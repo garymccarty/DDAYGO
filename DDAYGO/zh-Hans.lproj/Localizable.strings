@@ -1,0 +1,70 @@
+
+/*****************/
+/* *
+ * 首页
+ * */
+"Home" = "首页";
+"Position" = "位置";
+"Searchfavorite" = "搜索喜欢的";
+"Choose your country" = "选择您所在的国家";
+"HongKong" = "香港";
+"China" = "中国";
+"Malaysia" = "马来西亚";
+"Singapore" = "新加坡";
+"Thailand" = "泰国";
+"Vietnam" = "越南";
+"Cancel" = "取消";
+"Select erchandise ach Month" = "每月精选商品";
+"Best-selling products" = "热销商品";
+"erchandise" = "精选商品";
+"More erchandise" = "更多精选";
+/*****************/
+/* *
+ * 分类
+ * */
+"Class" = "分类";
+"Acquiescence" = "默认";
+"Sales Volume" = "销量";
+"Latest" = "最新";
+"Price" = "价格";
+/*****************/
+/* *
+ * 购物车
+ * */
+"Shopping" = "购物车";
+"Edit" = "编辑";
+"Select All" = "全选";
+"TotalRMB:" = "合计RMB:";
+"Clearing(0)" = "结算(0)";
+"You have not selected goods " = "您还没有选择宝贝哦";
+/*****************/
+/* *
+ * 订单
+ * */
+"Order" = "订单";
+/*****************/
+/* *
+ * 我的
+ * */
+"My" = "我的";
+"Language" = "语言";
+"Setting" = "设置";
+"Choose photos" = "选择照片";
+"Change my avatar" = "修改我的头像";
+"cancel" = "取消";
+"camera" = "拍照";
+"photo" = "相册";
+"No camera" = "没有摄像头";
+"reminding" = "提示";
+"Your device does not support taking photos" = "您的设备不支持拍照";
+"ok" = "确定";
+"revocation" = "撤销";
+"reminding" = "提示";
+"Are you sure you want to log out?" = "您确定要登出吗？";
+"ok" = "确定";
+"cancel" = "取消";
+"collect" = "收藏";
+"Tracking the shop" = "关注的商店";
+"store management" = "商店管理";
+
+

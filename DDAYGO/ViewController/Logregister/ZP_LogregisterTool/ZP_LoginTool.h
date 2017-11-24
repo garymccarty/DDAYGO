@@ -1,0 +1,25 @@
+//
+//  ZP_LoginTool.h
+//  DDAYGO
+//
+//  Created by Summer on 2017/10/26.
+//  Copyright © 2017年 Summer. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface ZP_LoginTool : NSObject
+
+// 注册
++ (void)requestRegiser:(NSDictionary *)Regiser success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+//  登录
++ (void)requestLogin:(NSDictionary *)Login success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 验证码
++ (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 地区
++ (void) requsetArea:(NSDictionary *)Area success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+@end

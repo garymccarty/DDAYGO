@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "6f33c5e4-78be-9d4b-a144-b6d29babe1ca++7127" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6f33c5e4-78be-9d4b-a144-b6d29babe1ca++7127" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "76E5ABF4-A9A9-4D84-980C-2638E179C3BF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6f33c5e4-78be-9d4b-a144-b6d29babe1ca++7127" : "trunk\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DDAYGO",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DDAYGO.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/58.64.200.94\/svn\/DDAYGO",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6f33c5e4-78be-9d4b-a144-b6d29babe1ca++7127"
+    }
+  ]
+}
