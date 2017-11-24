@@ -14,6 +14,7 @@
 @interface FootprintViewController ()
 
 @property (nonatomic, strong)NSMutableArray * newsData;
+@property (nonatomic, strong)UICollectionView *bottomCV;
 @end
 
 @implementation FootprintViewController
@@ -33,8 +34,11 @@
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
    int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
+    
     [ZP_MyTool requtsFootprint:dic success:^(id obj) {
         NSArray * arr = obj;
+        self.newsData = [ZP_FootprintModel arrayWithArray:arr];
+        [self.bottomCV reloadData];
         ZPLog(@"%@",arr);
     } failure:^(NSError * error) {
         
@@ -42,11 +46,13 @@
 }
 #pragma mark --- collectionView delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
+    return self.newsData.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FootprintCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FootprintCollectionViewCell" forIndexPath:indexPath];
+    ZP_FootprintModel * model = self.newsData[indexPath.row];
+    [cell FootprintCollection:model];
     return cell;
 }
 
