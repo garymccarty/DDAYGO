@@ -186,6 +186,8 @@
 		06F572411F9F204F00D61FDB /* BillDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5723B1F9F204F00D61FDB /* BillDetailViewController.xib */; };
 		06F572421F9F204F00D61FDB /* SearchTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5723E1F9F204F00D61FDB /* SearchTimeViewController.m */; };
 		06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5723F1F9F204F00D61FDB /* SearchTimeViewController.xib */; };
+		4D20F5891FC9C2100079402B /* SelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D20F5871FC9C2100079402B /* SelectedViewController.m */; };
+		4D20F58A1FC9C2100079402B /* SelectedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D20F5881FC9C2100079402B /* SelectedViewController.xib */; };
 		6FA32ACCA83E0A32B68FDCFC /* libPods-DDAYGO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */; };
 		C409F86E1FA17336009DE7B1 /* NestedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86A1FA17336009DE7B1 /* NestedCollectionViewCell.m */; };
 		C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86C1FA17336009DE7B1 /* SixthViewCell.m */; };
@@ -642,6 +644,9 @@
 		06F5723F1F9F204F00D61FDB /* SearchTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTimeViewController.xib; sourceTree = "<group>"; };
 		06F572441F9F3A0900D61FDB /* DataInterface.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataInterface.pch; sourceTree = "<group>"; };
 		0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDAYGO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D20F5861FC9C2100079402B /* SelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectedViewController.h; sourceTree = "<group>"; };
+		4D20F5871FC9C2100079402B /* SelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectedViewController.m; sourceTree = "<group>"; };
+		4D20F5881FC9C2100079402B /* SelectedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedViewController.xib; sourceTree = "<group>"; };
 		6A14FE6EC0BD7CDD0156BD7F /* Pods-DDAYGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.release.xcconfig"; sourceTree = "<group>"; };
 		949508FD8C61CA662D6E2034 /* Pods-DDAYGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.debug.xcconfig"; sourceTree = "<group>"; };
 		C409F8691FA17336009DE7B1 /* NestedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NestedCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1488,6 +1493,7 @@
 		06DD47D81F947CBA007E4D17 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4D20F5851FC9C1B20079402B /* ZP_Selected */,
 				C45F230E1FA0757A00F5DB41 /* ZP_HomePage */,
 				C45F230A1FA0756300F5DB41 /* ZP_Position */,
 				C45F22FE1FA0754500F5DB41 /* ZP_SearchBox */,
@@ -2082,6 +2088,16 @@
 				6A14FE6EC0BD7CDD0156BD7F /* Pods-DDAYGO.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4D20F5851FC9C1B20079402B /* ZP_Selected */ = {
+			isa = PBXGroup;
+			children = (
+				4D20F5861FC9C2100079402B /* SelectedViewController.h */,
+				4D20F5871FC9C2100079402B /* SelectedViewController.m */,
+				4D20F5881FC9C2100079402B /* SelectedViewController.xib */,
+			);
+			path = ZP_Selected;
 			sourceTree = "<group>";
 		};
 		C409F8671FA17336009DE7B1 /* ZP_Sixth-Nested */ = {
@@ -3198,6 +3214,7 @@
 				C47E76371FB5A1C7009F279A /* ProductDescriptionView.xib in Resources */,
 				06F5716E1F9F15CE00D61FDB /* CollectionViewController.xib in Resources */,
 				0682BE801F90C8F000894F4E /* seven.png in Resources */,
+				4D20F58A1FC9C2100079402B /* SelectedViewController.xib in Resources */,
 				062C9D681F8CDB7900E14987 /* headImage.jpg in Resources */,
 				064448E21F6A1F7F0004DFE4 /* Shopping.png in Resources */,
 				C47096A81FB065CE006EA52C /* LanguageController.xib in Resources */,
@@ -3416,6 +3433,7 @@
 				C47E762C1FB5A1C7009F279A /* ClassificationViewController.m in Sources */,
 				C45F230D1FA0756300F5DB41 /* PositionView.m in Sources */,
 				0641BBDB1F67F9E400E72FEF /* UIButton+WebCache.m in Sources */,
+				4D20F5891FC9C2100079402B /* SelectedViewController.m in Sources */,
 				06F5722A1F9F1E8700D61FDB /* OrderManagerCollectionViewCell.m in Sources */,
 				C47E76461FB5A1C7009F279A /* ShopIntroductionViewController.m in Sources */,
 				064449AC1F6A9B250004DFE4 /* MJRefreshAutoGifFooter.m in Sources */,

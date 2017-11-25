@@ -10,6 +10,8 @@
 #import "Pop-upPrefixHeader.pch"
 #import "ZP_HomeTool.h"
 #import "ZP_PositionModel.h"
+#import "DetailedController.h"
+#import "SelectedViewController.h"
 @interface HomeViewController () <SDCycleScrollViewDelegate,UITableViewDelegate, UITableViewDataSource> {
     int _i;
     UIButton * _chooseCityBtn;
@@ -130,7 +132,7 @@
 //返回
     position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
         NSLog(@"c = %@",ContStr);
-        [_chooseCityBtn setTitle:ContStr forState:UIControlStateNormal];
+        
     };
     //  显示
     [position showInView:self.navigationController.view];
@@ -197,6 +199,12 @@
     if (indexPath.section == 0) {
         static NSString * ZeroID = @"ceaa";
         ZeroViewCell * cell = [tableView dequeueReusableCellWithIdentifier: ZeroID];
+        cell.finishBlock = ^(id response) {
+            DetailedController *viewController = [[DetailedController alloc] init];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:viewController animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        };
         cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
         return cell;
     }else
@@ -204,7 +212,10 @@
             static NSString * FirstID = @"First";
             FirstViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FirstID];
             cell.firstBlock = ^(NSInteger tag) {
-                NSLog(@"%ld",(long)tag);
+                SelectedViewController *viewController = [[SelectedViewController alloc] init];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:viewController animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
             };
             [cell first:A];
             return cell;
@@ -214,7 +225,10 @@
             SecondViewCell * cell = [tableView dequeueReusableCellWithIdentifier: SecondID];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             cell.SecondBlock = ^(NSInteger tag){
-                NSLog(@"%ld",(long)tag);
+                DetailedController *viewController = [[DetailedController alloc] init];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:viewController animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
             };
             [cell Second:B];
             return cell;
@@ -224,7 +238,10 @@
             ThirdViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ThirdID];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             cell.ThirdBlock = ^(NSInteger tag){
-                NSLog(@"%ld",(long)tag);
+                DetailedController *viewController = [[DetailedController alloc] init];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:viewController animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
             };
             [cell Third:C];
             return cell;
@@ -232,6 +249,12 @@
         if (indexPath.section == 4){
             static NSString * FourthID = @"Fourthcell";
             FourthViewCell * cell = [tableView dequeueReusableCellWithIdentifier:FourthID];
+            cell.ThirdBlock = ^(NSInteger tag){
+                DetailedController *viewController = [[DetailedController alloc] init];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:viewController animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
+            };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             NSDictionary * dic = dataArray[indexPath.row];
             [cell InformationWithDic:dic];
@@ -240,11 +263,23 @@
         if (indexPath.section == 5){
             static NSString * FifthID = @"ceaaa";
             FifthViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FifthID];
+            cell.ThirdBlock = ^(NSInteger tag){
+                DetailedController *viewController = [[DetailedController alloc] init];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:viewController animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
+            };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             return cell;
     }else {
             static NSString * SixthID = @"Fifthcell";
             SixthViewCell * cell = [tableView dequeueReusableCellWithIdentifier: SixthID];
+        cell.ThirdBlock = ^(NSInteger tag){
+            DetailedController *viewController = [[DetailedController alloc] init];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:viewController animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             return cell;
     }
@@ -275,7 +310,41 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    switch (indexPath.section) {
+        case 0:
+        {
+            
+        }
+            break;
+        case 1:
+        {
+            
+        }
+            break;
+        case 2:
+        {
+            
+        }
+            break;
+        case 3:
+        {
+            
+        }
+            break;
+        case 4:
+        {
+            
+        }
+            break;
+        case 5:
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
     NSLog(@"选中%ld",(long)indexPath.item);
     
 }

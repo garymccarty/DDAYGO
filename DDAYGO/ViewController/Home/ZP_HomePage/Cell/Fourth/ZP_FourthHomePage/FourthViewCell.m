@@ -126,7 +126,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    if (self.ThirdBlock) {
+        self.ThirdBlock(indexPath.row);
+    }
         NSLog(@"111");
 }
 @end

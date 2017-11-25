@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FourthViewCell : UITableViewCell
+@property (nonatomic, copy) void(^ThirdBlock)(NSInteger tag);
 @property (nonatomic, strong) UILabel * Titlelabel; //标题
 @property (nonatomic, strong) UIImageView * imageView1; // 图片1
 - (void)InformationWithDic:(NSDictionary *)dic;

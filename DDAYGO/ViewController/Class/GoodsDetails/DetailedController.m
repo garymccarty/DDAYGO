@@ -113,6 +113,9 @@
 }
 // 获取数据
 - (void)allData {
+    if (nil == _productId) {
+        return;
+    }
     NSDictionary * dic = @{@"productid":_productId,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
     [ZP_ClassViewTool requDetails:dic success:^(id obj) {
         

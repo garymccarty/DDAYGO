@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface FifthViewCell : UITableViewCell
-
+@property (nonatomic, copy) void(^ThirdBlock)(NSInteger tag);
 @end

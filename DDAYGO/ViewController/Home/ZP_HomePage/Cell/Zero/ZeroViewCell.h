@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void (^FinishBlock)(id response);
 @interface ZeroViewCell : UITableViewCell
 
+@property (nonatomic ,strong) FinishBlock finishBlock;
 @end

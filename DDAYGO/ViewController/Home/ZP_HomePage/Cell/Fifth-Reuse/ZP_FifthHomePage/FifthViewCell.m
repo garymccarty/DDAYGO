@@ -79,9 +79,9 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //    ZPHomeCell * Detailed = [[ZPHomeCell alloc]initWithNibName:@"DetailedController" bundle:nil];
-    //    [self.navigationController pushViewController:Detailed animated:YES];
+    if (self.ThirdBlock) {
+        self.ThirdBlock(indexPath.row);
+    }
     NSLog(@"选中%ld",(long)indexPath.item);
 }
 
