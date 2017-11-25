@@ -32,6 +32,8 @@
 #import "UIButton+countDown.h"
 #import "Const.h"
 #import "ZP_GeneralLabel.h"
+#import "MyViewController.h"
+#import "LogregisterController.h"
 
 #ifdef DEBUG // 调试状态, 打开LOG功能
 #define ZPLog(...) NSLog(__VA_ARGS__)
@@ -40,6 +42,8 @@
 #endif
 
 #define DEMO_CALL 1
+#define DD_HASLOGIN [MyViewController sharedInstanceTool].hasLogin
+#define DD_TOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
 //全局
 #define appD ((AppDelegate*)[[UIApplication sharedApplication] delegate])
 #define NavBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height + 44)

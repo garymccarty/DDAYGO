@@ -45,10 +45,18 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
     [super viewWillAppear:animated];
-    [self allData];
+    
+    if (!DD_HASLOGIN) {
+        LogregisterController *viewcontroller = [[LogregisterController alloc] init];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewcontroller animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    } else {
+        [self allData];
+    }
 }
+
 - (void)allData {
     [ZP_shoopingTool requesshoppingData:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] success:^(id obj) {
         ZPLog(@"%@",obj);

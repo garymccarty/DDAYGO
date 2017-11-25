@@ -14,7 +14,10 @@
 + (void)requestRegiser:(NSDictionary *)Regiser success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 //  登录
-+ (void)requestLogin:(NSDictionary *)Login success:(void (^)(id))success failure:(void (^)(NSError *))failure;
++ (void)requestLogin:(NSDictionary *)Login success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
+//  获取用户信息
++ (void)getAccountInfo:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 验证码
 + (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure;

@@ -63,7 +63,7 @@
     myNavigationController.tabBarItem = [UITabBarItem ImageName:@"ic_tab_Persona_normal.png" selectedImage:@"ic_tab_Persona_pressed.png"];
     [myNavigationController.tabBarItem setTitleTextAttributes:dictHome forState:UIControlStateSelected];
     myNavigationController.tabBarItem.title = NSLocalizedString(@"My", nil);
-
+    [myViewController autoLogin:nil];
     NSArray * viewControllers = @[ homeNavigationController, classNavigationController, shoppingNavigationController, orderNavigationController, myNavigationController];
     
     self.viewControllers = viewControllers;

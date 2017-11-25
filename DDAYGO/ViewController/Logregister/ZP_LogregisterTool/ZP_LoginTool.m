@@ -34,9 +34,8 @@
      */
 }
 
-
 //  登录
-+ (void)requestLogin:(NSDictionary *)Login success:(void (^)(id))success failure:(void (^)(NSError *))failure {
++ (void)requestLogin:(NSDictionary *)Login success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
     
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/Login?email=%@&pwd=%@&countrycode=%@",Login[@"email"],Login[@"pwd"],Login[@"countrycode"]] parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
@@ -46,14 +45,20 @@
         
         NSLog(@"%@",error);
     }];
-    
-    //    [ZP_NetorkingTools POST:@"http://www.ddaygo.com/api/Test/Login?" parameters:Login success:^(NSDictionary *responseObject) {
-    //        success(responseObject);
-    //        NSLog(@"%@",responseObject);
-    //    } failure:^(NSError *error) {
-    //        failure(error);
-    //    }];
 }
+
+//  获取用户信息
++ (void)getAccountInfo:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/accountinfo?token=%@&nonce=adf",token] parameters:nil success:^(NSDictionary *responseObject) {
+        
+        success(responseObject);
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"%@",error);
+    }];
+}
+
 // 验证码
 + (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/sendvercode?email=%@",Yzm[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {

@@ -11,5 +11,9 @@
 @interface MyViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel * NameLabel;
+@property (nonatomic ,assign) BOOL hasLogin;
 
++ (MyViewController *)sharedInstanceTool;
+
+- (void)autoLogin:(void (^)(id obj))success;
 @end

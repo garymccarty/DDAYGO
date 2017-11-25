@@ -31,6 +31,19 @@
     [self initUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (!DD_HASLOGIN) {
+        LogregisterController *viewcontroller = [[LogregisterController alloc] init];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:viewcontroller animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
+    } else {
+        //        [self allData];
+    }
+}
+
 - (void)setUpNavgationBar {
     
     ZPSearchBarBUtton * searchBar = [ZPSearchBarBUtton buttonWithType:UIButtonTypeCustom];

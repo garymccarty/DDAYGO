@@ -19,6 +19,7 @@
 #import "PrefixHeader.pch"
 #import "ZP_MyTool.h"
 #import "ZP_HomePageModel.h"
+#import "ZP_LoginTool.h"
 
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIView *userBackView;
@@ -35,8 +36,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    [self allData];
+    
+    [self autoLogin:^(id obj) {
+        if (!DD_HASLOGIN) {
+            LogregisterController *viewcontroller = [[LogregisterController alloc] init];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:viewcontroller animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
+        } else {
+            [self updateUserInfo];
+        }
+    }];
 }
+
++ (MyViewController *)sharedInstanceTool {
+    static MyViewController *instance = nil;
+    static NSString *language = nil;
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Language"]) {
+        NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
+        [[NSUserDefaults standardUserDefaults] setObject:array.firstObject forKey:@"Language"];
+    }
+    NSString *language1 = [[NSUserDefaults standardUserDefaults] objectForKey:@"Language"];
+    if (!language) {
+        language = [[NSUserDefaults standardUserDefaults] objectForKey:@"Language"];
+    }
+    if (!instance || ![language isEqualToString:language1]) {
+        language = language1;
+        instance = [[self alloc] init];
+    }
+    
+    return instance;
+}
+
 //- (void)viewWillAppear:(BOOL)animated {
 //    self.hidesBottomBarWhenPushed = YES;
 //    [super viewWillAppear:animated];
@@ -49,6 +80,48 @@
 //    self.hidesBottomBarWhenPushed = NO;
 //    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor orangeColor]];
 //}
+
+- (void)autoLogin:(void (^)(id obj))success {
+    if (DD_HASLOGIN) {
+        if (success) {
+            success(nil);
+        }
+    } else {
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"loginData"]) {
+            NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginData"];
+            [ZP_LoginTool requestLogin:dic success:^(id obj) {
+                NSLog(@"obj---%@",obj);
+                NSDictionary * dic = obj;
+                [[NSUserDefaults standardUserDefaults] setObject:dic[@"token"] forKey:@"token"];
+                if ([dic[@"result"] isEqualToString:@"ok"]) {
+                    [ZP_LoginTool getAccountInfo:dic[@"token"] success:^(id obj) {
+                        NSDictionary * tempDic = obj;
+                        NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"]};
+                        [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
+                        DD_HASLOGIN = YES;
+                        if (success) {
+                            success(nil);
+                        }
+                    } failure:^(NSError *error) {
+                        if (success) {
+                            success(nil);
+                        }
+                        NSLog(@"%@",error);
+                    }];
+                }
+            } failure:^(NSError *error) {
+                if (success) {
+                    success(nil);
+                }
+                NSLog(@"%@",error);
+            }];
+        } else {
+            if (success) {
+                success(nil);
+            }
+        }
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
@@ -65,7 +138,8 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
-   
+    
+    [self allData];
 }
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
@@ -102,11 +176,39 @@
     self.scanView.layer.shadowOpacity = 0.3;
 }
 
+- (void)updateUserInfo {
+    /*
+     address = "";
+     aid = 51;
+     avatarimg = "/images/avatar_img.jpg";
+     birthday = "/Date(-62135596800000)/";
+     countrycode = 86;
+     createtime = "/Date(-62135596800000)/";
+     createtimestr = "<null>";
+     email = "zhaoningdeemail@qq.com";
+     icueaccount = "";
+     introducer = "";
+     nickname = "";
+     phone = "";
+     realname = "";
+     sex = 1;
+     state = 3;
+     */
+    if (DD_HASLOGIN) {
+        NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+        self.NameLabel.text = dic[@"nickname"];
+    }
+}
+
 - (IBAction)LonigAction:(id)sender {
-    NSLog(@"Push");
     self.hidesBottomBarWhenPushed = YES;
-    LogregisterController * Logregister = [[LogregisterController alloc] init];
-    [self.navigationController pushViewController:Logregister animated:YES];
+    UIViewController *viewController;
+    if (DD_HASLOGIN) {
+        viewController = [[SettingViewController alloc] init];
+    } else {
+        viewController = [[LogregisterController alloc] init];
+    }
+    [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.hidesBottomBarWhenPushed = NO;
