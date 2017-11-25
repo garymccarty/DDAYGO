@@ -56,11 +56,11 @@
             [SVProgressHUD showSuccessWithStatus:@"添加成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else {
-           if ([dic[@"result"] isEqualToString:@"add_up_to_ten"]) {
-               [SVProgressHUD showInfoWithStatus:@"添加失败，最多只能添加10天哟"];
-        }else {
-            if ([dic[@"result"] isEqualToString:@"sys_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"服务器连接至火星"];
+            if ([dic[@"result"] isEqualToString:@"add_up_to_ten"]) {
+                [SVProgressHUD showInfoWithStatus:@"添加失败，最多只能添加10天哟"];
+            }else {
+                if ([dic[@"result"] isEqualToString:@"sys_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"服务器连接至火星"];
                 }
             }
         }
@@ -71,9 +71,9 @@
 //  键盘触摸
 - (void)touchesBegan {
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
-//  设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    //  设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
     tapGestureRecognizer.cancelsTouchesInView = NO;
-//  将触摸事件添加到当前view
+    //  将触摸事件添加到当前view
     [self.view addGestureRecognizer:tapGestureRecognizer];
     
 }
@@ -92,4 +92,6 @@
 }
 
 @end
+
+
 
