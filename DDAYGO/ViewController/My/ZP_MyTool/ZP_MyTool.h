@@ -34,5 +34,8 @@
 
 // 获取浏览记录
 + (void)requtsFootprint:(NSDictionary *)Footprint success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+//  删除浏览记录
++ (void)requtsDeleFootprint:(NSDictionary *)Footprint success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end
 

@@ -31,13 +31,15 @@
 }
 
 + (NSMutableArray *)arrayWithArray:(NSArray *)array {
+    
     NSMutableArray * arr = [[NSMutableArray alloc]init];
-    for (NSDictionary * dic in array) {
+    for (NSDictionary * dic in array[0][@"historylist"]) {
         ZP_FootprintModel * model = [[ZP_FootprintModel alloc]init];
         model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
         model.productname = dic[@"productname"];
         model.productprice = [NSString stringWithFormat:@"RMB:%@",dic[@"productprice"]];
-        model.cp = [NSString stringWithFormat:@"RMB:%@",dic[@"cp"]];
+        model.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];
+        model.historyid = dic[@"historyid"];
         [arr addObject:model];
     }
     return arr;

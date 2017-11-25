@@ -13,6 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel * productname;  // 标题
 @property (strong, nonatomic) IBOutlet UILabel *productprice; // 商品价格
 @property (strong, nonatomic) IBOutlet UILabel * cp; // 商品cp
+@property (weak, nonatomic) IBOutlet UIButton *deleBtn;
 
 - (void)FootprintCollection:(ZP_FootprintModel *)model;
+
 @end

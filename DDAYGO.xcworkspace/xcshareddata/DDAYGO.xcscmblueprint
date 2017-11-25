@@ -1,15 +1,20 @@
 {
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
-    "CFBA55EC3E1125FD46B94974391FCD967EA736FF" : {
+    "CFBA55EC3E1125FD46B94974391FCD967EA736FF+++792819F" : {
+
+    },
+    "CFBA55EC3E1125FD46B94974391FCD967EA736FF+++50F4853" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "CFBA55EC3E1125FD46B94974391FCD967EA736FF" : 9223372036854775807
+    "CFBA55EC3E1125FD46B94974391FCD967EA736FF+++792819F" : 9223372036854775807,
+    "CFBA55EC3E1125FD46B94974391FCD967EA736FF+++50F4853" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "76E5ABF4-A9A9-4D84-980C-2638E179C3BF",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "CFBA55EC3E1125FD46B94974391FCD967EA736FF" : "DDAYGO\/"
+    "CFBA55EC3E1125FD46B94974391FCD967EA736FF+++792819F" : "DDAYGO\/",
+    "CFBA55EC3E1125FD46B94974391FCD967EA736FF+++50F4853" : "DDAYGO\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "DDAYGO",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -18,12 +23,12 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/58.64.200.94\/svn\/DDAYGO",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CFBA55EC3E1125FD46B94974391FCD967EA736FF"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CFBA55EC3E1125FD46B94974391FCD967EA736FF+++50F4853"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/58.64.200.94\/svn\/DDAYGO",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CFBA55EC3E1125FD46B94974391FCD967EA736FF"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CFBA55EC3E1125FD46B94974391FCD967EA736FF+++792819F"
     }
   ]
 }

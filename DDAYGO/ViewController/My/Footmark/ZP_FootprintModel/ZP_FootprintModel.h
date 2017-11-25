@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSString * productname;  // 标题
 @property (strong, nonatomic) NSString *productprice; // 商品价格
 @property (strong, nonatomic) NSString * cp; // 商品cp
+@property (nonatomic, strong) NSNumber *historyid;
 
 + (instancetype)gEtFootprint:(NSDictionary *)Dic;
 
