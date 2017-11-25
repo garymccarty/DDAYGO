@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    self.title = NSLocalizedString(@"登录", nil) ;
+    self.title = NSLocalizedString(@"Login", nil) ;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -56,21 +56,29 @@
         }
     [self allData];
 }
+
 - (void)allData {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[@"email"] = _ZPEmailTextField.textField.text;
     dic[@"pwd"] = [self md5:_ZPPswTextField.textField.text];
     dic[@"countrycode"] = @"886";
+    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"loginData"];
     [ZP_LoginTool requestLogin:dic success:^(id obj) {
         NSLog(@"obj---%@",obj);
-        NSDictionary * dic = obj;
-        if ([dic[@"result"] isEqualToString:@"ok"]) {
-            NSLog(@"登录成功");
-            [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
-            [self.navigationController popViewControllerAnimated:YES];
-
+        NSDictionary * aadic = obj;
+        if ([aadic[@"result"] isEqualToString:@"ok"]) {
+            [ZP_LoginTool getAccountInfo:aadic[@"token"] success:^(id obj) {
+                NSDictionary * tempDic = obj;
+                NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"],@"token":aadic[@"token"]};
+                [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
+                DD_HASLOGIN = YES;
+                [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            } failure:^(NSError *error) {
+                NSLog(@"%@",error);
+            }];
         }else {
-            if ([dic[@"result"]isEqualToString:@"acc_pwd_err"]) {
+            if ([aadic[@"result"]isEqualToString:@"acc_pwd_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"邮箱或密码不正确"];
             }
         }
@@ -79,6 +87,7 @@
         NSLog(@"%@",error);
     }];
 }
+
 - (IBAction)forgetPsdClick:(id)sender {
     
     self.hidesBottomBarWhenPushed = YES;
