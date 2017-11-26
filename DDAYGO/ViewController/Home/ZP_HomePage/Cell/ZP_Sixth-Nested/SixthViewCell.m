@@ -129,7 +129,8 @@
 //  cell 点击事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.ThirdBlock) {
-        self.ThirdBlock(indexPath.row);
+        ZP_SixthModel *model = self.newsData[indexPath.row];
+        self.ThirdBlock([model.productid longValue]);
     }
     NSLog(@"选中%ld",(long)indexPath.item);
 }

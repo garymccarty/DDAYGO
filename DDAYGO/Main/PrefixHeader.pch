@@ -41,7 +41,9 @@
 #define ZPLog(...)
 #endif
 
-#define DEMO_CALL 1
+#define DEMO_CALL 1Check login status
+#define DD_CHECK_HASLONGIN if (!DD_HASLOGIN) {[SVProgressHUD showErrorWithStatus:@"请登录账户"];return;}
+
 #define DD_HASLOGIN [MyViewController sharedInstanceTool].hasLogin
 #define DD_TOKEN [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
 //全局

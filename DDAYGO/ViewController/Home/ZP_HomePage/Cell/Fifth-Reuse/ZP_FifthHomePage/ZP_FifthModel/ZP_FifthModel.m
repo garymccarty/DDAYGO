@@ -33,6 +33,7 @@
         ZP_FifthModel * model = [[ZP_FifthModel alloc]init];
         model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
         model.productname = dic[@"productname"];
+        model.producid = dic[@"productid"];
         model.PreferentialLabel = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
         model.TrademarkLabel = [NSString stringWithFormat:@"%@",dic[@"cp"]];
         [arr addObject:model];

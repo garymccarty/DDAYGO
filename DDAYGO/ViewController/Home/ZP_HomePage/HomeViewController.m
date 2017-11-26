@@ -266,6 +266,7 @@
             cell.ThirdBlock = ^(NSInteger tag){
                 DetailedController *viewController = [[DetailedController alloc] init];
                 self.hidesBottomBarWhenPushed = YES;
+                viewController.productId = @(tag);
                 [self.navigationController pushViewController:viewController animated:YES];
                 self.hidesBottomBarWhenPushed = NO;
             };
@@ -276,6 +277,7 @@
             SixthViewCell * cell = [tableView dequeueReusableCellWithIdentifier: SixthID];
         cell.ThirdBlock = ^(NSInteger tag){
             DetailedController *viewController = [[DetailedController alloc] init];
+            viewController.productId = @(tag);
             self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:viewController animated:YES];
             self.hidesBottomBarWhenPushed = NO;

@@ -179,11 +179,10 @@
 
 #pragma mark  - - 收藏
 - (IBAction)shoucangAction:(UIButton *)sender {
-    
+    DD_CHECK_HASLONGIN;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[@"productid"] = _model.productid;
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-    
     if (!sender.selected) {
         //收藏
         [ZP_ClassViewTool requshoucang:dic success:^(id obj) {

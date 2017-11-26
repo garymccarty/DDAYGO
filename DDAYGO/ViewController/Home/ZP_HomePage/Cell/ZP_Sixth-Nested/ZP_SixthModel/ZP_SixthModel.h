@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString * PreferentialLabel; // 优惠价格
 @property (nonatomic, strong) NSString * priceLabel; // 价格
 @property (nonatomic, strong) NSString * TrademarkLabel; // 商标编号
+@property (nonatomic, strong) NSNumber * productid; // 商标id
 
 //+ (instancetype)GetFifthData:(NSDictionary *)Dic;
 
