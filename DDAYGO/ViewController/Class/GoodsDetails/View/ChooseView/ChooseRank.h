@@ -31,7 +31,7 @@
 
 -(instancetype)initWithTitle:(NSString *)title titleArr:(NSArray *)titleArr andFrame:(CGRect)frame;
 
-
+- (void)btnClick:(UIButton *)btn;
 @end
 
 

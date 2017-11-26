@@ -67,7 +67,6 @@
         height += self.chooseRank.height;
         self.chooseRank.tag = 9000+i;
         self.chooseRank.delegate = self;
-        
         [self.chooseView.mainscrollview addSubview:self.chooseRank];
     }
     self.chooseView.mainscrollview.contentSize = CGSizeMake(0, height);
@@ -373,6 +372,10 @@
         }
     }
     
+    [self getdata];
+}
+
+- (void)getdata {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     if (self.colorId) {
         dic[@"colorid"] = self.colorId;
@@ -415,10 +418,13 @@
 - (void)setModelArr:(NSArray *)modelArr {
     _modelArr = modelArr;
     NSMutableArray  *arr = [NSMutableArray array];
-    [modelArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        ZP_GoodDetailsModel *model = obj;
+    for (int i = 0; i < modelArr.count; i ++) {
+        ZP_GoodDetailsModel *model = modelArr[i];
         [arr addObject:model.cnname];
-    }];
+        if (0 == i) {
+            self.colorId = model.cnid;
+        }
+    }
     
     self.standardValueList = @[arr,@[]];
     
@@ -429,10 +435,13 @@
 {
     _modeltypeArr = modeltypeArr;
     NSMutableArray  *arr = [NSMutableArray array];
-    [modeltypeArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        ZP_GoodDetailsModel *model = obj;
+    for (int i = 0; i < modeltypeArr.count; i ++) {
+        ZP_GoodDetailsModel *model = modeltypeArr[i];
         [arr addObject:model.cnname];
-    }];
+        if (0 == i) {
+            self.sizeId = model.cnid;
+        }
+    }
     
     self.standardValueTypeList = @[arr,@[]];
     

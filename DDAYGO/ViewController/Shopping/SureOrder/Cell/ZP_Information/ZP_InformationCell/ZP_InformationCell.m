@@ -167,7 +167,7 @@
 
 //    _TotalLabel.text = model[@"Quantiy"];
 //    CGFloat f = [[[@"Preferential"] stringByReplacingOccurrencesOfString:@"RMB:" withString:@""] floatValue];
-//    _ComputationsLabel.text = [NSString stringWithFormat:@"RMB:%.2f",f * [dic[@"Quantiy"] floatValue]];
+    _ComputationsLabel.text = [NSString stringWithFormat:@"RMB:%.2f",model.amount.intValue * model.productprice.floatValue];
 
 }
 

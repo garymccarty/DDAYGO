@@ -35,6 +35,7 @@
 @property(nonatomic,strong)NSMutableArray * dataArrar;
 @property (nonatomic, strong)NSMutableArray * NewData;
 @property (nonatomic, strong) NSMutableArray * ConfirmArray;
+@property (nonatomic, strong) UILabel * merchantsLabel;
 
 
 @end
@@ -108,9 +109,9 @@
     }];
     _StatisticsLabel = StatisticsLabel;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        _PriceLabel.text = [NSString stringWithFormat:@"%.2f", [_PriceStr floatValue]];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        _PriceLabel.text = [NSString stringWithFormat:@"%.2f", [_PriceStr floatValue]];
+//    });
     //  提交订单
     UIButton * Clearing = [UIButton new];
     Clearing.backgroundColor = ZP_pricebackground;
@@ -200,6 +201,7 @@
         [modelArr enumerateObjectsUsingBlock:^(ZP_ComfirmModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([model.isdefault isEqualToNumber:@1]) {
                 NSLog(@"%@",model.isdefault);
+                self.merchantsLabel.text = model.receiptname;
                 [_dataArrar addObject:model];
             }
         }];
@@ -218,12 +220,22 @@
         NSDictionary * dic = obj;
         ZPLog(@"%@",dic);
         self.NewData = [ZP_InformationModel arrayWithArray:dic[@"carts"]];
-        
+        [self upfataStatisticsLabel];
         [self.tableView reloadData];
     } failure:^(NSError * error) {
         
     }];
 }
+
+- (void)upfataStatisticsLabel {
+    float asd = 0.0;
+    for (ZP_InformationModel *model in self.NewData) {
+        asd += model.amount.intValue * model.productprice.floatValue;
+    }
+    
+    self.PriceLabel.text = [NSString stringWithFormat:@"%.2f",asd];
+}
+
 // 快递费
 - (void)ExpressDelivery {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
@@ -403,6 +415,7 @@
             make.left.equalTo(myView).offset(30);
             make.top.equalTo(myView).offset(20);
         }];
+        self.merchantsLabel = merchantsLabel;
         return myView;
         
     }else {

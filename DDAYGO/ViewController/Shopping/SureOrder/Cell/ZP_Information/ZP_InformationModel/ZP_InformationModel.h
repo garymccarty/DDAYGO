@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString * colorid; // 颜色
 @property (nonatomic, strong) NSString * normid; // 尺码
 @property (nonatomic, strong) NSString * supplierid; // 供货商ID
+@property (nonatomic, strong) NSString * suppliername; // 供货商名
 @property (nonatomic, strong) NSString * stockid; // 库存ID
 @property (nonatomic, strong) NSString * amount; // 购买数量
 

@@ -36,6 +36,7 @@
         ZP_InformationModel * model = [[ZP_InformationModel alloc]init];
         model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
         model.productname = dic[@"productname"];
+        model.suppliername = dic[@"suppliername"];
         model.amount = [NSString stringWithFormat:@"%@",dic[@"amount"]];
         model.productprice = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
         model.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];

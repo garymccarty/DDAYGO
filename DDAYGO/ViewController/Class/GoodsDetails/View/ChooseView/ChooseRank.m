@@ -100,6 +100,12 @@
         
         btn.tag = 10000+i;
         
+        if (i==0)
+        {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(300 * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+                [self btnClick:btn];
+            });
+        }
     }
     self.btnView.height = viewHeight;
     self.packView.height = self.btnView.height+CGRectGetMaxY(titleLB.frame);
