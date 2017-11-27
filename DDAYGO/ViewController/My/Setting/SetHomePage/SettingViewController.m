@@ -16,6 +16,7 @@
 #import "SelectPhotoManager.h"
 #import "LanguageController.h"
 #import "BindingEmailController.h"
+#import "BindingIntroduce.h"
 #import "UINavigationBar+Awesome.h"
 #import "MyViewController.h"
 #import "ZP_MyTool.h"
@@ -184,6 +185,14 @@
     [self.navigationController pushViewController:Email animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
 }
+// 绑定推荐人
+- (IBAction)bdIntroduce:(id)sender {
+    self.hidesBottomBarWhenPushed = YES;
+    BindingIntroduce * introduce = [[BindingIntroduce alloc]init];
+    [self.navigationController pushViewController:introduce animated:YES];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+}
+
 //  修改密码
 - (IBAction)xgmmAction:(id)sender {
     self.hidesBottomBarWhenPushed = YES;

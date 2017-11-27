@@ -40,7 +40,6 @@
 #else // 发布状态, 关闭LOG功能
 #define ZPLog(...)
 #endif
-
 #define DEMO_CALL 1Check login status
 #define DD_CHECK_HASLONGIN if (!DD_HASLOGIN) {[SVProgressHUD showErrorWithStatus:@"请登录账户"];return;}
 

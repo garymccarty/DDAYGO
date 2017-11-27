@@ -127,7 +127,7 @@
     [Paybut addTarget:self action:@selector(paybut:) forControlEvents:UIControlEventTouchUpInside];
     [bounceView addSubview:Paybut];
     [Paybut mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(10);
+        make.bottom.equalTo(self).offset(-20);
         make.right.equalTo(self).offset(-10);
         make.bottom.equalTo(self).offset(-25);
         make.height.mas_offset(40);

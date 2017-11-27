@@ -63,7 +63,7 @@
     self.titleView.titlesArr = @[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待发货", nil),NSLocalizedString(@"待收货", nil),NSLocalizedString(@"评价", nil)];
     [self.view addSubview:_titleView];
     
-    NSMutableArray *childVCs = [[NSMutableArray alloc]init];
+    NSMutableArray * childVCs = [[NSMutableArray alloc]init];
     for (NSString *title in self.titleView.titlesArr) {
         ZP_OrderController *vc = [[ZP_OrderController alloc]init];
         vc.titleStr = title;

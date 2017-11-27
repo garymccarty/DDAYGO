@@ -95,6 +95,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="Cp" destination="A0p-VQ-TKJ" id="jaK-Wp-vjX"/>
                 <outlet property="ShopimageView" destination="NhN-r3-pHL" id="vmt-6h-SZo"/>
                 <outlet property="priceLabel" destination="DYA-FP-Cd3" id="2FE-lh-fcp"/>
                 <outlet property="shopTextLabel" destination="UlF-Tk-dWI" id="dVg-9O-Tjd"/>

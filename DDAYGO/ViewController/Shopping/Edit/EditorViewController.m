@@ -45,11 +45,11 @@
                   
   @{@"title":@"Valvola法莫拉天然植物萃取保加利亚玫瑰纯露200ml",@"price":@"15",@"desc":@"250ml升级装",@"title2":@"Valvola法莫拉天然植物萃取保加利亚玫瑰纯露200ml",@"price2":@"15",@"desc2":@"250ml升级装"}];
 /**** IOS 11 ****/
-//    if (@available(iOS 11.0, *)) {
-//        self.tableView.estimatedRowHeight = 0;
-//        self.tableView.estimatedSectionHeaderHeight = 0;
-//        self.tableView.estimatedSectionFooterHeight = 0;
-//    }
+    if (@available(iOS 11.0, *)) {
+        self.tableView.estimatedRowHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+    }
 }
 /************************************************/
 //  navigationBar按钮

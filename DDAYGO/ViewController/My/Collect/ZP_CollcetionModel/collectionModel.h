@@ -10,26 +10,24 @@
 
 
 @interface collectionModel : NSObject
-/**商品名称*/
-@property (nonatomic, strong) NSString *productname;
-/**商品默认图片*/
-@property (nonatomic, strong) NSString *defaultimg;
-/**创建时间*/
-@property (nonatomic, strong) NSString *createtime;
-/**用户ID*/
-@property (nonatomic, strong) NSNumber *aid;
-/**商品状态*/
-@property (nonatomic, strong) NSNumber *collectionid;
-/**商品cp*/
-@property (nonatomic, strong) NSNumber *cp;
-/**商品ID*/
-@property (nonatomic, strong) NSNumber *productid;
-/**商品价格*/
-@property (nonatomic, strong) NSNumber *productprice;
-/**商品状态*/
-@property (nonatomic, strong) NSNumber *state;
-
-
+//商品名称
+@property (nonatomic, strong) NSString * productname;
+//商品默认图片
+@property (nonatomic, strong) NSString * defaultimg;
+//创建时间
+@property (nonatomic, strong) NSString * createtime;
+//用户ID
+@property (nonatomic, strong) NSNumber * aid;
+//商品状态
+@property (nonatomic, strong) NSNumber * collectionid;
+//商品cp
+@property (nonatomic, strong) NSNumber * cp;
+//商品ID
+@property (nonatomic, strong) NSNumber * productid;
+//商品价格
+@property (nonatomic, strong) NSNumber * productprice;
+//商品状态
+@property (nonatomic, strong) NSNumber * state;
 
 + (NSMutableArray *)arrayWithArray:(NSArray *)array;
 

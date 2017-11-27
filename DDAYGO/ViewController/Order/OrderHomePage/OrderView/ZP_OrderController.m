@@ -48,7 +48,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self addUI];
     //数据都写在这个页面·刷新什么的都在这个页面写·
 }
@@ -73,7 +72,7 @@
 
 - (void)getDataWithState{
     
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     if ([_titleStr isEqualToString:@"全部"]) {
         dic[@"sta"] = @"-1";
     }
@@ -93,7 +92,7 @@
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"orderno"] = @"";
     [ZP_OrderTool requestGetorders:dic success:^(id json) {
-        
+//        ZPLog(@"%@",json);
         _ModeldataArray = [OrderModel arrayWithArray:json];
         
         [self.tableview reloadData];
@@ -121,8 +120,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString * ID = @"orderViewCell";
-    OrderModel *model = _ModeldataArray[indexPath.row];
-    OrdersdetailModel *model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
+    OrderModel * model = _ModeldataArray[indexPath.row];
+    OrdersdetailModel * model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
     
     OrderViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -37,11 +37,11 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.title = NSLocalizedString(@"Shopping", nil);
 /**** IOS 11 ****/
-//if (@available(iOS 11.0, *)) {
-//        self.tableView.estimatedRowHeight = 0;
-//        self.tableView.estimatedSectionHeaderHeight = 0;
-//        self.tableView.estimatedSectionFooterHeight = 0;
-//    }
+if (@available(iOS 11.0, *)) {
+        self.tableView.estimatedRowHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -191,7 +191,7 @@
     
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(PriceLabel).offset(-65); // 左边
+        make.left.equalTo(PriceLabel).offset(-70); // 左边
         make.bottom.equalTo(PriceLabel).offset(0); // 下
     }];
     _StatisticsLabel = StatisticsLabel;

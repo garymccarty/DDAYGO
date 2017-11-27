@@ -311,6 +311,8 @@
 		C47E765D1FB5A5A6009F279A /* DetailedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47E765F1FB5A5A6009F279A /* DetailedController.xib */; };
 		C482B2761FC2848C00D7539F /* ZP_GeneralLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C482B2751FC2848C00D7539F /* ZP_GeneralLabel.m */; };
 		C482B2861FC2B62600D7539F /* ZP_AnonymityViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C482B2851FC2B62600D7539F /* ZP_AnonymityViewCell.m */; };
+		C491D3771FCBE31D00D127E9 /* BindingIntroduce.m in Sources */ = {isa = PBXBuildFile; fileRef = C491D3751FCBE31D00D127E9 /* BindingIntroduce.m */; };
+		C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */ = {isa = PBXBuildFile; fileRef = C491D3761FCBE31D00D127E9 /* BindingIntroduce.xib */; };
 		E37503CF1FC7BD8F00DA2950 /* ZP_ConfirmWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */; };
 /* End PBXBuildFile section */
 
@@ -906,6 +908,9 @@
 		C482B2751FC2848C00D7539F /* ZP_GeneralLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_GeneralLabel.m; sourceTree = "<group>"; };
 		C482B2841FC2B62600D7539F /* ZP_AnonymityViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_AnonymityViewCell.h; sourceTree = "<group>"; };
 		C482B2851FC2B62600D7539F /* ZP_AnonymityViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_AnonymityViewCell.m; sourceTree = "<group>"; };
+		C491D3741FCBE31D00D127E9 /* BindingIntroduce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindingIntroduce.h; sourceTree = "<group>"; };
+		C491D3751FCBE31D00D127E9 /* BindingIntroduce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindingIntroduce.m; sourceTree = "<group>"; };
+		C491D3761FCBE31D00D127E9 /* BindingIntroduce.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindingIntroduce.xib; sourceTree = "<group>"; };
 		E37503CC1FC7BBF400DA2950 /* ZP_ConfirmWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ConfirmWebController.h; sourceTree = "<group>"; };
 		E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ConfirmWebController.m; sourceTree = "<group>"; };
 		E37503CE1FC7BBF400DA2950 /* ZP_ConfirmWebController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ConfirmWebController.xib; sourceTree = "<group>"; };
@@ -1785,8 +1790,9 @@
 				06F571CA1F9F1A7900D61FDB /* SetHomePage */,
 				06F571B91F9F1A7900D61FDB /* ReceivingAddress */,
 				06F571AD1F9F1A7900D61FDB /* BindingICUE */,
-				06F571B51F9F1A7900D61FDB /* ChangePassword */,
 				C470968A1FB04998006EA52C /* BindingEmail */,
+				C491D3731FCBE2EE00D127E9 /* BindingIntroduce */,
+				06F571B51F9F1A7900D61FDB /* ChangePassword */,
 				C47096A31FB065AA006EA52C /* Language */,
 			);
 			path = Setting;
@@ -3021,6 +3027,16 @@
 			path = ZP_ConfirmAddress;
 			sourceTree = "<group>";
 		};
+		C491D3731FCBE2EE00D127E9 /* BindingIntroduce */ = {
+			isa = PBXGroup;
+			children = (
+				C491D3741FCBE31D00D127E9 /* BindingIntroduce.h */,
+				C491D3751FCBE31D00D127E9 /* BindingIntroduce.m */,
+				C491D3761FCBE31D00D127E9 /* BindingIntroduce.xib */,
+			);
+			path = BindingIntroduce;
+			sourceTree = "<group>";
+		};
 		E37503CB1FC7BBF400DA2950 /* ZP_ConfirmPayWeb */ = {
 			isa = PBXGroup;
 			children = (
@@ -3206,6 +3222,7 @@
 				0682BE6B1F906D7B00894F4E /* Shopping2.png in Resources */,
 				06F5722B1F9F1E8700D61FDB /* OrderManagerCollectionViewCell.xib in Resources */,
 				064449A61F6A9B250004DFE4 /* LICENSE in Resources */,
+				C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */,
 				062C9D611F8CD6F900E14987 /* button_5@2x.png in Resources */,
 				C45F22BF1FA017E800F5DB41 /* button_7@2x.png in Resources */,
 				C47E76521FB5A42F009F279A /* ClassificationViewController.xib in Resources */,
@@ -3517,6 +3534,7 @@
 				06DD47511F94721B007E4D17 /* UINavigationBar+Awesome.m in Sources */,
 				C47E76381FB5A1C7009F279A /* PurchaseView.m in Sources */,
 				C45F23611FA09A7C00F5DB41 /* ZP_FifthModel.m in Sources */,
+				C491D3771FCBE31D00D127E9 /* BindingIntroduce.m in Sources */,
 				0641BBD41F67F9E400E72FEF /* SDImageCache.m in Sources */,
 				06F5711C1F9F0DFF00D61FDB /* LogistcsCell.m in Sources */,
 				064449AE1F6A9B250004DFE4 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -3802,7 +3820,7 @@
 				DEVELOPMENT_TEAM = 3W8N7VEFEA;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = DDAYGO/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -3825,7 +3843,7 @@
 				DEVELOPMENT_TEAM = 3W8N7VEFEA;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = DDAYGO/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (

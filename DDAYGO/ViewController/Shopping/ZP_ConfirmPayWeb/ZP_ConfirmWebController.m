@@ -25,7 +25,6 @@
 - (void)initUI {
     webView = [UIWebView new];
     [self.view addSubview: webView];
-    
     [webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(0);
         make.top.equalTo(self.view).offset(0);
@@ -46,13 +45,11 @@
     return YES;
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView
-{
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
     [SVProgressHUD dismiss];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     
     NSLog(@"连接失败%@",error);
     [SVProgressHUD dismiss];

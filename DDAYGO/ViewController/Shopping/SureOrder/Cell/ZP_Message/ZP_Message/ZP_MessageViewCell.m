@@ -88,7 +88,8 @@
     }];
     _SmallLabel = SmallLabel;
     
-    //  价格
+    
+//      价格
     UILabel * ComputationsLabel = [UILabel new];
     ComputationsLabel.textAlignment = NSTextAlignmentLeft;
     ComputationsLabel.textColor = ZP_WhiteColor;

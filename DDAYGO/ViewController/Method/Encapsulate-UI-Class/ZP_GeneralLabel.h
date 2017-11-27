@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZP_GeneralLabel : UILabel
+
 + (instancetype)initWithtextLabel:(NSString *)text textColor:(UIColor *)textColor font:(UIFont *)font textAlignment:(NSTextAlignment)textAlignment bakcgroundColor:(UIColor *)bgColor;
 @end

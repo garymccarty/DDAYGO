@@ -42,10 +42,11 @@
 }
 
 - (void)getData {
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"screen"] = @1;
     [ZP_MyTool requestgetcollections:dic success:^(id json) {
+//        ZPLog(@"%@",json);
     _dataArray = [collectionModel arrayWithArray:json[@"list"]];
     [self.tableView reloadData];
         

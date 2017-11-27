@@ -16,10 +16,11 @@
 @property (nonatomic, strong) UIView * Backgroundview;    //  背景view
 /*********************************************************/
 /********************************************************/
-@property (nonatomic, strong) UIImageView * FigureImage;          //主图
-@property (nonatomic, strong) UILabel * merchantsLabel;          //商家名字
-@property (nonatomic, strong) UILabel * titleLabel;             //商品文字
-@property (nonatomic, strong) UILabel * descLabel;             // 250ml升级装
+@property (nonatomic, strong) UIImageView * FigureImage;           //主图
+@property (nonatomic, strong) UILabel * merchantsLabel;           //商家名字
+@property (nonatomic, strong) UILabel * titleLabel;              //商品文字
+@property (nonatomic, strong) UILabel * descLabel;              // 颜色分类
+@property (nonatomic, strong) UILabel * SizeLabel;             // 尺寸
 @property (nonatomic, strong) UILabel * PreferentialLabel;    //优惠价格
 @property (nonatomic, strong) UILabel * priceLabel;          // 价格
 @property (nonatomic, strong) UIImageView * TrademarkImage; // 商标
@@ -27,11 +28,12 @@
 @property (nonatomic, strong) UILabel * QuantityLabel;    //  数量
 /*********************************************************/
 /********************************************************/
-@property (nonatomic, strong) UILabel * CountLabel;     // 合计
-@property (nonatomic, strong) UILabel * AmountLabel;   // 金额
-@property (nonatomic, strong) UILabel * FreightLabel; // 运费
-/*****************************************************/
-/****************************************************/
+@property (nonatomic, strong) UILabel * CountLabel;         // 合计
+@property (nonatomic, strong) UILabel * AmountLabel;       // 金额
+@property (nonatomic, strong) UILabel * FreightLabel;     // 快递
+@property (nonatomic, strong) UILabel * ExpressFeeLabel; // 快递费
+/********************************************************/
+/*******************************************************/
 @property (nonatomic, strong) UIButton * AppraiseBut;      // 评价
 @property (nonatomic, strong) UIButton * LogisticsBut;    // 物流
 @property (nonatomic, strong) UIButton * OnceagainBut;   // 再次购买

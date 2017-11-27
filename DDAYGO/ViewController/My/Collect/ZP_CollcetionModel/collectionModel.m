@@ -18,6 +18,7 @@
         model.productname = dic[@"productname"];
         model.productprice = dic[@"productprice"];
         model.productid =  dic[@"productid"];
+        model.cp = dic[@"cp"];
         [arr addObject:model];
     }
     return arr;

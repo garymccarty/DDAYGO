@@ -22,7 +22,8 @@
 
 - (void)setModel:(collectionModel *)model {
     [_ShopimageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:nil];
-    _priceLabel.text = [NSString stringWithFormat:@"%@",model.productprice];
+    _priceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice];
+    _Cp.text = [NSString stringWithFormat:@"%@",model.cp];
     _shopTextLabel.text = model.productname;
 }
 

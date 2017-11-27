@@ -14,5 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel * nicknameLabel;  // 昵称
 @property (strong, nonatomic) IBOutlet UILabel * BindingICUELabel;  // 绑定ICUE
 @property (strong, nonatomic) IBOutlet UILabel * bindingEmailLabel;  // 绑定邮箱
+@property (strong, nonatomic) IBOutlet UILabel *BindingIntroduce;    // 绑定介绍人
+
 
 @end

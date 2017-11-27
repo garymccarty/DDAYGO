@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PayMoneyCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *PayImageView;
-@property (weak, nonatomic) IBOutlet UILabel *PayLabel;
-@property (weak, nonatomic) IBOutlet UIButton *PayBtn;
+@property (weak, nonatomic) IBOutlet UIImageView * PayImageView;
+@property (weak, nonatomic) IBOutlet UILabel * PayLabel;
+@property (weak, nonatomic) IBOutlet UIButton * PayBtn;
 
 @end

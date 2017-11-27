@@ -151,6 +151,11 @@
 }
 //  数据
 - (void)allData {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSLog(@"1.8");
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+    });
     [ZP_HomeTool requestSellLikeHotCakes:nil success:^(id obj) {
         
         [self.tableView reloadData];

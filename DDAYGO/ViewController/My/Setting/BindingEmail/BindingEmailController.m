@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    self.title = NSLocalizedString(@"绑定", nil);
+    self.title = NSLocalizedString(@"绑定邮箱", nil);
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
 }
 
