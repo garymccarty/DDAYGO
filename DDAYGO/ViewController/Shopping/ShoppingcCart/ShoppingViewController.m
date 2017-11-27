@@ -37,11 +37,11 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.title = NSLocalizedString(@"Shopping", nil);
 /**** IOS 11 ****/
-if (@available(iOS 11.0, *)) {
-        self.tableView.estimatedRowHeight = 0;
-        self.tableView.estimatedSectionHeaderHeight = 0;
-        self.tableView.estimatedSectionFooterHeight = 0;
-    }
+//if (@available(iOS 11.0, *)) {
+//        self.tableView.estimatedRowHeight = 0;
+//        self.tableView.estimatedSectionHeaderHeight = 0;
+//        self.tableView.estimatedSectionFooterHeight = 0;
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

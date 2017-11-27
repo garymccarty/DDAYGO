@@ -80,10 +80,10 @@
     SmallLabel.textAlignment = NSTextAlignmentLeft;
     SmallLabel.textColor = ZP_textblack;
     SmallLabel.font = ZP_titleFont;
-    SmallLabel.text = NSLocalizedString(@"小计RMB:", nil);
+    SmallLabel.text = NSLocalizedString(@"小计:", nil);
     [self.contentView addSubview:SmallLabel];
     [SmallLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-60);
+        make.left.equalTo(TotalLabel).offset(80);
         make.bottom.equalTo(self).offset(-15);
     }];
     _SmallLabel = SmallLabel;
@@ -92,12 +92,12 @@
 //      价格
     UILabel * ComputationsLabel = [UILabel new];
     ComputationsLabel.textAlignment = NSTextAlignmentLeft;
-    ComputationsLabel.textColor = ZP_WhiteColor;
+    ComputationsLabel.textColor = ZP_textblack;
     ComputationsLabel.font = ZP_titleFont;
     [self.contentView addSubview:ComputationsLabel];
     [ComputationsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.right.equalTo(self).offset(-10);
+        make.left.equalTo(SmallLabel).offset(25);
         make.bottom.equalTo(self).offset(-15);
     }];
     _ComputationsLabel = ComputationsLabel;
