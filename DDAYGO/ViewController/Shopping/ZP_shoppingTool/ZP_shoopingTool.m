@@ -64,9 +64,15 @@
     }];
 }
 // 支付
-+ (void)requessaddorderpay:(NSDictionary *)dic success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure{
++ (void)requessaddorderpay:(NSDictionary *)dic noEdit:(BOOL)noEdit success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure{
 
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addorderpay?token=%@&stockids=%@&adsid=%@&logistic=1&payway=%@&leavemsg=%@&icuetoken=%@",URLAPI,dic[@"token"],dic[@"stockids"],dic[@"adsid"],dic[@"payway"],dic[@"leavemsg"],dic[@"icuetoken"]] parameters:nil success:^(id responseObject) {
+    NSString *url;
+    if (noEdit) {
+        url = [NSString stringWithFormat:@"%@updateorderpay?token=%@&orderno=%@&adsid=%@&logistic=1&payway=%@&leavemsg=%@&icuetoken=%@",URLAPI,dic[@"token"],dic[@"ordersnumber"],dic[@"adsid"],dic[@"payway"],dic[@"leavemsg"],dic[@"icuetoken"]];
+    } else {
+        url = [NSString stringWithFormat:@"%@addorderpay?token=%@&stockids=%@&adsid=%@&logistic=1&payway=%@&leavemsg=%@&icuetoken=%@",URLAPI,dic[@"token"],dic[@"stockids"],dic[@"adsid"],dic[@"payway"],dic[@"leavemsg"],dic[@"icuetoken"]];
+    }
+    [ZP_NetorkingTools POST:url parameters:nil success:^(id responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);

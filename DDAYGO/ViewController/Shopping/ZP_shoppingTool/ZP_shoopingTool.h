@@ -24,6 +24,6 @@
 + (void)requesshoppingData:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
 
 // 添加订单并付款
-+ (void)requessaddorderpay:(NSDictionary *)dic success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
++ (void)requessaddorderpay:(NSDictionary *)dic noEdit:(BOOL)noEdit success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
 @end
 

@@ -30,6 +30,8 @@
 @property (nonatomic, strong) ZP_ShoppingModel *model;
 @property (nonatomic, strong) NSString *PriceStr;
 @property (nonatomic, strong) NSString *NumStr;
+@property (nonatomic, assign) BOOL noEdit;
+@property (nonatomic, strong) NSNumber * ordersnumber;
 
 @end
 

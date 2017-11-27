@@ -171,23 +171,25 @@
             dic[@"payway"] = model.payid;
             dic[@"leavemsg"] = @"nihaoya";
             dic[@"icuetoken"] = @"";
+            if (self.ordersnumber) {
+                dic[@"ordersnumber"] = self.ordersnumber;
+            }
             __weak typeof(PayView) weakView = PayView;
-            [ZP_shoopingTool requessaddorderpay:dic success:^(id json) {
+            [ZP_shoopingTool requessaddorderpay:dic noEdit:self.noEdit success:^(id obj) {
                 ZP_ConfirmWebController * web = [[ZP_ConfirmWebController alloc]init];
                 self.hidesBottomBarWhenPushed = YES;
                 self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
                 self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
                 self.hidesBottomBarWhenPushed = YES;
-                NSString * urlStr = [NSString stringWithFormat:@"%@%@",json[@"uri"],json[@"para"]];
+                NSString * urlStr = [NSString stringWithFormat:@"%@%@",obj[@"uri"],obj[@"para"]];
                 web.UrlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//                NSURL * url = [NSURL URLWithString:urlStr];
-//                NSURLRequest * request = [[NSURLRequest alloc]initWithURL:url];
+                //                NSURL * url = [NSURL URLWithString:urlStr];
+                //                NSURLRequest * request = [[NSURLRequest alloc]initWithURL:url];
                 
-//                web.UrlStr = [NSString stringWithFormat:@"%@?%@",json[@"uri"],json[@"para"]];
+                //                web.UrlStr = [NSString stringWithFormat:@"%@?%@",json[@"uri"],json[@"para"]];
                 
                 [weakView removeView];
                 [self.navigationController pushViewController:web animated:YES];
-                
             } failure:^(NSError *error) {
                 NSLog(@"%@",error);
             }];
@@ -378,7 +380,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 && !self.noEdit) {
         self.hidesBottomBarWhenPushed = YES;
         AddressViewController * addres = [[AddressViewController alloc]init];
         [self.navigationController pushViewController:addres animated:YES];
