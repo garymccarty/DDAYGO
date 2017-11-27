@@ -56,7 +56,7 @@
     orderNavigationController.tabBarItem = [UITabBarItem ImageName:@"ic_tab_order_normal.png" selectedImage:@"ic_tab_order_pressed.png"];
     [orderNavigationController.tabBarItem setTitleTextAttributes:dictHome forState:UIControlStateSelected];
     orderNavigationController.tabBarItem.title = NSLocalizedString(@"Order", nil);
-    
+
 //  个人中心
     MyViewController * myViewController = [[MyViewController alloc] initWithNibName:@"MyViewController" bundle:nil];
     UINavigationController * myNavigationController = [[UINavigationController alloc] initWithRootViewController:myViewController];

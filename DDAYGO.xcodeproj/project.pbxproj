@@ -803,9 +803,6 @@
 		C47212A91FB186D60055578E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MyViewController.strings"; sourceTree = "<group>"; };
 		C47212AB1FB186DB0055578E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MyViewController.strings"; sourceTree = "<group>"; };
 		C47212AD1FB18A4E0055578E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingViewController.xib; sourceTree = "<group>"; };
-		C47212B01FB18A570055578E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingViewController.strings; sourceTree = "<group>"; };
-		C47212B21FB18A5A0055578E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingViewController.strings"; sourceTree = "<group>"; };
-		C47212B41FB18A5C0055578E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SettingViewController.strings"; sourceTree = "<group>"; };
 		C47212B61FB1A5DC0055578E /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		C47212B71FB1A5DC0055578E /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		C477507A1FBA981500AE8B3F /* Documents.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Documents.pch; sourceTree = "<group>"; };
@@ -911,6 +908,9 @@
 		C491D3741FCBE31D00D127E9 /* BindingIntroduce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindingIntroduce.h; sourceTree = "<group>"; };
 		C491D3751FCBE31D00D127E9 /* BindingIntroduce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindingIntroduce.m; sourceTree = "<group>"; };
 		C491D3761FCBE31D00D127E9 /* BindingIntroduce.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindingIntroduce.xib; sourceTree = "<group>"; };
+		C491D3791FCC21C800D127E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingViewController.strings; sourceTree = "<group>"; };
+		C491D37A1FCC21CA00D127E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingViewController.strings"; sourceTree = "<group>"; };
+		C491D37B1FCC21CD00D127E9 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SettingViewController.strings"; sourceTree = "<group>"; };
 		E37503CC1FC7BBF400DA2950 /* ZP_ConfirmWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ConfirmWebController.h; sourceTree = "<group>"; };
 		E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ConfirmWebController.m; sourceTree = "<group>"; };
 		E37503CE1FC7BBF400DA2950 /* ZP_ConfirmWebController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ConfirmWebController.xib; sourceTree = "<group>"; };
@@ -3684,9 +3684,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				C47212AD1FB18A4E0055578E /* Base */,
-				C47212B01FB18A570055578E /* en */,
-				C47212B21FB18A5A0055578E /* zh-Hans */,
-				C47212B41FB18A5C0055578E /* zh-Hant */,
+				C491D3791FCC21C800D127E9 /* en */,
+				C491D37A1FCC21CA00D127E9 /* zh-Hans */,
+				C491D37B1FCC21CD00D127E9 /* zh-Hant */,
 			);
 			name = SettingViewController.xib;
 			sourceTree = "<group>";
