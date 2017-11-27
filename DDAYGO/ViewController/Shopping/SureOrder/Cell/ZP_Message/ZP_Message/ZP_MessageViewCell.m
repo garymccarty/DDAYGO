@@ -121,15 +121,14 @@
     [self.TextField resignFirstResponder];
 }
 
-- (void)MessageDic:(NSDictionary *)dic {
+- (void)MessageDic:(ZP_InformationModel *)model {
     
     //    _ComputationsLabel.text = dic[@"Computations"];
-    _SmallLabel.text = [NSString stringWithFormat:@"小计RMB:%@",dic[@"Computations"]];
-    _TotalLabel.text = dic[@"num"];
+    _TotalLabel.text = [NSString stringWithFormat:@"共计%@件商品",model.amount];
     
     //    CGFloat f = [[dic[@"Preferential"] stringByReplacingOccurrencesOfString:@"0:" withString:@""] floatValue];
     //    _TotalLabel.text = [NSString stringWithFormat:NSLocalizedString(@"共计%ld件商品", nil) ,f * [dic[@"Quantiy"] floatValue]];
-    
+    _ComputationsLabel.text = [NSString stringWithFormat:@"RMB:%.2f",model.amount.intValue * model.productprice.floatValue];
 }
 @end
 

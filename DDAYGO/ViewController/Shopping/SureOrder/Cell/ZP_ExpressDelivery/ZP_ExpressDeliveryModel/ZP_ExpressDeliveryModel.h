@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ZP_ExpressDeliveryModel : NSObject
-@property (nonatomic, strong) NSString * freightamount; // 快递费
+@property (nonatomic, strong) NSNumber * freightamount; // 快递费
+@property (nonatomic, copy) NSString * chooselogistic; // 配送方式
 
 + (instancetype)GetExpressDeliveryData:(NSDictionary *)dic;
 

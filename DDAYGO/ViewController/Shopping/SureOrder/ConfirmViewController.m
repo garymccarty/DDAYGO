@@ -45,6 +45,7 @@
 - (void)viewDidLoad {
     ZPLog(@"_stockid = %@",_stockid);
     _dataArrar = [NSMutableArray array];
+    _ConfirmArray = [NSMutableArray array];
     [self initUI];
     [self ImmobilizationView];
     self.title = NSLocalizedString(@"确认订单", nil);
@@ -151,10 +152,9 @@
     NSDictionary * dic = @{@"countrycode":@"886"};
     [ZP_shoopingTool requetMethodpay:dic success:^(id obj) {
         
-        _ConfirmArray = [ZP_ConfirmPayModel arrayWithArray:obj];
         ConfirmPayView * PayView = [[ConfirmPayView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         PayView.AmountLabel.text = _PriceLabel.text;
-        PayView.dataArray = _ConfirmArray;
+        PayView.dataArray = [ZP_ConfirmPayModel arrayWithArray:obj];
         PayView.confirmPayBlock = ^(id response) {
             
         };
@@ -229,6 +229,10 @@
         NSDictionary * dic = obj;
         ZPLog(@"%@",dic);
         self.NewData = [ZP_InformationModel arrayWithArray:dic[@"carts"]];
+        ZP_ExpressDeliveryModel *model = [[ZP_ExpressDeliveryModel alloc] init];
+        model.freightamount = dic[@"freightamount"];
+        model.chooselogistic = dic[@"chooselogistic"];
+        [_ConfirmArray addObject:model];
         [self upfataStatisticsLabel];
         [self.tableView reloadData];
     } failure:^(NSError * error) {
@@ -318,8 +322,11 @@
                     ZP_MessageViewCell * cell = [tableView dequeueReusableCellWithIdentifier:messageID];
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;  // 取消cell点击变灰
                     self.tableView.tableFooterView = [[UIView alloc]init];
-                    NSDictionary * dic = messageArray[indexPath.row];
-                    [cell MessageDic:dic];
+                    if (self.NewData.count > indexPath.row) {
+                        ZP_InformationModel *model = self.NewData[indexPath.row];
+                        [cell MessageDic:model];
+                    }
+                    
                     return cell;
                     
                 }else {
