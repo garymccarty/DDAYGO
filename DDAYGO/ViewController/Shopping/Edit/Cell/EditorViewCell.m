@@ -20,7 +20,6 @@
 }
 
 - (void)initUI {
-    
 //  选择按钮
     UIButton * button = [UIButton new];
     button.layer.masksToBounds = YES;
@@ -61,7 +60,7 @@
     }];
     _titleLabel = titleLabel;
     
-//  250ml升级装
+//  颜色
     UILabel * descLabel = [UILabel new];
     descLabel.textColor = ZP_TabBarTextColor;
     descLabel.font = ZP_stockFont;
@@ -73,6 +72,15 @@
         make.width.mas_offset(80);
     }];
     _descLabel = descLabel;
+    
+//    尺码
+    ZP_GeneralLabel * SizeLabel = [ZP_GeneralLabel initWithtextLabel:_SizeLanbel.text textColor:ZP_TabBarTextColor font:ZP_stockFont textAlignment: NSTextAlignmentLeft bakcgroundColor:nil];
+    [self.contentView addSubview: SizeLabel];
+    [SizeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(descLabel).offset(100);
+        make.left.equalTo(Mainfigure).offset(45);
+    }];
+    _SizeLanbel = SizeLabel;
     
 //  筛选按钮
     UIButton * ScreeningBut = [UIButton new];

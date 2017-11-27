@@ -12,7 +12,8 @@
 @property (nonatomic, strong) UIButton * button;  // 选择按钮
 @property (nonatomic, strong) UIImageView * Mainfigure;  // 主图
 @property (nonatomic, strong) UILabel * titleLabel;   // 标题
-@property (nonatomic, strong) UILabel * descLabel;    //    250ml升级装
+@property (nonatomic, strong) UILabel * descLabel;    //    颜色
+@property (nonatomic, strong) UILabel * SizeLanbel;  // 尺码
 @property (nonatomic, strong) UIButton * Reducebutton;   // 减少按钮
 @property (nonatomic, strong) UILabel * numLabel;  // 数量
 @property (nonatomic, strong) UIButton * addButton;  // 增加
