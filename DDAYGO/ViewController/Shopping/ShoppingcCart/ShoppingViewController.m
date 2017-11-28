@@ -17,7 +17,7 @@
 @interface ShoppingViewController ()<UITableViewDelegate,UITableViewDataSource> {
     
     NSInteger allNum;
-    NSArray * dataArray;
+    NSMutableArray * dataArray;
     NSArray * nameArray;
     BOOL _bjBool;
     NSString * _modelstockid;
@@ -77,16 +77,18 @@
 
 //  navigationBar按钮
 - (void) setUpNavgationBar {
-    static CGFloat const kButtonWidth = 33.0f;
+    static CGFloat const kButtonWidth = 63.0f;
     static CGFloat const kButtonHeight = 43.0f;
     UIButton *cartButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cartButton.frame = CGRectMake(0.0f, 0.0f, kButtonWidth, kButtonHeight);
     cartButton.backgroundColor = [UIColor clearColor];
+    
     [cartButton setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
     [cartButton setTitle:NSLocalizedString(@"Complete", nil) forState:UIControlStateSelected];
     cartButton.titleLabel.font = ZP_TooBarFont;
     [cartButton addTarget:self action:@selector(onClickedSweep:) forControlEvents:UIControlEventTouchUpInside];
     cartButton.imageEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
+    [cartButton.titleLabel setTextAlignment:NSTextAlignmentRight];
     UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:cartButton];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
 }
@@ -258,7 +260,7 @@
             ZP_CartsModel *model = dataArray[i];
             if (cell.buttom.selected ) {
                 
-                NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
+                NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB:"];
                 data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
                 dataCount += [cell.QuantityLabel.text integerValue];
                 count ++;
@@ -433,6 +435,54 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return dataArray.count;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (@available(iOS 11.0, *)) {
+        NSArray *array = @[[UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"delete" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            [dataArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            completionHandler(YES);
+        }]];
+        return [UISwipeActionsConfiguration configurationWithActions:array];
+    } else {
+        // Fallback on earlier versions
+    }
+    
+    return nil;
+}
+
+-(UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (@available(iOS 11.0, *)) {
+        UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            ZP_CartsModel *model = dataArray[indexPath.row];
+            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+            dic[@"stockid"] = model.stockid;
+            dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+            [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
+                NSLog(@"%@",obj);
+            } failure:^(NSError *error) {
+                NSLog(@"%@",error);
+            }];
+            
+            [dataArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            completionHandler(YES);
+        }];
+        //也可以设置图片
+        deleteAction.backgroundColor = [UIColor redColor];
+        UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction]];
+        return config;
+    } else {
+        // Fallback on earlier versions
+        return nil;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
