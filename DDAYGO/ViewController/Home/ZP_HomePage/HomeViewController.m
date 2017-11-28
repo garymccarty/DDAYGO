@@ -126,7 +126,7 @@
 - (void)buttonAction:(id)sender {
     [self PositionallData];
     NSLog(@"位置");
-    PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
 //数据
     [position Position:_postionArray];
 //返回

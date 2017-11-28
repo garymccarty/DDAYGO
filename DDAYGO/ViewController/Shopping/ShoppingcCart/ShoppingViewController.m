@@ -419,8 +419,8 @@
     UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"取消",nil) otherButtonTitles:NSLocalizedString(@"确定",nil), nil];
     [alertView show];
 }
-#pragma mark tableviewdelegate
 
+#pragma mark tableviewdelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (nameArray.count) {
         return nameArray.count;
@@ -532,8 +532,6 @@
     
     [super didReceiveMemoryWarning];
 }
-
-
 
 @end
 

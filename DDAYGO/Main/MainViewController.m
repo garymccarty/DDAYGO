@@ -14,11 +14,50 @@
 #import "MyViewController.h"
 #import "ThemeManager.h"
 #import "UITabBarItem+Theme.h"
+#import "UIImage+Image.h"
+#import "UIImage+Render.h"
+#import "myNavigationController.h"
+#import "PrefixHeader.pch"
+#define AboveIOS9  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
+
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController
+
++ (void)load
+{
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    //字体颜色
+    dict[NSForegroundColorAttributeName] = [UIColor colorWithHexString:@"#828C98"];
+    //字体大小
+    dict[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+    
+    NSMutableDictionary *dict2 = [NSMutableDictionary dictionary];
+    //字体颜色
+    dict2[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    if (AboveIOS9) {
+        UITabBarItem *tabbarItem = [UITabBarItem appearanceWhenContainedInInstancesOfClasses:@[self]];
+        
+        [tabbarItem setTitleTextAttributes:dict forState:UIControlStateNormal];
+        
+        [tabbarItem setTitleTextAttributes:dict2 forState:UIControlStateSelected];
+        
+        UITabBar *tabbar = [UITabBar appearanceWhenContainedInInstancesOfClasses:@[self]];
+        [tabbar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+        
+    }else{
+        
+        [[UITabBarItem appearance] setTitleTextAttributes:dict forState:UIControlStateNormal];
+        [[UITabBarItem appearance]  setTitleTextAttributes:dict2 forState:UIControlStateSelected];
+        
+        [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+    }
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,48 +66,38 @@
 
 - (void) initTabBarUI {
     [[NSUserDefaults standardUserDefaults] setObject:@"6d864a3ef88554499df1878adcd65429" forKey:@"token"];
-//  字体颜色
-    NSDictionary * dictHome = [NSDictionary dictionaryWithObject:[UIColor orangeColor] forKey:NSForegroundColorAttributeName];
-//  主页
-    HomeViewController * homeViewController = [[HomeViewController alloc] init];
-    UINavigationController * homeNavigationController = [[UINavigationController alloc] initWithRootViewController:homeViewController];
-    homeNavigationController.tabBarItem = [UITabBarItem ImageName:@"ic_tab_home_normal.png" selectedImage:@"ic_tab_home_pressed.png"];
-    [homeNavigationController.tabBarItem setTitleTextAttributes:dictHome forState:UIControlStateSelected];
-    homeNavigationController.tabBarItem.title = NSLocalizedString(@"Home", nil);
+    //  字体颜色
+    //    NSDictionary * dictHome = [NSDictionary dictionaryWithObject:[UIColor orangeColor] forKey:NSForegroundColorAttributeName];
+    //  主页
     
-//  类
-    ClassificationViewController * classViewController = [[ClassificationViewController alloc] init];
-    UINavigationController * classNavigationController = [[UINavigationController alloc] initWithRootViewController:classViewController];
-    classNavigationController.tabBarItem = [UITabBarItem ImageName:@"ic_tab_sort_normal.png" selectedImage:@"ic_tab_sort_pressed.png"];
-    [classNavigationController.tabBarItem setTitleTextAttributes:dictHome forState:UIControlStateSelected];
-    classNavigationController.tabBarItem.title = NSLocalizedString(@"Class", nil);
+    [self setupOneChirlVc:[[HomeViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_home_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_home_pressed.png"] title:NSLocalizedString(@"Home", nil)];
     
-//  购物车
-    ShoppingViewController * shoppingViewController = [[ShoppingViewController alloc] init];
-    UINavigationController * shoppingNavigationController = [[UINavigationController alloc] initWithRootViewController:shoppingViewController];
-    shoppingNavigationController.tabBarItem = [UITabBarItem ImageName:@"ic_tab_shopping_normal.png" selectedImage:@"ic_tab_shopping_pressed.png"];
-    [shoppingNavigationController.tabBarItem setTitleTextAttributes:dictHome forState:UIControlStateSelected];
-    shoppingNavigationController.tabBarItem.title = NSLocalizedString(@"Shopping", nil);
+    //  类
     
-//  订单
-    OrderViewController * orderViewController = [[OrderViewController alloc] init];
-    UINavigationController * orderNavigationController = [[UINavigationController alloc] initWithRootViewController:orderViewController];
-    orderNavigationController.tabBarItem = [UITabBarItem ImageName:@"ic_tab_order_normal.png" selectedImage:@"ic_tab_order_pressed.png"];
-    [orderNavigationController.tabBarItem setTitleTextAttributes:dictHome forState:UIControlStateSelected];
-    orderNavigationController.tabBarItem.title = NSLocalizedString(@"Order", nil);
-
-//  个人中心
-    MyViewController * myViewController = [[MyViewController alloc] initWithNibName:@"MyViewController" bundle:nil];
-    UINavigationController * myNavigationController = [[UINavigationController alloc] initWithRootViewController:myViewController];
-    myNavigationController.tabBarItem = [UITabBarItem ImageName:@"ic_tab_Persona_normal.png" selectedImage:@"ic_tab_Persona_pressed.png"];
-    [myNavigationController.tabBarItem setTitleTextAttributes:dictHome forState:UIControlStateSelected];
-    myNavigationController.tabBarItem.title = NSLocalizedString(@"My", nil);
-    [myViewController autoLogin:nil];
-    NSArray * viewControllers = @[ homeNavigationController, classNavigationController, shoppingNavigationController, orderNavigationController, myNavigationController];
+    [self setupOneChirlVc:[[ClassificationViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_sort_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_sort_pressed.png"] title:NSLocalizedString(@"Class", nil)];
     
-    self.viewControllers = viewControllers;
+    //  购物车
+    
+    [self setupOneChirlVc:[[ShoppingViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_shopping_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_shopping_pressed.png"] title:NSLocalizedString(@"Shopping", nil)];
+    
+    //  订单
+    [self setupOneChirlVc:[[OrderViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_order_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_order_pressed.png"] title:NSLocalizedString(@"Order", nil)];
+    
+    //  个人中心
+    [self setupOneChirlVc:[[MyViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_Persona_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_Persona_pressed.png"] title:NSLocalizedString(@"My", nil)];
+    
 }
 
 
+- (void)setupOneChirlVc:(UIViewController*)VC withImage:(UIImage *)image selImage:(UIImage *)selImage title:(NSString *)title {
+    myNavigationController*nav = [[myNavigationController alloc] initWithRootViewController:VC];
+    [self addChildViewController:nav];
+    nav.tabBarItem.title = title;
+    
+    nav.tabBarItem.image = image;
+    nav.tabBarItem.selectedImage = selImage;
+    
+}
 
 @end
+

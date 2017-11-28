@@ -1,5 +1,5 @@
 //
-//  myTabBarController.h
+//  UIImage+Render.h
 //  DDAYGO
 //
 //  Created by Summer on 2017/11/28.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface myTabBarController : UITabBarController
+@interface UIImage (Render)
++ (UIImage *)imageNamedWithOriginalImage:(NSString *)name;
 
 @end
+

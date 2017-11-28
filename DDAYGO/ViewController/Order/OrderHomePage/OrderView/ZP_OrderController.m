@@ -53,7 +53,6 @@
 }
 
 
-
 -(void)addUI{
     
     self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width , ZP_height - NavBarHeight - 40)];
