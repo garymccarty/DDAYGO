@@ -93,31 +93,32 @@
                 NSLog(@"obj---%@",obj);
                 NSDictionary * dic = obj;
                 [[NSUserDefaults standardUserDefaults] setObject:dic[@"token"] forKey:@"token"];
-                if ([dic[@"result"] isEqualToString:@"ok"]) {
-                    [ZP_LoginTool getAccountInfo:dic[@"token"] success:^(id obj) {
-                        NSDictionary * tempDic = obj;
-                        NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"]};
-                        [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
-                        DD_HASLOGIN = YES;
-                        if (success) {
-                            success(nil);
-                        }
-                    } failure:^(NSError *error) {
-                        if (success) {
-                            success(nil);
-                        }
-                        NSLog(@"%@",error);
-                    }];
-                }
-            } failure:^(NSError *error) {
-                if (success) {
-                    success(nil);
-                }
-                NSLog(@"%@",error);
-            }];
-        } else {
-            if (success) {
-                success(nil);
+        if ([dic[@"result"] isEqualToString:@"ok"]) {
+            [ZP_LoginTool getAccountInfo:dic[@"token"] success:^(id obj) {
+                NSDictionary * tempDic = obj;
+                NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"]};
+                [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
+                DD_HASLOGIN = YES;
+        if (success) {
+             success(nil);
+            }
+        } failure:^(NSError *error) {
+        if (success) {
+            success(nil);
+            }
+            NSLog(@"%@",error);
+         }];
+        }
+       } failure:^(NSError *error) {
+        if (success) {
+            success(nil);
+        }
+        NSLog(@"%@",error);
+      }];
+      } else {
+          if (success) {
+              success(nil);
+            
             }
         }
     }

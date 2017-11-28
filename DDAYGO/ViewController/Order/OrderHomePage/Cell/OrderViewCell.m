@@ -109,7 +109,7 @@
     
     //  颜色分类
     ZP_GeneralLabel * descLabel = [ZP_GeneralLabel initWithtextLabel:_descLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    descLabel.text = @"大红色";
+//    descLabel.text = @"大红色";
     [self.Backgroundview addSubview:descLabel];
     [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(FigureImage).offset(80);
@@ -254,17 +254,17 @@
     FreightLabel.textAlignment = NSTextAlignmentLeft;
     FreightLabel.textColor = ZP_textblack;
     FreightLabel.font = ZP_introduceFont;
-    FreightLabel.text = NSLocalizedString(@"RMB:", nil);
+    FreightLabel.text = NSLocalizedString(@"运费RMB:", nil);
     [self.contentView addSubview:FreightLabel];
     [FreightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(AmountLabel).offset(55);
+        make.left.equalTo(AmountLabel).offset(40);
         make.top.equalTo(VerticalView).offset(40);
     }];
     _FreightLabel = FreightLabel;
     
 //    快递费
     ZP_GeneralLabel * ExpressFeeLabel = [ZP_GeneralLabel initWithtextLabel:_ExpressFeeLabel.text textColor:ZP_textblack font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    ExpressFeeLabel.text = @"300";
+//    ExpressFeeLabel.text = @"300";
     [self.contentView addSubview:ExpressFeeLabel];
     [ExpressFeeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(FreightLabel).offset(30);
@@ -381,6 +381,7 @@
     //    _TimeLabel.text = dic[@"Time"];
     [_FigureImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@", dic.defaultimg]]];
     _titleLabel.text = dic.productname;
+    _descLabel.text = [NSString stringWithFormat:@"%@",dic.colorname];
     _SizeLabel.text = [NSString stringWithFormat:@"%@",dic.normname];
     _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",dic.price];
     _priceLabel.text = [NSString stringWithFormat:@"RMB:%@",dic.cost];
@@ -388,7 +389,9 @@
     _TrademarkLabel.text = [NSString stringWithFormat:@"%@",dic.cp];
     _QuantityLabel.text = [NSString stringWithFormat:@"%@",dic.amount];
     _merchantsLabel.text = [NSString stringWithFormat:@"%@",dic.suppliername];
-    _AmountLabel.text = @"1234567";
+    _AmountLabel.text = [NSString stringWithFormat:@"%@",dic.ordersamount];  // 总计金额数据为NIl
+    _ExpressFeeLabel.text = [NSString stringWithFormat:@"%@",dic.freight]; // 运费
+
     
 }
 

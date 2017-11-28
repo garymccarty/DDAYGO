@@ -120,8 +120,10 @@
     UIImageView * TrademarkImage = [UIImageView new];
     [self.contentView addSubview:TrademarkImage];
     [TrademarkImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-115); // 右边
-        make.bottom.equalTo(self).offset(-20); // 下
+        make.left.equalTo(PreferentialLabel).offset(85);
+        make.top.equalTo(PreferentialLabel).offset(15);
+        make.width.mas_offset(15);
+        make.height.mas_offset(15);
     }];
     _TrademarkImage = TrademarkImage;
     
@@ -129,8 +131,8 @@
     ZP_GeneralLabel * TrademarkLabel = [ZP_GeneralLabel initWithtextLabel:_TrademarkLabel.text textColor:ZP_textblack font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:TrademarkLabel];
     [TrademarkLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-85); // 右边
-        make.bottom.equalTo(self).offset(-20); // 下边
+        make.left.equalTo(TrademarkImage).offset(18);
+        make.top.equalTo(TrademarkImage).offset(0);
     }];
     _TrademarkLabel = TrademarkLabel;
     
@@ -140,8 +142,8 @@
     VerticalView.layer.borderColor = [UIColor blackColor].CGColor;
     [self.contentView addSubview:VerticalView];
     [VerticalView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-50); // 右
-        make.bottom.equalTo(self).offset(-10); // 下
+        make.left.equalTo(TrademarkLabel).offset(40);
+        make.top.equalTo(TrademarkImage).offset(5); // 下
         make.height.mas_equalTo(20); // 高
         make.width.mas_equalTo(1); // 宽
     }];
@@ -151,8 +153,8 @@
     [self.contentView addSubview:SharacterLabel];
     SharacterLabel.text = @"x";
     [SharacterLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-40); // 右边
-        make.bottom.equalTo(self).offset(-10); // 下边
+        make.left.equalTo(VerticalView).offset(3);
+        make.top.equalTo(VerticalView).offset(0);
     }];
     _SharacterLabel = SharacterLabel;
     
@@ -160,8 +162,8 @@
     ZP_GeneralLabel * QuantityLabel = [ZP_GeneralLabel initWithtextLabel:_QuantityLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:QuantityLabel];
     [QuantityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-20); //右边
-        make.bottom.equalTo(self).offset(-10); // 下边
+        make.left.equalTo(SharacterLabel).offset(10);
+        make.top.equalTo(SharacterLabel).offset(+3.5);
     }];
     _QuantityLabel = QuantityLabel;
     

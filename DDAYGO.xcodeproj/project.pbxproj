@@ -245,6 +245,8 @@
 		C45F23591FA099B200F5DB41 /* ReuseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45F23551FA099B200F5DB41 /* ReuseCollectionViewCell.m */; };
 		C45F235A1FA099B200F5DB41 /* FifthViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45F23571FA099B200F5DB41 /* FifthViewCell.m */; };
 		C45F23611FA09A7C00F5DB41 /* ZP_FifthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45F23601FA09A7C00F5DB41 /* ZP_FifthModel.m */; };
+		C45FAEE71FCD055B00BD4CE1 /* myNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAEE61FCD055B00BD4CE1 /* myNavigationController.m */; };
+		C45FAEEA1FCD05B900BD4CE1 /* myTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAEE91FCD05B900BD4CE1 /* myTabBarController.m */; };
 		C466403F1FA7094B00B76927 /* ZP_MyTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C466403E1FA7094B00B76927 /* ZP_MyTool.m */; };
 		C47096921FB04998006EA52C /* BindingEmailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C470968C1FB04998006EA52C /* BindingEmailController.m */; };
 		C47096931FB04998006EA52C /* BindingEmailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C470968D1FB04998006EA52C /* BindingEmailController.xib */; };
@@ -771,6 +773,10 @@
 		C45F23571FA099B200F5DB41 /* FifthViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewCell.m; sourceTree = "<group>"; };
 		C45F235F1FA09A7C00F5DB41 /* ZP_FifthModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_FifthModel.h; sourceTree = "<group>"; };
 		C45F23601FA09A7C00F5DB41 /* ZP_FifthModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_FifthModel.m; sourceTree = "<group>"; };
+		C45FAEE51FCD055B00BD4CE1 /* myNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myNavigationController.h; sourceTree = "<group>"; };
+		C45FAEE61FCD055B00BD4CE1 /* myNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myNavigationController.m; sourceTree = "<group>"; };
+		C45FAEE81FCD05B900BD4CE1 /* myTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myTabBarController.h; sourceTree = "<group>"; };
+		C45FAEE91FCD05B900BD4CE1 /* myTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTabBarController.m; sourceTree = "<group>"; };
 		C466403D1FA7094B00B76927 /* ZP_MyTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_MyTool.h; sourceTree = "<group>"; };
 		C466403E1FA7094B00B76927 /* ZP_MyTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_MyTool.m; sourceTree = "<group>"; };
 		C470968B1FB04998006EA52C /* BindingEmailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingEmailController.h; sourceTree = "<group>"; };
@@ -1298,6 +1304,10 @@
 				064AB1901F73B2FF007FE5F0 /* AppDelegate.m */,
 				064AB1911F73B2FF007FE5F0 /* MainViewController.h */,
 				064AB1921F73B2FF007FE5F0 /* MainViewController.m */,
+				C45FAEE51FCD055B00BD4CE1 /* myNavigationController.h */,
+				C45FAEE61FCD055B00BD4CE1 /* myNavigationController.m */,
+				C45FAEE81FCD05B900BD4CE1 /* myTabBarController.h */,
+				C45FAEE91FCD05B900BD4CE1 /* myTabBarController.m */,
 				064AB1931F73B2FF007FE5F0 /* PrefixHeader.pch */,
 				06F572441F9F3A0900D61FDB /* DataInterface.pch */,
 				C477507A1FBA981500AE8B3F /* Documents.pch */,
@@ -3422,6 +3432,7 @@
 				C47096991FB04B2D006EA52C /* UIButton+countDown.m in Sources */,
 				C470ADF31FA95B5200BAC2CA /* ZP_registrationModel.m in Sources */,
 				C409F8721FA1758E009DE7B1 /* ZP_SixthModel.m in Sources */,
+				C45FAEE71FCD055B00BD4CE1 /* myNavigationController.m in Sources */,
 				06418F521F7A076A00479523 /* MASConstraintMaker.m in Sources */,
 				064449A71F6A9B250004DFE4 /* MJRefreshAutoFooter.m in Sources */,
 				C4535E2C1FC55A7F00DFFD62 /* ZP_ConfirmViewCell.m in Sources */,
@@ -3491,6 +3502,7 @@
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,
 				C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */,
+				C45FAEEA1FCD05B900BD4CE1 /* myTabBarController.m in Sources */,
 				C47E76321FB5A1C7009F279A /* DetailedController.m in Sources */,
 				C47E76441FB5A1C7009F279A /* ZPHomeHeadrView.m in Sources */,
 				06F571D71F9F1A7900D61FDB /* EditViewController.m in Sources */,

@@ -14,8 +14,6 @@
 #import "PayFailController.h"
 #import "ZP_ConfirmPayModel.h"
 #import "PayMoneyCell.h"
-
-
 #import "UIImageView+WebCache.h"
 #define kATTR_VIEW_HEIGHT (kHeight-215)
 
@@ -127,9 +125,9 @@
     [Paybut addTarget:self action:@selector(paybut:) forControlEvents:UIControlEventTouchUpInside];
     [bounceView addSubview:Paybut];
     [Paybut mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self).offset(-20);
+        make.left.equalTo(self).offset(10);
         make.right.equalTo(self).offset(-10);
-        make.bottom.equalTo(self).offset(-25);
+        make.bottom.equalTo(self).offset(-15);
         make.height.mas_offset(40);
     }];
 }
@@ -189,8 +187,6 @@
     } completion:^(BOOL finished) {
         [_weakSelf removeFromSuperview];
     }];
-    
-    
 }
 #pragma mark - UIGestureRecognizerDelegate
 //  确定点击范围
@@ -243,8 +239,7 @@
     return self.dataArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZP_ConfirmPayModel *model = _dataArray[indexPath.row];
     PayMoneyCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PayMoneyCell"];
     NSLog(@"%@",model.logourl);
@@ -255,13 +250,11 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return CGFLOAT_MIN;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return CGFLOAT_MIN;
 }
 
@@ -278,8 +271,7 @@
     }
 }
 
-- (UITableView *)tableView
-{
+- (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 165, ZP_Width, self.contentView.frame.size.height - 165 - 60) style:UITableViewStyleGrouped];
         _tableView.delegate = self;
@@ -290,11 +282,11 @@
 }
 
 - (void)setAmountLabel:(UILabel *)AmountLabel {
-    _AmountLabel.text = [NSString stringWithFormat:@"RMB:%.2f",AmountLabel.text.floatValue];
+    
+//    _AmountLabel.text = [NSString stringWithFormat:@"RMB:%.2f",AmountLabel.text.floatValue];
 }
 
-- (void)setDataArray:(NSArray *)dataArray
-{
+- (void)setDataArray:(NSArray *)dataArray {
     _dataArray = dataArray;
     [_tableView reloadData];
 

@@ -107,6 +107,12 @@
 @property (nonatomic, strong) NSString * suppliername;
 //商品规格
 @property (nonatomic, strong) NSNumber * norm;
+// 总计金额
+@property (nonatomic, strong) NSNumber * ordersamount;
+// 运费
+@property (nonatomic, strong) NSNumber * freight;
+
 + (instancetype)CreateWithDict:(NSDictionary *)dict;
+
 @end
 

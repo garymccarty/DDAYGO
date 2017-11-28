@@ -58,8 +58,6 @@
     
     self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width , ZP_height - NavBarHeight - 40)];
     self.tableview.backgroundColor = ZP_Graybackground;
-    //    dataArray = @[@{@"ID":@"123456789",@"Date":@"2017-03-27",@"Time":@"10:00:00",@"title":@"Valvola法莫拉天然植物萃取保加利亚玫瑰纯露200ml",@"merchants":@"阿芙专卖店",@"Preferential":@"￥100.00",@"desc":@"250ml升级装",@"price":@"￥80.00",@"Trademark":@"666",@"Quantiy":@"36",@"Amount":@"900",@"Cost":@"300.00"}];
-    
     [self.tableview registerClass:[OrderViewCell class] forCellReuseIdentifier:@"orderViewCell"];
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
@@ -70,7 +68,7 @@
     
 }
 
-- (void)getDataWithState{
+- (void)getDataWithState {
     
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     if ([_titleStr isEqualToString:@"全部"]) {
@@ -92,7 +90,7 @@
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"orderno"] = @"";
     [ZP_OrderTool requestGetorders:dic success:^(id json) {
-//        ZPLog(@"%@",json);
+        ZPLog(@"%@",json);
         _ModeldataArray = [OrderModel arrayWithArray:json];
         
         [self.tableview reloadData];
@@ -101,8 +99,7 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self getDataWithState];
 }
