@@ -10,6 +10,7 @@
 #import "PrefixHeader.pch"
 #import "ZP_shoopingTool.h"
 #import "ShoppingCell.h"
+
 #import "ConfirmViewController.h"
 #import "ZP_ShoppingModel.h"
 #import "EditorViewCell.h"
@@ -358,7 +359,7 @@
     [self updateData];
     if ([self YESOrNoPush]) {
         if (sender.selected) {
-            NSLog(@"删除");
+            [self Reminding];
             NSMutableDictionary *dic = [NSMutableDictionary dictionary];
             dic[@"stockid"] =_modelstockid;
             dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
@@ -413,7 +414,11 @@
     }
     return NO;
 }
-
+#pragma make -- 提示框
+- (void)Reminding {
+    UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"取消",nil) otherButtonTitles:NSLocalizedString(@"确定",nil), nil];
+    [alertView show];
+}
 #pragma mark tableviewdelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
