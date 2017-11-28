@@ -10,7 +10,6 @@
 #import "PrefixHeader.pch"
 #import "ZP_shoopingTool.h"
 #import "ShoppingCell.h"
-#import "EditorViewController.h"
 #import "ConfirmViewController.h"
 #import "ZP_ShoppingModel.h"
 #import "EditorViewCell.h"

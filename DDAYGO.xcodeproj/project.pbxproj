@@ -114,8 +114,6 @@
 		06DD47511F94721B007E4D17 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DD46BE1F94721A007E4D17 /* UINavigationBar+Awesome.m */; };
 		06F570EB1F9F0ABA00D61FDB /* ShoppingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F570E81F9F0ABA00D61FDB /* ShoppingCell.m */; };
 		06F570EC1F9F0ABA00D61FDB /* ShoppingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F570EA1F9F0ABA00D61FDB /* ShoppingViewController.m */; };
-		06F570F31F9F0C4300D61FDB /* EditorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F570F01F9F0C4300D61FDB /* EditorViewCell.m */; };
-		06F570F41F9F0C4300D61FDB /* EditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F570F21F9F0C4300D61FDB /* EditorViewController.m */; };
 		06F571021F9F0CA500D61FDB /* ConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F570FE1F9F0CA500D61FDB /* ConfirmViewController.m */; };
 		06F571091F9F0D3A00D61FDB /* OrderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F571061F9F0D3A00D61FDB /* OrderViewCell.m */; };
 		06F5710A1F9F0D3A00D61FDB /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F571081F9F0D3A00D61FDB /* OrderViewController.m */; };
@@ -249,6 +247,7 @@
 		C45FAEEA1FCD05B900BD4CE1 /* myTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAEE91FCD05B900BD4CE1 /* myTabBarController.m */; };
 		C45FAF381FCD40E200BD4CE1 /* LotteryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAF361FCD40E200BD4CE1 /* LotteryController.m */; };
 		C45FAF391FCD40E200BD4CE1 /* LotteryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45FAF371FCD40E200BD4CE1 /* LotteryController.xib */; };
+		C45FAF3C1FCD48CC00BD4CE1 /* EditorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAF3A1FCD48CC00BD4CE1 /* EditorViewCell.m */; };
 		C466403F1FA7094B00B76927 /* ZP_MyTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C466403E1FA7094B00B76927 /* ZP_MyTool.m */; };
 		C47096921FB04998006EA52C /* BindingEmailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C470968C1FB04998006EA52C /* BindingEmailController.m */; };
 		C47096931FB04998006EA52C /* BindingEmailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C470968D1FB04998006EA52C /* BindingEmailController.xib */; };
@@ -529,10 +528,6 @@
 		06F570E81F9F0ABA00D61FDB /* ShoppingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCell.m; sourceTree = "<group>"; };
 		06F570E91F9F0ABA00D61FDB /* ShoppingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingViewController.h; sourceTree = "<group>"; };
 		06F570EA1F9F0ABA00D61FDB /* ShoppingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingViewController.m; sourceTree = "<group>"; };
-		06F570EF1F9F0C4300D61FDB /* EditorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorViewCell.h; sourceTree = "<group>"; };
-		06F570F01F9F0C4300D61FDB /* EditorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorViewCell.m; sourceTree = "<group>"; };
-		06F570F11F9F0C4300D61FDB /* EditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorViewController.h; sourceTree = "<group>"; };
-		06F570F21F9F0C4300D61FDB /* EditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorViewController.m; sourceTree = "<group>"; };
 		06F570FD1F9F0CA500D61FDB /* ConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmViewController.h; sourceTree = "<group>"; };
 		06F570FE1F9F0CA500D61FDB /* ConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmViewController.m; sourceTree = "<group>"; };
 		06F571051F9F0D3A00D61FDB /* OrderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewCell.h; sourceTree = "<group>"; };
@@ -782,6 +777,8 @@
 		C45FAF351FCD40E200BD4CE1 /* LotteryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryController.h; sourceTree = "<group>"; };
 		C45FAF361FCD40E200BD4CE1 /* LotteryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryController.m; sourceTree = "<group>"; };
 		C45FAF371FCD40E200BD4CE1 /* LotteryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryController.xib; sourceTree = "<group>"; };
+		C45FAF3A1FCD48CC00BD4CE1 /* EditorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorViewCell.m; sourceTree = "<group>"; };
+		C45FAF3B1FCD48CC00BD4CE1 /* EditorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorViewCell.h; sourceTree = "<group>"; };
 		C466403D1FA7094B00B76927 /* ZP_MyTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_MyTool.h; sourceTree = "<group>"; };
 		C466403E1FA7094B00B76927 /* ZP_MyTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_MyTool.m; sourceTree = "<group>"; };
 		C470968B1FB04998006EA52C /* BindingEmailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingEmailController.h; sourceTree = "<group>"; };
@@ -1073,7 +1070,6 @@
 			isa = PBXGroup;
 			children = (
 				06F570E51F9F0ABA00D61FDB /* ShoppingcCart */,
-				06F570ED1F9F0C4300D61FDB /* Edit */,
 				06F570F51F9F0CA500D61FDB /* SureOrder */,
 				E37503CB1FC7BBF400DA2950 /* ZP_ConfirmPayWeb */,
 				064249721F998E3200340EBA /* ConfirmPay */,
@@ -1539,25 +1535,8 @@
 			children = (
 				06F570E71F9F0ABA00D61FDB /* ShoppingCell.h */,
 				06F570E81F9F0ABA00D61FDB /* ShoppingCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		06F570ED1F9F0C4300D61FDB /* Edit */ = {
-			isa = PBXGroup;
-			children = (
-				06F570F11F9F0C4300D61FDB /* EditorViewController.h */,
-				06F570F21F9F0C4300D61FDB /* EditorViewController.m */,
-				06F570EE1F9F0C4300D61FDB /* Cell */,
-			);
-			path = Edit;
-			sourceTree = "<group>";
-		};
-		06F570EE1F9F0C4300D61FDB /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				06F570EF1F9F0C4300D61FDB /* EditorViewCell.h */,
-				06F570F01F9F0C4300D61FDB /* EditorViewCell.m */,
+				C45FAF3B1FCD48CC00BD4CE1 /* EditorViewCell.h */,
+				C45FAF3A1FCD48CC00BD4CE1 /* EditorViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -3393,7 +3372,6 @@
 				C477507E1FBA990E00AE8B3F /* ZP_PositionModel.m in Sources */,
 				064449AD1F6A9B250004DFE4 /* MJRefreshAutoNormalFooter.m in Sources */,
 				06F571D91F9F1A7900D61FDB /* AddressViewController.m in Sources */,
-				06F570F41F9F0C4300D61FDB /* EditorViewController.m in Sources */,
 				C45F233C1FA0757A00F5DB41 /* ZeroViewCell.m in Sources */,
 				064449AF1F6A9B250004DFE4 /* MJRefreshBackGifFooter.m in Sources */,
 				06418F531F7A076A00479523 /* MASLayoutConstraint.m in Sources */,
@@ -3465,7 +3443,6 @@
 				064449A81F6A9B250004DFE4 /* MJRefreshBackFooter.m in Sources */,
 				C47212B81FB1A5DC0055578E /* CustomCell.m in Sources */,
 				C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */,
-				06F570F31F9F0C4300D61FDB /* EditorViewCell.m in Sources */,
 				06F571141F9F0D6800D61FDB /* AppraiseViewCell.m in Sources */,
 				C47E764D1FB5A1C7009F279A /* ZP_ClassViewTool.m in Sources */,
 				C4535E241FC51E5300DFFD62 /* ZP_InformationCell.m in Sources */,
@@ -3512,6 +3489,7 @@
 				06418F551F7A076A00479523 /* MASViewConstraint.m in Sources */,
 				0641BBD71F67F9E400E72FEF /* SDWebImageDownloader.m in Sources */,
 				C47E763C1FB5A1C7009F279A /* ZPHomeLayout.m in Sources */,
+				C45FAF3C1FCD48CC00BD4CE1 /* EditorViewCell.m in Sources */,
 				06F571831F9F16A600D61FDB /* FootprintCollectionViewCell.m in Sources */,
 				C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */,
 				064449BB1F6A9B250004DFE4 /* README.md in Sources */,
