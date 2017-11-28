@@ -61,8 +61,8 @@
 
 -(void)initUI {
     
-    NSArray *allTitle = @[NSLocalizedString(@"Acquiescence", nil),NSLocalizedString(@"Sales Volume", nil),NSLocalizedString(@"Latest", nil),NSLocalizedString(@"Price", nil)];
-    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ZP_Width, 37)];
+    NSArray * allTitle = @[NSLocalizedString(@"Acquiescence", nil),NSLocalizedString(@"Sales Volume", nil),NSLocalizedString(@"Latest", nil),NSLocalizedString(@"Price", nil)];
+    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 37)];
     topView.backgroundColor = [UIColor whiteColor];
     UIView *gayLine = [[UIView alloc]initWithFrame:CGRectMake(0, topView.height - 1, ZP_Width, 1)];
     gayLine.backgroundColor = ZP_HUISE;
@@ -87,7 +87,7 @@
     self.topView = topView;
     self.line.x = self.btn.x;
     
-    UIScrollView *lastView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 101, ZP_Width, ZP_height - 101)];
+    UIScrollView *lastView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 37, ZP_Width, ZP_height - 37)];
     lastView.contentSize = CGSizeMake(ZP_Width * 4, 0);
     lastView.pagingEnabled  = YES;
     lastView.showsHorizontalScrollIndicator = NO;

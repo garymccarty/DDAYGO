@@ -23,12 +23,12 @@
 #import "ZP_LoginTool.h"
 
 @interface MyViewController ()
-@property (weak, nonatomic) IBOutlet UIView *userBackView;
-@property (weak, nonatomic) IBOutlet UIView *sdglView;
-@property (weak, nonatomic) IBOutlet UIView *xfjlView;
-@property (weak, nonatomic) IBOutlet UIView *zxxxView;
-@property (weak, nonatomic) IBOutlet UIView *scanView;
-@property (strong, nonatomic) IBOutlet UIView *CaipiaoView;
+@property (weak, nonatomic) IBOutlet UIView * userBackView;
+@property (weak, nonatomic) IBOutlet UIView * sdglView;
+@property (weak, nonatomic) IBOutlet UIView * xfjlView;
+@property (weak, nonatomic) IBOutlet UIView * zxxxView;
+@property (weak, nonatomic) IBOutlet UIView * scanView;
+@property (weak, nonatomic) IBOutlet UIView * CaipiaoView;
 @property (weak, nonatomic) IBOutlet UIButton *headImageBut;
 
 @end

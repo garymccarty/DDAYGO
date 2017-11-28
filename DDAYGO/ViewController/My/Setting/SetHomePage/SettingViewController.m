@@ -49,7 +49,7 @@
 //  数据
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
 //    dic[@"nonce"] = @"adf";
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);

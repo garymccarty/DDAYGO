@@ -23,9 +23,7 @@
 }
 
 - (IBAction)buildingAction:(id)sender {
-//    if (nil == _AccountnumbertextField.text) {
-//        [SVProgressHUD showInfoWithStatus:@"账号不能为空"];
-//    }
+
     [self allData];
 }
 // 数据
@@ -33,7 +31,7 @@
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"icueaccount"] = _AccountnumbertextField.text;
     dic[@"pwd"] = _PassWordtextField.text;
-    dic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     ZPLog(@"%@",dic);
     [ZP_MyTool requestBindingICUE:dic success:^(id obj) {
         NSDictionary * dic = obj;

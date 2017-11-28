@@ -320,6 +320,8 @@
 		C482B2861FC2B62600D7539F /* ZP_AnonymityViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C482B2851FC2B62600D7539F /* ZP_AnonymityViewCell.m */; };
 		C491D3771FCBE31D00D127E9 /* BindingIntroduce.m in Sources */ = {isa = PBXBuildFile; fileRef = C491D3751FCBE31D00D127E9 /* BindingIntroduce.m */; };
 		C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */ = {isa = PBXBuildFile; fileRef = C491D3761FCBE31D00D127E9 /* BindingIntroduce.xib */; };
+		C4DB8EEC1FCD78150007DB01 /* ZP_LotteryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4DB8EEA1FCD78150007DB01 /* ZP_LotteryCell.m */; };
+		C4DB8EED1FCD78150007DB01 /* ZP_LotteryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DB8EEB1FCD78150007DB01 /* ZP_LotteryCell.xib */; };
 		E37503CF1FC7BD8F00DA2950 /* ZP_ConfirmWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */; };
 /* End PBXBuildFile section */
 
@@ -931,6 +933,9 @@
 		C491D3791FCC21C800D127E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingViewController.strings; sourceTree = "<group>"; };
 		C491D37A1FCC21CA00D127E9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingViewController.strings"; sourceTree = "<group>"; };
 		C491D37B1FCC21CD00D127E9 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SettingViewController.strings"; sourceTree = "<group>"; };
+		C4DB8EE91FCD78150007DB01 /* ZP_LotteryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryCell.h; sourceTree = "<group>"; };
+		C4DB8EEA1FCD78150007DB01 /* ZP_LotteryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryCell.m; sourceTree = "<group>"; };
+		C4DB8EEB1FCD78150007DB01 /* ZP_LotteryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_LotteryCell.xib; sourceTree = "<group>"; };
 		E37503CC1FC7BBF400DA2950 /* ZP_ConfirmWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ConfirmWebController.h; sourceTree = "<group>"; };
 		E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ConfirmWebController.m; sourceTree = "<group>"; };
 		E37503CE1FC7BBF400DA2950 /* ZP_ConfirmWebController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ConfirmWebController.xib; sourceTree = "<group>"; };
@@ -1313,13 +1318,13 @@
 		064AB18E1F73B2FF007FE5F0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C45FAF8E1FCD672C00BD4CE1 /* MainMethod */,
 				064AB18F1F73B2FF007FE5F0 /* AppDelegate.h */,
 				064AB1901F73B2FF007FE5F0 /* AppDelegate.m */,
 				064AB1911F73B2FF007FE5F0 /* MainViewController.h */,
 				064AB1921F73B2FF007FE5F0 /* MainViewController.m */,
 				C45FAEE51FCD055B00BD4CE1 /* myNavigationController.h */,
 				C45FAEE61FCD055B00BD4CE1 /* myNavigationController.m */,
-				C45FAF8E1FCD672C00BD4CE1 /* MainMethod */,
 				064AB1931F73B2FF007FE5F0 /* PrefixHeader.pch */,
 				06F572441F9F3A0900D61FDB /* DataInterface.pch */,
 				C477507A1FBA981500AE8B3F /* Documents.pch */,
@@ -2568,6 +2573,7 @@
 				C45FAF351FCD40E200BD4CE1 /* LotteryController.h */,
 				C45FAF361FCD40E200BD4CE1 /* LotteryController.m */,
 				C45FAF371FCD40E200BD4CE1 /* LotteryController.xib */,
+				C4DB8EE51FCD77EA0007DB01 /* ZP_LotteryCell */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
@@ -3070,6 +3076,16 @@
 			path = BindingIntroduce;
 			sourceTree = "<group>";
 		};
+		C4DB8EE51FCD77EA0007DB01 /* ZP_LotteryCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4DB8EE91FCD78150007DB01 /* ZP_LotteryCell.h */,
+				C4DB8EEA1FCD78150007DB01 /* ZP_LotteryCell.m */,
+				C4DB8EEB1FCD78150007DB01 /* ZP_LotteryCell.xib */,
+			);
+			path = ZP_LotteryCell;
+			sourceTree = "<group>";
+		};
 		E37503CB1FC7BBF400DA2950 /* ZP_ConfirmPayWeb */ = {
 			isa = PBXGroup;
 			children = (
@@ -3223,6 +3239,7 @@
 				06F572291F9F1E8700D61FDB /* OrderDetailViewController.xib in Resources */,
 				06F572331F9F1E8700D61FDB /* ReceivingViewCell.xib in Resources */,
 				C435171F1FB2AC180066302E /* ConcernShopTableViewCell.xib in Resources */,
+				C4DB8EED1FCD78150007DB01 /* ZP_LotteryCell.xib in Resources */,
 				C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */,
 				0641BBA31F67B60B00E72FEF /* Third.png in Resources */,
 				063FE0551F614D24009910FF /* LaunchScreen.storyboard in Resources */,
@@ -3420,6 +3437,7 @@
 				C45F23081FA0754500F5DB41 /* SearchBar.m in Sources */,
 				064449B11F6A9B250004DFE4 /* MJRefreshBackStateFooter.m in Sources */,
 				06F572341F9F1E8700D61FDB /* ReceivingController.m in Sources */,
+				C4DB8EEC1FCD78150007DB01 /* ZP_LotteryCell.m in Sources */,
 				C47E764C1FB5A1C7009F279A /* Pop-upViewCell.m in Sources */,
 				064449B41F6A9B250004DFE4 /* MJRefreshStateHeader.m in Sources */,
 				C482B2761FC2848C00D7539F /* ZP_GeneralLabel.m in Sources */,

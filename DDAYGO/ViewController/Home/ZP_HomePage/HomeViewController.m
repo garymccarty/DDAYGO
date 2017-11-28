@@ -66,7 +66,7 @@
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(0);
-        make.bottom.equalTo(self.view).offset(-20);
+        make.bottom.equalTo(self.view).offset(0);
         make.right.equalTo(self.view).offset(0);
         make.top.equalTo(self.view).offset(0);
     }];

@@ -28,6 +28,9 @@
 //  绑定IUCE
 + (void)requestBindingICUE:(NSDictionary *)Binding success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+//  绑定介绍人
++ (void)requesIntroduce:(NSDictionary *)Introduce success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
 // 获取用户收藏商品列表
  
 + (void)requestgetcollections:(NSDictionary *)Binding success:(void (^)(id))success failure:(void (^)(NSError *))failure;

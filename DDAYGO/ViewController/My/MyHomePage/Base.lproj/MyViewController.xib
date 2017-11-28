@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController">
             <connections>
+                <outlet property="CaipiaoView" destination="mDy-f9-02s" id="CCc-8L-W9C"/>
                 <outlet property="NameLabel" destination="Yfb-7E-S8p" id="9B3-Bj-5NT"/>
                 <outlet property="headImageBut" destination="OTg-9H-to4" id="9fB-tz-BmB"/>
                 <outlet property="scanView" destination="7k6-oe-5YX" id="UHd-bb-MTZ"/>
@@ -331,6 +332,9 @@
                                     <state key="normal" title="彩票" image="ic_mine_scanning">
                                         <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="CaipiaoAction:" destination="-1" eventType="touchUpInside" id="gWT-Qz-ct1"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

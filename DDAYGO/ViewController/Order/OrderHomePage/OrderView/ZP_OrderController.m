@@ -53,7 +53,7 @@
 }
 
 
--(void)addUI{
+-(void)addUI {
     
     self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width , ZP_height - NavBarHeight - 40)];
     self.tableview.backgroundColor = ZP_Graybackground;
@@ -63,12 +63,9 @@
     self.tableview.backgroundColor = ZP_Graybackground;
     self.tableview.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     [self.view addSubview:self.tableview];
-    
-    
 }
 
 - (void)getDataWithState {
-    
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     if ([_titleStr isEqualToString:@"全部"]) {
         dic[@"sta"] = @"-1";

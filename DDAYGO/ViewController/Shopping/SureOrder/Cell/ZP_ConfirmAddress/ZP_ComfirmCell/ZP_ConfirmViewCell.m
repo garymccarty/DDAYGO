@@ -27,7 +27,7 @@
     [self addSubview:ConsigneeLabel];
     [ConsigneeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(30); // 左
-        make.bottom.equalTo(self).offset(-60); //下
+        make.bottom.equalTo(self).offset(-60); 
     }];
     _ConsigneeLabel = ConsigneeLabel;
     

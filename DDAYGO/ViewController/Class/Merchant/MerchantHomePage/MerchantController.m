@@ -57,9 +57,9 @@ static NSString * ID = @"collectionViewCell";
 
 - (void)dataUI {
     NSArray * allTitle = @[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待发货", nil),NSLocalizedString(@"待收货", nil),NSLocalizedString(@"评价", nil)];
-    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ZP_Width, 37)];
+    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 37)];
     topView.backgroundColor = [UIColor whiteColor];
-    UIView *gayLine = [[UIView alloc]initWithFrame:CGRectMake(0, topView.height - 1, ZP_Width, 1)];
+    UIView * gayLine = [[UIView alloc]initWithFrame:CGRectMake(0, topView.height - 1, ZP_Width, 1)];
     gayLine.backgroundColor = [UIColor colorWithHexString:@"#f2f2f2"];
     [topView addSubview:gayLine];
     

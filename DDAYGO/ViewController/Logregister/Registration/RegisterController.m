@@ -186,21 +186,20 @@
 - (void)PositionallData {
     
     [ZP_HomeTool requesPosition:nil success:^(id obj) {
-
         NSArray * arr = [ZP_PositionModel arrayWithArray:obj];
-        ZPLog(@"%@",obj);
-        PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, self.view.frame.size.height)];
+//        ZPLog(@"%@",obj);
+        PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
         [position Position:arr];
         position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
-            NSLog(@"c = %@ %@",ContStr,code);
+//            NSLog(@"c = %@ %@",ContStr,code);
             _CountCode = code;
             _ZPCountryTextField.textField.text = ContStr;
-
         };
         //  显示
         [position showInView:self.navigationController.view];
+        
     } failure:^(NSError *error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
     }];
 }
 

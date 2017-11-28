@@ -59,7 +59,7 @@
 - (void)initUI {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor whiteColor];
-    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, NavBarHeight, CGRectGetWidth(self.view.frame), 40) delegate:self indicatorType:0];
+    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 40) delegate:self indicatorType:0];
     self.titleView.titlesArr = @[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待发货", nil),NSLocalizedString(@"待收货", nil),NSLocalizedString(@"评价", nil)];
     [self.view addSubview:_titleView];
     
@@ -69,7 +69,7 @@
         vc.titleStr = title;
         [childVCs addObject:vc];
     }
-    self.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0, NavBarHeight + 40, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.frame) - NavBarHeight - 40) childVCs:childVCs parentVC:self delegate:self];
+    self.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0,  40, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.frame)  - 40) childVCs:childVCs parentVC:self delegate:self];
     [self.view addSubview:_pageContentView];
 }
 

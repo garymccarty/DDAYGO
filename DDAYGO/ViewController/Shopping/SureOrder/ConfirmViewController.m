@@ -87,7 +87,7 @@
 
 - (void)ImmobilizationView {
     
-    UIView * bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, ZP_height - TabbarHeight , ZP_Width, 50)];
+    UIView * bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, ZP_height - TabbarHeight - NavBarHeight , ZP_Width, 50)];
     bottomView.backgroundColor = ZP_textWite;
     [self.view addSubview:bottomView];
     //  总金额
@@ -96,7 +96,7 @@
     [bottomView addSubview:PriceLabel];
     [PriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view).offset(- 110); // 右
-        make.bottom.equalTo(self.view).offset(- 20); // 下
+        make.top.equalTo(bottomView).offset(10);
     }];
     _PriceLabel = PriceLabel;
     
@@ -106,7 +106,7 @@
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(PriceLabel).offset(- 65); // 右
-        make.bottom.equalTo(self.view).offset(- 20); // 下
+        make.top.equalTo(PriceLabel).offset(0);
     }];
     _StatisticsLabel = StatisticsLabel;
     

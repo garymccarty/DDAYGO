@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LotteryController : UIViewController
+@interface LotteryController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@property (nonatomic, strong) UICollectionView * bottonVC;
 
 @end

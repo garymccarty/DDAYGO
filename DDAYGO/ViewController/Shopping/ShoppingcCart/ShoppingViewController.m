@@ -118,14 +118,15 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = NO;
     [self.view addSubview:self.tableView];
-    //    注册
+    
+//    注册
     [self.tableView registerClass:[ShoppingCell class] forCellReuseIdentifier:@"shoppingCell"];
     UIView * bottomView = [UIView new];
     bottomView.backgroundColor = ZP_textWite;
-    bottomView.frame = CGRectMake(0, ZP_height - TabbarHeight - 50, ZP_Width, 50);
+    bottomView.frame = CGRectMake(0, ZP_height - TabbarHeight - 50 - NavBarHeight, ZP_Width, 50);
     [self.view addSubview:bottomView];
     
-    //   全选按钮
+//   全选按钮
     self.AllButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.AllButton.layer.masksToBounds = YES;
     self.AllButton.layer.cornerRadius = self.AllButton.frame.size.height/2;
@@ -146,7 +147,7 @@
         make.height.mas_offset(20);
     }];
     
-    //    总金额
+//    总金额
     UILabel * PriceLabel = [UILabel new];
     PriceLabel.textAlignment = NSTextAlignmentLeft;
     PriceLabel.textColor = ZP_TypefaceColor;
@@ -159,7 +160,7 @@
     }];
     _PriceLabel = PriceLabel;
     
-    //    合计
+//    合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     //    StatisticsLabel.textAlignment = NSTextAlignmentLeft;
     StatisticsLabel.text = NSLocalizedString(@"TotalRMB:", nil);
@@ -171,14 +172,15 @@
     }];
     _StatisticsLabel = StatisticsLabel;
     
-    //   结算按钮
+//   结算按钮
     UIButton * ClearingBut = [UIButton new];
     ClearingBut.backgroundColor = ZP_pricebackground;
     [ClearingBut setTitle:NSLocalizedString(@"Clearing(0)", nil) forState:UIControlStateNormal];
     [ClearingBut setTitle:NSLocalizedString(@"Delete", nil) forState:UIControlStateSelected];
     ClearingBut.titleLabel.font = ZP_TooBarFont;
     [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
-    //保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
+    
+//  保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
     [ClearingBut addTarget:self action:@selector(preventFlicker:) forControlEvents:UIControlEventAllTouchEvents];
     [bottomView addSubview:ClearingBut];
     [ClearingBut mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -200,7 +202,7 @@
                 ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
                 cell.buttom.selected = sender.selected;
                 
-            }else{
+            }else {
                 EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
                 cell.button.selected = sender.selected;
             }
@@ -209,7 +211,7 @@
         if (!_bjBool) {
             ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:sender.tag inSection:0]];
             cell.buttom.selected = sender.selected;
-        }else{
+        }else {
             EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:sender.tag inSection:0]];
             cell.button.selected = sender.selected;
         }
@@ -369,8 +371,8 @@
                 NSLog(@"%@",error);
             }];
             return;
-        }else
-        {
+        }else {
+            
             ConfirmViewController * Confirm = [[ConfirmViewController alloc]init];
             Confirm.model = _model;
             Confirm.dataArray = dataArray;
