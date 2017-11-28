@@ -116,7 +116,7 @@
     
     _backView = backView;
     
-    //  商标
+//      商标
     UIImageView * TrademarkImage = [UIImageView new];
     [self.contentView addSubview:TrademarkImage];
     [TrademarkImage mas_makeConstraints:^(MASConstraintMaker *make) {

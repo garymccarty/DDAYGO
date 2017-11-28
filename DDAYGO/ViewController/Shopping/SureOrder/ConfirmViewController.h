@@ -15,9 +15,9 @@
 @property (nonatomic, strong) NSString * shopMoney;
 @property (nonatomic, strong) NSNumber * stockid;
 
-@property (nonatomic, strong)UILabel * StatisticsLabel; //  合计
-@property (nonatomic, strong)UILabel * PriceLabel; //  总金额
-@property (nonatomic, strong)UIButton * ClearingBut;//  提交订单
+@property (nonatomic, strong) UILabel * StatisticsLabel; //  合计
+@property (nonatomic, strong) UILabel * PriceLabel; //  总金额
+@property (nonatomic, strong) UIButton * ClearingBut;//  提交订单
 @property (nonatomic, copy) NSString* stockidsString;//  库存id字串
 /** Web*/
 @property (nonatomic, copy) NSString * jump_URL;

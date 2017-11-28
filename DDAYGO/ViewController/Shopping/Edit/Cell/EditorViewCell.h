@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZP_ShoppingModel.h"
 @interface EditorViewCell : UITableViewCell
 @property (nonatomic, strong) UIButton * button;  // 选择按钮
 @property (nonatomic, strong) UIImageView * Mainfigure;  // 主图
@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UILabel * numLabel;  // 数量
 @property (nonatomic, strong) UIButton * addButton;  // 增加
 
-- (void)cellWithDic:(NSDictionary *)dic;
-
+- (void)cellWithModel:(ZP_CartsModel *)model;
+- (void)cellWithDic:(NSDictionary *)dic ;
 @end
+

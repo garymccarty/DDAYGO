@@ -58,14 +58,14 @@
 + (void)requesshoppingData:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@cart?token=%@",URLAPI,token] parameters:nil success:^(id responseObject) {
         success(responseObject);
-//        ZPLog(@"%@",responseObject);
+        //        ZPLog(@"%@",responseObject);
     } failure:^(NSError *error) {
         failure(error);
     }];
 }
 // 支付
 + (void)requessaddorderpay:(NSDictionary *)dic noEdit:(BOOL)noEdit success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure{
-
+    
     NSString *url;
     if (noEdit) {
         url = [NSString stringWithFormat:@"%@updateorderpay?token=%@&orderno=%@&adsid=%@&logistic=1&payway=%@&leavemsg=%@&icuetoken=%@",URLAPI,dic[@"token"],dic[@"ordersnumber"],dic[@"adsid"],dic[@"payway"],dic[@"leavemsg"],dic[@"icuetoken"]];
@@ -79,6 +79,16 @@
     }];
     
     
+}
+
+//  删除购物车
++ (void)requesscartitemdelte:(NSDictionary *)dic success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure{
+    
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@cartitemdelte?token=%@&stockid=%@",URLAPI,dic[@"token"],dic[@"stockid"]] parameters:nil success:^(NSDictionary *responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
 }
 
 @end

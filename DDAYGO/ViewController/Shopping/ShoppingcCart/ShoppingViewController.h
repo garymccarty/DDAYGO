@@ -11,12 +11,12 @@
 @interface ShoppingViewController : UIViewController
 
 @property (nonatomic, strong) UILabel * merchantsLabel; // 店铺名称
-@property (nonatomic, strong)UIButton * AllButton;  // 全选按钮
+@property (nonatomic, strong) UIButton * AllButton;  // 全选按钮
 @property (nonatomic, strong) UIButton * Shopchoosebuttom; // 选择按钮
-@property (nonatomic, strong)UILabel * AllLabel;  // 全选文字
-@property (nonatomic, strong)UILabel * StatisticsLabel;  // 合计
-@property (nonatomic, strong)UILabel * PriceLabel; // 总金额
-@property (nonatomic,strong) UIButton * ClearingButt; // 结算按钮
+@property (nonatomic, strong) UILabel * AllLabel;  // 全选文字
+@property (nonatomic, strong) UILabel * StatisticsLabel;  // 合计
+@property (nonatomic, strong) UILabel * PriceLabel; // 总金额
+@property (nonatomic, strong) UIButton * ClearingButt; // 结算按钮
 //- (void)cellWithDic:(NSDictionary *)dic;  // 获取总金额
 
 @end

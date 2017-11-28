@@ -178,23 +178,6 @@
 }
 
 - (void)updateUserInfo {
-    /*
-     address = "";
-     aid = 51;
-     avatarimg = "/images/avatar_img.jpg";
-     birthday = "/Date(-62135596800000)/";
-     countrycode = 86;
-     createtime = "/Date(-62135596800000)/";
-     createtimestr = "<null>";
-     email = "zhaoningdeemail@qq.com";
-     icueaccount = "";
-     introducer = "";
-     nickname = "";
-     phone = "";
-     realname = "";
-     sex = 1;
-     state = 3;
-     */
     if (DD_HASLOGIN) {
         NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
         self.NameLabel.text = dic[@"nickname"];

@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface ZP_shoopingTool : NSObject
-////  购物车首页
-//+ (void)requsetShopping:(NSDictionary *)Shopping success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 //  获取地址
 + (void)requGetAddress:(NSDictionary *)Address success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 // 获取确认订单信息
@@ -25,5 +23,8 @@
 
 // 添加订单并付款
 + (void)requessaddorderpay:(NSDictionary *)dic noEdit:(BOOL)noEdit success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
+//  删除购物车
++ (void)requesscartitemdelte:(NSDictionary *)dic success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
 @end
 

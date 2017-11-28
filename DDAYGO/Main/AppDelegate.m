@@ -27,6 +27,7 @@
     return YES;
 }
 - (void)MainViewController {
+    
     MainViewController * rootViewController = [[MainViewController alloc]init];
     self.window.rootViewController = rootViewController;
     self.window.backgroundColor = [UIColor whiteColor];

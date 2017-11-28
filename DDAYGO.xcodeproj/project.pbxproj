@@ -247,6 +247,8 @@
 		C45F23611FA09A7C00F5DB41 /* ZP_FifthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45F23601FA09A7C00F5DB41 /* ZP_FifthModel.m */; };
 		C45FAEE71FCD055B00BD4CE1 /* myNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAEE61FCD055B00BD4CE1 /* myNavigationController.m */; };
 		C45FAEEA1FCD05B900BD4CE1 /* myTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAEE91FCD05B900BD4CE1 /* myTabBarController.m */; };
+		C45FAF381FCD40E200BD4CE1 /* LotteryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAF361FCD40E200BD4CE1 /* LotteryController.m */; };
+		C45FAF391FCD40E200BD4CE1 /* LotteryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45FAF371FCD40E200BD4CE1 /* LotteryController.xib */; };
 		C466403F1FA7094B00B76927 /* ZP_MyTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C466403E1FA7094B00B76927 /* ZP_MyTool.m */; };
 		C47096921FB04998006EA52C /* BindingEmailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C470968C1FB04998006EA52C /* BindingEmailController.m */; };
 		C47096931FB04998006EA52C /* BindingEmailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C470968D1FB04998006EA52C /* BindingEmailController.xib */; };
@@ -777,6 +779,9 @@
 		C45FAEE61FCD055B00BD4CE1 /* myNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myNavigationController.m; sourceTree = "<group>"; };
 		C45FAEE81FCD05B900BD4CE1 /* myTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myTabBarController.h; sourceTree = "<group>"; };
 		C45FAEE91FCD05B900BD4CE1 /* myTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myTabBarController.m; sourceTree = "<group>"; };
+		C45FAF351FCD40E200BD4CE1 /* LotteryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotteryController.h; sourceTree = "<group>"; };
+		C45FAF361FCD40E200BD4CE1 /* LotteryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotteryController.m; sourceTree = "<group>"; };
+		C45FAF371FCD40E200BD4CE1 /* LotteryController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryController.xib; sourceTree = "<group>"; };
 		C466403D1FA7094B00B76927 /* ZP_MyTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_MyTool.h; sourceTree = "<group>"; };
 		C466403E1FA7094B00B76927 /* ZP_MyTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_MyTool.m; sourceTree = "<group>"; };
 		C470968B1FB04998006EA52C /* BindingEmailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingEmailController.h; sourceTree = "<group>"; };
@@ -1488,6 +1493,7 @@
 				06F571E21F9F1E8700D61FDB /* StoreManagement */,
 				06F571871F9F16E600D61FDB /* LatestNews */,
 				06F571931F9F193300D61FDB /* ScanningGun */,
+				C45FAF341FCD40C800BD4CE1 /* Lottery */,
 				06DD46BA1F94721A007E4D17 /* Tools */,
 				C466403C1FA7092D00B76927 /* ZP_MyTool */,
 			);
@@ -2576,6 +2582,16 @@
 			path = ZP_FifthModel;
 			sourceTree = "<group>";
 		};
+		C45FAF341FCD40C800BD4CE1 /* Lottery */ = {
+			isa = PBXGroup;
+			children = (
+				C45FAF351FCD40E200BD4CE1 /* LotteryController.h */,
+				C45FAF361FCD40E200BD4CE1 /* LotteryController.m */,
+				C45FAF371FCD40E200BD4CE1 /* LotteryController.xib */,
+			);
+			path = Lottery;
+			sourceTree = "<group>";
+		};
 		C466403B1FA6BCCC00B76927 /* ZP_LoginModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -3188,6 +3204,7 @@
 				C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */,
 				06F571921F9F16E600D61FDB /* NewsViewController.xib in Resources */,
 				06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */,
+				C45FAF391FCD40E200BD4CE1 /* LotteryController.xib in Resources */,
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
 				06F571A81F9F193300D61FDB /* PayViewController.xib in Resources */,
 				062C9D5D1F8CD6F900E14987 /* button_3@2x.png in Resources */,
@@ -3398,6 +3415,7 @@
 				064449B41F6A9B250004DFE4 /* MJRefreshStateHeader.m in Sources */,
 				C482B2761FC2848C00D7539F /* ZP_GeneralLabel.m in Sources */,
 				06F571791F9F163F00D61FDB /* ConcernShopViewController.m in Sources */,
+				C45FAF381FCD40E200BD4CE1 /* LotteryController.m in Sources */,
 				06F5716B1F9F15CE00D61FDB /* CollectionTableViewCell.m in Sources */,
 				06621D9B1F9757B40030983F /* UIView+SDAutoLayout.m in Sources */,
 				06418F511F7A076A00479523 /* MASConstraint.m in Sources */,

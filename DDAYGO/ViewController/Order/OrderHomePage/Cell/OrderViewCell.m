@@ -264,11 +264,11 @@
     
 //    快递费
     ZP_GeneralLabel * ExpressFeeLabel = [ZP_GeneralLabel initWithtextLabel:_ExpressFeeLabel.text textColor:ZP_textblack font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    ExpressFeeLabel.text = @"300";
+    ExpressFeeLabel.text = @"80.00";
     [self.contentView addSubview:ExpressFeeLabel];
     [ExpressFeeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(FreightLabel).offset(30);
-        make.top.equalTo(VerticalView).offset(40);
+        make.left.equalTo(FreightLabel).offset(50);
+        make.top.equalTo(FreightLabel).offset(0);
     }];
     
 //      评价
