@@ -35,18 +35,18 @@
     }];
     _button = button;
     
-    //  主图
+//  主图
     UIImageView * Mainfigure = [UIImageView new];
     [self.contentView addSubview:Mainfigure];
     [Mainfigure mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(5); // 上
         make.left.equalTo(self).offset(30);  // 左
-        make.width.mas_equalTo(80);
+        make.width.mas_equalTo(90);
         make.height.mas_equalTo(120-20);
     }];
     _Mainfigure = Mainfigure;
     
-    //  标题
+//  标题
     UILabel * titleLabel = [UILabel new];
     titleLabel.textColor = ZP_textblack;
     titleLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
@@ -60,20 +60,19 @@
     }];
     _titleLabel = titleLabel;
     
-    //  颜色
+//  颜色
     UILabel * descLabel = [UILabel new];
     descLabel.textColor = ZP_TabBarTextColor;
     descLabel.font = ZP_stockFont;
     [self.contentView addSubview:descLabel];
     [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(Mainfigure).offset(85); // 左
-        //        make.right.equalTo(Mainfigure).offset(ZP_Width - 85);
         make.top.equalTo(Mainfigure).offset(45);
         make.width.mas_offset(80);
     }];
     _descLabel = descLabel;
     
-    //    尺码
+//  尺码
     ZP_GeneralLabel * SizeLabel = [ZP_GeneralLabel initWithtextLabel:_SizeLanbel.text textColor:ZP_TabBarTextColor font:ZP_stockFont textAlignment: NSTextAlignmentLeft bakcgroundColor:nil];
     [self.contentView addSubview: SizeLabel];
     [SizeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -82,7 +81,7 @@
     }];
     _SizeLanbel = SizeLabel;
     
-    //  筛选按钮
+//  筛选按钮
     UIButton * ScreeningBut = [UIButton new];
     [ScreeningBut setImage:[UIImage imageNamed:@"ic_shop_down"] forState:UIControlStateNormal];
     ScreeningBut.layer.borderColor = [UIColor clearColor].CGColor;
@@ -96,7 +95,7 @@
         make.height.mas_equalTo(15);
     }];
     
-    //  背景
+//  背景
     UIView * backgroundView = [UIView new];
     backgroundView.layer.borderWidth = 1;
     backgroundView.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
@@ -108,7 +107,7 @@
         make.width.mas_equalTo(100);
     }];
     
-    //  减少
+//  减少
     UIButton * Reducebutton = [UIButton buttonWithType:UIButtonTypeCustom];
     Reducebutton.frame = CGRectMake(0, 0, 20, 20);
     [Reducebutton setImage:[UIImage imageNamed:@"ic_shopping_less"] forState:UIControlStateNormal];
@@ -118,7 +117,7 @@
     [backgroundView addSubview:Reducebutton];
     _Reducebutton = Reducebutton;
     
-    //  个数
+//  个数
     UILabel * numLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, 60, 20)];
     numLabel.textAlignment = NSTextAlignmentCenter;
     numLabel.textColor = [UIColor blackColor];
@@ -127,7 +126,7 @@
     [backgroundView addSubview:numLabel];
     _numLabel = numLabel;
     
-    //  添加
+//  添加
     UIButton * addButton = [UIButton buttonWithType:UIButtonTypeCustom];
     addButton.frame = CGRectMake(80, 0, 20, 20);
     [addButton setImage:[UIImage imageNamed:@"ic_shopping_add"] forState:UIControlStateNormal];
@@ -137,7 +136,7 @@
     [backgroundView addSubview:addButton];
     _addButton = addButton;
     
-    //  分割线
+//  分割线
     UIView * view1 = [UIView new];
     view1.backgroundColor = ZP_Graybackground;
     [self.contentView addSubview:view1];
@@ -149,14 +148,14 @@
     }];
 }
 
-- (void)cellWithDic:(NSDictionary *)dic {
-    
-    _titleLabel.text = dic[@"title"];
-    _descLabel.text = dic[@"desc"];
-    _Mainfigure.image = [UIImage imageNamed:@"Shopping"];
-    _numLabel.text = @"0";
-    
-}
+//- (void)cellWithDic:(NSDictionary *)dic {
+//    
+//    _titleLabel.text = dic[@"title"];
+//    _descLabel.text = dic[@"desc"];
+//    _Mainfigure.image = [UIImage imageNamed:@"Shopping"];
+//    _numLabel.text = @"0";
+//    
+//}
 - (void)cellWithModel:(ZP_CartsModel *)model {
     
     [_Mainfigure sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:nil];;
@@ -174,7 +173,7 @@
 - (void)buttonClick:(UIButton *)sender {
     if ([_numLabel.text integerValue]<=0) {
         _numLabel.text = @"0";
-    }else{
+    }else {
         _numLabel.text = [NSString stringWithFormat:@"%ld",[_numLabel.text integerValue]-1];
     }
 }

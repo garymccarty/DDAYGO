@@ -19,6 +19,6 @@
 @property (nonatomic, strong) UIButton * addButton;  // 增加
 
 - (void)cellWithModel:(ZP_CartsModel *)model;
-- (void)cellWithDic:(NSDictionary *)dic ;
+//- (void)cellWithDic:(NSDictionary *)dic ;
 @end
 

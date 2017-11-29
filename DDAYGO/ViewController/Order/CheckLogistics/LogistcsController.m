@@ -19,11 +19,13 @@
 @implementation LogistcsController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = NSLocalizedString(@"物流详情", nil);
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     [self initUI];
 }
+
 - (void)initUI {
     self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 10, ZP_Width , ZP_height)];
     self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条

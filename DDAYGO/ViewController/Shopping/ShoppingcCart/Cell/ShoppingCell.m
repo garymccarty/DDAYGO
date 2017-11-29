@@ -20,7 +20,7 @@
 }
 
 - (void)initUI {
-    //    商品选择按钮
+//  商品选择按钮
     UIButton * buttom = [UIButton new];
     [buttom setImage:[UIImage imageNamed:@"ic_Shopping_Choice_normal"] forState:UIControlStateNormal];
     [buttom setImage:[UIImage imageNamed:@"ic_Shopping_Choice_pressed"] forState:UIControlStateSelected];
@@ -37,18 +37,18 @@
     }];
     _buttom = buttom;
     
-    //  图片
+//  图片
     UIImageView * imageView = [UIImageView new];
     [self.contentView addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(5); // 上
         make.left.equalTo(self).offset(30);  // 左
-        make.width.mas_equalTo(80);
+        make.width.mas_equalTo(90);
         make.height.mas_equalTo(120-20);
     }];
     _leftImageView = imageView;
     
-    //  商品文字
+//  商品文字
     ZP_GeneralLabel * titleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     titleLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
     titleLabel.numberOfLines = 0;
@@ -56,11 +56,11 @@
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(imageView).offset(8);
         make.left.equalTo(imageView).offset(85);
-        make.right.equalTo(imageView).offset(ZP_Width - 30 -85);
+        make.right.equalTo(imageView).offset(ZP_Width - 30 -90);
     }];
     _titleLabel = titleLabel;
     
-    //  商品颜色
+//  商品颜色
     ZP_GeneralLabel * descLabel = [ZP_GeneralLabel initWithtextLabel:_descLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:descLabel];
     [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,7 +70,7 @@
     }];
     _descLabel = descLabel;
 
-//    商品尺码
+//  商品尺码
     ZP_GeneralLabel * SizeLabel = [ZP_GeneralLabel initWithtextLabel:_SizeLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:SizeLabel];
     [SizeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -116,7 +116,7 @@
     
     _backView = backView;
     
-//      商标
+//  商标
     UIImageView * TrademarkImage = [UIImageView new];
     [self.contentView addSubview:TrademarkImage];
     [TrademarkImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -190,6 +190,7 @@
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = [NSString stringWithFormat:@"%@",model.cp];
     _QuantityLabel.text = [NSString stringWithFormat:@"%@",model.amount];
+    
 }
 
 @end

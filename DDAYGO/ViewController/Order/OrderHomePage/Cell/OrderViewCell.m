@@ -207,10 +207,10 @@
     
 //  合计
     ZP_GeneralLabel * CountLabel = [ZP_GeneralLabel initWithtextLabel:_CountLabel.text textColor:ZP_textblack font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    CountLabel.text = NSLocalizedString(@"合计:", nil);
+    CountLabel.text = NSLocalizedString(@"合计RMB:", nil);
     [self.contentView addSubview:CountLabel];
     [CountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(Crossview).offset(70);
+        make.left.equalTo(Crossview).offset(60);
         make.top.equalTo(VerticalView).offset(40);
     }];
     _CountLabel = CountLabel;
@@ -219,7 +219,7 @@
     ZP_GeneralLabel * AmountLabel = [ZP_GeneralLabel initWithtextLabel:_AmountLabel.text textColor:ZP_textblack font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:AmountLabel];
     [AmountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(CountLabel).offset(30);
+        make.left.equalTo(CountLabel).offset(50);
         make.top.equalTo(VerticalView).offset(40);
     }];
     _AmountLabel = AmountLabel;
@@ -358,8 +358,8 @@
     _titleLabel.text = dic.productname;
     _descLabel.text = [NSString stringWithFormat:@"%@",dic.colorname];
     _SizeLabel.text = [NSString stringWithFormat:@"%@",dic.normname];
-    _AmountLabel.text = [NSString stringWithFormat:@"RMB:%@",dic.ordersamount];  // 总计金额数据为NIl
-    _ExpressFeeLabel.text = [NSString stringWithFormat:@"%@",dic.freight]; // 运费
+    _AmountLabel.text = [NSString stringWithFormat:@"%@",model.ordersamount];  // 总计金额数据为NIl
+    _ExpressFeeLabel.text = [NSString stringWithFormat:@"%@",model.freight]; // 运费
     _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",dic.price];
     _priceLabel.text = [NSString stringWithFormat:@"RMB:%@",dic.cost];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
