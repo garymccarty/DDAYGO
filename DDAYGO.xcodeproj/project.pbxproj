@@ -184,6 +184,14 @@
 		06F572411F9F204F00D61FDB /* BillDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5723B1F9F204F00D61FDB /* BillDetailViewController.xib */; };
 		06F572421F9F204F00D61FDB /* SearchTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5723E1F9F204F00D61FDB /* SearchTimeViewController.m */; };
 		06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5723F1F9F204F00D61FDB /* SearchTimeViewController.xib */; };
+		4D81EBCC1FCEFD9D00E3B700 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D81EBCA1FCEFD9D00E3B700 /* BetViewController.m */; };
+		4D81EBCD1FCEFD9D00E3B700 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81EBCB1FCEFD9D00E3B700 /* BetViewController.xib */; };
+		4D81EBD11FCF037600E3B700 /* BetHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D81EBD01FCF037600E3B700 /* BetHeaderView.m */; };
+		4D81EBD31FCF038000E3B700 /* BetHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81EBD21FCF038000E3B700 /* BetHeaderView.xib */; };
+		4D81EBD71FCF08C400E3B700 /* BetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D81EBD51FCF08C400E3B700 /* BetTableViewCell.m */; };
+		4D81EBD81FCF08C400E3B700 /* BetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81EBD61FCF08C400E3B700 /* BetTableViewCell.xib */; };
+		4D81EBDC1FCF0EB700E3B700 /* BetCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D81EBDA1FCF0EB700E3B700 /* BetCollectionViewCell.m */; };
+		4D81EBDD1FCF0EB700E3B700 /* BetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81EBDB1FCF0EB700E3B700 /* BetCollectionViewCell.xib */; };
 		6FA32ACCA83E0A32B68FDCFC /* libPods-DDAYGO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */; };
 		C409F86E1FA17336009DE7B1 /* NestedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86A1FA17336009DE7B1 /* NestedCollectionViewCell.m */; };
 		C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86C1FA17336009DE7B1 /* SixthViewCell.m */; };
@@ -651,6 +659,18 @@
 		06F5723F1F9F204F00D61FDB /* SearchTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTimeViewController.xib; sourceTree = "<group>"; };
 		06F572441F9F3A0900D61FDB /* DataInterface.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataInterface.pch; sourceTree = "<group>"; };
 		0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDAYGO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D81EBC91FCEFD9D00E3B700 /* BetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
+		4D81EBCA1FCEFD9D00E3B700 /* BetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
+		4D81EBCB1FCEFD9D00E3B700 /* BetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetViewController.xib; sourceTree = "<group>"; };
+		4D81EBCF1FCF037600E3B700 /* BetHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetHeaderView.h; sourceTree = "<group>"; };
+		4D81EBD01FCF037600E3B700 /* BetHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetHeaderView.m; sourceTree = "<group>"; };
+		4D81EBD21FCF038000E3B700 /* BetHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetHeaderView.xib; sourceTree = "<group>"; };
+		4D81EBD41FCF08C400E3B700 /* BetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetTableViewCell.h; sourceTree = "<group>"; };
+		4D81EBD51FCF08C400E3B700 /* BetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetTableViewCell.m; sourceTree = "<group>"; };
+		4D81EBD61FCF08C400E3B700 /* BetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetTableViewCell.xib; sourceTree = "<group>"; };
+		4D81EBD91FCF0EB700E3B700 /* BetCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetCollectionViewCell.h; sourceTree = "<group>"; };
+		4D81EBDA1FCF0EB700E3B700 /* BetCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetCollectionViewCell.m; sourceTree = "<group>"; };
+		4D81EBDB1FCF0EB700E3B700 /* BetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetCollectionViewCell.xib; sourceTree = "<group>"; };
 		6A14FE6EC0BD7CDD0156BD7F /* Pods-DDAYGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.release.xcconfig"; sourceTree = "<group>"; };
 		949508FD8C61CA662D6E2034 /* Pods-DDAYGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.debug.xcconfig"; sourceTree = "<group>"; };
 		C409F8691FA17336009DE7B1 /* NestedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NestedCollectionViewCell.h; sourceTree = "<group>"; };
@@ -2105,6 +2125,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4D81EBC81FCEFD8700E3B700 /* Bet */ = {
+			isa = PBXGroup;
+			children = (
+				4D81EBCE1FCF035B00E3B700 /* BetHeaderCell */,
+				4D81EBC91FCEFD9D00E3B700 /* BetViewController.h */,
+				4D81EBCA1FCEFD9D00E3B700 /* BetViewController.m */,
+				4D81EBCB1FCEFD9D00E3B700 /* BetViewController.xib */,
+			);
+			path = Bet;
+			sourceTree = "<group>";
+		};
+		4D81EBCE1FCF035B00E3B700 /* BetHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D81EBCF1FCF037600E3B700 /* BetHeaderView.h */,
+				4D81EBD01FCF037600E3B700 /* BetHeaderView.m */,
+				4D81EBD21FCF038000E3B700 /* BetHeaderView.xib */,
+				4D81EBD41FCF08C400E3B700 /* BetTableViewCell.h */,
+				4D81EBD51FCF08C400E3B700 /* BetTableViewCell.m */,
+				4D81EBD61FCF08C400E3B700 /* BetTableViewCell.xib */,
+				4D81EBD91FCF0EB700E3B700 /* BetCollectionViewCell.h */,
+				4D81EBDA1FCF0EB700E3B700 /* BetCollectionViewCell.m */,
+				4D81EBDB1FCF0EB700E3B700 /* BetCollectionViewCell.xib */,
+			);
+			path = BetHeaderCell;
+			sourceTree = "<group>";
+		};
 		C409F8671FA17336009DE7B1 /* ZP_Sixth-Nested */ = {
 			isa = PBXGroup;
 			children = (
@@ -2574,6 +2621,7 @@
 		C45FAF341FCD40C800BD4CE1 /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
+				4D81EBC81FCEFD8700E3B700 /* Bet */,
 				C4399D671FCE849F00B7B96D /* LotteryHomePage */,
 			);
 			path = Lottery;
@@ -3211,6 +3259,7 @@
 				C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */,
 				06F571921F9F16E600D61FDB /* NewsViewController.xib in Resources */,
 				06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */,
+				4D81EBD31FCF038000E3B700 /* BetHeaderView.xib in Resources */,
 				C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */,
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
 				06F571A81F9F193300D61FDB /* PayViewController.xib in Resources */,
@@ -3256,6 +3305,8 @@
 				C4535E3E1FC5654500DFFD62 /* PayMoneyCell.xib in Resources */,
 				0682BE6B1F906D7B00894F4E /* Shopping2.png in Resources */,
 				06F5722B1F9F1E8700D61FDB /* OrderManagerCollectionViewCell.xib in Resources */,
+				4D81EBD81FCF08C400E3B700 /* BetTableViewCell.xib in Resources */,
+				4D81EBDD1FCF0EB700E3B700 /* BetCollectionViewCell.xib in Resources */,
 				064449A61F6A9B250004DFE4 /* LICENSE in Resources */,
 				C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */,
 				062C9D611F8CD6F900E14987 /* button_5@2x.png in Resources */,
@@ -3265,6 +3316,7 @@
 				063FE0521F614D24009910FF /* Assets.xcassets in Resources */,
 				C47E76371FB5A1C7009F279A /* ProductDescriptionView.xib in Resources */,
 				06F5716E1F9F15CE00D61FDB /* CollectionViewController.xib in Resources */,
+				4D81EBCD1FCEFD9D00E3B700 /* BetViewController.xib in Resources */,
 				0682BE801F90C8F000894F4E /* seven.png in Resources */,
 				062C9D681F8CDB7900E14987 /* headImage.jpg in Resources */,
 				064448E21F6A1F7F0004DFE4 /* Shopping.png in Resources */,
@@ -3414,6 +3466,7 @@
 				06F572281F9F1E8700D61FDB /* OrderDetailViewController.m in Sources */,
 				06F572321F9F1E8700D61FDB /* ReceivingViewCell.m in Sources */,
 				06F571021F9F0CA500D61FDB /* ConfirmViewController.m in Sources */,
+				4D81EBDC1FCF0EB700E3B700 /* BetCollectionViewCell.m in Sources */,
 				063FE04D1F614D24009910FF /* ViewController.m in Sources */,
 				06F571611F9F154E00D61FDB /* MyViewController.m in Sources */,
 				C47750811FBA9A1E00AE8B3F /* ZP_FirstModel.m in Sources */,
@@ -3530,6 +3583,7 @@
 				0641BBE01F67F9E400E72FEF /* UIView+WebCacheOperation.m in Sources */,
 				064449AB1F6A9B250004DFE4 /* MJRefreshHeader.m in Sources */,
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
+				4D81EBCC1FCEFD9D00E3B700 /* BetViewController.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,
 				C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */,
 				C47E76321FB5A1C7009F279A /* DetailedController.m in Sources */,
@@ -3538,6 +3592,7 @@
 				06F5722E1F9F1E8700D61FDB /* ReturnDetailViewController.m in Sources */,
 				06F571AA1F9F193300D61FDB /* QCodeController.m in Sources */,
 				C47E76281FB5A1C7009F279A /* ZP_LeftModel.m in Sources */,
+				4D81EBD11FCF037600E3B700 /* BetHeaderView.m in Sources */,
 				C45FAF9F1FCD693100BD4CE1 /* UIBarButtonItem+Button.m in Sources */,
 				0641BBDC1F67F9E400E72FEF /* UIImage+GIF.m in Sources */,
 				064449AA1F6A9B250004DFE4 /* MJRefreshFooter.m in Sources */,
@@ -3559,6 +3614,7 @@
 				06F570EC1F9F0ABA00D61FDB /* ShoppingViewController.m in Sources */,
 				06F571E11F9F1A7900D61FDB /* SelectPhotoManager.m in Sources */,
 				0641BBDF1F67F9E400E72FEF /* UIImageView+WebCache.m in Sources */,
+				4D81EBD71FCF08C400E3B700 /* BetTableViewCell.m in Sources */,
 				C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */,
 				C45F22D11FA05A9E00F5DB41 /* UITabBarItem+Theme.m in Sources */,
 				C45F22EE1FA0746300F5DB41 /* UIButton+UIButtonImageWithLable.m in Sources */,

@@ -9,6 +9,7 @@
 #import "LotteryController.h"
 #import "ZP_LotteryCell/ZP_LotteryViewCell.h"
 #import "PrefixHeader.pch"
+#import "BetViewController.h"
 @interface LotteryController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView * bottomCV;
@@ -43,7 +44,8 @@
 }
 
 - (void)Instruction {
-    
+    BetViewController *viewController = [[BetViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
     ZPLog(@"说明");
 }
 
