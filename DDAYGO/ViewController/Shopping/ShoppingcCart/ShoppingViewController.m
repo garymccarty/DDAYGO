@@ -14,7 +14,7 @@
 #import "ConfirmViewController.h"
 #import "ZP_ShoppingModel.h"
 #import "EditorViewCell.h"
-@interface ShoppingViewController ()<UITableViewDelegate,UITableViewDataSource> {
+@interface ShoppingViewController ()<UITableViewDelegate,UITableViewDataSource,UIViewControllerPreviewingDelegate> {
     
     NSInteger allNum;
     NSMutableArray * dataArray;
@@ -121,14 +121,14 @@
     self.tableView.separatorStyle = NO;
     [self.view addSubview:self.tableView];
     
-//    注册
+    //    注册
     [self.tableView registerClass:[ShoppingCell class] forCellReuseIdentifier:@"shoppingCell"];
     UIView * bottomView = [UIView new];
     bottomView.backgroundColor = ZP_textWite;
     bottomView.frame = CGRectMake(0, ZP_height - TabbarHeight - 50 - NavBarHeight, ZP_Width, 50);
     [self.view addSubview:bottomView];
     
-//   全选按钮
+    //   全选按钮
     self.AllButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.AllButton.layer.masksToBounds = YES;
     self.AllButton.layer.cornerRadius = self.AllButton.frame.size.height/2;
@@ -149,7 +149,7 @@
         make.height.mas_offset(20);
     }];
     
-//    总金额
+    //    总金额
     UILabel * PriceLabel = [UILabel new];
     PriceLabel.textAlignment = NSTextAlignmentLeft;
     PriceLabel.textColor = ZP_TypefaceColor;
@@ -162,7 +162,7 @@
     }];
     _PriceLabel = PriceLabel;
     
-//    合计
+    //    合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     //    StatisticsLabel.textAlignment = NSTextAlignmentLeft;
     StatisticsLabel.text = NSLocalizedString(@"TotalRMB:", nil);
@@ -174,7 +174,7 @@
     }];
     _StatisticsLabel = StatisticsLabel;
     
-//   结算按钮
+    //   结算按钮
     UIButton * ClearingBut = [UIButton new];
     ClearingBut.backgroundColor = ZP_pricebackground;
     [ClearingBut setTitle:NSLocalizedString(@"Clearing(0)", nil) forState:UIControlStateNormal];
@@ -182,7 +182,7 @@
     ClearingBut.titleLabel.font = ZP_TooBarFont;
     [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
     
-//  保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
+    //  保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
     [ClearingBut addTarget:self action:@selector(preventFlicker:) forControlEvents:UIControlEventAllTouchEvents];
     [bottomView addSubview:ClearingBut];
     [ClearingBut mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -278,7 +278,12 @@
                 dataCount += [cell.numLabel.text integerValue];
                 count ++;
                 NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
-                _modelstockid = [model.stockid stringValue];
+                NSString *str1 = [NSString stringWithFormat:@"%@",model.stockid];
+                if (_modelstockid.length > 0) {
+                    _modelstockid = [_modelstockid stringByAppendingString:[NSString stringWithFormat:@",%@",str1]];
+                }else{
+                    _modelstockid = str;
+                }
                 if (_stockids.length > 0) {
                     _stockids = [_stockids stringByAppendingString:[NSString stringWithFormat:@",%@",str]];
                 }else{
@@ -329,8 +334,13 @@
             if (cell.button.selected ) {
                 dataCount += [cell.numLabel.text integerValue];
                 count ++;
-                _modelstockid = [model.stockid stringValue];
                 NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
+                NSString *str1 = [NSString stringWithFormat:@"%@",model.stockid];
+                if (_modelstockid.length > 0) {
+                    _modelstockid = [_modelstockid stringByAppendingString:[NSString stringWithFormat:@",%@",str1]];
+                }else{
+                    _modelstockid = str;
+                }
                 if (_stockids.length > 0) {
                     _stockids = [_stockids stringByAppendingString:[NSString stringWithFormat:@",%@",str]];
                 }else{
@@ -360,19 +370,28 @@
 //  结算按钮
 - (void)ClearingBut:(UIButton *)sender {
     _stockids = nil;
+    _modelstockid = nil;
     [self updateData];
     if ([self YESOrNoPush]) {
         if (sender.selected) {
-            [self Reminding];
-            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-            dic[@"stockid"] =_modelstockid;
-            dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-            [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
-                NSLog(@"%@",obj);
-            } failure:^(NSError *error) {
-                NSLog(@"%@",error);
+            
+#pragma make -- 提示框
+            UIAlertController *al = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *act = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             }];
-            return;
+            UIAlertAction *act2 = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定要删除吗？",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+                dic[@"stockid"] =_modelstockid;
+                dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+                [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
+                    NSLog(@"%@",obj);
+                } failure:^(NSError *error) {
+                    NSLog(@"%@",error);
+                }];
+            }];
+            [al addAction:act];
+            [al addAction:act2];
         }else {
             
             ConfirmViewController * Confirm = [[ConfirmViewController alloc]init];
@@ -418,11 +437,7 @@
     }
     return NO;
 }
-#pragma make -- 提示框
-- (void)Reminding {
-    UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"取消",nil) otherButtonTitles:NSLocalizedString(@"确定",nil), nil];
-    [alertView show];
-}
+
 
 #pragma mark tableviewdelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -442,48 +457,7 @@
     return UITableViewCellEditingStyleDelete;
 }
 
--(UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (@available(iOS 11.0, *)) {
-        NSArray *array = @[[UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"delete" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-            [dataArray removeObjectAtIndex:indexPath.row];
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            completionHandler(YES);
-        }]];
-        return [UISwipeActionsConfiguration configurationWithActions:array];
-    } else {
-        // Fallback on earlier versions
-    }
-    
-    return nil;
-}
 
--(UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (@available(iOS 11.0, *)) {
-        UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-            ZP_CartsModel *model = dataArray[indexPath.row];
-            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-            dic[@"stockid"] = model.stockid;
-            dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-            [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
-                NSLog(@"%@",obj);
-            } failure:^(NSError *error) {
-                NSLog(@"%@",error);
-            }];
-            
-            [dataArray removeObjectAtIndex:indexPath.row];
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            completionHandler(YES);
-        }];
-        //也可以设置图片
-        deleteAction.backgroundColor = [UIColor redColor];
-        UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction]];
-        return config;
-    } else {
-        // Fallback on earlier versions
-        return nil;
-    }
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -496,6 +470,7 @@
         [cell.buttom removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.buttom addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell cellWithModel:model];
+        [self registerForPreviewingWithDelegate:self sourceView:cell];
         return cell;
     }else{
         static NSString * EditorID = @"editorViewCell";
@@ -580,10 +555,82 @@
     return 40;
 }
 
+/*
+ -(UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (@available(iOS 11.0, *)) {
+ NSArray *array = @[[UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"delete" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+ [dataArray removeObjectAtIndex:indexPath.row];
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ completionHandler(YES);
+ }]];
+ return [UISwipeActionsConfiguration configurationWithActions:array];
+ } else {
+ // Fallback on earlier versions
+ }
+ 
+ return nil;
+ }
+ 
+ -(UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+ if (@available(iOS 11.0, *)) {
+ UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+ ZP_CartsModel *model = dataArray[indexPath.row];
+ NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+ dic[@"stockid"] = model.stockid;
+ dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+ [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
+ NSLog(@"%@",obj);
+ } failure:^(NSError *error) {
+ NSLog(@"%@",error);
+ }];
+ 
+ [dataArray removeObjectAtIndex:indexPath.row];
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ completionHandler(YES);
+ }];
+ //也可以设置图片
+ deleteAction.backgroundColor = [UIColor redColor];
+ UISwipeActionsConfiguration *config = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction]];
+ return config;
+ } else {
+ // Fallback on earlier versions
+ return nil;
+ }
+ }
+ */
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSLog(@"go");
+        ZP_CartsModel *model = dataArray[indexPath.row];
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        dic[@"stockid"] = model.stockid;
+        dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+        [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
+            NSLog(@"%@",obj);
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
+        
+        [dataArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        //        [_data  removeObjectAtIndex:indexPath.row];
+        //        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
 }
 
 @end
-

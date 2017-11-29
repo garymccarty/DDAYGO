@@ -20,6 +20,7 @@
     [super viewDidLoad];
     self.title = NSLocalizedString(@"绑定推荐人", nil);
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
+     _BindingIntroduceTextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     
 }
 
@@ -41,7 +42,7 @@
             if ([dic[@"result"]isEqualToString:@"failure"]) {
                 [SVProgressHUD showInfoWithStatus:@"绑定失败"];
         }else {
-            if ([dic[@"result"]isEqualToString:@"acc_notexist"]) {
+            if ([dic[@"result"]isEqualToString:@"no"]) {
                 [SVProgressHUD showInfoWithStatus:@"账户不存在"];
         }else {
              if ([dic[@"result"]isEqualToString:@"abnormal_message"]) {
@@ -56,5 +57,11 @@
     }];
 }
 
+//  键盘弹起
+- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:YES];
+    
+}
 
 @end

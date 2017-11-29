@@ -10,7 +10,7 @@
 #import "ZP_LotteryCell.h"
 #import "PrefixHeader.pch"
 @interface LotteryController () 
-
+@property (nonatomic, strong) UICollectionView * bottonVC;
 @end
 
 @implementation LotteryController

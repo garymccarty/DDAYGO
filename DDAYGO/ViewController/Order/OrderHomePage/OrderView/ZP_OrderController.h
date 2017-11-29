@@ -10,5 +10,8 @@
 
 @interface ZP_OrderController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property (nonatomic, strong) NSString *titleStr;
+@property (nonatomic, assign) NSInteger num;
 
 @end
+
+

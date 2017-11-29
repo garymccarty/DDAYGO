@@ -6,7 +6,6 @@
 //  Copyright © 2017年 Summer. All rights reserved.
 //
 
-
 #import "OrderViewController.h"
 #import "FSScrollContentView.h"
 #import "OrderViewController.h"
@@ -59,17 +58,27 @@
 - (void)initUI {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor whiteColor];
-    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 40) delegate:self indicatorType:0];
-    self.titleView.titlesArr = @[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待发货", nil),NSLocalizedString(@"待收货", nil),NSLocalizedString(@"评价", nil)];
+    
+    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 40) titles:@[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待发货", nil),NSLocalizedString(@"待收货", nil),NSLocalizedString(@"评价", nil)] delegate:self indicatorType:FSIndicatorTypeEqualTitle];
+    self.titleView.titleSelectFont = [UIFont systemFontOfSize:14];
+    self.titleView.titleFont = [UIFont systemFontOfSize:13];
+    self.titleView.titleSelectColor = [UIColor orangeColor];
+    self.titleView.indicatorColor = [UIColor orangeColor];
     [self.view addSubview:_titleView];
     
-    NSMutableArray * childVCs = [[NSMutableArray alloc]init];
-    for (NSString *title in self.titleView.titlesArr) {
+    
+    NSMutableArray *childVCs = [[NSMutableArray alloc]init];
+    [@[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待发货", nil),NSLocalizedString(@"待收货", nil),NSLocalizedString(@"评价", nil)] enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ZP_OrderController *vc = [[ZP_OrderController alloc]init];
-        vc.titleStr = title;
+        
+        vc.titleStr = obj;
+        vc.num = idx;
+        
         [childVCs addObject:vc];
-    }
+    }];
+    
     self.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0,  40, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.frame)  - 40) childVCs:childVCs parentVC:self delegate:self];
+    
     [self.view addSubview:_pageContentView];
 }
 

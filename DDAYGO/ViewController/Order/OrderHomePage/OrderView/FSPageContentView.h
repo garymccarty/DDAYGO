@@ -8,14 +8,14 @@
 
 /**
  FSPageContentView开始滑动
-
+ 
  @param contentView FSPageContentView
  */
 - (void)FSContentViewWillBeginDragging:(FSPageContentView *)contentView;
 
 /**
  FSPageContentView滑动调用
-
+ 
  @param contentView FSPageContentView
  @param startIndex 开始滑动页面索引
  @param endIndex 结束滑动页面索引
@@ -25,12 +25,19 @@
 
 /**
  FSPageContentView结束滑动
-
+ 
  @param contentView FSPageContentView
  @param startIndex 开始滑动索引
  @param endIndex 结束滑动索引
  */
 - (void)FSContenViewDidEndDecelerating:(FSPageContentView *)contentView startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex;
+
+/**
+ scrollViewDidEndDragging
+ 
+ @param contentView FSPageContentView
+ */
+- (void)FSContenViewDidEndDragging:(FSPageContentView *)contentView;
 
 @end
 
@@ -38,7 +45,7 @@
 
 /**
  对象方法创建FSPageContentView
-
+ 
  @param frame frame
  @param childVCs 子VC数组
  @param parentVC 父视图VC
@@ -54,4 +61,11 @@
  */
 @property (nonatomic, assign) NSInteger contentViewCurrentIndex;
 
+/**
+ 设置contentView能否左右滑动，默认YES
+ */
+@property (nonatomic, assign) BOOL contentViewCanScroll;
+
 @end
+
+
