@@ -34,11 +34,7 @@
     
 //    标题
     ZP_GeneralLabel * TitleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_HomeTitleTypefaceCorlor font:ZP_TrademarkFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
-//    TitleLabel.textColor = ZP_HomeTitleTypefaceCorlor;
-//    TitleLabel.textAlignment = NSTextAlignmentCenter;
-//    TitleLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
-//    TitleLabel.numberOfLines = 0;
-//    TitleLabel.font = ZP_TrademarkFont;
+
     [self addSubview:TitleLabel];
     [TitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(2);
@@ -49,9 +45,6 @@
     
 //    优惠价格
     ZP_GeneralLabel * PreferentialLabel = [ZP_GeneralLabel initWithtextLabel:_PreferentialLabel.text textColor:ZP_HomePreferentialpriceTypefaceCorlor font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    PreferentialLabel.textColor = ZP_HomePreferentialpriceTypefaceCorlor;
-//    PreferentialLabel.textAlignment = NSTextAlignmentLeft;
-//    PreferentialLabel.font = ZP_introduceFont;
     [self addSubview:PreferentialLabel];
     [PreferentialLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
@@ -61,9 +54,6 @@
     
 //    价格
     ZP_GeneralLabel * priceLabel = [ZP_GeneralLabel initWithtextLabel:_priceLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_introduceFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
-//    priceLabel.textColor = ZP_HomeTitlepriceTypefaceColor;
-//    priceLabel.textAlignment = NSTextAlignmentCenter;
-//    priceLabel.font = ZP_introduceFont;
     [self addSubview:priceLabel];
     [priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
@@ -95,9 +85,6 @@
     
 //    商标编号
     ZP_GeneralLabel * TrademarkLabel = [ZP_GeneralLabel initWithtextLabel:_TrademarkLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    TrademarkLabel.textAlignment = NSTextAlignmentLeft;
-//    TrademarkLabel.textColor = ZP_HomeTitlepriceTypefaceColor;
-//    TrademarkLabel.font = ZP_TrademarkFont;
     [self.contentView addSubview:TrademarkLabel];
     [TrademarkLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(20);
@@ -121,7 +108,6 @@
 }
 
 - (void)cellWithdic:(ZP_FifthModel *)model {
-    
     [_imageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     _titleLabel.text = model.productname;
     _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.PreferentialLabel]; // 优惠价格

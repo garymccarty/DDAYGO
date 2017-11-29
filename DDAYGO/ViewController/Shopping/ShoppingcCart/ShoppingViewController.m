@@ -249,7 +249,7 @@
     [self updateDataa];
 }
 - (void)updateData {
-    //   更新选中数量
+//   更新选中数量
     NSInteger count = 0;
     NSInteger data = 0;
     NSInteger dataCount = 0;
@@ -300,7 +300,7 @@
         self.AllButton.selected = NO;
         self.Shopchoosebuttom.selected = NO;
     }
-    //   更新合计数据
+//   更新合计数据
     self.PriceLabel.text = [@(data) stringValue];
     [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
 }
@@ -311,7 +311,7 @@
     NSInteger data = 0;
     NSInteger dataCount = 0;
     for (int i = 0; i < dataArray.count; i ++) {
-        
+
         if (!_bjBool) {
             ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
             ZP_CartsModel *model = dataArray[i];
@@ -600,8 +600,8 @@
  }
  */
 
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     return @"删除";
 }
 

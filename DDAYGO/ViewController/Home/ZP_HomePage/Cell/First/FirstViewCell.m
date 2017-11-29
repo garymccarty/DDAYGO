@@ -28,9 +28,7 @@
         [self.contentView addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self).offset(5);
-            //            make.right.equalTo(self).offset(ZP_Width); //长
             make.top.equalTo(self).offset(ZP_Width/2/2-0.5); // 高
-            //            make.bottom.equalTo(self).offset(-95);
             make.height.mas_equalTo(1); // 高
             make.width.mas_offset(ZP_Width-5);
         }];

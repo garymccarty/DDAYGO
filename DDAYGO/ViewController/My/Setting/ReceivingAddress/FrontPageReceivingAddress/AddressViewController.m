@@ -42,6 +42,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
+
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";

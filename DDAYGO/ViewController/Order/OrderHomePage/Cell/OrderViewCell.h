@@ -16,16 +16,17 @@
 @property (nonatomic, strong) UIView * Backgroundview;    //  背景view
 /*********************************************************/
 /********************************************************/
-@property (nonatomic, strong) UIImageView * FigureImage;           //主图
-@property (nonatomic, strong) UILabel * merchantsLabel;           //商家名字
-@property (nonatomic, strong) UILabel * titleLabel;              //商品文字
-@property (nonatomic, strong) UILabel * descLabel;              // 颜色分类
-@property (nonatomic, strong) UILabel * SizeLabel;             // 尺寸
-@property (nonatomic, strong) UILabel * PreferentialLabel;    //优惠价格
-@property (nonatomic, strong) UILabel * priceLabel;          // 价格
-@property (nonatomic, strong) UIImageView * TrademarkImage; // 商标
-@property (nonatomic, strong) UILabel * TrademarkLabel;    // 商标编号
-@property (nonatomic, strong) UILabel * QuantityLabel;    //  数量
+@property (nonatomic, strong) UIImageView * FigureImage;             //主图
+@property (nonatomic, strong) UILabel * merchantsLabel;             //商家名字
+@property (nonatomic, strong) UILabel * titleLabel;                //商品文字
+@property (nonatomic, strong) UILabel * descLabel;                // 颜色分类
+@property (nonatomic, strong) UILabel * SizeLabel;               // 尺寸
+@property (nonatomic, strong) UILabel * PreferentialLabel;      //优惠价格
+@property (nonatomic, strong) UILabel * priceLabel;            // 价格
+@property (nonatomic, strong) UILabel * SharacterLabel;       // X 符号
+@property (nonatomic, strong) UIImageView * TrademarkImage;  // 商标
+@property (nonatomic, strong) UILabel * TrademarkLabel;     // 商标编号
+@property (nonatomic, strong) UILabel * QuantityLabel;     //  数量
 /*********************************************************/
 /********************************************************/
 @property (nonatomic, strong) UILabel * CountLabel;         // 合计

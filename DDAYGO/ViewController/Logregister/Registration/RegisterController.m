@@ -108,7 +108,7 @@
     [ZP_LoginTool requestRegiser:dict success:^(id obj) {
         NSDictionary * dic = obj;
         if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
-            if ([dic[@"result"] isEqualToString:@"success"]) {
+            if ([dic[@"result"] isEqualToString:@"ok"]) {
                 NSLog(@"注册成功");
                 [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
                 [self.navigationController popViewControllerAnimated:YES];
