@@ -202,8 +202,6 @@
 		C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C435174E1FB2ACE80066302E /* OrdersViewController.xib */; };
 		C4399D6F1FCE84A000B7B96D /* LotteryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4399D691FCE849F00B7B96D /* LotteryController.m */; };
 		C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4399D6A1FCE849F00B7B96D /* LotteryController.xib */; };
-		C4399D7B1FCE87A000B7B96D /* ZP_LotteryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4399D791FCE87A000B7B96D /* ZP_LotteryViewCell.m */; };
-		C4399D7C1FCE87A000B7B96D /* ZP_LotteryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4399D7A1FCE87A000B7B96D /* ZP_LotteryViewCell.xib */; };
 		C4535E201FC5086800DFFD62 /* ZP_ConfirmPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E1F1FC5086800DFFD62 /* ZP_ConfirmPayModel.m */; };
 		C4535E241FC51E5300DFFD62 /* ZP_InformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E231FC51E5300DFFD62 /* ZP_InformationCell.m */; };
 		C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E271FC51E7D00DFFD62 /* ZP_InformationModel.m */; };
@@ -257,7 +255,23 @@
 		C4573F3C1FCFA3A6001DFE97 /* BetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F331FCFA3A6001DFE97 /* BetTableViewCell.xib */; };
 		C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F351FCFA3A6001DFE97 /* BetViewController.m */; };
 		C4573F3E1FCFA3A6001DFE97 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F361FCFA3A6001DFE97 /* BetViewController.xib */; };
-		C4573F401FCFA4F3001DFE97 /* 历史下注.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F3F1FCFA4F2001DFE97 /* 历史下注.png */; };
+		C4573F421FCFB0F1001DFE97 /* 历史下注号码.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F411FCFB0F1001DFE97 /* 历史下注号码.png */; };
+		C4573F4B1FCFDE6D001DFE97 /* ZP_LotteryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */; };
+		C4573F4C1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */; };
+		C4573F511FCFE049001DFE97 /* ZP_HistoryVetController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F4F1FCFE049001DFE97 /* ZP_HistoryVetController.m */; };
+		C4573F521FCFE049001DFE97 /* ZP_HistoryVetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F501FCFE049001DFE97 /* ZP_HistoryVetController.xib */; };
+		C4573F571FCFE0A2001DFE97 /* ZP_HistoryBetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F551FCFE0A2001DFE97 /* ZP_HistoryBetCell.m */; };
+		C4573F581FCFE0A2001DFE97 /* ZP_HistoryBetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F561FCFE0A2001DFE97 /* ZP_HistoryBetCell.xib */; };
+		C4573F5A1FCFE354001DFE97 /* bg_lottery_money@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F591FCFE354001DFE97 /* bg_lottery_money@2x.png */; };
+		C4573F5C1FCFE35E001DFE97 /* bg_lottery_money@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F5B1FCFE35E001DFE97 /* bg_lottery_money@3x.png */; };
+		C4573F601FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F5E1FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.m */; };
+		C4573F611FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F5F1FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.xib */; };
+		C4573F651FD006A9001DFE97 /* ZP_HistoryBetView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F631FD006A9001DFE97 /* ZP_HistoryBetView.m */; };
+		C4573F661FD006A9001DFE97 /* ZP_HistoryBetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F641FD006A9001DFE97 /* ZP_HistoryBetView.xib */; };
+		C4573F6B1FD01B82001DFE97 /* ZP_InstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F691FD01B82001DFE97 /* ZP_InstructionController.m */; };
+		C4573F6C1FD01B82001DFE97 /* ZP_InstructionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F6A1FD01B82001DFE97 /* ZP_InstructionController.xib */; };
+		C4573F711FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F6F1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m */; };
+		C4573F721FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F701FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib */; };
 		C45868FA1FC7CE06000CEB92 /* collectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45868F91FC7CE06000CEB92 /* collectionModel.m */; };
 		C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */; };
 		C45D83051FAB00EB003C35EB /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C45D83041FAB00EB003C35EB /* UIButton+countDown.m */; };
@@ -738,9 +752,6 @@
 		C4399D681FCE849F00B7B96D /* LotteryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryController.h; sourceTree = "<group>"; };
 		C4399D691FCE849F00B7B96D /* LotteryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryController.m; sourceTree = "<group>"; };
 		C4399D6A1FCE849F00B7B96D /* LotteryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryController.xib; sourceTree = "<group>"; };
-		C4399D781FCE87A000B7B96D /* ZP_LotteryViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryViewCell.h; sourceTree = "<group>"; };
-		C4399D791FCE87A000B7B96D /* ZP_LotteryViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryViewCell.m; sourceTree = "<group>"; };
-		C4399D7A1FCE87A000B7B96D /* ZP_LotteryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_LotteryViewCell.xib; sourceTree = "<group>"; };
 		C4535E1E1FC5086800DFFD62 /* ZP_ConfirmPayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ConfirmPayModel.h; sourceTree = "<group>"; };
 		C4535E1F1FC5086800DFFD62 /* ZP_ConfirmPayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ConfirmPayModel.m; sourceTree = "<group>"; };
 		C4535E221FC51E5300DFFD62 /* ZP_InformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_InformationCell.h; sourceTree = "<group>"; };
@@ -809,7 +820,30 @@
 		C4573F341FCFA3A6001DFE97 /* BetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
 		C4573F351FCFA3A6001DFE97 /* BetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
 		C4573F361FCFA3A6001DFE97 /* BetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetViewController.xib; sourceTree = "<group>"; };
-		C4573F3F1FCFA4F2001DFE97 /* 历史下注.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史下注.png"; sourceTree = "<group>"; };
+		C4573F411FCFB0F1001DFE97 /* 历史下注号码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史下注号码.png"; sourceTree = "<group>"; };
+		C4573F481FCFDE6D001DFE97 /* ZP_LotteryViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryViewCell.h; sourceTree = "<group>"; };
+		C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryViewCell.m; sourceTree = "<group>"; };
+		C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_LotteryViewCell.xib; sourceTree = "<group>"; };
+		C4573F4E1FCFE049001DFE97 /* ZP_HistoryVetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryVetController.h; sourceTree = "<group>"; };
+		C4573F4F1FCFE049001DFE97 /* ZP_HistoryVetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryVetController.m; sourceTree = "<group>"; };
+		C4573F501FCFE049001DFE97 /* ZP_HistoryVetController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_HistoryVetController.xib; sourceTree = "<group>"; };
+		C4573F541FCFE0A2001DFE97 /* ZP_HistoryBetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryBetCell.h; sourceTree = "<group>"; };
+		C4573F551FCFE0A2001DFE97 /* ZP_HistoryBetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryBetCell.m; sourceTree = "<group>"; };
+		C4573F561FCFE0A2001DFE97 /* ZP_HistoryBetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_HistoryBetCell.xib; sourceTree = "<group>"; };
+		C4573F591FCFE354001DFE97 /* bg_lottery_money@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_money@2x.png"; sourceTree = "<group>"; };
+		C4573F5B1FCFE35E001DFE97 /* bg_lottery_money@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_money@3x.png"; sourceTree = "<group>"; };
+		C4573F5D1FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryBetCollectionCell.h; sourceTree = "<group>"; };
+		C4573F5E1FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryBetCollectionCell.m; sourceTree = "<group>"; };
+		C4573F5F1FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_HistoryBetCollectionCell.xib; sourceTree = "<group>"; };
+		C4573F621FD006A9001DFE97 /* ZP_HistoryBetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryBetView.h; sourceTree = "<group>"; };
+		C4573F631FD006A9001DFE97 /* ZP_HistoryBetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryBetView.m; sourceTree = "<group>"; };
+		C4573F641FD006A9001DFE97 /* ZP_HistoryBetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_HistoryBetView.xib; sourceTree = "<group>"; };
+		C4573F681FD01B82001DFE97 /* ZP_InstructionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_InstructionController.h; sourceTree = "<group>"; };
+		C4573F691FD01B82001DFE97 /* ZP_InstructionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_InstructionController.m; sourceTree = "<group>"; };
+		C4573F6A1FD01B82001DFE97 /* ZP_InstructionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_InstructionController.xib; sourceTree = "<group>"; };
+		C4573F6E1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_InstructionTableViewCell.h; sourceTree = "<group>"; };
+		C4573F6F1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_InstructionTableViewCell.m; sourceTree = "<group>"; };
+		C4573F701FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_InstructionTableViewCell.xib; sourceTree = "<group>"; };
 		C45868F81FC7CE06000CEB92 /* collectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectionModel.h; sourceTree = "<group>"; };
 		C45868F91FC7CE06000CEB92 /* collectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectionModel.m; sourceTree = "<group>"; };
 		C45868FF1FC80C8E000CEB92 /* ZP_OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderModel.h; sourceTree = "<group>"; };
@@ -2287,9 +2321,9 @@
 		C4399D6B1FCE849F00B7B96D /* ZP_LotteryCell */ = {
 			isa = PBXGroup;
 			children = (
-				C4399D781FCE87A000B7B96D /* ZP_LotteryViewCell.h */,
-				C4399D791FCE87A000B7B96D /* ZP_LotteryViewCell.m */,
-				C4399D7A1FCE87A000B7B96D /* ZP_LotteryViewCell.xib */,
+				C4573F481FCFDE6D001DFE97 /* ZP_LotteryViewCell.h */,
+				C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */,
+				C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */,
 			);
 			path = ZP_LotteryCell;
 			sourceTree = "<group>";
@@ -2400,8 +2434,8 @@
 				C4573EE51FCF8ECF001DFE97 /* 2x */,
 				C4573EF41FCF8ECF001DFE97 /* 3x */,
 				C4573F031FCF8ECF001DFE97 /* 历史开奖_spec.png */,
-				C4573F3F1FCFA4F2001DFE97 /* 历史下注.png */,
 				C4573F041FCF8ECF001DFE97 /* 历史开奖详情.png */,
+				C4573F411FCFB0F1001DFE97 /* 历史下注号码.png */,
 				C4573F051FCF8ECF001DFE97 /* 说明_spec.png */,
 				C4573F061FCF8ECF001DFE97 /* 赏金彩_spec.png */,
 				C4573F071FCF8ECF001DFE97 /* 选择赏金彩_spec.png */,
@@ -2412,6 +2446,7 @@
 		C4573EE51FCF8ECF001DFE97 /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				C4573F591FCFE354001DFE97 /* bg_lottery_money@2x.png */,
 				C4573EE61FCF8ECF001DFE97 /* bg_choose_redball@2x.png */,
 				C4573EE71FCF8ECF001DFE97 /* bg_choose_whiteball_normal@2x.png */,
 				C4573EE81FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@2x.png */,
@@ -2433,6 +2468,7 @@
 		C4573EF41FCF8ECF001DFE97 /* 3x */ = {
 			isa = PBXGroup;
 			children = (
+				C4573F5B1FCFE35E001DFE97 /* bg_lottery_money@3x.png */,
 				C4573EF51FCF8ECF001DFE97 /* bg_choose_redball@3x.png */,
 				C4573EF61FCF8ECF001DFE97 /* bg_choose_whiteball_normal@3x.png */,
 				C4573EF71FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@3x.png */,
@@ -2465,17 +2501,65 @@
 		C4573F2A1FCFA3A6001DFE97 /* BetHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
-				C4573F2B1FCFA3A6001DFE97 /* BetCollectionViewCell.h */,
-				C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */,
-				C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */,
-				C4573F2E1FCFA3A6001DFE97 /* BetHeaderView.h */,
-				C4573F2F1FCFA3A6001DFE97 /* BetHeaderView.m */,
-				C4573F301FCFA3A6001DFE97 /* BetHeaderView.xib */,
 				C4573F311FCFA3A6001DFE97 /* BetTableViewCell.h */,
 				C4573F321FCFA3A6001DFE97 /* BetTableViewCell.m */,
 				C4573F331FCFA3A6001DFE97 /* BetTableViewCell.xib */,
+				C4573F2E1FCFA3A6001DFE97 /* BetHeaderView.h */,
+				C4573F2F1FCFA3A6001DFE97 /* BetHeaderView.m */,
+				C4573F301FCFA3A6001DFE97 /* BetHeaderView.xib */,
+				C4573F2B1FCFA3A6001DFE97 /* BetCollectionViewCell.h */,
+				C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */,
+				C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */,
 			);
 			path = BetHeaderCell;
+			sourceTree = "<group>";
+		};
+		C4573F4D1FCFDFD3001DFE97 /* ZP_HistoryBet */ = {
+			isa = PBXGroup;
+			children = (
+				C4573F4E1FCFE049001DFE97 /* ZP_HistoryVetController.h */,
+				C4573F4F1FCFE049001DFE97 /* ZP_HistoryVetController.m */,
+				C4573F501FCFE049001DFE97 /* ZP_HistoryVetController.xib */,
+				C4573F531FCFE05D001DFE97 /* ZP_HistoryBetCell */,
+			);
+			path = ZP_HistoryBet;
+			sourceTree = "<group>";
+		};
+		C4573F531FCFE05D001DFE97 /* ZP_HistoryBetCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4573F541FCFE0A2001DFE97 /* ZP_HistoryBetCell.h */,
+				C4573F551FCFE0A2001DFE97 /* ZP_HistoryBetCell.m */,
+				C4573F561FCFE0A2001DFE97 /* ZP_HistoryBetCell.xib */,
+				C4573F621FD006A9001DFE97 /* ZP_HistoryBetView.h */,
+				C4573F631FD006A9001DFE97 /* ZP_HistoryBetView.m */,
+				C4573F641FD006A9001DFE97 /* ZP_HistoryBetView.xib */,
+				C4573F5D1FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.h */,
+				C4573F5E1FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.m */,
+				C4573F5F1FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.xib */,
+			);
+			path = ZP_HistoryBetCell;
+			sourceTree = "<group>";
+		};
+		C4573F671FD01B5A001DFE97 /* ZP_InstructionBet */ = {
+			isa = PBXGroup;
+			children = (
+				C4573F681FD01B82001DFE97 /* ZP_InstructionController.h */,
+				C4573F691FD01B82001DFE97 /* ZP_InstructionController.m */,
+				C4573F6A1FD01B82001DFE97 /* ZP_InstructionController.xib */,
+				C4573F6D1FD01B94001DFE97 /* ZP_InstructionCell */,
+			);
+			path = ZP_InstructionBet;
+			sourceTree = "<group>";
+		};
+		C4573F6D1FD01B94001DFE97 /* ZP_InstructionCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4573F6E1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.h */,
+				C4573F6F1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m */,
+				C4573F701FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib */,
+			);
+			path = ZP_InstructionCell;
 			sourceTree = "<group>";
 		};
 		C45868F71FC7CE06000CEB92 /* ZP_CollcetionModel */ = {
@@ -2749,6 +2833,8 @@
 			children = (
 				C4399D671FCE849F00B7B96D /* LotteryHomePage */,
 				C4573F291FCFA3A6001DFE97 /* ZP_LotteryBet */,
+				C4573F4D1FCFDFD3001DFE97 /* ZP_HistoryBet */,
+				C4573F671FD01B5A001DFE97 /* ZP_InstructionBet */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
@@ -3400,8 +3486,11 @@
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
 				06F571A81F9F193300D61FDB /* PayViewController.xib in Resources */,
 				062C9D5D1F8CD6F900E14987 /* button_3@2x.png in Resources */,
+				C4573F6C1FD01B82001DFE97 /* ZP_InstructionController.xib in Resources */,
+				C4573F421FCFB0F1001DFE97 /* 历史下注号码.png in Resources */,
 				062C9D5F1F8CD6F900E14987 /* button_4@2x.png in Resources */,
 				062C9D641F8CD6F900E14987 /* button_6@3x.png in Resources */,
+				C4573F521FCFE049001DFE97 /* ZP_HistoryVetController.xib in Resources */,
 				06F5721D1F9F1E8700D61FDB /* AllCategoriesView.xib in Resources */,
 				0662AB5E1F9610BF0031F22B /* LogregisterController.xib in Resources */,
 				C47212AC1FB18A4E0055578E /* SettingViewController.xib in Resources */,
@@ -3412,6 +3501,8 @@
 				C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */,
 				0641BBA31F67B60B00E72FEF /* Third.png in Resources */,
 				063FE0551F614D24009910FF /* LaunchScreen.storyboard in Resources */,
+				C4573F581FCFE0A2001DFE97 /* ZP_HistoryBetCell.xib in Resources */,
+				C4573F5C1FCFE35E001DFE97 /* bg_lottery_money@3x.png in Resources */,
 				C4573F1F1FCF8ECF001DFE97 /* icon_explan_first@3x.png in Resources */,
 				C4573F0C1FCF8ECF001DFE97 /* bg_lottery_record@2x.png in Resources */,
 				C4573F1C1FCF8ECF001DFE97 /* bg_lottery_whiteball@3x.png in Resources */,
@@ -3421,9 +3512,11 @@
 				C47212A31FB186C90055578E /* MyViewController.xib in Resources */,
 				06F5722F1F9F1E8700D61FDB /* ReturnDetailViewController.xib in Resources */,
 				06F5722D1F9F1E8700D61FDB /* OrderManagerViewController.xib in Resources */,
+				C4573F661FD006A9001DFE97 /* ZP_HistoryBetView.xib in Resources */,
 				06F571D21F9F1A7900D61FDB /* BindingICUEViewController.xib in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
 				C4573F131FCF8ECF001DFE97 /* icon_explan_second@2x.png in Resources */,
+				C4573F721FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib in Resources */,
 				C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */,
 				C4573F1D1FCF8ECF001DFE97 /* bg_prize_explan@3x.png in Resources */,
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
@@ -3438,7 +3531,6 @@
 				064449B51F6A9B250004DFE4 /* MJRefresh.bundle in Resources */,
 				064249821F99F36000340EBA /* PayPassController.xib in Resources */,
 				C4573F211FCF8ECF001DFE97 /* icon_explan_second@3x.png in Resources */,
-				C4573F401FCFA4F3001DFE97 /* 历史下注.png in Resources */,
 				C45FAF8D1FCD564C00BD4CE1 /* SelectedViewController.xib in Resources */,
 				06F571DA1F9F1A7900D61FDB /* AddressViewController.xib in Resources */,
 				06F571DE1F9F1A7900D61FDB /* AddAddressViewController.xib in Resources */,
@@ -3473,19 +3565,21 @@
 				C4573F271FCF8ECF001DFE97 /* 赏金彩_spec.png in Resources */,
 				C4573F1A1FCF8ECF001DFE97 /* bg_lottery_record@3x.png in Resources */,
 				0682BE801F90C8F000894F4E /* seven.png in Resources */,
+				C4573F5A1FCFE354001DFE97 /* bg_lottery_money@2x.png in Resources */,
 				062C9D681F8CDB7900E14987 /* headImage.jpg in Resources */,
 				C4573F3A1FCFA3A6001DFE97 /* BetHeaderView.xib in Resources */,
 				C4573F0B1FCF8ECF001DFE97 /* bg_lottery_explan@2x.png in Resources */,
 				064448E21F6A1F7F0004DFE4 /* Shopping.png in Resources */,
 				C47096A81FB065CE006EA52C /* LanguageController.xib in Resources */,
+				C4573F4C1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib in Resources */,
 				064448DF1F6A16A00004DFE4 /* banner_jiazai.jpg in Resources */,
 				C4573F261FCF8ECF001DFE97 /* 说明_spec.png in Resources */,
-				C4399D7C1FCE87A000B7B96D /* ZP_LotteryViewCell.xib in Resources */,
 				0641BBA11F67B60B00E72FEF /* Second.png in Resources */,
 				063FE0501F614D24009910FF /* Main.storyboard in Resources */,
 				C4573F3C1FCFA3A6001DFE97 /* BetTableViewCell.xib in Resources */,
 				C470969C1FB0602F006EA52C /* Localizable.strings in Resources */,
 				C435173A1FB2AC830066302E /* FootprintCollectionViewCell.xib in Resources */,
+				C4573F611FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.xib in Resources */,
 				C4573F091FCF8ECF001DFE97 /* bg_choose_whiteball_normal@2x.png in Resources */,
 				C47E76311FB5A1C7009F279A /* TextdetailsViewCell.xib in Resources */,
 			);
@@ -3584,6 +3678,7 @@
 				06F571A91F9F193300D61FDB /* DataViewController.m in Sources */,
 				C45FAF9C1FCD68F400BD4CE1 /* UIImage+Image.m in Sources */,
 				C47E76241FB5A1C7009F279A /* ZP_ClassGoodsModel.m in Sources */,
+				C4573F711FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m in Sources */,
 				06F572201F9F1E8700D61FDB /* BillViewController.m in Sources */,
 				C45F22EF1FA0746300F5DB41 /* UIView+Additions.m in Sources */,
 				06418F501F7A076A00479523 /* MASCompositeConstraint.m in Sources */,
@@ -3615,11 +3710,13 @@
 				C47E764B1FB5A1C7009F279A /* Pop-upTableViewDelegate.m in Sources */,
 				0662AB341F9592A50031F22B /* VPImageCropperViewController.m in Sources */,
 				C47E762F1FB5A1C7009F279A /* DetailedViewCell.m in Sources */,
+				C4573F6B1FD01B82001DFE97 /* ZP_InstructionController.m in Sources */,
 				C477507E1FBA990E00AE8B3F /* ZP_PositionModel.m in Sources */,
 				064449AD1F6A9B250004DFE4 /* MJRefreshAutoNormalFooter.m in Sources */,
 				06F571D91F9F1A7900D61FDB /* AddressViewController.m in Sources */,
 				C45F233C1FA0757A00F5DB41 /* ZeroViewCell.m in Sources */,
 				064449AF1F6A9B250004DFE4 /* MJRefreshBackGifFooter.m in Sources */,
+				C4573F601FCFE55E001DFE97 /* ZP_HistoryBetCollectionCell.m in Sources */,
 				06418F531F7A076A00479523 /* MASLayoutConstraint.m in Sources */,
 				064249861F99FBEB00340EBA /* PayFailController.m in Sources */,
 				C47096941FB04998006EA52C /* PromptBox.m in Sources */,
@@ -3738,7 +3835,6 @@
 				C47E763C1FB5A1C7009F279A /* ZPHomeLayout.m in Sources */,
 				C45FAF3C1FCD48CC00BD4CE1 /* EditorViewCell.m in Sources */,
 				06F571831F9F16A600D61FDB /* FootprintCollectionViewCell.m in Sources */,
-				C4399D7B1FCE87A000B7B96D /* ZP_LotteryViewCell.m in Sources */,
 				C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */,
 				064449BB1F6A9B250004DFE4 /* README.md in Sources */,
 				0641BBE01F67F9E400E72FEF /* UIView+WebCacheOperation.m in Sources */,
@@ -3755,6 +3851,7 @@
 				C4573F391FCFA3A6001DFE97 /* BetHeaderView.m in Sources */,
 				C45FAF9F1FCD693100BD4CE1 /* UIBarButtonItem+Button.m in Sources */,
 				0641BBDC1F67F9E400E72FEF /* UIImage+GIF.m in Sources */,
+				C4573F571FCFE0A2001DFE97 /* ZP_HistoryBetCell.m in Sources */,
 				064449AA1F6A9B250004DFE4 /* MJRefreshFooter.m in Sources */,
 				06F571091F9F0D3A00D61FDB /* OrderViewCell.m in Sources */,
 				0641BBD81F67F9E400E72FEF /* SDWebImageDownloaderOperation.m in Sources */,
@@ -3772,6 +3869,7 @@
 				C47E76351FB5A1C7009F279A /* ChooseView.m in Sources */,
 				06F571771F9F163F00D61FDB /* ConcernShopTableViewCell.m in Sources */,
 				06F570EC1F9F0ABA00D61FDB /* ShoppingViewController.m in Sources */,
+				C4573F651FD006A9001DFE97 /* ZP_HistoryBetView.m in Sources */,
 				06F571E11F9F1A7900D61FDB /* SelectPhotoManager.m in Sources */,
 				0641BBDF1F67F9E400E72FEF /* UIImageView+WebCache.m in Sources */,
 				C4573F3B1FCFA3A6001DFE97 /* BetTableViewCell.m in Sources */,
@@ -3796,7 +3894,9 @@
 				0641BBD41F67F9E400E72FEF /* SDImageCache.m in Sources */,
 				06F5711C1F9F0DFF00D61FDB /* LogistcsCell.m in Sources */,
 				064449AE1F6A9B250004DFE4 /* MJRefreshAutoStateFooter.m in Sources */,
+				C4573F511FCFE049001DFE97 /* ZP_HistoryVetController.m in Sources */,
 				C47E76411FB5A1C7009F279A /* ZPWeakTimerTargetObject.m in Sources */,
+				C4573F4B1FCFDE6D001DFE97 /* ZP_LotteryViewCell.m in Sources */,
 				C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

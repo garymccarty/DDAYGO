@@ -22,16 +22,9 @@
 // 热销商品
 + (void)requestSellLikeHotCakes:(NSDictionary *)sd success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@%@",URLAPI,HotCakesAPI] parameters:sd success:^(id responseObject) {
-        //        NSLog(@"%@",responseObject);
-        //        if ([[responseObject objectForKey:@"status"] isEqualToString:@"success"]) {
-        //            NSMutableArray * arr = [NSMutableArray array];
-        //             NSArray * allItem = [self cheakNull:[responseObject objectForKey:@"data"]];
-        //            NSDictionary * ZP_Fourth = [NSDictionary dictionary];
-        //        }
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);
-        //        NSLog(@"%@",error);
     }];
 }
 
@@ -39,12 +32,10 @@
 +(void)requSelectLikeHotCakes:(NSDictionary *)jx success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@%@",URLAPI,NewsReleaseAPI] parameters:jx success:^(id responseObject) {
-        //        NSLog(@"%@",responseObject);
-        
         success(responseObject);
         
     } failure:^(NSError *error) {
-        //        NSLog(@"%@",error);
+        
         failure(error);
     }];
 }

@@ -202,8 +202,6 @@ static NSString * ID = @"collectionViewCell";
     [self.view addSubview:self.collectionView];
 }
 
-
-
 #pragma mark ---UICollectionViewDataSource 数据源方法
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

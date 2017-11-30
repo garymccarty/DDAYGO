@@ -47,37 +47,38 @@
     _Mainfigure = Mainfigure;
     
 //  标题
-    UILabel * titleLabel = [UILabel new];
-    titleLabel.textColor = ZP_textblack;
+    ZP_GeneralLabel * titleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+//    titleLabel.textColor = ZP_textblack;
     titleLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
     titleLabel.numberOfLines = 0;
-    titleLabel.font = ZP_stockFont;
+//    titleLabel.font = ZP_stockFont;
     [self.contentView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(Mainfigure).offset(8);
         make.left.equalTo(Mainfigure).offset(85);
-        make.right.equalTo(Mainfigure).offset(ZP_Width -30-85);
+        make.right.equalTo(Mainfigure).offset(ZP_Width -30-90);
     }];
     _titleLabel = titleLabel;
     
 //  颜色
-    UILabel * descLabel = [UILabel new];
-    descLabel.textColor = ZP_TabBarTextColor;
-    descLabel.font = ZP_stockFont;
+    ZP_GeneralLabel * descLabel = [ZP_GeneralLabel initWithtextLabel:_descLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+//    descLabel.textColor = ZP_TabBarTextColor;
+//    descLabel.font = ZP_stockFont;
     [self.contentView addSubview:descLabel];
     [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(Mainfigure).offset(85); // 左
-        make.top.equalTo(Mainfigure).offset(45);
-        make.width.mas_offset(80);
+        make.top.equalTo(titleLabel).offset(35);
+//        make.width.mas_offset(80);
     }];
     _descLabel = descLabel;
     
 //  尺码
-    ZP_GeneralLabel * SizeLabel = [ZP_GeneralLabel initWithtextLabel:_SizeLanbel.text textColor:ZP_TabBarTextColor font:ZP_stockFont textAlignment: NSTextAlignmentLeft bakcgroundColor:nil];
+    ZP_GeneralLabel * SizeLabel = [ZP_GeneralLabel initWithtextLabel:_SizeLanbel.text textColor:ZP_TabBarTextColor font:ZP_stockFont textAlignment: NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview: SizeLabel];
     [SizeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(descLabel).offset(100);
-        make.left.equalTo(Mainfigure).offset(45);
+        make.left.equalTo(descLabel).offset(45);
+        make.top.equalTo(titleLabel).offset(35);
+//        make.width.mas_offset(25);
     }];
     _SizeLanbel = SizeLabel;
     
@@ -89,8 +90,8 @@
     [ScreeningBut addTarget:self action:@selector(ScreeningBut:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:ScreeningBut];
     [ScreeningBut mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(descLabel).offset(90);
-        make.top.equalTo(Mainfigure).offset(45);
+        make.left.equalTo(SizeLabel).offset(20);
+        make.top.equalTo(SizeLabel).offset(0);
         make.width.mas_equalTo(15);
         make.height.mas_equalTo(15);
     }];
@@ -161,6 +162,7 @@
     [_Mainfigure sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:nil];;
     _titleLabel.text = model.productremark;
     _descLabel.text = model.colorname;
+    _SizeLanbel.text = model.normname;
     _numLabel.text = [NSString stringWithFormat:@"%@",model.amount];
     //    _SizeLabel.text = model.normname;
     //    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.priceamount];

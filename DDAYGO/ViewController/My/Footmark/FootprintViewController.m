@@ -34,7 +34,6 @@
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requtsFootprint:dic success:^(id obj) {
-        
         self.newsData = [ZP_FootprintModel arrayWithArray:obj[@"historyslist"]];
         [self.collectionView reloadData];
     } failure:^(NSError * error) {
@@ -69,6 +68,7 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
+//  删除按钮
 - (void)deleBtn:(UIButton *)btn{
     ZP_FootprintModel *model = self.newsData[btn.tag];
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
@@ -77,6 +77,13 @@
     [ZP_MyTool requtsDeleFootprint:dic success:^(id obj) {
         NSLog(@"dele %@",obj);
         [self allData];
+        if ([obj[@"result"]isEqualToString:@"ok"]) {
+            [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+        }else {
+            if ([obj[@"result"]isEqualToString:@"failure"]) {
+                [SVProgressHUD showInfoWithStatus:@"删除失败"];
+            }
+        }
     } failure:^(NSError * error) {
         NSLog(@"dele %@",error);
     }];

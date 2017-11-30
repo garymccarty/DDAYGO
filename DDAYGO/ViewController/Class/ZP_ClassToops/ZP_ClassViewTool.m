@@ -32,7 +32,7 @@
 
 //  商品分类
 + (void)requMerchandise:(NSDictionary *)spfl WithIndex:(NSUInteger)index success:(void (^)(id))success failure:(void (^)(NSError *))failure{
-    NSArray *arr = @[@"default",@"sale",@"price",@"time"];
+    NSArray * arr = @[@"default",@"sale",@"price",@"time"];
     //    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/ProductFilter?producttypeid=2&sort=%@&seq=desc&word=&countrycode=886&page=1&pagesize=30",arr[index]] parameters:spfl success:^(NSDictionary *responseObject) {
     ////        ZPLog(@"%@",responseObject);
     //        success(responseObject);
@@ -42,7 +42,7 @@
     //    }];
     
     
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/productfilter?fatherid=%@&sort=%@&seq=%@&word=%@&countrycode=%@&page=%@&pagesize=%@",spfl[@"fatherid"],arr[index],spfl[@"seq"],spfl[@"word"],spfl[@"countrycode"],spfl[@"page"],spfl[@"pagesize"]] parameters:nil success:^(NSDictionary *responseObject) {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@productfilter?fatherid=%@&sort=%@&seq=%@&word=%@&countrycode=%@&page=%@&pagesize=%@",URLAPI,spfl[@"fatherid"],arr[index],spfl[@"seq"],spfl[@"word"],spfl[@"countrycode"],spfl[@"page"],spfl[@"pagesize"]] parameters:nil success:^(NSDictionary *responseObject) {
         //        ZPLog(@"%@",responseObject);
         success(responseObject);
     } failure:^(NSError *error) {

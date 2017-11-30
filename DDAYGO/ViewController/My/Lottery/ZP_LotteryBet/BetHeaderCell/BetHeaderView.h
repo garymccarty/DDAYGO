@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef NS_ENUM(NSUInteger, DDColorBet)
-{
+typedef NS_ENUM(NSUInteger, DDColorBet) {
+    
     DDRedBet        = 0,
     DDWriteBet      = 1,
 };

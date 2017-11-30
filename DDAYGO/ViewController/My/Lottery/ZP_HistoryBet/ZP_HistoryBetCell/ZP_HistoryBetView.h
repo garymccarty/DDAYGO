@@ -1,5 +1,5 @@
 //
-//  ZP_LotteryViewCell.h
+//  ZP_HistoryBetView.h
 //  DDAYGO
 //
 //  Created by Summer on 2017/11/30.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZP_LotteryViewCell : UITableViewCell
+@interface ZP_HistoryBetView : UIView
 
 @end

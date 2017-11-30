@@ -66,7 +66,7 @@
     [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(imageView).offset(85);
         make.top.equalTo(titleLabel).offset(35);
-        make.width.mas_offset(50);
+//        make.width.mas_offset(50);
     }];
     _descLabel = descLabel;
 
@@ -76,7 +76,7 @@
     [SizeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(descLabel).offset(45);
         make.top.equalTo(titleLabel).offset(35);
-        make.width.mas_offset(25);
+//        make.width.mas_offset(25);
     }];
     _SizeLabel = SizeLabel;
     
