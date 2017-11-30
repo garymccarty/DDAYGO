@@ -184,14 +184,6 @@
 		06F572411F9F204F00D61FDB /* BillDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5723B1F9F204F00D61FDB /* BillDetailViewController.xib */; };
 		06F572421F9F204F00D61FDB /* SearchTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5723E1F9F204F00D61FDB /* SearchTimeViewController.m */; };
 		06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5723F1F9F204F00D61FDB /* SearchTimeViewController.xib */; };
-		4D81EBCC1FCEFD9D00E3B700 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D81EBCA1FCEFD9D00E3B700 /* BetViewController.m */; };
-		4D81EBCD1FCEFD9D00E3B700 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81EBCB1FCEFD9D00E3B700 /* BetViewController.xib */; };
-		4D81EBD11FCF037600E3B700 /* BetHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D81EBD01FCF037600E3B700 /* BetHeaderView.m */; };
-		4D81EBD31FCF038000E3B700 /* BetHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81EBD21FCF038000E3B700 /* BetHeaderView.xib */; };
-		4D81EBD71FCF08C400E3B700 /* BetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D81EBD51FCF08C400E3B700 /* BetTableViewCell.m */; };
-		4D81EBD81FCF08C400E3B700 /* BetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81EBD61FCF08C400E3B700 /* BetTableViewCell.xib */; };
-		4D81EBDC1FCF0EB700E3B700 /* BetCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D81EBDA1FCF0EB700E3B700 /* BetCollectionViewCell.m */; };
-		4D81EBDD1FCF0EB700E3B700 /* BetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D81EBDB1FCF0EB700E3B700 /* BetCollectionViewCell.xib */; };
 		6FA32ACCA83E0A32B68FDCFC /* libPods-DDAYGO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */; };
 		C409F86E1FA17336009DE7B1 /* NestedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86A1FA17336009DE7B1 /* NestedCollectionViewCell.m */; };
 		C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86C1FA17336009DE7B1 /* SixthViewCell.m */; };
@@ -224,6 +216,48 @@
 		C4535E421FC56A0000DFFD62 /* ZP_MessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E411FC56A0000DFFD62 /* ZP_MessageViewCell.m */; };
 		C4535E461FC56A1400DFFD62 /* ZP_MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E451FC56A1400DFFD62 /* ZP_MessageModel.m */; };
 		C4566B641FBED233000FCC78 /* ZP_OrderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C4566B631FBED233000FCC78 /* ZP_OrderTool.m */; };
+		C4573F081FCF8ECF001DFE97 /* bg_choose_redball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EE61FCF8ECF001DFE97 /* bg_choose_redball@2x.png */; };
+		C4573F091FCF8ECF001DFE97 /* bg_choose_whiteball_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EE71FCF8ECF001DFE97 /* bg_choose_whiteball_normal@2x.png */; };
+		C4573F0A1FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EE81FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@2x.png */; };
+		C4573F0B1FCF8ECF001DFE97 /* bg_lottery_explan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EE91FCF8ECF001DFE97 /* bg_lottery_explan@2x.png */; };
+		C4573F0C1FCF8ECF001DFE97 /* bg_lottery_record@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EEA1FCF8ECF001DFE97 /* bg_lottery_record@2x.png */; };
+		C4573F0D1FCF8ECF001DFE97 /* bg_lottery_redball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EEB1FCF8ECF001DFE97 /* bg_lottery_redball@2x.png */; };
+		C4573F0E1FCF8ECF001DFE97 /* bg_lottery_whiteball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EEC1FCF8ECF001DFE97 /* bg_lottery_whiteball@2x.png */; };
+		C4573F0F1FCF8ECF001DFE97 /* bg_prize_explan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EED1FCF8ECF001DFE97 /* bg_prize_explan@2x.png */; };
+		C4573F101FCF8ECF001DFE97 /* icon_explan_fire@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EEE1FCF8ECF001DFE97 /* icon_explan_fire@2x.png */; };
+		C4573F111FCF8ECF001DFE97 /* icon_explan_first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EEF1FCF8ECF001DFE97 /* icon_explan_first@2x.png */; };
+		C4573F121FCF8ECF001DFE97 /* icon_explan_fourth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF01FCF8ECF001DFE97 /* icon_explan_fourth@2x.png */; };
+		C4573F131FCF8ECF001DFE97 /* icon_explan_second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF11FCF8ECF001DFE97 /* icon_explan_second@2x.png */; };
+		C4573F141FCF8ECF001DFE97 /* icon_explan_third@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF21FCF8ECF001DFE97 /* icon_explan_third@2x.png */; };
+		C4573F151FCF8ECF001DFE97 /* icon_forward_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF31FCF8ECF001DFE97 /* icon_forward_right@2x.png */; };
+		C4573F161FCF8ECF001DFE97 /* bg_choose_redball@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF51FCF8ECF001DFE97 /* bg_choose_redball@3x.png */; };
+		C4573F171FCF8ECF001DFE97 /* bg_choose_whiteball_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF61FCF8ECF001DFE97 /* bg_choose_whiteball_normal@3x.png */; };
+		C4573F181FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF71FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@3x.png */; };
+		C4573F191FCF8ECF001DFE97 /* bg_lottery_explan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF81FCF8ECF001DFE97 /* bg_lottery_explan@3x.png */; };
+		C4573F1A1FCF8ECF001DFE97 /* bg_lottery_record@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EF91FCF8ECF001DFE97 /* bg_lottery_record@3x.png */; };
+		C4573F1B1FCF8ECF001DFE97 /* bg_lottery_redball@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EFA1FCF8ECF001DFE97 /* bg_lottery_redball@3x.png */; };
+		C4573F1C1FCF8ECF001DFE97 /* bg_lottery_whiteball@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EFB1FCF8ECF001DFE97 /* bg_lottery_whiteball@3x.png */; };
+		C4573F1D1FCF8ECF001DFE97 /* bg_prize_explan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EFC1FCF8ECF001DFE97 /* bg_prize_explan@3x.png */; };
+		C4573F1E1FCF8ECF001DFE97 /* icon_explan_fire@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EFD1FCF8ECF001DFE97 /* icon_explan_fire@3x.png */; };
+		C4573F1F1FCF8ECF001DFE97 /* icon_explan_first@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EFE1FCF8ECF001DFE97 /* icon_explan_first@3x.png */; };
+		C4573F201FCF8ECF001DFE97 /* icon_explan_fourth@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573EFF1FCF8ECF001DFE97 /* icon_explan_fourth@3x.png */; };
+		C4573F211FCF8ECF001DFE97 /* icon_explan_second@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F001FCF8ECF001DFE97 /* icon_explan_second@3x.png */; };
+		C4573F221FCF8ECF001DFE97 /* icon_explan_third@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F011FCF8ECF001DFE97 /* icon_explan_third@3x.png */; };
+		C4573F231FCF8ECF001DFE97 /* icon_forward_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F021FCF8ECF001DFE97 /* icon_forward_right@3x.png */; };
+		C4573F241FCF8ECF001DFE97 /* 历史开奖_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F031FCF8ECF001DFE97 /* 历史开奖_spec.png */; };
+		C4573F251FCF8ECF001DFE97 /* 历史开奖详情.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F041FCF8ECF001DFE97 /* 历史开奖详情.png */; };
+		C4573F261FCF8ECF001DFE97 /* 说明_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F051FCF8ECF001DFE97 /* 说明_spec.png */; };
+		C4573F271FCF8ECF001DFE97 /* 赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F061FCF8ECF001DFE97 /* 赏金彩_spec.png */; };
+		C4573F281FCF8ECF001DFE97 /* 选择赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F071FCF8ECF001DFE97 /* 选择赏金彩_spec.png */; };
+		C4573F371FCFA3A6001DFE97 /* BetCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */; };
+		C4573F381FCFA3A6001DFE97 /* BetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */; };
+		C4573F391FCFA3A6001DFE97 /* BetHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F2F1FCFA3A6001DFE97 /* BetHeaderView.m */; };
+		C4573F3A1FCFA3A6001DFE97 /* BetHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F301FCFA3A6001DFE97 /* BetHeaderView.xib */; };
+		C4573F3B1FCFA3A6001DFE97 /* BetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F321FCFA3A6001DFE97 /* BetTableViewCell.m */; };
+		C4573F3C1FCFA3A6001DFE97 /* BetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F331FCFA3A6001DFE97 /* BetTableViewCell.xib */; };
+		C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F351FCFA3A6001DFE97 /* BetViewController.m */; };
+		C4573F3E1FCFA3A6001DFE97 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F361FCFA3A6001DFE97 /* BetViewController.xib */; };
+		C4573F401FCFA4F3001DFE97 /* 历史下注.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F3F1FCFA4F2001DFE97 /* 历史下注.png */; };
 		C45868FA1FC7CE06000CEB92 /* collectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45868F91FC7CE06000CEB92 /* collectionModel.m */; };
 		C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */; };
 		C45D83051FAB00EB003C35EB /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C45D83041FAB00EB003C35EB /* UIButton+countDown.m */; };
@@ -659,18 +693,6 @@
 		06F5723F1F9F204F00D61FDB /* SearchTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTimeViewController.xib; sourceTree = "<group>"; };
 		06F572441F9F3A0900D61FDB /* DataInterface.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataInterface.pch; sourceTree = "<group>"; };
 		0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDAYGO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D81EBC91FCEFD9D00E3B700 /* BetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
-		4D81EBCA1FCEFD9D00E3B700 /* BetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
-		4D81EBCB1FCEFD9D00E3B700 /* BetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetViewController.xib; sourceTree = "<group>"; };
-		4D81EBCF1FCF037600E3B700 /* BetHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetHeaderView.h; sourceTree = "<group>"; };
-		4D81EBD01FCF037600E3B700 /* BetHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetHeaderView.m; sourceTree = "<group>"; };
-		4D81EBD21FCF038000E3B700 /* BetHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetHeaderView.xib; sourceTree = "<group>"; };
-		4D81EBD41FCF08C400E3B700 /* BetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetTableViewCell.h; sourceTree = "<group>"; };
-		4D81EBD51FCF08C400E3B700 /* BetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetTableViewCell.m; sourceTree = "<group>"; };
-		4D81EBD61FCF08C400E3B700 /* BetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetTableViewCell.xib; sourceTree = "<group>"; };
-		4D81EBD91FCF0EB700E3B700 /* BetCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetCollectionViewCell.h; sourceTree = "<group>"; };
-		4D81EBDA1FCF0EB700E3B700 /* BetCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetCollectionViewCell.m; sourceTree = "<group>"; };
-		4D81EBDB1FCF0EB700E3B700 /* BetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetCollectionViewCell.xib; sourceTree = "<group>"; };
 		6A14FE6EC0BD7CDD0156BD7F /* Pods-DDAYGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.release.xcconfig"; sourceTree = "<group>"; };
 		949508FD8C61CA662D6E2034 /* Pods-DDAYGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.debug.xcconfig"; sourceTree = "<group>"; };
 		C409F8691FA17336009DE7B1 /* NestedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NestedCollectionViewCell.h; sourceTree = "<group>"; };
@@ -742,6 +764,52 @@
 		C4535E451FC56A1400DFFD62 /* ZP_MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_MessageModel.m; sourceTree = "<group>"; };
 		C4566B621FBED233000FCC78 /* ZP_OrderTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderTool.h; sourceTree = "<group>"; };
 		C4566B631FBED233000FCC78 /* ZP_OrderTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_OrderTool.m; sourceTree = "<group>"; };
+		C4573EE61FCF8ECF001DFE97 /* bg_choose_redball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_choose_redball@2x.png"; sourceTree = "<group>"; };
+		C4573EE71FCF8ECF001DFE97 /* bg_choose_whiteball_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_choose_whiteball_normal@2x.png"; sourceTree = "<group>"; };
+		C4573EE81FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_choose_whiteball_pressed@2x.png"; sourceTree = "<group>"; };
+		C4573EE91FCF8ECF001DFE97 /* bg_lottery_explan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_explan@2x.png"; sourceTree = "<group>"; };
+		C4573EEA1FCF8ECF001DFE97 /* bg_lottery_record@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_record@2x.png"; sourceTree = "<group>"; };
+		C4573EEB1FCF8ECF001DFE97 /* bg_lottery_redball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_redball@2x.png"; sourceTree = "<group>"; };
+		C4573EEC1FCF8ECF001DFE97 /* bg_lottery_whiteball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_whiteball@2x.png"; sourceTree = "<group>"; };
+		C4573EED1FCF8ECF001DFE97 /* bg_prize_explan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_prize_explan@2x.png"; sourceTree = "<group>"; };
+		C4573EEE1FCF8ECF001DFE97 /* icon_explan_fire@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_fire@2x.png"; sourceTree = "<group>"; };
+		C4573EEF1FCF8ECF001DFE97 /* icon_explan_first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_first@2x.png"; sourceTree = "<group>"; };
+		C4573EF01FCF8ECF001DFE97 /* icon_explan_fourth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_fourth@2x.png"; sourceTree = "<group>"; };
+		C4573EF11FCF8ECF001DFE97 /* icon_explan_second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_second@2x.png"; sourceTree = "<group>"; };
+		C4573EF21FCF8ECF001DFE97 /* icon_explan_third@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_third@2x.png"; sourceTree = "<group>"; };
+		C4573EF31FCF8ECF001DFE97 /* icon_forward_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_forward_right@2x.png"; sourceTree = "<group>"; };
+		C4573EF51FCF8ECF001DFE97 /* bg_choose_redball@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_choose_redball@3x.png"; sourceTree = "<group>"; };
+		C4573EF61FCF8ECF001DFE97 /* bg_choose_whiteball_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_choose_whiteball_normal@3x.png"; sourceTree = "<group>"; };
+		C4573EF71FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_choose_whiteball_pressed@3x.png"; sourceTree = "<group>"; };
+		C4573EF81FCF8ECF001DFE97 /* bg_lottery_explan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_explan@3x.png"; sourceTree = "<group>"; };
+		C4573EF91FCF8ECF001DFE97 /* bg_lottery_record@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_record@3x.png"; sourceTree = "<group>"; };
+		C4573EFA1FCF8ECF001DFE97 /* bg_lottery_redball@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_redball@3x.png"; sourceTree = "<group>"; };
+		C4573EFB1FCF8ECF001DFE97 /* bg_lottery_whiteball@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_lottery_whiteball@3x.png"; sourceTree = "<group>"; };
+		C4573EFC1FCF8ECF001DFE97 /* bg_prize_explan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_prize_explan@3x.png"; sourceTree = "<group>"; };
+		C4573EFD1FCF8ECF001DFE97 /* icon_explan_fire@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_fire@3x.png"; sourceTree = "<group>"; };
+		C4573EFE1FCF8ECF001DFE97 /* icon_explan_first@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_first@3x.png"; sourceTree = "<group>"; };
+		C4573EFF1FCF8ECF001DFE97 /* icon_explan_fourth@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_fourth@3x.png"; sourceTree = "<group>"; };
+		C4573F001FCF8ECF001DFE97 /* icon_explan_second@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_second@3x.png"; sourceTree = "<group>"; };
+		C4573F011FCF8ECF001DFE97 /* icon_explan_third@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_explan_third@3x.png"; sourceTree = "<group>"; };
+		C4573F021FCF8ECF001DFE97 /* icon_forward_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_forward_right@3x.png"; sourceTree = "<group>"; };
+		C4573F031FCF8ECF001DFE97 /* 历史开奖_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史开奖_spec.png"; sourceTree = "<group>"; };
+		C4573F041FCF8ECF001DFE97 /* 历史开奖详情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史开奖详情.png"; sourceTree = "<group>"; };
+		C4573F051FCF8ECF001DFE97 /* 说明_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "说明_spec.png"; sourceTree = "<group>"; };
+		C4573F061FCF8ECF001DFE97 /* 赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赏金彩_spec.png"; sourceTree = "<group>"; };
+		C4573F071FCF8ECF001DFE97 /* 选择赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择赏金彩_spec.png"; sourceTree = "<group>"; };
+		C4573F2B1FCFA3A6001DFE97 /* BetCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetCollectionViewCell.h; sourceTree = "<group>"; };
+		C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetCollectionViewCell.m; sourceTree = "<group>"; };
+		C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetCollectionViewCell.xib; sourceTree = "<group>"; };
+		C4573F2E1FCFA3A6001DFE97 /* BetHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetHeaderView.h; sourceTree = "<group>"; };
+		C4573F2F1FCFA3A6001DFE97 /* BetHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetHeaderView.m; sourceTree = "<group>"; };
+		C4573F301FCFA3A6001DFE97 /* BetHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetHeaderView.xib; sourceTree = "<group>"; };
+		C4573F311FCFA3A6001DFE97 /* BetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetTableViewCell.h; sourceTree = "<group>"; };
+		C4573F321FCFA3A6001DFE97 /* BetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetTableViewCell.m; sourceTree = "<group>"; };
+		C4573F331FCFA3A6001DFE97 /* BetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetTableViewCell.xib; sourceTree = "<group>"; };
+		C4573F341FCFA3A6001DFE97 /* BetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
+		C4573F351FCFA3A6001DFE97 /* BetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
+		C4573F361FCFA3A6001DFE97 /* BetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetViewController.xib; sourceTree = "<group>"; };
+		C4573F3F1FCFA4F2001DFE97 /* 历史下注.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史下注.png"; sourceTree = "<group>"; };
 		C45868F81FC7CE06000CEB92 /* collectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectionModel.h; sourceTree = "<group>"; };
 		C45868F91FC7CE06000CEB92 /* collectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectionModel.m; sourceTree = "<group>"; };
 		C45868FF1FC80C8E000CEB92 /* ZP_OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderModel.h; sourceTree = "<group>"; };
@@ -1148,6 +1216,7 @@
 		0641BB971F67B60B00E72FEF /* Testbag */ = {
 			isa = PBXGroup;
 			children = (
+				C4573EE41FCF8ECF001DFE97 /* 彩票_ios */,
 				062C9D4A1F8CD6F900E14987 /* 图片 */,
 				064448DE1F6A16A00004DFE4 /* banner_jiazai.jpg */,
 				062C9D671F8CDB7900E14987 /* headImage.jpg */,
@@ -2125,33 +2194,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4D81EBC81FCEFD8700E3B700 /* Bet */ = {
-			isa = PBXGroup;
-			children = (
-				4D81EBCE1FCF035B00E3B700 /* BetHeaderCell */,
-				4D81EBC91FCEFD9D00E3B700 /* BetViewController.h */,
-				4D81EBCA1FCEFD9D00E3B700 /* BetViewController.m */,
-				4D81EBCB1FCEFD9D00E3B700 /* BetViewController.xib */,
-			);
-			path = Bet;
-			sourceTree = "<group>";
-		};
-		4D81EBCE1FCF035B00E3B700 /* BetHeaderCell */ = {
-			isa = PBXGroup;
-			children = (
-				4D81EBCF1FCF037600E3B700 /* BetHeaderView.h */,
-				4D81EBD01FCF037600E3B700 /* BetHeaderView.m */,
-				4D81EBD21FCF038000E3B700 /* BetHeaderView.xib */,
-				4D81EBD41FCF08C400E3B700 /* BetTableViewCell.h */,
-				4D81EBD51FCF08C400E3B700 /* BetTableViewCell.m */,
-				4D81EBD61FCF08C400E3B700 /* BetTableViewCell.xib */,
-				4D81EBD91FCF0EB700E3B700 /* BetCollectionViewCell.h */,
-				4D81EBDA1FCF0EB700E3B700 /* BetCollectionViewCell.m */,
-				4D81EBDB1FCF0EB700E3B700 /* BetCollectionViewCell.xib */,
-			);
-			path = BetHeaderCell;
-			sourceTree = "<group>";
-		};
 		C409F8671FA17336009DE7B1 /* ZP_Sixth-Nested */ = {
 			isa = PBXGroup;
 			children = (
@@ -2350,6 +2392,90 @@
 				C4566B631FBED233000FCC78 /* ZP_OrderTool.m */,
 			);
 			path = ZP_OrderTool;
+			sourceTree = "<group>";
+		};
+		C4573EE41FCF8ECF001DFE97 /* 彩票_ios */ = {
+			isa = PBXGroup;
+			children = (
+				C4573EE51FCF8ECF001DFE97 /* 2x */,
+				C4573EF41FCF8ECF001DFE97 /* 3x */,
+				C4573F031FCF8ECF001DFE97 /* 历史开奖_spec.png */,
+				C4573F3F1FCFA4F2001DFE97 /* 历史下注.png */,
+				C4573F041FCF8ECF001DFE97 /* 历史开奖详情.png */,
+				C4573F051FCF8ECF001DFE97 /* 说明_spec.png */,
+				C4573F061FCF8ECF001DFE97 /* 赏金彩_spec.png */,
+				C4573F071FCF8ECF001DFE97 /* 选择赏金彩_spec.png */,
+			);
+			path = "彩票_ios";
+			sourceTree = "<group>";
+		};
+		C4573EE51FCF8ECF001DFE97 /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				C4573EE61FCF8ECF001DFE97 /* bg_choose_redball@2x.png */,
+				C4573EE71FCF8ECF001DFE97 /* bg_choose_whiteball_normal@2x.png */,
+				C4573EE81FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@2x.png */,
+				C4573EE91FCF8ECF001DFE97 /* bg_lottery_explan@2x.png */,
+				C4573EEA1FCF8ECF001DFE97 /* bg_lottery_record@2x.png */,
+				C4573EEB1FCF8ECF001DFE97 /* bg_lottery_redball@2x.png */,
+				C4573EEC1FCF8ECF001DFE97 /* bg_lottery_whiteball@2x.png */,
+				C4573EED1FCF8ECF001DFE97 /* bg_prize_explan@2x.png */,
+				C4573EEE1FCF8ECF001DFE97 /* icon_explan_fire@2x.png */,
+				C4573EEF1FCF8ECF001DFE97 /* icon_explan_first@2x.png */,
+				C4573EF01FCF8ECF001DFE97 /* icon_explan_fourth@2x.png */,
+				C4573EF11FCF8ECF001DFE97 /* icon_explan_second@2x.png */,
+				C4573EF21FCF8ECF001DFE97 /* icon_explan_third@2x.png */,
+				C4573EF31FCF8ECF001DFE97 /* icon_forward_right@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		C4573EF41FCF8ECF001DFE97 /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				C4573EF51FCF8ECF001DFE97 /* bg_choose_redball@3x.png */,
+				C4573EF61FCF8ECF001DFE97 /* bg_choose_whiteball_normal@3x.png */,
+				C4573EF71FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@3x.png */,
+				C4573EF81FCF8ECF001DFE97 /* bg_lottery_explan@3x.png */,
+				C4573EF91FCF8ECF001DFE97 /* bg_lottery_record@3x.png */,
+				C4573EFA1FCF8ECF001DFE97 /* bg_lottery_redball@3x.png */,
+				C4573EFB1FCF8ECF001DFE97 /* bg_lottery_whiteball@3x.png */,
+				C4573EFC1FCF8ECF001DFE97 /* bg_prize_explan@3x.png */,
+				C4573EFD1FCF8ECF001DFE97 /* icon_explan_fire@3x.png */,
+				C4573EFE1FCF8ECF001DFE97 /* icon_explan_first@3x.png */,
+				C4573EFF1FCF8ECF001DFE97 /* icon_explan_fourth@3x.png */,
+				C4573F001FCF8ECF001DFE97 /* icon_explan_second@3x.png */,
+				C4573F011FCF8ECF001DFE97 /* icon_explan_third@3x.png */,
+				C4573F021FCF8ECF001DFE97 /* icon_forward_right@3x.png */,
+			);
+			path = 3x;
+			sourceTree = "<group>";
+		};
+		C4573F291FCFA3A6001DFE97 /* ZP_LotteryBet */ = {
+			isa = PBXGroup;
+			children = (
+				C4573F341FCFA3A6001DFE97 /* BetViewController.h */,
+				C4573F351FCFA3A6001DFE97 /* BetViewController.m */,
+				C4573F361FCFA3A6001DFE97 /* BetViewController.xib */,
+				C4573F2A1FCFA3A6001DFE97 /* BetHeaderCell */,
+			);
+			path = ZP_LotteryBet;
+			sourceTree = "<group>";
+		};
+		C4573F2A1FCFA3A6001DFE97 /* BetHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4573F2B1FCFA3A6001DFE97 /* BetCollectionViewCell.h */,
+				C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */,
+				C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */,
+				C4573F2E1FCFA3A6001DFE97 /* BetHeaderView.h */,
+				C4573F2F1FCFA3A6001DFE97 /* BetHeaderView.m */,
+				C4573F301FCFA3A6001DFE97 /* BetHeaderView.xib */,
+				C4573F311FCFA3A6001DFE97 /* BetTableViewCell.h */,
+				C4573F321FCFA3A6001DFE97 /* BetTableViewCell.m */,
+				C4573F331FCFA3A6001DFE97 /* BetTableViewCell.xib */,
+			);
+			path = BetHeaderCell;
 			sourceTree = "<group>";
 		};
 		C45868F71FC7CE06000CEB92 /* ZP_CollcetionModel */ = {
@@ -2621,8 +2747,8 @@
 		C45FAF341FCD40C800BD4CE1 /* Lottery */ = {
 			isa = PBXGroup;
 			children = (
-				4D81EBC81FCEFD8700E3B700 /* Bet */,
 				C4399D671FCE849F00B7B96D /* LotteryHomePage */,
+				C4573F291FCFA3A6001DFE97 /* ZP_LotteryBet */,
 			);
 			path = Lottery;
 			sourceTree = "<group>";
@@ -3242,8 +3368,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4573F121FCF8ECF001DFE97 /* icon_explan_fourth@2x.png in Resources */,
 				062C9D601F8CD6F900E14987 /* button_4@3x.png in Resources */,
 				06621DB31F9758840030983F /* RegisterController.xib in Resources */,
+				C4573F221FCF8ECF001DFE97 /* icon_explan_third@3x.png in Resources */,
 				06F572211F9F1E8700D61FDB /* BillViewController.xib in Resources */,
 				062C9D5A1F8CD6F900E14987 /* button_1@3x.png in Resources */,
 				06F5716C1F9F15CE00D61FDB /* CollectionTableViewCell.xib in Resources */,
@@ -3252,15 +3380,23 @@
 				06F571D61F9F1A7900D61FDB /* ResetPasswordViewController.xib in Resources */,
 				C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */,
 				0682BE6D1F90725700894F4E /* img_home_advertisemen.png in Resources */,
+				C4573F1B1FCF8ECF001DFE97 /* bg_lottery_redball@3x.png in Resources */,
+				C4573F231FCF8ECF001DFE97 /* icon_forward_right@3x.png in Resources */,
+				C4573F0D1FCF8ECF001DFE97 /* bg_lottery_redball@2x.png in Resources */,
 				06F572231F9F1E8700D61FDB /* BillTableViewCell.xib in Resources */,
 				06F571A61F9F193300D61FDB /* PayViewCell.xib in Resources */,
+				C4573F101FCF8ECF001DFE97 /* icon_explan_fire@2x.png in Resources */,
+				C4573F0E1FCF8ECF001DFE97 /* bg_lottery_whiteball@2x.png in Resources */,
 				C47E76271FB5A1C7009F279A /* LeftTableViewCell.xib in Resources */,
+				C4573F0A1FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@2x.png in Resources */,
+				C4573F241FCF8ECF001DFE97 /* 历史开奖_spec.png in Resources */,
 				06621DAC1F9758720030983F /* LoginController.xib in Resources */,
 				C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */,
 				06F571921F9F16E600D61FDB /* NewsViewController.xib in Resources */,
 				06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */,
-				4D81EBD31FCF038000E3B700 /* BetHeaderView.xib in Resources */,
 				C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */,
+				C4573F281FCF8ECF001DFE97 /* 选择赏金彩_spec.png in Resources */,
+				C4573F161FCF8ECF001DFE97 /* bg_choose_redball@3x.png in Resources */,
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
 				06F571A81F9F193300D61FDB /* PayViewController.xib in Resources */,
 				062C9D5D1F8CD6F900E14987 /* button_3@2x.png in Resources */,
@@ -3269,12 +3405,16 @@
 				06F5721D1F9F1E8700D61FDB /* AllCategoriesView.xib in Resources */,
 				0662AB5E1F9610BF0031F22B /* LogregisterController.xib in Resources */,
 				C47212AC1FB18A4E0055578E /* SettingViewController.xib in Resources */,
+				C4573F171FCF8ECF001DFE97 /* bg_choose_whiteball_normal@3x.png in Resources */,
 				06F572291F9F1E8700D61FDB /* OrderDetailViewController.xib in Resources */,
 				06F572331F9F1E8700D61FDB /* ReceivingViewCell.xib in Resources */,
 				C435171F1FB2AC180066302E /* ConcernShopTableViewCell.xib in Resources */,
 				C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */,
 				0641BBA31F67B60B00E72FEF /* Third.png in Resources */,
 				063FE0551F614D24009910FF /* LaunchScreen.storyboard in Resources */,
+				C4573F1F1FCF8ECF001DFE97 /* icon_explan_first@3x.png in Resources */,
+				C4573F0C1FCF8ECF001DFE97 /* bg_lottery_record@2x.png in Resources */,
+				C4573F1C1FCF8ECF001DFE97 /* bg_lottery_whiteball@3x.png in Resources */,
 				062C9D5B1F8CD6F900E14987 /* button_2@2x.png in Resources */,
 				C47E765D1FB5A5A6009F279A /* DetailedController.xib in Resources */,
 				06F572311F9F1E8700D61FDB /* OrderSearchView.xib in Resources */,
@@ -3283,10 +3423,13 @@
 				06F5722D1F9F1E8700D61FDB /* OrderManagerViewController.xib in Resources */,
 				06F571D21F9F1A7900D61FDB /* BindingICUEViewController.xib in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
+				C4573F131FCF8ECF001DFE97 /* icon_explan_second@2x.png in Resources */,
 				C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */,
+				C4573F1D1FCF8ECF001DFE97 /* bg_prize_explan@3x.png in Resources */,
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
 				062C9D631F8CD6F900E14987 /* button_6@2x.png in Resources */,
 				06F571D81F9F1A7900D61FDB /* EditViewController.xib in Resources */,
+				C4573F1E1FCF8ECF001DFE97 /* icon_explan_fire@3x.png in Resources */,
 				06F572411F9F204F00D61FDB /* BillDetailViewController.xib in Resources */,
 				C47096931FB04998006EA52C /* BindingEmailController.xib in Resources */,
 				062C9D621F8CD6F900E14987 /* button_5@3x.png in Resources */,
@@ -3294,39 +3437,56 @@
 				064249871F99FBEB00340EBA /* PayFailController.xib in Resources */,
 				064449B51F6A9B250004DFE4 /* MJRefresh.bundle in Resources */,
 				064249821F99F36000340EBA /* PayPassController.xib in Resources */,
+				C4573F211FCF8ECF001DFE97 /* icon_explan_second@3x.png in Resources */,
+				C4573F401FCFA4F3001DFE97 /* 历史下注.png in Resources */,
 				C45FAF8D1FCD564C00BD4CE1 /* SelectedViewController.xib in Resources */,
 				06F571DA1F9F1A7900D61FDB /* AddressViewController.xib in Resources */,
 				06F571DE1F9F1A7900D61FDB /* AddAddressViewController.xib in Resources */,
+				C4573F191FCF8ECF001DFE97 /* bg_lottery_explan@3x.png in Resources */,
 				062C9D591F8CD6F900E14987 /* button_1@2x.png in Resources */,
 				06F571DC1F9F1A7900D61FDB /* AddressTableViewCell.xib in Resources */,
 				06F572351F9F1E8700D61FDB /* ReceivingController.xib in Resources */,
+				C4573F081FCF8ECF001DFE97 /* bg_choose_redball@2x.png in Resources */,
+				C4573F251FCF8ECF001DFE97 /* 历史开奖详情.png in Resources */,
 				C47E76391FB5A1C7009F279A /* PurchaseView.xib in Resources */,
 				C43517281FB2AC4B0066302E /* ConcernShopViewController.xib in Resources */,
+				C4573F151FCF8ECF001DFE97 /* icon_forward_right@2x.png in Resources */,
 				C4535E3E1FC5654500DFFD62 /* PayMoneyCell.xib in Resources */,
+				C4573F3E1FCFA3A6001DFE97 /* BetViewController.xib in Resources */,
 				0682BE6B1F906D7B00894F4E /* Shopping2.png in Resources */,
+				C4573F381FCFA3A6001DFE97 /* BetCollectionViewCell.xib in Resources */,
 				06F5722B1F9F1E8700D61FDB /* OrderManagerCollectionViewCell.xib in Resources */,
-				4D81EBD81FCF08C400E3B700 /* BetTableViewCell.xib in Resources */,
-				4D81EBDD1FCF0EB700E3B700 /* BetCollectionViewCell.xib in Resources */,
+				C4573F0F1FCF8ECF001DFE97 /* bg_prize_explan@2x.png in Resources */,
+				C4573F141FCF8ECF001DFE97 /* icon_explan_third@2x.png in Resources */,
 				064449A61F6A9B250004DFE4 /* LICENSE in Resources */,
 				C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */,
 				062C9D611F8CD6F900E14987 /* button_5@2x.png in Resources */,
+				C4573F181FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@3x.png in Resources */,
 				C45F22BF1FA017E800F5DB41 /* button_7@2x.png in Resources */,
+				C4573F111FCF8ECF001DFE97 /* icon_explan_first@2x.png in Resources */,
 				C47E76521FB5A42F009F279A /* ClassificationViewController.xib in Resources */,
 				062C9D5C1F8CD6F900E14987 /* button_2@3x.png in Resources */,
 				063FE0521F614D24009910FF /* Assets.xcassets in Resources */,
 				C47E76371FB5A1C7009F279A /* ProductDescriptionView.xib in Resources */,
 				06F5716E1F9F15CE00D61FDB /* CollectionViewController.xib in Resources */,
-				4D81EBCD1FCEFD9D00E3B700 /* BetViewController.xib in Resources */,
+				C4573F201FCF8ECF001DFE97 /* icon_explan_fourth@3x.png in Resources */,
+				C4573F271FCF8ECF001DFE97 /* 赏金彩_spec.png in Resources */,
+				C4573F1A1FCF8ECF001DFE97 /* bg_lottery_record@3x.png in Resources */,
 				0682BE801F90C8F000894F4E /* seven.png in Resources */,
 				062C9D681F8CDB7900E14987 /* headImage.jpg in Resources */,
+				C4573F3A1FCFA3A6001DFE97 /* BetHeaderView.xib in Resources */,
+				C4573F0B1FCF8ECF001DFE97 /* bg_lottery_explan@2x.png in Resources */,
 				064448E21F6A1F7F0004DFE4 /* Shopping.png in Resources */,
 				C47096A81FB065CE006EA52C /* LanguageController.xib in Resources */,
 				064448DF1F6A16A00004DFE4 /* banner_jiazai.jpg in Resources */,
+				C4573F261FCF8ECF001DFE97 /* 说明_spec.png in Resources */,
 				C4399D7C1FCE87A000B7B96D /* ZP_LotteryViewCell.xib in Resources */,
 				0641BBA11F67B60B00E72FEF /* Second.png in Resources */,
 				063FE0501F614D24009910FF /* Main.storyboard in Resources */,
+				C4573F3C1FCFA3A6001DFE97 /* BetTableViewCell.xib in Resources */,
 				C470969C1FB0602F006EA52C /* Localizable.strings in Resources */,
 				C435173A1FB2AC830066302E /* FootprintCollectionViewCell.xib in Resources */,
+				C4573F091FCF8ECF001DFE97 /* bg_choose_whiteball_normal@2x.png in Resources */,
 				C47E76311FB5A1C7009F279A /* TextdetailsViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3441,6 +3601,7 @@
 				06F571D31F9F1A7900D61FDB /* DialogBox.m in Sources */,
 				064449BA1F6A9B250004DFE4 /* UIView+MJExtension.m in Sources */,
 				064449B31F6A9B250004DFE4 /* MJRefreshNormalHeader.m in Sources */,
+				C4573F371FCFA3A6001DFE97 /* BetCollectionViewCell.m in Sources */,
 				C45F233D1FA0757A00F5DB41 /* HomeViewController.m in Sources */,
 				C47E764A1FB5A1C7009F279A /* Pop-upTableViewDataSource.m in Sources */,
 				06418F561F7A076A00479523 /* NSArray+MASAdditions.m in Sources */,
@@ -3466,7 +3627,6 @@
 				06F572281F9F1E8700D61FDB /* OrderDetailViewController.m in Sources */,
 				06F572321F9F1E8700D61FDB /* ReceivingViewCell.m in Sources */,
 				06F571021F9F0CA500D61FDB /* ConfirmViewController.m in Sources */,
-				4D81EBDC1FCF0EB700E3B700 /* BetCollectionViewCell.m in Sources */,
 				063FE04D1F614D24009910FF /* ViewController.m in Sources */,
 				06F571611F9F154E00D61FDB /* MyViewController.m in Sources */,
 				C47750811FBA9A1E00AE8B3F /* ZP_FirstModel.m in Sources */,
@@ -3494,6 +3654,7 @@
 				0641BBD91F67F9E400E72FEF /* SDWebImageManager.m in Sources */,
 				06F571D51F9F1A7900D61FDB /* ResetPasswordViewController.m in Sources */,
 				C47E763F1FB5A1C7009F279A /* ZPLoopViewCell.m in Sources */,
+				C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */,
 				06F571131F9F0D6800D61FDB /* AppraiseController.m in Sources */,
 				C45F23491FA0809000F5DB41 /* FourthViewCell.m in Sources */,
 				0641BBD31F67F9E400E72FEF /* NSData+ImageContentType.m in Sources */,
@@ -3583,7 +3744,6 @@
 				0641BBE01F67F9E400E72FEF /* UIView+WebCacheOperation.m in Sources */,
 				064449AB1F6A9B250004DFE4 /* MJRefreshHeader.m in Sources */,
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
-				4D81EBCC1FCEFD9D00E3B700 /* BetViewController.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,
 				C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */,
 				C47E76321FB5A1C7009F279A /* DetailedController.m in Sources */,
@@ -3592,7 +3752,7 @@
 				06F5722E1F9F1E8700D61FDB /* ReturnDetailViewController.m in Sources */,
 				06F571AA1F9F193300D61FDB /* QCodeController.m in Sources */,
 				C47E76281FB5A1C7009F279A /* ZP_LeftModel.m in Sources */,
-				4D81EBD11FCF037600E3B700 /* BetHeaderView.m in Sources */,
+				C4573F391FCFA3A6001DFE97 /* BetHeaderView.m in Sources */,
 				C45FAF9F1FCD693100BD4CE1 /* UIBarButtonItem+Button.m in Sources */,
 				0641BBDC1F67F9E400E72FEF /* UIImage+GIF.m in Sources */,
 				064449AA1F6A9B250004DFE4 /* MJRefreshFooter.m in Sources */,
@@ -3614,7 +3774,7 @@
 				06F570EC1F9F0ABA00D61FDB /* ShoppingViewController.m in Sources */,
 				06F571E11F9F1A7900D61FDB /* SelectPhotoManager.m in Sources */,
 				0641BBDF1F67F9E400E72FEF /* UIImageView+WebCache.m in Sources */,
-				4D81EBD71FCF08C400E3B700 /* BetTableViewCell.m in Sources */,
+				C4573F3B1FCFA3A6001DFE97 /* BetTableViewCell.m in Sources */,
 				C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */,
 				C45F22D11FA05A9E00F5DB41 /* UITabBarItem+Theme.m in Sources */,
 				C45F22EE1FA0746300F5DB41 /* UIButton+UIButtonImageWithLable.m in Sources */,

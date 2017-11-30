@@ -48,51 +48,6 @@
     [self.navigationController pushViewController:viewController animated:YES];
     ZPLog(@"说明");
 }
-
-// 表头
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    UIView * myview = [UIView new];
-    self.bottomCV.tableHeaderView = myview; // 表头跟着cell一起滚动
-    [myview setBackgroundColor:ZP_Graybackground];
-    
-//    标题
-    ZP_GeneralLabel * TitleLabel = [ZP_GeneralLabel initWithtextLabel:_TitleLabel.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
-    TitleLabel.text = @"中奖号码";
-    [myview addSubview:TitleLabel];
-    _TitleLabel = TitleLabel;
-    [self.TitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(myview).offset(10);
-        make.top.equalTo(myview).offset(10);
-    }];
-    
-//    编号
-    ZP_GeneralLabel * NumberingLabel = [ZP_GeneralLabel initWithtextLabel:_NumberingLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
-    NumberingLabel.text = @"第207136期";
-    [myview addSubview:NumberingLabel];
-    _NumberingLabel = NumberingLabel;
-    [self.NumberingLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(TitleLabel).offset(65);
-        make.top.equalTo(TitleLabel).offset(2);
-    }];
-    
-//    日期
-    ZP_GeneralLabel * DatesLabel = [ZP_GeneralLabel initWithtextLabel:_DatesLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
-    DatesLabel.text = @"2017-11-19(周日)";
-    [myview addSubview:DatesLabel];
-    _DatesLabel = DatesLabel;
-    [self.DatesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(NumberingLabel).offset(70);
-        make.top.equalTo(NumberingLabel).offset(0);
-    }];
-    
-    return myview;
-}
-
-//  设置表头高度
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//
-//    return 50;
-//}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 2;

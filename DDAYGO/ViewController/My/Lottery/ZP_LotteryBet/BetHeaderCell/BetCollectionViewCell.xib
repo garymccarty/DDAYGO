@@ -18,29 +18,36 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snb-gj-gLD">
-                        <rect key="frame" x="10" y="10" width="30" height="30"/>
-                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <state key="normal" title="1">
-                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snb-gj-gLD">
+                        <rect key="frame" x="5" y="5" width="40" height="40"/>
+                        <state key="normal" title="1" backgroundImage="bg_choose_whiteball_normal">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
+                        <state key="selected" backgroundImage="bg_choose_whiteball_pressed"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="15"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="CountBUt:" destination="gTV-IL-0wX" eventType="touchUpInside" id="IvQ-av-0il"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Snb-gj-gLD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="9dk-fC-IBz"/>
-                <constraint firstAttribute="bottom" secondItem="Snb-gj-gLD" secondAttribute="bottom" constant="10" id="Qvh-Nz-Xn9"/>
-                <constraint firstItem="Snb-gj-gLD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="uaa-xM-8lm"/>
-                <constraint firstAttribute="trailing" secondItem="Snb-gj-gLD" secondAttribute="trailing" constant="10" id="wNP-z9-XPS"/>
+                <constraint firstItem="Snb-gj-gLD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="9dk-fC-IBz"/>
+                <constraint firstAttribute="bottom" secondItem="Snb-gj-gLD" secondAttribute="bottom" constant="5" id="Qvh-Nz-Xn9"/>
+                <constraint firstItem="Snb-gj-gLD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="uaa-xM-8lm"/>
+                <constraint firstAttribute="trailing" secondItem="Snb-gj-gLD" secondAttribute="trailing" constant="5" id="wNP-z9-XPS"/>
             </constraints>
             <connections>
                 <outlet property="countBtn" destination="Snb-gj-gLD" id="fcr-iC-S8k"/>
             </connections>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="bg_choose_whiteball_normal" width="32" height="32"/>
+        <image name="bg_choose_whiteball_pressed" width="32" height="32"/>
+    </resources>
 </document>

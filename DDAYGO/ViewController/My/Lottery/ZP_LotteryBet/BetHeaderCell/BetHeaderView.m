@@ -2,7 +2,7 @@
 //  BetHeaderView.m
 //  DDAYGO
 //
-//  Created by 赵宁 on 2017/11/29.
+//  Created by Summer on 2017/11/28.
 //  Copyright © 2017年 Summer. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.backgroundColor = [UIColor yellowColor];
+    self.backgroundColor = [UIColor whiteColor];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
