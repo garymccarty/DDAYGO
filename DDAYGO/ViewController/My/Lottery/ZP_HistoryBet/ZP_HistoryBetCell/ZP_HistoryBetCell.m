@@ -36,7 +36,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake([UIScreen mainScreen].bounds.size.width/8, [UIScreen mainScreen].bounds.size.width/8);
+    return CGSizeMake(40, 40);
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
