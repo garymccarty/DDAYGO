@@ -132,6 +132,7 @@
 //返回
     position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
         NSLog(@"c = %@",ContStr);
+        [_chooseCityBtn setTitle:NSLocalizedString(ContStr, nil) forState:UIControlStateNormal];
         
     };
     //  显示

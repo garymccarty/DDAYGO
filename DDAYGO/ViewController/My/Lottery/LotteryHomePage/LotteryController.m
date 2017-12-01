@@ -46,7 +46,7 @@
         switch (i) {
             case 0:
             {
-                self.prizeWidth.constant = [self getStringSize:self.prizeLabel.text FontSize:13 Size:CGSizeMake(MAXFLOAT, MAXFLOAT)].width + 16;
+                self.prizeWidth.constant = [self getStringSize:self.prizeLabel.text FontSize:13 Size:CGSizeMake(13, MAXFLOAT)].width + 16;
                 onScrollViewWidth += self.prizeWidth.constant;
             }
                 break;

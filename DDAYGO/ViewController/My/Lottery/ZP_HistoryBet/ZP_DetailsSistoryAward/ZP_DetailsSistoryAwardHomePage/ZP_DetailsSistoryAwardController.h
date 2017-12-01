@@ -1,26 +1,17 @@
 //
-//  LotteryController.h
+//  ZP_DetailsSistoryAwardController.h
 //  DDAYGO
 //
-//  Created by Summer on 2017/11/28.
+//  Created by Summer on 2017/12/1.
 //  Copyright © 2017年 Summer. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-/*
- prize
- The winning number
- The sum of the awards in the current period
- Number of winners
- Bounty
- */
-@interface LotteryController : UIViewController 
-//@property (nonatomic, strong) UILabel * TitleLabel;  //标题
-//@property (nonatomic, strong) UILabel * NumberingLabel; // 编号
-//@property (nonatomic, strong) UILabel * DatesLabel; // 日期
-@property (weak, nonatomic) IBOutlet UIScrollView * zhongjiangScrollView;    //中间滚动图
-@property (weak, nonatomic) IBOutlet UILabel * prizeLabel;
-@property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel;
+
+@interface ZP_DetailsSistoryAwardController : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView * zhongjangScrollView; // 中间滚动图
+@property (weak, nonatomic) IBOutlet UILabel * prizeLabel;   // 奖项
+@property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel;  // 对中奖号数
 @property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel;
 @property (weak, nonatomic) IBOutlet UILabel * winnersNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel * bountyLabel;
@@ -30,6 +21,4 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * winnersNumWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * bountyWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * onScrollViewWidth;
-
-
 @end
