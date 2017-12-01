@@ -80,7 +80,6 @@
 		064449B81F6A9B250004DFE4 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 064449A01F6A9B250004DFE4 /* UIScrollView+MJExtension.m */; };
 		064449B91F6A9B250004DFE4 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 064449A21F6A9B250004DFE4 /* UIScrollView+MJRefresh.m */; };
 		064449BA1F6A9B250004DFE4 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 064449A41F6A9B250004DFE4 /* UIView+MJExtension.m */; };
-		064449BB1F6A9B250004DFE4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 064449A51F6A9B250004DFE4 /* README.md */; };
 		06475E891F70CB080084CAD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06475E881F70CB080084CAD3 /* CoreGraphics.framework */; };
 		064AB1941F73B2FF007FE5F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 064AB1901F73B2FF007FE5F0 /* AppDelegate.m */; };
 		064AB1951F73B2FF007FE5F0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064AB1921F73B2FF007FE5F0 /* MainViewController.m */; };
@@ -3961,7 +3960,6 @@
 				C45FAF3C1FCD48CC00BD4CE1 /* EditorViewCell.m in Sources */,
 				06F571831F9F16A600D61FDB /* FootprintCollectionViewCell.m in Sources */,
 				C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */,
-				064449BB1F6A9B250004DFE4 /* README.md in Sources */,
 				0641BBE01F67F9E400E72FEF /* UIView+WebCacheOperation.m in Sources */,
 				064449AB1F6A9B250004DFE4 /* MJRefreshHeader.m in Sources */,
 				C492A1791FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.m in Sources */,

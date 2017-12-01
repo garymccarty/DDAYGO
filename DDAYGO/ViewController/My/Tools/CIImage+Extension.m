@@ -10,12 +10,11 @@
 
 @implementation CIImage (Extension)
 
-/**
- *  根据CIImage生成指定大小的UIImage
- *
- *  @param images CIImage
- *  @param size  图片宽度
- */
+
+// *  根据CIImage生成指定大小的UIImage
+// *  @param images CIImage
+// *  @param size  图片宽度
+
 
 - (UIImage *)createNonInterpolatedWithSize:(CGFloat)size
 {

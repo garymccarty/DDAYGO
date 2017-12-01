@@ -44,7 +44,7 @@
     BetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewCell"];
     if (indexPath.row == 0) {
         [cell.betHeaderView updateViewWithColor:DDWriteBet TotalCount:5 SelectedCount:1];
-        [cell updateCount:69];
+        [cell updateCount:59];
     } else {
         [cell.betHeaderView updateViewWithColor:DDRedBet TotalCount:1 SelectedCount:1];
         [cell updateCount:26];
@@ -56,7 +56,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger count = 0;
     if (indexPath.row == 0) {
-        count = 69;
+        count = 59;
     } else {
         count = 26;
     }

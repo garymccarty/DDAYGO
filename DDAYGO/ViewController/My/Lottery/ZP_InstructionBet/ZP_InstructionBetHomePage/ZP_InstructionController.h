@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZP_InstructionController : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView *ZP_InstrucScrollView;
 @property (strong, nonatomic) IBOutlet UITableView * tableview;
 
 @end

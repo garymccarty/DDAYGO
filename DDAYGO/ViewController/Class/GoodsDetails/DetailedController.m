@@ -20,7 +20,7 @@
 #import "ZP_GoodDetailsModel.h"
 #import "PurchaseView.h"
 #import "ConfirmViewController.h"
-@interface DetailedController ()<UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface DetailedController ()<UICollectionViewDelegate,UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource>
 
 //**Xib 拖过来然后填写数据**/
 @property (nonatomic, strong)UIImageView * ShopImageView;

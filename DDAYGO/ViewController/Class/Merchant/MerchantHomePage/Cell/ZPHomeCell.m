@@ -76,7 +76,7 @@
 - (void)setDescribe:(NSString *)describe {
     _describe = describe;
     self.describeLabel.text = describe;
-    self.describeLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.describeLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.describeLabel.numberOfLines = 0;
 }
 
