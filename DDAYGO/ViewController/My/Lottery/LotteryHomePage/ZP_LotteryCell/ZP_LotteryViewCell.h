@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZP_LotteryViewCell : UITableViewCell
+@interface ZP_LotteryViewCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, assign) NSInteger wirteBetCount;
+@property (nonatomic, assign) NSInteger redBetCount;
+- (void)updateCount:(NSInteger)count;
 @end

@@ -79,13 +79,13 @@
                 break;
         }
     }
-    
     self.onScrollViewWidth.constant = onScrollViewWidth;
 }
 
 - (void)initUI {
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZP_LotteryViewCell" bundle:nil] forCellReuseIdentifier:@"ZP_LotteryViewCell"];
-    
+    static NSString * LotteryID = @"ZP_LotteryViewCell";
+    [self.tableView registerNib:[UINib nibWithNibName:LotteryID bundle:nil] forCellReuseIdentifier:LotteryID];
+    self.tableView.separatorStyle = UITableViewRowAnimationNone; // 隐藏tableview线条
     UIToolbar * tools=[[UIToolbar alloc]initWithFrame:CGRectMake(5, 0, 80, 39)];
 // 解决出现的那条线
     tools.clipsToBounds = YES;
@@ -105,15 +105,6 @@
     [tools setItems:buttons animated:NO];
     UIBarButtonItem * btn =[[UIBarButtonItem alloc]initWithCustomView:tools];
     self.navigationItem.rightBarButtonItem = btn;
-    
-//        UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bg_lottery_record"] style:UIBarButtonItemStylePlain target:self action:@selector(Instruction)];
-//        self.navigationItem.rightBarButtonItem = item;
-///**** IOS 11 ****/
-//    if (@available(iOS 11.0, *)) {
-//        self.bottomCV.estimatedRowHeight = 0;
-//        self.bottomCV.estimatedSectionHeaderHeight = 0;
-//        self.bottomCV.estimatedSectionFooterHeight = 0;
-//    }
 }
 // 说明
 - (void)Instruction {
@@ -136,19 +127,19 @@
 #pragma mark --tableview delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    ZP_LotteryViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ZP_LotteryViewCell"];
+    static NSString * LotteryID = @"ZP_LotteryViewCell";
+    ZP_LotteryViewCell * cell = [tableView dequeueReusableCellWithIdentifier:LotteryID];
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 300;
+    return 60;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

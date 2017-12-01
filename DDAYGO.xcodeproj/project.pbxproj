@@ -384,6 +384,15 @@
 		C492A19E1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A19C1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib */; };
 		C492A1A71FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1A51FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m */; };
 		C492A1A81FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1A61FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib */; };
+		C492A1AC1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1AA1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m */; };
+		C492A1AD1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1AB1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib */; };
+		C492A1B61FD15189009FF57B /* icon_order_delete_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1AF1FD15189009FF57B /* icon_order_delete_normal@2x.png */; };
+		C492A1B71FD15189009FF57B /* icon_order_delete_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B01FD15189009FF57B /* icon_order_delete_normal@3x.png */; };
+		C492A1B81FD15189009FF57B /* icon_order_delete_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B11FD15189009FF57B /* icon_order_delete_pressed@2x.png */; };
+		C492A1B91FD15189009FF57B /* icon_order_delete_pressed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B21FD15189009FF57B /* icon_order_delete_pressed@3x.png */; };
+		C492A1BA1FD15189009FF57B /* img_order_code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B31FD15189009FF57B /* img_order_code@2x.png */; };
+		C492A1BB1FD15189009FF57B /* img_order_code@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B41FD15189009FF57B /* img_order_code@3x.png */; };
+		C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B51FD15189009FF57B /* 扫码付款状态.png */; };
 		E37503CF1FC7BD8F00DA2950 /* ZP_ConfirmWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */; };
 /* End PBXBuildFile section */
 
@@ -1073,6 +1082,16 @@
 		C492A1A41FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_DetailsSistoryAwardCell.h; sourceTree = "<group>"; };
 		C492A1A51FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardCell.m; sourceTree = "<group>"; };
 		C492A1A61FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_DetailsSistoryAwardCell.xib; sourceTree = "<group>"; };
+		C492A1A91FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryCollectionViewCell.h; sourceTree = "<group>"; };
+		C492A1AA1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryCollectionViewCell.m; sourceTree = "<group>"; };
+		C492A1AB1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_LotteryCollectionViewCell.xib; sourceTree = "<group>"; };
+		C492A1AF1FD15189009FF57B /* icon_order_delete_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_order_delete_normal@2x.png"; sourceTree = "<group>"; };
+		C492A1B01FD15189009FF57B /* icon_order_delete_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_order_delete_normal@3x.png"; sourceTree = "<group>"; };
+		C492A1B11FD15189009FF57B /* icon_order_delete_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_order_delete_pressed@2x.png"; sourceTree = "<group>"; };
+		C492A1B21FD15189009FF57B /* icon_order_delete_pressed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_order_delete_pressed@3x.png"; sourceTree = "<group>"; };
+		C492A1B31FD15189009FF57B /* img_order_code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_code@2x.png"; sourceTree = "<group>"; };
+		C492A1B41FD15189009FF57B /* img_order_code@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_code@3x.png"; sourceTree = "<group>"; };
+		C492A1B51FD15189009FF57B /* 扫码付款状态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫码付款状态.png"; sourceTree = "<group>"; };
 		E37503CC1FC7BBF400DA2950 /* ZP_ConfirmWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ConfirmWebController.h; sourceTree = "<group>"; };
 		E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ConfirmWebController.m; sourceTree = "<group>"; };
 		E37503CE1FC7BBF400DA2950 /* ZP_ConfirmWebController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ConfirmWebController.xib; sourceTree = "<group>"; };
@@ -1265,6 +1284,7 @@
 		0641BB971F67B60B00E72FEF /* Testbag */ = {
 			isa = PBXGroup;
 			children = (
+				C492A1AE1FD15189009FF57B /* 订单_ios */,
 				C4573EE41FCF8ECF001DFE97 /* 彩票_ios */,
 				062C9D4A1F8CD6F900E14987 /* 图片 */,
 				064448DE1F6A16A00004DFE4 /* banner_jiazai.jpg */,
@@ -2339,6 +2359,9 @@
 				C4573F481FCFDE6D001DFE97 /* ZP_LotteryViewCell.h */,
 				C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */,
 				C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */,
+				C492A1A91FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.h */,
+				C492A1AA1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m */,
+				C492A1AB1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib */,
 			);
 			path = ZP_LotteryCell;
 			sourceTree = "<group>";
@@ -3402,6 +3425,20 @@
 			path = ZP_DetailsSistoryAwardcell;
 			sourceTree = "<group>";
 		};
+		C492A1AE1FD15189009FF57B /* 订单_ios */ = {
+			isa = PBXGroup;
+			children = (
+				C492A1AF1FD15189009FF57B /* icon_order_delete_normal@2x.png */,
+				C492A1B01FD15189009FF57B /* icon_order_delete_normal@3x.png */,
+				C492A1B11FD15189009FF57B /* icon_order_delete_pressed@2x.png */,
+				C492A1B21FD15189009FF57B /* icon_order_delete_pressed@3x.png */,
+				C492A1B31FD15189009FF57B /* img_order_code@2x.png */,
+				C492A1B41FD15189009FF57B /* img_order_code@3x.png */,
+				C492A1B51FD15189009FF57B /* 扫码付款状态.png */,
+			);
+			path = "订单_ios";
+			sourceTree = "<group>";
+		};
 		E37503CB1FC7BBF400DA2950 /* ZP_ConfirmPayWeb */ = {
 			isa = PBXGroup;
 			children = (
@@ -3530,6 +3567,7 @@
 				062C9D601F8CD6F900E14987 /* button_4@3x.png in Resources */,
 				06621DB31F9758840030983F /* RegisterController.xib in Resources */,
 				C4573F221FCF8ECF001DFE97 /* icon_explan_third@3x.png in Resources */,
+				C492A1AD1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib in Resources */,
 				06F572211F9F1E8700D61FDB /* BillViewController.xib in Resources */,
 				062C9D5A1F8CD6F900E14987 /* button_1@3x.png in Resources */,
 				06F5716C1F9F15CE00D61FDB /* CollectionTableViewCell.xib in Resources */,
@@ -3547,6 +3585,7 @@
 				C4573F101FCF8ECF001DFE97 /* icon_explan_fire@2x.png in Resources */,
 				C492A17A1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.xib in Resources */,
 				C4573F0E1FCF8ECF001DFE97 /* bg_lottery_whiteball@2x.png in Resources */,
+				C492A1B81FD15189009FF57B /* icon_order_delete_pressed@2x.png in Resources */,
 				C47E76271FB5A1C7009F279A /* LeftTableViewCell.xib in Resources */,
 				C4573F0A1FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@2x.png in Resources */,
 				C4573F241FCF8ECF001DFE97 /* 历史开奖_spec.png in Resources */,
@@ -3566,6 +3605,7 @@
 				06F5721D1F9F1E8700D61FDB /* AllCategoriesView.xib in Resources */,
 				0662AB5E1F9610BF0031F22B /* LogregisterController.xib in Resources */,
 				C47212AC1FB18A4E0055578E /* SettingViewController.xib in Resources */,
+				C492A1B91FD15189009FF57B /* icon_order_delete_pressed@3x.png in Resources */,
 				C4573F171FCF8ECF001DFE97 /* bg_choose_whiteball_normal@3x.png in Resources */,
 				06F572291F9F1E8700D61FDB /* OrderDetailViewController.xib in Resources */,
 				06F572331F9F1E8700D61FDB /* ReceivingViewCell.xib in Resources */,
@@ -3583,6 +3623,7 @@
 				06F572311F9F1E8700D61FDB /* OrderSearchView.xib in Resources */,
 				C47212A31FB186C90055578E /* MyViewController.xib in Resources */,
 				06F5722F1F9F1E8700D61FDB /* ReturnDetailViewController.xib in Resources */,
+				C492A1BA1FD15189009FF57B /* img_order_code@2x.png in Resources */,
 				06F5722D1F9F1E8700D61FDB /* OrderManagerViewController.xib in Resources */,
 				06F571D21F9F1A7900D61FDB /* BindingICUEViewController.xib in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
@@ -3600,6 +3641,7 @@
 				C47E762A1FB5A1C7009F279A /* RightTableViewCell.xib in Resources */,
 				064249871F99FBEB00340EBA /* PayFailController.xib in Resources */,
 				064449B51F6A9B250004DFE4 /* MJRefresh.bundle in Resources */,
+				C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */,
 				064249821F99F36000340EBA /* PayPassController.xib in Resources */,
 				C4573F211FCF8ECF001DFE97 /* icon_explan_second@3x.png in Resources */,
 				C45FAF8D1FCD564C00BD4CE1 /* SelectedViewController.xib in Resources */,
@@ -3611,6 +3653,7 @@
 				06F571DC1F9F1A7900D61FDB /* AddressTableViewCell.xib in Resources */,
 				06F572351F9F1E8700D61FDB /* ReceivingController.xib in Resources */,
 				C4573F081FCF8ECF001DFE97 /* bg_choose_redball@2x.png in Resources */,
+				C492A1BB1FD15189009FF57B /* img_order_code@3x.png in Resources */,
 				C4573F251FCF8ECF001DFE97 /* 历史开奖详情.png in Resources */,
 				C47E76391FB5A1C7009F279A /* PurchaseView.xib in Resources */,
 				C492A18C1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.xib in Resources */,
@@ -3628,6 +3671,7 @@
 				C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */,
 				062C9D611F8CD6F900E14987 /* button_5@2x.png in Resources */,
 				C4573F181FCF8ECF001DFE97 /* bg_choose_whiteball_pressed@3x.png in Resources */,
+				C492A1B71FD15189009FF57B /* icon_order_delete_normal@3x.png in Resources */,
 				C45F22BF1FA017E800F5DB41 /* button_7@2x.png in Resources */,
 				C4573F111FCF8ECF001DFE97 /* icon_explan_first@2x.png in Resources */,
 				C47E76521FB5A42F009F279A /* ClassificationViewController.xib in Resources */,
@@ -3635,6 +3679,7 @@
 				063FE0521F614D24009910FF /* Assets.xcassets in Resources */,
 				C47E76371FB5A1C7009F279A /* ProductDescriptionView.xib in Resources */,
 				06F5716E1F9F15CE00D61FDB /* CollectionViewController.xib in Resources */,
+				C492A1B61FD15189009FF57B /* icon_order_delete_normal@2x.png in Resources */,
 				C4573F201FCF8ECF001DFE97 /* icon_explan_fourth@3x.png in Resources */,
 				C492A17C1FD0ECB7009FF57B /* ZP_HistoryBetView.xib in Resources */,
 				C4573F271FCF8ECF001DFE97 /* 赏金彩_spec.png in Resources */,
@@ -3807,6 +3852,7 @@
 				06F572261F9F1E8700D61FDB /* OrdersViewController.m in Sources */,
 				C47E76421FB5A1C7009F279A /* ZPHomeHeaderLayout.m in Sources */,
 				C45F23081FA0754500F5DB41 /* SearchBar.m in Sources */,
+				C492A1AC1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m in Sources */,
 				064449B11F6A9B250004DFE4 /* MJRefreshBackStateFooter.m in Sources */,
 				06F572341F9F1E8700D61FDB /* ReceivingController.m in Sources */,
 				C47E764C1FB5A1C7009F279A /* Pop-upViewCell.m in Sources */,

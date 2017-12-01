@@ -1,5 +1,5 @@
 //
-//  ZP_DetailsSistoryAwardCell.h
+//  ZP_LotteryCollectionViewCell.h
 //  DDAYGO
 //
 //  Created by Summer on 2017/12/1.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZP_DetailsSistoryAwardCell : UICollectionViewCell
+@interface ZP_LotteryCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIButton * countBut;
 - (void)setValue:(NSInteger)index;
-
 @end
