@@ -19,11 +19,44 @@
 //@property (nonatomic, strong) UILabel * NumberingLabel; // 编号
 //@property (nonatomic, strong) UILabel * DatesLabel; // 日期
 @property (weak, nonatomic) IBOutlet UIScrollView * zhongjiangScrollView;    //中间滚动图
+
+//奖项
 @property (weak, nonatomic) IBOutlet UILabel * prizeLabel;
+@property (weak, nonatomic) IBOutlet UILabel * prizeLabel1;
+@property (weak, nonatomic) IBOutlet UILabel * prizeLabel2;
+@property (weak, nonatomic) IBOutlet UILabel * prizeLabel3;
+@property (weak, nonatomic) IBOutlet UILabel * prizeLabel4;
+
+//对中奖号数
 @property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel;
+@property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel1;
+@property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel2;
+@property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel3;
+@property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel4;
+
+//本期各奖项金额
 @property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel;
+@property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel1;
+@property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel2;
+@property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel3;
+@property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel4;
+
+//中奖数
 @property (weak, nonatomic) IBOutlet UILabel * winnersNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel * winnersNumLabel1;
+@property (weak, nonatomic) IBOutlet UILabel * winnersNumLabel2;
+@property (weak, nonatomic) IBOutlet UILabel * winnersNumLabel3;
+@property (weak, nonatomic) IBOutlet UILabel * winnersNumLabel4;
+
+//赏金金额
 @property (weak, nonatomic) IBOutlet UILabel * bountyLabel;
+@property (weak, nonatomic) IBOutlet UILabel * bountyLabel1;
+@property (weak, nonatomic) IBOutlet UILabel * bountyLabel2;
+@property (weak, nonatomic) IBOutlet UILabel * bountyLabel3;
+@property (weak, nonatomic) IBOutlet UILabel * bountyLabel4;
+
+@property (weak, nonatomic) IBOutlet UIView *bounctyView;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * prizeWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * winningNumbWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * currentPeriodWidth;
