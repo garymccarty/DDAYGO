@@ -21,9 +21,8 @@
 }
 // 修改资料(暂时只有昵称，性别)
 + (void)requesModifydata:(NSDictionary *)Modifydata uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    NSString *nickname = Modifydata[@"nickname"];
-    NSString *address = Modifydata[@"address"];
-    
+    NSString * nickname = Modifydata[@"nickname"];
+    NSString * address = Modifydata[@"address"];
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updateaccountinfo?nickname=%@&realname=%@&sex=%@&birth=%@&phone=%@&address=%@&token=%@",URLAPI,nickname.encodeToPercentEscapeString,Modifydata[@"realname"],Modifydata[@"sex"],Modifydata[@"birth"],Modifydata[@"phone"],address.encodeToPercentEscapeString,Modifydata[@"token"]].encodeToPercentEscapeString parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
