@@ -13,8 +13,8 @@
 
 //  商品评价，商家评价
 + (void)requestAppraise:(NSDictionary *)Appraise success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/addreviews?preview=%@&oid=%@&supscore=%@&sreview=%@&token=%@",Appraise[@"preview"],Appraise[@"oid"],Appraise[@"supscore"],Appraise[@"sreview"],Appraise[@"token"]] parameters:nil success:^(NSDictionary *responseObject) {
+    http://www.ddaygo.com/api/Test/addreviews?preview=21,7,5,薄荷清新爽口&oid=117102618112236642&supscore=5.0&sreview=sdfadfa&token=
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addreviews?preview=%@&oid=%@&supscore=%@&sreview=%@&token=%@",URLAPI,Appraise[@"preview"],Appraise[@"oid"],Appraise[@"supscore"],Appraise[@"sreview"],Appraise[@"token"]] parameters:nil success:^(NSDictionary *responseObject) {
         
         success(responseObject);
         

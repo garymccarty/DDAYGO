@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface StoreViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView * merchantscrollView;
 
 @end

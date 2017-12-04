@@ -146,7 +146,7 @@
 }
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"nonce"] = @"adf";
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
         ZPLog(@"%@",obj);

@@ -67,6 +67,8 @@
 
 @end
 
+/*---------------------OrdersdetailModel--------------------------*/
+
 @interface OrdersdetailModel : NSObject
 
 //订单状态

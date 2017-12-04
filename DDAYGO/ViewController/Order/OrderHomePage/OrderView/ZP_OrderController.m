@@ -19,6 +19,7 @@
 #import "ZP_OrderModel.h"
 #import "FSScrollContentView.h"
 #import "ConfirmViewController.h"
+#import "AppraiseController.h"
 @interface ZP_OrderController ()<FSPageContentViewDelegate,FSSegmentTitleViewDelegate> {
     NSArray * dataArray;
     NSArray * _ModeldataArray;
@@ -87,6 +88,7 @@
     dic[@"orderno"] = @"";
     [ZP_OrderTool requestGetorders:dic success:^(id json) {
         ZPLog(@"%@",json);
+        
         _ModeldataArray = [OrderModel arrayWithArray:json];
         
         [self.tableview reloadData];
@@ -97,7 +99,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self getDataWithState];
+    
+    if (DD_HASLOGIN ) {
+      [self getDataWithState];
+    }
 }
 
 
@@ -114,7 +119,7 @@
     
     static NSString * ID = @"orderViewCell";
     OrderModel * model = _ModeldataArray[indexPath.row];
-    OrdersdetailModel * model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
+//    OrdersdetailModel * model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
     
     OrderViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -123,8 +128,13 @@
     [cell.AppraiseBut removeTarget:self action:@selector(buttonType) forControlEvents:UIControlEventTouchUpInside];
     [cell.OnceagainBut addTarget:self action:@selector(OnceagainBut:) forControlEvents:UIControlEventTouchUpInside];
     cell.OnceagainBut.tag = indexPath.row;
-    [cell InformationWithDic:model2 WithModel:model];
-    
+    OrdersdetailModel * model2;
+    if (![_titleStr isEqualToString:@"评价"]) {
+         model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
+        [cell InformationWithDic:model2 WithModel:model];
+    }else {
+    [cell InformationWithDic:nil WithModel:model];
+    }
     cell.finishBlock = ^(id response) {
         self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:response animated:YES];
@@ -133,12 +143,11 @@
         self.hidesBottomBarWhenPushed = NO;
     };
     
-    cell.appraiseBlock = ^(id response) {
-        self.hidesBottomBarWhenPushed = YES;
+//    评论
+    cell.appraiseBlock = ^(AppraiseController* response) {
+        response.model = model;
         [self.navigationController pushViewController:response animated:YES];
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
-        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-        self.hidesBottomBarWhenPushed = NO;
+       
     };
     
     return cell;

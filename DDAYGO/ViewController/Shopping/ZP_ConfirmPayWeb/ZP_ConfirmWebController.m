@@ -32,7 +32,11 @@
         make.bottom.equalTo(self.view).offset(0);
     }];
     webView.delegate = self;
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_UrlStr]]];
+    
+//    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_UrlStr]]];
+    NSMutableURLRequest * requestShare = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:_UrlStr]];
+    [requestShare setHTTPMethod:@"POST"];
+    [webView loadRequest:requestShare];
 }
 
 #pragma mark -UIWebViewDelegate

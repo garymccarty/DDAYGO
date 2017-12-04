@@ -45,7 +45,7 @@
 
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     
     ZPLog(@"%@",dic);
     [ZP_MyTool requesAddress:dic success:^(id obj) {
@@ -92,7 +92,7 @@
         if (btn.selected) {
             ZP_FrontPageReceivingAddressModel * model = self.newsData[btn.tag];
             NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-            dic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";
+            dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
             dic[@"adsid"] = model.addressid;
             [ZP_MyTool requestDefaultAddress:dic success:^(id obj) {
                 ZPLog(@"%@",obj);

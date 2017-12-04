@@ -12,6 +12,7 @@
 #import "UINavigationBar+Awesome.h"
 #import "ReceivingController.h"
 #import "PrefixHeader.pch"
+#import "YueTixianController.h"
 @interface StoreViewController ()
 
 @end
@@ -21,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = NSLocalizedString(@"商店管理", nil);
+
+//    _merchantscrollView.bounces = YES;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -28,6 +31,11 @@
     self.hidesBottomBarWhenPushed = NO;
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_PayColor];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+}
+//  提现
+- (IBAction)tixianBut:(id)sender {
+    YueTixianController * YueTixian = [[YueTixianController alloc]init];
+    [self.navigationController pushViewController:YueTixian animated:YES];
 }
 //  订单
 - (IBAction)orderAction:(id)sender {

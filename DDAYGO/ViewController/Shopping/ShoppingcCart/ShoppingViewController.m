@@ -62,14 +62,20 @@
 }
 
 - (void)allData {
+    NSLog(@"token : %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]);
     [ZP_shoopingTool requesshoppingData:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] success:^(id obj) {
         ZPLog(@"%@",obj);
-        NSDictionary * dic = [obj firstObject];
-        ZPLog(@"%@",dic);
-        _model = [ZP_ShoppingModel CreateWithDict:[obj firstObject]];
-        dataArray = [ZP_CartsModel arrayWithArray:dic[@"cart"]];
-        nameArray = [ZP_CartsShopModel arrayWithArray:obj];
-        [self.tableView reloadData];
+        NSArray *arr = obj;
+        if (arr.count > 0) {
+            NSDictionary * dic = [obj firstObject];
+            ZPLog(@"%@",dic);
+            _model = [ZP_ShoppingModel CreateWithDict:[obj firstObject]];
+            dataArray = [ZP_CartsModel arrayWithArray:dic[@"cart"]];
+            nameArray = [ZP_CartsShopModel arrayWithArray:obj];
+            [self.tableView reloadData];
+            
+        }
+        
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];

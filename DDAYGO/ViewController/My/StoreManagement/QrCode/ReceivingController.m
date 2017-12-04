@@ -10,6 +10,7 @@
 #import "PrefixHeader.pch"
 #import "ReceivingViewCell.h"
 #import "UINavigationBar+Awesome.h"
+#import "ZP_MyTool.h"
 @interface ReceivingController ()<UITableViewDelegate, UITableViewDataSource>
 // 当前试图控制器的亮度
 @property (nonatomic, readwrite, assign) CGFloat currentLight;
@@ -20,7 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    self.title = @"收款码";
+    [self allData];
+    self.title = NSLocalizedString(@"收款码", nil);
     self.view.backgroundColor = ZP_green;
     [self.navigationController.navigationBar setBarTintColor:ZP_NavigationCorlor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
@@ -33,7 +35,19 @@
     self.tableView.backgroundColor = ZP_green;
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_greenen];
 }
-
+// 数据
+-(void)allData {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    int i = arc4random_uniform(999);  // 随机数
+    dic[@"nonce"] = @(i);
+    [ZP_MyTool requesQrCode:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
 #pragma mark - tableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;

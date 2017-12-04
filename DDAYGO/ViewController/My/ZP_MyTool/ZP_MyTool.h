@@ -40,5 +40,8 @@
 
 //  删除浏览记录
 + (void)requtsDeleFootprint:(NSDictionary *)Footprint success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+//  获取生成二维码所需要的商家ID
++ (void)requesQrCode:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end
 

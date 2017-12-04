@@ -11,6 +11,7 @@
 #import "ShopevaluationViewCell.h"
 #import "UINavigationBar+Awesome.h"
 #import "PrefixHeader.pch"
+#import "ZP_OrderTool.h"
 @interface AppraiseController ()
 @property (nonatomic, strong) UITableView * tableview;
 @end
@@ -99,7 +100,24 @@
 //        NSLog(@"没选选中，不跳");
     }
 
+// 数据
+- (void)allData {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+//    写在这里就好
+//    _model.addressid
+    dic[@"preview"] = @"";  //逗號拼接： [商品详情ID,商品ID,分数,评价内容] 多个以 _ 连接
+    dic[@"oid"] = _model.ordersnumber;   //订单编号
+    dic[@"supscore"] = @""; // 店家评分
+    dic[@"sreview"] = @""; //店家评论
 
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    [ZP_OrderTool requestAppraise:dic success:^(id obj) {
+        
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
 #pragma mark - <UItableviewDelegate>
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -27,8 +27,9 @@
     [filter setDefaults];
     
 //  3.设置数据
-//    NSString *info = @"https://www.apple.com";
+//    NSString *info = @"http://www.ddaygo.com/api/Test/getqrcode?token=&nonce=123";
     NSString * info = @"50";
+    
     NSData *infoData = [info dataUsingEncoding:NSUTF8StringEncoding];
     [filter setValue:infoData forKeyPath:@"inputMessage"];
     

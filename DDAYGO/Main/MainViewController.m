@@ -65,7 +65,7 @@
 }
 
 - (void) initTabBarUI {
-    [[NSUserDefaults standardUserDefaults] setObject:@"6d864a3ef88554499df1878adcd65429" forKey:@"token"];
+    //[[NSUserDefaults standardUserDefaults] setObject:@"6d864a3ef88554499df1878adcd65429" forKey:@"token"];
     //  字体颜色
     //    NSDictionary * dictHome = [NSDictionary dictionaryWithObject:[UIColor orangeColor] forKey:NSForegroundColorAttributeName];
     //  主页

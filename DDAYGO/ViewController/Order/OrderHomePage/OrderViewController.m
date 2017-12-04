@@ -57,7 +57,7 @@
 
 - (void)initUI {
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = ZP_WhiteColor;
     
     self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 40) titles:@[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待发货", nil),NSLocalizedString(@"待收货", nil),NSLocalizedString(@"评价", nil)] delegate:self indicatorType:FSIndicatorTypeEqualTitle];
     self.titleView.titleSelectFont = [UIFont systemFontOfSize:14];

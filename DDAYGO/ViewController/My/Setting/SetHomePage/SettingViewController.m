@@ -254,8 +254,7 @@
 //    }];
 //}
 
-- (NSMutableDictionary *)dataDic
-{
+- (NSMutableDictionary *)dataDic {
     if (!_dataDic) {
         _dataDic = [NSMutableDictionary dictionary];
         _dataDic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";

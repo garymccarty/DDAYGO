@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZP_OrderModel.h"
 @interface AppraiseController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     
     NSArray * dataArray;
 }
+
+@property (nonatomic, strong) OrderModel *model;
 
 @end

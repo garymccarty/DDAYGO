@@ -71,6 +71,8 @@
                 NSDictionary * tempDic = obj;
                 NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"],@"token":aadic[@"token"]};
                 [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
+                [[NSUserDefaults standardUserDefaults] setObject:aadic[@"token"] forKey:@"token"];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 DD_HASLOGIN = YES;
                 [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
