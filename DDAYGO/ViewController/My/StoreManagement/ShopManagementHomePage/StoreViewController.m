@@ -37,6 +37,7 @@
     YueTixianController * YueTixian = [[YueTixianController alloc]init];
     [self.navigationController pushViewController:YueTixian animated:YES];
 }
+
 //  订单
 - (IBAction)orderAction:(id)sender {
     self.hidesBottomBarWhenPushed = YES;
@@ -45,6 +46,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
+
 //  账单
 - (IBAction)billAction:(id)sender {
     self.hidesBottomBarWhenPushed = YES;
@@ -53,6 +55,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
+
 //  收款
 - (IBAction)receivingAction:(id)sender {
     self.hidesBottomBarWhenPushed = YES;
