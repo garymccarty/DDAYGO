@@ -130,7 +130,7 @@
     cell.OnceagainBut.tag = indexPath.row;
     OrdersdetailModel * model2;
     if (![_titleStr isEqualToString:@"评价"]) {
-         model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
+         model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail.firstObject];
         [cell InformationWithDic:model2 WithModel:model];
     }else {
     [cell InformationWithDic:nil WithModel:model];

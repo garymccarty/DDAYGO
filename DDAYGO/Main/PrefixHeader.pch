@@ -100,5 +100,7 @@
 #define ClassBtnViewforHot  LWN_height*0.2
 #define HeightRatio ((ZP_Width==320)?1:ZP_Width/568)
 #define WidthRatio ((ZP_Width==320)?1:ZP_Width/320)
+
+#pragma mark 网络转码
 #endif /* PrefixHeader_pch */
 
