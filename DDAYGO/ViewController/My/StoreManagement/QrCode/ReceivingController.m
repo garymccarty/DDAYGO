@@ -38,8 +38,8 @@
 // 数据
 -(void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
-//    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requesQrCode:dic success:^(id obj) {

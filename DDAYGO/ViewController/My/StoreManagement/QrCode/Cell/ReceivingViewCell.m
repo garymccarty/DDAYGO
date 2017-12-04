@@ -34,7 +34,7 @@
     [filter setValue:infoData forKeyPath:@"inputMessage"];
     
     // 4.生成二维码
-    CIImage *outputImage = [filter outputImage];
+    CIImage * outputImage = [filter outputImage];
     
     self.imageview.image = [outputImage createNonInterpolatedWithSize:150];
 }
