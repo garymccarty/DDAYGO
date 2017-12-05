@@ -47,5 +47,12 @@
 // 用户扫码后请求付款链接
 + (void)requesQrCodePay:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+//  获取用户供货商ID
++ (void)requesSupplier:(NSDictionary *)Supplier success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+// 获取商家余额
++ (void)requesMerchantsBalance:(NSDictionary *)MerchantsBalance success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+//添加提现申请  addsuppliertakeout
++ (void)requesAddSupplierTakeOut:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end
 

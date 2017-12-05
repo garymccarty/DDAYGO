@@ -10,9 +10,22 @@
 #import "QRCodeReaderView.h"
 #import "DataViewController.h"
 #import <AVFoundation/AVFoundation.h>
+//#import <AudioToolbox/AudioToolbox.h>
+//#import "PayViewController.h"
 #import "PrefixHeader.pch"
+//#define DeviceMaxHeight ([UIScreen mainScreen].bounds.size.height)
+//#define DeviceMaxWidth ([UIScreen mainScreen].bounds.size.width)
+//#define widthRate DeviceMaxWidth/320
+//#define IOS8 ([[UIDevice currentDevice].systemVersion intValue] >= 8 ? YES : NO)
 @interface QCodeController ()<AVCaptureMetadataOutputObjectsDelegate>
+//{
+//    QRCodeReaderView * readview;//二维码扫描对象
+//    
+//    BOOL isFirst;//第一次进入该页面
+//    BOOL isPush;//跳转到下一级页面
+//}
 
+//@property (strong, nonatomic) CIDetector *detector;
 /** 会话对象 */
 @property (nonatomic, strong) AVCaptureSession *session;
 /** 图层类 */
@@ -30,17 +43,20 @@
     self.title = @"扫一扫";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: ZP_textWite}];
    [self.navigationController.navigationBar setBarTintColor:ZP_NavigationCorlor];
+    
     [self InitScan];
 }
 
 #pragma mark 初始化扫描
 - (void)InitScan {
     
+//    创建扫描边框
     // 创建扫描边框
     self.scanningView = [[QRCodeReaderView alloc] initWithFrame:self.view.frame outsideViewLayer:self.view.layer];
     [self.view addSubview:self.scanningView];
     
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     
@@ -52,13 +68,13 @@
 #pragma mark - - - 二维码扫描
 - (void)setupScanningQRCode {
     // 1、 获取摄像设备
-    AVCaptureDevice * device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     
     // 2、 创建输入流
-    AVCaptureDeviceInput * input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:nil];
     
     // 3、 创建输出流
-    AVCaptureMetadataOutput * output = [[AVCaptureMetadataOutput alloc] init];
+    AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
     
     // 4、设置代理 在主线程里刷新
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];

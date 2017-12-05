@@ -9,6 +9,7 @@
 #import "YueTixianController.h"
 #import "ZP_ExtractController.h"
 #import "PrefixHeader.pch"
+#import "ZP_MyTool.h"
 @interface YueTixianController ()
 
 @end
@@ -26,13 +27,6 @@
     ExtractBut.tintColor = ZP_WhiteColor;
     self.navigationItem.rightBarButtonItem = ExtractBut;
     
-//    _amountText.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-//    _payeeText.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-//    _CollectingBankText.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-//    _PaymentAccountText.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-//    _reservedPhoneText.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-//    _emailText.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-    
 }
 
 - (void)Extract {
@@ -43,6 +37,22 @@
 }
 - (IBAction)CompleteButton:(id)sender {
     ZPLog(@"完成");
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    //    ec77b922d25bb303f27f63d23de84f73
+    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    dic[@"sid"] = _SupplierId;
+    dic[@"amount"] = _amountText.textField.text;
+    dic[@"bankcardname"] = _payeeText.textField.text;
+    dic[@"bankname"] = _CollectingBankText.textField.text;
+    dic[@"bankcardno"] = _PaymentAccountText.textField.text;
+    dic[@"phone"] = _reservedPhoneText.textField.text;
+    dic[@"email"] = _emailText.textField.text;
+    
+    [ZP_MyTool requesAddSupplierTakeOut:dic success:^(id obj) {
+        NSLog(@"obj %@",obj);
+    } failure:^(NSError *error) {
+        NSLog(@"error %@",error);
+    }];
 }
 //  键盘弹起
 - (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{

@@ -126,6 +126,31 @@
         failure(error);
     }];
 }
+//  获取用户供货商ID
++ (void)requesSupplier:(NSDictionary *)Supplier success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getaccountsupplierid?token=%@&nonce=%@",URLAPI,Supplier[@"token"],Supplier[@"nonce"]] parameters:nil success:^(NSDictionary *responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 
+// 获取商家余额
++ (void)requesMerchantsBalance:(NSDictionary *)MerchantsBalance success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@getsupplierbalance?token=%@&sid=%@",URLAPI,MerchantsBalance[@"token"],MerchantsBalance[@"sid"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+// 添加提现申请  addsuppliertakeout
++ (void)requesAddSupplierTakeOut:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure{
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addsuppliertakeout?token=%@&sid=%@&amount=%@&bankname=%@&bankcardno=%@&bankcardname=%@&phone=%@&email=%@",URLAPI,QrCoed[@"token"],QrCoed[@"sid"],QrCoed[@"amount"],QrCoed[@"bankname"],QrCoed[@"bankcardno"],QrCoed[@"bankcardname"],QrCoed[@"phone"],QrCoed[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 @end
 

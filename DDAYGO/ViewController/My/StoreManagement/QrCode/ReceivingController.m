@@ -15,7 +15,7 @@
 @interface ReceivingController ()<UITableViewDelegate, UITableViewDataSource>
 // 当前试图控制器的亮度
 @property (nonatomic, readwrite, assign) CGFloat currentLight;
-@property (nonatomic,strong) NSString *strUrl;
+@property (nonatomic,strong) NSString * strUrl;
 @end
 
 @implementation ReceivingController
@@ -46,7 +46,7 @@
     dic[@"nonce"] = @(i);
     [ZP_MyTool requesQrCode:dic success:^(id obj) {
         ZPLog(@"%@",obj);
-        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        NSMutableDictionary * dic = [NSMutableDictionary dictionary];
         dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
         dic[@"amount"] = @"555";
         dic[@"shopcode"] = obj[@"supplierid"];

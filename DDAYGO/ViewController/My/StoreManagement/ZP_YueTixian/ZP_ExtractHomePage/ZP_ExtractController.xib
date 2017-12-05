@@ -246,12 +246,12 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1R-fb-dHU">
-                                    <rect key="frame" x="38" y="248" width="254" height="20"/>
+                                    <rect key="frame" x="38" y="248" width="254" height="75"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="uwg-OK-onT"/>
+                                        <constraint firstAttribute="height" constant="75" id="uwg-OK-onT"/>
                                     </constraints>
                                     <attributedString key="attributedText">
-                                        <fragment content="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX">
+                                        <fragment content="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX">
                                             <attributes>
                                                 <color key="NSColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <font key="NSFont" metaFont="cellTitle"/>

@@ -36,20 +36,17 @@
 // 添加webView，加载扫描过来的内容
 - (void)setupWebView {
     UIWebView * webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    
     webView.frame = self.view.bounds;
     
     // 1. URL 定位资源,需要资源的地址
     NSString * urlStr = self.jump_URL;
+    NSURL * url = [NSURL URLWithString:urlStr];
     
-    NSURL *url = [NSURL URLWithString:urlStr];
-    
-    // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
+    // 2. 把URL告诉给服务器,请求数据
     NSURLRequest * request = [NSURLRequest requestWithURL:url];
     
     // 3. 发送请求给服务器
     [webView loadRequest:request];
-    
     [self.view addSubview:webView];
 }
 

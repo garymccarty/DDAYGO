@@ -18,4 +18,8 @@
 @property (strong, nonatomic) IBOutlet TextView * reservedPhoneText;
 @property (strong, nonatomic) IBOutlet TextView * emailText;
 
+/**
+ * 供货商ID
+ */
+@property (nonatomic, strong) NSNumber * SupplierId;
 @end

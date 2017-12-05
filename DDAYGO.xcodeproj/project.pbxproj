@@ -318,6 +318,7 @@
 		C47750811FBA9A1E00AE8B3F /* ZP_FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750801FBA9A1E00AE8B3F /* ZP_FirstModel.m */; };
 		C47750851FBADDAA00AE8B3F /* ZP_HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750841FBADDAA00AE8B3F /* ZP_HomePageModel.m */; };
 		C47750881FBAFC5D00AE8B3F /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750871FBAFC5D00AE8B3F /* Const.m */; };
+		C4780BEF1FD6A1F600DDE25D /* ZP_ShopManagementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */; };
 		C47E75861FB573F2009F279A /* ZP_HomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75851FB573F2009F279A /* ZP_HomeTool.m */; };
 		C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E758C1FB575C5009F279A /* ZP_shoopingTool.m */; };
 		C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75901FB57846009F279A /* ZP_ShoppingModel.m */; };
@@ -997,6 +998,8 @@
 		C47750841FBADDAA00AE8B3F /* ZP_HomePageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomePageModel.m; sourceTree = "<group>"; };
 		C47750861FBAFC5D00AE8B3F /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		C47750871FBAFC5D00AE8B3F /* Const.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
+		C4780BED1FD6A1F600DDE25D /* ZP_ShopManagementModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ShopManagementModel.h; sourceTree = "<group>"; };
+		C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ShopManagementModel.m; sourceTree = "<group>"; };
 		C47E75841FB573F2009F279A /* ZP_HomeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HomeTool.h; sourceTree = "<group>"; };
 		C47E75851FB573F2009F279A /* ZP_HomeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomeTool.m; sourceTree = "<group>"; };
 		C47E758B1FB575C5009F279A /* ZP_shoopingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_shoopingTool.h; sourceTree = "<group>"; };
@@ -2303,6 +2306,7 @@
 				06F572191F9F1E8700D61FDB /* StoreViewController.h */,
 				06F5721A1F9F1E8700D61FDB /* StoreViewController.m */,
 				C43517451FB2ACD60066302E /* StoreViewController.xib */,
+				C4780BEC1FD6A1CE00DDE25D /* ZP_ShopManagementModel */,
 			);
 			path = ShopManagementHomePage;
 			sourceTree = "<group>";
@@ -3050,6 +3054,15 @@
 				C47750841FBADDAA00AE8B3F /* ZP_HomePageModel.m */,
 			);
 			path = ZP_HomePageModel;
+			sourceTree = "<group>";
+		};
+		C4780BEC1FD6A1CE00DDE25D /* ZP_ShopManagementModel */ = {
+			isa = PBXGroup;
+			children = (
+				C4780BED1FD6A1F600DDE25D /* ZP_ShopManagementModel.h */,
+				C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */,
+			);
+			path = ZP_ShopManagementModel;
 			sourceTree = "<group>";
 		};
 		C47E75821FB573A2009F279A /* ZP_shoppingTool */ = {
@@ -4089,6 +4102,7 @@
 				C47096991FB04B2D006EA52C /* UIButton+countDown.m in Sources */,
 				C470ADF31FA95B5200BAC2CA /* ZP_registrationModel.m in Sources */,
 				C409F8721FA1758E009DE7B1 /* ZP_SixthModel.m in Sources */,
+				C4780BEF1FD6A1F600DDE25D /* ZP_ShopManagementModel.m in Sources */,
 				C45FAF8C1FCD564C00BD4CE1 /* SelectedViewController.m in Sources */,
 				C45FAEE71FCD055B00BD4CE1 /* myNavigationController.m in Sources */,
 				06418F521F7A076A00479523 /* MASConstraintMaker.m in Sources */,

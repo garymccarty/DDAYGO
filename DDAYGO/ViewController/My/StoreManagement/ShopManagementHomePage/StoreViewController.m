@@ -13,7 +13,11 @@
 #import "ReceivingController.h"
 #import "PrefixHeader.pch"
 #import "YueTixianController.h"
+#import "ZP_ShopManagementModel/ZP_ShopManagementModel.h"
+#import "ZP_MyTool.h"
 @interface StoreViewController ()
+
+@property (nonatomic, strong) NSNumber *sid;
 
 @end
 
@@ -21,17 +25,81 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initUI];
+    [self Supplier];
+    // 因为需要上个接口的 sid 所以只有等 商家sid 获取成功后才能调用
+//    [self MerchantsBalance];
+}
+- (void)initUI {
     self.title = NSLocalizedString(@"商店管理", nil);
-
-//    _merchantscrollView.bounces = YES;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
 }
+// 获取供货商
+- (void)Supplier {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    int i = arc4random_uniform(999);  // 随机数
+    dic[@"nonce"] = @(i);
+    [ZP_MyTool requesSupplier:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
+        
+//        1、直接 方法1
+//        [self MerchantsBalance:obj[@"result"]];
+        
+//        2、全局 方法2
+        //38接口显示·返回只有2个结果·以防止崩溃·加判断
+        if ([obj[@"result"] isEqualToString:@"no"]) {
+            ZPLog(@"no token");
+        }else {
+            _sid = obj[@"result"];
+            [self MerchantsBalance];
+        }
+
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+// 获取商家余额(方法1)
+//- (void)MerchantsBalance:(id)sid {
+//    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+//    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+//    dic[@"sid"] = sid;
+//    [ZP_MyTool requesMerchantsBalance:dic success:^(id obj) {
+//        ZPLog(@"%@",obj);
+//    } failure:^(NSError * error) {
+//        ZPLog(@"%@",error);
+//    }];
+//}
+
+// 获取商家余额(方法2)
+- (void)MerchantsBalance {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    dic[@"sid"] = _sid;
+    [ZP_MyTool requesMerchantsBalance:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
+        ZP_ShopManagementModel * model = [ZP_ShopManagementModel CreateWithDict:obj];
+        [self AllData:model];
+        
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+
+// 数据
+- (void)AllData:(ZP_ShopManagementModel *)model {
+    _TotalAmountLabel.text = [model.allamount stringValue];
+    _ActivitiesAssetsLabel.text = [model.iceamount stringValue];
+    _FrozenAssets.text = [model.balance stringValue];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.hidesBottomBarWhenPushed = NO;
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_PayColor];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
+
 //  提现
 - (IBAction)tixianBut:(id)sender {
     YueTixianController * YueTixian = [[YueTixianController alloc]init];
