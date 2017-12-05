@@ -38,7 +38,7 @@
     layout.minimumLineSpacing = 1;
     layout.minimumInteritemSpacing = 1;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    UICollectionView * bottomCV = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 35, ZP_Width, 330) collectionViewLayout:layout];
+    UICollectionView * bottomCV = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 35, ZP_Width, ZP_Width / 3 * 2) collectionViewLayout:layout];
     bottomCV.backgroundColor = [UIColor whiteColor];
     
     bottomCV.delegate = self;
@@ -137,7 +137,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(ZP_Width/3-1, 330/2-10);
+    return CGSizeMake(ZP_Width/3-1, ZP_Width / 3);
 }
 
 

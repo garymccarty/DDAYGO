@@ -116,7 +116,12 @@
     if (nil == _productId) {
         return;
     }
-    NSDictionary * dic = @{@"productid":_productId,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
+    NSDictionary * dic;
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
+        dic = @{@"productid":_productId,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
+    } else {
+        dic = @{@"productid":_productId};
+    }
     [ZP_ClassViewTool requDetails:dic success:^(id obj) {
         
         ZP_GoodDetailsModel * model = [ZP_GoodDetailsModel getGoodDetailsData:obj[@"products"][0]];

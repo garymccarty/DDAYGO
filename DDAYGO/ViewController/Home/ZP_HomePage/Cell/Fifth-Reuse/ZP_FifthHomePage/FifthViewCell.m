@@ -39,7 +39,7 @@
     layout.minimumLineSpacing = 1;
     layout.minimumInteritemSpacing = 1;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;  //横向滚动 默认上下
-    _bottomCV = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 150) collectionViewLayout:layout];
+    _bottomCV = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_Width / 4) collectionViewLayout:layout];
     _bottomCV.backgroundColor = [UIColor whiteColor];
     
     _bottomCV.delegate = self;
@@ -89,7 +89,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(ZP_Width/4-1, 150);
+    return CGSizeMake(ZP_Width/4-1, ZP_Width / 4);
 }
 
 @end

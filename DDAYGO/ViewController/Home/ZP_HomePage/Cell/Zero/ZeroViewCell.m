@@ -38,7 +38,7 @@
                                    @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
                                    ];
     
-    SDCycleScrollView *scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ZP_Width, 120) delegate:self placeholderImage:[UIImage imageNamed:@"banner_jiazai.jpg"]];
+    SDCycleScrollView *scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ZP_Width, ZP_Width / 2) delegate:self placeholderImage:[UIImage imageNamed:@"banner_jiazai.jpg"]];
     
     scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
     scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
@@ -47,7 +47,7 @@
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.height.mas_equalTo(120);
+        make.height.mas_equalTo(ZP_Width / 2);
     }];
     
 }

@@ -296,7 +296,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return 120;
+        return ZP_Width / 2;
     }else
         if (indexPath.section ==1){
             return ZP_Width / 2;
@@ -311,9 +311,9 @@
             return 190;
     }else
         if (indexPath.section == 5){
-            return 150;
+            return ZP_Width / 4;
     }else {
-        return 330;
+        return ZP_Width / 3 * 2 + 35;
     }
 }
 
