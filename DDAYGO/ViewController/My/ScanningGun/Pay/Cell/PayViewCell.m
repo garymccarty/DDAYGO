@@ -17,8 +17,8 @@
 
 - (IBAction)Determine:(id)sender {
     
-//        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"付款成功",nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"确定",nil) otherButtonTitles:NSLocalizedString(@"取消",nil), nil];
-//        [alertView show];
+        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"付款成功",nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"确定",nil) otherButtonTitles:NSLocalizedString(@"取消",nil), nil];
+        [alertView show];
 }
 
 // 键盘弹起

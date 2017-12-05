@@ -11,9 +11,11 @@
 #import "ReceivingViewCell.h"
 #import "UINavigationBar+Awesome.h"
 #import "ZP_MyTool.h"
+#import "ZP_ConfirmWebController.h"
 @interface ReceivingController ()<UITableViewDelegate, UITableViewDataSource>
 // 当前试图控制器的亮度
 @property (nonatomic, readwrite, assign) CGFloat currentLight;
+@property (nonatomic,strong) NSString *strUrl;
 @end
 
 @implementation ReceivingController
@@ -38,12 +40,28 @@
 // 数据
 -(void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    //    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requesQrCode:dic success:^(id obj) {
         ZPLog(@"%@",obj);
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+        dic[@"amount"] = @"555";
+        dic[@"shopcode"] = obj[@"supplierid"];
+        dic[@"countrycode"] = @"886";
+        dic[@"payway"] = @"allpay_balance";
+        dic[@"icuetoken"] = @"";
+        [ZP_MyTool requesQrCodePay:dic success:^(id obj) {
+            NSLog(@"obj = %@",obj);
+            _strUrl= [NSString stringWithFormat:@"%@?%@",obj[@"uri"],obj[@"para"]];
+            //            _strUrl = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            [self.tableView reloadData];
+        } failure:^(NSError *error) {
+            NSLog(@"error = %@",error);
+        }];
+        //        http://www.ddaygo.com/api/Test/getqrcodepaylink?token=ec77b922d25bb303f27f63d23de84f73&amount=100&shopcode=H7XVKDMECZQ=&countrycode=886&payway=allpay_balance&icuetoken=nil
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
@@ -58,6 +76,7 @@
     ReceivingViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ReceivingViewCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
     cell.layer.cornerRadius = 5.0;// View圆角弧度
+    [cell getInitWithUrl:_strUrl];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,3 +98,4 @@
     [USER_DEFAULTS setBool:NO forKey:ISQRCONTROLLER];
 }
 @end
+

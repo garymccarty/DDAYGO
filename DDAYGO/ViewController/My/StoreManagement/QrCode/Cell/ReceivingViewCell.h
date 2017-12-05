@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ReceivingViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *imageview;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageview;
+- (void)getInitWithUrl:(NSString *)url;
 @end

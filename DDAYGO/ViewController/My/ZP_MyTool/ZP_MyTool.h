@@ -43,5 +43,9 @@
 
 //  获取生成二维码所需要的商家ID
 + (void)requesQrCode:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 用户扫码后请求付款链接
++ (void)requesQrCodePay:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
 @end
 
