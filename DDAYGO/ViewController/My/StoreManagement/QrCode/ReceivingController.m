@@ -76,7 +76,10 @@
     ReceivingViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ReceivingViewCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
     cell.layer.cornerRadius = 5.0;// View圆角弧度
-    [cell getInitWithUrl:_strUrl];
+    if (_strUrl.length>0) {
+         [cell getInitWithUrl:_strUrl];
+    }
+   
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

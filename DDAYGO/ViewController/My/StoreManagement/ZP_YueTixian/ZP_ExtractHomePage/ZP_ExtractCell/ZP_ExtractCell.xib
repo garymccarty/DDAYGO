@@ -12,20 +12,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="489" id="KGk-i7-Jjw" customClass="ZP_ExtractCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="489"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="ZP_ExtractCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZP_ExtractCell" rowHeight="336" id="KGk-i7-Jjw" customClass="ZP_ExtractCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="336"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="488.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="335.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_record_phone" translatesAutoresizingMaskIntoConstraints="NO" id="k7f-pm-nom">
-                        <rect key="frame" x="10" y="127" width="20" height="20"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_record_money" translatesAutoresizingMaskIntoConstraints="NO" id="yfM-0r-iQm">
+                        <rect key="frame" x="10" y="15" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="X4R-fX-rjp"/>
-                            <constraint firstAttribute="height" constant="20" id="l9U-J1-taV"/>
+                            <constraint firstAttribute="height" constant="20" id="Y6x-Xf-jbs"/>
+                            <constraint firstAttribute="width" constant="20" id="fdv-C8-5h8"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lav-fP-NEG">
+                        <rect key="frame" x="38" y="15" width="27" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="NAb-RS-SNG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uki-Qg-OKX">
+                        <rect key="frame" x="124" y="15" width="30.5" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="MNs-kx-842"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.99215686270000003" green="0.6588235294" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phA-yI-lk1">
+                        <rect key="frame" x="10" y="42" width="310" height="1"/>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.8980392157" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="9SZ-sZ-lw8"/>
+                        </constraints>
+                    </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_record_bank" translatesAutoresizingMaskIntoConstraints="NO" id="U0Z-Iq-W2d">
                         <rect key="frame" x="10" y="51" width="20" height="20"/>
                         <constraints>
@@ -33,6 +58,15 @@
                             <constraint firstAttribute="width" constant="20" id="QR3-eU-JPU"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dm-XT-ufb">
+                        <rect key="frame" x="38" y="51" width="27" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="6Dr-yf-bqW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bs3-th-VRS">
                         <rect key="frame" x="124" y="51" width="61.5" height="20"/>
                         <constraints>
@@ -42,10 +76,60 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-uO-waP">
-                        <rect key="frame" x="38" y="187" width="53.5" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-sj-DG8">
+                        <rect key="frame" x="124" y="73" width="25" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="J5M-dP-ejS"/>
+                            <constraint firstAttribute="height" constant="20" id="6xy-pV-WMy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6230947200001378875" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gad-UF-YCP">
+                        <rect key="frame" x="124" y="99" width="139" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="xrn-WF-Yxs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_record_phone" translatesAutoresizingMaskIntoConstraints="NO" id="k7f-pm-nom">
+                        <rect key="frame" x="10" y="127" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="X4R-fX-rjp"/>
+                            <constraint firstAttribute="height" constant="20" id="l9U-J1-taV"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZq-RO-Ldj">
+                        <rect key="frame" x="38" y="127" width="53.5" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="gqe-uZ-bWB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+86 15118041624" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z05-6x-jt2">
+                        <rect key="frame" x="124" y="127" width="102" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="LoR-Gb-BE8"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_record_email" translatesAutoresizingMaskIntoConstraints="NO" id="JGN-fQ-eMb">
+                        <rect key="frame" x="10" y="154" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="GY7-6i-YtS"/>
+                            <constraint firstAttribute="width" constant="20" id="TL6-Nh-527"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电子邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkY-Kg-aDV">
+                        <rect key="frame" x="38" y="154" width="53.5" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="vmd-UX-i0f"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
@@ -57,15 +141,6 @@
                             <constraint firstAttribute="height" constant="20" id="c4R-Po-q2X"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审核时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tm-n6-Vcn">
-                        <rect key="frame" x="38" y="207" width="53.5" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="hHp-M0-tJj"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -83,28 +158,12 @@
                             <constraint firstAttribute="width" constant="20" id="cBl-mX-KXD"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6230947200001378875" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gad-UF-YCP">
-                        <rect key="frame" x="124" y="99" width="139" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-uO-waP">
+                        <rect key="frame" x="38" y="187" width="53.5" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="xrn-WF-Yxs"/>
+                            <constraint firstAttribute="height" constant="20" id="J5M-dP-ejS"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_record_money" translatesAutoresizingMaskIntoConstraints="NO" id="yfM-0r-iQm">
-                        <rect key="frame" x="10" y="15" width="20" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Y6x-Xf-jbs"/>
-                            <constraint firstAttribute="width" constant="20" id="fdv-C8-5h8"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoc-sj-DG8">
-                        <rect key="frame" x="124" y="73" width="25" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="6xy-pV-WMy"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -117,13 +176,15 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_record_email" translatesAutoresizingMaskIntoConstraints="NO" id="JGN-fQ-eMb">
-                        <rect key="frame" x="10" y="154" width="20" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审核时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tm-n6-Vcn">
+                        <rect key="frame" x="38" y="207" width="53.5" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="GY7-6i-YtS"/>
-                            <constraint firstAttribute="width" constant="20" id="TL6-Nh-527"/>
+                            <constraint firstAttribute="height" constant="20" id="hHp-M0-tJj"/>
                         </constraints>
-                    </imageView>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-12-01 16:38:31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lte-Qp-2pF">
                         <rect key="frame" x="124" y="207" width="125" height="20"/>
                         <constraints>
@@ -131,6 +192,24 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZb-uA-abn">
+                        <rect key="frame" x="38" y="227" width="53.5" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="oT9-c7-u5K"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审核成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDC-5M-SaH">
+                        <rect key="frame" x="124" y="227" width="53.5" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Uly-qS-fAx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.99215686270000003" green="0.6588235294" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMZ-Rs-6AH">
@@ -147,85 +226,6 @@
                                 </attributes>
                             </fragment>
                         </attributedString>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lav-fP-NEG">
-                        <rect key="frame" x="38" y="15" width="27" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="NAb-RS-SNG"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审核成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDC-5M-SaH">
-                        <rect key="frame" x="124" y="227" width="53.5" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Uly-qS-fAx"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.99215686270000003" green="0.6588235294" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电子邮箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkY-Kg-aDV">
-                        <rect key="frame" x="38" y="154" width="53.5" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="vmd-UX-i0f"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZb-uA-abn">
-                        <rect key="frame" x="38" y="227" width="53.5" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="oT9-c7-u5K"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+86 15118041624" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z05-6x-jt2">
-                        <rect key="frame" x="124" y="127" width="102" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="LoR-Gb-BE8"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电话号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZq-RO-Ldj">
-                        <rect key="frame" x="38" y="127" width="53.5" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="gqe-uZ-bWB"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phA-yI-lk1">
-                        <rect key="frame" x="10" y="42" width="310" height="1"/>
-                        <color key="backgroundColor" red="0.90196078430000004" green="0.8980392157" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="9SZ-sZ-lw8"/>
-                        </constraints>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dm-XT-ufb">
-                        <rect key="frame" x="38" y="51" width="27" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="6Dr-yf-bqW"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uki-Qg-OKX">
-                        <rect key="frame" x="124" y="15" width="30.5" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="MNs-kx-842"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.99215686270000003" green="0.6588235294" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -283,7 +283,19 @@
                     <constraint firstItem="2k5-JX-TYb" firstAttribute="leading" secondItem="QkY-Kg-aDV" secondAttribute="trailing" constant="32.5" id="yWI-ec-m7e"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="35" y="129.5"/>
+            <connections>
+                <outlet property="ApplyTimeLabel" destination="6LI-xb-fYS" id="pmM-20-S16"/>
+                <outlet property="AuditTimeLabel" destination="lte-Qp-2pF" id="y76-5B-Jok"/>
+                <outlet property="BankAccountLabel" destination="Gad-UF-YCP" id="UD7-P5-Hr5"/>
+                <outlet property="BanksLabel" destination="bs3-th-VRS" id="UBV-GE-jEa"/>
+                <outlet property="EmailLabel" destination="2k5-JX-TYb" id="Wc2-RM-huI"/>
+                <outlet property="MmountLabel" destination="uki-Qg-OKX" id="D9y-ja-p5f"/>
+                <outlet property="NameLabel" destination="Zoc-sj-DG8" id="9Tm-qT-GUF"/>
+                <outlet property="PhoneLabel" destination="z05-6x-jt2" id="sfB-OJ-U3L"/>
+                <outlet property="ReviewStatusLabel" destination="KDC-5M-SaH" id="vnX-XI-ewo"/>
+                <outlet property="TextIntroduceLabel" destination="dMZ-Rs-6AH" id="w3U-fz-baQ"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="53"/>
         </tableViewCell>
     </objects>
     <resources>

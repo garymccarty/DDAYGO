@@ -8,6 +8,7 @@
 
 #import "ZP_ExtractController.h"
 #import "ZP_ExtractCell.h"
+#import "PrefixHeader.pch"
 @interface ZP_ExtractController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -22,14 +23,14 @@
 - (void)initUI {
     self.title = NSLocalizedString(@"提现记录", nil);
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"ZP_ExtractCell" bundle:self] forCellReuseIdentifier:@"ZP_ExtractCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ZP_ExtractCell" bundle:nil] forCellReuseIdentifier:@"ZP_ExtractCell"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.backgroundColor = ZP_green;
+//    [self.navigationController.navigationBar lt_setBackgroundColor:ZP_greenen];
     
 }
+#pragma mark - tableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView  {
     return 1;
 }
 
@@ -40,7 +41,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
-    return 100;
+    return 350;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

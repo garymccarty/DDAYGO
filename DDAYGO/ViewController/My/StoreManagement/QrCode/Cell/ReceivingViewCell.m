@@ -50,7 +50,11 @@
     //  3.设置数据
     NSString * info = url;
     
-    NSData * infoData = [info dataUsingEncoding:NSUTF8StringEncoding];
+//
+//    NSString * str = [info ]
+    NSString * string = [info stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    string = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSData * infoData = [string dataUsingEncoding:NSUTF8StringEncoding];
     [filter setValue:infoData forKeyPath:@"inputMessage"];
     
     // 4.生成二维码
