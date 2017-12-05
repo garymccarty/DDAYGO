@@ -18,5 +18,5 @@
  *  @return 返回的大小会取整，如实际高度是 115.15 时，会返回 116.0
  */
 - (CGSize)sizeWithFont:(UIFont *)font forWidth:(CGFloat)width;
-
+- (NSString *)encodeToPercentEscapeString;
 @end

@@ -19,4 +19,11 @@
         return CGSizeMake(ceil(size.width), ceil(size.height));
     }
 }
+
+- (NSString *)encodeToPercentEscapeString
+{
+    NSString *outputStr = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)self,NULL,(CFStringRef)@"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8));
+    
+    return outputStr;
+}
 @end

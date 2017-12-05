@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZP_ExtractController">
+            <connections>
+                <outlet property="DatetoItemLabel" destination="dTA-Ib-6Uu" id="8lu-Ue-bZ8"/>
+                <outlet property="tableView" destination="HmV-JG-DTl" id="LIo-Jc-o3T"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-12-02 13:38" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-Ib-6Uu">
+                    <rect key="frame" x="80" y="20" width="160" height="21"/>
+                    <color key="backgroundColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="KBS-Ke-k7x"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HmV-JG-DTl">
+                    <rect key="frame" x="0.0" y="49" width="320" height="519"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="HmV-JG-DTl" secondAttribute="bottom" id="CNo-36-A2p"/>
+                <constraint firstItem="HmV-JG-DTl" firstAttribute="top" secondItem="dTA-Ib-6Uu" secondAttribute="bottom" constant="8" id="G7u-XX-5WQ"/>
+                <constraint firstItem="dTA-Ib-6Uu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="Oat-vf-hPq"/>
+                <constraint firstAttribute="trailing" secondItem="HmV-JG-DTl" secondAttribute="trailing" id="ZHZ-n0-sic"/>
+                <constraint firstAttribute="trailing" secondItem="dTA-Ib-6Uu" secondAttribute="trailing" constant="80" id="Zz3-on-0T6"/>
+                <constraint firstItem="dTA-Ib-6Uu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="oS9-Cr-c5O"/>
+                <constraint firstItem="HmV-JG-DTl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xLg-pN-f22"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

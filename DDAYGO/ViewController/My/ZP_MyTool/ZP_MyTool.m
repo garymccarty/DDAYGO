@@ -9,6 +9,7 @@
 #import "ZP_MyTool.h"
 #import "PrefixHeader.pch"
 #import "ZP_NetorkingTools.h"
+#import "NSString+Additions.h"
 @implementation ZP_MyTool
 // 个人资料
 + (void)requestSetHomePage:(NSDictionary *)SetHomePage success:(void (^)(id))success failure:(void (^)(NSError *))failure {
@@ -20,7 +21,9 @@
 }
 // 修改资料(暂时只有昵称，性别)
 + (void)requesModifydata:(NSDictionary *)Modifydata uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updateaccountinfo?nickname=%@&realname=%@&sex=%@&birth=%@&phone=%@&address=%@&token=%@",URLAPI,Modifydata[@"nickname"],Modifydata[@"realname"],Modifydata[@"sex"],Modifydata[@"birth"],Modifydata[@"phone"],Modifydata[@"address"],Modifydata[@"token"]] parameters:nil success:^(NSDictionary *responseObject) {
+    NSString * nickname = Modifydata[@"nickname"];
+    NSString * address = Modifydata[@"address"];
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updateaccountinfo?nickname=%@&realname=%@&sex=%@&birth=%@&phone=%@&address=%@&token=%@",URLAPI,nickname.encodeToPercentEscapeString,Modifydata[@"realname"],Modifydata[@"sex"],Modifydata[@"birth"],Modifydata[@"phone"],address.encodeToPercentEscapeString,Modifydata[@"token"]].encodeToPercentEscapeString parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);

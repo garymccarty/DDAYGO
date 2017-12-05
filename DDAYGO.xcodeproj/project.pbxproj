@@ -392,6 +392,10 @@
 		C492A1BA1FD15189009FF57B /* img_order_code@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B31FD15189009FF57B /* img_order_code@2x.png */; };
 		C492A1BB1FD15189009FF57B /* img_order_code@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B41FD15189009FF57B /* img_order_code@3x.png */; };
 		C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B51FD15189009FF57B /* 扫码付款状态.png */; };
+		C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */; };
+		C49B32221FD5A995007632F2 /* ZP_ExtractController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */; };
+		C49B32271FD5AC9E007632F2 /* ZP_ExtractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B32251FD5AC9E007632F2 /* ZP_ExtractCell.m */; };
+		C49B32281FD5AC9E007632F2 /* ZP_ExtractCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32261FD5AC9E007632F2 /* ZP_ExtractCell.xib */; };
 		C4D2FEA71FD519A100F546AB /* ZP_QrCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */; };
 		C4D2FEB31FD552A000F546AB /* YueTixianController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEB11FD552A000F546AB /* YueTixianController.m */; };
 		C4D2FEB41FD552A000F546AB /* YueTixianController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEB21FD552A000F546AB /* YueTixianController.xib */; };
@@ -1124,6 +1128,12 @@
 		C492A1B31FD15189009FF57B /* img_order_code@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_code@2x.png"; sourceTree = "<group>"; };
 		C492A1B41FD15189009FF57B /* img_order_code@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_code@3x.png"; sourceTree = "<group>"; };
 		C492A1B51FD15189009FF57B /* 扫码付款状态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫码付款状态.png"; sourceTree = "<group>"; };
+		C49B321E1FD5A995007632F2 /* ZP_ExtractController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ExtractController.h; sourceTree = "<group>"; };
+		C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ExtractController.m; sourceTree = "<group>"; };
+		C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ExtractController.xib; sourceTree = "<group>"; };
+		C49B32241FD5AC9E007632F2 /* ZP_ExtractCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ExtractCell.h; sourceTree = "<group>"; };
+		C49B32251FD5AC9E007632F2 /* ZP_ExtractCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ExtractCell.m; sourceTree = "<group>"; };
+		C49B32261FD5AC9E007632F2 /* ZP_ExtractCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ExtractCell.xib; sourceTree = "<group>"; };
 		C4D2FEA51FD519A100F546AB /* ZP_QrCodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_QrCodeModel.h; sourceTree = "<group>"; };
 		C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_QrCodeModel.m; sourceTree = "<group>"; };
 		C4D2FEB01FD552A000F546AB /* YueTixianController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YueTixianController.h; sourceTree = "<group>"; };
@@ -3510,6 +3520,27 @@
 			path = "订单_ios";
 			sourceTree = "<group>";
 		};
+		C49B321D1FD5A93C007632F2 /* ZP_ExtractHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				C49B321E1FD5A995007632F2 /* ZP_ExtractController.h */,
+				C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */,
+				C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */,
+				C49B32231FD5AC6D007632F2 /* ZP_ExtractCell */,
+			);
+			path = ZP_ExtractHomePage;
+			sourceTree = "<group>";
+		};
+		C49B32231FD5AC6D007632F2 /* ZP_ExtractCell */ = {
+			isa = PBXGroup;
+			children = (
+				C49B32241FD5AC9E007632F2 /* ZP_ExtractCell.h */,
+				C49B32251FD5AC9E007632F2 /* ZP_ExtractCell.m */,
+				C49B32261FD5AC9E007632F2 /* ZP_ExtractCell.xib */,
+			);
+			path = ZP_ExtractCell;
+			sourceTree = "<group>";
+		};
 		C4D2FEA41FD5197E00F546AB /* ZP_QrCodeModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -3523,6 +3554,7 @@
 			isa = PBXGroup;
 			children = (
 				C4D2FEAF1FD552A000F546AB /* ZP_YueTixianHomePage */,
+				C49B321D1FD5A93C007632F2 /* ZP_ExtractHomePage */,
 			);
 			path = ZP_YueTixian;
 			sourceTree = "<group>";
@@ -3712,6 +3744,7 @@
 				C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */,
 				0682BE6D1F90725700894F4E /* img_home_advertisemen.png in Resources */,
 				C4573F1B1FCF8ECF001DFE97 /* bg_lottery_redball@3x.png in Resources */,
+				C49B32281FD5AC9E007632F2 /* ZP_ExtractCell.xib in Resources */,
 				C492A1A81FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib in Resources */,
 				C4D2FEE71FD5636C00F546AB /* icon_record_money@3x.png in Resources */,
 				C4573F231FCF8ECF001DFE97 /* icon_forward_right@3x.png in Resources */,
@@ -3729,6 +3762,7 @@
 				C4D2FEE51FD5636C00F546AB /* icon_record_email@3x.png in Resources */,
 				C4D2FEE81FD5636C00F546AB /* icon_record_phone@2x.png in Resources */,
 				06621DAC1F9758720030983F /* LoginController.xib in Resources */,
+				C49B32221FD5A995007632F2 /* ZP_ExtractController.xib in Resources */,
 				C4D2FEDC1FD5636C00F546AB /* ic_store_bill@2x.png in Resources */,
 				C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */,
 				06F571921F9F16E600D61FDB /* NewsViewController.xib in Resources */,
@@ -3946,6 +3980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37503CF1FC7BD8F00DA2950 /* ZP_ConfirmWebController.m in Sources */,
+				C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */,
 				C4137E811FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m in Sources */,
 				C47E763B1FB5A1C7009F279A /* ZPHomeCell.m in Sources */,
 				06621DB81F9758AE0030983F /* ForgetPswController.m in Sources */,
@@ -4086,6 +4121,7 @@
 				065B3CE31F984F8A00A8E6D6 /* UIView+SDExtension.m in Sources */,
 				C45F23091FA0754500F5DB41 /* ZPSearchBarBUtton.m in Sources */,
 				C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */,
+				C49B32271FD5AC9E007632F2 /* ZP_ExtractCell.m in Sources */,
 				C45F23381FA0757A00F5DB41 /* SecondViewCell.m in Sources */,
 				C4535E381FC55EB600DFFD62 /* ZP_ExpressDeliveryModel.m in Sources */,
 				064249751F998E6400340EBA /* ConfirmPayView.m in Sources */,
