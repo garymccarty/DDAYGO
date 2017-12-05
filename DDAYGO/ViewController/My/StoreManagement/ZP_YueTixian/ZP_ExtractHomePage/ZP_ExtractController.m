@@ -7,8 +7,8 @@
 //
 
 #import "ZP_ExtractController.h"
-//#import "ZP_ExtractCell.h"
-@interface ZP_ExtractController ()
+#import "ZP_ExtractCell.h"
+@interface ZP_ExtractController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -22,6 +22,28 @@
 - (void)initUI {
     self.title = NSLocalizedString(@"提现记录", nil);
     
+    [self.tableView registerNib:[UINib nibWithNibName:@"ZP_ExtractCell" bundle:self] forCellReuseIdentifier:@"ZP_ExtractCell"];
+    
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView  {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZP_ExtractCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ZP_ExtractCell"];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath  {
+    return 100;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 @end
