@@ -13,9 +13,9 @@
 
 @property (strong, nonatomic) IBOutlet TextView * amountText;
 @property (strong, nonatomic) IBOutlet TextView * payeeText;
-@property (strong, nonatomic) IBOutlet TextView *CollectingBankText;
-@property (strong, nonatomic) IBOutlet TextView *PaymentAccountText;
-@property (strong, nonatomic) IBOutlet TextView *reservedPhoneText;
-@property (strong, nonatomic) IBOutlet TextView *emailText;
+@property (strong, nonatomic) IBOutlet TextView * CollectingBankText;
+@property (strong, nonatomic) IBOutlet TextView * PaymentAccountText;
+@property (strong, nonatomic) IBOutlet TextView * reservedPhoneText;
+@property (strong, nonatomic) IBOutlet TextView * emailText;
 
 @end

@@ -2164,7 +2164,6 @@
 			isa = PBXGroup;
 			children = (
 				06F571E41F9F1E8700D61FDB /* BillsHomePage */,
-				06F571F51F9F1E8700D61FDB /* SearchBox */,
 				06F5723C1F9F204F00D61FDB /* Screening */,
 				06F572381F9F204F00D61FDB /* BillsDetails */,
 			);
@@ -2193,13 +2192,6 @@
 				06F571F11F9F1E8700D61FDB /* BillTableViewCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		06F571F51F9F1E8700D61FDB /* SearchBox */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SearchBox;
 			sourceTree = "<group>";
 		};
 		06F571F61F9F1E8700D61FDB /* Order */ = {

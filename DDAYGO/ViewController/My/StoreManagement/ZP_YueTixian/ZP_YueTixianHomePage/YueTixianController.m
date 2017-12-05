@@ -18,12 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    
-    
 }
+
 - (void)initUI {
         self.title = NSLocalizedString(@"余额", nil);
-    UIBarButtonItem * ExtractBut = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_withdrawals_record"] style:UIBarButtonItemStyleDone target:nil action:@selector(Extract)];
+    UIBarButtonItem * ExtractBut = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_withdrawals_record"] style:UIBarButtonItemStyleDone target:self action:@selector(Extract)];
     ExtractBut.tintColor = ZP_WhiteColor;
     self.navigationItem.rightBarButtonItem = ExtractBut;
     

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OrdersViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView *OrdersscrollView;
 
 @end
