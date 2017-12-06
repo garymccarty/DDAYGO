@@ -34,7 +34,6 @@
     ZP_ExtractController * Extract = [[ZP_ExtractController alloc]init];
     Extract.supplierId = _SupplierId;
     [self.navigationController pushViewController:Extract animated:YES];
-    
 }
 - (IBAction)CompleteButton:(id)sender {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
