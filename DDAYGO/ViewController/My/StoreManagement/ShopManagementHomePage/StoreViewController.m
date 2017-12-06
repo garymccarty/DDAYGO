@@ -17,7 +17,7 @@
 #import "ZP_MyTool.h"
 @interface StoreViewController ()
 
-@property (nonatomic, strong) NSNumber *sid;
+@property (nonatomic, strong) NSNumber * sid;
 
 @end
 
@@ -103,6 +103,7 @@
 //  提现
 - (IBAction)tixianBut:(id)sender {
     YueTixianController * YueTixian = [[YueTixianController alloc]init];
+    YueTixian.SupplierId = _sid;
     [self.navigationController pushViewController:YueTixian animated:YES];
 }
 

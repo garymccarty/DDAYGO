@@ -91,7 +91,7 @@
 #define ZP_OnceagainColor [UIColor colorWithHexString:@"#fb7f06"]
 #define ZP_TypefaceColor [UIColor colorWithHexString:@"#666666"]  // 商标字体
 #define ZP_TabBarTextColor [UIColor colorWithHexString:@"#999999"]
-//#define ZP_WhiteColor [UIColor colorWithHexString:@"#ff6600"]
+#define ZP_titlecokeColor [UIColor colorWithHexString:@"#bebebe"]
 #define ZP_ButtonDisabledColor [UIColor colorWithHexString:@"#dfdfdf"]
 #define ZP_WhiteColor [UIColor colorWithHexString:@"#ffffff"]
 #define ZP_LabelColor [UIColor colorWithHexString:@"#434343"]

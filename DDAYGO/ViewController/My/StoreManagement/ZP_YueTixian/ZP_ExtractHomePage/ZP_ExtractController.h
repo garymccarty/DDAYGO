@@ -10,7 +10,11 @@
 
 @interface ZP_ExtractController : UIViewController
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, strong) UILabel * DateTimeLabel;
+/**
+ * 供货商ID
+ */
+@property (nonatomic, strong) NSNumber * supplierId;
 
 
 

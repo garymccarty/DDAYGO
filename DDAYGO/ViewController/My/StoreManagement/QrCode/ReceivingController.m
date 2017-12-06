@@ -84,7 +84,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 350;
+    return 300;
 }
 // 把将要进入二维码页面时的系统亮度保存
 - (void)viewWillAppear:(BOOL)animated {

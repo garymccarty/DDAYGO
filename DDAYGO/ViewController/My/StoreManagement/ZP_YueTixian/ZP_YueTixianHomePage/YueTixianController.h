@@ -22,4 +22,5 @@
  * 供货商ID
  */
 @property (nonatomic, strong) NSNumber * SupplierId;
+
 @end

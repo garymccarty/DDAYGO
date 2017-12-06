@@ -54,5 +54,8 @@
 
 //添加提现申请  addsuppliertakeout
 + (void)requesAddSupplierTakeOut:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 获取用户提现记录列表
++ (void)requesWithdrawalRecord:(NSDictionary *)WithdrawalRecord uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end
 

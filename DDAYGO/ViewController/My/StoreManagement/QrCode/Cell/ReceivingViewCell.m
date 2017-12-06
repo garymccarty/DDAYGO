@@ -50,8 +50,6 @@
     //  3.设置数据
     NSString * info = url;
     
-//
-//    NSString * str = [info ]
     NSString * string = [info stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     string = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSData * infoData = [string dataUsingEncoding:NSUTF8StringEncoding];
