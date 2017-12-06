@@ -51,13 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/My/ScanningGun/ScanData/DataViewController.m"
-            timestampString = "534163144.043618"
+            filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/ReceivingController.m"
+            timestampString = "534250821.241459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-setupWebView"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DDAYGO/ViewController/My/ScanningGun/ScanData/DataViewController.m"
-            timestampString = "534163144.043677"
+            timestampString = "534250821.241541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -83,44 +83,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/My/ScanningGun/ScanData/DataViewController.m"
-            timestampString = "534163144.043723"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "-setupWebView"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/My/ScanningGun/ScanData/DataViewController.m"
-            timestampString = "534163144.043764"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-setupWebView"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/ReceivingController.m"
-            timestampString = "534221774.723278"
+            timestampString = "534250821.241589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "-allData"
             landmarkType = "7">
          </BreakpointContent>
@@ -131,13 +99,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/Cell/ReceivingViewCell.m"
-            timestampString = "534221774.723412"
+            filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/ReceivingController.m"
+            timestampString = "534250821.241667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-getInitWithUrl:"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-allData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -148,12 +116,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/ReceivingController.m"
-            timestampString = "534221774.723486"
+            timestampString = "534250821.241711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-allData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/ReceivingController.m"
+            timestampString = "534250821.241753"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-allData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,7 +10,7 @@
 #import "ZP_ExtractController.h"
 #import "PrefixHeader.pch"
 #import "ZP_MyTool.h"
-@interface YueTixianController ()
+@interface YueTixianController ()<UITextFieldDelegate>
 
 @end
 
@@ -26,7 +26,7 @@
     UIBarButtonItem * ExtractBut = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_withdrawals_record"] style:UIBarButtonItemStyleDone target:self action:@selector(Extract)];
     ExtractBut.tintColor = ZP_WhiteColor;
     self.navigationItem.rightBarButtonItem = ExtractBut;
-
+    self.TikuanscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
 }
 
 - (void)Extract {
@@ -56,11 +56,11 @@
     ZPLog(@"完成");
 }
 
-//  键盘弹起
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{
-    
-    [self.view endEditing:YES];
-    
-}
+////  键盘弹起
+//- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{
+//
+//    [self.view endEditing:YES];
+//
+//}
 @end
 

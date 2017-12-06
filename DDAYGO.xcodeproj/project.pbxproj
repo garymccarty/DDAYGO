@@ -184,6 +184,10 @@
 		06F572421F9F204F00D61FDB /* SearchTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5723E1F9F204F00D61FDB /* SearchTimeViewController.m */; };
 		06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5723F1F9F204F00D61FDB /* SearchTimeViewController.xib */; };
 		6FA32ACCA83E0A32B68FDCFC /* libPods-DDAYGO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */; };
+		C407AC131FD7E917004A8DE8 /* 提现记录_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C407AC121FD7E916004A8DE8 /* 提现记录_spec.png */; };
+		C407AC151FD7EB7C004A8DE8 /* 赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C407AC141FD7EB7C004A8DE8 /* 赏金彩_spec.png */; };
+		C407AC171FD7EB93004A8DE8 /* 选择赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C407AC161FD7EB93004A8DE8 /* 选择赏金彩_spec.png */; };
+		C407AC191FD7FEA5004A8DE8 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C407AC181FD7FEA5004A8DE8 /* DDAYGO IHTTP协议1.0.docx */; };
 		C409F86E1FA17336009DE7B1 /* NestedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86A1FA17336009DE7B1 /* NestedCollectionViewCell.m */; };
 		C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86C1FA17336009DE7B1 /* SixthViewCell.m */; };
 		C409F8721FA1758E009DE7B1 /* ZP_SixthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F8711FA1758E009DE7B1 /* ZP_SixthModel.m */; };
@@ -244,8 +248,6 @@
 		C4573F241FCF8ECF001DFE97 /* 历史开奖_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F031FCF8ECF001DFE97 /* 历史开奖_spec.png */; };
 		C4573F251FCF8ECF001DFE97 /* 历史开奖详情.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F041FCF8ECF001DFE97 /* 历史开奖详情.png */; };
 		C4573F261FCF8ECF001DFE97 /* 说明_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F051FCF8ECF001DFE97 /* 说明_spec.png */; };
-		C4573F271FCF8ECF001DFE97 /* 赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F061FCF8ECF001DFE97 /* 赏金彩_spec.png */; };
-		C4573F281FCF8ECF001DFE97 /* 选择赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4573F071FCF8ECF001DFE97 /* 选择赏金彩_spec.png */; };
 		C4573F371FCFA3A6001DFE97 /* BetCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */; };
 		C4573F381FCFA3A6001DFE97 /* BetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */; };
 		C4573F391FCFA3A6001DFE97 /* BetHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F2F1FCFA3A6001DFE97 /* BetHeaderView.m */; };
@@ -400,7 +402,6 @@
 		C4D2FEA71FD519A100F546AB /* ZP_QrCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */; };
 		C4D2FEB31FD552A000F546AB /* YueTixianController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEB11FD552A000F546AB /* YueTixianController.m */; };
 		C4D2FEB41FD552A000F546AB /* YueTixianController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEB21FD552A000F546AB /* YueTixianController.xib */; };
-		C4D2FEBB1FD5634A00F546AB /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEBA1FD5634900F546AB /* DDAYGO IHTTP协议1.0.docx */; };
 		C4D2FEDA1FD5636C00F546AB /* bg_store_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEBD1FD5636C00F546AB /* bg_store_background@2x.png */; };
 		C4D2FEDB1FD5636C00F546AB /* bg_store_background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEBE1FD5636C00F546AB /* bg_store_background@3x.png */; };
 		C4D2FEDC1FD5636C00F546AB /* ic_store_bill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEBF1FD5636C00F546AB /* ic_store_bill@2x.png */; };
@@ -429,7 +430,6 @@
 		C4D2FEF31FD5636C00F546AB /* img_store_defaulthead_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FED61FD5636C00F546AB /* img_store_defaulthead_1@3x.png */; };
 		C4D2FEF41FD5636C00F546AB /* 商店管理_spec_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FED71FD5636C00F546AB /* 商店管理_spec_spec.png */; };
 		C4D2FEF51FD5636C00F546AB /* 提现_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FED81FD5636C00F546AB /* 提现_spec.png */; };
-		C4D2FEF61FD5636C00F546AB /* 提现记录_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FED91FD5636C00F546AB /* 提现记录_spec.png */; };
 		E37503CF1FC7BD8F00DA2950 /* ZP_ConfirmWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */; };
 /* End PBXBuildFile section */
 
@@ -761,6 +761,10 @@
 		0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDAYGO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A14FE6EC0BD7CDD0156BD7F /* Pods-DDAYGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.release.xcconfig"; sourceTree = "<group>"; };
 		949508FD8C61CA662D6E2034 /* Pods-DDAYGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.debug.xcconfig"; sourceTree = "<group>"; };
+		C407AC121FD7E916004A8DE8 /* 提现记录_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "提现记录_spec.png"; sourceTree = "<group>"; };
+		C407AC141FD7EB7C004A8DE8 /* 赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赏金彩_spec.png"; sourceTree = "<group>"; };
+		C407AC161FD7EB93004A8DE8 /* 选择赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择赏金彩_spec.png"; sourceTree = "<group>"; };
+		C407AC181FD7FEA5004A8DE8 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C409F8691FA17336009DE7B1 /* NestedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NestedCollectionViewCell.h; sourceTree = "<group>"; };
 		C409F86A1FA17336009DE7B1 /* NestedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NestedCollectionViewCell.m; sourceTree = "<group>"; };
 		C409F86B1FA17336009DE7B1 /* SixthViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SixthViewCell.h; sourceTree = "<group>"; };
@@ -858,8 +862,6 @@
 		C4573F031FCF8ECF001DFE97 /* 历史开奖_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史开奖_spec.png"; sourceTree = "<group>"; };
 		C4573F041FCF8ECF001DFE97 /* 历史开奖详情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史开奖详情.png"; sourceTree = "<group>"; };
 		C4573F051FCF8ECF001DFE97 /* 说明_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "说明_spec.png"; sourceTree = "<group>"; };
-		C4573F061FCF8ECF001DFE97 /* 赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赏金彩_spec.png"; sourceTree = "<group>"; };
-		C4573F071FCF8ECF001DFE97 /* 选择赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择赏金彩_spec.png"; sourceTree = "<group>"; };
 		C4573F2B1FCFA3A6001DFE97 /* BetCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetCollectionViewCell.h; sourceTree = "<group>"; };
 		C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetCollectionViewCell.m; sourceTree = "<group>"; };
 		C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1142,7 +1144,6 @@
 		C4D2FEB01FD552A000F546AB /* YueTixianController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YueTixianController.h; sourceTree = "<group>"; };
 		C4D2FEB11FD552A000F546AB /* YueTixianController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YueTixianController.m; sourceTree = "<group>"; };
 		C4D2FEB21FD552A000F546AB /* YueTixianController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YueTixianController.xib; sourceTree = "<group>"; };
-		C4D2FEBA1FD5634900F546AB /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C4D2FEBD1FD5636C00F546AB /* bg_store_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_store_background@2x.png"; sourceTree = "<group>"; };
 		C4D2FEBE1FD5636C00F546AB /* bg_store_background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_store_background@3x.png"; sourceTree = "<group>"; };
 		C4D2FEBF1FD5636C00F546AB /* ic_store_bill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_store_bill@2x.png"; sourceTree = "<group>"; };
@@ -1171,7 +1172,6 @@
 		C4D2FED61FD5636C00F546AB /* img_store_defaulthead_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_store_defaulthead_1@3x.png"; sourceTree = "<group>"; };
 		C4D2FED71FD5636C00F546AB /* 商店管理_spec_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "商店管理_spec_spec.png"; sourceTree = "<group>"; };
 		C4D2FED81FD5636C00F546AB /* 提现_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "提现_spec.png"; sourceTree = "<group>"; };
-		C4D2FED91FD5636C00F546AB /* 提现记录_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "提现记录_spec.png"; sourceTree = "<group>"; };
 		E37503CC1FC7BBF400DA2950 /* ZP_ConfirmWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ConfirmWebController.h; sourceTree = "<group>"; };
 		E37503CD1FC7BBF400DA2950 /* ZP_ConfirmWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ConfirmWebController.m; sourceTree = "<group>"; };
 		E37503CE1FC7BBF400DA2950 /* ZP_ConfirmWebController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ConfirmWebController.xib; sourceTree = "<group>"; };
@@ -1364,8 +1364,8 @@
 		0641BB971F67B60B00E72FEF /* Testbag */ = {
 			isa = PBXGroup;
 			children = (
+				C407AC181FD7FEA5004A8DE8 /* DDAYGO IHTTP协议1.0.docx */,
 				C4D2FEBC1FD5636C00F546AB /* 提现_ios */,
-				C4D2FEBA1FD5634900F546AB /* DDAYGO IHTTP协议1.0.docx */,
 				C492A1AE1FD15189009FF57B /* 订单_ios */,
 				C4573EE41FCF8ECF001DFE97 /* 彩票_ios */,
 				062C9D4A1F8CD6F900E14987 /* 图片 */,
@@ -2552,8 +2552,8 @@
 				C4573F041FCF8ECF001DFE97 /* 历史开奖详情.png */,
 				C4573F411FCFB0F1001DFE97 /* 历史下注号码.png */,
 				C4573F051FCF8ECF001DFE97 /* 说明_spec.png */,
-				C4573F061FCF8ECF001DFE97 /* 赏金彩_spec.png */,
-				C4573F071FCF8ECF001DFE97 /* 选择赏金彩_spec.png */,
+				C407AC161FD7EB93004A8DE8 /* 选择赏金彩_spec.png */,
+				C407AC141FD7EB7C004A8DE8 /* 赏金彩_spec.png */,
 			);
 			path = "彩票_ios";
 			sourceTree = "<group>";
@@ -3605,7 +3605,7 @@
 				C4D2FED61FD5636C00F546AB /* img_store_defaulthead_1@3x.png */,
 				C4D2FED71FD5636C00F546AB /* 商店管理_spec_spec.png */,
 				C4D2FED81FD5636C00F546AB /* 提现_spec.png */,
-				C4D2FED91FD5636C00F546AB /* 提现记录_spec.png */,
+				C407AC121FD7E916004A8DE8 /* 提现记录_spec.png */,
 			);
 			path = "提现_ios";
 			sourceTree = "<group>";
@@ -3772,9 +3772,9 @@
 				C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */,
 				06F571921F9F16E600D61FDB /* NewsViewController.xib in Resources */,
 				C4D2FEDA1FD5636C00F546AB /* bg_store_background@2x.png in Resources */,
+				C407AC151FD7EB7C004A8DE8 /* 赏金彩_spec.png in Resources */,
 				06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */,
 				C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */,
-				C4573F281FCF8ECF001DFE97 /* 选择赏金彩_spec.png in Resources */,
 				C4573F161FCF8ECF001DFE97 /* bg_choose_redball@3x.png in Resources */,
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
 				C4D2FEEA1FD5636C00F546AB /* icon_record_state@2x.png in Resources */,
@@ -3815,7 +3815,6 @@
 				06F5722F1F9F1E8700D61FDB /* ReturnDetailViewController.xib in Resources */,
 				C492A1BA1FD15189009FF57B /* img_order_code@2x.png in Resources */,
 				06F5722D1F9F1E8700D61FDB /* OrderManagerViewController.xib in Resources */,
-				C4D2FEBB1FD5634A00F546AB /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				06F571D21F9F1A7900D61FDB /* BindingICUEViewController.xib in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
 				C4573F131FCF8ECF001DFE97 /* icon_explan_second@2x.png in Resources */,
@@ -3877,14 +3876,16 @@
 				062C9D5C1F8CD6F900E14987 /* button_2@3x.png in Resources */,
 				063FE0521F614D24009910FF /* Assets.xcassets in Resources */,
 				C47E76371FB5A1C7009F279A /* ProductDescriptionView.xib in Resources */,
+				C407AC131FD7E917004A8DE8 /* 提现记录_spec.png in Resources */,
 				06F5716E1F9F15CE00D61FDB /* CollectionViewController.xib in Resources */,
 				C492A1B61FD15189009FF57B /* icon_order_delete_normal@2x.png in Resources */,
 				C4573F201FCF8ECF001DFE97 /* icon_explan_fourth@3x.png in Resources */,
 				C492A17C1FD0ECB7009FF57B /* ZP_HistoryBetView.xib in Resources */,
-				C4573F271FCF8ECF001DFE97 /* 赏金彩_spec.png in Resources */,
 				C4D2FEE41FD5636C00F546AB /* icon_record_email@2x.png in Resources */,
 				C4573F1A1FCF8ECF001DFE97 /* bg_lottery_record@3x.png in Resources */,
+				C407AC171FD7EB93004A8DE8 /* 选择赏金彩_spec.png in Resources */,
 				0682BE801F90C8F000894F4E /* seven.png in Resources */,
+				C407AC191FD7FEA5004A8DE8 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				C4573F5A1FCFE354001DFE97 /* bg_lottery_money@2x.png in Resources */,
 				062C9D681F8CDB7900E14987 /* headImage.jpg in Resources */,
 				C4573F3A1FCFA3A6001DFE97 /* BetHeaderView.xib in Resources */,
@@ -3901,7 +3902,6 @@
 				C470969C1FB0602F006EA52C /* Localizable.strings in Resources */,
 				C4D2FEF21FD5636C00F546AB /* img_store_defaulthead_1@2x.png in Resources */,
 				C435173A1FB2AC830066302E /* FootprintCollectionViewCell.xib in Resources */,
-				C4D2FEF61FD5636C00F546AB /* 提现记录_spec.png in Resources */,
 				C4D2FEDD1FD5636C00F546AB /* ic_store_bill@3x.png in Resources */,
 				C4573F091FCF8ECF001DFE97 /* bg_choose_whiteball_normal@2x.png in Resources */,
 				C4D2FEEC1FD5636C00F546AB /* icon_shop_wallet@2x.png in Resources */,

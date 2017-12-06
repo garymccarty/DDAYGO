@@ -1,3 +1,4 @@
+
 //
 //  DataViewController.m
 //  DDAYGO
@@ -26,8 +27,8 @@
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
          self.hidesBottomBarWhenPushed = NO;
-//        [self setupLabel];
     } else {
+        
         [self setupWebView];
     }
 
@@ -37,16 +38,9 @@
 - (void)setupWebView {
     UIWebView * webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     webView.frame = self.view.bounds;
-    
-    // 1. URL 定位资源,需要资源的地址
-    NSString * urlStr = self.jump_URL;
-    NSURL * url = [NSURL URLWithString:urlStr];
-    
-    // 2. 把URL告诉给服务器,请求数据
-    NSURLRequest * request = [NSURLRequest requestWithURL:url];
-    
-    // 3. 发送请求给服务器
-    [webView loadRequest:request];
+    NSMutableURLRequest * reuqestShare = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:_jump_URL]];
+    [reuqestShare setHTTPMethod:@"POST"];
+    [webView loadRequest:reuqestShare];
     [self.view addSubview:webView];
 }
 

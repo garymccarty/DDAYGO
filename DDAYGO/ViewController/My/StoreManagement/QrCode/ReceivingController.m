@@ -37,6 +37,7 @@
     self.tableView.backgroundColor = ZP_green;
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_greenen];
 }
+
 // 数据
 -(void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
@@ -44,24 +45,32 @@
     dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
+    
     [ZP_MyTool requesQrCode:dic success:^(id obj) {
         ZPLog(@"%@",obj);
+        
         NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+        
         dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
-        dic[@"amount"] = @"555";
+        dic[@"amount"] = @"100";
         dic[@"shopcode"] = obj[@"supplierid"];
         dic[@"countrycode"] = @"886";
         dic[@"payway"] = @"allpay_balance";
-        dic[@"icuetoken"] = @"";
-        [ZP_MyTool requesQrCodePay:dic success:^(id obj) {
-            NSLog(@"obj = %@",obj);
-            _strUrl= [NSString stringWithFormat:@"%@?%@",obj[@"uri"],obj[@"para"]];
-            //            _strUrl = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        dic[@"icuetoken"] = nil;
+        [ZP_MyTool requesQrCodePay:dic success:^(id objj) {
+            
+            NSLog(@"obj = %@",objj);
+            
+            _strUrl = [NSString stringWithFormat:@"%@,%@,%@",objj[@"ddaygo"],objj[@"shopname"],objj[@"supplierid"]];
+            _strUrl = [NSString stringWithFormat:@"%@?%@",objj[@"uri"],objj[@"para"]];
+            NSLog(@"%@-%@",obj[@"shopname"],obj[@"supplirid"]);
+//             获取到这三个参数ddaygo， -->  这个从那里来,用来区分二维码
+            //shopname，supplirid
             [self.tableView reloadData];
         } failure:^(NSError *error) {
             NSLog(@"error = %@",error);
         }];
-        //        http://www.ddaygo.com/api/Test/getqrcodepaylink?token=ec77b922d25bb303f27f63d23de84f73&amount=100&shopcode=H7XVKDMECZQ=&countrycode=886&payway=allpay_balance&icuetoken=nil
+//        http://www.ddaygo.com/api/Test/getqrcodepaylink?token=ec77b922d25bb303f27f63d23de84f73&amount=100&shopcode=H7XVKDMECZQ=&countrycode=886&payway=allpay_balance&icuetoken=nil
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
@@ -82,10 +91,12 @@
    
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 300;
 }
+
 // 把将要进入二维码页面时的系统亮度保存
 - (void)viewWillAppear:(BOOL)animated {
     self.currentLight = [[USER_DEFAULTS valueForKey:SCREEN_BRIGHT] floatValue];
@@ -93,7 +104,7 @@
 }
 // 进入控制器完成后，让控制器变量
 - (void)viewDidAppear:(BOOL)animated {
-    [[UIScreen mainScreen] setBrightness: 5.0];//0.1~1.0之间，值越大越亮
+    [[UIScreen mainScreen] setBrightness: 1.0];//0.1~1.0之间，值越大越亮
 }
 // 退出控制器时恢复之前的亮度
 - (void)viewWillDisappear:(BOOL)animated {

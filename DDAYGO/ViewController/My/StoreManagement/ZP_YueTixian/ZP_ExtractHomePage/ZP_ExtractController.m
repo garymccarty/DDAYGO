@@ -23,13 +23,13 @@
 }
 
 - (void)initUI {
-    self.title = NSLocalizedString(@"提现记录", nil);
     
+    self.title = NSLocalizedString(@"提现记录", nil);
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_ExtractCell" bundle:nil] forCellReuseIdentifier:@"ZP_ExtractCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
 }
 
+// 数据
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
@@ -43,6 +43,7 @@
 }
 
 #pragma mark - tableview delegate
+
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *myView = [[UIView alloc]init];

@@ -14,12 +14,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self initUI];
+//    [self initUI];
     
 }
 
-- (void)initUI{
-    
+//- (void)initUI {
+
     ////  1.创建滤镜对象
     //    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
     //
@@ -38,37 +38,35 @@
     //    CIImage * outputImage = [filter outputImage];
     //
     //    self.imageview.image = [outputImage createNonInterpolatedWithSize:150];
-}
+//}
 
-- (void)getInitWithUrl:(NSString *)url{
-    //  1.创建滤镜对象
-    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
-    
-    //  2.恢复默认设置
+- (void)getInitWithUrl:(NSString *)url {
+
+//  1.创建滤镜对象
+    CIFilter * filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+
+//  2.恢复默认设置
     [filter setDefaults];
-    
-    //  3.设置数据
+
+//  3.设置数据
     NSString * info = url;
-    
+
     NSString * string = [info stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     string = [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSData * infoData = [string dataUsingEncoding:NSUTF8StringEncoding];
     [filter setValue:infoData forKeyPath:@"inputMessage"];
-    
-    // 4.生成二维码
+
+// 4.生成二维码
     CIImage * outputImage = [filter outputImage];
-    
-    //    self.imageview.image = [outputImage createNonInterpolatedWithSize:150];
-    //    self.imageView.image = [UIImage imageWithCIImage:outputImage];
-    self.imageview.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:ZP_Width-120];
+    self.imageview.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:ZP_Width-100];
 }
 
 - (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size {
-    
+
     CGRect extent = CGRectIntegral(image.extent);
     CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
-    
-    // 1.创建bitmap;
+
+// 1.创建bitmap;
     size_t width = CGRectGetWidth(extent) * scale;
     size_t height = CGRectGetHeight(extent) * scale;
     CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
@@ -78,8 +76,8 @@
     CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
     CGContextScaleCTM(bitmapRef, scale, scale);
     CGContextDrawImage(bitmapRef, extent, bitmapImage);
-    
-    // 2.保存bitmap到图片
+
+// 2.保存bitmap到图片
     CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
     CGContextRelease(bitmapRef);
     CGImageRelease(bitmapImage);
