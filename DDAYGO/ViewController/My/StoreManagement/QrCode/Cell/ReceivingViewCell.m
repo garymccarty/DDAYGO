@@ -58,7 +58,14 @@
 
 // 4.生成二维码
     CIImage * outputImage = [filter outputImage];
+
     self.imageview.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:ZP_Width-100];
+
+    
+        self.imageview.image = [outputImage createNonInterpolatedWithSize:150];
+        self.imageView.image = [UIImage imageWithCIImage:outputImage];
+    self.imageview.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:ZP_Width-120];
+
 }
 
 - (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size {

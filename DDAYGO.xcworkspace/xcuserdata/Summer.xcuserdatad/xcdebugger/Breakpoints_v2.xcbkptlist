@@ -100,7 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/ReceivingController.m"
+<<<<<<< Updated upstream
             timestampString = "534251145.946835"
+=======
+            timestampString = "534209245.001812"
+>>>>>>> Stashed changes
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -115,8 +119,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< Updated upstream
             filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/ReceivingController.m"
             timestampString = "534251145.946881"
+=======
+            filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/Cell/ReceivingViewCell.m"
+            timestampString = "534209245.002002"
+>>>>>>> Stashed changes
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -132,7 +141,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DDAYGO/ViewController/My/StoreManagement/QrCode/ReceivingController.m"
+<<<<<<< Updated upstream
             timestampString = "534251145.946924"
+=======
+            timestampString = "534209245.002767"
+>>>>>>> Stashed changes
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
