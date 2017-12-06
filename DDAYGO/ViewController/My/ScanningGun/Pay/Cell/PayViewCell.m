@@ -16,9 +16,11 @@
 }
 
 - (IBAction)Determine:(id)sender {
-    
-        UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"付款成功",nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"确定",nil) otherButtonTitles:NSLocalizedString(@"取消",nil), nil];
-        [alertView show];
+    if (_PayTextField.text.length>0) {
+        self.PayBlock(_PayTextField.text);
+    }else{
+        NSLog(@"money not empty！");
+    }
 }
 
 // 键盘弹起

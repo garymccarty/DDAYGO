@@ -102,7 +102,7 @@
             <connections>
                 <outlet property="PayTextField" destination="f8A-eo-dVF" id="Mk3-go-HKO"/>
             </connections>
-            <point key="canvasLocation" x="34" y="203"/>
+            <point key="canvasLocation" x="68" y="76"/>
         </tableViewCell>
     </objects>
     <resources>

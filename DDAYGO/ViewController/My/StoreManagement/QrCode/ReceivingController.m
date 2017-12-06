@@ -48,28 +48,7 @@
     
     [ZP_MyTool requesQrCode:dic success:^(id obj) {
         ZPLog(@"%@",obj);
-        
-        NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-        
-        dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
-        dic[@"amount"] = @"100";
-        dic[@"shopcode"] = obj[@"supplierid"];
-        dic[@"countrycode"] = @"886";
-        dic[@"payway"] = @"allpay_balance";
-        dic[@"icuetoken"] = nil;
-        [ZP_MyTool requesQrCodePay:dic success:^(id objj) {
-            
-            NSLog(@"obj = %@",objj);
-            
-            _strUrl = [NSString stringWithFormat:@"%@,%@,%@",objj[@"ddaygo"],objj[@"shopname"],objj[@"supplierid"]];
-            _strUrl = [NSString stringWithFormat:@"%@?%@",objj[@"uri"],objj[@"para"]];
-            NSLog(@"%@-%@",obj[@"shopname"],obj[@"supplirid"]);
-//             获取到这三个参数ddaygo， -->  这个从那里来,用来区分二维码
-            //shopname，supplirid
-            [self.tableView reloadData];
-        } failure:^(NSError *error) {
-            NSLog(@"error = %@",error);
-        }];
+         _strUrl = [NSString stringWithFormat:@"ddaygo,%@,%@",obj[@"supplierid"],obj[@"shopname"]];
 //        http://www.ddaygo.com/api/Test/getqrcodepaylink?token=ec77b922d25bb303f27f63d23de84f73&amount=100&shopcode=H7XVKDMECZQ=&countrycode=886&payway=allpay_balance&icuetoken=nil
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);

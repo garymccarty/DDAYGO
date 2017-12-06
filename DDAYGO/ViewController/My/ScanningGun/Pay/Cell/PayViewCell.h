@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PayViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UITextField *PayTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField * PayTextField;
+@property (nonatomic, copy) void(^PayBlock)(NSString * text);
 @end
