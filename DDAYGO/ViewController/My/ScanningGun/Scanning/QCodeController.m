@@ -8,6 +8,7 @@
 
 #import "QCodeController.h"
 #import "QRCodeReaderView.h"
+#import "PayViewController.h"
 #import "DataViewController.h"
 #import <AVFoundation/AVFoundation.h>
 //#import <AudioToolbox/AudioToolbox.h>
@@ -121,23 +122,28 @@
         
         NSLog(@"metadataObjects = %@", metadataObjects);
         
-        if ([obj.stringValue hasPrefix:@"https"]) {
+
             // 提示：如果需要对url或者名片等信息进行扫描，可以在此进行扩展！
-            self.hidesBottomBarWhenPushed = YES;
-            DataViewController * jumpVC = [[DataViewController alloc] init];
-            jumpVC.jump_URL = obj.stringValue;
-            NSLog(@"stringValue = = %@", obj.stringValue);
-            [self.navigationController pushViewController:jumpVC animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
+//            self.hidesBottomBarWhenPushed = YES;po 
+            if ([obj.stringValue containsString:@"ddaygo"]) {
+                PayViewController * pay = [[PayViewController alloc]init];
+                NSArray * arr = [obj.stringValue componentsSeparatedByString:@","];
+                pay.Oid = arr[1];
+                pay.Oname = arr[2];
+                [self.navigationController pushViewController:pay animated:YES];
+            }
+//            jumpVC.jump_URL = obj.stringValue;
             
-        }else { // 扫描结果为条形码
-            self.hidesBottomBarWhenPushed = YES;
-            DataViewController *jumpVC = [[DataViewController alloc] init];
-            jumpVC.jump_bar_code = obj.stringValue;
-            NSLog(@"stringValue = = %@", obj.stringValue);
-            [self.navigationController pushViewController:jumpVC animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
-        }
+//
+//
+//        }else { // 扫描结果为条形码
+//            self.hidesBottomBarWhenPushed = YES;
+//            DataViewController *jumpVC = [[DataViewController alloc] init];
+//            jumpVC.jump_bar_code = obj.stringValue;
+//            NSLog(@"stringValue = = %@", obj.stringValue);
+//            [self.navigationController pushViewController:jumpVC animated:YES];
+//            self.hidesBottomBarWhenPushed = NO;
+//        }
     }
 }
 

@@ -15,4 +15,7 @@
 /** 接收扫描的条形码信息 */
 @property (nonatomic, copy) NSString * jump_bar_code;
 
+
+@property (nonatomic, strong) NSString * Oid;
+@property (nonatomic, strong) NSString * Oname;
 @end

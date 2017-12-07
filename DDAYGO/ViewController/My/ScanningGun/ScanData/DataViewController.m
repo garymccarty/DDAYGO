@@ -21,16 +21,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    if (self.jump_bar_code) {
-        PayViewController * pay = [[PayViewController alloc]init];
-        [self.navigationController pushViewController:pay animated:YES];
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
-        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-         self.hidesBottomBarWhenPushed = NO;
-    } else {
         
         [self setupWebView];
-    }
 
 }
 

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PayViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView * tableView;
+@property (nonatomic, strong) NSString * Oid;
+@property (nonatomic, strong) NSString * Oname;
 
 @end
