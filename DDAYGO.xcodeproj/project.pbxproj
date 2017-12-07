@@ -134,10 +134,6 @@
 		06F571901F9F16E600D61FDB /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5718B1F9F16E600D61FDB /* NewsTableViewCell.xib */; };
 		06F571911F9F16E600D61FDB /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5718D1F9F16E600D61FDB /* NewsViewController.m */; };
 		06F571921F9F16E600D61FDB /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5718E1F9F16E600D61FDB /* NewsViewController.xib */; };
-		06F571A51F9F193300D61FDB /* PayViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F571971F9F193300D61FDB /* PayViewCell.m */; };
-		06F571A61F9F193300D61FDB /* PayViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F571981F9F193300D61FDB /* PayViewCell.xib */; };
-		06F571A71F9F193300D61FDB /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5719A1F9F193300D61FDB /* PayViewController.m */; };
-		06F571A81F9F193300D61FDB /* PayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5719B1F9F193300D61FDB /* PayViewController.xib */; };
 		06F571A91F9F193300D61FDB /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5719E1F9F193300D61FDB /* DataViewController.m */; };
 		06F571AA1F9F193300D61FDB /* QCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F571A11F9F193300D61FDB /* QCodeController.m */; };
 		06F571AB1F9F193300D61FDB /* QRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F571A41F9F193300D61FDB /* QRCodeReaderView.m */; };
@@ -205,6 +201,11 @@
 		C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C435174E1FB2ACE80066302E /* OrdersViewController.xib */; };
 		C4399D6F1FCE84A000B7B96D /* LotteryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4399D691FCE849F00B7B96D /* LotteryController.m */; };
 		C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4399D6A1FCE849F00B7B96D /* LotteryController.xib */; };
+		C44D6D0F1FD8CF070002DAF2 /* PayViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D6D0A1FD8CF070002DAF2 /* PayViewCell.m */; };
+		C44D6D101FD8CF070002DAF2 /* PayViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44D6D0B1FD8CF070002DAF2 /* PayViewCell.xib */; };
+		C44D6D111FD8CF070002DAF2 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D6D0D1FD8CF070002DAF2 /* PayViewController.m */; };
+		C44D6D121FD8CF070002DAF2 /* PayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44D6D0E1FD8CF070002DAF2 /* PayViewController.xib */; };
+		C44D6D161FD8CF7D0002DAF2 /* ZP_PayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D6D151FD8CF7D0002DAF2 /* ZP_PayView.m */; };
 		C4535E201FC5086800DFFD62 /* ZP_ConfirmPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E1F1FC5086800DFFD62 /* ZP_ConfirmPayModel.m */; };
 		C4535E241FC51E5300DFFD62 /* ZP_InformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E231FC51E5300DFFD62 /* ZP_InformationCell.m */; };
 		C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E271FC51E7D00DFFD62 /* ZP_InformationModel.m */; };
@@ -680,12 +681,6 @@
 		06F5718C1F9F16E600D61FDB /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		06F5718D1F9F16E600D61FDB /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		06F5718E1F9F16E600D61FDB /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
-		06F571961F9F193300D61FDB /* PayViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewCell.h; sourceTree = "<group>"; };
-		06F571971F9F193300D61FDB /* PayViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewCell.m; sourceTree = "<group>"; };
-		06F571981F9F193300D61FDB /* PayViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayViewCell.xib; sourceTree = "<group>"; };
-		06F571991F9F193300D61FDB /* PayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
-		06F5719A1F9F193300D61FDB /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
-		06F5719B1F9F193300D61FDB /* PayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayViewController.xib; sourceTree = "<group>"; };
 		06F5719D1F9F193300D61FDB /* DataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
 		06F5719E1F9F193300D61FDB /* DataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
 		06F571A01F9F193300D61FDB /* QCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCodeController.h; sourceTree = "<group>"; };
@@ -808,6 +803,14 @@
 		C4399D681FCE849F00B7B96D /* LotteryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryController.h; sourceTree = "<group>"; };
 		C4399D691FCE849F00B7B96D /* LotteryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryController.m; sourceTree = "<group>"; };
 		C4399D6A1FCE849F00B7B96D /* LotteryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryController.xib; sourceTree = "<group>"; };
+		C44D6D091FD8CF070002DAF2 /* PayViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewCell.h; sourceTree = "<group>"; };
+		C44D6D0A1FD8CF070002DAF2 /* PayViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewCell.m; sourceTree = "<group>"; };
+		C44D6D0B1FD8CF070002DAF2 /* PayViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayViewCell.xib; sourceTree = "<group>"; };
+		C44D6D0C1FD8CF070002DAF2 /* PayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
+		C44D6D0D1FD8CF070002DAF2 /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
+		C44D6D0E1FD8CF070002DAF2 /* PayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayViewController.xib; sourceTree = "<group>"; };
+		C44D6D141FD8CF7D0002DAF2 /* ZP_PayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_PayView.h; sourceTree = "<group>"; };
+		C44D6D151FD8CF7D0002DAF2 /* ZP_PayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_PayView.m; sourceTree = "<group>"; };
 		C4535E1E1FC5086800DFFD62 /* ZP_ConfirmPayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ConfirmPayModel.h; sourceTree = "<group>"; };
 		C4535E1F1FC5086800DFFD62 /* ZP_ConfirmPayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ConfirmPayModel.m; sourceTree = "<group>"; };
 		C4535E221FC51E5300DFFD62 /* ZP_InformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_InformationCell.h; sourceTree = "<group>"; };
@@ -1987,22 +1990,10 @@
 		06F571941F9F193300D61FDB /* Pay */ = {
 			isa = PBXGroup;
 			children = (
-				06F571991F9F193300D61FDB /* PayViewController.h */,
-				06F5719A1F9F193300D61FDB /* PayViewController.m */,
-				06F5719B1F9F193300D61FDB /* PayViewController.xib */,
-				06F571951F9F193300D61FDB /* Cell */,
+				C44D6D071FD8CF070002DAF2 /* ZP_PayHomePage */,
+				C44D6D131FD8CF1E0002DAF2 /* ZP_PayView */,
 			);
 			path = Pay;
-			sourceTree = "<group>";
-		};
-		06F571951F9F193300D61FDB /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				06F571961F9F193300D61FDB /* PayViewCell.h */,
-				06F571971F9F193300D61FDB /* PayViewCell.m */,
-				06F571981F9F193300D61FDB /* PayViewCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		06F5719C1F9F193300D61FDB /* ScanData */ = {
@@ -2441,6 +2432,36 @@
 				C492A1AB1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib */,
 			);
 			path = ZP_LotteryCell;
+			sourceTree = "<group>";
+		};
+		C44D6D071FD8CF070002DAF2 /* ZP_PayHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				C44D6D0C1FD8CF070002DAF2 /* PayViewController.h */,
+				C44D6D0D1FD8CF070002DAF2 /* PayViewController.m */,
+				C44D6D0E1FD8CF070002DAF2 /* PayViewController.xib */,
+				C44D6D081FD8CF070002DAF2 /* Cell */,
+			);
+			path = ZP_PayHomePage;
+			sourceTree = "<group>";
+		};
+		C44D6D081FD8CF070002DAF2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C44D6D091FD8CF070002DAF2 /* PayViewCell.h */,
+				C44D6D0A1FD8CF070002DAF2 /* PayViewCell.m */,
+				C44D6D0B1FD8CF070002DAF2 /* PayViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C44D6D131FD8CF1E0002DAF2 /* ZP_PayView */ = {
+			isa = PBXGroup;
+			children = (
+				C44D6D141FD8CF7D0002DAF2 /* ZP_PayView.h */,
+				C44D6D151FD8CF7D0002DAF2 /* ZP_PayView.m */,
+			);
+			path = ZP_PayView;
 			sourceTree = "<group>";
 		};
 		C4535E1D1FC5083600DFFD62 /* ZP_ConfirmPayModel */ = {
@@ -3755,7 +3776,6 @@
 				C4573F231FCF8ECF001DFE97 /* icon_forward_right@3x.png in Resources */,
 				C4573F0D1FCF8ECF001DFE97 /* bg_lottery_redball@2x.png in Resources */,
 				06F572231F9F1E8700D61FDB /* BillTableViewCell.xib in Resources */,
-				06F571A61F9F193300D61FDB /* PayViewCell.xib in Resources */,
 				C4573F101FCF8ECF001DFE97 /* icon_explan_fire@2x.png in Resources */,
 				C492A17A1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.xib in Resources */,
 				C4573F0E1FCF8ECF001DFE97 /* bg_lottery_whiteball@2x.png in Resources */,
@@ -3778,7 +3798,6 @@
 				C4573F161FCF8ECF001DFE97 /* bg_choose_redball@3x.png in Resources */,
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
 				C4D2FEEA1FD5636C00F546AB /* icon_record_state@2x.png in Resources */,
-				06F571A81F9F193300D61FDB /* PayViewController.xib in Resources */,
 				062C9D5D1F8CD6F900E14987 /* button_3@2x.png in Resources */,
 				C4D2FEEF1FD5636C00F546AB /* icon_withdrawals_record@3x.png in Resources */,
 				C4573F421FCFB0F1001DFE97 /* 历史下注号码.png in Resources */,
@@ -3823,6 +3842,7 @@
 				C4573F1D1FCF8ECF001DFE97 /* bg_prize_explan@3x.png in Resources */,
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
 				C4D2FEE31FD5636C00F546AB /* icon_record_bank@3x.png in Resources */,
+				C44D6D121FD8CF070002DAF2 /* PayViewController.xib in Resources */,
 				062C9D631F8CD6F900E14987 /* button_6@2x.png in Resources */,
 				06F571D81F9F1A7900D61FDB /* EditViewController.xib in Resources */,
 				C4D2FEF11FD5636C00F546AB /* icon_withdrawals_star@3x.png in Resources */,
@@ -3889,6 +3909,7 @@
 				C4573F5A1FCFE354001DFE97 /* bg_lottery_money@2x.png in Resources */,
 				062C9D681F8CDB7900E14987 /* headImage.jpg in Resources */,
 				C4573F3A1FCFA3A6001DFE97 /* BetHeaderView.xib in Resources */,
+				C44D6D101FD8CF070002DAF2 /* PayViewCell.xib in Resources */,
 				C4573F0B1FCF8ECF001DFE97 /* bg_lottery_explan@2x.png in Resources */,
 				064448E21F6A1F7F0004DFE4 /* Shopping.png in Resources */,
 				C47096A81FB065CE006EA52C /* LanguageController.xib in Resources */,
@@ -4039,6 +4060,7 @@
 				0662AB341F9592A50031F22B /* VPImageCropperViewController.m in Sources */,
 				C47E762F1FB5A1C7009F279A /* DetailedViewCell.m in Sources */,
 				C477507E1FBA990E00AE8B3F /* ZP_PositionModel.m in Sources */,
+				C44D6D111FD8CF070002DAF2 /* PayViewController.m in Sources */,
 				064449AD1F6A9B250004DFE4 /* MJRefreshAutoNormalFooter.m in Sources */,
 				06F571D91F9F1A7900D61FDB /* AddressViewController.m in Sources */,
 				C45F233C1FA0757A00F5DB41 /* ZeroViewCell.m in Sources */,
@@ -4095,8 +4117,8 @@
 				06F572401F9F204F00D61FDB /* BillDetailViewController.m in Sources */,
 				06F5722C1F9F1E8700D61FDB /* OrderManagerViewController.m in Sources */,
 				C45F23501FA087A600F5DB41 /* ZP_FourthModel.m in Sources */,
+				C44D6D0F1FD8CF070002DAF2 /* PayViewCell.m in Sources */,
 				C425BEAA1FC813C30097DB8F /* FSSegmentTitleView.m in Sources */,
-				06F571A71F9F193300D61FDB /* PayViewController.m in Sources */,
 				C45F22E51FA0617E00F5DB41 /* ZP_HttpConst.m in Sources */,
 				C409F86E1FA17336009DE7B1 /* NestedCollectionViewCell.m in Sources */,
 				C47096991FB04B2D006EA52C /* UIButton+countDown.m in Sources */,
@@ -4114,6 +4136,7 @@
 				C47096921FB04998006EA52C /* BindingEmailController.m in Sources */,
 				C4535E201FC5086800DFFD62 /* ZP_ConfirmPayModel.m in Sources */,
 				C45F23591FA099B200F5DB41 /* ReuseCollectionViewCell.m in Sources */,
+				C44D6D161FD8CF7D0002DAF2 /* ZP_PayView.m in Sources */,
 				064449B91F6A9B250004DFE4 /* UIScrollView+MJRefresh.m in Sources */,
 				C47E76491FB5A1C7009F279A /* Pop-upMenuView.m in Sources */,
 				C492A19D1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.m in Sources */,
@@ -4151,7 +4174,6 @@
 				06F571DF1F9F1A7900D61FDB /* SettingViewController.m in Sources */,
 				C45F23341FA0757A00F5DB41 /* FirstViewCell.m in Sources */,
 				C47E763D1FB5A1C7009F279A /* MerchantController.m in Sources */,
-				06F571A51F9F193300D61FDB /* PayViewCell.m in Sources */,
 				06F571151F9F0D6800D61FDB /* ShopevaluationViewCell.m in Sources */,
 				0662AB5D1F9610BF0031F22B /* LogregisterController.m in Sources */,
 				06F570EB1F9F0ABA00D61FDB /* ShoppingCell.m in Sources */,

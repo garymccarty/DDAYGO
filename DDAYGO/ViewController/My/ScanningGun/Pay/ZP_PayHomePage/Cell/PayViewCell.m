@@ -7,7 +7,6 @@
 //
 
 #import "PayViewCell.h"
-
 @implementation PayViewCell
 
 - (void)awakeFromNib {
@@ -16,17 +15,23 @@
 }
 
 - (IBAction)Determine:(id)sender {
+    
     if (_PayTextField.text.length>0) {
         self.PayBlock(_PayTextField.text);
+        
     }else{
         NSLog(@"money not empty！");
     }
 }
 
-// 键盘弹起
+- (void)initWithName:(NSString *)name NameId:(NSString *)nameId {
+    _BusinessNameLabel.text = name;
+    
+    NSLog(@"id = %@",nameId);
+}
 
+// 键盘弹起
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    textField.keyboardType = UIKeyboardTypeNumberPad
     [super touchesBegan:touches withEvent:event];
     [self.PayTextField resignFirstResponder];
 }

@@ -54,41 +54,6 @@
 }
 
 - (void)cartButton:(UIButton *)cartbut {
-    
-//    UIView * myView = [UIView new];
-//    myView.backgroundColor = ZP_DeepBlue;
-//    myView.layer.cornerRadius = 5; // 圆角
-//    [self.view addSubview:myView];
-//    [myView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.view).offset(ZP_Width / 2 - 50);
-//        make.top.equalTo(self.view).offset(ZP_Width / 2 );
-//        make.width.mas_offset(80);
-//        make.height.mas_offset(25);
-//    }];
-////  添加一张图片
-//    UIImageView * image = [UIImageView new];
-//    image.image = [UIImage imageNamed:@"icon_successful"];
-//    [self.view addSubview:image];
-//    [image mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(myView).offset(2.5);
-//        make.top.equalTo(myView).offset(2.5);
-//        make.width.mas_offset(20);
-//        make.height.mas_offset(20);
-//    }];
-////  声明一个 UILabel 对象
-//    UILabel * tipLabel = [UILabel new];
-////  设置提示内容
-//    [tipLabel setText: NSLocalizedString(@"评价成功", nil)];
-//    tipLabel.font = ZP_stockFont;
-//    tipLabel.layer.masksToBounds = YES;
-//    tipLabel.textAlignment = NSTextAlignmentRight;
-//    tipLabel.textColor = [UIColor whiteColor];
-//    [self.view addSubview:tipLabel];
-//    [tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(image).offset(22.5);
-//        make.top.equalTo(image).offset(2.5);
-//    }];
-    
 //  设置时间和动画效果
     [UIView animateWithDuration:8.0 animations:^{
         [SVProgressHUD showSuccessWithStatus:@"评价成功"];

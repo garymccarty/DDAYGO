@@ -171,6 +171,14 @@
     }];
 }
 
-
+// 获取订单支付结果
++ (void)requesOrdPay:(NSDictionary *)OrdPay uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getpayresult?poid=%@",@"http://www.ddaygo.com/receive/",OrdPay[@"poid"]] parameters:nil success:^(NSDictionary *responseObject) {
+        success(responseObject);
+//        http://www.ddaygo.com/receive/getpayresult?poid=DG12345645544
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 @end
 

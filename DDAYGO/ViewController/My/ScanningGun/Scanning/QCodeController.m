@@ -118,32 +118,16 @@
     [self.previewLayer removeFromSuperlayer];
     // 3. 设置界面显示扫描结果
     if (metadataObjects.count > 0) {
-        AVMetadataMachineReadableCodeObject *obj = metadataObjects[0];
-        
+        AVMetadataMachineReadableCodeObject * obj = metadataObjects[0];
         NSLog(@"metadataObjects = %@", metadataObjects);
-        
-
-            // 提示：如果需要对url或者名片等信息进行扫描，可以在此进行扩展！
-//            self.hidesBottomBarWhenPushed = YES;po 
-            if ([obj.stringValue containsString:@"ddaygo"]) {
+    //  提示：如果需要对url或者名片等信息进行扫描，可以在此进行扩展！
+           if ([obj.stringValue containsString:@"ddaygo"]) {
                 PayViewController * pay = [[PayViewController alloc]init];
                 NSArray * arr = [obj.stringValue componentsSeparatedByString:@","];
                 pay.Oid = arr[1];
                 pay.Oname = arr[2];
                 [self.navigationController pushViewController:pay animated:YES];
-            }
-//            jumpVC.jump_URL = obj.stringValue;
-            
-//
-//
-//        }else { // 扫描结果为条形码
-//            self.hidesBottomBarWhenPushed = YES;
-//            DataViewController *jumpVC = [[DataViewController alloc] init];
-//            jumpVC.jump_bar_code = obj.stringValue;
-//            NSLog(@"stringValue = = %@", obj.stringValue);
-//            [self.navigationController pushViewController:jumpVC animated:YES];
-//            self.hidesBottomBarWhenPushed = NO;
-//        }
+        }
     }
 }
 

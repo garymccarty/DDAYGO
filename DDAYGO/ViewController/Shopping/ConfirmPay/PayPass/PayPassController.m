@@ -7,7 +7,7 @@
 //
 
 #import "PayPassController.h"
-
+#import "OrderViewController.h"
 @interface PayPassController ()
 
 @end
@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"支付成功";
+//    for (UIViewController * controller in self.navigationController.viewControllers) {
+//        if ([controller isKindOfClass:[OrderViewController class]]) {
+//            [self.navigationController popToViewController:controller animated:YES];
+//        }
+//    }
     // Do any additional setup after loading the view from its nib.
 }
 //- (void)viewWillAppear:(BOOL)animated {

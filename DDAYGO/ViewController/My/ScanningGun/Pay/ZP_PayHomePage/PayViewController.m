@@ -12,9 +12,8 @@
 #import "UINavigationBar+Awesome.h"
 #import "ZP_MyTool.h"
 #import "DataViewController.h"
-
-@interface PayViewController () <UITableViewDelegate, UITableViewDataSource>
-{
+@interface PayViewController () <UITableViewDelegate, UITableViewDataSource> {
+    
     NSString * money;
 }
 @end
@@ -24,32 +23,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self AllData];
     self.title = @"付款";
     self.view.backgroundColor = ZP_WhiteColor;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: ZP_textWite}];
     
 }
 
-- (void)btnClick{
+- (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
-    dic[@"amount"] = money;
+    dic[@"shopname"] = self.Oname;
     dic[@"shopcode"] = self.Oid;
+    ZPLog(@"%@_%@",dic[@"shopname"] = self.Oname,dic[@"shopcode"] = self.Oid);
+}
+
+
+
+
+
+//  点击确认按钮需要的参数
+- (void)btnClick {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    
+    dic[@"amount"] = money; // 这个是在view上选择支付金额
+    dic[@"shopcode"] = self.Oid; // 这个必须要
     dic[@"countrycode"] = @"886";
-    dic[@"payway"] = @"allpay_balance";
+    dic[@"payway"] = @"allpay_balance";   // 这个是在view上选择支付方式
     dic[@"icuetoken"] = nil;
-    [ZP_MyTool requesQrCodePay:dic success:^(id objj) {
-        
-        NSLog(@"obj = %@",objj);
+    
+//    这是是在选择支付方式后点击确定后跳转的数据加OID回调
+    [ZP_MyTool requesQrCodePay:dic success:^(id obj) {
+        NSLog(@"obj = %@",obj);
         
         DataViewController * vc = [[DataViewController alloc]init];
-        vc.jump_URL = [NSString stringWithFormat:@"%@?%@",objj[@"uri"],objj[@"para"]];
+//        vc.jump_URL = [NSString stringWithFormat:@"http://www.baidu.com"];
+//        vc.jump_URL = [NSString stringWithFormat:@"%@?%@",obj[@"uri"],obj[@"para"]];
+//        把rui跟para传到dataviewcontroller
+        vc.jump_URL = obj[@"para"];
+        vc.jump_HeadURL = obj[@"uri"];
+        vc.Oid = obj[@"oid"];
         [self.navigationController pushViewController:vc animated:YES];
-        //_strUrl = [NSString stringWithFormat:@"%@?%@",objj[@"uri"],objj[@"para"]];
-        //            NSLog(@"%@-%@",obj[@"shopname"],obj[@"supplirid"]);
-        //             获取到这三个参数ddaygo， -->  这个从那里来,用来区分二维码
-        //shopname，supplirid
-       // [self.tableView reloadData];
+        
     } failure:^(NSError *error) {
         NSLog(@"error = %@",error);
     }];
@@ -70,6 +86,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PayViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PayViewCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
+    [cell initWithName:self.Oname NameId:_Oid];
     cell.PayBlock = ^(NSString * text) {
         money = text;
         [self btnClick];

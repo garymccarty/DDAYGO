@@ -48,14 +48,19 @@
     
     [ZP_MyTool requesQrCode:dic success:^(id obj) {
         ZPLog(@"%@",obj);
-         _strUrl = [NSString stringWithFormat:@"ddaygo,%@,%@",obj[@"supplierid"],obj[@"shopname"]];
+    _strUrl = [NSString stringWithFormat:@"ddaygo,%@,%@",obj[@"supplierid"],obj[@"shopname"]];
+        
 //        http://www.ddaygo.com/api/Test/getqrcodepaylink?token=ec77b922d25bb303f27f63d23de84f73&amount=100&shopcode=H7XVKDMECZQ=&countrycode=886&payway=allpay_balance&icuetoken=nil
+        [self.tableView reloadData];
     } failure:^(NSError * error) {
+        
         ZPLog(@"%@",error);
     }];
 }
+
 #pragma mark - tableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return 1;
 }
 
@@ -64,7 +69,8 @@
     ReceivingViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ReceivingViewCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
     cell.layer.cornerRadius = 5.0;// View圆角弧度
-    if (_strUrl.length>0) {
+    
+    if (_strUrl.length >0) {
          [cell getInitWithUrl:_strUrl];
     }
    
