@@ -39,19 +39,8 @@
 }
 
 - (void)backAction {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否确认退出界面" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-//
-//    UIAlertAction *photography = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        [self.navigationController popToRootViewControllerAnimated:YES];
-//    }];
-//    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-//
-//    [alert addAction:photography];
-//    [alert addAction:cancel];
-//
-//
-//    [self presentViewController:alert animated:YES completion:nil];
+    [MyViewController sharedInstanceTool].popKind = DDFromDataVC;
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 // 添加webView，加载扫描过来的内容
@@ -67,19 +56,6 @@
     NSLog(@"oid = %@",_Oid);
     
     [self.view addSubview:_webView];
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否确认退出界面" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    UIAlertAction *photography = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    
-    [alert addAction:photography];
-    [alert addAction:cancel];
-    
-    
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark -UIWebViewDelegate

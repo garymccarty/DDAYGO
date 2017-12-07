@@ -84,7 +84,7 @@
     [self setupOneChirlVc:[[OrderViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_order_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_order_pressed.png"] title:NSLocalizedString(@"Order", nil)];
     
     //  个人中心
-    [self setupOneChirlVc:[[MyViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_Persona_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_Persona_pressed.png"] title:NSLocalizedString(@"My", nil)];
+    [self setupOneChirlVc:[MyViewController sharedInstanceTool] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_Persona_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_Persona_pressed.png"] title:NSLocalizedString(@"My", nil)];
     
 }
 
