@@ -112,22 +112,26 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     // 会频繁的扫描，调用代理方法
     // 1. 如果扫描完成，停止会话
-    [self.session stopRunning];
     
-    // 2. 删除预览图层
-    [self.previewLayer removeFromSuperlayer];
     // 3. 设置界面显示扫描结果
     if (metadataObjects.count > 0) {
         AVMetadataMachineReadableCodeObject * obj = metadataObjects[0];
         NSLog(@"metadataObjects = %@", metadataObjects);
     //  提示：如果需要对url或者名片等信息进行扫描，可以在此进行扩展！
            if ([obj.stringValue containsString:@"ddaygo"]) {
+               [self.session stopRunning];
+               
+               // 2. 删除预览图层
+               [self.previewLayer removeFromSuperlayer];
+               
                 PayViewController * pay = [[PayViewController alloc]init];
                 NSArray * arr = [obj.stringValue componentsSeparatedByString:@","];
                 pay.Oid = arr[1];
                 pay.Oname = arr[2];
                 [self.navigationController pushViewController:pay animated:YES];
-        }
+           } else {
+               [SVProgressHUD showErrorWithStatus:@"二维码错误"];
+           }
     }
 }
 

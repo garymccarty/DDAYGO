@@ -27,6 +27,31 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
         [self setupWebView];
+    
+//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+//    [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *backitem = [[UIBarButtonItem alloc] initWithCustomView:button];
+//    self.navigationItem.rightBarButtonItem = backitem;
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"ic_bar_return"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(backAction)];
+}
+
+- (void)backAction {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否确认退出界面" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//
+//    UIAlertAction *photography = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        [self.navigationController popToRootViewControllerAnimated:YES];
+//    }];
+//    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+//
+//    [alert addAction:photography];
+//    [alert addAction:cancel];
+//
+//
+//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 // 添加webView，加载扫描过来的内容
@@ -42,6 +67,19 @@
     NSLog(@"oid = %@",_Oid);
     
     [self.view addSubview:_webView];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否确认退出界面" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *photography = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:photography];
+    [alert addAction:cancel];
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark -UIWebViewDelegate
