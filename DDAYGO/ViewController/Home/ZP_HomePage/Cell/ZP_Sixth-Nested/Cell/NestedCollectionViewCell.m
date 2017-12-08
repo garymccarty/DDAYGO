@@ -35,7 +35,7 @@
     UILabel * introduceLabel = [UILabel new];
     introduceLabel.textColor = ZP_HomeTitleTypefaceCorlor;
     introduceLabel.textAlignment = NSTextAlignmentCenter;
-    introduceLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
+    introduceLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
     introduceLabel.numberOfLines = 0;
     introduceLabel.font = ZP_TrademarkFont;
     [self addSubview:introduceLabel];

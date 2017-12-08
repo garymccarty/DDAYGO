@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyViewController">
             <connections>
+                <outlet property="BrowseLabel" destination="wKB-1F-Lrk" id="jcJ-I7-Gmh"/>
                 <outlet property="CaipiaoView" destination="mDy-f9-02s" id="CCc-8L-W9C"/>
+                <outlet property="CollectionLabel" destination="9Ji-Nx-7ud" id="mIJ-mD-Jt0"/>
                 <outlet property="NameLabel" destination="Yfb-7E-S8p" id="9B3-Bj-5NT"/>
                 <outlet property="headImageBut" destination="OTg-9H-to4" id="9fB-tz-BmB"/>
                 <outlet property="scanView" destination="7k6-oe-5YX" id="UHd-bb-MTZ"/>
@@ -303,7 +305,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <inset key="contentEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="赏金彩" image="ic_mine_scanning">
+                                    <state key="normal" title="赏金彩" image="icon_mine_lottery">
                                         <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
@@ -359,5 +361,6 @@
         <image name="ic_mine_scanning" width="22" height="22"/>
         <image name="ic_mine_set" width="20" height="20"/>
         <image name="ic_mine_store" width="20" height="20"/>
+        <image name="icon_mine_lottery" width="23" height="23"/>
     </resources>
 </document>

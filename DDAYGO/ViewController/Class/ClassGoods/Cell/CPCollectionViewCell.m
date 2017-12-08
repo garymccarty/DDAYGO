@@ -14,7 +14,6 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        
         [self initUI];
     }
     return self;
@@ -29,7 +28,7 @@
 //    标题
     UILabel * headerlabel = [[UILabel alloc]initWithFrame:CGRectMake(5, CGRectGetWidth(self.frame)- 10, CGRectGetWidth(self.frame)-10, 15)];
     headerlabel.textColor = ZP_TypefaceColor;
-    headerlabel.lineBreakMode = UILineBreakModeWordWrap;
+    headerlabel.lineBreakMode = NSLineBreakByWordWrapping;
     headerlabel.numberOfLines = 0;
     headerlabel.font = ZP_titleFont;
     headerlabel.textAlignment = NSTextAlignmentLeft;
@@ -75,7 +74,6 @@
 }
 
 - (void)cellWithdic:(ZP_ClassGoodsModel *)model {
-    
     [_imageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     _headerlabel.text = model.productname;
     _preferentialLabel.text = model.productprice;

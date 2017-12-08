@@ -60,5 +60,9 @@
 
 // 获取订单支付结果
 + (void)requesOrdPay:(NSDictionary *)OrdPay uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 获取浏览记录、收藏的数量
++ (void)requesBrowseCollection:(NSDictionary *)BrowseCollection uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
 @end
 

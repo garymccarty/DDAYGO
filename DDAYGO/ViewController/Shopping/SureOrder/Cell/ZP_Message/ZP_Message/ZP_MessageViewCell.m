@@ -17,7 +17,6 @@
     self = [super initWithStyle:style reuseIdentifier:MessageID];
     if (self) {
         [self initUI];
-        
     }
     return self;
 }
@@ -114,6 +113,7 @@
         make.width.mas_equalTo(ZP_Width - 5);
     }];
 }
+
 //  键盘弹起
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
@@ -122,12 +122,9 @@
 }
 
 - (void)MessageDic:(ZP_InformationModel *)model {
-    
-    //    _ComputationsLabel.text = dic[@"Computations"];
+
     _TotalLabel.text = [NSString stringWithFormat:@"共计%@件商品",model.amount];
     
-    //    CGFloat f = [[dic[@"Preferential"] stringByReplacingOccurrencesOfString:@"0:" withString:@""] floatValue];
-    //    _TotalLabel.text = [NSString stringWithFormat:NSLocalizedString(@"共计%ld件商品", nil) ,f * [dic[@"Quantiy"] floatValue]];
     _ComputationsLabel.text = [NSString stringWithFormat:@"RMB:%.2f",model.amount.intValue * model.productprice.floatValue];
 }
 @end

@@ -88,7 +88,6 @@
     dic[@"orderno"] = @"";
     [ZP_OrderTool requestGetorders:dic success:^(id json) {
         ZPLog(@"%@",json);
-        
         _ModeldataArray = [OrderModel arrayWithArray:json];
         
         [self.tableview reloadData];

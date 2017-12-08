@@ -49,7 +49,7 @@
 //  标题
     ZP_GeneralLabel * titleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
 //    titleLabel.textColor = ZP_textblack;
-    titleLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
+    titleLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
     titleLabel.numberOfLines = 0;
 //    titleLabel.font = ZP_stockFont;
     [self.contentView addSubview:titleLabel];

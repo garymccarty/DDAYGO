@@ -54,14 +54,13 @@
 - (void)btnClick {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
-    
     dic[@"amount"] = money; // 这个是在view上选择支付金额
     dic[@"shopcode"] = self.Oid; // 这个必须要
     dic[@"countrycode"] = @"886";
     dic[@"payway"] = @"allpay_balance";   // 这个是在view上选择支付方式
     dic[@"icuetoken"] = nil;
-    
-    
+    ZP_PayView * PayView = [[ZP_PayView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [PayView showInView:self.view];
     
     
     
@@ -72,6 +71,7 @@
 //        vc.jump_URL = [NSString stringWithFormat:@"http://www.baidu.com"];
 //        vc.jump_URL = [NSString stringWithFormat:@"%@?%@",obj[@"uri"],obj[@"para"]];
 //        把rui跟para传到dataviewcontroller
+        
         vc.jump_URL = obj[@"para"];
         vc.jump_HeadURL = obj[@"uri"];
         vc.Oid = obj[@"oid"];

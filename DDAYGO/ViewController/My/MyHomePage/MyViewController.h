@@ -16,6 +16,8 @@ typedef NS_ENUM(NSUInteger, DDPopKind)
 @interface MyViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel * NameLabel;
+@property (strong, nonatomic) IBOutlet UILabel * CollectionLabel;
+@property (strong, nonatomic) IBOutlet UILabel * BrowseLabel;
 @property (nonatomic ,assign) BOOL hasLogin;
 @property (nonatomic ,assign) DDPopKind popKind;
 

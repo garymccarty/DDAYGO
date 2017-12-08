@@ -49,7 +49,7 @@
 //  商品文字
     UILabel * titleLabel = [UILabel new];
     titleLabel.textColor = ZP_textblack;
-    titleLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
+    titleLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
     titleLabel.numberOfLines = 0;
     titleLabel.font = ZP_titleFont;
     [self.contentView addSubview:titleLabel];

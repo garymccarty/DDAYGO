@@ -180,5 +180,25 @@
         failure(error);
     }];
 }
+// 获取浏览记录、收藏的数量
++ (void)requesBrowseCollection:(NSDictionary *)BrowseCollection uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@gethistorycount?token=%@",URLAPI,BrowseCollection[@"token"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+        ZPLog(@"%@",responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+//http://www.ddaygo.com/api/Test/gethistorycount?token=4d9b2a599b3f50ebbdd150b07b5214d7
+
+
+
+
+
+
+
+
+
+
 @end
 

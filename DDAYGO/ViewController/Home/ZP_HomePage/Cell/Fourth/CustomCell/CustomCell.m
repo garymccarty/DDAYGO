@@ -35,7 +35,7 @@
     //  文字介绍
     ZP_GeneralLabel * introduceLabel = [ZP_GeneralLabel initWithtextLabel:_introduceLabel.text textColor:ZP_HomeTitleTypefaceCorlor font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
 //    introduceLabel.textColor = ZP_HomeTitleTypefaceCorlor;
-    introduceLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
+    introduceLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
     introduceLabel.numberOfLines = 0;
 //    introduceLabel.font = ZP_introduceFont;
     [self addSubview:introduceLabel];

@@ -95,7 +95,7 @@
 //  商品文字
     ZP_GeneralLabel * titleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_textblack font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
     titleLabel.textColor = ZP_textblack;
-    titleLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
+    titleLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
     titleLabel.numberOfLines = 0;
     titleLabel.font = ZP_titleFont;
     [self.Backgroundview addSubview:titleLabel];
@@ -355,11 +355,11 @@
     _DateLabel.text = model.createtime;
 
     [_FigureImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@", dic.defaultimg]]];
-    _merchantsLabel.text = [NSString stringWithFormat:@"%@",model.shopname];
+    _merchantsLabel.text = [NSString stringWithFormat:@"%@",model.shopname]; // 这个参数显示不出来不
     _titleLabel.text = dic.productname;
     _descLabel.text = [NSString stringWithFormat:@"%@",dic.colorname];
     _SizeLabel.text = [NSString stringWithFormat:@"%@",dic.normname];
-    _AmountLabel.text = [NSString stringWithFormat:@"%@",model.ordersamount];  // 总计金额数据为NIl
+    _AmountLabel.text = [NSString stringWithFormat:@"%@",model.ordersamount];
     _ExpressFeeLabel.text = [NSString stringWithFormat:@"%@",model.freight]; // 运费
     _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",dic.price];
     _priceLabel.text = [NSString stringWithFormat:@"RMB:%@",dic.cost];

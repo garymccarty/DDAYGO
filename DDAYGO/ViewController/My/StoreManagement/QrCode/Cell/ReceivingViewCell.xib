@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,21 +21,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_frame" translatesAutoresizingMaskIntoConstraints="NO" id="5g5-OP-le0">
-                        <rect key="frame" x="46" y="58" width="220" height="220"/>
+                        <rect key="frame" x="46" y="57.5" width="220" height="220"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="5g5-OP-le0" secondAttribute="height" multiplier="1:1" id="ZIW-Ft-CeC"/>
                             <constraint firstAttribute="height" constant="220" id="sKm-zV-YLS"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydd-dV-fSA">
-                        <rect key="frame" x="66" y="78" width="180" height="180"/>
+                        <rect key="frame" x="66" y="77.5" width="180" height="180"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ydd-dV-fSA" secondAttribute="height" multiplier="1:1" id="r5R-hQ-uaR"/>
                             <constraint firstAttribute="height" constant="180" id="uJZ-67-grt"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2u-Xb-eLs">
-                        <rect key="frame" x="66" y="32" width="180" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2u-Xb-eLs">
+                        <rect key="frame" x="66" y="31.5" width="180" height="20"/>
                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="bgH-Es-Hvl"/>
@@ -60,6 +60,7 @@
                     <constraint firstAttribute="trailingMargin" secondItem="ydd-dV-fSA" secondAttribute="trailing" constant="50" id="jBV-aV-3ZU"/>
                     <constraint firstItem="5g5-OP-le0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="30" id="rAc-Ob-IwY"/>
                     <constraint firstItem="ydd-dV-fSA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uZB-hR-Muf"/>
+                    <constraint firstItem="h2u-Xb-eLs" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="zAT-hd-TbV"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

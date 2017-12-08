@@ -50,7 +50,7 @@
     
 //  商品文字
     ZP_GeneralLabel * titleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    titleLabel.lineBreakMode = UILineBreakModeWordWrap; //文字分行
+    titleLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
     titleLabel.numberOfLines = 0;
     [self.contentView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel * priceLabel;  // 价格
 @property (strong, nonatomic) IBOutlet UILabel * Cp; // 编号
 
-@property (nonatomic, strong) collectionModel *model;
+@property (nonatomic, strong) collectionModel * model;
 
 @end
 

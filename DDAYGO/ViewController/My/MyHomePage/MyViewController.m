@@ -21,7 +21,7 @@
 #import "ZP_MyTool.h"
 #import "ZP_HomePageModel.h"
 #import "ZP_LoginTool.h"
-
+#import "ZP_MyHopageModel.h"
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIView * userBackView;
 @property (weak, nonatomic) IBOutlet UIView * sdglView;
@@ -38,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self AllDatas];
     
     [self autoLogin:^(id obj) {
         if (!DD_HASLOGIN) {
@@ -70,19 +71,6 @@
     return instance;
 }
 
-//- (void)viewWillAppear:(BOOL)animated {
-//    self.hidesBottomBarWhenPushed = YES;
-//    [super viewWillAppear:animated];
-//    [self.navigationController setNavigationBarHidden:YES];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated {
-//    [super viewWillDisappear:animated];
-//    [self.navigationController setNavigationBarHidden:NO];
-//    self.hidesBottomBarWhenPushed = NO;
-//    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor orangeColor]];
-//}
-
 - (void)autoLogin:(void (^)(id obj))success {
     if (DD_HASLOGIN) {
         if (success) {
@@ -90,7 +78,7 @@
         }
     } else {
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"loginData"]) {
-            NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginData"];
+            NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginData"];
             [ZP_LoginTool requestLogin:dic success:^(id obj) {
                 NSLog(@"obj---%@",obj);
                 NSDictionary * dic = obj;
@@ -152,13 +140,16 @@
     [super viewWillDisappear:animated];
     
     [self allData];
+    
 }
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-    dic[@"nonce"] = @"adf";
+    int i = arc4random_uniform(999);  // 随机数
+    dic[@"nonce"] = @(i);
+//    dic[@"nonce"] = @"adf";
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
-        ZPLog(@"%@",obj);
+//        ZPLog(@"%@",obj);
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.icueaccount = obj[@"icueaccount"];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
@@ -170,6 +161,27 @@
 - (void)MyViewData:(ZP_HomePageModel *) model {
     _NameLabel.text = model.icueaccount;
 }
+
+// 获取浏览记录、收藏的数量
+- (void)AllDatas {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    [ZP_MyTool requesBrowseCollection:dic uccess:^(id obj) {
+        ZPLog(@"%@",obj);
+        ZP_MyHopageModel * model = [[ZP_MyHopageModel alloc]init];
+        model.collecedcount = obj[@"collecedcount"];
+        model.historycount = obj[@"historycount"];
+        [self setAllDatas:model];
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+- (void)setAllDatas:(ZP_MyHopageModel *)model {
+    _CollectionLabel.text =  [NSString stringWithFormat:@"%@",model.collecedcount];
+    
+    _BrowseLabel.text = [NSString stringWithFormat:@"%@",model.historycount];
+}
+
 - (void)initUI {
     self.userBackView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.userBackView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
@@ -192,68 +204,68 @@
 
 - (void)updateUserInfo {
     if (DD_HASLOGIN) {
-        NSDictionary *dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
+        NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
         self.NameLabel.text = dic[@"nickname"];
     }
 }
 
 - (IBAction)LonigAction:(id)sender {
     self.hidesBottomBarWhenPushed = YES;
-    UIViewController *viewController;
+    UIViewController * viewController;
     if (DD_HASLOGIN) {
         viewController = [[SettingViewController alloc] init];
     } else {
         viewController = [[LogregisterController alloc] init];
     }
-    [self.navigationController pushViewController:viewController animated:YES];
+//    [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)settingAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
-    SettingViewController *settingViewController = [[SettingViewController alloc] init];
+//    self.hidesBottomBarWhenPushed = YES;
+    SettingViewController * settingViewController = [[SettingViewController alloc] init];
     [self.navigationController pushViewController:settingViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)scAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     CollectionViewController *collectionViewController = [[CollectionViewController alloc] init];
     [self.navigationController pushViewController:collectionViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)gzdpAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     ConcernShopViewController *concernShopViewController = [[ConcernShopViewController alloc] init];
     [self.navigationController pushViewController:concernShopViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)zjAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     FootprintViewController *footprintViewController = [[FootprintViewController alloc] init];
     [self.navigationController pushViewController:footprintViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 //  商店管理
 - (IBAction)sdglAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     StoreViewController *storeViewController = [[StoreViewController alloc] init];
     [self.navigationController pushViewController:storeViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 /**暂不需要***
 // 申请开店
@@ -264,32 +276,32 @@
 
 // 最新消息
 - (IBAction)zxxxAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     NewsViewController *newsViewController = [[NewsViewController alloc] init];
     [self.navigationController pushViewController:newsViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 //  扫一扫
 - (IBAction)scanAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     QCodeController * CodeController = [[QCodeController alloc]init];
     [self.navigationController pushViewController:CodeController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 
     NSLog(@"跳转");
 }
 // 彩票
 - (IBAction)CaipiaoAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     LotteryController * Lottery = [[LotteryController alloc]init];
     [self.navigationController pushViewController:Lottery animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil]; // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-    self.hidesBottomBarWhenPushed = NO;
+//    self.hidesBottomBarWhenPushed = NO;
 }
 
 @end
