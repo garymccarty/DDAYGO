@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef NS_ENUM(NSUInteger, DDPopKind)
+{
+    DDFromChildVC           = 0,
+    DDFromDataVC            = 1
+};
 
 @interface MyViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel * NameLabel;
 @property (nonatomic ,assign) BOOL hasLogin;
+@property (nonatomic ,assign) DDPopKind popKind;
 
 + (MyViewController *)sharedInstanceTool;
 

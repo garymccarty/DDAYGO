@@ -27,6 +27,20 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
         [self setupWebView];
+    
+//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+//    [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *backitem = [[UIBarButtonItem alloc] initWithCustomView:button];
+//    self.navigationItem.rightBarButtonItem = backitem;
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"ic_bar_return"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(backAction)];
+}
+
+- (void)backAction {
+    [MyViewController sharedInstanceTool].popKind = DDFromDataVC;
+    [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 // 添加webView，加载扫描过来的内容

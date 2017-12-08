@@ -138,6 +138,15 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.popKind == DDFromDataVC) {
+        self.tabBarController.selectedIndex = 3;
+        self.popKind = 0;
+    }
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
