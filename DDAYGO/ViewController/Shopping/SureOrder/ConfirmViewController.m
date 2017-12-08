@@ -177,16 +177,14 @@
             __weak typeof(PayView) weakView = PayView;
             [ZP_shoopingTool requessaddorderpay:dic noEdit:self.noEdit success:^(id obj) {
                 ZP_ConfirmWebController * web = [[ZP_ConfirmWebController alloc]init];
-                self.hidesBottomBarWhenPushed = YES;
-                self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
-                self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-                self.hidesBottomBarWhenPushed = YES;
-                NSString * urlStr = [NSString stringWithFormat:@"%@?%@",obj[@"uri"],obj[@"para"]];
-                web.UrlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//                                NSURL * url = [NSURL URLWithString:urlStr];
-//                                NSURLRequest * request = [[NSURLRequest alloc]initWithURL:url];
-//                                web.UrlStr = [NSString stringWithFormat:@"%@?%@",json[@"uri"],json[@"para"]];
-                
+//                self.hidesBottomBarWhenPushed = YES;
+//                self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+//                self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//                self.hidesBottomBarWhenPushed = YES;
+//                NSString * urlStr = [NSString stringWithFormat:@"%@?%@",obj[@"uri"],obj[@"para"]];
+                web.jump_URL = obj[@"para"];
+                web.jump_HeadURL = obj[@"uri"];
+//                web.UrlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                 [weakView removeView];
                 [self.navigationController pushViewController:web animated:YES];
             } failure:^(NSError *error) {

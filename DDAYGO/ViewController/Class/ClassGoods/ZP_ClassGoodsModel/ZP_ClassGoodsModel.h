@@ -10,10 +10,13 @@
 
 @interface ZP_ClassGoodsModel : NSObject
 @property (nonatomic, strong) NSString * productname; // 标题
-@property (nonatomic, strong) NSString * productcost; // 价格
+@property (nonatomic, strong) NSString * productprice; // 优惠价格
+//@property (nonatomic, strong) NSString * productprice; // 价格
 @property (nonatomic, strong) NSString * defaultimg; //图片
 @property (nonatomic, strong) NSString * TrademarkLabel; // 商标编号
-@property (nonatomic, strong) NSNumber * productid;
+@property (nonatomic, strong) NSString * productremark; // 商品介绍
+@property (nonatomic, strong) NSString * produced; // 地区
+@property (nonatomic, strong) NSNumber * productid;  // ID
 
 + (instancetype)gEtCassGoods:(NSDictionary *)Dic;
 

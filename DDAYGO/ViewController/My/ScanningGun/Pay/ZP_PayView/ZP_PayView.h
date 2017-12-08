@@ -28,7 +28,6 @@ typedef void (^ConfirmPayBlock)(id response);
 //  支付失败
 typedef void (^PayFailBlock)(id response);
 @property (nonatomic , copy) PayFailBlock PayFailBlock;
-
 //  总计金额
 @property (nonatomic, strong) UILabel * AmountLabel;
 

@@ -177,7 +177,7 @@
     
     [ZP_ClassViewTool requMerchandise:dic WithIndex:0 success:^(id obj) {
         NSDictionary * dict = obj;
-//        ZPLog(@"%@",obj);
+        ZPLog(@"%@",obj);
         self.dicts = dict[@"datalist"];
         NSArray * arr = dict[@"datalist"];
         self.newsData = [ZP_ClassGoodsModel arrayWithArray:arr];

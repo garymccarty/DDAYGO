@@ -237,7 +237,7 @@
     
 //  快递费
     ZP_GeneralLabel * ExpressFeeLabel = [ZP_GeneralLabel initWithtextLabel:_ExpressFeeLabel.text textColor:ZP_textblack font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    ExpressFeeLabel.text = @"80.00";
+    ExpressFeeLabel.text = @"0.00";
     [self.contentView addSubview:ExpressFeeLabel];
     _ExpressFeeLabel = ExpressFeeLabel;
     [ExpressFeeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -353,8 +353,9 @@
     
     _IDLabel.text = [NSString stringWithFormat:@"%@",dic.ordersnumber];
     _DateLabel.text = model.createtime;
-    //    _TimeLabel.text = dic[@"Time"];
+
     [_FigureImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@", dic.defaultimg]]];
+    _merchantsLabel.text = [NSString stringWithFormat:@"%@",model.shopname];
     _titleLabel.text = dic.productname;
     _descLabel.text = [NSString stringWithFormat:@"%@",dic.colorname];
     _SizeLabel.text = [NSString stringWithFormat:@"%@",dic.normname];
@@ -365,8 +366,7 @@
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = [NSString stringWithFormat:@"%@",dic.cp];
     _QuantityLabel.text = [NSString stringWithFormat:@"%@",dic.amount];
-    _merchantsLabel.text = [NSString stringWithFormat:@"%@",dic.suppliername];
-    
+
 }
 
 @end

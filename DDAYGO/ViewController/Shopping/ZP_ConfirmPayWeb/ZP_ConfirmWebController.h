@@ -10,6 +10,7 @@
 
 @interface ZP_ConfirmWebController : UIViewController
 
-@property (nonatomic, strong) NSString * UrlStr;
-
+//@property (nonatomic, strong) NSString * UrlStr;
+@property (nonatomic, copy) NSString * jump_HeadURL;
+@property (nonatomic, copy) NSString * jump_URL;
 @end

@@ -34,9 +34,16 @@
     webView.delegate = self;
     
 //    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_UrlStr]]];
-    NSMutableURLRequest * requestShare = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:_UrlStr]];
-    [requestShare setHTTPMethod:@"POST"];
-    [webView loadRequest:requestShare];
+//    NSMutableURLRequest * requestShare = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:_UrlStr]];
+//    [requestShare setHTTPMethod:@"POST"];
+//    [webView loadRequest:requestShare];
+    
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[_jump_HeadURL stringByAppendingString:@"?"]]];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[_jump_URL dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [webView loadRequest:request];
+    [self.view addSubview:webView];
     
     
 //    _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
@@ -57,7 +64,7 @@
     
     NSLog(@"当前连接--》%@",request.URL.absoluteString);
     
-    [SVProgressHUD showWithStatus:@"正在努力加载ing......请再稍等一下下~"]; // 菊花
+//    [SVProgressHUD showWithStatus:@"正在努力加载ing......请再稍等一下下~"]; // 菊花
     
     return YES;
 }

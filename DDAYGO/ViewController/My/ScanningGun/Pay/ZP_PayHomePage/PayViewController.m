@@ -12,6 +12,7 @@
 #import "UINavigationBar+Awesome.h"
 #import "ZP_MyTool.h"
 #import "DataViewController.h"
+#import "ZP_PayView.h"
 @interface PayViewController () <UITableViewDelegate, UITableViewDataSource> {
     
     NSString * money;
@@ -60,10 +61,13 @@
     dic[@"payway"] = @"allpay_balance";   // 这个是在view上选择支付方式
     dic[@"icuetoken"] = nil;
     
+    
+    
+    
+    
 //    这是是在选择支付方式后点击确定后跳转的数据加OID回调
     [ZP_MyTool requesQrCodePay:dic success:^(id obj) {
         NSLog(@"obj = %@",obj);
-        
         DataViewController * vc = [[DataViewController alloc]init];
 //        vc.jump_URL = [NSString stringWithFormat:@"http://www.baidu.com"];
 //        vc.jump_URL = [NSString stringWithFormat:@"%@?%@",obj[@"uri"],obj[@"para"]];

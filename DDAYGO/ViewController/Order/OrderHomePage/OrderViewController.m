@@ -73,7 +73,6 @@
         
         vc.titleStr = obj;
         vc.num = idx;
-        
         [childVCs addObject:vc];
     }];
     

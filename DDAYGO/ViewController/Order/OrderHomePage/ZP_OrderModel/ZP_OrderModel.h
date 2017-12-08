@@ -58,7 +58,6 @@
 @property (nonatomic, strong) NSNumber * ordersamount;
 //订单类型
 
-
 @property (nonatomic, strong) NSArray<OrdersdetailModel *> *ordersdetail;
 
 + (NSMutableArray *)arrayWithArray:(NSArray *)array;

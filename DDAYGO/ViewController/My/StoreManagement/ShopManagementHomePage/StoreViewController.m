@@ -27,6 +27,7 @@
     [super viewDidLoad];
     [self initUI];
     [self Supplier];
+    self.merchantscrollView.bounces = YES;
     // 因为需要上个接口的 sid 所以只有等 商家sid 获取成功后才能调用
 //    [self MerchantsBalance];
 }
@@ -107,6 +108,7 @@
     [self.navigationController pushViewController:YueTixian animated:YES];
 }
 
+/**暂不需要
 //  订单
 - (IBAction)orderAction:(id)sender {
     self.hidesBottomBarWhenPushed = YES;
@@ -124,6 +126,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
+*/
 
 //  收款
 - (IBAction)receivingAction:(id)sender {

@@ -17,10 +17,12 @@
 - (instancetype)ininWithClassGoodsData:(NSDictionary *)dic {
     if (self == [super init]) {
         self.productname = dic[@"productname"];
-        self.productcost = [NSString stringWithFormat:@"%@RMB:",dic[@"productcost"]];
+        self.productprice = [NSString stringWithFormat:@"%@RMB:",dic[@"productprice"]];
         self.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@", dic[@"defaultimg"]];
         self.TrademarkLabel = [NSString stringWithFormat:@"%@", dic[@"cp"]];
         self.productid = dic[@"productid"];
+        self.productremark = dic[@"productremark"];
+        self.produced = dic[@"produced"];
         
     }
     return self;
@@ -39,9 +41,11 @@
         ZP_ClassGoodsModel * model = [[ZP_ClassGoodsModel alloc]init];
         model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@", dic[@"defaultimg"]];
         model.productname = dic[@"productname"];
-        model.productcost = [NSString stringWithFormat:@"%@RMB:",dic[@"productcost"]];
+        model.productprice = [NSString stringWithFormat:@"RMB:%@",dic[@"productprice"]];
         model.TrademarkLabel = [NSString stringWithFormat:@"%@", dic[@"cp"]];
         model.productid =  dic[@"productid"];
+        model.productremark = dic[@"productremark"];
+        model.produced = dic[@"produced"];
         [arr addObject:model];
     }
     return arr;

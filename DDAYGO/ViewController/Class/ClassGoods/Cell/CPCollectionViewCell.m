@@ -49,14 +49,14 @@
     priceLabel.textColor = ZP_TypefaceColor;
     priceLabel.font = ZP_TrademarkFont;
     priceLabel.textAlignment = NSTextAlignmentLeft;
-    [self.contentView addSubview:priceLabel];
+//    [self.contentView addSubview:priceLabel];
     _priceLabel = priceLabel;
     
     
 //   横线
-    UIView * backView = [[UIView alloc]initWithFrame:CGRectMake(5, CGRectGetWidth(self.frame)+ 37.5, _priceLabel.height+ 10, 1.5)];
+    UIView * backView = [[UIView alloc]initWithFrame:CGRectMake(5, CGRectGetWidth(self.frame)+ 37.5, _priceLabel.height, 1.5)];
     backView.backgroundColor = ZP_TypefaceColor;
-    [self.contentView addSubview:backView];
+//    [self.contentView addSubview:backView];
     
 //   商标
     UIImageView * TrademarkImage = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetWidth(self.frame)- 55, CGRectGetWidth(self.frame)+ 35, 22*0.66, 20-5)];
@@ -78,8 +78,8 @@
     
     [_imageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     _headerlabel.text = model.productname;
-    _preferentialLabel.text = model.productcost;
-    _priceLabel.text = [NSString stringWithFormat:@"RMB:"];
+    _preferentialLabel.text = model.productprice;
+//    _priceLabel.text = model.productprice;
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = model.TrademarkLabel;
     

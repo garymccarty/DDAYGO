@@ -167,7 +167,7 @@
 - (void)OnceagainBut:(UIButton *)OnceagainBut {
     NSLog(@"再次购买");
     OrderModel *model = _ModeldataArray[OnceagainBut.tag];
-    OrdersdetailModel *model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
+    OrdersdetailModel * model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
     ConfirmViewController *confirm = [[ConfirmViewController alloc]init];
     confirm.stockidsString = [NSString stringWithFormat:@"%@_%@",model2.stockid,model2.amount];
     self.hidesBottomBarWhenPushed = YES;

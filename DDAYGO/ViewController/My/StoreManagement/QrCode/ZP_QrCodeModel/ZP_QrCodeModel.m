@@ -10,7 +10,4 @@
 
 @implementation ZP_QrCodeModel
 
-- (void)initWithData:(NSDictionary *)dic {
-    
-}
 @end

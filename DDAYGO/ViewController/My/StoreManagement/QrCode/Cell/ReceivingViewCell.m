@@ -61,7 +61,6 @@
 
     self.imageview.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:ZP_Width - 100];
     self.imageview.image = [outputImage createNonInterpolatedWithSize:150];
-//    self.imageView.image = [UIImage imageWithCIImage:outputImage];多余
     self.imageview.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:ZP_Width - 150];
 
 }

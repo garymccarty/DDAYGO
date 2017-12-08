@@ -91,7 +91,7 @@
         [self.scrollView addSubview:self.pageControl];
         [self.shoucangBtn resizeWithDistance:5];
         [self.gouwuBtn resizeWithDistance:5];
-        [self.dianpuBtn resizeWithDistance:5];
+        [self.dianpuBtn resizeWithDistance:5]; 
     }
     else{
         self.onScrollViewWidth.constant = ZP_Width * 1;
@@ -111,6 +111,7 @@
     }
     
 }
+
 // 获取数据
 - (void)allData {
     if (nil == _productId) {
@@ -122,8 +123,9 @@
     } else {
         dic = @{@"productid":_productId};
     }
+    
     [ZP_ClassViewTool requDetails:dic success:^(id obj) {
-        
+        ZPLog(@"%@",obj);
         ZP_GoodDetailsModel * model = [ZP_GoodDetailsModel getGoodDetailsData:obj[@"products"][0]];
         _shoucangBtn.selected = [model.state boolValue];
         NSString *value = [obj objectForKey:@"colornorms"];
@@ -149,11 +151,12 @@
 - (void)getRightItemDataWithProducttypeid:(NSInteger)producttypeid {
     NSDictionary * dictt = @{@"productid":@"2",@"fatherid":[@(producttypeid + 1) stringValue]};
     [ZP_ClassViewTool requClassIficationrj:dictt success:^(id obj) {
-        
+        ZPLog(@"%@",obj);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
 }
+
 //填写数据
 - (void)getDataWithModel:(ZP_GoodDetailsModel *)model {
     if (_normsArr.count < 1){
@@ -218,10 +221,11 @@
 }
 
 - (IBAction)dianpuAction:(id)sender {
-    
+    /** 暂不需要
     MerchantController * Merchant = [[MerchantController alloc]init];
     [self.navigationController pushViewController:Merchant animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+     */
 }
 
 - (IBAction)xzflAction:(UIButton *)sender {
@@ -304,6 +308,7 @@
         
     };
 }
+
 //加入购物车
 - (IBAction)jrgwcAction:(UIButton *)sender {
     DD_CHECK_HASLONGIN;
@@ -316,7 +321,6 @@
         self.purchaseView.modelArr = _normsArr;
         [self.view addSubview:self.purchaseView];
     }
-    
     [self.purchaseView show:^(id response) {
         NSLog(@"re = %@",response);
         [self.xzflBtn setTitle:response forState:UIControlStateNormal];

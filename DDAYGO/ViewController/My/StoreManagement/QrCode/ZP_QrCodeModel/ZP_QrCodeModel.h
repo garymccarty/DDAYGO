@@ -12,7 +12,4 @@
 @property (nonatomic, strong) NSString * shopname;  // 商品名字
 @property (nonatomic, strong) NSString * supplierid; // 商家ID
 
-- (void)initWithData:(NSDictionary *)dic;
-    
-
 @end

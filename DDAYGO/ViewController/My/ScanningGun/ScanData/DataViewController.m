@@ -98,7 +98,7 @@
         [ZP_MyTool requesOrdPay:dic uccess:^(id obj) {
             
             if ([obj[@"result"] isEqualToString:@"success"]) {
-//                [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"支付成功", nil)];
+                [SVProgressHUD showSuccessWithStatus:NSLocalizedString(@"支付成功", nil)];
                 PayPassController * Pass = [[PayPassController alloc]init];
                 [self.navigationController pushViewController:Pass animated:YES];
             }else

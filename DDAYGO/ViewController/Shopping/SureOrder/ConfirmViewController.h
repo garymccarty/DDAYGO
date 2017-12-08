@@ -20,7 +20,9 @@
 @property (nonatomic, strong) UIButton * ClearingBut;//  提交订单
 @property (nonatomic, copy) NSString* stockidsString;//  库存id字串
 /** Web*/
+@property (nonatomic, copy) NSString * jump_HeadURL;
 @property (nonatomic, copy) NSString * jump_URL;
+
 
 
 /**购物车*/
