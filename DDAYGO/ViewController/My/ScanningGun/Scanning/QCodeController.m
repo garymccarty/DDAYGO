@@ -131,6 +131,7 @@
                 [self.navigationController pushViewController:pay animated:YES];
            } else {
                [SVProgressHUD showErrorWithStatus:@"二维码错误"];
+               [self.navigationController popViewControllerAnimated:YES];
            }
     }
 }

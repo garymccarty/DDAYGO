@@ -11,7 +11,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (IBAction)Determine:(id)sender {

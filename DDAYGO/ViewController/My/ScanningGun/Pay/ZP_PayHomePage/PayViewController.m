@@ -46,10 +46,6 @@
     ZPLog(@"%@_%@",dic[@"shopname"] = self.Oname,dic[@"shopcode"] = self.Oid);
 }
 
-
-
-
-
 //  点击确认按钮需要的参数
 - (void)btnClick {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
@@ -62,16 +58,10 @@
     ZP_PayView * PayView = [[ZP_PayView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [PayView showInView:self.view];
     
-    
-    
 //    这是是在选择支付方式后点击确定后跳转的数据加OID回调
     [ZP_MyTool requesQrCodePay:dic success:^(id obj) {
         NSLog(@"obj = %@",obj);
         DataViewController * vc = [[DataViewController alloc]init];
-//        vc.jump_URL = [NSString stringWithFormat:@"http://www.baidu.com"];
-//        vc.jump_URL = [NSString stringWithFormat:@"%@?%@",obj[@"uri"],obj[@"para"]];
-//        把rui跟para传到dataviewcontroller
-        
         vc.jump_URL = obj[@"para"];
         vc.jump_HeadURL = obj[@"uri"];
         vc.Oid = obj[@"oid"];
