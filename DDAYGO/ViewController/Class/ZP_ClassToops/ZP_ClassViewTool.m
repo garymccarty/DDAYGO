@@ -109,5 +109,14 @@
         failure(error);
     }];
 }
+
++ (void)requImage:(NSString *)url success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
+    [ZP_NetorkingTools GET:url parameters:nil success:^(NSDictionary *responseObject) {
+        success([UIImage imageWithData:responseObject]);
+    } failure:^(NSError *error) {
+        NSDictionary *dic = error;
+        failure(error);
+    }];
+}
 @end
 

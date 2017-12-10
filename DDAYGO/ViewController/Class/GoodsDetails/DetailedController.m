@@ -20,6 +20,7 @@
 #import "ZP_GoodDetailsModel.h"
 #import "PurchaseView.h"
 #import "ConfirmViewController.h"
+#import "ProductTableViewCell.h"
 @interface DetailedController ()<UICollectionViewDelegate,UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource>
 
 //**Xib 拖过来然后填写数据**/
@@ -31,10 +32,10 @@
 @property (weak, nonatomic) IBOutlet UILabel * peramountLable;
 @property (weak, nonatomic) IBOutlet UILabel * productidLable;
 @property (strong, nonatomic) IBOutlet UILabel * ShoppingIdLabel;
+@property (weak, nonatomic) IBOutlet UIView *headView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *detailViewTop;
+@property (weak, nonatomic) IBOutlet UITableView *detailTableView;
 
-
-@property (nonatomic, strong) UITableView * tableviewVC;
-@property (nonatomic, strong) UICollectionView * bottomVC;
 @property (nonatomic, strong) NSArray * array;
 @property (nonatomic, strong) UIWindow * window;
 @property (nonatomic, strong) ProductDescriptionView * productDescriptionView;
@@ -47,6 +48,8 @@
 @property (nonatomic, strong) NSArray * normsArr;
 @property (nonatomic, strong) NSArray * typeArr;
 
+@property (nonatomic, strong) NSMutableArray *productArray;
+
 @end
 
 @implementation DetailedController
@@ -55,9 +58,7 @@
     [super viewDidLoad];
     [self allData];
     self.navigationController.navigationBar.hidden = YES;
-    //    [_bottomVC registerClass:[DetailedViewCell class] forCellWithReuseIdentifier:@"detailedViewCell"];
-    [_tableviewVC registerClass:[TextdetailsViewCell class] forCellReuseIdentifier:@"textdetailsViewCell"];
-    [self.view addSubview:self.bottomVC];
+    [self.detailTableView registerNib:[UINib nibWithNibName:@"ProductTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProductTableViewCell"];
     self.shfwBottomView.hidden = YES;
     self.qbpjBottomView.hidden = YES;
 }
@@ -67,6 +68,12 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
+
+- (void)updateViewConstraints {
+    [super updateViewConstraints];
+    self.scrollView.contentSize =CGSizeMake(ZP_Width,ZP_height * 2);
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
@@ -126,6 +133,21 @@
     
     [ZP_ClassViewTool requDetails:dic success:^(id obj) {
         ZPLog(@"%@",obj);
+        NSDictionary *asdic = [obj[@"productdetail"] firstObject];
+        NSString *asdtring = asdic[@"content"];
+        self.productArray = [asdtring componentsSeparatedByString:@","];
+        [self.detailTableView reloadData];
+//        for (NSString *url in array) {
+//            
+//            [ZP_ClassViewTool requImage:url success:^(id obj) {
+//                [self.productArray addObject:obj];
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self.detailTableView reloadData];
+//                });
+//            } failure:^(NSError *error) {
+//                NSLog(@"%@",error);
+//            }];
+//        }
         ZP_GoodDetailsModel * model = [ZP_GoodDetailsModel getGoodDetailsData:obj[@"products"][0]];
         _shoucangBtn.selected = [model.state boolValue];
         NSString *value = [obj objectForKey:@"colornorms"];
@@ -264,21 +286,29 @@
     [self.productDescriptionView show];
 }
 - (IBAction)cpnrAction:(id)sender {
-    self.cpnrBottomView.hidden = NO;
-    self.qbpjBottomView.hidden = YES;
-    self.shfwBottomView.hidden = YES;
+    [self.detailTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (IBAction)qupjAction:(id)sender {
-    self.cpnrBottomView.hidden = YES;
-    self.qbpjBottomView.hidden = NO;
-    self.shfwBottomView.hidden = YES;
+    [self.detailTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] atScrollPosition:UITableViewScrollPositionTop animated:NO];
 }
 
 - (IBAction)shfwAction:(id)sender {
+    [self.detailTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+}
+
+- (void)updateDetailView:(NSInteger)index {
     self.cpnrBottomView.hidden = YES;
     self.qbpjBottomView.hidden = YES;
-    self.shfwBottomView.hidden = NO;
+    self.shfwBottomView.hidden = YES;
+    
+    if (index == 0) {
+        self.cpnrBottomView.hidden = NO;;
+    } else if (index == 1) {
+        self.qbpjBottomView.hidden = NO;
+    } else {
+        self.shfwBottomView.hidden = NO;
+    }
 }
 
 //立即购买
@@ -334,75 +364,71 @@
         [_weakSelf.navigationController pushViewController:response animated:YES];
     };
 }
-
-
-- (UICollectionView *)collectionView {
-    if (_bottomVC == nil) {
-        UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
-        _bottomVC = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 375, 180) collectionViewLayout:layout];
-        _bottomVC.delegate = self;
-        _bottomVC.dataSource = self;
-        _bottomVC.backgroundColor = [UIColor whiteColor];
-//      自动适应
-        _bottomVC.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        
-    }
-    return _bottomVC;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
-}
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-
-//        static NSString * identify = @"detailedViewCell";
-//        DetailedViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
-//
-//        return cell;
-
-//}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 150;
-}
-//  TableView代理
-
+#pragma mark  --- tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.productArray.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
-    _tableviewVC = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 150)];
-    layout.itemSize = CGSizeMake(375, 200);
-    [_tableviewVC registerClass:[TextdetailsViewCell class] forCellReuseIdentifier:@"textdetailsViewCell"];
-    _tableviewVC.delegate = self;
-    _tableviewVC.dataSource = self;
-    
-    _smallScrollView.delegate = self;
-    _tableviewVC.backgroundColor = [UIColor whiteColor];
-    //     自动适应
-    _tableviewVC.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    TextdetailsViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"textdetailsViewCell"];
-    
+    ProductTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ProductTableViewCell"];
+    [cell.productImageView sd_setImageWithURL:self.productArray[indexPath.row]];
+    [self updateDetailView:indexPath.section];
     return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return ZP_Width;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return 30;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ZP_Width, 30)];
+    label.backgroundColor = [UIColor redColor];
+    if (section == 0) {
+        label.text = @"产品内容";
+    } else if (section == 1) {
+        label.text = @"全部评价";
+    } else {
+        label.text = @"售后服务";
+    }
+    
+    return label;
+}
+
 #pragma mark --- scrollView delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.scrollView) {
+        self.headView.alpha = 1 - scrollView.contentOffset.y / 200.0;
+        if (scrollView.contentOffset.y >= 524) {
+            self.detailViewTop.constant = scrollView.contentOffset.y - 524 + 8;
+        } else if (self.detailViewTop.constant != 8) {
+            self.detailViewTop.constant = 8;
+        }
+        
+//        if (scrollView.contentOffset.y > 100) {
+//            self.scrollView.bounces = NO;
+//        } else {
+//            self.scrollView.bounces = YES;
+//        }
+    }
+}
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     if (scrollView == self.smallScrollView) {
         if (!velocity.y && velocity.x) {

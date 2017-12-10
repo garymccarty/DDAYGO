@@ -17,7 +17,7 @@ static AFHTTPSessionManager *_manager = nil;
     _manager = [AFHTTPSessionManager manager];
     _manager.requestSerializer = [AFJSONRequestSerializer serializer];
 //    _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript", @"text/html", nil];
+    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript", @"text/html",@"image/jpeg", nil];
     NSString * tipCode = [UserDefultManage objectForKey:@"token"];
     
     if (tipCode.length >10) {
@@ -52,7 +52,7 @@ static AFHTTPSessionManager *_manager = nil;
         [_manager.requestSerializer setValue:tipCode forHTTPHeaderField:@"token"];
     }
     _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript", @"text/html", nil];
+    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript", @"text/html",@"image/jpeg", nil];
 
     [_manager POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         

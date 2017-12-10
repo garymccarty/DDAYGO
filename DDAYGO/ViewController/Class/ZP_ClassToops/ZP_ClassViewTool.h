@@ -48,4 +48,7 @@
  * 取消收藏
  */
 + (void)requCancelshoucang:(NSDictionary *)dic success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
+//获取图片
++ (void)requImage:(NSString *)url success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
 @end
