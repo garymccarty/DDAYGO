@@ -19,6 +19,6 @@
 @property (nonatomic, strong) UICollectionView * collectionView3;
 @property (nonatomic, strong) UICollectionView * collectionView4;
 
-@property (nonatomic, strong) NSNumber *fatherId;
+@property (nonatomic, strong) NSNumber * fatherId;
 
 @end

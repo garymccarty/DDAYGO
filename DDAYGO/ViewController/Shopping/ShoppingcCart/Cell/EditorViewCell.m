@@ -48,39 +48,45 @@
     
 //  标题
     ZP_GeneralLabel * titleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    titleLabel.textColor = ZP_textblack;
-    titleLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
-    titleLabel.numberOfLines = 0;
-//    titleLabel.font = ZP_stockFont;
     [self.contentView addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(Mainfigure).offset(8);
-        make.left.equalTo(Mainfigure).offset(85);
-        make.right.equalTo(Mainfigure).offset(ZP_Width -30-90);
-    }];
     _titleLabel = titleLabel;
-    
-//  颜色
-    ZP_GeneralLabel * descLabel = [ZP_GeneralLabel initWithtextLabel:_descLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    descLabel.textColor = ZP_TabBarTextColor;
-//    descLabel.font = ZP_stockFont;
-    [self.contentView addSubview:descLabel];
-    [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(Mainfigure).offset(85); // 左
-        make.top.equalTo(titleLabel).offset(35);
-//        make.width.mas_offset(80);
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(Mainfigure).offset(3);
+        make.left.equalTo(Mainfigure).offset(95);
+        make.right.equalTo(Mainfigure).offset(ZP_Width - 35 -95);
     }];
-    _descLabel = descLabel;
     
-//  尺码
-    ZP_GeneralLabel * SizeLabel = [ZP_GeneralLabel initWithtextLabel:_SizeLanbel.text textColor:ZP_TabBarTextColor font:ZP_stockFont textAlignment: NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    [self.contentView addSubview: SizeLabel];
+    //     商品介绍
+    ZP_GeneralLabel * MerchandiseIntroducedLabel = [ZP_GeneralLabel initWithtextLabel:_MerchandiseIntroducedLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    MerchandiseIntroducedLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
+    MerchandiseIntroducedLabel.numberOfLines = 0;
+    [self.contentView addSubview:MerchandiseIntroducedLabel];
+    _MerchandiseIntroducedLabel = MerchandiseIntroducedLabel;
+    [MerchandiseIntroducedLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(titleLabel).offset(17);
+        make.left.equalTo(Mainfigure).offset(95);
+        make.right.equalTo(Mainfigure).offset(ZP_Width - 35 - 95);
+    }];
+    
+//  商品颜色
+    ZP_GeneralLabel * descLabel = [ZP_GeneralLabel initWithtextLabel:_descLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    [self.contentView addSubview:descLabel];
+    _descLabel = descLabel;
+    [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(Mainfigure).offset(95);
+        make.top.equalTo(MerchandiseIntroducedLabel).offset(35);
+//        make.width.mas_offset(50);
+    }];
+    
+//  商品尺码
+    ZP_GeneralLabel * SizeLabel = [ZP_GeneralLabel initWithtextLabel:_SizeLanbel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    [self.contentView addSubview:SizeLabel];
+    _SizeLanbel = SizeLabel;
     [SizeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(descLabel).offset(45);
-        make.top.equalTo(titleLabel).offset(35);
-//        make.width.mas_offset(25);
+        make.top.equalTo(MerchandiseIntroducedLabel).offset(35);
+    //        make.width.mas_offset(25);
     }];
-    _SizeLanbel = SizeLabel;
     
 //  筛选按钮
     UIButton * ScreeningBut = [UIButton new];
@@ -90,7 +96,7 @@
     [ScreeningBut addTarget:self action:@selector(ScreeningBut:) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:ScreeningBut];
     [ScreeningBut mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(SizeLabel).offset(20);
+        make.left.equalTo(SizeLabel).offset(25);
         make.top.equalTo(SizeLabel).offset(0);
         make.width.mas_equalTo(15);
         make.height.mas_equalTo(15);
@@ -102,7 +108,7 @@
     backgroundView.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
     [self.contentView addSubview:backgroundView];
     [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(Mainfigure).offset(85);
+        make.left.equalTo(Mainfigure).offset(95);
         make.bottom.equalTo(self).offset(-23.5);
         make.height.mas_equalTo(20);
         make.width.mas_equalTo(100);
@@ -149,22 +155,15 @@
     }];
 }
 
-//- (void)cellWithDic:(NSDictionary *)dic {
-//    
-//    _titleLabel.text = dic[@"title"];
-//    _descLabel.text = dic[@"desc"];
-//    _Mainfigure.image = [UIImage imageNamed:@"Shopping"];
-//    _numLabel.text = @"0";
-//    
-//}
+
 - (void)cellWithModel:(ZP_CartsModel *)model {
     
     [_Mainfigure sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:nil];;
-    _titleLabel.text = model.productremark;
+    _titleLabel.text = model.productname;
+    _MerchandiseIntroducedLabel.text = model.productremark;
     _descLabel.text = model.colorname;
     _SizeLanbel.text = model.normname;
     _numLabel.text = [NSString stringWithFormat:@"%@",model.amount];
-    //    _SizeLabel.text = model.normname;
     //    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.priceamount];
     //    _PriceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice];
     //    _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];

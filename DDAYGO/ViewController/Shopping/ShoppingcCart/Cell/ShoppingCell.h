@@ -13,7 +13,8 @@
 @property (nonatomic, strong) UIButton * buttom;  // 选择按钮
 @property (nonatomic, strong) UIImageView * leftImageView;  // 主图
 @property (nonatomic, strong) UILabel * titleLabel;  // 标题
-@property (nonatomic, strong) UILabel * descLabel;  // 商品介绍
+@property (nonatomic, strong) UILabel * MerchandiseIntroducedLabel; // 商品介绍
+@property (nonatomic, strong) UILabel * descLabel;  // 规格
 @property (nonatomic, strong) UILabel * PreferentialLabel;  // 颜色
 @property (nonatomic, strong) UILabel * SizeLabel;  // 尺码
 @property (nonatomic, strong) UILabel * PriceLabel;  // 价格

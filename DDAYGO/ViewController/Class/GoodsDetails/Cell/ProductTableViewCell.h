@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ProductTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *productImageView;
+@property (weak, nonatomic) IBOutlet UIImageView * productImageView;
 
 @end

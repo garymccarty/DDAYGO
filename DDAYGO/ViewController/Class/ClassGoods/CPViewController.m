@@ -173,7 +173,7 @@
 //  数据
 - (void)allData {
 
-    NSDictionary *dic =@{@"fatherid":_fatherId,@"seq":@"desc",@"word":@"",@"countrycode":@"886",@"page":@"1",@"pagesize":@"10"};
+    NSDictionary * dic =@{@"fatherid":_fatherId,@"seq":@"desc",@"word":@"",@"countrycode":@"886",@"page":@"1",@"pagesize":@"10"};
     
     [ZP_ClassViewTool requMerchandise:dic WithIndex:0 success:^(id obj) {
         NSDictionary * dict = obj;
@@ -183,7 +183,7 @@
         self.newsData = [ZP_ClassGoodsModel arrayWithArray:arr];
         [self.collectionView1 reloadData];
 
-        NSLog(@"%ld",(unsigned long)arr.count);
+//        NSLog(@"%ld",(unsigned long)arr.count);
 
     } failure:^(NSError *error) {
 
@@ -193,7 +193,7 @@
 
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"go");
+//    NSLog(@"go");
     [[NSNotificationCenter defaultCenter]postNotificationName:@"relodClassDaTa" object:nil];
     NSInteger tag = scrollView.contentOffset.x/ZP_Width;
     UIButton *button = [self.topView viewWithTag:tag + 100];
@@ -201,9 +201,16 @@
     button.selected = YES;
     self.btn = button;
     
-    NSDictionary *dic =@{@"fatherid":_fatherId,@"seq":@"desc",@"word":@"",@"countrycode":@"886",@"page":@"1",@"pagesize":@"10"};
+//    NSDictionary * dic =@{@"fatherid":_fatherId,@"seq":@"desc",@"word":@"",@"countrycode":@"886",@"page":@"1",@"pagesize":@"10"};
+    NSMutableDictionary * dic  = [NSMutableDictionary dictionary];
+    dic[@"fatherid"] = _fatherId;
+    dic[@"seq"] = @"desc";
+    dic[@"word"] = @"";
+    dic[@"countrycode"] = @"886";
+    dic[@"page"] = @"1";
+    dic[@"pagesize"] = @"10";
     [ZP_ClassViewTool requMerchandise:dic WithIndex:tag success:^(id obj) {
-        NSLog(@"obj = %@",obj);
+//        NSLog(@"obj = %@",obj);
         NSDictionary * dict = obj;
         self.dicts = dict[@"datalist"];
         NSArray * arr = dict[@"datalist"];
@@ -259,14 +266,12 @@
     ZP_ClassGoodsModel * model = self.newsData[indexPath.row];
     [cell cellWithdic:model];
     
-    
     return cell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     static NSString * header = @"ReusableView";
     UICollectionReusableView * headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:header forIndexPath:indexPath];
-    
     return headerView;
 }
 
@@ -277,6 +282,6 @@
     Detailed.productId = model.productid;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:Detailed animated:YES];
-    NSLog(@"选中%ld",(long)indexPath.item);
+//    NSLog(@"选中%ld",(long)indexPath.item);
 }
 @end

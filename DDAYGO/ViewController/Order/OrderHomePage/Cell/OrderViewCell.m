@@ -84,11 +84,12 @@
     _FigureImage = FigureImage;
     
 //  商家名字
-    ZP_GeneralLabel * merchantsLabel = [ZP_GeneralLabel  initWithtextLabel:_merchantsLabel.text textColor:ZP_Graybackground font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
+    ZP_GeneralLabel * merchantsLabel = [ZP_GeneralLabel  initWithtextLabel:_merchantsLabel.text textColor:ZP_textblack font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
     [self.Backgroundview addSubview:merchantsLabel];
+//    merchantsLabel.text = @"你好吗";
     [merchantsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(FigureImage).offset(80);
-        make.top.equalTo(self).offset(40);
+        make.top.equalTo(DateLabel).offset(20);
     }];
     _merchantsLabel = merchantsLabel;
     
@@ -357,6 +358,7 @@
     [_FigureImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@", dic.defaultimg]]];
     _merchantsLabel.text = [NSString stringWithFormat:@"%@",model.shopname]; // 这个参数显示不出来不
     _titleLabel.text = dic.productname;
+//    _titleLabel.text = model.shopname;
     _descLabel.text = [NSString stringWithFormat:@"%@",dic.colorname];
     _SizeLabel.text = [NSString stringWithFormat:@"%@",dic.normname];
     _AmountLabel.text = [NSString stringWithFormat:@"%@",model.ordersamount];

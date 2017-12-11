@@ -29,6 +29,7 @@
 
 /**商品默认图片*/
 @property (nonatomic, strong) NSString * defaultimg;
+
 //店铺名称
 @property (nonatomic, strong) NSString * shopname;
 //供货商名称
@@ -58,7 +59,7 @@
 @property (nonatomic, strong) NSNumber * ordersamount;
 //订单类型
 
-@property (nonatomic, strong) NSArray<OrdersdetailModel *> *ordersdetail;
+@property (nonatomic, strong) NSArray<OrdersdetailModel *> * ordersdetail;
 
 + (NSMutableArray *)arrayWithArray:(NSArray *)array;
 

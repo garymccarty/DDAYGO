@@ -382,12 +382,11 @@
         if (sender.selected) {
             
 #pragma make -- 提示框
-            UIAlertController *al = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction *act = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController * al = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * act = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             }];
-            UIAlertAction *act2 = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定要删除吗？",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        UIAlertAction * act2 = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定要删除吗？",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSMutableDictionary * dic = [NSMutableDictionary dictionary];
                 dic[@"stockid"] =_modelstockid;
                 dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
                 [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
@@ -458,8 +457,7 @@
     return dataArray.count;
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewCellEditingStyleDelete;
 }
 
@@ -611,10 +609,8 @@
     return @"删除";
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSLog(@"go");
         ZP_CartsModel *model = dataArray[indexPath.row];
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];

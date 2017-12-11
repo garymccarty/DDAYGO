@@ -50,7 +50,6 @@
         model.amount = dic[@"amount"];
         model.cp = dic[@"cp"];
         model.stockid = dic[@"stockid"];
-        
         [arr addObject:model];
     }
     return arr;

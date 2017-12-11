@@ -48,80 +48,89 @@
     }];
     _leftImageView = imageView;
     
-//  商品文字
+//  标题
     ZP_GeneralLabel * titleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    titleLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
-    titleLabel.numberOfLines = 0;
     [self.contentView addSubview:titleLabel];
+     _titleLabel = titleLabel;
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(imageView).offset(8);
-        make.left.equalTo(imageView).offset(85);
-        make.right.equalTo(imageView).offset(ZP_Width - 30 -90);
+        make.top.equalTo(imageView).offset(3);
+        make.left.equalTo(imageView).offset(95);
+        make.right.equalTo(imageView).offset(ZP_Width - 35 -95);
     }];
-    _titleLabel = titleLabel;
+    
+//     商品介绍
+    ZP_GeneralLabel * MerchandiseIntroducedLabel = [ZP_GeneralLabel initWithtextLabel:_MerchandiseIntroducedLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    MerchandiseIntroducedLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
+    MerchandiseIntroducedLabel.numberOfLines = 0;
+    [self.contentView addSubview:MerchandiseIntroducedLabel];
+    _MerchandiseIntroducedLabel = MerchandiseIntroducedLabel;
+    [MerchandiseIntroducedLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(titleLabel).offset(17);
+        make.left.equalTo(imageView).offset(95);
+        make.right.equalTo(imageView).offset(ZP_Width - 35 - 95);
+    }];
     
 //  商品颜色
     ZP_GeneralLabel * descLabel = [ZP_GeneralLabel initWithtextLabel:_descLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:descLabel];
+    _descLabel = descLabel;
     [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(imageView).offset(85);
-        make.top.equalTo(titleLabel).offset(35);
+        make.left.equalTo(imageView).offset(95);
+        make.top.equalTo(MerchandiseIntroducedLabel).offset(35);
 //        make.width.mas_offset(50);
     }];
-    _descLabel = descLabel;
 
 //  商品尺码
     ZP_GeneralLabel * SizeLabel = [ZP_GeneralLabel initWithtextLabel:_SizeLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:SizeLabel];
+    _SizeLabel = SizeLabel;
     [SizeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(descLabel).offset(45);
-        make.top.equalTo(titleLabel).offset(35);
+        make.top.equalTo(descLabel).offset(0);
 //        make.width.mas_offset(25);
     }];
-    _SizeLabel = SizeLabel;
-    
+
 //  优惠价格
     ZP_GeneralLabel * PreferentialLabel = [ZP_GeneralLabel initWithtextLabel:_PreferentialLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:PreferentialLabel];
+    _PreferentialLabel = PreferentialLabel;
     [PreferentialLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(imageView).offset(85); //左边
-        make.top.equalTo(SizeLabel).offset(20); // 下
-        make.height.mas_offset(20);
+        make.left.equalTo(imageView).offset(95); //左边
+        make.top.equalTo(SizeLabel).offset(20);
+        make.height.mas_offset(15);
         make.width.mas_offset(100);
     }];
-    _PreferentialLabel = PreferentialLabel;
     
 //  价格
     ZP_GeneralLabel * PriceLabel = [ZP_GeneralLabel initWithtextLabel:_PriceLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:PriceLabel];
+    _PriceLabel = PriceLabel;
     [PriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(imageView).offset(85);
-        make.top.equalTo(PreferentialLabel).offset(20);
+        make.left.equalTo(imageView).offset(95);
+        make.top.equalTo(PreferentialLabel).offset(17);
         make.width.mas_offset(65);
         
     }];
-    _PriceLabel = PriceLabel;
     
 //  横线
     UIView * backView = [UIView new];
     backView.layer.borderWidth = 1;
     backView.backgroundColor = ZP_TypefaceColor;
     [self.contentView addSubview:backView];
+    _backView = backView;
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(imageView).offset(85);  // 左
-        make.top.equalTo(PreferentialLabel).offset(28);
+        make.left.equalTo(imageView).offset(95);  // 左
+        make.top.equalTo(PriceLabel).offset(9);
         make.height.mas_equalTo(1); // 高
         make.width.mas_equalTo(PriceLabel);
     }];
-    
-    _backView = backView;
     
 //  商标
     UIImageView * TrademarkImage = [UIImageView new];
     [self.contentView addSubview:TrademarkImage];
     [TrademarkImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(PreferentialLabel).offset(85);
-        make.top.equalTo(PreferentialLabel).offset(15);
+        make.left.equalTo(PreferentialLabel).offset(95);
+        make.top.equalTo(PreferentialLabel).offset(20);
         make.width.mas_offset(15);
         make.height.mas_offset(15);
     }];
@@ -143,8 +152,8 @@
     [self.contentView addSubview:VerticalView];
     [VerticalView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(TrademarkLabel).offset(40);
-        make.top.equalTo(TrademarkImage).offset(5); // 下
-        make.height.mas_equalTo(20); // 高
+        make.top.equalTo(TrademarkImage).offset(3); // 下
+        make.height.mas_equalTo(15); // 高
         make.width.mas_equalTo(1); // 宽
     }];
     
@@ -154,7 +163,7 @@
     SharacterLabel.text = @"x";
     [SharacterLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(VerticalView).offset(3);
-        make.top.equalTo(VerticalView).offset(0);
+        make.top.equalTo(VerticalView).offset(-2.5);
     }];
     _SharacterLabel = SharacterLabel;
     
@@ -174,7 +183,7 @@
     [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(100);
         make.right.equalTo(self).offset(ZP_Width - 100); //长
-        make.bottom.equalTo(self).offset(0); // 高
+        make.bottom.equalTo(self).offset(0.5);
         make.height.mas_equalTo(1); // 高
     }];
 }
@@ -182,7 +191,8 @@
 - (void)cellWithModel:(ZP_CartsModel *)model {
     
     [_leftImageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:nil];;
-    _titleLabel.text = model.productremark;
+    _titleLabel.text = model.productname;
+    _MerchandiseIntroducedLabel.text = model.productremark;
     _descLabel.text = model.colorname;
     _SizeLabel.text = model.normname;
     _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.priceamount];

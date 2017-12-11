@@ -44,7 +44,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *ljgmBtn;
 @property (weak, nonatomic) IBOutlet UIButton *jrgwcBtn;
 @property (nonatomic, strong) ZP_GoodDetailsModel * model;
-
 @property (nonatomic, strong) NSArray * normsArr;
 @property (nonatomic, strong) NSArray * typeArr;
 
