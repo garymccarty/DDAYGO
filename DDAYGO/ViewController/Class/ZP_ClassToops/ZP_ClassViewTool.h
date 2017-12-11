@@ -22,6 +22,9 @@
 //  商品详情
 + (void)requDetails:(NSDictionary *)spxq success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+//  商品评价
++ (void)requEvaluates:(NSDictionary *)spxq success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
 /**
  *获取确认订单信息
  */

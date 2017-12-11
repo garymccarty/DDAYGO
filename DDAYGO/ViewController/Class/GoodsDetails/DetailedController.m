@@ -21,6 +21,7 @@
 #import "PurchaseView.h"
 #import "ConfirmViewController.h"
 #import "ProductTableViewCell.h"
+#import "EvaluateTableViewCell.h"
 @interface DetailedController ()<UICollectionViewDelegate,UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource>
 
 //**Xib 拖过来然后填写数据**/
@@ -48,6 +49,7 @@
 @property (nonatomic, strong) NSArray * typeArr;
 
 @property (nonatomic, strong) NSMutableArray *productArray;
+@property (nonatomic, strong) NSMutableArray *evaluateArray;
 
 @end
 
@@ -58,8 +60,11 @@
     [self allData];
     self.navigationController.navigationBar.hidden = YES;
     [self.detailTableView registerNib:[UINib nibWithNibName:@"ProductTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProductTableViewCell"];
+    [self.detailTableView registerNib:[UINib nibWithNibName:@"EvaluateTableViewCell" bundle:nil] forCellReuseIdentifier:@"EvaluateTableViewCell"];
     self.shfwBottomView.hidden = YES;
     self.qbpjBottomView.hidden = YES;
+    
+    self.evaluateArray = [NSMutableArray array];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -136,17 +141,14 @@
         NSString *asdtring = asdic[@"content"];
         self.productArray = [asdtring componentsSeparatedByString:@","];
         [self.detailTableView reloadData];
-//        for (NSString *url in array) {
-//            
-//            [ZP_ClassViewTool requImage:url success:^(id obj) {
-//                [self.productArray addObject:obj];
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    [self.detailTableView reloadData];
-//                });
-//            } failure:^(NSError *error) {
-//                NSLog(@"%@",error);
-//            }];
-//        }
+        NSDictionary *tempDic = @{@"productid":_productId,@"page":@(1),@"pagesize":@(5)};
+        [ZP_ClassViewTool requEvaluates:tempDic success:^(id obj) {
+            [self.evaluateArray addObject:obj];
+            NSLog(@"%@",obj);
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
+        
         ZP_GoodDetailsModel * model = [ZP_GoodDetailsModel getGoodDetailsData:obj[@"products"][0]];
         _shoucangBtn.selected = [model.state boolValue];
         NSString *value = [obj objectForKey:@"colornorms"];
@@ -391,10 +393,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProductTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ProductTableViewCell"];
-    [cell.productImageView sd_setImageWithURL:self.productArray[indexPath.row]];
     [self updateDetailView:indexPath.section];
-    return cell;
+    if (indexPath.section == 0) {
+        ProductTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ProductTableViewCell"];
+        [cell.productImageView sd_setImageWithURL:self.productArray[indexPath.row]];
+        return cell;
+    } else {
+        
+        EvaluateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"EvaluateTableViewCell"];
+        [cell updateData:self.evaluateArray.firstObject];
+        return cell;
+    }
 }
 
 
@@ -403,7 +412,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return ZP_Width;
+    if (indexPath.section == 0) {
+        return ZP_Width;
+    } else {
+        return 192;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

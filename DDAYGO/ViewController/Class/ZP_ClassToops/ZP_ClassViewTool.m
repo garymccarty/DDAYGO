@@ -59,6 +59,16 @@
         failure(error);
     }];
 }
+
+//  商品评价
++ (void)requEvaluates:(NSDictionary *)spxq success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getproductreview?productid=%@&page=%@&pagesize=%@", URLAPI,spxq[@"productid"],spxq[@"page"],spxq[@"pagesize"]] parameters:nil success:^(NSDictionary *responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 //  立即购买
 + (void)requPay:(NSDictionary *)spxq success:(void (^)(id))success failure:(void (^)(NSError *))failure{
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@ordersaddinfo", URLAPI] parameters:spxq success:^(NSDictionary *responseObject) {

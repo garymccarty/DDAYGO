@@ -181,6 +181,8 @@
 		06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F5723F1F9F204F00D61FDB /* SearchTimeViewController.xib */; };
 		4D0948F11FDD9BDC00FC4BCA /* ProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0948EF1FDD9BDC00FC4BCA /* ProductTableViewCell.m */; };
 		4D0948F21FDD9BDC00FC4BCA /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0948F01FDD9BDC00FC4BCA /* ProductTableViewCell.xib */; };
+		4D0949001FDEF77500FC4BCA /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0948FE1FDEF77400FC4BCA /* EvaluateTableViewCell.m */; };
+		4D0949011FDEF77500FC4BCA /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0948FF1FDEF77500FC4BCA /* EvaluateTableViewCell.xib */; };
 		6FA32ACCA83E0A32B68FDCFC /* libPods-DDAYGO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */; };
 		C407AC131FD7E917004A8DE8 /* 提现记录_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C407AC121FD7E916004A8DE8 /* 提现记录_spec.png */; };
 		C409F86E1FA17336009DE7B1 /* NestedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86A1FA17336009DE7B1 /* NestedCollectionViewCell.m */; };
@@ -699,6 +701,9 @@
 		4D0948EE1FDD9BDC00FC4BCA /* ProductTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductTableViewCell.h; sourceTree = "<group>"; };
 		4D0948EF1FDD9BDC00FC4BCA /* ProductTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductTableViewCell.m; sourceTree = "<group>"; };
 		4D0948F01FDD9BDC00FC4BCA /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		4D0948FD1FDEF77400FC4BCA /* EvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateTableViewCell.h; sourceTree = "<group>"; };
+		4D0948FE1FDEF77400FC4BCA /* EvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateTableViewCell.m; sourceTree = "<group>"; };
+		4D0948FF1FDEF77500FC4BCA /* EvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateTableViewCell.xib; sourceTree = "<group>"; };
 		6A14FE6EC0BD7CDD0156BD7F /* Pods-DDAYGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.release.xcconfig"; sourceTree = "<group>"; };
 		949508FD8C61CA662D6E2034 /* Pods-DDAYGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.debug.xcconfig"; sourceTree = "<group>"; };
 		C407AC121FD7E916004A8DE8 /* 提现记录_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "提现记录_spec.png"; sourceTree = "<group>"; };
@@ -3098,6 +3103,9 @@
 		C47E75D71FB5A1C7009F279A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				4D0948FD1FDEF77400FC4BCA /* EvaluateTableViewCell.h */,
+				4D0948FE1FDEF77400FC4BCA /* EvaluateTableViewCell.m */,
+				4D0948FF1FDEF77500FC4BCA /* EvaluateTableViewCell.xib */,
 				C47E75D81FB5A1C7009F279A /* DetailedViewCell.h */,
 				C47E75D91FB5A1C7009F279A /* DetailedViewCell.m */,
 				C47E75DA1FB5A1C7009F279A /* TextdetailsViewCell.h */,
@@ -3647,6 +3655,7 @@
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
 				C4573F721FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib in Resources */,
 				C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */,
+				4D0949011FDEF77500FC4BCA /* EvaluateTableViewCell.xib in Resources */,
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
 				C44D6D121FD8CF070002DAF2 /* PayViewController.xib in Resources */,
 				062C9D631F8CD6F900E14987 /* button_6@2x.png in Resources */,
@@ -3994,6 +4003,7 @@
 				0641BBD81F67F9E400E72FEF /* SDWebImageDownloaderOperation.m in Sources */,
 				C47E76261FB5A1C7009F279A /* LeftTableViewCell.m in Sources */,
 				064449B01F6A9B250004DFE4 /* MJRefreshBackNormalFooter.m in Sources */,
+				4D0949001FDEF77500FC4BCA /* EvaluateTableViewCell.m in Sources */,
 				0641BBDD1F67F9E400E72FEF /* UIImage+MultiFormat.m in Sources */,
 				C47096B31FB07144006EA52C /* NSBundle+Language.m in Sources */,
 				06F5716D1F9F15CE00D61FDB /* CollectionViewController.m in Sources */,
