@@ -217,7 +217,6 @@
 		C4535E421FC56A0000DFFD62 /* ZP_MessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E411FC56A0000DFFD62 /* ZP_MessageViewCell.m */; };
 		C4535E461FC56A1400DFFD62 /* ZP_MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E451FC56A1400DFFD62 /* ZP_MessageModel.m */; };
 		C4566B641FBED233000FCC78 /* ZP_OrderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C4566B631FBED233000FCC78 /* ZP_OrderTool.m */; };
-		C45696EB1FD959AA007BC25F /* ddaygo ihttp协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C45696EA1FD959AA007BC25F /* ddaygo ihttp协议1.0.docx */; };
 		C4573F371FCFA3A6001DFE97 /* BetCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */; };
 		C4573F381FCFA3A6001DFE97 /* BetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */; };
 		C4573F391FCFA3A6001DFE97 /* BetHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F2F1FCFA3A6001DFE97 /* BetHeaderView.m */; };
@@ -296,6 +295,7 @@
 		C47750851FBADDAA00AE8B3F /* ZP_HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750841FBADDAA00AE8B3F /* ZP_HomePageModel.m */; };
 		C47750881FBAFC5D00AE8B3F /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750871FBAFC5D00AE8B3F /* Const.m */; };
 		C4780BEF1FD6A1F600DDE25D /* ZP_ShopManagementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */; };
+		C47BBBEB1FDED11B0000FFE6 /* ddaygo ihttp协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C47BBBEA1FDED11B0000FFE6 /* ddaygo ihttp协议1.0.docx */; };
 		C47E75861FB573F2009F279A /* ZP_HomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75851FB573F2009F279A /* ZP_HomeTool.m */; };
 		C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E758C1FB575C5009F279A /* ZP_shoopingTool.m */; };
 		C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75901FB57846009F279A /* ZP_ShoppingModel.m */; };
@@ -776,7 +776,6 @@
 		C4535E451FC56A1400DFFD62 /* ZP_MessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_MessageModel.m; sourceTree = "<group>"; };
 		C4566B621FBED233000FCC78 /* ZP_OrderTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderTool.h; sourceTree = "<group>"; };
 		C4566B631FBED233000FCC78 /* ZP_OrderTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_OrderTool.m; sourceTree = "<group>"; };
-		C45696EA1FD959AA007BC25F /* ddaygo ihttp协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ddaygo ihttp协议1.0.docx"; sourceTree = "<group>"; };
 		C4573F2B1FCFA3A6001DFE97 /* BetCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetCollectionViewCell.h; sourceTree = "<group>"; };
 		C4573F2C1FCFA3A6001DFE97 /* BetCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetCollectionViewCell.m; sourceTree = "<group>"; };
 		C4573F2D1FCFA3A6001DFE97 /* BetCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -924,6 +923,7 @@
 		C47750871FBAFC5D00AE8B3F /* Const.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		C4780BED1FD6A1F600DDE25D /* ZP_ShopManagementModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ShopManagementModel.h; sourceTree = "<group>"; };
 		C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ShopManagementModel.m; sourceTree = "<group>"; };
+		C47BBBEA1FDED11B0000FFE6 /* ddaygo ihttp协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ddaygo ihttp协议1.0.docx"; sourceTree = "<group>"; };
 		C47E75841FB573F2009F279A /* ZP_HomeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HomeTool.h; sourceTree = "<group>"; };
 		C47E75851FB573F2009F279A /* ZP_HomeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomeTool.m; sourceTree = "<group>"; };
 		C47E758B1FB575C5009F279A /* ZP_shoopingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_shoopingTool.h; sourceTree = "<group>"; };
@@ -1256,7 +1256,7 @@
 			isa = PBXGroup;
 			children = (
 				C46837E61FDA645A000E7D7C /* ios */,
-				C45696EA1FD959AA007BC25F /* ddaygo ihttp协议1.0.docx */,
+				C47BBBEA1FDED11B0000FFE6 /* ddaygo ihttp协议1.0.docx */,
 				C46B9F431FDE71FE00942750 /* 促销彩 */,
 				C4D2FEBC1FD5636C00F546AB /* 提现_ios */,
 				C492A1AE1FD15189009FF57B /* 订单_ios */,
@@ -3624,7 +3624,6 @@
 				062C9D641F8CD6F900E14987 /* button_6@3x.png in Resources */,
 				06F5721D1F9F1E8700D61FDB /* AllCategoriesView.xib in Resources */,
 				C4D2FEB41FD552A000F546AB /* YueTixianController.xib in Resources */,
-				C45696EB1FD959AA007BC25F /* ddaygo ihttp协议1.0.docx in Resources */,
 				0662AB5E1F9610BF0031F22B /* LogregisterController.xib in Resources */,
 				C47212AC1FB18A4E0055578E /* SettingViewController.xib in Resources */,
 				06F572291F9F1E8700D61FDB /* OrderDetailViewController.xib in Resources */,
@@ -3636,6 +3635,7 @@
 				063FE0551F614D24009910FF /* LaunchScreen.storyboard in Resources */,
 				4D0948F21FDD9BDC00FC4BCA /* ProductTableViewCell.xib in Resources */,
 				062C9D5B1F8CD6F900E14987 /* button_2@2x.png in Resources */,
+				C47BBBEB1FDED11B0000FFE6 /* ddaygo ihttp协议1.0.docx in Resources */,
 				C47E765D1FB5A5A6009F279A /* DetailedController.xib in Resources */,
 				C4D2FEF51FD5636C00F546AB /* 提现_spec.png in Resources */,
 				06F572311F9F1E8700D61FDB /* OrderSearchView.xib in Resources */,
