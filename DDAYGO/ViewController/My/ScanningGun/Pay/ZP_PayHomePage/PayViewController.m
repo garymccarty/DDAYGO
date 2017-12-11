@@ -88,6 +88,7 @@
         }else
             if ([obj[@"result"]isEqualToString:@"addorder_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"订单生成失败"];
+                
         }
     } failure:^(NSError *error) {
         NSLog(@"error = %@",error);
