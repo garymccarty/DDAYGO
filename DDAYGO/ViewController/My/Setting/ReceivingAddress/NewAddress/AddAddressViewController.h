@@ -10,6 +10,7 @@
 
 @interface AddAddressViewController : UIViewController
 @property (strong ,nonatomic)NSDictionary * contentDic;
+@property (strong, nonatomic) IBOutlet UIScrollView * AddAddressScrollView;
 @property (weak, nonatomic) IBOutlet UITextField * ContactpersonTextField; //联系人
 @property (weak, nonatomic) IBOutlet UITextField * ContactnumberTextField; // 联系电话
 @property (weak, nonatomic) IBOutlet UITextField * ReceivingareaTextField; // 收货地区

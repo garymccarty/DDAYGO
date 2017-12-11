@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BindingICUEViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView * BindingICUEscrollView;
 @property (weak, nonatomic) IBOutlet UITextField * AccountnumbertextField;
 @property (weak, nonatomic) IBOutlet UITextField * PassWordtextField;
 

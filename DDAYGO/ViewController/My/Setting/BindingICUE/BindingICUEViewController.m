@@ -20,6 +20,7 @@
     [super viewDidLoad];
     self.title = @"ICUC绑定";
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
+    self.BindingICUEscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
 }
 
 - (IBAction)buildingAction:(id)sender {

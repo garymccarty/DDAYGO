@@ -16,8 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"修改密码";
+    [self initUI];
+    self.title = NSLocalizedString(@"修改密码", nil);
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
+    self.ResetPasswordscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
+    
+}
+- (void)initUI {
     self.oldpwTextfield.secureTextEntry = YES;
     self.newpwTextfield.secureTextEntry = YES;
     self.againpwTextfield.secureTextEntry = YES;
@@ -25,7 +30,6 @@
     self.newpwTextfield.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     self.againpwTextfield.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
 }
-
 - (IBAction)showpwAction:(UIButton *)sender {
     self.oldpwTextfield.secureTextEntry = sender.selected;
     self.newpwTextfield.secureTextEntry = sender.selected;

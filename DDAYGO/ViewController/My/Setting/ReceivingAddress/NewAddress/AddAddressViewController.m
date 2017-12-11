@@ -22,13 +22,13 @@
 }
 
 - (void)setContentDic:(NSDictionary *)contentDic {
-    
     if (contentDic) {
-        self.title = @"新增地址";
+        self.title = NSLocalizedString(@"新增地址", nil);
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
         UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveAddress)];
         self.navigationItem.rightBarButtonItem = item;
         [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
+        self.AddAddressScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
     }
 }
 //  保存按钮

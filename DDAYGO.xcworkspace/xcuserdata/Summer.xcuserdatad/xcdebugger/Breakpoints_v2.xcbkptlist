@@ -9,24 +9,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/Shopping/SureOrder/ConfirmViewController.m"
-            timestampString = "534668701.560012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "-MakeSureOrder"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
-            timestampString = "534682177.613205"
+            timestampString = "534688183.506363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "628"
@@ -42,7 +26,7 @@
                   moduleName = "DDAYGO"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhangpeng/Desktop/%E4%BB%A3%E7%A0%81/DDAYGO/DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
-                  timestampString = "534682177.70695"
+                  timestampString = "534688183.614045"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "628"
@@ -57,7 +41,7 @@
                   moduleName = "DDAYGO"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhangpeng/Desktop/%E4%BB%A3%E7%A0%81/DDAYGO/DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
-                  timestampString = "534682177.708532"
+                  timestampString = "534688183.616832"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "629"

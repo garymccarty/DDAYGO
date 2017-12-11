@@ -40,6 +40,7 @@
     [self allData];
     self.title = NSLocalizedString(@"Setting", nil) ;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

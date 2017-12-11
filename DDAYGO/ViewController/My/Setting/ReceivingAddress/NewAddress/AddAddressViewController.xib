@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAddressViewController">
             <connections>
+                <outlet property="AddAddressScrollView" destination="Bfx-W3-tz5" id="6Yk-oi-mEQ"/>
                 <outlet property="ContactnumberTextField" destination="6Kp-44-MBQ" id="t5c-vn-gV3"/>
                 <outlet property="ContactpersonTextField" destination="X7b-Gi-M0F" id="fNS-vg-cJU"/>
                 <outlet property="ReceivingaddressTextField" destination="4fy-3g-dDh" id="vNW-Nh-MlF"/>

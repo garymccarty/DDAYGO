@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ResetPasswordViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField * oldpwTextfield;
-@property (weak, nonatomic) IBOutlet UITextField * newpwTextfield;
-@property (weak, nonatomic) IBOutlet UITextField * againpwTextfield;
+@property (strong, nonatomic) IBOutlet UIScrollView * ResetPasswordscrollView;
+@property (weak, nonatomic) IBOutlet UITextField * oldpwTextfield; // 原有密码
+@property (weak, nonatomic) IBOutlet UITextField * newpwTextfield; // 新密码
+@property (weak, nonatomic) IBOutlet UITextField * againpwTextfield; // 确认新密码
 
 @end

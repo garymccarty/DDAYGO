@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BindingIntroduce : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView * BindingIntroducscrollView;
 @property (strong, nonatomic) IBOutlet UITextField * BindingIntroduceTextField;
 
 @end
