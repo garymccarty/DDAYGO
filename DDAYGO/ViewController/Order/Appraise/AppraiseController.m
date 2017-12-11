@@ -54,15 +54,15 @@
 }
 
 - (void)cartButton:(UIButton *)cartbut {
-//  设置时间和动画效果
-    [UIView animateWithDuration:8.0 animations:^{
-        [SVProgressHUD showSuccessWithStatus:@"评价成功"];
-    } completion:^(BOOL finished) {
-//  动画完毕从父视图移除
-        
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-//        NSLog(@"没选选中，不跳");
+////  设置时间和动画效果
+//    [UIView animateWithDuration:8.0 animations:^{
+//        [SVProgressHUD showSuccessWithStatus:@"评价成功"];
+//    } completion:^(BOOL finished) {
+////  动画完毕从父视图移除
+//
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }];
+////        NSLog(@"没选选中，不跳");
     }
 
 // 数据

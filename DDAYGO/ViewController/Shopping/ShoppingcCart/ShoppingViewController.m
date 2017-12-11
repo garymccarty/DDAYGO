@@ -617,7 +617,14 @@
         dic[@"stockid"] = model.stockid;
         dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
         [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
-            NSLog(@"%@",obj);
+            if ([obj[@"result"]isEqualToString:@"ok"]) {
+                [SVProgressHUD showSuccessWithStatus:@"删除成功!"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"failure"]) {
+                    
+                    [SVProgressHUD showInfoWithStatus:@"删除失败"];
+                }
+//            NSLog(@"%@",obj);
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
         }];

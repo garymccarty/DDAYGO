@@ -216,7 +216,16 @@
         //收藏
         [ZP_ClassViewTool requshoucang:dic success:^(id obj) {
             sender.selected = !sender.selected;
-            NSLog(@"收藏 %@",obj);
+            if ([obj[@"result"]isEqualToString:@"ok"]) {
+                [SVProgressHUD showSuccessWithStatus:@"收藏成功!"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"collected"]) {
+                    [SVProgressHUD showInfoWithStatus:@"已收藏"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"failure"]) {
+                    [SVProgressHUD showInfoWithStatus:@"操作失败"];
+                }
+//            NSLog(@"收藏 %@",obj);
         } failure:^(NSError *error) {
              NSLog(@"error %@",error);
         }];
@@ -224,7 +233,16 @@
         //取消收藏
         [ZP_ClassViewTool requCancelshoucang:dic success:^(id obj) {
             sender.selected = !sender.selected;
-            NSLog(@"取消收藏 %@",obj);
+            if ([obj[@"result"]isEqualToString:@"ok"]) {
+                [SVProgressHUD showSuccessWithStatus:@"取消成功!"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"count"]) {
+                    [SVProgressHUD showInfoWithStatus:@"0"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"failure"]) {
+                    [SVProgressHUD showInfoWithStatus:@"操作失败"];
+                }
+//            NSLog(@"取消收藏 %@",obj);
         } failure:^(NSError *error) {
             NSLog(@"error %@",error);
         }];

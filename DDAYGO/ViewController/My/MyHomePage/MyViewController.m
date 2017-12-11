@@ -142,6 +142,7 @@
     [self allData];
     
 }
+//  个人资料
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
