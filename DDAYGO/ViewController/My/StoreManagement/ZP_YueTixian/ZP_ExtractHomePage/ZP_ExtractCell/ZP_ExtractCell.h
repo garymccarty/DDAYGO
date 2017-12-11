@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZP_ExtractModel.h"
 @interface ZP_ExtractCell : UITableViewCell
-//@property (weak, nonatomic) IBOutlet UILabel * DatetoItemLabel;  // 日期
 @property (strong, nonatomic) IBOutlet UILabel * MmountLabel;  // 金额
 @property (strong, nonatomic) IBOutlet UILabel * BanksLabel;  // 银行
 @property (strong, nonatomic) IBOutlet UILabel * NameLabel;  // 名字
@@ -20,5 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel * AuditTimeLabel;  // 审核时间
 @property (strong, nonatomic) IBOutlet UILabel * ReviewStatusLabel;  // 审核状态
 @property (strong, nonatomic) IBOutlet UILabel * TextIntroduceLabel;  // 文字介绍
+
+- (void)Extract:(ZP_ExtractModel *)model;
 
 @end

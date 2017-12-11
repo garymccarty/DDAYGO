@@ -276,6 +276,7 @@
 		C46B9F491FDE71FE00942750 /* 本期下注号码_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C46B9F451FDE71FE00942750 /* 本期下注号码_spec.png */; };
 		C46B9F4A1FDE71FE00942750 /* 赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C46B9F461FDE71FE00942750 /* 赏金彩_spec.png */; };
 		C46B9F4B1FDE71FE00942750 /* 选择赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C46B9F471FDE71FE00942750 /* 选择赏金彩_spec.png */; };
+		C46B9F4F1FDE764000942750 /* ZP_ExtractModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C46B9F4E1FDE764000942750 /* ZP_ExtractModel.m */; };
 		C47096921FB04998006EA52C /* BindingEmailController.m in Sources */ = {isa = PBXBuildFile; fileRef = C470968C1FB04998006EA52C /* BindingEmailController.m */; };
 		C47096931FB04998006EA52C /* BindingEmailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C470968D1FB04998006EA52C /* BindingEmailController.xib */; };
 		C47096941FB04998006EA52C /* PromptBox.m in Sources */ = {isa = PBXBuildFile; fileRef = C47096901FB04998006EA52C /* PromptBox.m */; };
@@ -878,6 +879,8 @@
 		C46B9F451FDE71FE00942750 /* 本期下注号码_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "本期下注号码_spec.png"; sourceTree = "<group>"; };
 		C46B9F461FDE71FE00942750 /* 赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赏金彩_spec.png"; sourceTree = "<group>"; };
 		C46B9F471FDE71FE00942750 /* 选择赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择赏金彩_spec.png"; sourceTree = "<group>"; };
+		C46B9F4D1FDE764000942750 /* ZP_ExtractModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ExtractModel.h; sourceTree = "<group>"; };
+		C46B9F4E1FDE764000942750 /* ZP_ExtractModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ExtractModel.m; sourceTree = "<group>"; };
 		C470968B1FB04998006EA52C /* BindingEmailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingEmailController.h; sourceTree = "<group>"; };
 		C470968C1FB04998006EA52C /* BindingEmailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingEmailController.m; sourceTree = "<group>"; };
 		C470968D1FB04998006EA52C /* BindingEmailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindingEmailController.xib; sourceTree = "<group>"; };
@@ -2838,6 +2841,15 @@
 			path = "促销彩";
 			sourceTree = "<group>";
 		};
+		C46B9F4C1FDE762400942750 /* ZP_ExtractModel */ = {
+			isa = PBXGroup;
+			children = (
+				C46B9F4D1FDE764000942750 /* ZP_ExtractModel.h */,
+				C46B9F4E1FDE764000942750 /* ZP_ExtractModel.m */,
+			);
+			path = ZP_ExtractModel;
+			sourceTree = "<group>";
+		};
 		C470968A1FB04998006EA52C /* BindingEmail */ = {
 			isa = PBXGroup;
 			children = (
@@ -3406,6 +3418,7 @@
 				C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */,
 				C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */,
 				C49B32231FD5AC6D007632F2 /* ZP_ExtractCell */,
+				C46B9F4C1FDE762400942750 /* ZP_ExtractModel */,
 			);
 			path = ZP_ExtractHomePage;
 			sourceTree = "<group>";
@@ -3964,6 +3977,7 @@
 				064449AB1F6A9B250004DFE4 /* MJRefreshHeader.m in Sources */,
 				C492A1791FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.m in Sources */,
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
+				C46B9F4F1FDE764000942750 /* ZP_ExtractModel.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,
 				C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */,
 				C47E76321FB5A1C7009F279A /* DetailedController.m in Sources */,

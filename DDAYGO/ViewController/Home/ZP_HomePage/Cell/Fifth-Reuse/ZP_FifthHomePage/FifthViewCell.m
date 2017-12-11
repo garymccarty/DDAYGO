@@ -15,7 +15,7 @@
 
 @interface FifthViewCell () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong)UICollectionView *bottomCV;
+@property (nonatomic, strong)UICollectionView * bottomCV;
 @property (nonatomic, strong) NSArray * array;
 @property (nonatomic, strong)NSMutableArray * newsData;
 
@@ -33,8 +33,7 @@
     return self;
 }
 - (void)addSubViews {
-    //    NSDictionary * dic = @{@"image":@"Fifth",@"title":@"大尺码 吸汗排湿 圆领T恤 短袖...",@"Preferential":@"RMB:888.88",@"price":@"RMB:888.88",@"Trademark":@"6666"};
-    //    _array = @[dic,dic,dic,dic,dic,dic];
+
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc ]init];
     layout.minimumLineSpacing = 1;
     layout.minimumInteritemSpacing = 1;

@@ -11,7 +11,7 @@
 #import "PrefixHeader.pch"
 #import "ZP_MyTool.h"
 @interface ZP_ExtractController ()<UITableViewDelegate, UITableViewDataSource>
-
+@property (nonatomic, strong) NSArray * ExtractArr;
 @end
 
 @implementation ZP_ExtractController
@@ -23,10 +23,16 @@
 }
 
 - (void)initUI {
-    
     self.title = NSLocalizedString(@"提现记录", nil);
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_ExtractCell" bundle:nil] forCellReuseIdentifier:@"ZP_ExtractCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = ZP_DeepBlue;
+/**** IOS 11 ****/
+    if (@available(iOS 11.0, *)) {
+        self.tableView.estimatedRowHeight = 0;
+        self.tableView.estimatedSectionHeaderHeight = 0;
+        self.tableView.estimatedSectionFooterHeight = 0;
+    }
 }
 
 // 数据
@@ -43,7 +49,6 @@
 }
 
 #pragma mark - tableview delegate
-
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *myView = [[UIView alloc]init];
@@ -59,7 +64,6 @@
         make.top.equalTo(myView).offset(10);
 //        make.right.equalTo(myView).offset(ZP_Width- 50);
         make.width.mas_equalTo(120);
-        
     }];
     return myView;
 }
@@ -71,13 +75,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    
+    return _ExtractArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ZP_ExtractCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ZP_ExtractCell"];
-    
+    ZP_ExtractModel * model = self.ExtractArr[indexPath.row];
+    [cell Extract:model];
     return cell;
 }
 

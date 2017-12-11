@@ -35,9 +35,11 @@
     Extract.supplierId = _SupplierId;
     [self.navigationController pushViewController:Extract animated:YES];
 }
+
 - (IBAction)CompleteButton:(id)sender {
+    
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    //    ec77b922d25bb303f27f63d23de84f73
+    //    ec77b922d25bb303f27f63d23de84f73  // 测试商家Token
     dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
     dic[@"sid"] = _SupplierId;
     dic[@"amount"] = _amountText.textField.text;
@@ -55,11 +57,5 @@
     ZPLog(@"完成");
 }
 
-////  键盘弹起
-//- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{
-//
-//    [self.view endEditing:YES];
-//
-//}
 @end
 

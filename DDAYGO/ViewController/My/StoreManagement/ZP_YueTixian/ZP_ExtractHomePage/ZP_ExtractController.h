@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZP_ExtractController : UIViewController
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView * tableView;
 @property (nonatomic, strong) UILabel * DateTimeLabel;
 /**
  * 供货商ID
