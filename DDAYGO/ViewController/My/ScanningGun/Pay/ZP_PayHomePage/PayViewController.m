@@ -60,13 +60,35 @@
     
 //    这是是在选择支付方式后点击确定后跳转的数据加OID回调
     [ZP_MyTool requesQrCodePay:dic success:^(id obj) {
-        NSLog(@"obj = %@",obj);
-        DataViewController * vc = [[DataViewController alloc]init];
-        vc.jump_URL = obj[@"para"];
-        vc.jump_HeadURL = obj[@"uri"];
-        vc.Oid = obj[@"oid"];
-        [self.navigationController pushViewController:vc animated:YES];
-        
+        if ([obj[@"result"]isEqualToString:@"ok"]) {
+            NSLog(@"obj = %@",obj);
+            DataViewController * vc = [[DataViewController alloc]init];
+            vc.jump_URL = obj[@"para"];
+            vc.jump_HeadURL = obj[@"uri"];
+            vc.Oid = obj[@"oid"];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else
+            if ([obj[@"result"]isEqualToString:@"country_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"国家不匹配"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"国家不匹配"]) {
+                [SVProgressHUD showInfoWithStatus:@"支付方式错误"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"icuetoken_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"ICUE身份错误"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"shopcode_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"二维码错误，错误的商家ID"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"qrpay_state_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"商家已关闭扫码支付"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"qrpay_state_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"付款金额必须大于0"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"addorder_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"订单生成失败"];
+        }
     } failure:^(NSError *error) {
         NSLog(@"error = %@",error);
     }];

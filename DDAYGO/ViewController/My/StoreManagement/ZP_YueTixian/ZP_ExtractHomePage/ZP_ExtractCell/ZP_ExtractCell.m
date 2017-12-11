@@ -8,6 +8,7 @@
 
 #import "ZP_ExtractCell.h"
 #import "ZP_ExtractModel.h"
+#import "PrefixHeader.pch"
 @implementation ZP_ExtractCell
 
 - (void)awakeFromNib {
@@ -20,6 +21,12 @@
     _DatesTimeLabel.clipsToBounds = YES;
 }
 
+- (IBAction)CancelBut:(UIButton *)sender {
+    ZPLog(@"取消按钮");
+    
+}
+
+// 数据
 -(void)Extract:(ZP_ExtractModel *)model {
     _MmountLabel.text = [NSString stringWithFormat:@"RMB:%@",model.takeamount]; // 金额
     _BanksLabel.text = [NSString stringWithFormat:@"%@",model.bankname];  // 银行

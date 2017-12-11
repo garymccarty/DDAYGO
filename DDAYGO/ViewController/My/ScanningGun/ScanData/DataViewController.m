@@ -27,12 +27,6 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
         [self setupWebView];
-    
-//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-//    [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *backitem = [[UIBarButtonItem alloc] initWithCustomView:button];
-//    self.navigationItem.rightBarButtonItem = backitem;
-    
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:[UIColor whiteColor]}];
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"ic_bar_return"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(backAction)];
@@ -64,7 +58,6 @@
     NSLog(@"当前连接--》%@",request.URL.absoluteString);
 //用一个字符串来接受  全局的· 后面要用
     _str = request.URL.absoluteString;
-//    就在这里··手机只动了一下然后就报404？  就是这里url ·
     
 //    [SVProgressHUD showWithStatus:@"正在努力加载ing......请再稍等一下下~"]; // 菊花
     
@@ -117,8 +110,7 @@
         }];
         [SVProgressHUD dismiss];
     }else{
-        //这是不包含 该怎么处理· 返回上一个页面还是提示他再求请求·或者是超  自己做另外的处理就好了··
-        // 2 请求失败·webveiw 需不需要移除  。要移除。
+        
       [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"链接错误", nil)];
         
     }

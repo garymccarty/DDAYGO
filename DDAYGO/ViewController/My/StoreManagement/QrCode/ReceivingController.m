@@ -48,6 +48,9 @@
     
     [ZP_MyTool requesQrCode:dic success:^(id obj) {
         ZPLog(@"%@",obj);
+        if ([obj[@"result"]isEqualToString:@"no_supplie"]) {
+            [SVProgressHUD showInfoWithStatus:@"此用户不是商家"];
+        }
     _strUrl = [NSString stringWithFormat:@"ddaygo,%@,%@",obj[@"supplierid"],obj[@"shopname"]];
         [self.tableView reloadData];
     } failure:^(NSError * error) {

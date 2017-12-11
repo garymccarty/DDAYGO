@@ -50,7 +50,7 @@
 //        2、全局 方法2
         //38接口显示·返回只有2个结果·以防止崩溃·加判断
         if ([obj[@"result"] isEqualToString:@"no"]) {
-            ZPLog(@"no token");
+            [SVProgressHUD showInfoWithStatus:@"供货商不存在"];
         }else {
             _sid = obj[@"result"];
             [self MerchantsBalance];

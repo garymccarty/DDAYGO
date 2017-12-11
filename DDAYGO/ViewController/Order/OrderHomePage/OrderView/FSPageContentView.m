@@ -165,8 +165,7 @@ static NSString *collectionCellIdentifier = @"collectionCellIdentifier";
 
 #pragma mark setter
 
-- (void)setContentViewCurrentIndex:(NSInteger)contentViewCurrentIndex
-{
+- (void)setContentViewCurrentIndex:(NSInteger)contentViewCurrentIndex {
     if (contentViewCurrentIndex < 0||contentViewCurrentIndex > self.childsVCs.count-1) {
         return;
     }
@@ -175,8 +174,7 @@ static NSString *collectionCellIdentifier = @"collectionCellIdentifier";
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:contentViewCurrentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
 }
 
-- (void)setContentViewCanScroll:(BOOL)contentViewCanScroll
-{
+- (void)setContentViewCanScroll:(BOOL)contentViewCanScroll {
     _contentViewCanScroll = contentViewCanScroll;
     _collectionView.scrollEnabled = _contentViewCanScroll;
 }

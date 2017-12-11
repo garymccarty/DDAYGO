@@ -49,11 +49,14 @@
     dic[@"email"] = _emailText.textField.text;
   
     [ZP_MyTool requesAddSupplierTakeOut:dic success:^(id obj) {
-        NSLog(@"obj %@",obj);
+        if ([obj[@"result"]isEqualToString:@"ok"]) {
+            [SVProgressHUD showSuccessWithStatus:@"申请成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+//        NSLog(@"obj %@",obj);
     } failure:^(NSError *error) {
         NSLog(@"error %@",error);
     }];
-    ZPLog(@"完成");
 }
 
 @end
