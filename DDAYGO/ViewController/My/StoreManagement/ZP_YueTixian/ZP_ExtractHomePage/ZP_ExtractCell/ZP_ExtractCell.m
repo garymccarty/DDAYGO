@@ -12,7 +12,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
+    [self initUI];
+}
+
+- (void)initUI {
+    _DatesTimeLabel.layer.cornerRadius = 5;
+    _DatesTimeLabel.clipsToBounds = YES;
 }
 
 -(void)Extract:(ZP_ExtractModel *)model {

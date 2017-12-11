@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
-            timestampString = "534675402.143201"
+            timestampString = "534678738.840649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "628"
@@ -42,7 +42,7 @@
                   moduleName = "DDAYGO"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhangpeng/Desktop/%E4%BB%A3%E7%A0%81/DDAYGO/DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
-                  timestampString = "534675402.243754"
+                  timestampString = "534678738.943817"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "628"
@@ -57,7 +57,7 @@
                   moduleName = "DDAYGO"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhangpeng/Desktop/%E4%BB%A3%E7%A0%81/DDAYGO/DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
-                  timestampString = "534675402.245472"
+                  timestampString = "534678738.945509"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "629"
@@ -65,22 +65,6 @@
                   offsetFromSymbolStart = "51">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/My/StoreManagement/ZP_YueTixian/ZP_YueTixianHomePage/YueTixianController.m"
-            timestampString = "534675402.143263"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-CompleteButton:"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
