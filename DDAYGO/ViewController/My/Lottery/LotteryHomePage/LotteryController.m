@@ -76,7 +76,7 @@
     static NSString * LotteryID = @"ZP_LotteryViewCell";
     [self.tableView registerNib:[UINib nibWithNibName:LotteryID bundle:nil] forCellReuseIdentifier:LotteryID];
     self.tableView.separatorStyle = UITableViewRowAnimationNone; // 隐藏tableview线条
-    UIToolbar * tools=[[UIToolbar alloc]initWithFrame:CGRectMake(5, 0, 80, 39)];
+    UIToolbar * tools = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, -15, 15)];
 // 解决出现的那条线
     tools.clipsToBounds = YES;
 // 解决tools背景颜色的问题
@@ -87,6 +87,7 @@
     NSMutableArray * buttons = [[NSMutableArray alloc]initWithCapacity:2];
     
     UIBarButtonItem * Instruction = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bg_lottery_record"] style: UIBarButtonItemStyleDone target:self action:@selector(Instruction)];
+    
     UIBarButtonItem * HistoryLottery = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bg_lottery_explan"] style: UIBarButtonItemStyleDone target:self action:@selector(HistoryLottery)];
     Instruction.tintColor=[UIColor whiteColor];
     HistoryLottery.tintColor=[UIColor whiteColor];

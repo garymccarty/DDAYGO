@@ -221,52 +221,41 @@
 //    [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)settingAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     SettingViewController * settingViewController = [[SettingViewController alloc] init];
     [self.navigationController pushViewController:settingViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)scAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     CollectionViewController *collectionViewController = [[CollectionViewController alloc] init];
     [self.navigationController pushViewController:collectionViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)gzdpAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     ConcernShopViewController *concernShopViewController = [[ConcernShopViewController alloc] init];
     [self.navigationController pushViewController:concernShopViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (IBAction)zjAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     FootprintViewController *footprintViewController = [[FootprintViewController alloc] init];
     [self.navigationController pushViewController:footprintViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 }
 //  商店管理
 - (IBAction)sdglAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     StoreViewController *storeViewController = [[StoreViewController alloc] init];
     [self.navigationController pushViewController:storeViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 }
 /**暂不需要***
 // 申请开店
@@ -277,32 +266,25 @@
 
 // 最新消息
 - (IBAction)zxxxAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     NewsViewController *newsViewController = [[NewsViewController alloc] init];
     [self.navigationController pushViewController:newsViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 }
 //  扫一扫
 - (IBAction)scanAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     QCodeController * CodeController = [[QCodeController alloc]init];
     [self.navigationController pushViewController:CodeController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 
-    NSLog(@"跳转");
 }
 // 彩票
 - (IBAction)CaipiaoAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     LotteryController * Lottery = [[LotteryController alloc]init];
     [self.navigationController pushViewController:Lottery animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil]; // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//    self.hidesBottomBarWhenPushed = NO;
 }
 
 @end

@@ -40,7 +40,8 @@
 
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+//    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     dic[@"shopname"] = self.Oname;
     dic[@"shopcode"] = self.Oid;
     ZPLog(@"%@_%@",dic[@"shopname"] = self.Oname,dic[@"shopcode"] = self.Oid);
@@ -49,7 +50,8 @@
 //  点击确认按钮需要的参数
 - (void)btnClick {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
     dic[@"amount"] = money; // 这个是在view上选择支付金额
     dic[@"shopcode"] = self.Oid; // 这个必须要
     dic[@"countrycode"] = @"886";

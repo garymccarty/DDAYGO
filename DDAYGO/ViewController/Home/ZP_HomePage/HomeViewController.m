@@ -53,8 +53,6 @@
         _i+=10;
         [self allData];
     }];
-    
-    
 }
 - (void)initUI {
     
@@ -165,6 +163,7 @@
         
     }];
 }
+#pragma mark -- tabeView delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -207,9 +206,9 @@
         ZeroViewCell * cell = [tableView dequeueReusableCellWithIdentifier: ZeroID];
         cell.finishBlock = ^(id response) {
             DetailedController *viewController = [[DetailedController alloc] init];
-            self.hidesBottomBarWhenPushed = YES;
+//            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:viewController animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
+//            self.hidesBottomBarWhenPushed = NO;
         };
         cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
         return cell;
@@ -219,9 +218,9 @@
             FirstViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FirstID];
             cell.firstBlock = ^(NSInteger tag) {
                 SelectedViewController *viewController = [[SelectedViewController alloc] init];
-                self.hidesBottomBarWhenPushed = YES;
+//                self.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:viewController animated:YES];
-                self.hidesBottomBarWhenPushed = NO;
+//                self.hidesBottomBarWhenPushed = NO;
             };
             [cell first:A];
             return cell;
@@ -232,9 +231,9 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             cell.SecondBlock = ^(NSInteger tag){
                 DetailedController *viewController = [[DetailedController alloc] init];
-                self.hidesBottomBarWhenPushed = YES;
+//                self.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:viewController animated:YES];
-                self.hidesBottomBarWhenPushed = NO;
+//                self.hidesBottomBarWhenPushed = NO;
             };
             [cell Second:B];
             return cell;
@@ -245,9 +244,9 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             cell.ThirdBlock = ^(NSInteger tag){
                 DetailedController *viewController = [[DetailedController alloc] init];
-                self.hidesBottomBarWhenPushed = YES;
+//                self.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:viewController animated:YES];
-                self.hidesBottomBarWhenPushed = NO;
+//                self.hidesBottomBarWhenPushed = NO;
             };
             [cell Third:C];
             return cell;
@@ -257,9 +256,9 @@
             FourthViewCell * cell = [tableView dequeueReusableCellWithIdentifier:FourthID];
             cell.ThirdBlock = ^(NSInteger tag){
                 DetailedController *viewController = [[DetailedController alloc] init];
-                self.hidesBottomBarWhenPushed = YES;
+//                self.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:viewController animated:YES];
-                self.hidesBottomBarWhenPushed = NO;
+//                self.hidesBottomBarWhenPushed = NO;
             };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             NSDictionary * dic = dataArray[indexPath.row];
@@ -271,10 +270,10 @@
             FifthViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FifthID];
             cell.ThirdBlock = ^(NSInteger tag){
                 DetailedController *viewController = [[DetailedController alloc] init];
-                self.hidesBottomBarWhenPushed = YES;
+//                self.hidesBottomBarWhenPushed = YES;
                 viewController.productId = @(tag);
                 [self.navigationController pushViewController:viewController animated:YES];
-                self.hidesBottomBarWhenPushed = NO;
+//                self.hidesBottomBarWhenPushed = NO;
             };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             return cell;
@@ -284,9 +283,9 @@
         cell.ThirdBlock = ^(NSInteger tag){
             DetailedController *viewController = [[DetailedController alloc] init];
             viewController.productId = @(tag);
-            self.hidesBottomBarWhenPushed = YES;
+//            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:viewController animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
+//            self.hidesBottomBarWhenPushed = NO;
         };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             return cell;

@@ -58,9 +58,9 @@
         }else {
             if ([dic[@"result"] isEqualToString:@"add_up_to_ten"]) {
                 [SVProgressHUD showInfoWithStatus:@"添加失败，最多只能添加10天哟"];
-            }else {
-                if ([dic[@"result"] isEqualToString:@"sys_err"]) {
-                    [SVProgressHUD showInfoWithStatus:@"服务器连接至火星"];
+        }else {
+            if ([dic[@"result"] isEqualToString:@"sys_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"服务器连接至火星"];
                 }
             }
         }

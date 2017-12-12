@@ -38,7 +38,8 @@
 // 获取供货商
 - (void)Supplier {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+//    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requesSupplier:dic success:^(id obj) {
@@ -75,7 +76,8 @@
 // 获取商家余额(方法2)
 - (void)MerchantsBalance {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+//    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     dic[@"sid"] = _sid;
     [ZP_MyTool requesMerchantsBalance:dic success:^(id obj) {
         ZPLog(@"%@",obj);

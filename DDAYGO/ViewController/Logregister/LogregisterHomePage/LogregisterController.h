@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LogregisterController : UIViewController
-@property (weak, nonatomic) IBOutlet UIScrollView *LogregisterscrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView * LogregisterscrollView;
 
 @end
