@@ -253,6 +253,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
 }
+
 //  商店管理
 - (IBAction)sdglAction:(id)sender {
     StoreViewController *storeViewController = [[StoreViewController alloc] init];

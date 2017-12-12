@@ -30,7 +30,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPa-QM-Vzo" customClass="TextView">
-                            <rect key="frame" x="20" y="34" width="280" height="35"/>
+                            <rect key="frame" x="20" y="69" width="280" height="35"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="9dG-OA-lVU"/>
@@ -42,7 +42,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDH-Lx-MdD" customClass="TextView">
-                            <rect key="frame" x="20" y="85" width="280" height="35"/>
+                            <rect key="frame" x="20" y="120" width="280" height="35"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="Ybj-Qb-82O"/>
@@ -55,7 +55,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ok2-Lc-LMm" customClass="TextView">
-                            <rect key="frame" x="20" y="137" width="280" height="35"/>
+                            <rect key="frame" x="20" y="172" width="280" height="35"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="TrG-qm-JVO"/>
@@ -64,6 +64,16 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="输入密码"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="showBtn" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOF-id-nlj" customClass="TextView">
+                            <rect key="frame" x="20" y="224" width="280" height="35"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="TzZ-a6-bfd"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="国家"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKj-Ls-auH">
@@ -80,22 +90,6 @@
                                 <action selector="rEgBut:" destination="-1" eventType="touchUpInside" id="NNY-Kx-Qpg"/>
                             </connections>
                         </button>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOF-id-nlj" customClass="TextView">
-                            <rect key="frame" x="20" y="189" width="280" height="35"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="TzZ-a6-bfd"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="国家"/>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已阅读并同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQq-JO-7h7">
-                            <rect key="frame" x="66" y="392" width="115" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfa-xS-Sf7">
                             <rect key="frame" x="41" y="387" width="23" height="30"/>
                             <state key="normal" image="ic_registered_choose_normal"/>
@@ -104,6 +98,12 @@
                                 <action selector="agreeClick:" destination="-1" eventType="touchUpInside" id="Zrf-jP-Vp1"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已阅读并同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQq-JO-7h7">
+                            <rect key="frame" x="66" y="392" width="115" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISZ-Gw-HFI">
                             <rect key="frame" x="177" y="387" width="123" height="30"/>
                             <state key="normal" title="《用户服务协议》">
@@ -133,7 +133,7 @@
                         <constraint firstItem="Ok2-Lc-LMm" firstAttribute="top" secondItem="lDH-Lx-MdD" secondAttribute="bottom" constant="17" id="Qcb-YV-MLE"/>
                         <constraint firstItem="OOF-id-nlj" firstAttribute="trailing" secondItem="GKj-Ls-auH" secondAttribute="trailing" id="W71-wi-vhZ"/>
                         <constraint firstItem="Kfa-xS-Sf7" firstAttribute="centerY" secondItem="vQq-JO-7h7" secondAttribute="centerY" id="YJu-gR-BhS"/>
-                        <constraint firstItem="GPa-QM-Vzo" firstAttribute="top" secondItem="TRI-ux-pVu" secondAttribute="top" constant="34" id="ZTg-IW-plz"/>
+                        <constraint firstItem="GPa-QM-Vzo" firstAttribute="top" secondItem="TRI-ux-pVu" secondAttribute="top" constant="69" id="ZTg-IW-plz"/>
                         <constraint firstItem="Kfa-xS-Sf7" firstAttribute="top" secondItem="GKj-Ls-auH" secondAttribute="bottom" constant="8" symbolic="YES" id="bvT-i4-yz5"/>
                         <constraint firstItem="lDH-Lx-MdD" firstAttribute="trailing" secondItem="Ok2-Lc-LMm" secondAttribute="trailing" id="iEe-9J-Fxn"/>
                         <constraint firstItem="vQq-JO-7h7" firstAttribute="leading" secondItem="Kfa-xS-Sf7" secondAttribute="trailing" constant="2" id="k0e-17-z5m"/>
