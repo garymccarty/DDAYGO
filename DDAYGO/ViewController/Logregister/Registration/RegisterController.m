@@ -35,8 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self touchesBegan]; //触摸事件
     self.title = @"注册";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
+    self.RegisterscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
 }
 
 - (void)initUI {
@@ -236,12 +238,22 @@
 }
 
 //  键盘弹起
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{
-    
-    [self.view endEditing:YES];
+//  键盘触摸
+- (void)touchesBegan {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //  设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //  将触摸事件添加到当前view
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     
 }
-
+// 触发事件
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
+    [_ZPEmailTextFiled resignFirstResponder];
+    [_ZPCodeTextField resignFirstResponder];
+    [_ZPPswTextField resignFirstResponder];
+    [_ZPCountryTextField resignFirstResponder];
+}
 //  MD5加密方法
 -(NSString *)md5:(NSString *)input {
     const char * cStr = [input UTF8String];

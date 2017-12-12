@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RegisterController : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView * RegisterscrollView;
 
 @end

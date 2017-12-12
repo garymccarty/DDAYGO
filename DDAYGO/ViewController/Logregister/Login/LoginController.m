@@ -16,7 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet TextView * ZPEmailTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
-
 @property (weak, nonatomic) IBOutlet UIButton * LoginBtn;
 @property (nonatomic, strong) UIView * Boview;
 
@@ -30,6 +29,7 @@
     self.title = NSLocalizedString(@"Login", nil) ;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+    self.LoginscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
@@ -120,11 +120,20 @@
         [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_open.png"] forState:UIControlStateNormal];
     }
 }
-//  键盘弹起
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{
+
+//  键盘触摸
+- (void)touchesBegan {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //  设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //  将触摸事件添加到当前view
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     
-    [self.view endEditing:YES];
-    
+}
+// 触发事件
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
+    [_ZPEmailTextField resignFirstResponder];
+    [_ZPPswTextField resignFirstResponder];
 }
 
 //  MD5加密方法

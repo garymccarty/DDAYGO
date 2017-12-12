@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ForgetPswController : UIViewController
+@property (strong, nonatomic) IBOutlet UIScrollView * ForgetPswscrollView;
 
 @end
