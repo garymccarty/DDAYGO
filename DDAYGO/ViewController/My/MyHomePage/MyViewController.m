@@ -152,15 +152,17 @@
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
 //        ZPLog(@"%@",obj);
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
-        model.icueaccount = obj[@"icueaccount"];
+        model.nickname = obj[@"nickname"];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
+        
         [self MyViewData:model];
+        
     } failure:^(NSError * error) {
         
     }];
 }
 - (void)MyViewData:(ZP_HomePageModel *) model {
-    _NameLabel.text = model.icueaccount;
+    _NameLabel.text = model.nickname;
 }
 
 // 获取浏览记录、收藏的数量
@@ -236,14 +238,14 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
 }
-
+// 关注店铺（暂时不开启）
 - (IBAction)gzdpAction:(id)sender {
-    ConcernShopViewController *concernShopViewController = [[ConcernShopViewController alloc] init];
-    [self.navigationController pushViewController:concernShopViewController animated:YES];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
-    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
+//    ConcernShopViewController *concernShopViewController = [[ConcernShopViewController alloc] init];
+//    [self.navigationController pushViewController:concernShopViewController animated:YES];
+//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+//    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
 }
-
+// 足迹
 - (IBAction)zjAction:(id)sender {
     FootprintViewController *footprintViewController = [[FootprintViewController alloc] init];
     [self.navigationController pushViewController:footprintViewController animated:YES];

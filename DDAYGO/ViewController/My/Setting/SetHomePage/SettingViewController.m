@@ -63,16 +63,20 @@
         model.email = obj[@"email"];
         
         self.dataDic[@"nickname"] = obj[@"nickname"];
-        self.dataDic[@"realname"] = obj[@"realname"];
+        self.dataDic[@"realname"] = @"zach";
+//        obj[@"realname"];
         self.dataDic[@"sex"] = obj[@"sex"];
-        self.dataDic[@"birthday"] = obj[@"birthday"];
+        self.dataDic[@"birth"] = @"1967-04-08";
+//        obj[@"birthday"];
         self.dataDic[@"phone"] = obj[@"phone"];
         self.dataDic[@"address"] = obj[@"address"];
         
         if ([obj[@"sex"] isEqualToString:@"1"]) {
-            [self genderBooy:_genderBooy];
+//            [self genderBooy:_genderBooy];
+            _genderBooy.selected = YES;
         }else{
-            [self genderGail:_genderGail];
+//            [self genderGail:_genderGail];
+            _genderGail.selected = YES;
         }
         
 // 填写数据
@@ -130,38 +134,66 @@
 - (IBAction)nichengAction:(id)sender {
     
     [[DialogBox getInstance] showDialogBoxWithOperation:DDAModifyNickname FinishBlock:^(id response) {
-        
-        NSLog(@"修改成功");
+            self.dataDic[@"nickname"] = (NSString *)response;
+            [ZP_MyTool requesModifydata:self.dataDic uccess:^(id obj) {
+                ZPLog(@"%@",obj);
+                if ([obj[@"result"]isEqualToString:@"ok"]) {
+                    [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+                }else
+                    if ([obj[@"result"]isEqualToString:@"sys_error"]) {
+                        [SVProgressHUD showInfoWithStatus:@"修改失败"];
+                    }
+                NSLog(@"xiugai success");
+                self.nicknameLabel.text = (NSString *)response;
+            } failure:^(NSError * error) {
+                ZPLog(@"%@",error);
+            }];
     }];
 }
 
 - (IBAction)genderGail:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    _genderGail.selected = NO;
-    if (_genderGail == sender) {
+    NSLog(@"%d",sender.selected);
+    if (sender.selected) {
+        return;
+    }else{
+        sender.selected = !sender.selected;
         _genderBooy.selected = NO;
-        self.dataDic[@"sex"] = @0;
+        self.dataDic[@"sex"] = @"女";
         [ZP_MyTool requesModifydata:self.dataDic uccess:^(id json) {
-            NSLog(@"d");
+            if ([json[@"result"]isEqualToString:@"ok"]) {
+                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+            }else
+                if ([json[@"result"]isEqualToString:@"sys_error"]) {
+                    [SVProgressHUD showInfoWithStatus:@"修改失败"];
+                }
+//            NSLog(@"%@",json);
         } failure:^(NSError *error) {
-            
+            ZPLog(@"%@",error);
         }];
-        NSLog(@"女");
     }
 }
 
 - (IBAction)genderBooy:(UIButton *)sender {
-    _genderBooy.selected = YES;
-    if (_genderBooy == sender) {
-        _genderGail.selected = YES;
-        self.dataDic[@"sex"] = @1;
+    NSLog(@"%d",sender.selected);
+    if (sender.selected) {
+        return;
+    }else{
+        _genderGail.selected = NO;
+        sender.selected = !sender.selected;
+        self.dataDic[@"sex"] = @"男";
         [ZP_MyTool requesModifydata:self.dataDic uccess:^(id json) {
-            
+            if ([json[@"result"]isEqualToString:@"ok"]) {
+                [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+            }else
+                if ([json[@"result"]isEqualToString:@"sys_error"]) {
+                    [SVProgressHUD showInfoWithStatus:@"修改失败"];
+                }
+//            ZPLog(@"%@",json);
         } failure:^(NSError *error) {
-            
+            ZPLog(@"%@",error);
         }];
         
-        NSLog(@"男");
+//        NSLog(@"男");
     }
 }
 //  收货地址
@@ -172,6 +204,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
+
 //  绑定ICUE
 - (IBAction)bdICUEAction:(id)sender {
     self.hidesBottomBarWhenPushed = YES;

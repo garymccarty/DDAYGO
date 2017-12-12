@@ -23,7 +23,12 @@
 + (void)requesModifydata:(NSDictionary *)Modifydata uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     NSString * nickname = Modifydata[@"nickname"];
     NSString * address = Modifydata[@"address"];
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updateaccountinfo?nickname=%@&realname=%@&sex=%@&birth=%@&phone=%@&address=%@&token=%@",URLAPI,nickname.encodeToPercentEscapeString,Modifydata[@"realname"],Modifydata[@"sex"],Modifydata[@"birth"],Modifydata[@"phone"],address.encodeToPercentEscapeString,Modifydata[@"token"]].encodeToPercentEscapeString parameters:nil success:^(NSDictionary *responseObject) {
+    NSString * sex = Modifydata[@"sex"];
+//    http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=女&birth=1993-04-08T00:00:00&phone=15118041624&address=\U6e56\U5317&token=eb12616dbe8a351d23c2f3a79a4110de
+//  http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=%E5%A5%B3&birth=1967-04-08&phone=15118041624&address=%5CU6e56%5CU5317&token=a45f1a207aac999dc240d1bc5187c086
+ //   http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=(null)&birth=1967-04-08&phone=15118041624&address=%5CU6e56%5CU5317&token=2de2b5e8ef78178a0b7f694286b1135c
+//    NSLog(@"url%@",);
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updateaccountinfo?nickname=%@&realname=%@&sex=%@&birth=%@&phone=%@&address=%@&token=%@",URLAPI,nickname.encodeToPercentEscapeString,Modifydata[@"realname"],sex.encodeToPercentEscapeString ,Modifydata[@"birth"],Modifydata[@"phone"],address.encodeToPercentEscapeString,Modifydata[@"token"]] parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);

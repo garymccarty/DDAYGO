@@ -7,7 +7,8 @@
 //
 
 #import "DialogBox.h"
-
+#import "ZP_MyTool.h"
+#import "PrefixHeader.pch"
 @implementation DialogBox
 
 + (DialogBox *)getInstance  //定义一个类方法进行访问(便利构造)
@@ -33,6 +34,9 @@
     self.hidden = YES;
 }
 
+
+
+
 - (IBAction)cancelAction:(id)sender {
     
     [self dismiss];
@@ -40,10 +44,11 @@
 
 - (IBAction)ensureAction:(id)sender {
     if (self.finishBlock) {
-        self.finishBlock(nil);
+        self.finishBlock(_textfield.text);
     }
     [self dismiss];
 }
+
 - (IBAction)icucEnsure:(id)sender {
     [self dismiss];
 }
