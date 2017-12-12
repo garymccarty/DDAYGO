@@ -51,7 +51,7 @@
     [self.tableView reloadData];
         
     } failure:^(NSError *error) {
-        NSLog(@"error");
+        ZPLog(@"error");
         
     }];
 }
@@ -62,8 +62,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    collectionModel *model = _dataArray[indexPath.row];
-    CollectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionTableViewCell"];
+    collectionModel * model = _dataArray[indexPath.row];
+    CollectionTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionTableViewCell"];
     cell.model = model;
     return cell;
 }

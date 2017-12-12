@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self allData];
     self.title = @"我的足迹";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     [self.collectionView registerNib:[UINib nibWithNibName:@"FootprintCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"FootprintCollectionViewCell"];
@@ -28,6 +27,12 @@
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self allData];
+}
+
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
@@ -37,7 +42,7 @@
         self.newsData = [ZP_FootprintModel arrayWithArray:obj[@"historyslist"]];
         [self.collectionView reloadData];
     } failure:^(NSError * error) {
-        
+        ZPLog(@"error");
     }];
 }
 #pragma mark --- collectionView delegate
@@ -54,8 +59,8 @@
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     CGFloat width=(self.view.frame.size.width-51)/3;
     return CGSizeMake(width, width *137 / 110);
 }
@@ -89,8 +94,8 @@
     }];
 }
 
-- (NSMutableArray *)newsData
-{
+- (NSMutableArray *)newsData {
+    
     if (!_newsData) {
         _newsData = [NSMutableArray array];
     }

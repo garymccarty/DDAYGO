@@ -16,6 +16,7 @@
                 <outlet property="CaipiaoView" destination="mDy-f9-02s" id="CCc-8L-W9C"/>
                 <outlet property="CollectionLabel" destination="9Ji-Nx-7ud" id="mIJ-mD-Jt0"/>
                 <outlet property="NameLabel" destination="Yfb-7E-S8p" id="9B3-Bj-5NT"/>
+                <outlet property="TrackingStoreLabel" destination="Nxl-dy-Fb1" id="pOt-Aj-9OZ"/>
                 <outlet property="headImageBut" destination="OTg-9H-to4" id="9fB-tz-BmB"/>
                 <outlet property="scanView" destination="7k6-oe-5YX" id="UHd-bb-MTZ"/>
                 <outlet property="sdglView" destination="8nF-TL-hSY" id="5v8-3h-hhn"/>

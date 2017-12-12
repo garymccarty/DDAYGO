@@ -13,4 +13,5 @@
 @property (nonatomic, strong) NSNumber * collecedcount; // 收藏
 @property (nonatomic, strong) NSNumber * historycount; // 浏览
 
+
 @end

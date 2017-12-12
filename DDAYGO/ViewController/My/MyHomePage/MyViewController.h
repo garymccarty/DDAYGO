@@ -15,9 +15,11 @@ typedef NS_ENUM(NSUInteger, DDPopKind)
 
 @interface MyViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel * NameLabel;
-@property (strong, nonatomic) IBOutlet UILabel * CollectionLabel;
-@property (strong, nonatomic) IBOutlet UILabel * BrowseLabel;
+@property (strong, nonatomic) IBOutlet UILabel * NameLabel; // 名字
+@property (strong, nonatomic) IBOutlet UILabel * CollectionLabel; // 收藏
+@property (weak, nonatomic) IBOutlet UILabel *TrackingStoreLabel; // 关注店铺
+@property (strong, nonatomic) IBOutlet UILabel * BrowseLabel; // 足迹
+
 @property (nonatomic ,assign) BOOL hasLogin;
 @property (nonatomic ,assign) DDPopKind popKind;
 
