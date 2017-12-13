@@ -109,19 +109,8 @@
                                                 <constraint firstAttribute="width" constant="1" id="DH8-ix-Eu4"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奖项金额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCM-nc-1yX">
-                                            <rect key="frame" x="110" y="0.0" width="65" height="30"/>
-                                            <color key="backgroundColor" red="0.25516563260000003" green="1" blue="0.14085222959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="sIN-r0-Ku1"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奖项" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmM-eh-aKI">
                                             <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
-                                            <color key="backgroundColor" red="0.57560628589999996" green="1" blue="0.49418042670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="4kv-Fw-sJq"/>
                                                 <constraint firstAttribute="width" constant="45" id="hO5-lF-5oE"/>
@@ -132,7 +121,6 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对奖号数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsT-pK-2NA">
                                             <rect key="frame" x="45" y="0.0" width="65" height="30"/>
-                                            <color key="backgroundColor" red="1" green="0.56616035259999997" blue="0.41427394470000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="ND0-qF-D7w"/>
                                             </constraints>
@@ -140,11 +128,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="悬赏金额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-ex-XyR">
-                                            <rect key="frame" x="239.5" y="0.0" width="64.5" height="30"/>
-                                            <color key="backgroundColor" red="1" green="0.91834409500000003" blue="0.23089681940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奖项金额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCM-nc-1yX">
+                                            <rect key="frame" x="110" y="0.0" width="65" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="GQc-mf-CWY"/>
+                                                <constraint firstAttribute="height" constant="30" id="sIN-r0-Ku1"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <nil key="textColor"/>
@@ -152,9 +139,17 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中奖注数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ai-wG-KJX">
                                             <rect key="frame" x="175" y="0.0" width="64.5" height="30"/>
-                                            <color key="backgroundColor" red="1" green="0.077094184029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="6HX-db-aGn"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="悬赏金额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-ex-XyR">
+                                            <rect key="frame" x="239.5" y="0.0" width="64.5" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="GQc-mf-CWY"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <nil key="textColor"/>
@@ -249,7 +244,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.29717373609999997" blue="0.080588528029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstItem="wEu-Tg-NRD" firstAttribute="leading" secondItem="z0k-LB-z8P" secondAttribute="leading" constant="8" id="8gM-TV-CGc"/>
                                 <constraint firstAttribute="height" constant="408" id="Ai6-85-P7W"/>
@@ -270,6 +264,11 @@
                                 <constraint firstItem="OeE-E4-aVf" firstAttribute="leading" secondItem="4La-cI-cea" secondAttribute="trailing" constant="5" id="sia-u1-RVb"/>
                                 <constraint firstItem="9Tp-a5-nU6" firstAttribute="leading" secondItem="z0k-LB-z8P" secondAttribute="leading" constant="8" id="yBr-HS-Onx"/>
                             </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5m-Kb-k11">
+                            <rect key="frame" x="0.0" y="448" width="320" height="120"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
                     <constraints>
