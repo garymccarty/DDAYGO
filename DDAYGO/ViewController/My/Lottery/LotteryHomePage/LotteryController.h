@@ -7,13 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-/*
- prize
- The winning number
- The sum of the awards in the current period
- Number of winners
- Bounty
- */
 @interface LotteryController : UIViewController 
 //@property (nonatomic, strong) UILabel * TitleLabel;  //标题
 //@property (nonatomic, strong) UILabel * NumberingLabel; // 编号

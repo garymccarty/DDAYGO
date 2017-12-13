@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    [self AllDatas];
+//    [self AllDatas];
     
     [self autoLogin:^(id obj) {
         if (!DD_HASLOGIN) {
@@ -124,6 +124,8 @@
         _headImageBut.layer.masksToBounds = YES;
         [_headImageBut setImage:image forState:UIControlStateNormal];
     }
+    [self AllDatas];
+    [self allData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -139,7 +141,7 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
     
-    [self allData];
+   
     
 }
 //  个人资料

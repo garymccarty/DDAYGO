@@ -114,6 +114,9 @@
 #define ZP_titleFont [UIFont myFontOfSize:12]
 #define ZP_introduceFont [UIFont myFontOfSize:11]
 #define ZP_TrademarkFont [UIFont myFontOfSize:10]
+#define ZP_NineFont [UIFont myFontOfSize:9]
+#define ZP_EightFont [UIFont myFontOfSize:8]
+#define ZP_SevenFont [UIFont myFontOfSize:7]
 
 // 颜色调配
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]

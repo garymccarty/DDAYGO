@@ -11,6 +11,7 @@
 @interface ZP_LotteryViewCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UILabel *OrderNumberLabel; // 订单号
 @property (nonatomic, assign) NSInteger wirteBetCount;
 @property (nonatomic, assign) NSInteger redBetCount;
 - (void)updateCount:(NSInteger)count;

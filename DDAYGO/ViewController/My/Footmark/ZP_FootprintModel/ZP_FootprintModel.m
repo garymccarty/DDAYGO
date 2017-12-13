@@ -33,6 +33,8 @@
 + (NSMutableArray *)arrayWithArray:(NSArray *)array {
     
     NSMutableArray * arr = [[NSMutableArray alloc]init];
+    if (array.count > 0) {
+
     for (NSDictionary * dic in array[0][@"historylist"]) {
         ZP_FootprintModel * model = [[ZP_FootprintModel alloc]init];
         model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
@@ -41,6 +43,8 @@
         model.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];
         model.historyid = dic[@"historyid"];
         [arr addObject:model];
+    }
+        
     }
     return arr;
 }

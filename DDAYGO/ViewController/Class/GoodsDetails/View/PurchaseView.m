@@ -134,8 +134,8 @@
     if ( _modelArr.count > 0) {
         int a = 0;
         for (int i=0; i < _standardList.count; i++) {
-            ChooseRank *view = [self viewWithTag:8000+i];
-            for (UIButton *obj in  view.btnView.subviews) {
+            ChooseRank * view = [self viewWithTag:8000+i];
+            for (UIButton * obj in  view.btnView.subviews) {
                 if(obj.selected){
                     a++;
                 }else{
@@ -312,8 +312,8 @@
 
 -(void)selectBtnTitle:(NSString *)title andBtn:(UIButton *)btn{
     
-    NSLog(@"%ld",btn.tag);
-    NSLog(@"%@ - %@",title,btn.titleLabel.text);
+    ZPLog(@"%ld",btn.tag);
+    ZPLog(@"%@ - %@",title,btn.titleLabel.text);
     
     [self.rankArray removeAllObjects];
     [self.rankArray2 removeAllObjects];
@@ -408,6 +408,8 @@
     _model = model;
     self.chooseView.LB_price.text = model.productprice;
     [self.chooseView.headImage sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@"bingli"]];
+    NSLog(@"_____%@",model.productid);
+    self.stockid = [NSNumber numberWithInt:[model.productid intValue]];
     //    _ShopNameLabel.text = model.productname;
     //    _ShopMoneyLabel.text = model.productprice;
     //    _quantityLable.text = model.quantity;
@@ -424,6 +426,7 @@
         if (0 == i) {
             self.colorId = model.cnid;
         }
+        NSLog(@"_%@",model.productid);
     }
     
     self.standardValueList = @[arr,@[]];
@@ -437,6 +440,7 @@
     NSMutableArray  *arr = [NSMutableArray array];
     for (int i = 0; i < modeltypeArr.count; i ++) {
         ZP_GoodDetailsModel *model = modeltypeArr[i];
+        NSLog(@"__%@",model.productid);
         [arr addObject:model.cnname];
         if (0 == i) {
             self.sizeId = model.cnid;

@@ -27,13 +27,14 @@
         make.left.equalTo(self).offset(1);
         make.top.equalTo(self).offset(-1);
         make.right.equalTo(self).offset(-1);
-        make.bottom.equalTo(self).offset(-60);
+        make.bottom.equalTo(self).offset(-45);
         make.width.mas_offset(ZP_Width/4-1);
+//        make.height.mas_equalTo(ZP_Width / 4- 1);
     }];
     _imageView = imageView;
     
 //    标题
-    ZP_GeneralLabel * TitleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_HomeTitleTypefaceCorlor font:ZP_TrademarkFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
+    ZP_GeneralLabel * TitleLabel = [ZP_GeneralLabel initWithtextLabel:_titleLabel.text textColor:ZP_HomeTitleTypefaceCorlor font:ZP_NineFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
 
     [self addSubview:TitleLabel];
     [TitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -44,7 +45,7 @@
     _titleLabel = TitleLabel;
     
 //    优惠价格
-    ZP_GeneralLabel * PreferentialLabel = [ZP_GeneralLabel initWithtextLabel:_PreferentialLabel.text textColor:ZP_HomePreferentialpriceTypefaceCorlor font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    ZP_GeneralLabel * PreferentialLabel = [ZP_GeneralLabel initWithtextLabel:_PreferentialLabel.text textColor:ZP_HomePreferentialpriceTypefaceCorlor font:ZP_NineFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self addSubview:PreferentialLabel];
     [PreferentialLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
@@ -52,43 +53,43 @@
     }];
     _PreferentialLabel = PreferentialLabel;
     
-//    价格
-    ZP_GeneralLabel * priceLabel = [ZP_GeneralLabel initWithtextLabel:_priceLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_introduceFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
-    [self addSubview:priceLabel];
-    [priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(5);
-        make.bottom.equalTo(PreferentialLabel).offset(10);
-    }];
-    _priceLabel = priceLabel;
-    
-//    横线
-    UIView * Crossview = [UIView new];
-    Crossview.backgroundColor = ZP_HomeTitlepriceTypefaceColor;
-    [self addSubview: Crossview];
-    [Crossview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(5);
-        make.bottom.equalTo(PreferentialLabel).offset(4.5);
-        make.width.mas_equalTo(priceLabel);
-        make.height.mas_equalTo(1);
-    }];
+////    价格
+//    ZP_GeneralLabel * priceLabel = [ZP_GeneralLabel initWithtextLabel:_priceLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_introduceFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
+//    [self addSubview:priceLabel];
+//    [priceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self).offset(5);
+//        make.bottom.equalTo(PreferentialLabel).offset(10);
+//    }];
+//    _priceLabel = priceLabel;
+//
+////    横线
+//    UIView * Crossview = [UIView new];
+//    Crossview.backgroundColor = ZP_HomeTitlepriceTypefaceColor;
+//    [self addSubview: Crossview];
+//    [Crossview mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self).offset(5);
+//        make.bottom.equalTo(PreferentialLabel).offset(4.5);
+//        make.width.mas_equalTo(priceLabel);
+//        make.height.mas_equalTo(1);
+//    }];
     
 //    商标
     UIImageView * TrademarkImage = [UIImageView new];
     [self.contentView addSubview:TrademarkImage];
     [TrademarkImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
-        make.bottom.equalTo(priceLabel).offset(10);
-        make.width.mas_offset(10);
-        make.height.mas_offset(10);
+        make.bottom.equalTo(PreferentialLabel).offset(10);
+        make.width.mas_offset(8);
+        make.height.mas_offset(8);
     }];
     _TrademarkImage = TrademarkImage;
     
 //    商标编号
-    ZP_GeneralLabel * TrademarkLabel = [ZP_GeneralLabel initWithtextLabel:_TrademarkLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    ZP_GeneralLabel * TrademarkLabel = [ZP_GeneralLabel initWithtextLabel:_TrademarkLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_SevenFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:TrademarkLabel];
     [TrademarkLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(20);
-        make.bottom.equalTo(priceLabel).offset(10);
+        make.left.equalTo(TrademarkImage).offset(10);
+        make.bottom.equalTo(PreferentialLabel).offset(10);
         make.width.mas_offset(20); //宽
         make.height.mas_offset(10); // 高
         

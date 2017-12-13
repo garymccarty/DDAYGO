@@ -34,44 +34,46 @@
     
     [self initUI];
     
-    [self updateBounctyViewWithBonus:614278265 Suffix:@"$"];
+//    [self updateBounctyViewWithBonus:614278265 Suffix:@"$"];
 }
 
-- (CGSize)getStringSize:(NSString *)string FontSize:(NSInteger)fontSize Size:(CGSize)size {
-    CGSize size1;
-    CGSize widthSize = [string boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:fontSize]} context:nil].size;
-    size1.width = widthSize.width+1;
-    size1.height = widthSize.height+1;
-    return size1;
-}
+//- (CGSize)getStringSize:(NSString *)string FontSize:(NSInteger)fontSize Size:(CGSize)size {
+//    CGSize size1;
+//    CGSize widthSize = [string boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:fontSize]} context:nil].size;
+//    size1.width = widthSize.width+1;
+//    size1.height = widthSize.height+1;
+//    return size1;
+//}
 
-- (void)updateViewConstraints {
-    [super updateViewConstraints];
-    CGFloat onScrollViewWidth = 0;
-    CGFloat compensateValue = 0;
-    for (int i = 0; i < self.titleArray.count; i ++) {
-        UILabel *tempLabtl = self.titleLabelArray[i];
-        NSLayoutConstraint *tempLayoutCont =self.titleWidthArray[i];
-        tempLayoutCont.constant = [self getStringSize:tempLabtl.text FontSize:13 Size:CGSizeMake(MAXFLOAT, MAXFLOAT)].width;
-        onScrollViewWidth += tempLayoutCont.constant;
-    }
-    
-    if (onScrollViewWidth > [UIScreen mainScreen].bounds.size.width - 16 + 50) {
-        compensateValue = 16;
-        onScrollViewWidth += 5 * 16;
-    } else {
-        compensateValue = ([UIScreen mainScreen].bounds.size.width - 16 - onScrollViewWidth) /5;
-        onScrollViewWidth = [UIScreen mainScreen].bounds.size.width - 16;
-    }
-    
-    for (NSLayoutConstraint *tempLayoutCont in self.titleWidthArray) {
-        tempLayoutCont.constant += compensateValue;
-    }
-    self.onScrollViewWidth.constant = onScrollViewWidth;
-}
+//- (void)updateViewConstraints {
+//    [super updateViewConstraints];
+//    CGFloat onScrollViewWidth = 0;
+//    CGFloat compensateValue = 0;
+//    for (int i = 0; i < self.titleArray.count; i ++) {
+//        UILabel *tempLabtl = self.titleLabelArray[i];
+//        NSLayoutConstraint *tempLayoutCont =self.titleWidthArray[i];
+//        tempLayoutCont.constant = [self getStringSize:tempLabtl.text FontSize:13 Size:CGSizeMake(MAXFLOAT, MAXFLOAT)].width;
+//        onScrollViewWidth += tempLayoutCont.constant;
+//    }
+//    
+//    if (onScrollViewWidth > [UIScreen mainScreen].bounds.size.width - 16 + 50) {
+//        compensateValue = 16;
+//        onScrollViewWidth += 5 * 16;
+//    } else {
+//        compensateValue = ([UIScreen mainScreen].bounds.size.width - 16 - onScrollViewWidth) /5;
+//        onScrollViewWidth = [UIScreen mainScreen].bounds.size.width - 16;
+//    }
+//    
+//    for (NSLayoutConstraint *tempLayoutCont in self.titleWidthArray) {
+//        tempLayoutCont.constant += compensateValue;
+//    }
+//    self.onScrollViewWidth.constant = onScrollViewWidth;
+//}
 
 - (void)initUI {
     self.title = NSLocalizedString(@"赏金彩", nil);
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
+    [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];  //  更改导航栏颜色
     
     static NSString * LotteryID = @"ZP_LotteryViewCell";
     [self.tableView registerNib:[UINib nibWithNibName:LotteryID bundle:nil] forCellReuseIdentifier:LotteryID];
@@ -97,71 +99,68 @@
     UIBarButtonItem * btn =[[UIBarButtonItem alloc]initWithCustomView:tools];
     self.navigationItem.rightBarButtonItem = btn;
     
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
-    [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];  //  更改导航栏颜色
-    self.titleArray = @[@"奖项",@"对中奖号数",@"本期各奖项金额",@"中奖数",@"赏金金额"];
-    self.titleLabelArray = @[self.prizeLabel,self.winningNumbLabel,self.currentPeriodLabel,self.winnersNumLabel,self.bountyLabel];
-    self.titleWidthArray = @[self.prizeWidth,self.winningNumbWidth,self.currentPeriodWidth,self.winnersNumWidth,self.bountyWidth];
-    self.prizeArray = @[self.prizeLabel1,self.prizeLabel2,self.prizeLabel3,self.prizeLabel4];
-    self.winningNumbArray = @[self.winningNumbLabel1,self.winningNumbLabel2,self.winningNumbLabel3,self.winningNumbLabel4];
-    self.currentPeriodArray = @[self.currentPeriodLabel1,self.currentPeriodLabel2,self.currentPeriodLabel3,self.currentPeriodLabel4];
-    self.winnersNumArray = @[self.winnersNumLabel1,self.winnersNumLabel2,self.winnersNumLabel3,self.winnersNumLabel4];
-    self.bountyArray = @[self.bountyLabel1,self.bountyLabel2,self.bountyLabel3,self.bountyLabel4];
-    
-    NSArray *prizeArray = @[@"头奖",@"二奖",@"三奖",@"四奖"];
-    NSArray *winnersNumArray = @[@"白球五个+红球一个",@"白球五个",@"白球四个",@"白球三个"];
-    for (int i = 0; i < prizeArray.count; i ++) {
-        UILabel *tempPrizeLabel = self.prizeArray[i];
-        UILabel *tempWinningNumbLabel = self.winningNumbArray[i];
-        UILabel *tempCurrentPeriodLabel = self.currentPeriodArray[i];
-        UILabel *tempWinnersNumLabel = self.winnersNumArray[i];
-        UILabel *tempBountyLabel = self.bountyArray[i];
-        
-        tempPrizeLabel.text = prizeArray[i];
-        tempWinningNumbLabel.text = winnersNumArray[i];
-        tempCurrentPeriodLabel.text = nil;
-        tempWinnersNumLabel.text = nil;
-        tempBountyLabel.text = nil;
-    }
+//    self.titleArray = @[@"奖项",@"对中奖号数",@"本期各奖项金额",@"中奖数",@"赏金金额"];
+//    self.titleLabelArray = @[self.prizeLabel,self.winningNumbLabel,self.currentPeriodLabel,self.winnersNumLabel,self.bountyLabel];
+//    self.titleWidthArray = @[self.prizeWidth,self.winningNumbWidth,self.currentPeriodWidth,self.winnersNumWidth,self.bountyWidth];
+//    self.prizeArray = @[self.prizeLabel1,self.prizeLabel2,self.prizeLabel3,self.prizeLabel4];
+//    self.winningNumbArray = @[self.winningNumbLabel1,self.winningNumbLabel2,self.winningNumbLabel3,self.winningNumbLabel4];
+//    self.currentPeriodArray = @[self.currentPeriodLabel1,self.currentPeriodLabel2,self.currentPeriodLabel3,self.currentPeriodLabel4];
+//    self.winnersNumArray = @[self.winnersNumLabel1,self.winnersNumLabel2,self.winnersNumLabel3,self.winnersNumLabel4];
+//    self.bountyArray = @[self.bountyLabel1,self.bountyLabel2,self.bountyLabel3,self.bountyLabel4];
+//
+//    NSArray *prizeArray = @[@"头奖",@"二奖",@"三奖",@"四奖"];
+//    NSArray *winnersNumArray = @[@"白球五个+红球一个",@"白球五个",@"白球四个",@"白球三个"];
+//    for (int i = 0; i < prizeArray.count; i ++) {
+//        UILabel *tempPrizeLabel = self.prizeArray[i];
+//        UILabel *tempWinningNumbLabel = self.winningNumbArray[i];
+//        UILabel *tempCurrentPeriodLabel = self.currentPeriodArray[i];
+//        UILabel *tempWinnersNumLabel = self.winnersNumArray[i];
+//        UILabel *tempBountyLabel = self.bountyArray[i];
+//
+//        tempPrizeLabel.text = prizeArray[i];
+//        tempWinningNumbLabel.text = winnersNumArray[i];
+//        tempCurrentPeriodLabel.text = nil;
+//        tempWinnersNumLabel.text = nil;
+//        tempBountyLabel.text = nil;
+//    }
 }
 
 #pragma mark  更新赏金视图
-- (void)updateBounctyViewWithBonus:(NSInteger)bonus Suffix:(NSString *)suffix {
-    for (UIView *view in self.bounctyView.subviews) {
-        [view removeFromSuperview];
-    }
-    
-    NSString *bonusString = @(bonus).stringValue;
-    NSInteger commaCount = (bonusString.length - 1) / 3;
-    CGFloat startPoint = ([UIScreen mainScreen].bounds.size.width - (14 * (bonusString.length + 1) + (bonusString.length + commaCount) * 3 + commaCount * 10)) / 2;
-    for (int i = 0; i < bonusString.length; i ++) {
-        UIButton *bonusBtn = [[UIButton alloc] initWithFrame:CGRectMake(startPoint, 0, 14, 20)];
-        [bonusBtn setBackgroundImage:[UIImage imageNamed:@"bg_lottery_money"] forState:UIControlStateNormal];
-        [bonusBtn setTitle:[bonusString substringWithRange:NSMakeRange(i, 1)] forState:UIControlStateNormal];
-        [bonusBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-        
-        if (0 == (bonusString.length - i) % 3 && i > 0) {
-            UIButton *commaBtn = [[UIButton alloc] initWithFrame:CGRectMake(startPoint, 0, 10, 20)];
-            [commaBtn setTitle:@"," forState:UIControlStateNormal];
-            [commaBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-            [bonusBtn setFrame:CGRectMake(startPoint + 13, 0, 14, 20)];
-            [self.bounctyView addSubview:commaBtn];
-            [self.bounctyView addSubview:bonusBtn];
-            
-            startPoint += 32;
-        } else {
-            [self.bounctyView addSubview:bonusBtn];
-            
-            startPoint += 17;
-        }
-    }
-    
-    UIButton *suffixBtn = [[UIButton alloc] initWithFrame:CGRectMake(startPoint, 0, 14, 20)];
-    [suffixBtn setTitle:suffix forState:UIControlStateNormal];
-    [suffixBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    [self.bounctyView addSubview:suffixBtn];
-}
+//- (void)updateBounctyViewWithBonus:(NSInteger)bonus Suffix:(NSString *)suffix {
+//    for (UIView *view in self.bounctyView.subviews) {
+//        [view removeFromSuperview];
+//    }
+//
+//    NSString *bonusString = @(bonus).stringValue;
+//    NSInteger commaCount = (bonusString.length - 1) / 3;
+//    CGFloat startPoint = ([UIScreen mainScreen].bounds.size.width - (14 * (bonusString.length + 1) + (bonusString.length + commaCount) * 3 + commaCount * 10)) / 2;
+//    for (int i = 0; i < bonusString.length; i ++) {
+//        UIButton *bonusBtn = [[UIButton alloc] initWithFrame:CGRectMake(startPoint, 0, 14, 20)];
+//        [bonusBtn setBackgroundImage:[UIImage imageNamed:@"bg_lottery_money"] forState:UIControlStateNormal];
+//        [bonusBtn setTitle:[bonusString substringWithRange:NSMakeRange(i, 1)] forState:UIControlStateNormal];
+//        [bonusBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+//
+//        if (0 == (bonusString.length - i) % 3 && i > 0) {
+//            UIButton *commaBtn = [[UIButton alloc] initWithFrame:CGRectMake(startPoint, 0, 10, 20)];
+//            [commaBtn setTitle:@"," forState:UIControlStateNormal];
+//            [commaBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+//            [bonusBtn setFrame:CGRectMake(startPoint + 13, 0, 14, 20)];
+//            [self.bounctyView addSubview:commaBtn];
+//            [self.bounctyView addSubview:bonusBtn];
+//
+//            startPoint += 32;
+//        } else {
+//            [self.bounctyView addSubview:bonusBtn];
+//
+//            startPoint += 17;
+//        }
+//    }
+//
+//    UIButton *suffixBtn = [[UIButton alloc] initWithFrame:CGRectMake(startPoint, 0, 14, 20)];
+//    [suffixBtn setTitle:suffix forState:UIControlStateNormal];
+//    [suffixBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+//    [self.bounctyView addSubview:suffixBtn];
+//}
 
 // 说明
 - (void)Instruction {
@@ -196,7 +195,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 60;
+    return 80;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
