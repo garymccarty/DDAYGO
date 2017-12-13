@@ -9,72 +9,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/Class/GoodsDetails/View/PurchaseView.m"
-            timestampString = "534850768.412618"
+            filePath = "DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
+            timestampString = "534688183.506363"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
-            landmarkName = "-getdata"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/Class/GoodsDetails/View/PurchaseView.m"
-            timestampString = "534850768.412905"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
-            landmarkName = "-getdata"
+            startingLineNumber = "628"
+            endingLineNumber = "628"
+            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[PurchaseView getdata]"
+                  symbolName = "__73-[ShoppingViewController tableView:commitEditingStyle:forRowAtIndexPath:]_block_invoke"
                   moduleName = "DDAYGO"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhangpeng/Desktop/%E4%BB%A3%E7%A0%81/DDAYGO/DDAYGO/ViewController/Class/GoodsDetails/View/PurchaseView.m"
-                  timestampString = "534854252.584708"
+                  urlString = "file:///Users/Summer/Desktop/DDAYGO/DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
+                  timestampString = "534866394.631863"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "392"
-                  endingLineNumber = "392"
-                  offsetFromSymbolStart = "496">
+                  startingLineNumber = "628"
+                  endingLineNumber = "628"
+                  offsetFromSymbolStart = "302">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__23-[PurchaseView getdata]_block_invoke"
+                  symbolName = "__73-[ShoppingViewController tableView:commitEditingStyle:forRowAtIndexPath:]_block_invoke_2"
                   moduleName = "DDAYGO"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhangpeng/Desktop/%E4%BB%A3%E7%A0%81/DDAYGO/DDAYGO/ViewController/Class/GoodsDetails/View/PurchaseView.m"
-                  timestampString = "534854252.586704"
+                  urlString = "file:///Users/Summer/Desktop/DDAYGO/DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
+                  timestampString = "534866394.635604"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "394"
-                  endingLineNumber = "394"
+                  startingLineNumber = "629"
+                  endingLineNumber = "629"
                   offsetFromSymbolStart = "51">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
