@@ -22,8 +22,10 @@
     self.title = NSLocalizedString(@"登录 / 注册", nil);
     self.navigationController.navigationBar.hidden = NO;  //   隐藏navigationBar
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
+
 //  登录
 - (IBAction)LoginAction:(id)sender {
     NSLog(@"登录");
@@ -44,6 +46,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
      self.hidesBottomBarWhenPushed = YES;
 }
+
 - (IBAction)QuickloginAction:(id)sender {
     NSLog(@"快速登录");
 }

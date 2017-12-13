@@ -245,7 +245,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <inset key="titleEdgeInsets" minX="26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="imageEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="收款" image="ic_store_Receivables">
+                                    <state key="normal" title="收款" image="ic_store_receivables">
                                         <color key="titleColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
@@ -309,7 +309,7 @@
         <image name="bg_store_background" width="375" height="173"/>
         <image name="bg_store_head_2" width="68" height="68"/>
         <image name="ic_left_arrow" width="7" height="13"/>
-        <image name="ic_store_Receivables" width="23" height="16"/>
+        <image name="ic_store_receivables" width="24" height="24"/>
         <image name="icon_shop_wallet" width="24" height="24"/>
         <image name="img_store_defaulthead_1" width="65" height="65"/>
     </resources>
