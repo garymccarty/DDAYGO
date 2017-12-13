@@ -75,7 +75,6 @@
 
 - (void)updateViewConstraints {
     [super updateViewConstraints];
-    self.scrollView.contentSize =CGSizeMake(ZP_Width,ZP_height * 2);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -460,6 +459,7 @@
     }
 }
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    self.scrollView.contentSize =CGSizeMake(ZP_Width,ZP_height * 2);
     if (scrollView == self.smallScrollView) {
         if (!velocity.y && velocity.x) {
             CGPoint point = *targetContentOffset;

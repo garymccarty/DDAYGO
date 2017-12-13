@@ -23,6 +23,7 @@
 #import "ZP_ComfirmModel.h"
 #import "ZP_ConfirmPayModel.h"
 #import "ZP_ConfirmWebController.h"
+#import "AddAddressViewController.h"
 
 @interface ConfirmViewController () <UITableViewDelegate, UITableViewDataSource> {
     
@@ -145,8 +146,12 @@
 
 // 提交订单
 - (void)ClearingBut:(UIButton *)sender {
-    [self ConfirmData];
-    
+    if (_dataArrar.count == 0) {
+        [SVProgressHUD showErrorWithStatus:@"请添加地址"];
+        [self.navigationController pushViewController:[[AddAddressViewController alloc] init] animated:YES];
+    } else {
+        [self ConfirmData];
+    }
 }
 // ConfirmView数据
 - (void)ConfirmData {
@@ -201,13 +206,19 @@
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
         NSDictionary * dic = obj;
         NSArray * modelArr = [ZP_ComfirmModel arrayWithArray:dic[@"receipts"]];
-        [modelArr enumerateObjectsUsingBlock:^(ZP_ComfirmModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([model.isdefault isEqualToNumber:@1]) {
-                NSLog(@"%@",model.isdefault);
-                self.merchantsLabel.text = model.receiptname;
-                [_dataArrar addObject:model];
-            }
-        }];
+        if (modelArr.count == 0) {
+            [SVProgressHUD showErrorWithStatus:@"请添加地址"];
+            [self.navigationController pushViewController:[[AddAddressViewController alloc] init] animated:YES];
+        } else {
+            [modelArr enumerateObjectsUsingBlock:^(ZP_ComfirmModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([model.isdefault isEqualToNumber:@1]) {
+                    NSLog(@"%@",model.isdefault);
+                    self.merchantsLabel.text = model.receiptname;
+                    [_dataArrar addObject:model];
+                }
+            }];
+        }
+        
         [self.tableView reloadData];
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);

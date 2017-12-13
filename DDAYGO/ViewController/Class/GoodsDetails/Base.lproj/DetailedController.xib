@@ -325,7 +325,7 @@
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LTl-24-eao">
-                            <rect key="frame" x="0.0" y="600" width="375" height="557"/>
+                            <rect key="frame" x="0.0" y="600" width="375" height="563"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <connections>
                                 <outlet property="dataSource" destination="-1" id="mEb-so-CcL"/>
@@ -339,6 +339,7 @@
                         <constraint firstItem="zr9-j3-C4D" firstAttribute="top" secondItem="erL-ta-lZE" secondAttribute="bottom" constant="8" id="Cal-Ri-KnM"/>
                         <constraint firstItem="Tyf-aT-gID" firstAttribute="leading" secondItem="ggt-fq-ZTj" secondAttribute="leading" id="DhF-lc-npf"/>
                         <constraint firstAttribute="trailing" secondItem="pNh-da-IVa" secondAttribute="trailing" id="E3S-Rd-31b"/>
+                        <constraint firstItem="LTl-24-eao" firstAttribute="height" secondItem="ggt-fq-ZTj" secondAttribute="height" constant="-70" id="Gtc-6c-9gh"/>
                         <constraint firstItem="Tyf-aT-gID" firstAttribute="top" secondItem="zr9-j3-C4D" secondAttribute="bottom" id="HnR-Je-nmg"/>
                         <constraint firstItem="dxe-zc-jNu" firstAttribute="leading" secondItem="ggt-fq-ZTj" secondAttribute="leading" id="PNZ-qw-W0v"/>
                         <constraint firstItem="dxe-zc-jNu" firstAttribute="centerX" secondItem="ggt-fq-ZTj" secondAttribute="centerX" id="Q4Y-aY-lpY"/>
@@ -518,7 +519,6 @@
                 <constraint firstAttribute="trailing" secondItem="ggt-fq-ZTj" secondAttribute="trailing" id="fak-J6-1M9"/>
                 <constraint firstItem="4rk-Zo-kZP" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="ihg-3f-NlB"/>
                 <constraint firstItem="pkQ-dn-mhv" firstAttribute="leading" secondItem="ggt-fq-ZTj" secondAttribute="leading" id="oxK-tH-mpy"/>
-                <constraint firstItem="LTl-24-eao" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" constant="-110" id="yQu-fU-Ubn"/>
             </constraints>
             <point key="canvasLocation" x="32.5" y="65.5"/>
         </view>
