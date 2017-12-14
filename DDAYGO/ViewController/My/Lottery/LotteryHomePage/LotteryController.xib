@@ -13,8 +13,35 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LotteryController">
             <connections>
                 <outlet property="OrderNumView" destination="2Wq-Qj-3dJ" id="gAW-iE-7kI"/>
+                <outlet property="OrderNumberLabel" destination="d4Q-VX-uLC" id="oQi-4m-0as"/>
+                <outlet property="bounctyView" destination="9Tp-a5-nU6" id="f6e-tt-cRH"/>
+                <outlet property="bountyLabel" destination="P0X-ex-XyR" id="sAj-fF-Y4k"/>
+                <outlet property="bountyLabel1" destination="GGl-XE-fCc" id="RSg-T8-cZo"/>
+                <outlet property="bountyLabel2" destination="kUX-yq-R9l" id="hwj-ZY-eSf"/>
+                <outlet property="bountyLabel3" destination="lCL-Of-0a3" id="YwM-zI-Mkg"/>
+                <outlet property="bountyLabel4" destination="YdO-sX-4tK" id="Tqw-M6-Hpc"/>
+                <outlet property="currentPeriodLabel" destination="vCM-nc-1yX" id="Vds-NZ-3yk"/>
+                <outlet property="currentPeriodLabel1" destination="cEN-7L-jGh" id="IAP-aq-zUp"/>
+                <outlet property="currentPeriodLabel2" destination="ZZi-S0-0LM" id="Scp-oH-Ax5"/>
+                <outlet property="currentPeriodLabel3" destination="Qd9-Ci-gbq" id="fGe-G2-RTZ"/>
+                <outlet property="currentPeriodLabel4" destination="cwo-6Z-Feu" id="vk2-qZ-qAw"/>
+                <outlet property="prizeLabel" destination="zmM-eh-aKI" id="0Va-sC-9Hb"/>
+                <outlet property="prizeLabel1" destination="E3H-c8-MTJ" id="P43-fi-cRY"/>
+                <outlet property="prizeLabel2" destination="MLr-WI-rGJ" id="4Q9-iA-q6S"/>
+                <outlet property="prizeLabel3" destination="xJ8-5n-tmY" id="A9A-bS-5c4"/>
+                <outlet property="prizeLabel4" destination="TuZ-Tc-LbF" id="5rl-jt-hNh"/>
                 <outlet property="scrollView" destination="fkK-xn-42X" id="Vty-S4-2tX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="winnersNumLabel" destination="6ai-wG-KJX" id="F10-IW-9Dl"/>
+                <outlet property="winnersNumLabel1" destination="25K-48-pLg" id="dDg-Lh-Gqq"/>
+                <outlet property="winnersNumLabel2" destination="sAQ-sa-WWl" id="4wP-iq-Rx2"/>
+                <outlet property="winnersNumLabel3" destination="e3u-6S-Fa0" id="JuC-me-23U"/>
+                <outlet property="winnersNumLabel4" destination="f4l-8O-atS" id="TwP-UB-80n"/>
+                <outlet property="winningNumbLabel" destination="QsT-pK-2NA" id="wSF-HZ-fDG"/>
+                <outlet property="winningNumbLabel1" destination="4Fn-eu-a8s" id="dNg-0Q-hy3"/>
+                <outlet property="winningNumbLabel2" destination="0km-Oa-2sd" id="iJ9-C2-nu3"/>
+                <outlet property="winningNumbLabel3" destination="o9M-lf-4bz" id="Sg1-MM-0qW"/>
+                <outlet property="winningNumbLabel4" destination="deP-O5-22v" id="kTG-EO-NzI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -697,6 +724,9 @@
                                             <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="CheckMore:" destination="-1" eventType="touchUpInside" id="bme-eL-rMU"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

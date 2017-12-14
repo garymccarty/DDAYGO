@@ -156,7 +156,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger count = 0;
+//    NSInteger count = 0;
 //    if (indexPath.row == 0) {
 //        count = 59;
 //    } else {
@@ -173,7 +173,7 @@
     if (indexPath.row == 1) {
         return 26 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 80;
     }else{
-        return 150;
+        return 65;
     }
 
 }

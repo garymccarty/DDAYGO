@@ -27,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel3;
 @property (weak, nonatomic) IBOutlet UILabel * winningNumbLabel4;
 
-//本期各奖项金额
+//奖项金额
 @property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel;
 @property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel1;
 @property (weak, nonatomic) IBOutlet UILabel * currentPeriodLabel2;
@@ -47,8 +47,10 @@
 @property (weak, nonatomic) IBOutlet UILabel * bountyLabel2;
 @property (weak, nonatomic) IBOutlet UILabel * bountyLabel3;
 @property (weak, nonatomic) IBOutlet UILabel * bountyLabel4;
-
+//
 @property (weak, nonatomic) IBOutlet UIView *bounctyView;
+// 订单号码
+@property (weak, nonatomic) IBOutlet UILabel *OrderNumberLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * prizeWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * winningNumbWidth;

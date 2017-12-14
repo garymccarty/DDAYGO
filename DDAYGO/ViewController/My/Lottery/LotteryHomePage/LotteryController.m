@@ -12,6 +12,7 @@
 #import "BetViewController.h"
 #import "ZP_HistoryVetController.h"
 #import "ZP_InstructionController.h"
+#import "ZP_CheckMoreController.h"
 @interface LotteryController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
@@ -36,30 +37,12 @@
     
     [self initUI];
     
-    // 调这里 fame就好
     
-    UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-    but.frame = CGRectMake(20, CGRectGetMaxY(_OrderNumView.frame) + 10, ZP_Width - 40, 40);
-    [but setTitle:@"xiazhu" forState:UIControlStateNormal];
-    but.backgroundColor = [UIColor redColor];
-    [self.scrollView addSubview:but];
-    
-    
-    UIButton *but2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    but2.frame = CGRectMake(20, CGRectGetMaxY(but.frame)+10, ZP_Width - 40, 40);
-    [but2 setTitle:@"--->" forState:UIControlStateNormal];
-    but2.backgroundColor = [UIColor orangeColor];
-    [self.scrollView addSubview:but2];
     
 //    [self updateBounctyViewWithBonus:614278265 Suffix:@"$"];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    // 上面的frame高度 于110> 10+ 40 + 10 +40
-//    //如果等于 就刚刚好在底部
-    self.scrollView.contentSize = CGSizeMake(ZP_Width, CGRectGetMaxY(_OrderNumView.frame)+110);
-}
+
 //- (CGSize)getStringSize:(NSString *)string FontSize:(NSInteger)fontSize Size:(CGSize)size {
 //    CGSize size1;
 //    CGSize widthSize = [string boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:fontSize]} context:nil].size;
@@ -122,6 +105,24 @@
     UIBarButtonItem * btn =[[UIBarButtonItem alloc]initWithCustomView:tools];
     self.navigationItem.rightBarButtonItem = btn;
     
+    // 调这里 fame就好
+    
+    UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
+    but.frame = CGRectMake(20, CGRectGetMaxY(_OrderNumView.frame) + 10, ZP_Width - 40, 40);
+    [but setTitle:@"下注" forState:UIControlStateNormal];
+    [but addTarget:self action:@selector(betAction) forControlEvents:UIControlEventTouchUpInside];
+    but.backgroundColor = [UIColor redColor];
+    [self.scrollView addSubview:but];
+    
+    
+    UIButton *but2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    but2.frame = CGRectMake(20, CGRectGetMaxY(but.frame)+10, ZP_Width - 40, 40);
+    [but2 setTitle:@"历史下注号码" forState:UIControlStateNormal];
+    [but2 addTarget:self action:@selector(HistoricalBetAction) forControlEvents:UIControlEventTouchUpInside];
+    but2.backgroundColor = [UIColor orangeColor];
+    [self.scrollView addSubview:but2];
+    
+    
 //    self.titleArray = @[@"奖项",@"对中奖号数",@"本期各奖项金额",@"中奖数",@"赏金金额"];
 //    self.titleLabelArray = @[self.prizeLabel,self.winningNumbLabel,self.currentPeriodLabel,self.winnersNumLabel,self.bountyLabel];
 //    self.titleWidthArray = @[self.prizeWidth,self.winningNumbWidth,self.currentPeriodWidth,self.winnersNumWidth,self.bountyWidth];
@@ -147,7 +148,22 @@
 //        tempBountyLabel.text = nil;
 //    }
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // 上面的frame高度 于110> 10+ 40 + 10 +40
+    //    //如果等于 就刚刚好在底部
+    self.scrollView.contentSize = CGSizeMake(ZP_Width, CGRectGetMaxY(_OrderNumView.frame)+110);
+}
 
+// 下注
+- (void)betAction {
+    BetViewController *viewController = [[BetViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+// 历史下注
+- (void)HistoricalBetAction {
+    
+}
 #pragma mark  更新赏金视图
 //- (void)updateBounctyViewWithBonus:(NSInteger)bonus Suffix:(NSString *)suffix {
 //    for (UIView *view in self.bounctyView.subviews) {
@@ -187,20 +203,24 @@
 
 // 说明
 - (void)Instruction {
-    BetViewController *viewController = [[BetViewController alloc] init];
-    [self.navigationController pushViewController:viewController animated:YES];
+    ZP_InstructionController * Instruction = [[ZP_InstructionController alloc]init];
+    [self.navigationController pushViewController:Instruction animated:YES];
     ZPLog(@"说明");
 }
 // 历史开奖
 -(void)HistoryLottery {
-    ZP_InstructionController * Instruction = [[ZP_InstructionController alloc]init];
-    [self.navigationController pushViewController:Instruction animated:YES];
+
     ZPLog(@"历史");
 }
 // 历史下注
 - (IBAction)History:(UIButton *)sender {
     ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
     [self.navigationController pushViewController:History animated:YES];
+}
+// 查看跟多
+- (IBAction)CheckMore:(id)sender {
+    ZP_CheckMoreController * CheckMore = [[ZP_CheckMoreController alloc]init];
+    [self.navigationController pushViewController:CheckMore animated:YES];
 }
 
 #pragma mark --tableview delegate
