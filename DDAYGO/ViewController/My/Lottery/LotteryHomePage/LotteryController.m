@@ -226,7 +226,7 @@
     ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
     [self.navigationController pushViewController:History animated:YES];
 }
-// 查看跟多
+// 查看更多
 - (IBAction)CheckMore:(id)sender {
     ZP_CheckMoreController * CheckMore = [[ZP_CheckMoreController alloc]init];
     [self.navigationController pushViewController:CheckMore animated:YES];
