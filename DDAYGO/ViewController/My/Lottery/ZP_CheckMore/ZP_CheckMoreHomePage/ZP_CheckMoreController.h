@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ZP_CheckMoreController : UIViewController
+@property (nonatomic, strong) UILabel * TitleLabel1;
+@property (nonatomic, strong) UILabel * TitleLabel2;
 
+@property (nonatomic, strong) UILabel * TitleLabel;
+@property (nonatomic, strong) UILabel * OrderNumberLabel;
 @end

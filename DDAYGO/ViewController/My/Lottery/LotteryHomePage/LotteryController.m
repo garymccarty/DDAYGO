@@ -217,7 +217,8 @@
 }
 // 历史开奖
 -(void)HistoryLottery {
-
+    ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
+    [self.navigationController pushViewController:History animated:YES];
     ZPLog(@"历史");
 }
 // 历史下注

@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nl8-jO-4Ud">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="23"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUJ-HR-VvV">
-                                <rect key="frame" x="8" y="5" width="34" height="20"/>
+                                <rect key="frame" x="8" y="3" width="34" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="gcQ-tw-F2E"/>
                                 </constraints>
@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34567890987656789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-YR-QHF">
-                                <rect key="frame" x="47" y="5" width="107.5" height="20"/>
+                                <rect key="frame" x="47" y="3" width="107.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="jPi-RI-1Vl"/>
                                 </constraints>
@@ -40,13 +40,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POs-xn-v9J">
-                                <rect key="frame" x="267" y="5" width="45" height="20"/>
+                                <rect key="frame" x="267" y="3" width="45" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="3Qb-ho-6D7"/>
                                     <constraint firstAttribute="height" constant="20" id="gR5-mb-rr1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="已领">
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="领奖">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -64,20 +64,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="6Ce-6i-Ugb"/>
-                            <constraint firstItem="LUJ-HR-VvV" firstAttribute="top" secondItem="nl8-jO-4Ud" secondAttribute="top" constant="5" id="DWN-f8-Ywn"/>
+                            <constraint firstAttribute="height" constant="23" id="6Ce-6i-Ugb"/>
+                            <constraint firstItem="LUJ-HR-VvV" firstAttribute="top" secondItem="nl8-jO-4Ud" secondAttribute="top" constant="3" id="DWN-f8-Ywn"/>
                             <constraint firstAttribute="trailing" secondItem="POs-xn-v9J" secondAttribute="trailing" constant="8" id="Mx1-53-fsY"/>
                             <constraint firstItem="LEa-YR-QHF" firstAttribute="leading" secondItem="LUJ-HR-VvV" secondAttribute="trailing" constant="5" id="ZrI-i0-nQb"/>
-                            <constraint firstItem="POs-xn-v9J" firstAttribute="top" secondItem="nl8-jO-4Ud" secondAttribute="top" constant="5" id="azb-2v-GRz"/>
-                            <constraint firstItem="LEa-YR-QHF" firstAttribute="top" secondItem="nl8-jO-4Ud" secondAttribute="top" constant="5" id="bse-tv-nIS"/>
+                            <constraint firstItem="POs-xn-v9J" firstAttribute="top" secondItem="nl8-jO-4Ud" secondAttribute="top" constant="3" id="azb-2v-GRz"/>
+                            <constraint firstItem="LEa-YR-QHF" firstAttribute="top" secondItem="nl8-jO-4Ud" secondAttribute="top" constant="3" id="bse-tv-nIS"/>
                             <constraint firstItem="LUJ-HR-VvV" firstAttribute="leading" secondItem="nl8-jO-4Ud" secondAttribute="leading" constant="8" id="eRx-jI-D5j"/>
                         </constraints>
                     </view>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ymV-G1-ZGe">
-                        <rect key="frame" x="0.0" y="30" width="320" height="40"/>
+                        <rect key="frame" x="0.0" y="24" width="320" height="46"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="liO-OA-zzJ"/>
+                            <constraint firstAttribute="height" constant="46" id="liO-OA-zzJ"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2fO-be-NyL">
                             <size key="itemSize" width="50" height="50"/>
@@ -88,7 +88,7 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ymV-G1-ZGe" firstAttribute="top" secondItem="nl8-jO-4Ud" secondAttribute="bottom" id="Hb0-v6-Xs8"/>
+                    <constraint firstItem="ymV-G1-ZGe" firstAttribute="top" secondItem="nl8-jO-4Ud" secondAttribute="bottom" constant="1" id="Hb0-v6-Xs8"/>
                     <constraint firstItem="ymV-G1-ZGe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IlB-UX-5fn"/>
                     <constraint firstItem="nl8-jO-4Ud" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Jcq-3C-ejk"/>
                     <constraint firstItem="nl8-jO-4Ud" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="P9Q-qY-sgJ"/>
@@ -101,7 +101,7 @@
                 <outlet property="OrderNumberLabel" destination="LEa-YR-QHF" id="04H-ZJ-vvc"/>
                 <outlet property="TitleView" destination="nl8-jO-4Ud" id="Txe-s2-Rw5"/>
             </connections>
-            <point key="canvasLocation" x="34" y="67.5"/>
+            <point key="canvasLocation" x="34" y="67"/>
         </tableViewCell>
     </objects>
 </document>
