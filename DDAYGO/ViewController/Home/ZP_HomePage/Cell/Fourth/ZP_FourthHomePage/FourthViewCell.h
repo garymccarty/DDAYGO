@@ -12,6 +12,8 @@
 @property (nonatomic, copy) void(^ThirdBlock)(NSInteger tag);
 @property (nonatomic, strong) UILabel * Titlelabel; //标题
 @property (nonatomic, strong) UIImageView * imageView1; // 图片1
+@property (nonatomic, strong) UIImageView * imageView2; // 图片2
+@property (nonatomic, strong) UIImageView * imageView3; // 图片3
 - (void)InformationWithDic:(NSDictionary *)dic;
 
 @end

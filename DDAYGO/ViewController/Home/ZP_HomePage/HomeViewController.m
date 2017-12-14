@@ -232,8 +232,7 @@
             cell.SecondBlock = ^(NSInteger tag){
                 DetailedController *viewController = [[DetailedController alloc] init];
 //                self.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:viewController animated:YES];
-//                self.hidesBottomBarWhenPushed = NO;
+                [self.navigationController pushViewController:viewController animated:YES];//                self.hidesBottomBarWhenPushed = NO;
             };
             [cell Second:B];
             return cell;
@@ -307,7 +306,7 @@
             return 210;
     }else
         if (indexPath.section == 4){
-            return 190;
+            return 348;
     }else
         if (indexPath.section == 5){
             return ZP_Width / 4;

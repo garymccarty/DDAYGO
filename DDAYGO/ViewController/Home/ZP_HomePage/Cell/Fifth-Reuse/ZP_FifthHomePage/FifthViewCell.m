@@ -66,6 +66,9 @@
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (self.newsData.count > 2) {
+        return self.newsData.count - 2;
+    }
     
 //    return self.newsData.count;
     return 3;
@@ -73,8 +76,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ReuseCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cells" forIndexPath:indexPath];
-    ZP_FifthModel * model = self.newsData[indexPath.row];
-    [cell cellWithdic:model];
+    if (self.newsData.count > indexPath.row + 2) {
+        ZP_FifthModel * model = self.newsData[indexPath.row + 2];
+        [cell cellWithdic:model];
+    }
     
     return cell;
 }

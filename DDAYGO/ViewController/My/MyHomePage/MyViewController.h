@@ -21,6 +21,7 @@ typedef NS_ENUM(NSUInteger, DDPopKind)
 @property (strong, nonatomic) IBOutlet UILabel * BrowseLabel; // 足迹
 
 @property (nonatomic ,assign) BOOL hasLogin;
+@property (nonatomic ,assign) BOOL hasRemind;
 @property (nonatomic ,assign) DDPopKind popKind;
 
 + (MyViewController *)sharedInstanceTool;

@@ -65,14 +65,62 @@
         make.top.equalTo(self).offset(30);
         make.left.equalTo(self).offset(0);
         make.width.mas_equalTo(100);
-        make.height.mas_equalTo(159);
+        make.height.mas_equalTo(160);
     }];
     _imageView1 = imageView1;
+    
+    //  图片2
+    UIImageView * imageView2 = [UIImageView new];
+    [self addSubview:imageView2];
+    [imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(190);
+        make.left.equalTo(self).offset(0);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(80);
+    }];
+    _imageView2 = imageView2;
+    
+    //  图片3
+    UIImageView * imageView3 = [UIImageView new];
+    [self addSubview:imageView3];
+    [imageView3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(270);
+        make.left.equalTo(self).offset(0);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(80);
+    }];
+    _imageView3 = imageView3;
 }
 - (void)InformationWithDic:(NSDictionary *)dic {
     
     _Titlelabel.text = dic[@"title"];
     _imageView1.image = [UIImage imageNamed:@"img_home_advertisemen"];
+    [self allData];
+}
+
+- (void)allData {
+    NSDictionary * dict = @{@"count":@"5",@"countrycode":@"886"};
+    [ZP_HomeTool requestSellLikeHotCakes:dict success:^(id obj) {
+        NSArray * arr = obj;
+        for (int i = 0; i < 2; i ++) {
+            NSDictionary *dic = arr[i];
+            if (i == 0) {
+                [_imageView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]]]];
+            } else {
+                [_imageView3 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]]]];
+            }
+        }
+//        for (NSDictionary *dic in arr) {
+//            model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
+//            model.productname = dic[@"productname"];
+//            model.producid = dic[@"productid"];
+//            model.PreferentialLabel = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
+//            model.TrademarkLabel = [NSString stringWithFormat:@"%@",dic[@"cp"]];
+//        }
+        // NSLog(@"%@",dic[@""]);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 /*****************************************************/
 //  定制Cell
@@ -122,7 +170,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 2;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
