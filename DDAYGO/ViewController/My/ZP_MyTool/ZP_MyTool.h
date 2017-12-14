@@ -64,5 +64,8 @@
 // 获取浏览记录、收藏的数量
 + (void)requesBrowseCollection:(NSDictionary *)BrowseCollection uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+// 获取上一期开奖号码及奖金分配信息
++ (void)getPrizeInfo:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
 @end
 

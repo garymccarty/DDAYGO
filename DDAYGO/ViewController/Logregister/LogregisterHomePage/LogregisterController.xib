@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,17 +22,17 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZG-WZ-q0v">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TZG-WZ-q0v">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_login_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ciz-WC-OaP">
-                            <rect key="frame" x="95" y="104" width="130" height="130"/>
+                            <rect key="frame" x="96" y="104" width="128" height="128"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="130" id="fbP-ZI-j3N"/>
+                                <constraint firstAttribute="width" secondItem="Ciz-WC-OaP" secondAttribute="height" multiplier="1:1" id="hRQ-O2-eAz"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nb-gI-0kd">
-                            <rect key="frame" x="16" y="326" width="288" height="40"/>
+                            <rect key="frame" x="16" y="324" width="288" height="40"/>
                             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.64544092470000003" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="n4R-zZ-gw8"/>
@@ -48,7 +50,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhN-3N-4wk">
-                            <rect key="frame" x="16" y="393" width="288" height="40"/>
+                            <rect key="frame" x="16" y="391" width="288" height="40"/>
                             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="0.64544092470000003" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="0kq-ck-HrF"/>
@@ -66,17 +68,16 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_icue" translatesAutoresizingMaskIntoConstraints="NO" id="9Jl-Hy-pY5">
-                            <rect key="frame" x="95" y="460" width="35" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="1xu-oW-1Mx"/>
-                                <constraint firstAttribute="width" constant="35" id="NVV-aV-Imn"/>
-                            </constraints>
+                            <rect key="frame" x="81.5" y="454.5" width="31" height="31"/>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICUE账户快速" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7d-Dd-0Lg">
+                            <rect key="frame" x="112.5" y="461" width="95.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYj-Ab-JMS">
-                            <rect key="frame" x="223" y="460" width="46" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="46" id="RMs-Lu-5qA"/>
-                            </constraints>
+                            <rect key="frame" x="208" y="454" width="33" height="32"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="登录">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,36 +87,24 @@
                                 <action selector="QuickloginAction:" destination="-1" eventType="touchUpInside" id="ijs-yF-S56"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ICUE账户快速" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7d-Dd-0Lg">
-                            <rect key="frame" x="133" y="460" width="101" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="101" id="Eaq-x5-gG9"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="XYj-Ab-JMS" firstAttribute="leading" secondItem="9Jl-Hy-pY5" secondAttribute="trailing" constant="93" id="2Rr-mJ-sxu"/>
-                        <constraint firstItem="Z7d-Dd-0Lg" firstAttribute="leading" secondItem="9Jl-Hy-pY5" secondAttribute="trailing" constant="3" id="FWE-rU-lL6"/>
-                        <constraint firstItem="9Jl-Hy-pY5" firstAttribute="top" secondItem="qhN-3N-4wk" secondAttribute="bottom" constant="27" id="HHG-oB-UZ1"/>
-                        <constraint firstItem="Z7d-Dd-0Lg" firstAttribute="bottom" secondItem="XYj-Ab-JMS" secondAttribute="bottom" id="HOi-Cl-b8N"/>
+                        <constraint firstItem="9Jl-Hy-pY5" firstAttribute="centerY" secondItem="Z7d-Dd-0Lg" secondAttribute="centerY" id="5QZ-wE-EW2"/>
+                        <constraint firstItem="Z7d-Dd-0Lg" firstAttribute="leading" secondItem="9Jl-Hy-pY5" secondAttribute="trailing" id="ALZ-Za-Mpo"/>
                         <constraint firstItem="Ciz-WC-OaP" firstAttribute="top" secondItem="TZG-WZ-q0v" secondAttribute="top" constant="104" id="J2P-U9-ZHn"/>
-                        <constraint firstItem="9Jl-Hy-pY5" firstAttribute="leading" secondItem="TZG-WZ-q0v" secondAttribute="leading" constant="95" id="JMd-Ie-6Nt"/>
-                        <constraint firstAttribute="bottom" secondItem="9Jl-Hy-pY5" secondAttribute="bottom" constant="73" id="P7Y-wD-t8f"/>
+                        <constraint firstItem="XYj-Ab-JMS" firstAttribute="leading" secondItem="Z7d-Dd-0Lg" secondAttribute="trailing" id="Lku-Mr-Zca"/>
+                        <constraint firstItem="Z7d-Dd-0Lg" firstAttribute="centerX" secondItem="Ciz-WC-OaP" secondAttribute="centerX" id="Rra-3b-P3l"/>
+                        <constraint firstItem="Ciz-WC-OaP" firstAttribute="width" secondItem="TZG-WZ-q0v" secondAttribute="width" multiplier="0.4" id="SRE-wE-LGO"/>
                         <constraint firstItem="0nb-gI-0kd" firstAttribute="leading" secondItem="qhN-3N-4wk" secondAttribute="leading" id="TG8-E4-KDz"/>
-                        <constraint firstItem="Z7d-Dd-0Lg" firstAttribute="top" secondItem="XYj-Ab-JMS" secondAttribute="top" id="WOB-Ra-ue4"/>
+                        <constraint firstItem="Z7d-Dd-0Lg" firstAttribute="top" secondItem="qhN-3N-4wk" secondAttribute="bottom" constant="30" id="V4d-bv-uGv"/>
                         <constraint firstItem="qhN-3N-4wk" firstAttribute="top" secondItem="0nb-gI-0kd" secondAttribute="bottom" constant="27" id="Ymk-p3-WZm"/>
                         <constraint firstItem="Ciz-WC-OaP" firstAttribute="centerX" secondItem="0nb-gI-0kd" secondAttribute="centerX" id="Yw2-BT-q5Y"/>
                         <constraint firstItem="0nb-gI-0kd" firstAttribute="trailing" secondItem="qhN-3N-4wk" secondAttribute="trailing" id="cNi-Ym-iP3"/>
                         <constraint firstItem="0nb-gI-0kd" firstAttribute="leading" secondItem="TZG-WZ-q0v" secondAttribute="leading" constant="16" id="cWx-9p-EvA"/>
-                        <constraint firstItem="9Jl-Hy-pY5" firstAttribute="top" secondItem="Z7d-Dd-0Lg" secondAttribute="top" id="fMz-8R-te6"/>
                         <constraint firstAttribute="trailing" secondItem="0nb-gI-0kd" secondAttribute="trailing" constant="16" id="fRa-Dj-Djj"/>
                         <constraint firstItem="0nb-gI-0kd" firstAttribute="top" secondItem="Ciz-WC-OaP" secondAttribute="bottom" constant="92" id="icm-uw-PQY"/>
-                        <constraint firstItem="Ciz-WC-OaP" firstAttribute="leading" secondItem="TZG-WZ-q0v" secondAttribute="leading" constant="95" id="omJ-OK-7Iu"/>
                         <constraint firstItem="Ciz-WC-OaP" firstAttribute="centerX" secondItem="TZG-WZ-q0v" secondAttribute="centerX" id="qzH-Gt-Gr2"/>
-                        <constraint firstItem="9Jl-Hy-pY5" firstAttribute="bottom" secondItem="Z7d-Dd-0Lg" secondAttribute="bottom" id="wTN-cF-LhC"/>
+                        <constraint firstItem="XYj-Ab-JMS" firstAttribute="centerY" secondItem="Z7d-Dd-0Lg" secondAttribute="centerY" id="rZ6-kx-LNg"/>
                     </constraints>
                 </scrollView>
             </subviews>
