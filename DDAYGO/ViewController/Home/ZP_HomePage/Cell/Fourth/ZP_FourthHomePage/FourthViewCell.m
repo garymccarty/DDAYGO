@@ -150,6 +150,19 @@
     
 }
 
+- (void)allData {
+    
+    NSDictionary * dict = @{@"count":@"5",@"countrycode":@"886"};
+    [ZP_HomeTool requestSellLikeHotCakes:dict success:^(id obj) {
+        ZPLog(@"%@",obj);
+        NSArray * arr = obj;
+        self.newsData = [ZP_FifthModel arrayWithArray:arr];
+        [self.tableView reloadData];
+        // NSLog(@"%@",dic[@""]);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 1;
