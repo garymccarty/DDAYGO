@@ -20,5 +20,6 @@
 @property (nonatomic, strong) UICollectionView * collectionView4;
 
 @property (nonatomic, strong) NSNumber * fatherId;
+@property (nonatomic, copy) NSString * titleString;
 
 @end

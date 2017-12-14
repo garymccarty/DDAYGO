@@ -148,7 +148,9 @@
 - (void)ClearingBut:(UIButton *)sender {
     if (_dataArrar.count == 0) {
         [SVProgressHUD showErrorWithStatus:@"请添加地址"];
-        [self.navigationController pushViewController:[[AddAddressViewController alloc] init] animated:YES];
+        AddAddressViewController *viewController = [[AddAddressViewController alloc] init];
+        [self.navigationController pushViewController:viewController animated:YES];
+        viewController.contentDic = @{@"asd":@(YES)};
     } else {
         [self ConfirmData];
     }
@@ -208,7 +210,9 @@
         NSArray * modelArr = [ZP_ComfirmModel arrayWithArray:dic[@"receipts"]];
         if (modelArr.count == 0) {
             [SVProgressHUD showErrorWithStatus:@"请添加地址"];
-            [self.navigationController pushViewController:[[AddAddressViewController alloc] init] animated:YES];
+            AddAddressViewController *viewController = [[AddAddressViewController alloc] init];
+            [self.navigationController pushViewController:viewController animated:YES];
+            viewController.contentDic = @{@"asd":@(YES)};
         } else {
             [modelArr enumerateObjectsUsingBlock:^(ZP_ComfirmModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([model.isdefault isEqualToNumber:@1]) {

@@ -106,7 +106,9 @@
         [cell.contentBtn removeTarget:self action:@selector(selectLeftCell:) forControlEvents:UIControlEventTouchUpInside];
         [cell.contentBtn addTarget:self action:@selector(selectLeftCell:) forControlEvents:UIControlEventTouchUpInside];
         [cell updateSelectState:indexPath.row == self.leftSelectRow];
-        
+        if (indexPath.row == self.leftSelectRow) {
+            _titleStr = cell.contentBtn.titleLabel.text;
+        }
         return cell;
         
     } else {
@@ -133,7 +135,7 @@
         CPViewController * CVPView = [[CPViewController alloc]init];
         ZP_RightModel * model = self.rightData[@(self.leftSelectRow)][indexPath.row];
         CVPView.fatherId = model.fatherid;
-        CVPView.title = _titleStr;
+        CVPView.titleString = _titleStr;
         [self.rightTableView deselectRowAtIndexPath:indexPath animated:YES];
         self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:CVPView animated:YES];

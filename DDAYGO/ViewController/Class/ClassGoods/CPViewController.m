@@ -53,6 +53,7 @@
 - (void)viewWillAppear:(BOOL)animated {
 //    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    self.title = _titleString;
     [self allData];
 }
 //- (void)viewWillDisappear:(BOOL)animated {
