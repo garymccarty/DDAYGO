@@ -42,7 +42,7 @@
             self.hidesBottomBarWhenPushed = NO;
         }
     } else {
-//                [self allData];
+//        [self allData];
     }
 }
 

@@ -42,10 +42,13 @@
     
     [self autoLogin:^(id obj) {
         if (!DD_HASLOGIN) {
-            LogregisterController *viewcontroller = [[LogregisterController alloc] init];
-            self.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:viewcontroller animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
+            if (![MyViewController sharedInstanceTool].hasRemind) {
+                [MyViewController sharedInstanceTool].hasRemind = YES;
+                LogregisterController *viewcontroller = [[LogregisterController alloc] init];
+                self.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:viewcontroller animated:YES];
+                self.hidesBottomBarWhenPushed = NO;
+            }
         } else {
             [self updateUserInfo];
         }
