@@ -25,6 +25,8 @@
                 <outlet property="currentPeriodLabel2" destination="ZZi-S0-0LM" id="Scp-oH-Ax5"/>
                 <outlet property="currentPeriodLabel3" destination="Qd9-Ci-gbq" id="fGe-G2-RTZ"/>
                 <outlet property="currentPeriodLabel4" destination="cwo-6Z-Feu" id="vk2-qZ-qAw"/>
+                <outlet property="dateLabel" destination="OeE-E4-aVf" id="FN4-WS-AkV"/>
+                <outlet property="periodsLabel" destination="4La-cI-cea" id="5b3-Br-YDA"/>
                 <outlet property="prizeLabel" destination="zmM-eh-aKI" id="0Va-sC-9Hb"/>
                 <outlet property="prizeLabel1" destination="E3H-c8-MTJ" id="P43-fi-cRY"/>
                 <outlet property="prizeLabel2" destination="MLr-WI-rGJ" id="4Q9-iA-q6S"/>
@@ -354,8 +356,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGl-XE-fCc">
-                                            <rect key="frame" x="242" y="31" width="60" height="43"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZi-S0-0LM">
+                                            <rect key="frame" x="112" y="77" width="60.5" height="45"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -366,8 +368,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZi-S0-0LM">
-                                            <rect key="frame" x="112" y="77" width="60.5" height="45"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGl-XE-fCc">
+                                            <rect key="frame" x="242" y="31" width="60" height="43"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -596,7 +598,6 @@
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tp-a5-nU6">
                                     <rect key="frame" x="8" y="308" width="304" height="25"/>
-                                    <color key="backgroundColor" red="0.98431372549999996" green="0.56078431370000004" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="8l9-0P-dSl"/>
                                     </constraints>

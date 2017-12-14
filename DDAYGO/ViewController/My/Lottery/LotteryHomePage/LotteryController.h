@@ -52,12 +52,9 @@
 // 订单号码
 @property (weak, nonatomic) IBOutlet UILabel *OrderNumberLabel;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint * prizeWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint * winningNumbWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint * currentPeriodWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint * winnersNumWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint * bountyWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint * onScrollViewWidth;
+@property (weak, nonatomic) IBOutlet UILabel *periodsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
 
 
 @end

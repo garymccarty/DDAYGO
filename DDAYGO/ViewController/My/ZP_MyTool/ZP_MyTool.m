@@ -194,6 +194,20 @@
         failure(error);
     }];
 }
+
+// 获取上一期开奖号码及奖金分配信息
++ (void)getPrizeInfo:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
+    if (DD_TOKEN) {
+        [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getlastlotterywinrecord?token=%@",URLAPI,DD_TOKEN] parameters:nil success:^(id responseObject) {
+            success(responseObject);
+            ZPLog(@"%@",responseObject);
+        } failure:^(NSError *error) {
+            failure(error);
+        }];
+    } else {
+        [SVProgressHUD showErrorWithStatus:@"请先登录账号"];
+    }
+}
 //http://www.ddaygo.com/api/Test/gethistorycount?token=4d9b2a599b3f50ebbdd150b07b5214d7
 
 
