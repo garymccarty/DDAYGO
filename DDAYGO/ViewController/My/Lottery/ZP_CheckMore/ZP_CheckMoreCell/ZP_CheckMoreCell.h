@@ -14,4 +14,9 @@
 @property (weak, nonatomic) IBOutlet UICollectionView * CheckMoreCollectionView;
 @property (nonatomic, assign) NSInteger wirteBetCount;
 @property (nonatomic, assign) NSInteger redBetCount;
+
+
+
+
+
 @end
