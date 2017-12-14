@@ -306,7 +306,7 @@
             return 210;
     }else
         if (indexPath.section == 4){
-            return 348;
+            return 190;
     }else
         if (indexPath.section == 5){
             return ZP_Width / 4;

@@ -52,7 +52,7 @@
     view0.backgroundColor = ZP_Graybackground;
     [self.contentView addSubview:view0];
     [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(29.5);
+        make.top.equalTo(self).offset(29);
         make.left.equalTo(self).offset(0);
         make.width.mas_equalTo(ZP_Width);
         make.height.mas_equalTo(1);
@@ -65,7 +65,7 @@
         make.top.equalTo(self).offset(30);
         make.left.equalTo(self).offset(0);
         make.width.mas_equalTo(100);
-        make.height.mas_equalTo(160);
+        make.height.mas_equalTo(80);
     }];
     _imageView1 = imageView1;
     
@@ -73,23 +73,12 @@
     UIImageView * imageView2 = [UIImageView new];
     [self addSubview:imageView2];
     [imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(190);
+        make.top.equalTo(self).offset(110);
         make.left.equalTo(self).offset(0);
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(80);
     }];
     _imageView2 = imageView2;
-    
-    //  图片3
-    UIImageView * imageView3 = [UIImageView new];
-    [self addSubview:imageView3];
-    [imageView3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(270);
-        make.left.equalTo(self).offset(0);
-        make.width.mas_equalTo(100);
-        make.height.mas_equalTo(80);
-    }];
-    _imageView3 = imageView3;
 }
 - (void)InformationWithDic:(NSDictionary *)dic {
     
@@ -105,9 +94,9 @@
         for (int i = 0; i < 2; i ++) {
             NSDictionary *dic = arr[i];
             if (i == 0) {
-                [_imageView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]]]];
+                [_imageView1 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]]]];
             } else {
-                [_imageView3 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]]]];
+                [_imageView2 sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]]]];
             }
         }
 //        for (NSDictionary *dic in arr) {
@@ -170,7 +159,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 4;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
