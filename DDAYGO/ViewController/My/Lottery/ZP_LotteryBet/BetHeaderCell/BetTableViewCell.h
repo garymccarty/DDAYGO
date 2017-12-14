@@ -10,6 +10,7 @@
 #import "BetHeaderView.h"
 
 @interface BetTableViewCell : UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UIView *titleView;
 @property (weak, nonatomic) IBOutlet BetHeaderView * betHeaderView;
 @property (weak, nonatomic) IBOutlet UICollectionView *collrctionView;
 @property (nonatomic ,assign) NSInteger wirteBetCount;

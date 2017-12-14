@@ -24,7 +24,9 @@
 @property (strong ,nonatomic) NSArray *currentPeriodArray;
 @property (strong ,nonatomic) NSArray *winnersNumArray;
 @property (strong ,nonatomic) NSArray *bountyArray;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet UIView *OrderNumView;
 @end
 
 @implementation LotteryController
@@ -34,9 +36,30 @@
     
     [self initUI];
     
+    // 调这里 fame就好
+    
+    UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
+    but.frame = CGRectMake(20, CGRectGetMaxY(_OrderNumView.frame) + 10, ZP_Width - 40, 40);
+    [but setTitle:@"xiazhu" forState:UIControlStateNormal];
+    but.backgroundColor = [UIColor redColor];
+    [self.scrollView addSubview:but];
+    
+    
+    UIButton *but2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    but2.frame = CGRectMake(20, CGRectGetMaxY(but.frame)+10, ZP_Width - 40, 40);
+    [but2 setTitle:@"--->" forState:UIControlStateNormal];
+    but2.backgroundColor = [UIColor orangeColor];
+    [self.scrollView addSubview:but2];
+    
 //    [self updateBounctyViewWithBonus:614278265 Suffix:@"$"];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // 上面的frame高度 于110> 10+ 40 + 10 +40
+//    //如果等于 就刚刚好在底部
+    self.scrollView.contentSize = CGSizeMake(ZP_Width, CGRectGetMaxY(_OrderNumView.frame)+110);
+}
 //- (CGSize)getStringSize:(NSString *)string FontSize:(NSInteger)fontSize Size:(CGSize)size {
 //    CGSize size1;
 //    CGSize widthSize = [string boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName :[UIFont systemFontOfSize:fontSize]} context:nil].size;

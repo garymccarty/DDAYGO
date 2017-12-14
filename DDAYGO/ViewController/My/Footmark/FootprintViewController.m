@@ -39,19 +39,18 @@
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requtsFootprint:dic success:^(id obj) {
-        
         self.newsData = [ZP_FootprintModel arrayWithArray:obj[@"historyslist"]];
         if (self.newsData.count < 1) {
-        UIImageView * image = [UIImageView new];
-        image.image = [UIImage imageNamed:@"icon_fail"];
-        [self.view addSubview:image];
-        [image mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(self.view).offset(150);
-            make.top.equalTo(self.view).offset(150);
-            make.width.mas_offset(50);
-            make.height.mas_equalTo(50);
-        }];
-    }
+            UIImageView * image = [UIImageView new];
+            image.image = [UIImage imageNamed:@"icon_fail"];
+            [self.view addSubview:image];
+            [image mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
+                make.top.equalTo(self.view).offset(20);
+                make.width.mas_offset(50);
+                make.height.mas_equalTo(50);
+            }];
+        }
         [self.collectionView reloadData];
     } failure:^(NSError * error) {
         ZPLog(@"error");

@@ -33,6 +33,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self allData];
+    
 }
 
 - (void)addAddress {
@@ -49,6 +50,17 @@
     
     ZPLog(@"%@",dic);
     [ZP_MyTool requesAddress:dic success:^(id obj) {
+        if (self.newsData.count < 1) {
+            UIImageView * image = [UIImageView new];
+            image.image = [UIImage imageNamed:@"icon_fail"];
+            [self.view addSubview:image];
+            [image mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
+                make.top.equalTo(self.view).offset(20);
+                make.width.mas_offset(50);
+                make.height.mas_equalTo(50);
+            }];
+        }
         NSArray * arr = obj;
         self.newsData = [ZP_FrontPageReceivingAddressModel arrayWithArray:arr];
         [self.tableView reloadData];
