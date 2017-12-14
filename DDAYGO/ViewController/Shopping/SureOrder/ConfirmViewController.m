@@ -92,7 +92,7 @@
     UIView * bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, ZP_height - TabbarHeight - NavBarHeight , ZP_Width, 50)];
     bottomView.backgroundColor = ZP_textWite;
     [self.view addSubview:bottomView];
-    //  总金额
+//      总金额
     ZP_GeneralLabel * PriceLabel = [ZP_GeneralLabel initWithtextLabel:_PriceLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     PriceLabel.text = @"0";
     [bottomView addSubview:PriceLabel];
@@ -102,7 +102,7 @@
     }];
     _PriceLabel = PriceLabel;
     
-    //  合计
+//      合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     StatisticsLabel.text = NSLocalizedString(@"合计RMB:", nil);
     [bottomView addSubview:StatisticsLabel];
@@ -115,7 +115,7 @@
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        _PriceLabel.text = [NSString stringWithFormat:@"%.2f", [_PriceStr floatValue]];
 //    });
-    //  提交订单
+//      提交订单
     UIButton * Clearing = [UIButton new];
     Clearing.backgroundColor = ZP_pricebackground;
     [Clearing setTitle:NSLocalizedString(@"提交订单", nil) forState:UIControlStateNormal];

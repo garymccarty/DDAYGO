@@ -50,18 +50,23 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     if (!DD_HASLOGIN) {
-        LogregisterController *viewcontroller = [[LogregisterController alloc] init];
-        self.hidesBottomBarWhenPushed = YES;
+        LogregisterController * viewcontroller = [[LogregisterController alloc] init];
+//        self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:viewcontroller animated:YES];
         self.hidesBottomBarWhenPushed = NO;
+
+        return;
     } else {
+//        self.hidesBottomBarWhenPushed = YES;
         [self allData];
+//        self.hidesBottomBarWhenPushed = NO;
     }
 }
 
 - (void)allData {
+    
     NSLog(@"token : %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]);
     [ZP_shoopingTool requesshoppingData:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] success:^(id obj) {
         ZPLog(@"%@",obj);
@@ -120,6 +125,7 @@
 }
 
 - (void)initUI {
+    
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 10, ZP_Width, ZP_height-TabbarHeight -50) style:UITableViewStylePlain];
     self.tableView.backgroundColor = ZP_Graybackground;
     self.tableView.delegate = self;
@@ -127,14 +133,14 @@
     self.tableView.separatorStyle = NO;
     [self.view addSubview:self.tableView];
     
-    //    注册
+//        注册
     [self.tableView registerClass:[ShoppingCell class] forCellReuseIdentifier:@"shoppingCell"];
     UIView * bottomView = [UIView new];
     bottomView.backgroundColor = ZP_textWite;
     bottomView.frame = CGRectMake(0, ZP_height - TabbarHeight - 50 - NavBarHeight, ZP_Width, 50);
     [self.view addSubview:bottomView];
     
-    //   全选按钮
+//       全选按钮
     self.AllButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.AllButton.layer.masksToBounds = YES;
     self.AllButton.layer.cornerRadius = self.AllButton.frame.size.height/2;
@@ -155,7 +161,7 @@
         make.height.mas_offset(20);
     }];
     
-    //    总金额
+//        总金额
     UILabel * PriceLabel = [UILabel new];
     PriceLabel.textAlignment = NSTextAlignmentLeft;
     PriceLabel.textColor = ZP_TypefaceColor;
@@ -168,7 +174,7 @@
     }];
     _PriceLabel = PriceLabel;
     
-    //    合计
+//        合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     //    StatisticsLabel.textAlignment = NSTextAlignmentLeft;
     StatisticsLabel.text = NSLocalizedString(@"TotalRMB:", nil);
@@ -180,7 +186,7 @@
     }];
     _StatisticsLabel = StatisticsLabel;
     
-    //   结算按钮
+//       结算按钮
     UIButton * ClearingBut = [UIButton new];
     ClearingBut.backgroundColor = ZP_pricebackground;
     [ClearingBut setTitle:NSLocalizedString(@"Clearing(0)", nil) forState:UIControlStateNormal];
@@ -254,6 +260,7 @@
     
     [self updateDataa];
 }
+
 - (void)updateData {
 //   更新选中数量
     NSInteger count = 0;
@@ -335,6 +342,7 @@
                 }
             }
         }else{
+            
             EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
             ZP_CartsModel *model = dataArray[i];
             if (cell.button.selected ) {
@@ -355,7 +363,6 @@
             }
         }
         
-        
     }
     
     if (count == dataArray.count) {
@@ -367,11 +374,12 @@
         self.Shopchoosebuttom.selected = NO;
         
     }
-    //   更新合计数据
+//       更新合计数据
     self.PriceLabel.text = [@(data) stringValue];
     [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
     allNum = dataCount;
 }
+
 #pragma mark - 结算
 //  结算按钮
 - (void)ClearingBut:(UIButton *)sender {
@@ -460,8 +468,6 @@
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewCellEditingStyleDelete;
 }
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     

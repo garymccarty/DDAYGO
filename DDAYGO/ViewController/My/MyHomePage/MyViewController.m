@@ -285,11 +285,11 @@
 }
 
 // 彩票
-//- (IBAction)CaipiaoAction:(id)sender {
-//    LotteryController * Lottery = [[LotteryController alloc]init];
-//    [self.navigationController pushViewController:Lottery animated:YES];
-//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil]; // 隐藏返回按钮上的文字
-//    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-//}
+- (IBAction)CaipiaoAction:(id)sender {
+    LotteryController * Lottery = [[LotteryController alloc]init];
+    [self.navigationController pushViewController:Lottery animated:YES];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil]; // 隐藏返回按钮上的文字
+    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
+}
 
 @end

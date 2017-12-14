@@ -53,6 +53,7 @@
     
     NSDictionary * dict = @{@"count":@"5",@"countrycode":@"886"};
     [ZP_HomeTool requestSellLikeHotCakes:dict success:^(id obj) {
+        ZPLog(@"%@",obj);
         NSArray * arr = obj;
         self.newsData = [ZP_FifthModel arrayWithArray:arr];
         [self.bottomCV reloadData];
@@ -66,7 +67,8 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.newsData.count;
+//    return self.newsData.count;
+    return 3;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -39,7 +39,7 @@
         [self.navigationController pushViewController:viewcontroller animated:YES];
         self.hidesBottomBarWhenPushed = NO;
     } else {
-        //        [self allData];
+//                [self allData];
     }
 }
 

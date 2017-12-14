@@ -8,6 +8,7 @@
 
 #import "CustomCell.h"
 #import "PrefixHeader.pch"
+#import "ZP_FifthModel.h"
 @implementation CustomCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -117,15 +118,22 @@
         make.height.mas_equalTo(1);
     }];
 }
-
-- (void)InformationWithDic:(NSDictionary *)dic {
-    
-    _imageView1.image = [UIImage imageNamed:@"Shopping2"];
-    _introduceLabel.text = dic[@"Titlelabel"];
-    _PreferentialLabel.text = dic[@"Preferentia"];
-    _PriceLabel.text = dic[@"Price"];
+- (void)cellWithdic:(ZP_FifthModel *)model {
+    [_imageView1 sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
+    _introduceLabel.text = model.productname;
+    _introduceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.PreferentialLabel]; // 优惠价格
+    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:"];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
-    _TrademarkLabel.text = dic[@"Trademark"];
+    _TrademarkLabel.text = model.TrademarkLabel;
 }
+//- (void)InformationWithDic:(NSDictionary *)dic {
+//
+//    _imageView1.image = [UIImage imageNamed:@"Shopping2"];
+//    _introduceLabel.text = dic[@"Titlelabel"];
+//    _PreferentialLabel.text = dic[@"Preferentia"];
+//    _PriceLabel.text = dic[@"Price"];
+//    _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
+//    _TrademarkLabel.text = dic[@"Trademark"];
+//}
 
 @end

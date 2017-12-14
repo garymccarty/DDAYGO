@@ -9,6 +9,8 @@
 #import "FourthViewCell.h"
 #import "PrefixHeader.pch"
 #import "CustomCell.h"
+#import "ZP_HomeTool.h"
+#import "ZP_FifthModel.h"
 //#import "CustomCell-B.h"
 @interface FourthViewCell ()<UITableViewDelegate,UITableViewDataSource> {
     
@@ -16,7 +18,7 @@
 }
 
 @property (nonatomic, strong) UITableView * tableView;
-
+@property (nonatomic, strong)NSMutableArray * newsData;
 @end
 @implementation FourthViewCell
 
@@ -92,6 +94,7 @@
     }];
     
 }
+
 //  注册
 - (void)Registration {
     
@@ -99,6 +102,19 @@
     
 }
 
+- (void)allData {
+    
+    NSDictionary * dict = @{@"count":@"5",@"countrycode":@"886"};
+    [ZP_HomeTool requestSellLikeHotCakes:dict success:^(id obj) {
+        ZPLog(@"%@",obj);
+        NSArray * arr = obj;
+        self.newsData = [ZP_FifthModel arrayWithArray:arr];
+        [self.tableView reloadData];
+        // NSLog(@"%@",dic[@""]);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 1;
@@ -113,8 +129,11 @@
 
         CustomCell * cell = [tableView dequeueReusableCellWithIdentifier:@"customCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
-        NSDictionary * dic = CustomAArray[indexPath.row];
-        [cell InformationWithDic:dic];
+//        NSDictionary * dic = CustomAArray[indexPath.row];
+    ZP_FifthModel * model = self.newsData[indexPath.row];
+    
+//        [cell InformationWithDic:dic];
+    [cell cellWithdic:model];
         return cell;
     
    }

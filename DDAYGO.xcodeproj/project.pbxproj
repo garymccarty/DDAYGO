@@ -2724,6 +2724,7 @@
 			isa = PBXGroup;
 			children = (
 				C45F23451FA0809000F5DB41 /* ZP_FourthHomePage */,
+				C45F234D1FA087A600F5DB41 /* ZP_FourthModel */,
 				C47212B51FB1A5DC0055578E /* CustomCell */,
 			);
 			path = Fourth;
@@ -2762,7 +2763,6 @@
 			children = (
 				C45F23461FA0809000F5DB41 /* FourthViewCell.h */,
 				C45F23471FA0809000F5DB41 /* FourthViewCell.m */,
-				C45F234D1FA087A600F5DB41 /* ZP_FourthModel */,
 			);
 			path = ZP_FourthHomePage;
 			sourceTree = "<group>";

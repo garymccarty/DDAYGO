@@ -46,10 +46,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    [self allData];
+    
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
 }
-
+// 生命周期
+- (void)viewWillAppear:(BOOL)animated {
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
+    [self allData];
+}
 //- (void)viewWillDisappear:(BOOL)animated {
 //    [super viewWillDisappear:animated];
 //    if ([self.navigationController.viewControllers.lastObject isKindOfClass:[ClassificationViewController class]]) {
@@ -210,6 +215,17 @@
     dic[@"page"] = @"1";
     dic[@"pagesize"] = @"10";
     [ZP_ClassViewTool requMerchandise:dic WithIndex:tag success:^(id obj) {
+        if (self.newsData.count < 1) {
+            UIImageView * image = [UIImageView new];
+            image.image = [UIImage imageNamed:@"icon_fail"];
+            [self.view addSubview:image];
+            [image mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
+                make.top.equalTo(self.view).offset(45);
+                make.width.mas_offset(50);
+                make.height.mas_equalTo(50);
+            }];
+        }
 //        NSLog(@"obj = %@",obj);
         NSDictionary * dict = obj;
         self.dicts = dict[@"datalist"];
