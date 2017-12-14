@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 @interface LotteryController : UIViewController 
-//@property (nonatomic, strong) UILabel * TitleLabel;  //标题
-//@property (nonatomic, strong) UILabel * NumberingLabel; // 编号
-//@property (nonatomic, strong) UILabel * DatesLabel; // 日期
+@property (nonatomic, strong) UIButton * Pickbuttom;  //领取按钮
+@property (nonatomic, strong) UILabel * NumberingLabel; // 编号
+@property (nonatomic, strong) UILabel * TitleLabel; // 标题
 @property (weak, nonatomic) IBOutlet UIScrollView * zhongjiangScrollView;    //中间滚动图
 
 //奖项

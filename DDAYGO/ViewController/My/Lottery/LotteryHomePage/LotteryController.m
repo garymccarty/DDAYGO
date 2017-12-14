@@ -172,6 +172,63 @@
 - (void)HistoricalBetAction {
     
 }
+
+// 表头
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *myView = [[UIView alloc]init];
+    self.tableView.tableHeaderView = myView; // 表头跟着cell一起滚动
+    [myView setBackgroundColor:[UIColor whiteColor]];
+    
+    //  领取按钮
+    UIButton * Pickbuttom = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [Pickbuttom setImage:[UIImage imageNamed:@"ic_Shopping_Choice_normal"] forState:UIControlStateNormal];
+    [Pickbuttom setTitle:@"领取" forState:UIControlStateNormal];
+    self.Pickbuttom.layer.masksToBounds = YES;
+    self.Pickbuttom.layer.cornerRadius = self.Pickbuttom.frame.size.height/2;
+    self.Pickbuttom.layer.borderColor = [UIColor clearColor].CGColor;
+    self.Pickbuttom.layer.borderWidth = 1;
+    [self.Pickbuttom addTarget:self action:@selector(Pickbuttom) forControlEvents:UIControlEventTouchUpInside];
+    [myView addSubview:self.Pickbuttom];
+    [self.Pickbuttom mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(myView).offset(5);
+        make.top.equalTo(myView).offset(10);
+    }];
+    
+    //  标题
+    ZP_GeneralLabel * TitleLabel = [ZP_GeneralLabel initWithtextLabel:_TitleLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    TitleLabel.text = @"订单号";
+    [myView addSubview:TitleLabel];
+    [TitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(myView).offset(8);
+        make.top.equalTo(myView).offset(15);
+        make.height.mas_offset(15);
+//        make.width.mas_offset(80);
+    }];
+    _TitleLabel = TitleLabel;
+    //  横线
+//    UIView * view0 = [UIView new];
+//    view0.backgroundColor = ZP_Graybackground;
+//    [myView addSubview:view0];
+//    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(myView).offset(5);  // 左
+//        make.right.equalTo(myView).offset(ZP_Width); // 长
+//        make.bottom.equalTo(myView).offset(- 1); // 下
+//        make.height.mas_equalTo(1); // 高
+//    }];
+    return myView;
+}
+
+// 领奖按钮点击事件
+-(void)Pickbuttom:(UIButton *)sender {
+    
+    ZPLog(@"43");
+}
+
+//  设置表头高度
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return 40;
+}
 #pragma mark  更新赏金视图
 - (void)updateBounctyViewWithBonus:(NSInteger)bonus Suffix:(NSString *)suffix {
     for (UIView *view in self.bounctyView.subviews) {
