@@ -50,14 +50,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    if (!DD_HASLOGIN) {
-        LogregisterController * viewcontroller = [[LogregisterController alloc] init];
-//        self.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:viewcontroller animated:YES];
-        self.hidesBottomBarWhenPushed = NO;
-
-        return;
+        if (![MyViewController sharedInstanceTool].hasRemind) {
+            [MyViewController sharedInstanceTool].hasRemind = YES;
+            LogregisterController *viewcontroller = [[LogregisterController alloc] init];
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:viewcontroller animated:YES];
+            self.hidesBottomBarWhenPushed = NO;
     } else {
 //        self.hidesBottomBarWhenPushed = YES;
         [self allData];
