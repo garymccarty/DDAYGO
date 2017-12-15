@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.wirteBetCount = 6;
+    self.wirteBetCount = 5;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     static NSString * DetailsSistoryAwardID = @"ZP_DetailsSistoryAwardCell";

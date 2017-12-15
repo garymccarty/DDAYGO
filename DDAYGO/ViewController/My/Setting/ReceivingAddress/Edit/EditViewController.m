@@ -8,8 +8,9 @@
 
 #import "EditViewController.h"
 #import "PrefixHeader.pch"
+#import "ZP_MyTool.h"
 @interface EditViewController ()
-
+@property (strong, nonatomic) IBOutlet UIButton * acquiescence;
 @end
 
 @implementation EditViewController
@@ -29,8 +30,37 @@
     NSLog(@"保存");
     [self allData];
 }
+//  数据
 - (void)allData {
-    ZPLog(@"数据");
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"adsid"] = @"1";
+    dic[@"name"] = _ContactpersonTextField.text;
+    dic[@"phone"] = _ContactnumberTextField.text;
+    dic[@"cell"] = @"123456789";
+    dic[@"zipcode"] = _ZipcodeaddressTextField.text;
+    dic[@"address"] = _ReceivingaddressTextField.text;
+    dic[@"isdefault"] = [NSNumber numberWithBool: _acquiescence.selected];
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    ZPLog(@"%@",dic);
+    [ZP_MyTool requesnewAaddress:dic success:^(id obj) {
+        NSDictionary * dic = obj;
+        ZPLog(@"%@",obj);
+        if ([dic[@"result"] isEqualToString:@"ok"]) {
+            ZPLog(@"加入成功");
+            [SVProgressHUD showSuccessWithStatus:@"添加成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else {
+            if ([dic[@"result"] isEqualToString:@"add_up_to_ten"]) {
+                [SVProgressHUD showInfoWithStatus:@"添加失败，最多只能添加10天哟"];
+            }else {
+                if ([dic[@"result"] isEqualToString:@"sys_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"服务器连接至火星"];
+                }
+            }
+        }
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
 }
 // 键盘触摸
 - (void)touchesBegan {

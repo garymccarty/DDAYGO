@@ -8,20 +8,20 @@
 
 #import "ZP_HistoryBetCell.h"
 #import "ZP_HistoryBetCollectionCell.h"
-#import "ZP_HistoryBetView.h"
+//#import "ZP_HistoryBetView.h"
 @implementation ZP_HistoryBetCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.wirteBetCount = 6;
+    self.wirteBetCount = 5;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     static NSString * collectionID = @"ZP_HistoryBetCollectionCell";
     [self.collectionView registerNib:[UINib nibWithNibName:collectionID bundle:nil] forCellWithReuseIdentifier:collectionID];
-    ZP_HistoryBetView * BetView = [[NSBundle mainBundle] loadNibNamed:@"ZP_HistoryBetView" owner:self options:nil].lastObject;
-    BetView.frame = CGRectMake(0, 0, self.HistoryBetView.frame.size.width, self.HistoryBetView.frame.size.height);
-    [self.HistoryBetView addSubview:BetView];
+//    ZP_HistoryBetView * BetView = [[NSBundle mainBundle] loadNibNamed:@"ZP_HistoryBetView" owner:self options:nil].lastObject;
+//    BetView.frame = CGRectMake(0, 0, self.HistoryBetView.frame.size.width, self.HistoryBetView.frame.size.height);
+//    [self.HistoryBetView addSubview:BetView];
     
 }
 

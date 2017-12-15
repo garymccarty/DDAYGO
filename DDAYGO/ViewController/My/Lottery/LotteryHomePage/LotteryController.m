@@ -14,9 +14,12 @@
 #import "ZP_InstructionController.h"
 #import "ZP_CheckMoreController.h"
 #import "ZP_MyTool.h"
-@interface LotteryController () <UITableViewDelegate, UITableViewDataSource>
+#import "ZP_LotteryCollectionViewCell.h"
+#import "ZP_LotterModel.h"
+@interface LotteryController ()
+///<UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UITableView * tableView;
+//@property (strong, nonatomic) IBOutlet UITableView * tableView;
 @property (strong ,nonatomic) NSArray *titleArray;
 @property (strong ,nonatomic) NSArray *titleLabelArray;
 @property (strong ,nonatomic) NSArray *titleWidthArray;
@@ -30,7 +33,7 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 
-@property (weak, nonatomic) IBOutlet UIView *OrderNumView;
+@property (weak, nonatomic) IBOutlet UIView * OrderNumView;
 @end
 
 @implementation LotteryController
@@ -43,7 +46,23 @@
 }
 
 - (void)getData {
+
     [ZP_MyTool getPrizeInfo:^(id obj) {
+        //这个是一次的数据
+        ZP_LotterModel * model = [ZP_LotterModel mj_objectWithKeyValues:obj];
+        
+        NSLog(@"dic %@",model.lottery);
+        
+        //下面一个数据 直接用
+        lotteryModel *model2 = [lotteryModel mj_objectWithKeyValues:model.lottery];
+        NSLog(@"m2 %@",model2.createtime);
+        // lottoerwinmodel 的数据
+        NSArray *arr = [lotterywinModel mj_objectArrayWithKeyValuesArray:model.lotterywin];
+        
+        //如你想取第一个的数据
+        lotterywinModel *model3 = arr[0];
+        NSLog(@"m3 = %@",model3.state);
+        
         self.prizeDic = obj;
         [self updateData];
     } failure:^(NSError *error) {
@@ -60,10 +79,10 @@
     NSArray *prizeArray = self.prizeDic[@"lotterywin"];
     for (int i = 0; i < prizeArray.count - 1; i ++) {
         NSDictionary *tempDic = prizeArray[i];
-        UILabel *tempWinningNumbLabel = self.winningNumbArray[i];
-        UILabel *tempCurrentPeriodLabel = self.currentPeriodArray[i];
-        UILabel *tempWinnersNumLabel = self.winnersNumArray[i];
-        UILabel *tempBountyLabel = self.bountyArray[i];
+        UILabel * tempWinningNumbLabel = self.winningNumbArray[i];
+        UILabel * tempCurrentPeriodLabel = self.currentPeriodArray[i];
+        UILabel * tempWinnersNumLabel = self.winnersNumArray[i];
+        UILabel * tempBountyLabel = self.bountyArray[i];
         
         tempWinningNumbLabel.text = [tempDic[@"state"] stringValue];
         tempCurrentPeriodLabel.text = [tempDic[@"winamount"] stringValue];
@@ -110,9 +129,16 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];  //  更改导航栏颜色
     
-    static NSString * LotteryID = @"ZP_LotteryViewCell";
-    [self.tableView registerNib:[UINib nibWithNibName:LotteryID bundle:nil] forCellReuseIdentifier:LotteryID];
-    self.tableView.separatorStyle = UITableViewRowAnimationNone; // 隐藏tableview线条
+//    static NSString * LotteryID = @"ZP_LotteryViewCell";
+//    [self.tableView registerNib:[UINib nibWithNibName:LotteryID bundle:nil] forCellReuseIdentifier:LotteryID];
+//    self.tableView.separatorStyle = UITableViewRowAnimationNone; // 隐藏tableview线条
+    
+//    self.wirteBetCount = 6;
+//    self.CCollectionView.delegate = self;
+//    self.CCollectionView.dataSource = self;
+//    static NSString * LotteryID = @"ZP_LotteryCollectionViewCell";
+//    [self.CCollectionView registerNib:[UINib nibWithNibName:LotteryID bundle:nil] forCellWithReuseIdentifier:LotteryID];
+    
     UIToolbar * tools = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, -15, 15)];
 // 解决出现的那条线
     tools.clipsToBounds = YES;
@@ -143,6 +169,8 @@
     but.backgroundColor = [UIColor redColor];
     [self.scrollView addSubview:but];
     
+    NSLog(@"%f",_OrderNumView.frame.origin.y);
+    NSLog(@"%f",but.frame.origin.y);
     
     UIButton *but2 = [UIButton buttonWithType:UIButtonTypeCustom];
     but2.frame = CGRectMake(20, CGRectGetMaxY(but.frame)+10, ZP_Width - 40, 40);
@@ -156,6 +184,7 @@
     self.winnersNumArray = @[self.winnersNumLabel1,self.winnersNumLabel2,self.winnersNumLabel3,self.winnersNumLabel4];
     self.bountyArray = @[self.bountyLabel1,self.bountyLabel2,self.bountyLabel3,self.bountyLabel4];
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // 上面的frame高度 于110> 10+ 40 + 10 +40
@@ -170,65 +199,31 @@
 }
 // 历史下注
 - (void)HistoricalBetAction {
-    
+    ZPLog(@"&*(");
 }
 
-// 表头
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *myView = [[UIView alloc]init];
-    self.tableView.tableHeaderView = myView; // 表头跟着cell一起滚动
-    [myView setBackgroundColor:[UIColor whiteColor]];
-    
-    //  领取按钮
-    UIButton * Pickbuttom = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [Pickbuttom setImage:[UIImage imageNamed:@"ic_Shopping_Choice_normal"] forState:UIControlStateNormal];
-    [Pickbuttom setTitle:@"领取" forState:UIControlStateNormal];
-    self.Pickbuttom.layer.masksToBounds = YES;
-    self.Pickbuttom.layer.cornerRadius = self.Pickbuttom.frame.size.height/2;
-    self.Pickbuttom.layer.borderColor = [UIColor clearColor].CGColor;
-    self.Pickbuttom.layer.borderWidth = 1;
-    [self.Pickbuttom addTarget:self action:@selector(Pickbuttom) forControlEvents:UIControlEventTouchUpInside];
-    [myView addSubview:self.Pickbuttom];
-    [self.Pickbuttom mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(myView).offset(5);
-        make.top.equalTo(myView).offset(10);
-    }];
-    
-    //  标题
-    ZP_GeneralLabel * TitleLabel = [ZP_GeneralLabel initWithtextLabel:_TitleLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    TitleLabel.text = @"订单号";
-    [myView addSubview:TitleLabel];
-    [TitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(myView).offset(8);
-        make.top.equalTo(myView).offset(15);
-        make.height.mas_offset(15);
-//        make.width.mas_offset(80);
-    }];
-    _TitleLabel = TitleLabel;
-    //  横线
-//    UIView * view0 = [UIView new];
-//    view0.backgroundColor = ZP_Graybackground;
-//    [myView addSubview:view0];
-//    [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(myView).offset(5);  // 左
-//        make.right.equalTo(myView).offset(ZP_Width); // 长
-//        make.bottom.equalTo(myView).offset(- 1); // 下
-//        make.height.mas_equalTo(1); // 高
-//    }];
-    return myView;
+/*
+#pragma mark -- Collectionview  delegate
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.wirteBetCount;
 }
 
-// 领奖按钮点击事件
--(void)Pickbuttom:(UIButton *)sender {
-    
-    ZPLog(@"43");
+- (void)updateCount:(NSInteger)count {
+    self.wirteBetCount = count;
+    [self.CCollectionView reloadData];
 }
 
-//  设置表头高度
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    return 40;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(30, 30);
 }
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * LotteryID = @"ZP_LotteryCollectionViewCell";
+    ZP_LotteryCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:LotteryID forIndexPath:indexPath];
+    [cell setValue:indexPath.row + 1];
+    return cell;
+}
+*/
 #pragma mark  更新赏金视图
 - (void)updateBounctyViewWithBonus:(NSInteger)bonus Suffix:(NSString *)suffix {
     for (UIView *view in self.bounctyView.subviews) {
@@ -266,6 +261,7 @@
     [self.bounctyView addSubview:suffixBtn];
 }
 
+
 // 说明
 - (void)Instruction {
     ZP_InstructionController * Instruction = [[ZP_InstructionController alloc]init];
@@ -289,26 +285,26 @@
     [self.navigationController pushViewController:CheckMore animated:YES];
 }
 
-#pragma mark --tableview delegate
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 3;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString * LotteryID = @"ZP_LotteryViewCell";
-    ZP_LotteryViewCell * cell = [tableView dequeueReusableCellWithIdentifier:LotteryID];
-    
-    return cell;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    return 80;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    NSLog(@"选中%ld",(long)indexPath.item);
-}
+//#pragma mark --tableview delegate
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//
+//    return 3;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    static NSString * LotteryID = @"ZP_LotteryViewCell";
+//    ZP_LotteryViewCell * cell = [tableView dequeueReusableCellWithIdentifier:LotteryID];
+//
+//    return cell;
+//}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    return 80;
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//
+//    NSLog(@"选中%ld",(long)indexPath.item);
+//}
 @end

@@ -34,7 +34,7 @@
 #import "ZP_GeneralLabel.h"
 #import "MyViewController.h"
 #import "LogregisterController.h"
-
+#import "MJExtension.h"
 #ifdef DEBUG
 #if TARGET_IPHONE_SIMULATOR//模拟器
 

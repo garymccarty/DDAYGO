@@ -40,9 +40,11 @@
 //  数据
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"adsid"] = @"0";
     dic[@"name"] = _ContactpersonTextField.text;
     dic[@"phone"] = _ContactnumberTextField.text;
     dic[@"cell"] = @"123456789";
+    dic[@"email"] = nil;
     dic[@"zipcode"] = _ZipcodeaddressTextField.text;
     dic[@"address"] = _ReceivingaddressTextField.text;
     dic[@"isdefault"] = [NSNumber numberWithBool: _acquiescence.selected];
@@ -85,6 +87,7 @@
     [_ReceivingaddressTextField resignFirstResponder];
     [_ZipcodeaddressTextField resignFirstResponder];
 }
+
 // 设置默认地址
 - (IBAction)acquiescence:(UIButton *)sender {
     

@@ -294,7 +294,6 @@
 		C47212B81FB1A5DC0055578E /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C47212B71FB1A5DC0055578E /* CustomCell.m */; };
 		C472F1241FE28B4E0031D7B5 /* BetTwoTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C472F1221FE28B4E0031D7B5 /* BetTwoTVCell.m */; };
 		C472F1251FE28B4E0031D7B5 /* BetTwoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472F1231FE28B4E0031D7B5 /* BetTwoTVCell.xib */; };
-		C472F1271FE290090031D7B5 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C472F1261FE290090031D7B5 /* DDAYGO IHTTP协议1.0.docx */; };
 		C472F1331FE299E00031D7B5 /* ZP_CheckMoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = C472F1301FE299E00031D7B5 /* ZP_CheckMoreController.m */; };
 		C472F1341FE299E00031D7B5 /* ZP_CheckMoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472F1311FE299E00031D7B5 /* ZP_CheckMoreController.xib */; };
 		C472F1381FE29A060031D7B5 /* ZP_CheckMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C472F1361FE29A060031D7B5 /* ZP_CheckMoreCell.m */; };
@@ -310,11 +309,24 @@
 		C472F14F1FE2A88B0031D7B5 /* icon_lottery_trash_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472F1461FE2A88B0031D7B5 /* icon_lottery_trash_pressed@2x.png */; };
 		C472F1501FE2A88B0031D7B5 /* icon_lottery_trash_pressed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472F1471FE2A88B0031D7B5 /* icon_lottery_trash_pressed@3x.png */; };
 		C472F1511FE2A88B0031D7B5 /* 选择赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C472F1481FE2A88B0031D7B5 /* 选择赏金彩_spec.png */; };
+		C472F1551FE380340031D7B5 /* ZP_LotterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C472F1541FE380330031D7B5 /* ZP_LotterModel.m */; };
 		C477507E1FBA990E00AE8B3F /* ZP_PositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C477507D1FBA990E00AE8B3F /* ZP_PositionModel.m */; };
 		C47750811FBA9A1E00AE8B3F /* ZP_FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750801FBA9A1E00AE8B3F /* ZP_FirstModel.m */; };
 		C47750851FBADDAA00AE8B3F /* ZP_HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750841FBADDAA00AE8B3F /* ZP_HomePageModel.m */; };
 		C47750881FBAFC5D00AE8B3F /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750871FBAFC5D00AE8B3F /* Const.m */; };
 		C4780BEF1FD6A1F600DDE25D /* ZP_ShopManagementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */; };
+		C479C6A01FE3CB5800A58A2A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C479C6891FE3CB5800A58A2A /* LICENSE */; };
+		C479C6A11FE3CB5800A58A2A /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C68D1FE3CB5800A58A2A /* MJExtensionConst.m */; };
+		C479C6A21FE3CB5800A58A2A /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C68F1FE3CB5800A58A2A /* MJFoundation.m */; };
+		C479C6A31FE3CB5800A58A2A /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C6911FE3CB5800A58A2A /* MJProperty.m */; };
+		C479C6A41FE3CB5800A58A2A /* MJPropertyKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C6931FE3CB5800A58A2A /* MJPropertyKey.m */; };
+		C479C6A51FE3CB5800A58A2A /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C6951FE3CB5800A58A2A /* MJPropertyType.m */; };
+		C479C6A61FE3CB5800A58A2A /* NSObject+MJClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C6971FE3CB5800A58A2A /* NSObject+MJClass.m */; };
+		C479C6A71FE3CB5800A58A2A /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C6991FE3CB5800A58A2A /* NSObject+MJCoding.m */; };
+		C479C6A81FE3CB5800A58A2A /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69B1FE3CB5800A58A2A /* NSObject+MJKeyValue.m */; };
+		C479C6A91FE3CB5800A58A2A /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */; };
+		C479C6AA1FE3CB5800A58A2A /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */; };
+		C479C6AC1FE3CEBD00A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C479C6AB1FE3CEBC00A58A2A /* DDAYGO IHTTP协议1.0.docx */; };
 		C47E75861FB573F2009F279A /* ZP_HomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75851FB573F2009F279A /* ZP_HomeTool.m */; };
 		C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E758C1FB575C5009F279A /* ZP_shoopingTool.m */; };
 		C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75901FB57846009F279A /* ZP_ShoppingModel.m */; };
@@ -937,7 +949,6 @@
 		C472F1211FE28B4E0031D7B5 /* BetTwoTVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetTwoTVCell.h; sourceTree = "<group>"; };
 		C472F1221FE28B4E0031D7B5 /* BetTwoTVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetTwoTVCell.m; sourceTree = "<group>"; };
 		C472F1231FE28B4E0031D7B5 /* BetTwoTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetTwoTVCell.xib; sourceTree = "<group>"; };
-		C472F1261FE290090031D7B5 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C472F12F1FE299E00031D7B5 /* ZP_CheckMoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_CheckMoreController.h; sourceTree = "<group>"; };
 		C472F1301FE299E00031D7B5 /* ZP_CheckMoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_CheckMoreController.m; sourceTree = "<group>"; };
 		C472F1311FE299E00031D7B5 /* ZP_CheckMoreController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_CheckMoreController.xib; sourceTree = "<group>"; };
@@ -956,6 +967,8 @@
 		C472F1461FE2A88B0031D7B5 /* icon_lottery_trash_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_lottery_trash_pressed@2x.png"; sourceTree = "<group>"; };
 		C472F1471FE2A88B0031D7B5 /* icon_lottery_trash_pressed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_lottery_trash_pressed@3x.png"; sourceTree = "<group>"; };
 		C472F1481FE2A88B0031D7B5 /* 选择赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择赏金彩_spec.png"; sourceTree = "<group>"; };
+		C472F1531FE380330031D7B5 /* ZP_LotterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotterModel.h; sourceTree = "<group>"; };
+		C472F1541FE380330031D7B5 /* ZP_LotterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotterModel.m; sourceTree = "<group>"; };
 		C477507A1FBA981500AE8B3F /* Documents.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Documents.pch; sourceTree = "<group>"; };
 		C477507C1FBA990E00AE8B3F /* ZP_PositionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_PositionModel.h; sourceTree = "<group>"; };
 		C477507D1FBA990E00AE8B3F /* ZP_PositionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_PositionModel.m; sourceTree = "<group>"; };
@@ -967,6 +980,29 @@
 		C47750871FBAFC5D00AE8B3F /* Const.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		C4780BED1FD6A1F600DDE25D /* ZP_ShopManagementModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ShopManagementModel.h; sourceTree = "<group>"; };
 		C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ShopManagementModel.m; sourceTree = "<group>"; };
+		C479C6891FE3CB5800A58A2A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C479C68B1FE3CB5800A58A2A /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		C479C68C1FE3CB5800A58A2A /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
+		C479C68D1FE3CB5800A58A2A /* MJExtensionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConst.m; sourceTree = "<group>"; };
+		C479C68E1FE3CB5800A58A2A /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		C479C68F1FE3CB5800A58A2A /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		C479C6901FE3CB5800A58A2A /* MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJProperty.h; sourceTree = "<group>"; };
+		C479C6911FE3CB5800A58A2A /* MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJProperty.m; sourceTree = "<group>"; };
+		C479C6921FE3CB5800A58A2A /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
+		C479C6931FE3CB5800A58A2A /* MJPropertyKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyKey.m; sourceTree = "<group>"; };
+		C479C6941FE3CB5800A58A2A /* MJPropertyType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyType.h; sourceTree = "<group>"; };
+		C479C6951FE3CB5800A58A2A /* MJPropertyType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPropertyType.m; sourceTree = "<group>"; };
+		C479C6961FE3CB5800A58A2A /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
+		C479C6971FE3CB5800A58A2A /* NSObject+MJClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJClass.m"; sourceTree = "<group>"; };
+		C479C6981FE3CB5800A58A2A /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		C479C6991FE3CB5800A58A2A /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		C479C69A1FE3CB5800A58A2A /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		C479C69B1FE3CB5800A58A2A /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		C479C69C1FE3CB5800A58A2A /* NSObject+MJProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJProperty.h"; sourceTree = "<group>"; };
+		C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
+		C479C69E1FE3CB5800A58A2A /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
+		C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		C479C6AB1FE3CEBC00A58A2A /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C47E75841FB573F2009F279A /* ZP_HomeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HomeTool.h; sourceTree = "<group>"; };
 		C47E75851FB573F2009F279A /* ZP_HomeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomeTool.m; sourceTree = "<group>"; };
 		C47E758B1FB575C5009F279A /* ZP_shoopingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_shoopingTool.h; sourceTree = "<group>"; };
@@ -1298,7 +1334,7 @@
 		0641BB971F67B60B00E72FEF /* Testbag */ = {
 			isa = PBXGroup;
 			children = (
-				C472F1261FE290090031D7B5 /* DDAYGO IHTTP协议1.0.docx */,
+				C479C6AB1FE3CEBC00A58A2A /* DDAYGO IHTTP协议1.0.docx */,
 				C472F13F1FE2A88B0031D7B5 /* ios(1) */,
 				C46837E61FDA645A000E7D7C /* ios */,
 				C46B9F431FDE71FE00942750 /* 促销彩 */,
@@ -1511,6 +1547,7 @@
 		065099C51F62334F002F62D4 /* Method */ = {
 			isa = PBXGroup;
 			children = (
+				C479C6881FE3CB5800A58A2A /* MJExtension */,
 				C482B26D1FC2834600D7539F /* Encapsulate-UI-Class */,
 				C47096B01FB0712D006EA52C /* Language */,
 				C47096961FB04B2D006EA52C /* ZP_registrationTimerBut */,
@@ -2351,6 +2388,7 @@
 				C4399D691FCE849F00B7B96D /* LotteryController.m */,
 				C4399D6A1FCE849F00B7B96D /* LotteryController.xib */,
 				C4399D6B1FCE849F00B7B96D /* ZP_LotteryCell */,
+				C472F1521FE380110031D7B5 /* ZP_LotterModel */,
 			);
 			path = LotteryHomePage;
 			sourceTree = "<group>";
@@ -3022,6 +3060,15 @@
 			path = "ios(1)";
 			sourceTree = "<group>";
 		};
+		C472F1521FE380110031D7B5 /* ZP_LotterModel */ = {
+			isa = PBXGroup;
+			children = (
+				C472F1531FE380330031D7B5 /* ZP_LotterModel.h */,
+				C472F1541FE380330031D7B5 /* ZP_LotterModel.m */,
+			);
+			path = ZP_LotterModel;
+			sourceTree = "<group>";
+		};
 		C477507B1FBA98EE00AE8B3F /* ZP_PositionModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -3048,6 +3095,43 @@
 				C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */,
 			);
 			path = ZP_ShopManagementModel;
+			sourceTree = "<group>";
+		};
+		C479C6881FE3CB5800A58A2A /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C479C6891FE3CB5800A58A2A /* LICENSE */,
+				C479C68A1FE3CB5800A58A2A /* MJExtension */,
+			);
+			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		C479C68A1FE3CB5800A58A2A /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C479C68B1FE3CB5800A58A2A /* MJExtension.h */,
+				C479C68C1FE3CB5800A58A2A /* MJExtensionConst.h */,
+				C479C68D1FE3CB5800A58A2A /* MJExtensionConst.m */,
+				C479C68E1FE3CB5800A58A2A /* MJFoundation.h */,
+				C479C68F1FE3CB5800A58A2A /* MJFoundation.m */,
+				C479C6901FE3CB5800A58A2A /* MJProperty.h */,
+				C479C6911FE3CB5800A58A2A /* MJProperty.m */,
+				C479C6921FE3CB5800A58A2A /* MJPropertyKey.h */,
+				C479C6931FE3CB5800A58A2A /* MJPropertyKey.m */,
+				C479C6941FE3CB5800A58A2A /* MJPropertyType.h */,
+				C479C6951FE3CB5800A58A2A /* MJPropertyType.m */,
+				C479C6961FE3CB5800A58A2A /* NSObject+MJClass.h */,
+				C479C6971FE3CB5800A58A2A /* NSObject+MJClass.m */,
+				C479C6981FE3CB5800A58A2A /* NSObject+MJCoding.h */,
+				C479C6991FE3CB5800A58A2A /* NSObject+MJCoding.m */,
+				C479C69A1FE3CB5800A58A2A /* NSObject+MJKeyValue.h */,
+				C479C69B1FE3CB5800A58A2A /* NSObject+MJKeyValue.m */,
+				C479C69C1FE3CB5800A58A2A /* NSObject+MJProperty.h */,
+				C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */,
+				C479C69E1FE3CB5800A58A2A /* NSString+MJExtension.h */,
+				C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */,
+			);
+			path = MJExtension;
 			sourceTree = "<group>";
 		};
 		C47E75821FB573A2009F279A /* ZP_shoppingTool */ = {
@@ -3718,6 +3802,7 @@
 				C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */,
 				06F571921F9F16E600D61FDB /* NewsViewController.xib in Resources */,
 				C472F14A1FE2A88B0031D7B5 /* icon_lottery_jia@3x.png in Resources */,
+				C479C6A01FE3CB5800A58A2A /* LICENSE in Resources */,
 				06F572431F9F204F00D61FDB /* SearchTimeViewController.xib in Resources */,
 				C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */,
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
@@ -3750,11 +3835,11 @@
 				C46B9F4A1FDE71FE00942750 /* 赏金彩_spec.png in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
 				C4573F721FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib in Resources */,
+				C479C6AC1FE3CEBD00A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */,
 				4D0949011FDEF77500FC4BCA /* EvaluateTableViewCell.xib in Resources */,
 				C472F1251FE28B4E0031D7B5 /* BetTwoTVCell.xib in Resources */,
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
-				C472F1271FE290090031D7B5 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				C44D6D121FD8CF070002DAF2 /* PayViewController.xib in Resources */,
 				062C9D631F8CD6F900E14987 /* button_6@2x.png in Resources */,
 				06F571D81F9F1A7900D61FDB /* EditViewController.xib in Resources */,
@@ -3921,6 +4006,7 @@
 				C4573F711FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m in Sources */,
 				06F572201F9F1E8700D61FDB /* BillViewController.m in Sources */,
 				C45F22EF1FA0746300F5DB41 /* UIView+Additions.m in Sources */,
+				C479C6AA1FE3CB5800A58A2A /* NSString+MJExtension.m in Sources */,
 				C4D2FEB31FD552A000F546AB /* YueTixianController.m in Sources */,
 				06418F501F7A076A00479523 /* MASCompositeConstraint.m in Sources */,
 				C45F23071FA0754500F5DB41 /* SearchGooodsController.m in Sources */,
@@ -3928,6 +4014,7 @@
 				06418F581F7A076A00479523 /* View+MASAdditions.m in Sources */,
 				C47E76301FB5A1C7009F279A /* TextdetailsViewCell.m in Sources */,
 				06F572221F9F1E8700D61FDB /* BillTableViewCell.m in Sources */,
+				C472F1551FE380340031D7B5 /* ZP_LotterModel.m in Sources */,
 				C45FAF961FCD688000BD4CE1 /* UIView+Frame.m in Sources */,
 				C47E76401FB5A1C7009F279A /* ZPLoopViewLayout.m in Sources */,
 				065099DF1F6247F7002F62D4 /* UIImage+Extension.m in Sources */,
@@ -3941,6 +4028,7 @@
 				C45F233D1FA0757A00F5DB41 /* HomeViewController.m in Sources */,
 				C47E764A1FB5A1C7009F279A /* Pop-upTableViewDataSource.m in Sources */,
 				06418F561F7A076A00479523 /* NSArray+MASAdditions.m in Sources */,
+				C479C6A51FE3CB5800A58A2A /* MJPropertyType.m in Sources */,
 				064449B71F6A9B250004DFE4 /* NSBundle+MJRefresh.m in Sources */,
 				C45F22ED1FA0746300F5DB41 /* NSString+Additions.m in Sources */,
 				06621DAD1F9758720030983F /* TextView.m in Sources */,
@@ -3996,6 +4084,7 @@
 				C45FAF991FCD68C200BD4CE1 /* UIImage+Render.m in Sources */,
 				0641BBD91F67F9E400E72FEF /* SDWebImageManager.m in Sources */,
 				06F571D51F9F1A7900D61FDB /* ResetPasswordViewController.m in Sources */,
+				C479C6A11FE3CB5800A58A2A /* MJExtensionConst.m in Sources */,
 				C47E763F1FB5A1C7009F279A /* ZPLoopViewCell.m in Sources */,
 				C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */,
 				06F571131F9F0D6800D61FDB /* AppraiseController.m in Sources */,
@@ -4030,6 +4119,8 @@
 				06F571911F9F16E600D61FDB /* NewsViewController.m in Sources */,
 				C47096921FB04998006EA52C /* BindingEmailController.m in Sources */,
 				C4535E201FC5086800DFFD62 /* ZP_ConfirmPayModel.m in Sources */,
+				C479C6A81FE3CB5800A58A2A /* NSObject+MJKeyValue.m in Sources */,
+				C479C6A31FE3CB5800A58A2A /* MJProperty.m in Sources */,
 				C45F23591FA099B200F5DB41 /* ReuseCollectionViewCell.m in Sources */,
 				C44D6D161FD8CF7D0002DAF2 /* ZP_PayView.m in Sources */,
 				064449B91F6A9B250004DFE4 /* UIScrollView+MJRefresh.m in Sources */,
@@ -4061,6 +4152,7 @@
 				C45F22CD1FA05A8E00F5DB41 /* ThemeManager.m in Sources */,
 				065B3CDE1F984F8A00A8E6D6 /* TAAnimatedDotView.m in Sources */,
 				C47E76451FB5A1C7009F279A /* ShoplntroductionCell.m in Sources */,
+				C479C6A41FE3CB5800A58A2A /* MJPropertyKey.m in Sources */,
 				06F572301F9F1E8700D61FDB /* OrderSearchView.m in Sources */,
 				065B3CE01F984F8A00A8E6D6 /* TAPageControl.m in Sources */,
 				C45D83051FAB00EB003C35EB /* UIButton+countDown.m in Sources */,
@@ -4091,11 +4183,13 @@
 				C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */,
 				0641BBE01F67F9E400E72FEF /* UIView+WebCacheOperation.m in Sources */,
 				064449AB1F6A9B250004DFE4 /* MJRefreshHeader.m in Sources */,
+				C479C6A71FE3CB5800A58A2A /* NSObject+MJCoding.m in Sources */,
 				C492A1791FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.m in Sources */,
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
 				C46B9F4F1FDE764000942750 /* ZP_ExtractModel.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,
 				C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */,
+				C479C6A21FE3CB5800A58A2A /* MJFoundation.m in Sources */,
 				C47E76321FB5A1C7009F279A /* DetailedController.m in Sources */,
 				C47E76441FB5A1C7009F279A /* ZPHomeHeadrView.m in Sources */,
 				06F571D71F9F1A7900D61FDB /* EditViewController.m in Sources */,
@@ -4124,6 +4218,7 @@
 				C47E76351FB5A1C7009F279A /* ChooseView.m in Sources */,
 				06F571771F9F163F00D61FDB /* ConcernShopTableViewCell.m in Sources */,
 				06F570EC1F9F0ABA00D61FDB /* ShoppingViewController.m in Sources */,
+				C479C6A61FE3CB5800A58A2A /* NSObject+MJClass.m in Sources */,
 				06F571E11F9F1A7900D61FDB /* SelectPhotoManager.m in Sources */,
 				0641BBDF1F67F9E400E72FEF /* UIImageView+WebCache.m in Sources */,
 				C4573F3B1FCFA3A6001DFE97 /* BetTableViewCell.m in Sources */,
@@ -4150,6 +4245,7 @@
 				06F5711C1F9F0DFF00D61FDB /* LogistcsCell.m in Sources */,
 				064449AE1F6A9B250004DFE4 /* MJRefreshAutoStateFooter.m in Sources */,
 				C47E76411FB5A1C7009F279A /* ZPWeakTimerTargetObject.m in Sources */,
+				C479C6A91FE3CB5800A58A2A /* NSObject+MJProperty.m in Sources */,
 				C4573F4B1FCFDE6D001DFE97 /* ZP_LotteryViewCell.m in Sources */,
 				C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */,
 			);

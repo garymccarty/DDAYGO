@@ -54,6 +54,6 @@
 // 本期下注号码
 @property (weak, nonatomic) IBOutlet UILabel *OrderNumberLabel;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UITableView * tableview;
 
 @end

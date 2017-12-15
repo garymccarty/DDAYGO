@@ -39,6 +39,7 @@
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requtsFootprint:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
         self.newsData = [ZP_FootprintModel arrayWithArray:obj[@"historyslist"]];
         if (self.newsData.count < 1) {
             UIImageView * image = [UIImageView new];

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZP_HistoryVetController : UIViewController
-
+@property (nonatomic, strong) UILabel * numberingLabel; // 期数
+@property (nonatomic, strong) UILabel * datesLabel; // 日期
 @end

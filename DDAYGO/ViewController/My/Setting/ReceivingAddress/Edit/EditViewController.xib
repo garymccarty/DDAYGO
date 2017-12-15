@@ -17,6 +17,7 @@
                 <outlet property="ReceivingaddressTextField" destination="5XP-DL-dMa" id="DC9-RN-x9B"/>
                 <outlet property="ReceivingareaTextField" destination="teA-cg-2U1" id="BBG-Om-KcS"/>
                 <outlet property="ZipcodeaddressTextField" destination="VUP-bX-yUh" id="vik-fV-43t"/>
+                <outlet property="acquiescence" destination="Vie-KG-udn" id="Poh-Gb-sQv"/>
                 <outlet property="view" destination="qKK-xE-n4M" id="eej-Yx-vRT"/>
             </connections>
         </placeholder>
