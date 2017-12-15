@@ -229,8 +229,6 @@
 		C4573F3E1FCFA3A6001DFE97 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F361FCFA3A6001DFE97 /* BetViewController.xib */; };
 		C4573F4B1FCFDE6D001DFE97 /* ZP_LotteryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */; };
 		C4573F4C1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */; };
-		C4573F711FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F6F1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m */; };
-		C4573F721FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F701FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib */; };
 		C45868FA1FC7CE06000CEB92 /* collectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45868F91FC7CE06000CEB92 /* collectionModel.m */; };
 		C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */; };
 		C45D83051FAB00EB003C35EB /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C45D83041FAB00EB003C35EB /* UIButton+countDown.m */; };
@@ -825,9 +823,6 @@
 		C4573F481FCFDE6D001DFE97 /* ZP_LotteryViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryViewCell.h; sourceTree = "<group>"; };
 		C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryViewCell.m; sourceTree = "<group>"; };
 		C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_LotteryViewCell.xib; sourceTree = "<group>"; };
-		C4573F6E1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_InstructionTableViewCell.h; sourceTree = "<group>"; };
-		C4573F6F1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_InstructionTableViewCell.m; sourceTree = "<group>"; };
-		C4573F701FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_InstructionTableViewCell.xib; sourceTree = "<group>"; };
 		C45868F81FC7CE06000CEB92 /* collectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectionModel.h; sourceTree = "<group>"; };
 		C45868F91FC7CE06000CEB92 /* collectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectionModel.m; sourceTree = "<group>"; };
 		C45868FF1FC80C8E000CEB92 /* ZP_OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderModel.h; sourceTree = "<group>"; };
@@ -2569,19 +2564,8 @@
 			isa = PBXGroup;
 			children = (
 				C492A1921FD0EDC0009FF57B /* ZP_InstructionBetHomePage */,
-				C4573F6D1FD01B94001DFE97 /* ZP_InstructionCell */,
 			);
 			path = ZP_InstructionBet;
-			sourceTree = "<group>";
-		};
-		C4573F6D1FD01B94001DFE97 /* ZP_InstructionCell */ = {
-			isa = PBXGroup;
-			children = (
-				C4573F6E1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.h */,
-				C4573F6F1FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m */,
-				C4573F701FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib */,
-			);
-			path = ZP_InstructionCell;
 			sourceTree = "<group>";
 		};
 		C45868F71FC7CE06000CEB92 /* ZP_CollcetionModel */ = {
@@ -3834,7 +3818,6 @@
 				06F571D21F9F1A7900D61FDB /* BindingICUEViewController.xib in Resources */,
 				C46B9F4A1FDE71FE00942750 /* 赏金彩_spec.png in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
-				C4573F721FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib in Resources */,
 				C479C6AE1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */,
 				4D0949011FDEF77500FC4BCA /* EvaluateTableViewCell.xib in Resources */,
@@ -4003,7 +3986,6 @@
 				C45FAF9C1FCD68F400BD4CE1 /* UIImage+Image.m in Sources */,
 				C47E76241FB5A1C7009F279A /* ZP_ClassGoodsModel.m in Sources */,
 				C492A18B1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.m in Sources */,
-				C4573F711FD01BAF001DFE97 /* ZP_InstructionTableViewCell.m in Sources */,
 				06F572201F9F1E8700D61FDB /* BillViewController.m in Sources */,
 				C45F22EF1FA0746300F5DB41 /* UIView+Additions.m in Sources */,
 				C479C6AA1FE3CB5800A58A2A /* NSString+MJExtension.m in Sources */,
