@@ -15,7 +15,6 @@
                 <outlet property="AmountLabel" destination="sWS-ZI-z4H" id="oQV-Yt-AMa"/>
                 <outlet property="AssemblageView" destination="z0k-LB-z8P" id="qD4-H9-kDP"/>
                 <outlet property="BenQIView" destination="plJ-Gj-weF" id="zBe-4G-Mco"/>
-                <outlet property="MosaicGoldLabel" destination="Eri-Yy-Koq" id="FS9-tb-7Fd"/>
                 <outlet property="OrderNumView" destination="2Wq-Qj-3dJ" id="gAW-iE-7kI"/>
                 <outlet property="OrderNumberLabel" destination="d4Q-VX-uLC" id="oQi-4m-0as"/>
                 <outlet property="WinningNumbersLabel" destination="iLH-vh-vnc" id="Sea-Vd-bxv"/>

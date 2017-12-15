@@ -326,7 +326,7 @@
 		C479C6A81FE3CB5800A58A2A /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69B1FE3CB5800A58A2A /* NSObject+MJKeyValue.m */; };
 		C479C6A91FE3CB5800A58A2A /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */; };
 		C479C6AA1FE3CB5800A58A2A /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */; };
-		C479C6AC1FE3CEBD00A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C479C6AB1FE3CEBC00A58A2A /* DDAYGO IHTTP协议1.0.docx */; };
+		C479C6AE1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */; };
 		C47E75861FB573F2009F279A /* ZP_HomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75851FB573F2009F279A /* ZP_HomeTool.m */; };
 		C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E758C1FB575C5009F279A /* ZP_shoopingTool.m */; };
 		C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75901FB57846009F279A /* ZP_ShoppingModel.m */; };
@@ -1002,7 +1002,7 @@
 		C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		C479C69E1FE3CB5800A58A2A /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
-		C479C6AB1FE3CEBC00A58A2A /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
+		C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C47E75841FB573F2009F279A /* ZP_HomeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HomeTool.h; sourceTree = "<group>"; };
 		C47E75851FB573F2009F279A /* ZP_HomeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomeTool.m; sourceTree = "<group>"; };
 		C47E758B1FB575C5009F279A /* ZP_shoopingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_shoopingTool.h; sourceTree = "<group>"; };
@@ -1334,7 +1334,6 @@
 		0641BB971F67B60B00E72FEF /* Testbag */ = {
 			isa = PBXGroup;
 			children = (
-				C479C6AB1FE3CEBC00A58A2A /* DDAYGO IHTTP协议1.0.docx */,
 				C472F13F1FE2A88B0031D7B5 /* ios(1) */,
 				C46837E61FDA645A000E7D7C /* ios */,
 				C46B9F431FDE71FE00942750 /* 促销彩 */,
@@ -3047,6 +3046,7 @@
 		C472F13F1FE2A88B0031D7B5 /* ios(1) */ = {
 			isa = PBXGroup;
 			children = (
+				C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */,
 				C472F1401FE2A88B0031D7B5 /* icon_lottery_jia@2x.png */,
 				C472F1411FE2A88B0031D7B5 /* icon_lottery_jia@3x.png */,
 				C472F1421FE2A88B0031D7B5 /* icon_lottery_jian@2x.png */,
@@ -3835,7 +3835,7 @@
 				C46B9F4A1FDE71FE00942750 /* 赏金彩_spec.png in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
 				C4573F721FD01BAF001DFE97 /* ZP_InstructionTableViewCell.xib in Resources */,
-				C479C6AC1FE3CEBD00A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */,
+				C479C6AE1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */,
 				4D0949011FDEF77500FC4BCA /* EvaluateTableViewCell.xib in Resources */,
 				C472F1251FE28B4E0031D7B5 /* BetTwoTVCell.xib in Resources */,

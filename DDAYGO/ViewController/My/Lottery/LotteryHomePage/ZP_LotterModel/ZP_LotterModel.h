@@ -28,7 +28,7 @@
 /*国家id*/
 @property (nonatomic, strong) NSNumber *countrycode;
 /*奖池金额*/
-@property (nonatomic, strong) NSNumber *poolamount;
+@property (nonatomic, strong) NSNumber * poolamount;
 /**年份*/
 @property (nonatomic, strong) NSNumber *yyyy;
 /**月份*/
@@ -38,7 +38,7 @@
 /**奖池生成时间*/
 @property (nonatomic, strong) NSString *createtime;
 /*开奖白球1*/
-@property (nonatomic, strong) NSNumber *white1;
+@property (nonatomic, strong) NSNumber * white1;
 /*开奖白球2*/
 @property (nonatomic, strong) NSNumber *white2;
 /*开奖白球3*/
@@ -48,7 +48,7 @@
 /*开奖白球5*/
 @property (nonatomic, strong) NSNumber *white5;
 /*开奖红球*/
-@property (nonatomic, strong) NSNumber *powerball;
+@property (nonatomic, strong) NSNumber * powerball;
 
 @end
 

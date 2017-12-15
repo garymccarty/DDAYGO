@@ -50,45 +50,77 @@
     [ZP_MyTool getPrizeInfo:^(id obj) {
         //这个是一次的数据
         ZP_LotterModel * model = [ZP_LotterModel mj_objectWithKeyValues:obj];
-        
-        NSLog(@"dic %@",model.lottery);
-        
-        //下面一个数据 直接用
-        lotteryModel *model2 = [lotteryModel mj_objectWithKeyValues:model.lottery];
-        NSLog(@"m2 %@",model2.createtime);
-        // lottoerwinmodel 的数据
-        NSArray *arr = [lotterywinModel mj_objectArrayWithKeyValuesArray:model.lotterywin];
-        
-        //如你想取第一个的数据
-        lotterywinModel *model3 = arr[0];
-        NSLog(@"m3 = %@",model3.state);
-        
-        self.prizeDic = obj;
-        [self updateData];
+
+        [self updateData:model];
     } failure:^(NSError *error) {
         
     }];
 }
 
-- (void)updateData {
-    self.periodsLabel.text = [NSString stringWithFormat:@"第%@期",[self.prizeDic[@"lottery"][@"periods"] stringValue]];
-    self.dateLabel.text = self.prizeDic[@"lottery"][@"createtime"];
-    //$
-    [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@"$"];
+- (void)updateData:(ZP_LotterModel *)model{
     
-    NSArray *prizeArray = self.prizeDic[@"lotterywin"];
-    for (int i = 0; i < prizeArray.count - 1; i ++) {
-        NSDictionary *tempDic = prizeArray[i];
-        UILabel * tempWinningNumbLabel = self.winningNumbArray[i];
-        UILabel * tempCurrentPeriodLabel = self.currentPeriodArray[i];
-        UILabel * tempWinnersNumLabel = self.winnersNumArray[i];
-        UILabel * tempBountyLabel = self.bountyArray[i];
-        
-        tempWinningNumbLabel.text = [tempDic[@"state"] stringValue];
-        tempCurrentPeriodLabel.text = [tempDic[@"winamount"] stringValue];
-        tempWinnersNumLabel.text = [tempDic[@"wincount"] stringValue];
-        tempBountyLabel.text = [tempDic[@"winunit"] stringValue];
-    }
+     lotteryModel *model1 = [lotteryModel mj_objectWithKeyValues:model.lottery];
+    _AmountLabel.text = [model1.poolamount stringValue];
+    _dateLabel.text = model1.createtime;
+    [_but1 setTitle:[model1.white1 stringValue] forState:UIControlStateNormal];
+    [_but2 setTitle:[model1.white2 stringValue] forState:UIControlStateNormal];
+    [_but3 setTitle:[model1.white3 stringValue] forState:UIControlStateNormal];
+    [_but4 setTitle:[model1.white4 stringValue] forState:UIControlStateNormal];
+    [_but5 setTitle:[model1.white5 stringValue] forState:UIControlStateNormal];
+    [_but6 setTitle:[model1.powerball stringValue] forState:UIControlStateNormal];
+    NSLog(@"dic %@",model.lottery);
+    
+    //下面一个数据 直接用
+    lotteryModel *model2 = [lotteryModel mj_objectWithKeyValues:model.lottery];
+    //        _AmountLabel.text = [model2.poolamount stringValue];
+    NSLog(@"m2 %@",model2.createtime);
+    // lottoerwinmodel 的数据
+    NSArray *arr = [lotterywinModel mj_objectArrayWithKeyValuesArray:model.lotterywin];
+    
+    //如你想取第一个的数据
+    lotterywinModel * model3 = arr[0]; //这个是头奖的后面
+    _currentPeriodLabel1.text = [model3.winamount stringValue];
+    _currentPeriodLabel2.text = [model3.wincount stringValue];
+    _currentPeriodLabel3.text = [model3.winunit stringValue];
+    _currentPeriodLabel4.text = [model3.winunit stringValue];
+    _currentPeriodLabel5.text = [model3.winunit stringValue];
+    NSLog(@"m3 = %@",model3.state);
+    //以此类推
+    lotterywinModel *model4 = arr[1]; //这个是头奖的后面
+    _winnersNumLabel1.text = [model4.winamount stringValue];
+    _winnersNumLabel2.text = [model4.wincount stringValue];
+    _winnersNumLabel3.text = [model4.winunit stringValue];
+    _winnersNumLabel4.text = [model4.winunit stringValue];
+    _winnersNumLabel5.text = [model4.winunit stringValue];
+    
+    lotterywinModel *model5 = arr[2]; //这个是头奖的后面
+    _bountyLabel1.text = [model5.winamount stringValue];
+    _bountyLabel2.text = [model5.wincount stringValue];
+    _bountyLabel3.text = [model5.winunit stringValue];
+    _bountyLabel4.text = [model5.winunit stringValue];
+    _bountyLabel5.text = [model5.winunit stringValue];
+    
+    
+    
+    
+//    self.periodsLabel.text = [NSString stringWithFormat:@"第%@期",[self.prizeDic[@"lottery"][@"periods"] stringValue]];
+//    self.dateLabel.text = self.prizeDic[@"lottery"][@"createtime"];
+//    //$
+//    [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@"$"];
+//
+//    NSArray *prizeArray = self.prizeDic[@"lotterywin"];
+//    for (int i = 0; i < prizeArray.count - 1; i ++) {
+//        NSDictionary *tempDic = prizeArray[i];
+//        UILabel * tempWinningNumbLabel = self.winningNumbArray[i];
+//        UILabel * tempCurrentPeriodLabel = self.currentPeriodArray[i];
+//        UILabel * tempWinnersNumLabel = self.winnersNumArray[i];
+//        UILabel * tempBountyLabel = self.bountyArray[i];
+//
+//        tempWinningNumbLabel.text = [tempDic[@"state"] stringValue];
+//        tempCurrentPeriodLabel.text = [tempDic[@"winamount"] stringValue];
+//        tempWinnersNumLabel.text = [tempDic[@"wincount"] stringValue];
+//        tempBountyLabel.text = [tempDic[@"winunit"] stringValue];
+//    }
 }
 
 //- (CGSize)getStringSize:(NSString *)string FontSize:(NSInteger)fontSize Size:(CGSize)size {

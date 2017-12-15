@@ -26,12 +26,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *periodsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIView * WinningNumbersView; // 中奖号码及按钮
-@property (weak, nonatomic) IBOutlet UIButton *but1;
-@property (weak, nonatomic) IBOutlet UIButton *but2;
-@property (weak, nonatomic) IBOutlet UIButton *but3;
-@property (weak, nonatomic) IBOutlet UIButton *but4;
-@property (weak, nonatomic) IBOutlet UIButton *but5;
-@property (weak, nonatomic) IBOutlet UIButton *but6;
+@property (weak, nonatomic) IBOutlet UIButton * but1;
+@property (weak, nonatomic) IBOutlet UIButton * but2;
+@property (weak, nonatomic) IBOutlet UIButton * but3;
+@property (weak, nonatomic) IBOutlet UIButton * but4;
+@property (weak, nonatomic) IBOutlet UIButton * but5;
+@property (weak, nonatomic) IBOutlet UIButton * but6;
 
 // 奖项
 @property (weak, nonatomic) IBOutlet UILabel * prizeLabel;
