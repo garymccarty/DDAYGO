@@ -46,7 +46,7 @@
     [ZP_MyTool getPrizeInfo:^(id obj) {
         //这个是一次的数据
         ZP_LotterModel * model = [ZP_LotterModel mj_objectWithKeyValues:obj];
-
+        self.prizeDic = obj;
         [self updateData:model];
     } failure:^(NSError *error) {
         
@@ -109,7 +109,7 @@
 //    self.periodsLabel.text = [NSString stringWithFormat:@"第%@期",[self.prizeDic[@"lottery"][@"periods"] stringValue]];
 //    self.dateLabel.text = self.prizeDic[@"lottery"][@"createtime"];
 //    //$
-//    [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@"$"];
+    [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@"$"];
 //
 //    NSArray *prizeArray = self.prizeDic[@"lotterywin"];
 //    for (int i = 0; i < prizeArray.count - 1; i ++) {
