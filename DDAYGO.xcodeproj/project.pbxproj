@@ -227,8 +227,6 @@
 		C4573F3C1FCFA3A6001DFE97 /* BetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F331FCFA3A6001DFE97 /* BetTableViewCell.xib */; };
 		C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F351FCFA3A6001DFE97 /* BetViewController.m */; };
 		C4573F3E1FCFA3A6001DFE97 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F361FCFA3A6001DFE97 /* BetViewController.xib */; };
-		C4573F4B1FCFDE6D001DFE97 /* ZP_LotteryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */; };
-		C4573F4C1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */; };
 		C45868FA1FC7CE06000CEB92 /* collectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45868F91FC7CE06000CEB92 /* collectionModel.m */; };
 		C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */; };
 		C45D83051FAB00EB003C35EB /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C45D83041FAB00EB003C35EB /* UIButton+countDown.m */; };
@@ -390,8 +388,6 @@
 		C492A19E1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A19C1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib */; };
 		C492A1A71FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1A51FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m */; };
 		C492A1A81FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1A61FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib */; };
-		C492A1AC1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1AA1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m */; };
-		C492A1AD1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1AB1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib */; };
 		C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B51FD15189009FF57B /* 扫码付款状态.png */; };
 		C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */; };
 		C49B32221FD5A995007632F2 /* ZP_ExtractController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */; };
@@ -820,9 +816,6 @@
 		C4573F341FCFA3A6001DFE97 /* BetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
 		C4573F351FCFA3A6001DFE97 /* BetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
 		C4573F361FCFA3A6001DFE97 /* BetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetViewController.xib; sourceTree = "<group>"; };
-		C4573F481FCFDE6D001DFE97 /* ZP_LotteryViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryViewCell.h; sourceTree = "<group>"; };
-		C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryViewCell.m; sourceTree = "<group>"; };
-		C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_LotteryViewCell.xib; sourceTree = "<group>"; };
 		C45868F81FC7CE06000CEB92 /* collectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectionModel.h; sourceTree = "<group>"; };
 		C45868F91FC7CE06000CEB92 /* collectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectionModel.m; sourceTree = "<group>"; };
 		C45868FF1FC80C8E000CEB92 /* ZP_OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderModel.h; sourceTree = "<group>"; };
@@ -1119,9 +1112,6 @@
 		C492A1A41FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_DetailsSistoryAwardCell.h; sourceTree = "<group>"; };
 		C492A1A51FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardCell.m; sourceTree = "<group>"; };
 		C492A1A61FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_DetailsSistoryAwardCell.xib; sourceTree = "<group>"; };
-		C492A1A91FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryCollectionViewCell.h; sourceTree = "<group>"; };
-		C492A1AA1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryCollectionViewCell.m; sourceTree = "<group>"; };
-		C492A1AB1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_LotteryCollectionViewCell.xib; sourceTree = "<group>"; };
 		C492A1B51FD15189009FF57B /* 扫码付款状态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫码付款状态.png"; sourceTree = "<group>"; };
 		C49B321E1FD5A995007632F2 /* ZP_ExtractController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ExtractController.h; sourceTree = "<group>"; };
 		C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ExtractController.m; sourceTree = "<group>"; };
@@ -2381,23 +2371,9 @@
 				C4399D681FCE849F00B7B96D /* LotteryController.h */,
 				C4399D691FCE849F00B7B96D /* LotteryController.m */,
 				C4399D6A1FCE849F00B7B96D /* LotteryController.xib */,
-				C4399D6B1FCE849F00B7B96D /* ZP_LotteryCell */,
 				C472F1521FE380110031D7B5 /* ZP_LotterModel */,
 			);
 			path = LotteryHomePage;
-			sourceTree = "<group>";
-		};
-		C4399D6B1FCE849F00B7B96D /* ZP_LotteryCell */ = {
-			isa = PBXGroup;
-			children = (
-				C4573F481FCFDE6D001DFE97 /* ZP_LotteryViewCell.h */,
-				C4573F491FCFDE6D001DFE97 /* ZP_LotteryViewCell.m */,
-				C4573F4A1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib */,
-				C492A1A91FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.h */,
-				C492A1AA1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m */,
-				C492A1AB1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib */,
-			);
-			path = ZP_LotteryCell;
 			sourceTree = "<group>";
 		};
 		C44D6D071FD8CF070002DAF2 /* ZP_PayHomePage */ = {
@@ -3765,7 +3741,6 @@
 				062C9D601F8CD6F900E14987 /* button_4@3x.png in Resources */,
 				06621DB31F9758840030983F /* RegisterController.xib in Resources */,
 				C472F14C1FE2A88B0031D7B5 /* icon_lottery_jian@3x.png in Resources */,
-				C492A1AD1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.xib in Resources */,
 				06F572211F9F1E8700D61FDB /* BillViewController.xib in Resources */,
 				062C9D5A1F8CD6F900E14987 /* button_1@3x.png in Resources */,
 				C472F14D1FE2A88B0031D7B5 /* icon_lottery_trash_normal@2x.png in Resources */,
@@ -3876,7 +3851,6 @@
 				C44D6D101FD8CF070002DAF2 /* PayViewCell.xib in Resources */,
 				064448E21F6A1F7F0004DFE4 /* Shopping.png in Resources */,
 				C47096A81FB065CE006EA52C /* LanguageController.xib in Resources */,
-				C4573F4C1FCFDE6D001DFE97 /* ZP_LotteryViewCell.xib in Resources */,
 				064448DF1F6A16A00004DFE4 /* banner_jiazai.jpg in Resources */,
 				0641BBA11F67B60B00E72FEF /* Second.png in Resources */,
 				063FE0501F614D24009910FF /* Main.storyboard in Resources */,
@@ -4044,7 +4018,6 @@
 				C46837FC1FDA78EE000E7D7C /* ZP_MyHopageModel.m in Sources */,
 				C47E76421FB5A1C7009F279A /* ZPHomeHeaderLayout.m in Sources */,
 				C45F23081FA0754500F5DB41 /* SearchBar.m in Sources */,
-				C492A1AC1FD14A6E009FF57B /* ZP_LotteryCollectionViewCell.m in Sources */,
 				064449B11F6A9B250004DFE4 /* MJRefreshBackStateFooter.m in Sources */,
 				06F572341F9F1E8700D61FDB /* ReceivingController.m in Sources */,
 				C47E764C1FB5A1C7009F279A /* Pop-upViewCell.m in Sources */,
@@ -4228,7 +4201,6 @@
 				064449AE1F6A9B250004DFE4 /* MJRefreshAutoStateFooter.m in Sources */,
 				C47E76411FB5A1C7009F279A /* ZPWeakTimerTargetObject.m in Sources */,
 				C479C6A91FE3CB5800A58A2A /* NSObject+MJProperty.m in Sources */,
-				C4573F4B1FCFDE6D001DFE97 /* ZP_LotteryViewCell.m in Sources */,
 				C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

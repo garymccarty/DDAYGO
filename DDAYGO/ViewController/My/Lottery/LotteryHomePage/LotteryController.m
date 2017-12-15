@@ -7,19 +7,15 @@
 //
 
 #import "LotteryController.h"
-#import "ZP_LotteryCell/ZP_LotteryViewCell.h"
 #import "PrefixHeader.pch"
 #import "BetViewController.h"
 #import "ZP_HistoryVetController.h"
 #import "ZP_InstructionController.h"
 #import "ZP_CheckMoreController.h"
 #import "ZP_MyTool.h"
-#import "ZP_LotteryCollectionViewCell.h"
 #import "ZP_LotterModel.h"
 @interface LotteryController ()
-///<UITableViewDelegate, UITableViewDataSource>
 
-//@property (strong, nonatomic) IBOutlet UITableView * tableView;
 @property (strong ,nonatomic) NSArray *titleArray;
 @property (strong ,nonatomic) NSArray *titleLabelArray;
 @property (strong ,nonatomic) NSArray *titleWidthArray;
