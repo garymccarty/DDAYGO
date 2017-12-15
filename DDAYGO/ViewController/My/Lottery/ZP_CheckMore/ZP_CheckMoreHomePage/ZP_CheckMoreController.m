@@ -89,6 +89,21 @@
         make.height.mas_equalTo(15);
     }];
     
+    //     button
+    UIButton * button = [[UIButton alloc] init];
+    [myView addSubview:button];
+    [button setTitle:@"领奖" forState:UIControlStateNormal];
+    button.titleLabel.textColor = [UIColor blackColor];
+    button.layer.borderWidth = 1;
+    button.layer.cornerRadius = 5;
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(myView.mas_trailing).offset(-8);
+        make.bottom.equalTo(myView).offset(0);
+        //        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(45);
+    }];
+    
     return myView;
 }
 
