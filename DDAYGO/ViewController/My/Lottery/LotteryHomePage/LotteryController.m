@@ -68,7 +68,7 @@
     [_but4 setTitle:[model1.white4 stringValue] forState:UIControlStateNormal];
     [_but5 setTitle:[model1.white5 stringValue] forState:UIControlStateNormal];
     [_but6 setTitle:[model1.powerball stringValue] forState:UIControlStateNormal];
-    NSLog(@"dic %@",model.lottery);
+//    NSLog(@"dic %@",model.lottery);
     
     //下面一个数据 直接用
     lotteryModel *model2 = [lotteryModel mj_objectWithKeyValues:model.lottery];
@@ -84,7 +84,7 @@
     _currentPeriodLabel3.text = [model3.winunit stringValue];
     _currentPeriodLabel4.text = [model3.winunit stringValue];
     _currentPeriodLabel5.text = [model3.winunit stringValue];
-    NSLog(@"m3 = %@",model3.state);
+//    NSLog(@"m3 = %@",model3.state);
     //以此类推
     lotterywinModel *model4 = arr[1]; //这个是头奖的后面
     _winnersNumLabel1.text = [model4.winamount stringValue];
@@ -100,8 +100,15 @@
     _bountyLabel4.text = [model5.winunit stringValue];
     _bountyLabel5.text = [model5.winunit stringValue];
     
-    
-    
+    lotteryorderModel * model6 = [lotteryorderModel mj_objectWithKeyValues:model.lottery];
+    _OrderNumberLabel.text = [model6.lotteryoid stringValue];
+    [_butt1 setTitle:[model6.white1 stringValue] forState:UIControlStateNormal];
+    [_butt2 setTitle:[model6.white2 stringValue] forState:UIControlStateNormal];
+    [_butt3 setTitle:[model6.white3 stringValue] forState:UIControlStateNormal];
+    [_butt4 setTitle:[model6.white4 stringValue] forState:UIControlStateNormal];
+    [_butt5 setTitle:[model6.white5 stringValue] forState:UIControlStateNormal];
+    [_butt6 setTitle:[model6.powerball stringValue] forState:UIControlStateNormal];
+    NSLog(@"m3 = %@",model.lottery);
     
 //    self.periodsLabel.text = [NSString stringWithFormat:@"第%@期",[self.prizeDic[@"lottery"][@"periods"] stringValue]];
 //    self.dateLabel.text = self.prizeDic[@"lottery"][@"createtime"];
