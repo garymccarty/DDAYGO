@@ -7,14 +7,10 @@
 //
 
 #import "BetViewController.h"
-#import "BetHeaderView.h"
 #import "PrefixHeader.pch"
-#import "BetTableViewCell.h"
-#import "BetTwoTVCell.h"
+#import "BetViewcell.h"
 @interface BetViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic ,strong) BetHeaderView *whiteBallHeaderView;
-@property (nonatomic ,strong) BetHeaderView *redBallHeaderView;
 
 @end
 
@@ -28,13 +24,7 @@
 
 - (void)initUI {
     self.title = @"促销彩下注";
-    
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewCell" bundle:nil] forCellReuseIdentifier:@"BetTableViewCell"];
-    [self.tableView registerNib:[UINib nibWithNibName:@"BetTwoTVCell" bundle:nil] forCellReuseIdentifier:@"BetTwoTVCell"];
-
-    
-    
+    [self.tableView registerNib:[UINib nibWithNibName:@"BetViewcell" bundle:nil] forCellReuseIdentifier:@"BetViewcell"];
 //    self.whiteBallHeaderView = [[NSBundle mainBundle] loadNibNamed:@"BetHeaderView" owner:self options:nil].lastObject;
 //    self.redBallHeaderView   = [[NSBundle mainBundle] loadNibNamed:@"BetHeaderView" owner:self options:nil].lastObject;
     UIToolbar * tools = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 0, 15)];
@@ -61,10 +51,6 @@
 
     ZPLog(@"下注");
 }
-
-
-
-
 
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -138,47 +124,26 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     //这个+1
-    return 3;
+    return 1;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewCell"];
-    if (indexPath.row == 0) {
-        [cell.betHeaderView updateViewWithColor:DDWriteBet TotalCount:5 SelectedCount:1];
-        [cell updateCount:59];
-    }
-   else if (indexPath.row == 1) {
-        [cell.betHeaderView updateViewWithColor:DDRedBet TotalCount:1 SelectedCount:1];
-        [cell updateCount:26];
-    }
-    else{
-        BetTwoTVCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"BetTwoTVCell"];
-        return cell1;
-    }
+    BetViewcell * cell = [tableView dequeueReusableCellWithIdentifier:@"BetViewcell"];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSInteger count = 0;
+    return 450;
+//
 //    if (indexPath.row == 0) {
-//        count = 59;
-//    } else {
-//        count = 26;
+//        return 59 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
 //    }
-//    if (count % 8 == 0) {
-//        return count / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
-//    } else {
-//        return count / 8 * [UIScreen mainScreen].bounds.size.width/8 + 80;
+//    if (indexPath.row == 1) {
+//        return 26 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 80;
+//    }else{
+//        return 65;
 //    }
-    if (indexPath.row == 0) {
-        return 59 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
-    }
-    if (indexPath.row == 1) {
-        return 26 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 80;
-    }else{
-        return 65;
-    }
 
 }
 

@@ -1,14 +1,14 @@
 //
-//  BetTwoTVCell.m
+//  BetViewcell.m
 //  DDAYGO
 //
-//  Created by Summer on 2017/12/14.
+//  Created by Summer on 2017/12/16.
 //  Copyright © 2017年 Summer. All rights reserved.
 //
 
-#import "BetTwoTVCell.h"
+#import "BetViewcell.h"
 
-@implementation BetTwoTVCell
+@implementation BetViewcell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
