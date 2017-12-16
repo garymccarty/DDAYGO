@@ -67,5 +67,7 @@
 // 获取上一期开奖号码及奖金分配信息
 + (void)getPrizeInfo:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
 
+// 获取本期下注查看更多
++ (void)requseMoreMore:(NSDictionary *)MoreMore uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end
 

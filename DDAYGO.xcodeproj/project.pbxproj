@@ -294,8 +294,6 @@
 		C472F1341FE299E00031D7B5 /* ZP_CheckMoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472F1311FE299E00031D7B5 /* ZP_CheckMoreController.xib */; };
 		C472F1381FE29A060031D7B5 /* ZP_CheckMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C472F1361FE29A060031D7B5 /* ZP_CheckMoreCell.m */; };
 		C472F1391FE29A060031D7B5 /* ZP_CheckMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472F1371FE29A060031D7B5 /* ZP_CheckMoreCell.xib */; };
-		C472F13D1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C472F13B1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.m */; };
-		C472F13E1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472F13C1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.xib */; };
 		C472F1491FE2A88B0031D7B5 /* icon_lottery_jia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472F1401FE2A88B0031D7B5 /* icon_lottery_jia@2x.png */; };
 		C472F14A1FE2A88B0031D7B5 /* icon_lottery_jia@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472F1411FE2A88B0031D7B5 /* icon_lottery_jia@3x.png */; };
 		C472F14B1FE2A88B0031D7B5 /* icon_lottery_jian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472F1421FE2A88B0031D7B5 /* icon_lottery_jian@2x.png */; };
@@ -323,6 +321,10 @@
 		C479C6A91FE3CB5800A58A2A /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */; };
 		C479C6AA1FE3CB5800A58A2A /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */; };
 		C479C6AE1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */; };
+		C47BBBF01FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBEE1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m */; };
+		C47BBBF11FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47BBBEF1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib */; };
+		C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */; };
+		C47BBBF91FE5128F0000FFE6 /* ZP_CheckMoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */; };
 		C47E75861FB573F2009F279A /* ZP_HomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75851FB573F2009F279A /* ZP_HomeTool.m */; };
 		C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E758C1FB575C5009F279A /* ZP_shoopingTool.m */; };
 		C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75901FB57846009F279A /* ZP_ShoppingModel.m */; };
@@ -374,20 +376,12 @@
 		C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */ = {isa = PBXBuildFile; fileRef = C491D3761FCBE31D00D127E9 /* BindingIntroduce.xib */; };
 		C492A1771FD0ECB7009FF57B /* ZP_HistoryBetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A16C1FD0ECB7009FF57B /* ZP_HistoryBetCell.m */; };
 		C492A1781FD0ECB7009FF57B /* ZP_HistoryBetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A16D1FD0ECB7009FF57B /* ZP_HistoryBetCell.xib */; };
-		C492A1791FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A16F1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.m */; };
-		C492A17A1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1701FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.xib */; };
-		C492A17B1FD0ECB7009FF57B /* ZP_HistoryBetView.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1721FD0ECB7009FF57B /* ZP_HistoryBetView.m */; };
-		C492A17C1FD0ECB7009FF57B /* ZP_HistoryBetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1731FD0ECB7009FF57B /* ZP_HistoryBetView.xib */; };
 		C492A17D1FD0ECB7009FF57B /* ZP_HistoryVetController.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1751FD0ECB7009FF57B /* ZP_HistoryVetController.m */; };
 		C492A17E1FD0ECB7009FF57B /* ZP_HistoryVetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1761FD0ECB7009FF57B /* ZP_HistoryVetController.xib */; };
 		C492A18B1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1891FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.m */; };
 		C492A18C1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A18A1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.xib */; };
 		C492A1961FD0EDC0009FF57B /* ZP_InstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1941FD0EDC0009FF57B /* ZP_InstructionController.m */; };
 		C492A1971FD0EDC0009FF57B /* ZP_InstructionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1951FD0EDC0009FF57B /* ZP_InstructionController.xib */; };
-		C492A19D1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A19B1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.m */; };
-		C492A19E1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A19C1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib */; };
-		C492A1A71FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1A51FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m */; };
-		C492A1A81FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1A61FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib */; };
 		C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B51FD15189009FF57B /* 扫码付款状态.png */; };
 		C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */; };
 		C49B32221FD5A995007632F2 /* ZP_ExtractController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */; };
@@ -943,9 +937,6 @@
 		C472F1351FE29A060031D7B5 /* ZP_CheckMoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_CheckMoreCell.h; sourceTree = "<group>"; };
 		C472F1361FE29A060031D7B5 /* ZP_CheckMoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_CheckMoreCell.m; sourceTree = "<group>"; };
 		C472F1371FE29A060031D7B5 /* ZP_CheckMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_CheckMoreCell.xib; sourceTree = "<group>"; };
-		C472F13A1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_CheckMoreCollectionCell.h; sourceTree = "<group>"; };
-		C472F13B1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_CheckMoreCollectionCell.m; sourceTree = "<group>"; };
-		C472F13C1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_CheckMoreCollectionCell.xib; sourceTree = "<group>"; };
 		C472F1401FE2A88B0031D7B5 /* icon_lottery_jia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_lottery_jia@2x.png"; sourceTree = "<group>"; };
 		C472F1411FE2A88B0031D7B5 /* icon_lottery_jia@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_lottery_jia@3x.png"; sourceTree = "<group>"; };
 		C472F1421FE2A88B0031D7B5 /* icon_lottery_jian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_lottery_jian@2x.png"; sourceTree = "<group>"; };
@@ -990,7 +981,14 @@
 		C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		C479C69E1FE3CB5800A58A2A /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
-		C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
+		C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DDAYGO IHTTP协议1.0.docx"; path = "ios(1)/DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
+		C47BBBED1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_DetailsSistoryAwardTableViewCell.h; sourceTree = "<group>"; };
+		C47BBBEE1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardTableViewCell.m; sourceTree = "<group>"; };
+		C47BBBEF1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_DetailsSistoryAwardTableViewCell.xib; sourceTree = "<group>"; };
+		C47BBBF31FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_DetailsSistoryAwardMOdel.h; sourceTree = "<group>"; };
+		C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardMOdel.m; sourceTree = "<group>"; };
+		C47BBBF71FE5128F0000FFE6 /* ZP_CheckMoreModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_CheckMoreModel.h; sourceTree = "<group>"; };
+		C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_CheckMoreModel.m; sourceTree = "<group>"; };
 		C47E75841FB573F2009F279A /* ZP_HomeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HomeTool.h; sourceTree = "<group>"; };
 		C47E75851FB573F2009F279A /* ZP_HomeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomeTool.m; sourceTree = "<group>"; };
 		C47E758B1FB575C5009F279A /* ZP_shoopingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_shoopingTool.h; sourceTree = "<group>"; };
@@ -1091,12 +1089,6 @@
 		C492A16B1FD0ECB7009FF57B /* ZP_HistoryBetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryBetCell.h; sourceTree = "<group>"; };
 		C492A16C1FD0ECB7009FF57B /* ZP_HistoryBetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryBetCell.m; sourceTree = "<group>"; };
 		C492A16D1FD0ECB7009FF57B /* ZP_HistoryBetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_HistoryBetCell.xib; sourceTree = "<group>"; };
-		C492A16E1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryBetCollectionCell.h; sourceTree = "<group>"; };
-		C492A16F1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryBetCollectionCell.m; sourceTree = "<group>"; };
-		C492A1701FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_HistoryBetCollectionCell.xib; sourceTree = "<group>"; };
-		C492A1711FD0ECB7009FF57B /* ZP_HistoryBetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryBetView.h; sourceTree = "<group>"; };
-		C492A1721FD0ECB7009FF57B /* ZP_HistoryBetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryBetView.m; sourceTree = "<group>"; };
-		C492A1731FD0ECB7009FF57B /* ZP_HistoryBetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_HistoryBetView.xib; sourceTree = "<group>"; };
 		C492A1741FD0ECB7009FF57B /* ZP_HistoryVetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryVetController.h; sourceTree = "<group>"; };
 		C492A1751FD0ECB7009FF57B /* ZP_HistoryVetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryVetController.m; sourceTree = "<group>"; };
 		C492A1761FD0ECB7009FF57B /* ZP_HistoryVetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_HistoryVetController.xib; sourceTree = "<group>"; };
@@ -1106,12 +1098,6 @@
 		C492A1931FD0EDC0009FF57B /* ZP_InstructionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_InstructionController.h; sourceTree = "<group>"; };
 		C492A1941FD0EDC0009FF57B /* ZP_InstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_InstructionController.m; sourceTree = "<group>"; };
 		C492A1951FD0EDC0009FF57B /* ZP_InstructionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_InstructionController.xib; sourceTree = "<group>"; };
-		C492A19A1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_DetailsSistoryAwardTableViewCell.h; sourceTree = "<group>"; };
-		C492A19B1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardTableViewCell.m; sourceTree = "<group>"; };
-		C492A19C1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_DetailsSistoryAwardTableViewCell.xib; sourceTree = "<group>"; };
-		C492A1A41FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_DetailsSistoryAwardCell.h; sourceTree = "<group>"; };
-		C492A1A51FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardCell.m; sourceTree = "<group>"; };
-		C492A1A61FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_DetailsSistoryAwardCell.xib; sourceTree = "<group>"; };
 		C492A1B51FD15189009FF57B /* 扫码付款状态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫码付款状态.png"; sourceTree = "<group>"; };
 		C49B321E1FD5A995007632F2 /* ZP_ExtractController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ExtractController.h; sourceTree = "<group>"; };
 		C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ExtractController.m; sourceTree = "<group>"; };
@@ -1319,6 +1305,7 @@
 		0641BB971F67B60B00E72FEF /* Testbag */ = {
 			isa = PBXGroup;
 			children = (
+				C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */,
 				C472F13F1FE2A88B0031D7B5 /* ios(1) */,
 				C46837E61FDA645A000E7D7C /* ios */,
 				C46B9F431FDE71FE00942750 /* 促销彩 */,
@@ -2976,6 +2963,7 @@
 			children = (
 				C472F12E1FE299E00031D7B5 /* ZP_CheckMoreHomePage */,
 				C472F1321FE299E00031D7B5 /* ZP_CheckMoreCell */,
+				C47BBBF61FE512690000FFE6 /* ZP_CheckMoreModel */,
 			);
 			path = ZP_CheckMore;
 			sourceTree = "<group>";
@@ -2996,9 +2984,6 @@
 				C472F1351FE29A060031D7B5 /* ZP_CheckMoreCell.h */,
 				C472F1361FE29A060031D7B5 /* ZP_CheckMoreCell.m */,
 				C472F1371FE29A060031D7B5 /* ZP_CheckMoreCell.xib */,
-				C472F13A1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.h */,
-				C472F13B1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.m */,
-				C472F13C1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.xib */,
 			);
 			path = ZP_CheckMoreCell;
 			sourceTree = "<group>";
@@ -3006,7 +2991,6 @@
 		C472F13F1FE2A88B0031D7B5 /* ios(1) */ = {
 			isa = PBXGroup;
 			children = (
-				C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */,
 				C472F1401FE2A88B0031D7B5 /* icon_lottery_jia@2x.png */,
 				C472F1411FE2A88B0031D7B5 /* icon_lottery_jia@3x.png */,
 				C472F1421FE2A88B0031D7B5 /* icon_lottery_jian@2x.png */,
@@ -3092,6 +3076,36 @@
 				C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */,
 			);
 			path = MJExtension;
+			sourceTree = "<group>";
+		};
+		C47BBBEC1FE510600000FFE6 /* ZP_DetailsSistoryAwardcell */ = {
+			isa = PBXGroup;
+			children = (
+				C47BBBED1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.h */,
+				C47BBBEE1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m */,
+				C47BBBEF1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib */,
+			);
+			name = ZP_DetailsSistoryAwardcell;
+			path = DDAYGO/ViewController/My/Lottery/ZP_HistoryBet/ZP_DetailsSistoryAward/ZP_DetailsSistoryAwardcell;
+			sourceTree = SOURCE_ROOT;
+		};
+		C47BBBF21FE510670000FFE6 /* ZP_DetailsSistoryAwardMOdel */ = {
+			isa = PBXGroup;
+			children = (
+				C47BBBF31FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.h */,
+				C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */,
+			);
+			name = ZP_DetailsSistoryAwardMOdel;
+			path = DDAYGO/ViewController/My/Lottery/ZP_HistoryBet/ZP_DetailsSistoryAward/ZP_DetailsSistoryAwardMOdel;
+			sourceTree = SOURCE_ROOT;
+		};
+		C47BBBF61FE512690000FFE6 /* ZP_CheckMoreModel */ = {
+			isa = PBXGroup;
+			children = (
+				C47BBBF71FE5128F0000FFE6 /* ZP_CheckMoreModel.h */,
+				C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */,
+			);
+			path = ZP_CheckMoreModel;
 			sourceTree = "<group>";
 		};
 		C47E75821FB573A2009F279A /* ZP_shoppingTool */ = {
@@ -3486,12 +3500,6 @@
 				C492A16B1FD0ECB7009FF57B /* ZP_HistoryBetCell.h */,
 				C492A16C1FD0ECB7009FF57B /* ZP_HistoryBetCell.m */,
 				C492A16D1FD0ECB7009FF57B /* ZP_HistoryBetCell.xib */,
-				C492A16E1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.h */,
-				C492A16F1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.m */,
-				C492A1701FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.xib */,
-				C492A1711FD0ECB7009FF57B /* ZP_HistoryBetView.h */,
-				C492A1721FD0ECB7009FF57B /* ZP_HistoryBetView.m */,
-				C492A1731FD0ECB7009FF57B /* ZP_HistoryBetView.xib */,
 			);
 			path = ZP_HistoryBetCell;
 			sourceTree = "<group>";
@@ -3500,17 +3508,8 @@
 			isa = PBXGroup;
 			children = (
 				C492A1871FD0ED72009FF57B /* ZP_DetailsSistoryAwardHomePage */,
-				C492A1861FD0ED72009FF57B /* ZP_DetailsSistoryAwardCell */,
 			);
 			path = ZP_DetailsSistoryAward;
-			sourceTree = "<group>";
-		};
-		C492A1861FD0ED72009FF57B /* ZP_DetailsSistoryAwardCell */ = {
-			isa = PBXGroup;
-			children = (
-				C492A1991FD126BA009FF57B /* ZP_DetailsSistoryAwardcell */,
-			);
-			path = ZP_DetailsSistoryAwardCell;
 			sourceTree = "<group>";
 		};
 		C492A1871FD0ED72009FF57B /* ZP_DetailsSistoryAwardHomePage */ = {
@@ -3519,6 +3518,8 @@
 				C492A1881FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.h */,
 				C492A1891FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.m */,
 				C492A18A1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.xib */,
+				C47BBBEC1FE510600000FFE6 /* ZP_DetailsSistoryAwardcell */,
+				C47BBBF21FE510670000FFE6 /* ZP_DetailsSistoryAwardMOdel */,
 			);
 			path = ZP_DetailsSistoryAwardHomePage;
 			sourceTree = "<group>";
@@ -3531,19 +3532,6 @@
 				C492A1951FD0EDC0009FF57B /* ZP_InstructionController.xib */,
 			);
 			path = ZP_InstructionBetHomePage;
-			sourceTree = "<group>";
-		};
-		C492A1991FD126BA009FF57B /* ZP_DetailsSistoryAwardcell */ = {
-			isa = PBXGroup;
-			children = (
-				C492A19A1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.h */,
-				C492A19B1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.m */,
-				C492A19C1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib */,
-				C492A1A41FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.h */,
-				C492A1A51FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m */,
-				C492A1A61FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib */,
-			);
-			path = ZP_DetailsSistoryAwardcell;
 			sourceTree = "<group>";
 		};
 		C492A1AE1FD15189009FF57B /* 订单_ios */ = {
@@ -3751,9 +3739,7 @@
 				C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */,
 				0682BE6D1F90725700894F4E /* img_home_advertisemen.png in Resources */,
 				C49B32281FD5AC9E007632F2 /* ZP_ExtractCell.xib in Resources */,
-				C492A1A81FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.xib in Resources */,
 				06F572231F9F1E8700D61FDB /* BillTableViewCell.xib in Resources */,
-				C492A17A1FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.xib in Resources */,
 				C47E76271FB5A1C7009F279A /* LeftTableViewCell.xib in Resources */,
 				C46837F81FDA645A000E7D7C /* 产品详情_spec.png in Resources */,
 				06621DAC1F9758720030983F /* LoginController.xib in Resources */,
@@ -3766,7 +3752,6 @@
 				C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */,
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
 				062C9D5D1F8CD6F900E14987 /* button_3@2x.png in Resources */,
-				C472F13E1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.xib in Resources */,
 				062C9D5F1F8CD6F900E14987 /* button_4@2x.png in Resources */,
 				C472F1391FE29A060031D7B5 /* ZP_CheckMoreCell.xib in Resources */,
 				062C9D641F8CD6F900E14987 /* button_6@3x.png in Resources */,
@@ -3778,7 +3763,6 @@
 				06F572331F9F1E8700D61FDB /* ReceivingViewCell.xib in Resources */,
 				C435171F1FB2AC180066302E /* ConcernShopTableViewCell.xib in Resources */,
 				C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */,
-				C492A19E1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */,
 				0641BBA31F67B60B00E72FEF /* Third.png in Resources */,
 				C472F14E1FE2A88B0031D7B5 /* icon_lottery_trash_normal@3x.png in Resources */,
 				063FE0551F614D24009910FF /* LaunchScreen.storyboard in Resources */,
@@ -3811,6 +3795,7 @@
 				C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */,
 				064249821F99F36000340EBA /* PayPassController.xib in Resources */,
 				C45FAF8D1FCD564C00BD4CE1 /* SelectedViewController.xib in Resources */,
+				C47BBBF11FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */,
 				06F571DA1F9F1A7900D61FDB /* AddressViewController.xib in Resources */,
 				C46B9F491FDE71FE00942750 /* 本期下注号码_spec.png in Resources */,
 				C472F1501FE2A88B0031D7B5 /* icon_lottery_trash_pressed@3x.png in Resources */,
@@ -3844,7 +3829,6 @@
 				C407AC131FD7E917004A8DE8 /* 提现记录_spec.png in Resources */,
 				06F5716E1F9F15CE00D61FDB /* CollectionViewController.xib in Resources */,
 				C46B9F481FDE71FE00942750 /* 历史下注号码_spec.png in Resources */,
-				C492A17C1FD0ECB7009FF57B /* ZP_HistoryBetView.xib in Resources */,
 				0682BE801F90C8F000894F4E /* seven.png in Resources */,
 				062C9D681F8CDB7900E14987 /* headImage.jpg in Resources */,
 				C4573F3A1FCFA3A6001DFE97 /* BetHeaderView.xib in Resources */,
@@ -3987,6 +3971,7 @@
 				C479C6A51FE3CB5800A58A2A /* MJPropertyType.m in Sources */,
 				064449B71F6A9B250004DFE4 /* NSBundle+MJRefresh.m in Sources */,
 				C45F22ED1FA0746300F5DB41 /* NSString+Additions.m in Sources */,
+				C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */,
 				06621DAD1F9758720030983F /* TextView.m in Sources */,
 				C4535E461FC56A1400DFFD62 /* ZP_MessageModel.m in Sources */,
 				C425BEB41FC832140097DB8F /* ZP_FootprintModel.m in Sources */,
@@ -4003,9 +3988,7 @@
 				C45F233C1FA0757A00F5DB41 /* ZeroViewCell.m in Sources */,
 				064449AF1F6A9B250004DFE4 /* MJRefreshBackGifFooter.m in Sources */,
 				06418F531F7A076A00479523 /* MASLayoutConstraint.m in Sources */,
-				C492A1A71FD13D37009FF57B /* ZP_DetailsSistoryAwardCell.m in Sources */,
 				064249861F99FBEB00340EBA /* PayFailController.m in Sources */,
-				C492A17B1FD0ECB7009FF57B /* ZP_HistoryBetView.m in Sources */,
 				C47096941FB04998006EA52C /* PromptBox.m in Sources */,
 				C4535E301FC55A9E00DFFD62 /* ZP_ComfirmModel.m in Sources */,
 				06F572281F9F1E8700D61FDB /* OrderDetailViewController.m in Sources */,
@@ -4039,6 +4022,7 @@
 				C45FAF991FCD68C200BD4CE1 /* UIImage+Render.m in Sources */,
 				0641BBD91F67F9E400E72FEF /* SDWebImageManager.m in Sources */,
 				06F571D51F9F1A7900D61FDB /* ResetPasswordViewController.m in Sources */,
+				C47BBBF01FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m in Sources */,
 				C479C6A11FE3CB5800A58A2A /* MJExtensionConst.m in Sources */,
 				C47E763F1FB5A1C7009F279A /* ZPLoopViewCell.m in Sources */,
 				C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */,
@@ -4052,6 +4036,7 @@
 				0641BBDE1F67F9E400E72FEF /* UIImageView+HighlightedWebCache.m in Sources */,
 				06A1CE7E1F669F0600D820E5 /* UserDefultManage.m in Sources */,
 				C425BEB01FC818480097DB8F /* ZP_OrderController.m in Sources */,
+				C47BBBF91FE5128F0000FFE6 /* ZP_CheckMoreModel.m in Sources */,
 				C47E763A1FB5A1C7009F279A /* ZP_GoodDetailsModel.m in Sources */,
 				06F572401F9F204F00D61FDB /* BillDetailViewController.m in Sources */,
 				06F5722C1F9F1E8700D61FDB /* OrderManagerViewController.m in Sources */,
@@ -4080,7 +4065,6 @@
 				C44D6D161FD8CF7D0002DAF2 /* ZP_PayView.m in Sources */,
 				064449B91F6A9B250004DFE4 /* UIScrollView+MJRefresh.m in Sources */,
 				C47E76491FB5A1C7009F279A /* Pop-upMenuView.m in Sources */,
-				C492A19D1FD126BA009FF57B /* ZP_DetailsSistoryAwardTableViewCell.m in Sources */,
 				064449A81F6A9B250004DFE4 /* MJRefreshBackFooter.m in Sources */,
 				C47212B81FB1A5DC0055578E /* CustomCell.m in Sources */,
 				C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */,
@@ -4103,7 +4087,6 @@
 				C47E76461FB5A1C7009F279A /* ShopIntroductionViewController.m in Sources */,
 				064449AC1F6A9B250004DFE4 /* MJRefreshAutoGifFooter.m in Sources */,
 				06621D9A1F9757B40030983F /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
-				C472F13D1FE2A07F0031D7B5 /* ZP_CheckMoreCollectionCell.m in Sources */,
 				C45F22CD1FA05A8E00F5DB41 /* ThemeManager.m in Sources */,
 				065B3CDE1F984F8A00A8E6D6 /* TAAnimatedDotView.m in Sources */,
 				C47E76451FB5A1C7009F279A /* ShoplntroductionCell.m in Sources */,
@@ -4139,7 +4122,6 @@
 				0641BBE01F67F9E400E72FEF /* UIView+WebCacheOperation.m in Sources */,
 				064449AB1F6A9B250004DFE4 /* MJRefreshHeader.m in Sources */,
 				C479C6A71FE3CB5800A58A2A /* NSObject+MJCoding.m in Sources */,
-				C492A1791FD0ECB7009FF57B /* ZP_HistoryBetCollectionCell.m in Sources */,
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
 				C46B9F4F1FDE764000942750 /* ZP_ExtractModel.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,

@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZP_CheckMoreCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource>
-@property (weak, nonatomic) IBOutlet UILabel * OrderNumberLabel;  // 订单号
-@property (weak, nonatomic) IBOutlet UIView * TitleView;
-@property (weak, nonatomic) IBOutlet UICollectionView * CheckMoreCollectionView;
-@property (nonatomic, assign) NSInteger wirteBetCount;
-@property (nonatomic, assign) NSInteger redBetCount;
-
-
-
-
+@interface ZP_CheckMoreCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *but1;
+@property (weak, nonatomic) IBOutlet UIButton *but2;
+@property (weak, nonatomic) IBOutlet UIButton *but3;
+@property (weak, nonatomic) IBOutlet UIButton *but4;
+@property (weak, nonatomic) IBOutlet UIButton *but5;
+@property (weak, nonatomic) IBOutlet UIButton *but6;
 
 @end

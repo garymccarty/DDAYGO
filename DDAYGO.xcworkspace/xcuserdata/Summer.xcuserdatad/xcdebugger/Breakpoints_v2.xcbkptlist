@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DDAYGO/ViewController/Shopping/ShoppingcCart/ShoppingViewController.m"
-            timestampString = "534688183.506363"
+            filePath = "DDAYGO/ViewController/My/Lottery/ZP_CheckMore/ZP_CheckMoreHomePage/ZP_CheckMoreController.m"
+            timestampString = "535115737.071131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "628"
-            endingLineNumber = "628"
-            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-AllData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
