@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BetViewcell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIView *butView;
+@property (nonatomic ,assign) NSInteger wirteBetCount;
+@property (nonatomic ,assign) NSInteger redBetCount;
+- (void)updateCount:(NSInteger)count;
 @end
