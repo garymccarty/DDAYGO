@@ -366,8 +366,8 @@
     _merchantsLabel.text = [NSString stringWithFormat:@"%@",model.shopname]; // 这个参数显示不出来不
     _titleLabel.text = dic.productname;
 //    _titleLabel.text = model.shopname;
-    _descLabel.text = [NSString stringWithFormat:@"%@",dic.colorname];
-    _SizeLabel.text = [NSString stringWithFormat:@"%@",dic.normname];
+    _descLabel.text = dic.colorname;
+    _SizeLabel.text = dic.normname;
     _AmountLabel.text = [NSString stringWithFormat:@"%@",model.ordersamount];
     _ExpressFeeLabel.text = [NSString stringWithFormat:@"%@",model.freight]; // 运费
     _PreferentialLabel.text = [NSString stringWithFormat:@"%@",dic.price];

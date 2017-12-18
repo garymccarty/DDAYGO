@@ -69,6 +69,10 @@
         }else {
             if ([adic[@"result"]isEqualToString:@"token_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"token以存在"];
+        }else {
+            if ([adic[@"result"]isEqualToString:@"failure"]) {
+                [SVProgressHUD showInfoWithStatus:@"登入失败"];
+                               }
                             }
                         }
                     }
