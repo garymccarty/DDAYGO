@@ -222,13 +222,13 @@
                 }
             }];
         }
-        [modelArr enumerateObjectsUsingBlock:^(ZP_ComfirmModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([model.isdefault isEqualToNumber:@1]) {
-                ZPLog(@"%@",model.isdefault);
-                self.merchantsLabel.text = model.receiptname;
-                [_dataArrar addObject:model];
-            }
-        }];
+//        [modelArr enumerateObjectsUsingBlock:^(ZP_ComfirmModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
+//            if ([model.isdefault isEqualToNumber:@1]) {
+//                ZPLog(@"%@",model.isdefault);
+//                self.merchantsLabel.text = model.receiptname;
+//                [_dataArrar addObject:model];
+//            }
+//        }];
         [self.tableView reloadData];
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);

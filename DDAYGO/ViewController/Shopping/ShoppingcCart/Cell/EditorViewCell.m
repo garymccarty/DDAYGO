@@ -176,12 +176,14 @@
         _numLabel.text = @"0";
     }else {
         _numLabel.text = [NSString stringWithFormat:@"%ld",[_numLabel.text integerValue]-1];
+        self.btnClickBlock(_numLabel.text);
     }
 }
 
 - (void)addClick:(UIButton *)sender {
     
     _numLabel.text = [NSString stringWithFormat:@"%ld",[_numLabel.text integerValue]+1];
+    self.btnClickBlock(_numLabel.text);
 }
 
 //  筛选

@@ -100,7 +100,8 @@
         make.height.mas_offset(15);
         make.width.mas_offset(100);
     }];
-    
+//    编辑VIEW
+    UIView * view = [UIView new];
 ////  价格
 //    ZP_GeneralLabel * PriceLabel = [ZP_GeneralLabel initWithtextLabel:_PriceLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
 //    [self.contentView addSubview:PriceLabel];
@@ -188,6 +189,9 @@
     }];
 }
 
+
+
+
 - (void)cellWithModel:(ZP_CartsModel *)model {
     
     [_leftImageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:nil];;
@@ -202,6 +206,7 @@
     _QuantityLabel.text = [NSString stringWithFormat:@"%@",model.amount];
     
 }
+
 
 @end
 

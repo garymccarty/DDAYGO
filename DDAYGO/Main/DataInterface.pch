@@ -47,6 +47,7 @@
 //#define RecordAPI @"my/activity/info"
 // 获取确认订单信息
 #define MakeSureOrderAPI @"ordersaddinfo"
+//http://www.ddaygo.com/api/Test/confirmreceipt?oid=117102618111439993&token=
 ////发送抽奖信息
 //#define LuckyDrawInfoAPI @"my/draw/coupon"
 ////新人专享

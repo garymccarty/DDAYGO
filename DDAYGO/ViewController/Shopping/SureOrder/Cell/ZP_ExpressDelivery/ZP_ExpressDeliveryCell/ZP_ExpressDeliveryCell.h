@@ -13,5 +13,5 @@
 @property (nonatomic, strong) UILabel * CourierLabel;      //  快速
 @property (nonatomic, strong) UILabel * CostLabel;        //  费用
 
-- (void)ExpressDevliveryDic:(NSNumber *)model;
+- (void)ExpressDevliveryDic:(ZP_ExpressDeliveryModel *)model;
 @end

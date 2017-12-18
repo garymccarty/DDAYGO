@@ -75,7 +75,7 @@
             NSDictionary * dic = [obj firstObject];
             ZPLog(@"%@",dic);
             _model = [ZP_ShoppingModel CreateWithDict:[obj firstObject]];
-            dataArray = [ZP_CartsModel arrayWithArray:dic[@"cart"]];
+          //  dataArray = [ZP_CartsModel arrayWithArray:dic[@"cart"]];
             nameArray = [ZP_CartsShopModel arrayWithArray:obj];
             [self.tableView reloadData];
             
@@ -135,6 +135,8 @@
     
 //        注册
     [self.tableView registerClass:[ShoppingCell class] forCellReuseIdentifier:@"shoppingCell"];
+    [self.tableView registerClass:[EditorViewCell class] forCellReuseIdentifier:@"editorViewCell"];
+    
     UIView * bottomView = [UIView new];
     bottomView.backgroundColor = ZP_textWite;
     bottomView.frame = CGRectMake(0, ZP_height - TabbarHeight - 50 - NavBarHeight, ZP_Width, 50);
@@ -461,8 +463,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return dataArray.count;
+    ZP_CartsShopModel * model = nameArray[section];
+    return model.array.count;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -475,12 +477,13 @@
         ShoppingCell * cell = [tableView dequeueReusableCellWithIdentifier:@"shoppingCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
         self.tableView.tableFooterView = [[UIView alloc] init];
-        ZP_CartsModel *model = dataArray[indexPath.row];
+        ZP_CartsShopModel * models = nameArray[indexPath.section];
+        ZP_CartsModel *model = models.array[indexPath.row];
         cell.buttom.tag = indexPath.row;
         [cell.buttom removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.buttom addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell cellWithModel:model];
-        [self registerForPreviewingWithDelegate:self sourceView:cell];
+     //   [self registerForPreviewingWithDelegate:self sourceView:cell];
         return cell;
     }else{
         static NSString * EditorID = @"editorViewCell";
@@ -490,11 +493,15 @@
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
         self.tableView.tableFooterView = [[UIView alloc] init];
-        ZP_CartsModel *model  = dataArray[indexPath.row];
+        ZP_CartsShopModel * models = nameArray[indexPath.section];
+        ZP_CartsModel *model = models.array[indexPath.row];
         cell.button.tag = indexPath.row;
         [cell.button removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.button addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell cellWithModel:model];
+        cell.btnClickBlock = ^(NSString *str) {
+            
+        };
         return cell;
     }
     

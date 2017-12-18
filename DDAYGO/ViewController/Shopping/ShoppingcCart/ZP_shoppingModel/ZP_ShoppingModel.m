@@ -69,6 +69,10 @@
         ZP_CartsShopModel *model = [[ZP_CartsShopModel alloc]init];
         model.shopname = dic[@"shopname"];
         model.supplierid = dic[@"supplierid"];
+        NSArray * arrays = dic[@"cart"];
+        if (arrays.count>0) {
+            model.array = [ZP_CartsModel arrayWithArray:arrays];
+        }
         [arr addObject:model];
     }
     return arr;
