@@ -35,10 +35,6 @@
 - (void)initUI {
 //    标题
     ZP_GeneralLabel * Titlelabel = [ZP_GeneralLabel initWithtextLabel:_Titlelabel.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    Titlelabel.textAlignment = NSTextAlignmentCenter;
-//    [Titlelabel setTextColor:ZP_Graybackground];
-//    Titlelabel.textColor = ZP_textblack;
-//    Titlelabel.font = ZP_TooBarFont;
     [self addSubview:Titlelabel];
     [Titlelabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
@@ -67,23 +63,13 @@
         make.height.mas_equalTo(160);
     }];
     _imageView1 = imageView1;
-//
-//    //  图片2
-//    UIImageView * imageView2 = [UIImageView new];
-//    [self addSubview:imageView2];
-//    [imageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self).offset(110);
-//        make.left.equalTo(self).offset(0);
-//        make.width.mas_equalTo(100);
-//        make.height.mas_equalTo(160);
-//    }];
-//    _imageView2 = imageView2;
+
 }
 - (void)InformationWithDic:(NSDictionary *)dic {
     
-    _Titlelabel.text = dic[@"title"];
+//    _Titlelabel.text = dic[@"title"];
     _imageView1.image = [UIImage imageNamed:@"img_home_advertisemen"];
-//    [self allData];
+    [self allData];
 }
 
 
@@ -105,7 +91,6 @@
         make.right.equalTo(self).offset(0);
         make.top.equalTo(self).offset(30);
     }];
-    [self allData];
 }
 
 - (void)allData {

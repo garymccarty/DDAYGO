@@ -24,7 +24,8 @@
 
 // 设定默认地址
 + (void) requestDefaultAddress:(NSDictionary *)DefaultAddress success:(void (^)(id))success failure:(void (^)(NSError *))failure;
-
+// 删除地址
++ (void)requesDeleteAddress:(NSDictionary *)DeleteAddress success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 //  绑定IUCE
 + (void)requestBindingICUE:(NSDictionary *)Binding success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
@@ -69,6 +70,6 @@
 
 // 获取本期下注查看更多
 + (void)requseMoreMore:(NSDictionary *)MoreMore uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
-
+//
 @end
 

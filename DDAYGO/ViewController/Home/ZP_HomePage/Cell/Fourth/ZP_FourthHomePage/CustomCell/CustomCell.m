@@ -44,13 +44,20 @@
         make.right.equalTo(self).offset(-80);
     }];
     _introduceLabel = introduceLabel;
-    
+//     RMB
+    ZP_GeneralLabel * CurrencySymbolLabel = [ZP_GeneralLabel initWithtextLabel:_CurrencySymbolLabel.text textColor:ZP_HomeTitleTypefaceCorlor font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    [self addSubview:CurrencySymbolLabel];
+    CurrencySymbolLabel.text = @"RMB:";
+    [CurrencySymbolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(45);
+        make.left.equalTo(self).offset(5);
+    }];
     //    优惠价格
     ZP_GeneralLabel * PreferentialLabel = [ZP_GeneralLabel initWithtextLabel:_PreferentialLabel.text textColor:ZP_HomePreferentialpriceTypefaceCorlor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self addSubview:PreferentialLabel];
     [PreferentialLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(45);
-        make.left.equalTo(self).offset(5);
+        make.left.equalTo(CurrencySymbolLabel).offset(30);
     }];
     _PreferentialLabel = PreferentialLabel;
     
@@ -78,7 +85,7 @@
     UIImageView * TrademarkImage = [UIImageView new];
     [self.contentView addSubview:TrademarkImage];
     [TrademarkImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-120);
+        make.left.equalTo(PreferentialLabel).offset(65);
         make.top.equalTo(self).offset(50);
         make.width.mas_offset(15);
         make.height.mas_offset(15);
@@ -90,7 +97,7 @@
     ZP_GeneralLabel * TrademarkLabel = [ZP_GeneralLabel initWithtextLabel:_TrademarkLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:TrademarkLabel];
     [TrademarkLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-90);
+        make.left.equalTo(TrademarkImage).offset(15);
         make.top.equalTo(self).offset(52.5);
 //        make.width.mas_offset(40);
     }];
@@ -110,11 +117,12 @@
 
 - (void)cellWithdic:(ZP_FourthModel *)model {
     [_imageView1 sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
-//    _introduceLabel.text = model.productname;
-//    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.PreferentialLabel]; // 优惠价格
+    _introduceLabel.text = model.productname;
+    
+    _PreferentialLabel.text = [NSString stringWithFormat:@"%@",model.PreferentialLabel]; // 优惠价格
 //    _PriceLabel.text = [NSString stringWithFormat:@"RMB:"];
-//    _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
-//    _TrademarkLabel.text = model.TrademarkLabel;
+    _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
+    _TrademarkLabel.text = model.TrademarkLabel;
 }
 
 

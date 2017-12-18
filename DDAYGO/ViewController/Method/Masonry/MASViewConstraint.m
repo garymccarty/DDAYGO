@@ -339,9 +339,7 @@ static char kInstalledConstraintsKey;
     
     if (secondLayoutItem) {
         MAS_VIEW *closestCommonSuperview = [firstLayoutItem mas_closestCommonSuperview:secondLayoutItem];
-        NSAssert(closestCommonSuperview,
-                 @"couldn't find a common superview for %@ and %@",
-                 firstLayoutItem, secondLayoutItem);
+//        NSAssert(closestCommonSuperview,@"couldn't find a common superview for %@ and %@",firstLayoutItem, secondLayoutItem);
         self.installedView = closestCommonSuperview;
     } else {
         self.installedView = firstLayoutItem;

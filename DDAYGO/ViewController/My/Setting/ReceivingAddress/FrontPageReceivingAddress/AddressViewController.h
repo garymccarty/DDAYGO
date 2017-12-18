@@ -10,5 +10,6 @@
 
 @interface AddressViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSNumber * oid;
 
 @end

@@ -43,7 +43,7 @@
     dic[@"adsid"] = @"0";
     dic[@"name"] = _ContactpersonTextField.text;
     dic[@"phone"] = _ContactnumberTextField.text;
-    dic[@"cell"] = @"123456789";
+    dic[@"cell"] = nil;
     dic[@"email"] = nil;
     dic[@"zipcode"] = _ZipcodeaddressTextField.text;
     dic[@"address"] = _ReceivingaddressTextField.text;
@@ -59,7 +59,7 @@
             [self.navigationController popViewControllerAnimated:YES];
         }else {
             if ([dic[@"result"] isEqualToString:@"add_up_to_ten"]) {
-                [SVProgressHUD showInfoWithStatus:@"添加失败，最多只能添加10天哟"];
+                [SVProgressHUD showInfoWithStatus:@"添加失败，最多只能添加10条哟"];
         }else {
             if ([dic[@"result"] isEqualToString:@"sys_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"服务器连接至火星"];

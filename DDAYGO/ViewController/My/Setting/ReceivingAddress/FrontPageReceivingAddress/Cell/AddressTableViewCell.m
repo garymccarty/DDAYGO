@@ -8,6 +8,8 @@
 
 #import "AddressTableViewCell.h"
 #import "ZP_FrontPageReceivingAddressModel.h"
+#import "ZP_MyTool.h"
+#import "PrefixHeader.pch"
 @implementation AddressTableViewCell
 
 - (void)awakeFromNib {
@@ -19,6 +21,12 @@
         self.finishBlock(nil);
     }
 }
+- (IBAction)DeletingBut:(id)sender {
+//    if (self.finishBlock) {
+//        self.finishBlock(nil);
+//    }
+}
+
 - (void)cellWithdic:(ZP_FrontPageReceivingAddressModel *)model {
     _NameLabel.text = model.eeceiptname;
     _PhoneLabel.text = model.eeceiptphone;
@@ -26,5 +34,7 @@
     _defBtn.selected = [model.isdefault boolValue];
     
 }
+
+
 @end
 

@@ -13,11 +13,10 @@
 @property (strong, nonatomic) IBOutlet UILabel * PhoneLabel; // 电话
 @property (strong, nonatomic) IBOutlet UILabel * AddressLabel; // 地址
 @property (weak, nonatomic) IBOutlet UIButton * defBtn;
-
+@property (nonatomic, strong) NSString * oid;
 typedef void (^FinishBlock)(id response);
-
 @property (nonatomic , copy) FinishBlock finishBlock;
-
+//@property (nonatomic, copy) FiniishBlock FiniishBlock;
 - (void)cellWithdic:(ZP_FrontPageReceivingAddressModel *)model;
 @end
 

@@ -57,7 +57,6 @@
         NSArray * arr = obj;
         self.newsData = [ZP_FifthModel arrayWithArray:arr];
         [self.bottomCV reloadData];
-        // NSLog(@"%@",dic[@""]);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];

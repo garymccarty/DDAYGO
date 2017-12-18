@@ -17,6 +17,7 @@
     [super viewDidLoad];
     [self initUI];
 }
+
 - (void)initUI {
    self.title = NSLocalizedString(@"玩转赏金", nil);
 
