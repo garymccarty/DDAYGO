@@ -27,9 +27,9 @@
         make.left.equalTo(self).offset(1);
         make.top.equalTo(self).offset(-1);
         make.right.equalTo(self).offset(-1);
-        make.bottom.equalTo(self).offset(-45);
+        make.bottom.equalTo(self).offset(-30);
         make.width.mas_offset(ZP_Width/4-1);
-//        make.height.mas_equalTo(ZP_Width / 4- 1);
+//        make.height.mas_equalTo(35);
     }];
     _imageView = imageView;
     
@@ -40,7 +40,7 @@
     [TitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(2);
         make.right.equalTo(self).offset(-2);
-        make.bottom.equalTo(imageView).offset(10);
+        make.top.equalTo(imageView).offset(40);
     }];
     _titleLabel = TitleLabel;
     
@@ -49,7 +49,7 @@
     [self addSubview:PreferentialLabel];
     [PreferentialLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
-        make.bottom.equalTo(TitleLabel).offset(15);
+        make.top.equalTo(TitleLabel).offset(10);
     }];
     _PreferentialLabel = PreferentialLabel;
     

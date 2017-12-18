@@ -9,21 +9,35 @@
 #import "ZP_FourthModel.h"
 
 @implementation ZP_FourthModel
-+ (instancetype)getFourthData:(NSDictionary *)Dic {
-    return [[self alloc]initWithFourthData:Dic];
++ (instancetype)GetFourthData:(NSDictionary *)dic {
+    return [[self alloc]initWithFourthData:dic];
 }
-
 - (instancetype)initWithFourthData:(NSDictionary *)Dic {
     if (self == [super init]) {
-        self.dataImage = Dic[@"dataImage"];
+        self.defaultimg = Dic[@"defaultimg"];
+        self.productname = Dic[@"productname"];
+        
     }
     return self;
 }
-
 + (id)cheakNull:(id)dic {
     if ([dic isEqual:[NSNull null]]) {
         return @"";
     }
     return dic;
+}
+
++ (NSMutableArray *)arrayWithArray:(NSArray *)array {
+    NSMutableArray * arr = [[NSMutableArray alloc]init];
+    for (NSDictionary * dic in array) {
+        ZP_FourthModel * model = [[ZP_FourthModel alloc]init];
+        model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
+        model.productname = dic[@"productname"];
+        model.producid = dic[@"productid"];
+        model.PreferentialLabel = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
+        model.TrademarkLabel = [NSString stringWithFormat:@"%@",dic[@"cp"]];
+        [arr addObject:model];
+    }
+    return arr;
 }
 @end

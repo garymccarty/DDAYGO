@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZP_FifthModel.h"
+#import "ZP_FourthModel.h"
 @interface CustomCell : UITableViewCell
 @property (nonatomic, strong) UIImageView * imageView1; // 图片
 @property (nonatomic, strong) UILabel * introduceLabel; // 详情
@@ -16,6 +16,5 @@
 @property (nonatomic, strong) UIImageView * TrademarkImage; // 商标图片
 @property (nonatomic, strong) UILabel * TrademarkLabel; // 商标编号
 
-//- (void)InformationWithDic:(NSDictionary *)dic;
-- (void)cellWithdic:(ZP_FifthModel *)model;
+- (void)cellWithdic:(ZP_FourthModel *)model;
 @end

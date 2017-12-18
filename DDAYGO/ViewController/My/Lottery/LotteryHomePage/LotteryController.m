@@ -12,6 +12,7 @@
 #import "ZP_HistoryVetController.h"
 #import "ZP_InstructionController.h"
 #import "ZP_CheckMoreController.h"
+#import "ZP_LotteryHistoricalBettingNumberController.h"
 #import "ZP_MyTool.h"
 #import "ZP_LotterModel.h"
 @interface LotteryController ()
@@ -232,11 +233,32 @@
     BetViewController *viewController = [[BetViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
-// 历史下注
+
+// 历史下注号码
 - (void)HistoricalBetAction {
-    ZPLog(@"&*(");
+    
+    ZP_LotteryHistoricalBettingNumberController * LotteryHistoricalBettingNumber = [[ZP_LotteryHistoricalBettingNumberController alloc]init];
+    [self.navigationController pushViewController:LotteryHistoricalBettingNumber animated:YES];
 }
 
+// 说明
+- (void)Instruction {
+    ZP_InstructionController * Instruction = [[ZP_InstructionController alloc]init];
+    [self.navigationController pushViewController:Instruction animated:YES];
+    ZPLog(@"说明");
+}
+// 历史下注
+-(void)HistoryLottery {
+    ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
+    [self.navigationController pushViewController:History animated:YES];
+    ZPLog(@"历史");
+}
+
+// 查看更多
+- (IBAction)CheckMore:(id)sender {
+    ZP_CheckMoreController * CheckMore = [[ZP_CheckMoreController alloc]init];
+    [self.navigationController pushViewController:CheckMore animated:YES];
+}
 /*
 #pragma mark -- Collectionview  delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -297,28 +319,7 @@
 }
 
 
-// 说明
-- (void)Instruction {
-    ZP_InstructionController * Instruction = [[ZP_InstructionController alloc]init];
-    [self.navigationController pushViewController:Instruction animated:YES];
-    ZPLog(@"说明");
-}
-// 历史开奖
--(void)HistoryLottery {
-    ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
-    [self.navigationController pushViewController:History animated:YES];
-    ZPLog(@"历史");
-}
-// 历史下注
-- (IBAction)History:(UIButton *)sender {
-    ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
-    [self.navigationController pushViewController:History animated:YES];
-}
-// 查看更多
-- (IBAction)CheckMore:(id)sender {
-    ZP_CheckMoreController * CheckMore = [[ZP_CheckMoreController alloc]init];
-    [self.navigationController pushViewController:CheckMore animated:YES];
-}
+
 
 //#pragma mark --tableview delegate
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

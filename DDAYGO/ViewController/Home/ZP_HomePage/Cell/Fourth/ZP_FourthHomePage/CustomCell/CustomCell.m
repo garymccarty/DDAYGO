@@ -8,7 +8,7 @@
 
 #import "CustomCell.h"
 #import "PrefixHeader.pch"
-#import "ZP_FifthModel.h"
+#import "ZP_FourthModel.h"
 @implementation CustomCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -35,10 +35,8 @@
     
     //  文字介绍
     ZP_GeneralLabel * introduceLabel = [ZP_GeneralLabel initWithtextLabel:_introduceLabel.text textColor:ZP_HomeTitleTypefaceCorlor font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    introduceLabel.textColor = ZP_HomeTitleTypefaceCorlor;
     introduceLabel.lineBreakMode = NSLineBreakByWordWrapping; //文字分行
     introduceLabel.numberOfLines = 0;
-//    introduceLabel.font = ZP_introduceFont;
     [self addSubview:introduceLabel];
     [introduceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(5);
@@ -49,9 +47,6 @@
     
     //    优惠价格
     ZP_GeneralLabel * PreferentialLabel = [ZP_GeneralLabel initWithtextLabel:_PreferentialLabel.text textColor:ZP_HomePreferentialpriceTypefaceCorlor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    PreferentialLabel.textColor = ZP_HomePreferentialpriceTypefaceCorlor;
-//    PreferentialLabel.textAlignment = NSTextAlignmentLeft;
-//    PreferentialLabel.font = ZP_titleFont;
     [self addSubview:PreferentialLabel];
     [PreferentialLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(45);
@@ -61,9 +56,6 @@
     
     //    价格
     ZP_GeneralLabel * PriceLabel = [ZP_GeneralLabel initWithtextLabel:_PriceLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    PriceLabel.textColor = ZP_HomeTitlepriceTypefaceColor;
-//    PriceLabel.textAlignment = NSTextAlignmentLeft;
-//    PriceLabel.font = ZP_introduceFont;
     [self addSubview:PriceLabel];
     [PriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(60);
@@ -74,7 +66,7 @@
     //    横线
     UIView * Crossview = [UIView new];
     Crossview.backgroundColor = ZP_HomeTitlepriceTypefaceColor;
-    [self addSubview: Crossview];
+//    [self addSubview: Crossview];
     [Crossview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(67.f);
         make.left.equalTo(self).offset(5);
@@ -96,9 +88,6 @@
     
     //    商标编号
     ZP_GeneralLabel * TrademarkLabel = [ZP_GeneralLabel initWithtextLabel:_TrademarkLabel.text textColor:ZP_HomeTitlepriceTypefaceColor font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    TrademarkLabel.textAlignment = NSTextAlignmentLeft;
-//    TrademarkLabel.textColor = ZP_HomeTitlepriceTypefaceColor;
-//    TrademarkLabel.font = ZP_TrademarkFont;
     [self.contentView addSubview:TrademarkLabel];
     [TrademarkLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(-90);
@@ -118,22 +107,15 @@
         make.height.mas_equalTo(1);
     }];
 }
-- (void)cellWithdic:(ZP_FifthModel *)model {
+
+- (void)cellWithdic:(ZP_FourthModel *)model {
     [_imageView1 sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
-    _introduceLabel.text = model.productname;
-    _introduceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.PreferentialLabel]; // 优惠价格
-    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:"];
-    _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
-    _TrademarkLabel.text = model.TrademarkLabel;
-}
-//- (void)InformationWithDic:(NSDictionary *)dic {
-//
-//    _imageView1.image = [UIImage imageNamed:@"Shopping2"];
-//    _introduceLabel.text = dic[@"Titlelabel"];
-//    _PreferentialLabel.text = dic[@"Preferentia"];
-//    _PriceLabel.text = dic[@"Price"];
+//    _introduceLabel.text = model.productname;
+//    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.PreferentialLabel]; // 优惠价格
+//    _PriceLabel.text = [NSString stringWithFormat:@"RMB:"];
 //    _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
-//    _TrademarkLabel.text = dic[@"Trademark"];
-//}
+//    _TrademarkLabel.text = model.TrademarkLabel;
+}
+
 
 @end
