@@ -65,13 +65,28 @@
 @end
 
 @interface lotteryorderModel : NSObject
+/*订单号*/
+@property (nonatomic, strong) NSNumber * lotteryoid;
+/*奖池ID*/
+@property (nonatomic, strong) NSNumber * pollid;
+@property (nonatomic, strong) NSNumber * yyyy;
+@property (nonatomic, strong) NSNumber * mm;
+@property (nonatomic, strong) NSNumber * periods;
+@property (nonatomic, strong) NSNumber * createtime;
+@property (nonatomic, strong) NSNumber * white1;
+@property (nonatomic, strong) NSNumber * white2;
+@property (nonatomic, strong) NSNumber * white3;
+@property (nonatomic, strong) NSNumber * white4;
+@property (nonatomic, strong) NSNumber * white5;
+@property (nonatomic, strong) NSNumber * powerball;
+@property (nonatomic, strong) NSNumber * buycount;
 //"lotteryoid": "LT17121609252109754", 购彩单号
 //"pollid": 1,        奖池ID
 //"yyyy": 0,
 //"mm": 0,
 //"periods": 0,
 //"createtime": "0001-01-01T00:00:00",
-//"white1": 6,        白球1
+//"white1": 6,        //白球1
 //"white2": 16,        白球2
 //"white3": 26,        白球3
 //"white4": 36,        白球4

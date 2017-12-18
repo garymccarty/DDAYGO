@@ -79,6 +79,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *OrderNumberLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *BenQIView;
+
 @property (weak, nonatomic) IBOutlet UIButton *butt1;
 @property (weak, nonatomic) IBOutlet UIButton *butt2;
 @property (weak, nonatomic) IBOutlet UIButton *butt3;

@@ -7,19 +7,15 @@
 //
 
 #import "LotteryController.h"
-#import "ZP_LotteryCell/ZP_LotteryViewCell.h"
 #import "PrefixHeader.pch"
 #import "BetViewController.h"
 #import "ZP_HistoryVetController.h"
 #import "ZP_InstructionController.h"
 #import "ZP_CheckMoreController.h"
 #import "ZP_MyTool.h"
-#import "ZP_LotteryCollectionViewCell.h"
 #import "ZP_LotterModel.h"
 @interface LotteryController ()
-///<UITableViewDelegate, UITableViewDataSource>
 
-//@property (strong, nonatomic) IBOutlet UITableView * tableView;
 @property (strong ,nonatomic) NSArray *titleArray;
 @property (strong ,nonatomic) NSArray *titleLabelArray;
 @property (strong ,nonatomic) NSArray *titleWidthArray;
@@ -50,7 +46,7 @@
     [ZP_MyTool getPrizeInfo:^(id obj) {
         //这个是一次的数据
         ZP_LotterModel * model = [ZP_LotterModel mj_objectWithKeyValues:obj];
-
+        self.prizeDic = obj;
         [self updateData:model];
     } failure:^(NSError *error) {
         
@@ -68,7 +64,7 @@
     [_but4 setTitle:[model1.white4 stringValue] forState:UIControlStateNormal];
     [_but5 setTitle:[model1.white5 stringValue] forState:UIControlStateNormal];
     [_but6 setTitle:[model1.powerball stringValue] forState:UIControlStateNormal];
-    NSLog(@"dic %@",model.lottery);
+//    NSLog(@"dic %@",model.lottery);
     
     //下面一个数据 直接用
     lotteryModel *model2 = [lotteryModel mj_objectWithKeyValues:model.lottery];
@@ -84,7 +80,7 @@
     _currentPeriodLabel3.text = [model3.winunit stringValue];
     _currentPeriodLabel4.text = [model3.winunit stringValue];
     _currentPeriodLabel5.text = [model3.winunit stringValue];
-    NSLog(@"m3 = %@",model3.state);
+//    NSLog(@"m3 = %@",model3.state);
     //以此类推
     lotterywinModel *model4 = arr[1]; //这个是头奖的后面
     _winnersNumLabel1.text = [model4.winamount stringValue];
@@ -100,13 +96,20 @@
     _bountyLabel4.text = [model5.winunit stringValue];
     _bountyLabel5.text = [model5.winunit stringValue];
     
-    
-    
+    lotteryorderModel * model6 = [lotteryorderModel mj_objectWithKeyValues:model.lottery];
+    _OrderNumberLabel.text = [model6.lotteryoid stringValue];
+    [_butt1 setTitle:[model6.white1 stringValue] forState:UIControlStateNormal];
+    [_butt2 setTitle:[model6.white2 stringValue] forState:UIControlStateNormal];
+    [_butt3 setTitle:[model6.white3 stringValue] forState:UIControlStateNormal];
+    [_butt4 setTitle:[model6.white4 stringValue] forState:UIControlStateNormal];
+    [_butt5 setTitle:[model6.white5 stringValue] forState:UIControlStateNormal];
+    [_butt6 setTitle:[model6.powerball stringValue] forState:UIControlStateNormal];
+    NSLog(@"m3 = %@",model.lottery);
     
 //    self.periodsLabel.text = [NSString stringWithFormat:@"第%@期",[self.prizeDic[@"lottery"][@"periods"] stringValue]];
 //    self.dateLabel.text = self.prizeDic[@"lottery"][@"createtime"];
 //    //$
-//    [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@"$"];
+    [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@"$"];
 //
 //    NSArray *prizeArray = self.prizeDic[@"lotterywin"];
 //    for (int i = 0; i < prizeArray.count - 1; i ++) {

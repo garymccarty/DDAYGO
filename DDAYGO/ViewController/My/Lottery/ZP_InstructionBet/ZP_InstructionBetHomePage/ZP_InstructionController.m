@@ -7,7 +7,6 @@
 //
 
 #import "ZP_InstructionController.h"
-#import "ZP_InstructionTableViewCell.h"
 @interface ZP_InstructionController ()
 
 @end

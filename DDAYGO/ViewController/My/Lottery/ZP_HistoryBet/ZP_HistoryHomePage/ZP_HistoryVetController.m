@@ -20,15 +20,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self initTableHeadView];
 }
 - (void)initUI {
     
     self.title = NSLocalizedString(@"历史下注", nil);
-//    static NSString * ZP_HistoryID = @"ZP_HistoryBetCell";
+    //    static NSString * ZP_HistoryID = @"ZP_HistoryBetCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_HistoryBetCell" bundle:nil] forCellReuseIdentifier:@"ZP_HistoryBetCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
-    self.tableView.backgroundColor = [UIColor grayColor];
-/**** IOS 11 ****/
+//    self.tableView.backgroundColor = [UIColor grayColor];
+    /**** IOS 11 ****/
     if (@available(iOS 11.0, *)) {
         self.tableView.estimatedRowHeight = 0;
         self.tableView.estimatedSectionHeaderHeight = 0;
@@ -37,100 +38,102 @@
     
 }
 
-///*设置标题头的宽度*/
+- (void)initTableHeadView {
+    UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 30)];
+    //    self.tableview.tableHeaderView = myView; // 表头跟着cell一起滚动
+    [myView setBackgroundColor:ZP_Graybackground];
+    //     标题1
+    ZP_GeneralLabel * TitleLabel1 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel1.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    TitleLabel1.text = @"第2017136期";
+    [myView addSubview:TitleLabel1];
+    _TitleLabel1 = TitleLabel1;
+    [TitleLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(myView).offset(8);
+        make.centerY.equalTo(myView);
+        //        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(15);
+    }];
+    
+    //     标题2
+    ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    TitleLabel2.text = @"2017-11-19（周日）";
+    [myView addSubview:TitleLabel2];
+    _TitleLabel2 = TitleLabel2;
+    [TitleLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(TitleLabel1.mas_trailing);
+        make.top.equalTo(TitleLabel1).offset(0);
+        //        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(15);
+    }];
+    
+    self.tableView.tableHeaderView = myView;
+}
+
+//表头
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0, 5, ZP_Width, 20)];
+    //    self.tableview.tableHeaderView = myView; // 表头跟着cell一起滚动
+    [myView setBackgroundColor:ZP_WhiteColor];
+    //     订单
+    ZP_GeneralLabel * OrderLabel = [ZP_GeneralLabel initWithtextLabel:_OrderLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    OrderLabel.text = @"订单号";
+    [myView addSubview:OrderLabel];
+    _OrderLabel = OrderLabel;
+    [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(myView).offset(8);
+        make.centerY.equalTo(OrderLabel).offset(0);
+        //        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(15);
+    }];
+    
+    //     订单号
+    ZP_GeneralLabel * OrderNumberLabel = [ZP_GeneralLabel initWithtextLabel:_OrderNumberLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    OrderNumberLabel.text = @"5678908765456";
+    [myView addSubview:OrderNumberLabel];
+    _OrderNumberLabel = OrderNumberLabel;
+    [OrderNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(OrderLabel.mas_trailing).offset(2);
+        make.centerY.equalTo(OrderLabel).offset(0);
+        //        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(15);
+    }];
+    return myView;
+}
+// 领奖按钮
+- (void)AwardBut {
+    ZPLog(@"按钮");
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
+    return 3;
+}
+
+/*设置标题头的宽度*/
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return 60;
-    }else
-        if (section == 3) {
-            return  60;
-        }
-    
-    return 30;
+    return 25;
 }
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
-    if (section == 0) {
-        UIView *v1 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 60)];
-        ZP_GeneralLabel * numberingLabel = [ZP_GeneralLabel initWithtextLabel:_numberingLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-        numberingLabel.frame = CGRectMake(0, 0, ZP_Width, 30);
-        numberingLabel.text = @"第2017136期";
-        [v1 addSubview:numberingLabel];
-        ZP_GeneralLabel * numberingLabel2 = [ZP_GeneralLabel initWithtextLabel:_numberingLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-        numberingLabel2.frame = CGRectMake(0, 30, ZP_Width, 30);
-        numberingLabel2.text = @"订单号：1234453454";
-        numberingLabel2.backgroundColor = [UIColor whiteColor];
-        [v1 addSubview:numberingLabel2];
-        
-        return v1;
-    }
-    else if (section == 1) {
-        ZP_GeneralLabel * numberingLabel = [ZP_GeneralLabel initWithtextLabel:_numberingLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-        numberingLabel.backgroundColor = [UIColor grayColor];
-        numberingLabel.frame = CGRectMake(0, 0, ZP_Width, 30);
-        numberingLabel.text = @"didanhao";
-        return numberingLabel;
-    }
-    else if (section == 2) {
-        ZP_GeneralLabel * numberingLabel = [ZP_GeneralLabel initWithtextLabel:_numberingLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-        numberingLabel.frame = CGRectMake(0, 0, ZP_Width, 30);
-        numberingLabel.text = @"地单号";
-        return numberingLabel;
-    }
-    else{
-        UIView *v2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 60)];
-        ZP_GeneralLabel * numberingLabel = [ZP_GeneralLabel initWithtextLabel:_numberingLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-        numberingLabel.frame = CGRectMake(0, 0, ZP_Width, 30);
-        numberingLabel.text = @"第2017136期";
-        [v2 addSubview:numberingLabel];
-        ZP_GeneralLabel * numberingLabel2 = [ZP_GeneralLabel initWithtextLabel:_numberingLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-        numberingLabel2.frame = CGRectMake(0, 30, ZP_Width, 30);
-        numberingLabel2.text = @"订单号：567890876";
-        numberingLabel2.backgroundColor = [UIColor whiteColor];
-        [v2 addSubview:numberingLabel2];
-        
-        return v2;
-    }
+/*设置cell 的宽度 */
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 35;
     
 }
 
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
-}
-
+#pragma mark -- tableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (section) {
-        case 0:{
-            return 1;
-        }break;
-        case 1:{
-            return 2;
-        }break;
-        case 2:{
-            return 3;
-        }break;
-        case 3:{
-            return 4;
-        }break;
-            
-    }
-    return 0;
+    return 2;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZP_HistoryBetCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ZP_HistoryBetCell"];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    return 50;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZP_DetailsSistoryAwardController * DetailsSistoryAward = [[ZP_DetailsSistoryAwardController alloc]init];
     [self.navigationController pushViewController:DetailsSistoryAward animated:YES];
     ZPLog(@"%ld",indexPath.row);
 }
 @end
+

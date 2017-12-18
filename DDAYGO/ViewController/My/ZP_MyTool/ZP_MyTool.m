@@ -210,8 +210,14 @@
 }
 //http://www.ddaygo.com/api/Test/gethistorycount?token=4d9b2a599b3f50ebbdd150b07b5214d7
 
-
-
+// 获取本期下注查看更多
++ (void)requseMoreMore:(NSDictionary *)MoreMore uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+        [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getlastlotterybuyrecord?token=%@&poolid=%@",URLAPI,MoreMore[@"token"],MoreMore[@"poolid"]] parameters:nil success:^(NSDictionary *responseObject) {
+            success(responseObject);
+        } failure:^(NSError *error) {
+            failure(error);
+        }];
+}
 
 
 
