@@ -37,7 +37,7 @@
 //  登录
 + (void)requestLogin:(NSDictionary *)Login success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
     
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/Login?email=%@&pwd=%@&countrycode=%@",Login[@"email"],Login[@"pwd"],Login[@"countrycode"]] parameters:nil success:^(NSDictionary *responseObject) {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@Login?email=%@&pwd=%@&countrycode=%@",URLAPI,Login[@"email"],Login[@"pwd"],Login[@"countrycode"]] parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
         NSLog(@"%@",responseObject);
         
@@ -49,7 +49,7 @@
 
 //  获取用户信息
 + (void)getAccountInfo:(NSString *)token success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/accountinfo?token=%@&nonce=adf",token] parameters:nil success:^(NSDictionary *responseObject) {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@accountinfo?token=%@&nonce=adf",URLAPI,token] parameters:nil success:^(NSDictionary *responseObject) {
         
         success(responseObject);
         
@@ -61,7 +61,7 @@
 
 // 验证码
 + (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/sendvercode?email=%@",Yzm[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@sendvercode?email=%@",URLAPI,Yzm[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
         
         success(responseObject);
         
@@ -78,6 +78,15 @@
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@%@",URLAPI, AreaAPI] parameters:Area success:^(NSDictionary *responseObject) {
         success(responseObject);
         ZPLog(@"%@",responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+// ICUE 登录
++ (void)requsetICUELogin:(NSDictionary *)ICUELogin success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@icuelogin?acc=%@&pwd=%@",URLAPI,ICUELogin[@"acc"],ICUELogin[@"pwd"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
     } failure:^(NSError *error) {
         failure(error);
     }];

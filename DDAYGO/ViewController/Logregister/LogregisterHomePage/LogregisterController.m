@@ -9,6 +9,7 @@
 #import "LogregisterController.h"
 #import "LoginController.h"
 #import "RegisterController.h"
+#import "ZP_QuickLoginController.h"
 #import "PrefixHeader.pch"
 #import "UINavigationBar+Awesome.h"
 @interface LogregisterController ()
@@ -29,26 +30,33 @@
 //  登录
 - (IBAction)LoginAction:(id)sender {
     NSLog(@"登录");
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     LoginController * loginViewController = [[LoginController alloc] init];
     [self.navigationController pushViewController:loginViewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
 }
 //  注册
 - (IBAction)RegAction:(id)sender {
     NSLog(@"注册");
-     self.hidesBottomBarWhenPushed = YES;
+//     self.hidesBottomBarWhenPushed = YES;
     RegisterController * Register = [[RegisterController alloc] init];
     [self.navigationController pushViewController:Register animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-     self.hidesBottomBarWhenPushed = YES;
+//     self.hidesBottomBarWhenPushed = YES;
 }
 
 - (IBAction)QuickloginAction:(id)sender {
     NSLog(@"快速登录");
+    //     self.hidesBottomBarWhenPushed = YES;
+    ZP_QuickLoginController * Register = [[ZP_QuickLoginController alloc] init];
+    [self.navigationController pushViewController:Register animated:YES];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    //     self.hidesBottomBarWhenPushed = YES;
+    
 }
 
 @end

@@ -24,5 +24,6 @@
 
 // 地区
 + (void) requsetArea:(NSDictionary *)Area success:(void (^)(id))success failure:(void (^)(NSError *))failure;
-
+//  ICUE 登录
++ (void)requsetICUELogin:(NSDictionary *)ICUELogin success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end

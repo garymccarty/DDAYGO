@@ -312,7 +312,6 @@
 		C479C6A81FE3CB5800A58A2A /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69B1FE3CB5800A58A2A /* NSObject+MJKeyValue.m */; };
 		C479C6A91FE3CB5800A58A2A /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */; };
 		C479C6AA1FE3CB5800A58A2A /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */; };
-		C479C6AE1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */; };
 		C47BBBF01FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBEE1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m */; };
 		C47BBBF11FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47BBBEF1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib */; };
 		C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */; };
@@ -377,6 +376,9 @@
 		C492A1961FD0EDC0009FF57B /* ZP_InstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1941FD0EDC0009FF57B /* ZP_InstructionController.m */; };
 		C492A1971FD0EDC0009FF57B /* ZP_InstructionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1951FD0EDC0009FF57B /* ZP_InstructionController.xib */; };
 		C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B51FD15189009FF57B /* 扫码付款状态.png */; };
+		C495B3371FE7B9FD002BBB32 /* ZP_QuickLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C495B3351FE7B9FD002BBB32 /* ZP_QuickLoginController.m */; };
+		C495B3381FE7B9FD002BBB32 /* ZP_QuickLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C495B3361FE7B9FD002BBB32 /* ZP_QuickLoginController.xib */; };
+		C495B33F1FE7D1E6002BBB32 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C495B33E1FE7D1E6002BBB32 /* DDAYGO IHTTP协议1.0.docx */; };
 		C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */; };
 		C49B32221FD5A995007632F2 /* ZP_ExtractController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */; };
 		C49B32271FD5AC9E007632F2 /* ZP_ExtractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B32251FD5AC9E007632F2 /* ZP_ExtractCell.m */; };
@@ -967,7 +969,6 @@
 		C479C69D1FE3CB5800A58A2A /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		C479C69E1FE3CB5800A58A2A /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		C479C69F1FE3CB5800A58A2A /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
-		C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DDAYGO IHTTP协议1.0.docx"; path = "ios(1)/DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C47BBBED1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_DetailsSistoryAwardTableViewCell.h; sourceTree = "<group>"; };
 		C47BBBEE1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardTableViewCell.m; sourceTree = "<group>"; };
 		C47BBBEF1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_DetailsSistoryAwardTableViewCell.xib; sourceTree = "<group>"; };
@@ -1088,6 +1089,10 @@
 		C492A1941FD0EDC0009FF57B /* ZP_InstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_InstructionController.m; sourceTree = "<group>"; };
 		C492A1951FD0EDC0009FF57B /* ZP_InstructionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_InstructionController.xib; sourceTree = "<group>"; };
 		C492A1B51FD15189009FF57B /* 扫码付款状态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫码付款状态.png"; sourceTree = "<group>"; };
+		C495B3341FE7B9FD002BBB32 /* ZP_QuickLoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_QuickLoginController.h; sourceTree = "<group>"; };
+		C495B3351FE7B9FD002BBB32 /* ZP_QuickLoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_QuickLoginController.m; sourceTree = "<group>"; };
+		C495B3361FE7B9FD002BBB32 /* ZP_QuickLoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_QuickLoginController.xib; sourceTree = "<group>"; };
+		C495B33E1FE7D1E6002BBB32 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C49B321E1FD5A995007632F2 /* ZP_ExtractController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ExtractController.h; sourceTree = "<group>"; };
 		C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ExtractController.m; sourceTree = "<group>"; };
 		C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ExtractController.xib; sourceTree = "<group>"; };
@@ -1300,7 +1305,7 @@
 		0641BB971F67B60B00E72FEF /* Testbag */ = {
 			isa = PBXGroup;
 			children = (
-				C479C6AD1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx */,
+				C495B33E1FE7D1E6002BBB32 /* DDAYGO IHTTP协议1.0.docx */,
 				C472F13F1FE2A88B0031D7B5 /* ios(1) */,
 				C46837E61FDA645A000E7D7C /* ios */,
 				C46B9F431FDE71FE00942750 /* 促销彩 */,
@@ -1637,6 +1642,7 @@
 				06621DA51F9758720030983F /* Login */,
 				06621DB41F9758AE0030983F /* ForgetpPassword */,
 				06621DAE1F9758840030983F /* Registration */,
+				C495B3331FE7B9DC002BBB32 /* ZP_QuickLogin */,
 				C470ADF41FA95BB400BAC2CA /* ZP_LogregisterTool */,
 			);
 			path = Logregister;
@@ -3529,6 +3535,16 @@
 			path = "订单_ios";
 			sourceTree = "<group>";
 		};
+		C495B3331FE7B9DC002BBB32 /* ZP_QuickLogin */ = {
+			isa = PBXGroup;
+			children = (
+				C495B3341FE7B9FD002BBB32 /* ZP_QuickLoginController.h */,
+				C495B3351FE7B9FD002BBB32 /* ZP_QuickLoginController.m */,
+				C495B3361FE7B9FD002BBB32 /* ZP_QuickLoginController.xib */,
+			);
+			path = ZP_QuickLogin;
+			sourceTree = "<group>";
+		};
 		C49B321D1FD5A93C007632F2 /* ZP_ExtractHomePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -3753,6 +3769,7 @@
 				06621DAC1F9758720030983F /* LoginController.xib in Resources */,
 				C49B32221FD5A995007632F2 /* ZP_ExtractController.xib in Resources */,
 				C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */,
+				C495B3381FE7B9FD002BBB32 /* ZP_QuickLoginController.xib in Resources */,
 				06F571921F9F16E600D61FDB /* NewsViewController.xib in Resources */,
 				C472F14A1FE2A88B0031D7B5 /* icon_lottery_jia@3x.png in Resources */,
 				C479C6A01FE3CB5800A58A2A /* LICENSE in Resources */,
@@ -3769,6 +3786,7 @@
 				C47212AC1FB18A4E0055578E /* SettingViewController.xib in Resources */,
 				06F572291F9F1E8700D61FDB /* OrderDetailViewController.xib in Resources */,
 				06F572331F9F1E8700D61FDB /* ReceivingViewCell.xib in Resources */,
+				C495B33F1FE7D1E6002BBB32 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				C435171F1FB2AC180066302E /* ConcernShopTableViewCell.xib in Resources */,
 				C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */,
 				0641BBA31F67B60B00E72FEF /* Third.png in Resources */,
@@ -3785,7 +3803,6 @@
 				06F571D21F9F1A7900D61FDB /* BindingICUEViewController.xib in Resources */,
 				C46B9F4A1FDE71FE00942750 /* 赏金彩_spec.png in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
-				C479C6AE1FE3E3C100A58A2A /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */,
 				4D0949011FDEF77500FC4BCA /* EvaluateTableViewCell.xib in Resources */,
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
@@ -4109,6 +4126,7 @@
 				C45F23341FA0757A00F5DB41 /* FirstViewCell.m in Sources */,
 				C47E763D1FB5A1C7009F279A /* MerchantController.m in Sources */,
 				06F571151F9F0D6800D61FDB /* ShopevaluationViewCell.m in Sources */,
+				C495B3371FE7B9FD002BBB32 /* ZP_QuickLoginController.m in Sources */,
 				0662AB5D1F9610BF0031F22B /* LogregisterController.m in Sources */,
 				06F570EB1F9F0ABA00D61FDB /* ShoppingCell.m in Sources */,
 				C492A17D1FD0ECB7009FF57B /* ZP_HistoryVetController.m in Sources */,
