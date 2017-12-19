@@ -19,12 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ICUC绑定";
+    self.AccountnumbertextField.secureTextEntry = YES;
+    self.PassWordtextField.secureTextEntry = YES;
+    self.AccountnumbertextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
+    self.PassWordtextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.BindingICUEscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
 }
 
 - (IBAction)buildingAction:(id)sender {
-
+    
+    
     [self allData];
 }
 // 数据
@@ -96,6 +101,12 @@
     } failure:^(NSError * error) {
         
     }];
+}
+#pragma mark -- 安全输入
+- (IBAction)showPwAction:(UIButton *)sender {
+    
+    _PassWordtextField.secureTextEntry = sender.selected;
+    sender.selected =!sender.selected;
 }
 
 //  键盘弹起

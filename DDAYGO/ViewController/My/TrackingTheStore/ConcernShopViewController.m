@@ -22,7 +22,7 @@
     self.title = NSLocalizedString(@"Tracking the shop", nil);
     
 }
-
+// 暂不开启
 - (void)initUI {
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];

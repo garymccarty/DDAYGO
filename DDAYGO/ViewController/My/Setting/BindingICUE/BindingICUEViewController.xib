@@ -57,7 +57,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="请输入ICUC密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S1L-wQ-aLr">
-                            <rect key="frame" x="86" y="116" width="220" height="30"/>
+                            <rect key="frame" x="86" y="116" width="190" height="30"/>
                             <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits"/>
@@ -87,6 +87,21 @@
                                 <action selector="buildingAction:" destination="-1" eventType="touchUpInside" id="PbD-l2-pOe"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3O0-1M-uxe">
+                            <rect key="frame" x="284" y="121" width="21" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="21" id="73b-ll-lYW"/>
+                                <constraint firstAttribute="height" constant="21" id="V3B-aI-79f"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" image="ic_login_close">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected" image="ic_login_open"/>
+                            <connections>
+                                <action selector="showPwAction:" destination="-1" eventType="touchUpInside" id="Jy9-r0-BI3"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="oCK-0y-ito" firstAttribute="top" secondItem="MIm-ar-Srq" secondAttribute="top" constant="57" id="0tM-dc-Alf"/>
@@ -104,10 +119,12 @@
                         <constraint firstAttribute="trailing" secondItem="oCK-0y-ito" secondAttribute="trailing" constant="14" id="RVg-l9-kk3"/>
                         <constraint firstItem="b7K-YZ-nNx" firstAttribute="leading" secondItem="MP9-Pg-sEy" secondAttribute="leading" id="U9N-Dt-cSX"/>
                         <constraint firstItem="5nV-S6-0Jz" firstAttribute="top" secondItem="MP9-Pg-sEy" secondAttribute="bottom" constant="8" symbolic="YES" id="UtE-bF-Wsl"/>
-                        <constraint firstItem="oCK-0y-ito" firstAttribute="trailing" secondItem="S1L-wQ-aLr" secondAttribute="trailing" id="W5Q-1s-9Xq"/>
+                        <constraint firstItem="oCK-0y-ito" firstAttribute="trailing" secondItem="S1L-wQ-aLr" secondAttribute="trailing" constant="30" id="W5Q-1s-9Xq"/>
                         <constraint firstItem="mrj-l7-uQz" firstAttribute="top" secondItem="0j6-Ww-o1h" secondAttribute="bottom" constant="91" id="d23-Ep-qKB"/>
                         <constraint firstItem="0j6-Ww-o1h" firstAttribute="leading" secondItem="MIm-ar-Srq" secondAttribute="leading" constant="16" id="iqI-hJ-jVu"/>
+                        <constraint firstItem="3O0-1M-uxe" firstAttribute="top" secondItem="oCK-0y-ito" secondAttribute="bottom" constant="34" id="jzT-I2-aWG"/>
                         <constraint firstItem="b7K-YZ-nNx" firstAttribute="top" secondItem="MIm-ar-Srq" secondAttribute="top" constant="37" id="rtl-5w-6J2"/>
+                        <constraint firstItem="3O0-1M-uxe" firstAttribute="leading" secondItem="S1L-wQ-aLr" secondAttribute="trailing" constant="8" id="uen-mp-9bM"/>
                         <constraint firstAttribute="trailing" secondItem="mrj-l7-uQz" secondAttribute="trailing" constant="15" id="wRL-4k-Mh0"/>
                         <constraint firstItem="MP9-Pg-sEy" firstAttribute="top" secondItem="b7K-YZ-nNx" secondAttribute="bottom" constant="19" id="ww0-KD-adu"/>
                         <constraint firstItem="S1L-wQ-aLr" firstAttribute="top" secondItem="oCK-0y-ito" secondAttribute="bottom" constant="29" id="z0h-Zz-wgX"/>
@@ -122,7 +139,11 @@
                 <constraint firstAttribute="bottom" secondItem="MIm-ar-Srq" secondAttribute="bottom" id="hNV-B7-1Zh"/>
                 <constraint firstItem="MIm-ar-Srq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lDX-Qu-kYk"/>
             </constraints>
-            <point key="canvasLocation" x="24.5" y="51.5"/>
+            <point key="canvasLocation" x="24" y="51"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_login_close" width="24" height="24"/>
+        <image name="ic_login_open" width="24" height="24"/>
+    </resources>
 </document>

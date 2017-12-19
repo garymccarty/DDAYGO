@@ -9,9 +9,11 @@
 #import "BetViewController.h"
 #import "PrefixHeader.pch"
 #import "BetViewcell.h"
+#import "BetSeleTableViewCell.h"
 @interface BetViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+//* 数据**/
+@property (nonatomic, strong) NSMutableArray *Selearray;
 @end
 
 @implementation BetViewController
@@ -26,6 +28,8 @@
 - (void)initUI {
     self.title = @"促销彩下注";
     [self.tableView registerNib:[UINib nibWithNibName:@"BetViewcell" bundle:nil] forCellReuseIdentifier:@"BetViewcell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"BetSeleTableViewCell" bundle:nil] forCellReuseIdentifier:@"BetSeleTableViewCell"];
+    
     //    self.whiteBallHeaderView = [[NSBundle mainBundle] loadNibNamed:@"BetHeaderView" owner:self options:nil].lastObject;
     //    self.redBallHeaderView   = [[NSBundle mainBundle] loadNibNamed:@"BetHeaderView" owner:self options:nil].lastObject;
     UIToolbar * tools = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 0, 15)];
@@ -112,27 +116,87 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BetViewcell * cell = [tableView dequeueReusableCellWithIdentifier:@"BetViewcell"];
     if (indexPath.row == 0) {
         [cell updateCount:59 WithIndex:indexPath.row];
-        
-    }else{
-        
+        cell.howLabel.text = [NSString stringWithFormat:@"0"];
+        __weak typeof(cell) weakCell = cell;
+        cell.arrayBlock = ^(NSArray *arr1, NSArray *arr2) {
+            NSLog(@"ar1 %@ ar2 %@",arr1,arr2);
+            weakCell.howLabel.text = [NSString stringWithFormat:@"%ld",arr1.count];
+            
+            if (self.Selearray.count > 0) {
+                for (NSNumber *Nstr in self.Selearray) {
+                    if ([Nstr integerValue] > 99) {
+                        self.Selearray = [NSMutableArray arrayWithArray:arr1];
+                        [self.Selearray addObject:Nstr];
+                        break;
+                    }else{
+                        self.Selearray = [NSMutableArray arrayWithArray:arr1];
+                    }
+                }
+            }else{
+                self.Selearray = [NSMutableArray arrayWithArray:arr1];
+            }
+            
+            NSLog(@"-%@",self.Selearray);
+            
+            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:2 inSection:0];
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+            
+        };
+        return cell;
+    }if (indexPath.row ==1) {
         [cell updateCount:26 WithIndex:indexPath.row];
+        cell.redlabel.text = [NSString stringWithFormat:@"红球1个,已选"];
+        cell.howLabel.text = [NSString stringWithFormat:@"0"];
+        cell.l1.hidden = YES;
+        cell.l2.hidden = YES;
+        cell.l3.hidden = YES;
+        cell.l4.hidden = YES;
+        __weak typeof(cell) weakCell = cell;
+        cell.arrayBlock = ^(NSArray *arr1, NSArray *arr2) {
+            
+            if (arr2.count == 0) {
+                [self.Selearray removeLastObject];
+            }else{
+                if (self.Selearray.count > 0) {
+                    for (NSNumber *Nstr in self.Selearray) {
+                        if ([Nstr integerValue] < 99) {
+                            [self.Selearray addObject:arr2[0]];
+                            break;
+                        }else{
+                            self.Selearray = [NSMutableArray arrayWithArray:arr1];
+                        }
+                    }
+                }else{
+                    self.Selearray = [NSMutableArray arrayWithArray:arr2];
+                }
+            }
+            weakCell.howLabel.text = [NSString stringWithFormat:@"%ld",(unsigned long)arr2.count];
+            NSIndexPath *indexPath=[NSIndexPath indexPathForRow:2 inSection:0];
+            [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+            NSLog(@"-%@",self.Selearray);
+        };
+        return cell;
+    }else{
+        BetSeleTableViewCell *cell1 = [tableView dequeueReusableCellWithIdentifier:@"BetSeleTableViewCell"];
+        [cell1 updateCount:self.Selearray];
+        [cell1.deleBut addTarget:self action:@selector(dele:) forControlEvents:UIControlEventTouchUpInside];
+        return cell1;
     }
+    //    http://www.ddaygo.com/api/Test/addlotteryorder?token=03dfa90ff0efbda8cc6a7412690a3c0f&ballstr=2,12,16,22,55,8,1_3,13,16,22,55,9,2&count=3
     
-    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    return 250;
-    //
+    
     if (indexPath.row == 0) {
-        return 59 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
+        return 59 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 60;
     }
     if (indexPath.row == 1) {
         return 26 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 80;
@@ -142,4 +206,23 @@
     
 }
 
+- (void)dele:(UIButton *)but
+{
+    if (self.Selearray.count > 0) {
+        [self.Selearray removeLastObject];
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:2 inSection:0];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationNone];
+    }else{
+        NSLog(@"没有选定 ");
+    }
+    
+}
+
+- (NSMutableArray *)Selearray
+{
+    if (!_Selearray) {
+        _Selearray = [NSMutableArray array];
+    }
+    return _Selearray;
+}
 @end

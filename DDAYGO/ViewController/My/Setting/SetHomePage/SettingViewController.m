@@ -55,19 +55,19 @@
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
         model.nickname = obj[@"nickname"];
         model.realname = obj[@"realname"];
         model.icueaccount = obj[@"icueaccount"];
         model.email = obj[@"email"];
+        model.introducer = obj[@"introducer"];
         
         self.dataDic[@"nickname"] = obj[@"nickname"];
-        self.dataDic[@"realname"] = @"zach";
-//        obj[@"realname"];
+        self.dataDic[@"realname"] = obj[@"realname"];
         self.dataDic[@"sex"] = obj[@"sex"];
-        self.dataDic[@"birth"] = @"1967-04-08";
-//        obj[@"birthday"];
+        self.dataDic[@"birthday"] = obj[@"birthday"];
         self.dataDic[@"phone"] = obj[@"phone"];
         self.dataDic[@"address"] = obj[@"address"];
         
@@ -90,10 +90,11 @@
 
 - (void)fillData:(ZP_HomePageModel *)model{
     [_headerImage sd_setImageWithURL:[NSURL URLWithString:model.avatarimg] placeholderImage:[UIImage imageNamed:@"HeadrImage"]];
-    _AccountNumber.text = model.email; // 账号
+    _AccountNumber.text = model.realname; // 账号
     _nicknameLabel.text = model.nickname; // 昵称
     _bindingEmailLabel.text = model.email;  // 邮箱
-    _BindingICUELabel.text = model.icueaccount; // ICUE
+    _BindingICUELabel.text = model.icueaccount; // ICUE  不显示
+    _BindingIntroduce.text = model.introducer; // ICUE  不显示
     
     
 }

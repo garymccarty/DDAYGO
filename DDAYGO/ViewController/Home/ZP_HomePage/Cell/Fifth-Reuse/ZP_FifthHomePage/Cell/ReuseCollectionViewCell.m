@@ -40,7 +40,7 @@
     [TitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(2);
         make.right.equalTo(self).offset(-2);
-        make.top.equalTo(imageView).offset(40);
+        make.top.equalTo(imageView).offset(50);
     }];
     _titleLabel = TitleLabel;
     
@@ -78,7 +78,7 @@
     [self.contentView addSubview:TrademarkImage];
     [TrademarkImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
-        make.bottom.equalTo(PreferentialLabel).offset(10);
+        make.bottom.equalTo(PreferentialLabel).offset(8);
         make.width.mas_offset(8);
         make.height.mas_offset(8);
     }];
@@ -89,8 +89,8 @@
     [self.contentView addSubview:TrademarkLabel];
     [TrademarkLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(TrademarkImage).offset(10);
-        make.bottom.equalTo(PreferentialLabel).offset(10);
-        make.width.mas_offset(20); //宽
+        make.bottom.equalTo(PreferentialLabel).offset(8);
+        
         make.height.mas_offset(10); // 高
         
     }];

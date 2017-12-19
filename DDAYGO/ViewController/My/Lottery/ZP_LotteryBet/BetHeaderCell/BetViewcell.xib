@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,7 +60,7 @@
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="668-Pz-vQp">
                         <rect key="frame" x="0.0" y="52" width="320" height="148"/>
-                        <color key="backgroundColor" red="1" green="0.1956696383" blue="0.20120481270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您当前可使用彩卷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD4-7c-Ysv">
                         <rect key="frame" x="209" y="8" width="82" height="12"/>
@@ -98,6 +98,12 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="butView" destination="668-Pz-vQp" id="X2A-0U-BUB"/>
+                <outlet property="howLabel" destination="S8z-0C-L91" id="ebK-OL-r7T"/>
+                <outlet property="l1" destination="lzU-AI-Gmg" id="ZZ5-eG-3al"/>
+                <outlet property="l2" destination="GhU-ZA-JbJ" id="eSd-CM-TID"/>
+                <outlet property="l3" destination="nD4-7c-Ysv" id="8hw-8S-OwE"/>
+                <outlet property="l4" destination="2ZP-rN-cKS" id="UyU-PQ-wds"/>
+                <outlet property="redlabel" destination="3Qu-pV-lTq" id="U5b-li-A4I"/>
             </connections>
             <point key="canvasLocation" x="35" y="285"/>
         </tableViewCell>

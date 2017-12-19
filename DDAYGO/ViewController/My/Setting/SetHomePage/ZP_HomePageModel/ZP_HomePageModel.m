@@ -18,7 +18,8 @@
         self.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"avatarimg"]];
         self.nickname = dic[@"nickname"];
         self.realname = dic[@"realname"];
-        self.icueaccount = dic[@"nickname"];
+        self.icueaccount = dic[@"icueaccount"];
+        self.introducer = dic[@"introducer"];
         self.email = dic[@"email"];
     }
     return self;
@@ -38,7 +39,8 @@
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"avatarimg"]];
         model.nickname = dic[@"nickname"];
         model.realname = dic[@"realname"];
-        model.icueaccount = dic[@"nickname"];
+        model.icueaccount = dic[@"icueaccount"];
+        model.introducer = dic[@"introducer"];
         model.email = dic[@"email"];
         [arr addObject:model];
     }

@@ -188,7 +188,7 @@
     }
     _ShopNameLabel.text = model.productname;
     _ShopMoneyLabel.text = model.productprice;
-    _quantityLable.text = model.quantity;
+    _quantityLable.text = model.productamount;
     _peramountLable.text = model.peramount;
     _productidLable.text = model.productid;
     _ShoppingIdLabel.text = model.TrademarkLabel;

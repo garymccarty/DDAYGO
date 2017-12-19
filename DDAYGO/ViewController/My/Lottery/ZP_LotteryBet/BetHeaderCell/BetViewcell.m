@@ -47,7 +47,8 @@
     [self.contentView rightAnchor];
 }
 
-- (void)butClick:(UIButton *)btn {
+- (void)butClick:(UIButton *)btn
+{
     NSLog(@"-%ld - %ld",self.but1Array.count,self.but2Array.count);
     if (btn.selected) {
         NSLog(@"go");
@@ -72,22 +73,24 @@
         }
     }
     
-    
+    if (self.arrayBlock) {
+        self.arrayBlock(self.but1Array, self.but2Array);
+    }
     
 }
 
-- (NSMutableArray *)but1Array {
+- (NSMutableArray *)but1Array
+{
     if (!_but1Array) {
         _but1Array = [NSMutableArray array];
     }
     return _but1Array;
 }
-
-- (NSMutableArray *)but2Array {
+- (NSMutableArray *)but2Array
+{
     if (!_but2Array) {
         _but2Array = [NSMutableArray array];
     }
     return _but2Array;
 }
-
 @end

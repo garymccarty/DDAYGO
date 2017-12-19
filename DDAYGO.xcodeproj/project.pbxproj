@@ -223,6 +223,15 @@
 		C4573F3E1FCFA3A6001DFE97 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F361FCFA3A6001DFE97 /* BetViewController.xib */; };
 		C45868FA1FC7CE06000CEB92 /* collectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45868F91FC7CE06000CEB92 /* collectionModel.m */; };
 		C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */; };
+		C45C41881FE8AC0A00F1135D /* MakeSureOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45C41871FE8AC0A00F1135D /* MakeSureOrderController.m */; };
+		C45C41901FE8ACDB00F1135D /* ZP_MakeSureOrderAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45C418F1FE8ACDB00F1135D /* ZP_MakeSureOrderAddressCell.m */; };
+		C45C41931FE8ACF100F1135D /* ZP_MakeSureOrderInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45C41921FE8ACF100F1135D /* ZP_MakeSureOrderInformationCell.m */; };
+		C45C41961FE8AD0700F1135D /* ZP_MakeSureOrderExpressDeliveryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45C41951FE8AD0700F1135D /* ZP_MakeSureOrderExpressDeliveryCell.m */; };
+		C45C41991FE8AD1600F1135D /* ZP_MakeSureOrderMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45C41981FE8AD1600F1135D /* ZP_MakeSureOrderMessageCell.m */; };
+		C45C419C1FE8AD2300F1135D /* ZP_MakeSureOrderAnonymityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45C419B1FE8AD2300F1135D /* ZP_MakeSureOrderAnonymityCell.m */; };
+		C45C419F1FE8B83300F1135D /* BetSeleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45C419E1FE8B83300F1135D /* BetSeleTableViewCell.m */; };
+		C45C41A11FE8B83A00F1135D /* BetSeleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45C41A01FE8B83A00F1135D /* BetSeleTableViewCell.xib */; };
+		C45C41A31FE8B8F700F1135D /* BetViewcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45C41A21FE8B8F600F1135D /* BetViewcell.xib */; };
 		C45D83051FAB00EB003C35EB /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C45D83041FAB00EB003C35EB /* UIButton+countDown.m */; };
 		C45F22BF1FA017E800F5DB41 /* button_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C45F22BD1FA017E800F5DB41 /* button_7@2x.png */; };
 		C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C45F22BE1FA017E800F5DB41 /* button_7@3x.png */; };
@@ -317,7 +326,6 @@
 		C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */; };
 		C47BBBF91FE5128F0000FFE6 /* ZP_CheckMoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */; };
 		C47BBBFD1FE55EA10000FFE6 /* BetViewcell.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBFB1FE55EA10000FFE6 /* BetViewcell.m */; };
-		C47BBBFE1FE55EA10000FFE6 /* BetViewcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47BBBFC1FE55EA10000FFE6 /* BetViewcell.xib */; };
 		C47BBC001FE7F5D40000FFE6 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C47BBBFF1FE7F5D30000FFE6 /* DDAYGO IHTTP协议1.0.docx */; };
 		C47E75861FB573F2009F279A /* ZP_HomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75851FB573F2009F279A /* ZP_HomeTool.m */; };
 		C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E758C1FB575C5009F279A /* ZP_shoopingTool.m */; };
@@ -805,6 +813,22 @@
 		C45868F91FC7CE06000CEB92 /* collectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectionModel.m; sourceTree = "<group>"; };
 		C45868FF1FC80C8E000CEB92 /* ZP_OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderModel.h; sourceTree = "<group>"; };
 		C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_OrderModel.m; sourceTree = "<group>"; };
+		C45C41861FE8AC0A00F1135D /* MakeSureOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeSureOrderController.h; sourceTree = "<group>"; };
+		C45C41871FE8AC0A00F1135D /* MakeSureOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeSureOrderController.m; sourceTree = "<group>"; };
+		C45C418E1FE8ACDB00F1135D /* ZP_MakeSureOrderAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_MakeSureOrderAddressCell.h; sourceTree = "<group>"; };
+		C45C418F1FE8ACDB00F1135D /* ZP_MakeSureOrderAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_MakeSureOrderAddressCell.m; sourceTree = "<group>"; };
+		C45C41911FE8ACF100F1135D /* ZP_MakeSureOrderInformationCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_MakeSureOrderInformationCell.h; sourceTree = "<group>"; };
+		C45C41921FE8ACF100F1135D /* ZP_MakeSureOrderInformationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_MakeSureOrderInformationCell.m; sourceTree = "<group>"; };
+		C45C41941FE8AD0700F1135D /* ZP_MakeSureOrderExpressDeliveryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_MakeSureOrderExpressDeliveryCell.h; sourceTree = "<group>"; };
+		C45C41951FE8AD0700F1135D /* ZP_MakeSureOrderExpressDeliveryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_MakeSureOrderExpressDeliveryCell.m; sourceTree = "<group>"; };
+		C45C41971FE8AD1600F1135D /* ZP_MakeSureOrderMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_MakeSureOrderMessageCell.h; sourceTree = "<group>"; };
+		C45C41981FE8AD1600F1135D /* ZP_MakeSureOrderMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_MakeSureOrderMessageCell.m; sourceTree = "<group>"; };
+		C45C419A1FE8AD2300F1135D /* ZP_MakeSureOrderAnonymityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_MakeSureOrderAnonymityCell.h; sourceTree = "<group>"; };
+		C45C419B1FE8AD2300F1135D /* ZP_MakeSureOrderAnonymityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_MakeSureOrderAnonymityCell.m; sourceTree = "<group>"; };
+		C45C419D1FE8B82A00F1135D /* BetSeleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetSeleTableViewCell.h; sourceTree = "<group>"; };
+		C45C419E1FE8B83300F1135D /* BetSeleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetSeleTableViewCell.m; sourceTree = "<group>"; };
+		C45C41A01FE8B83A00F1135D /* BetSeleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetSeleTableViewCell.xib; sourceTree = "<group>"; };
+		C45C41A21FE8B8F600F1135D /* BetViewcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetViewcell.xib; sourceTree = "<group>"; };
 		C45D83031FAB00EB003C35EB /* UIButton+countDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+countDown.h"; sourceTree = "<group>"; };
 		C45D83041FAB00EB003C35EB /* UIButton+countDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+countDown.m"; sourceTree = "<group>"; };
 		C45F22BD1FA017E800F5DB41 /* button_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_7@2x.png"; sourceTree = "<group>"; };
@@ -978,7 +1002,6 @@
 		C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_CheckMoreModel.m; sourceTree = "<group>"; };
 		C47BBBFA1FE55EA10000FFE6 /* BetViewcell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetViewcell.h; sourceTree = "<group>"; };
 		C47BBBFB1FE55EA10000FFE6 /* BetViewcell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetViewcell.m; sourceTree = "<group>"; };
-		C47BBBFC1FE55EA10000FFE6 /* BetViewcell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BetViewcell.xib; sourceTree = "<group>"; };
 		C47BBBFF1FE7F5D30000FFE6 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C47E75841FB573F2009F279A /* ZP_HomeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HomeTool.h; sourceTree = "<group>"; };
 		C47E75851FB573F2009F279A /* ZP_HomeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomeTool.m; sourceTree = "<group>"; };
@@ -1253,6 +1276,7 @@
 			isa = PBXGroup;
 			children = (
 				06F571031F9F0D3A00D61FDB /* OrderHomePage */,
+				C45C417D1FE8AAFA00F1135D /* MakeSureOrder */,
 				06F5710B1F9F0D6800D61FDB /* Appraise */,
 				06F571161F9F0DFF00D61FDB /* CheckLogistics */,
 				C4566B611FBED202000FCC78 /* ZP_OrderTool */,
@@ -2510,7 +2534,10 @@
 			children = (
 				C47BBBFA1FE55EA10000FFE6 /* BetViewcell.h */,
 				C47BBBFB1FE55EA10000FFE6 /* BetViewcell.m */,
-				C47BBBFC1FE55EA10000FFE6 /* BetViewcell.xib */,
+				C45C41A21FE8B8F600F1135D /* BetViewcell.xib */,
+				C45C419D1FE8B82A00F1135D /* BetSeleTableViewCell.h */,
+				C45C419E1FE8B83300F1135D /* BetSeleTableViewCell.m */,
+				C45C41A01FE8B83A00F1135D /* BetSeleTableViewCell.xib */,
 			);
 			path = BetHeaderCell;
 			sourceTree = "<group>";
@@ -2539,6 +2566,73 @@
 				C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */,
 			);
 			path = ZP_OrderModel;
+			sourceTree = "<group>";
+		};
+		C45C417D1FE8AAFA00F1135D /* MakeSureOrder */ = {
+			isa = PBXGroup;
+			children = (
+				C45C41851FE8AC0A00F1135D /* MakeSureOrderHomePage */,
+				C45C418D1FE8AC8F00F1135D /* ZP_MakeSureOrderAddress */,
+				C45C418B1FE8AC8F00F1135D /* ZP_MakeSureOrderInformation */,
+				C45C41891FE8AC8F00F1135D /* ZP_MakeSureOrderExpressDelivery */,
+				C45C418C1FE8AC8F00F1135D /* ZP_MakeSureOrderMessage */,
+				C45C418A1FE8AC8F00F1135D /* ZP_MakeSureOrderAnonymity */,
+			);
+			path = MakeSureOrder;
+			sourceTree = "<group>";
+		};
+		C45C41851FE8AC0A00F1135D /* MakeSureOrderHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				C45C41861FE8AC0A00F1135D /* MakeSureOrderController.h */,
+				C45C41871FE8AC0A00F1135D /* MakeSureOrderController.m */,
+			);
+			path = MakeSureOrderHomePage;
+			sourceTree = "<group>";
+		};
+		C45C41891FE8AC8F00F1135D /* ZP_MakeSureOrderExpressDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				C45C41941FE8AD0700F1135D /* ZP_MakeSureOrderExpressDeliveryCell.h */,
+				C45C41951FE8AD0700F1135D /* ZP_MakeSureOrderExpressDeliveryCell.m */,
+			);
+			path = ZP_MakeSureOrderExpressDelivery;
+			sourceTree = "<group>";
+		};
+		C45C418A1FE8AC8F00F1135D /* ZP_MakeSureOrderAnonymity */ = {
+			isa = PBXGroup;
+			children = (
+				C45C419A1FE8AD2300F1135D /* ZP_MakeSureOrderAnonymityCell.h */,
+				C45C419B1FE8AD2300F1135D /* ZP_MakeSureOrderAnonymityCell.m */,
+			);
+			path = ZP_MakeSureOrderAnonymity;
+			sourceTree = "<group>";
+		};
+		C45C418B1FE8AC8F00F1135D /* ZP_MakeSureOrderInformation */ = {
+			isa = PBXGroup;
+			children = (
+				C45C41911FE8ACF100F1135D /* ZP_MakeSureOrderInformationCell.h */,
+				C45C41921FE8ACF100F1135D /* ZP_MakeSureOrderInformationCell.m */,
+			);
+			path = ZP_MakeSureOrderInformation;
+			sourceTree = "<group>";
+		};
+		C45C418C1FE8AC8F00F1135D /* ZP_MakeSureOrderMessage */ = {
+			isa = PBXGroup;
+			children = (
+				C45C41971FE8AD1600F1135D /* ZP_MakeSureOrderMessageCell.h */,
+				C45C41981FE8AD1600F1135D /* ZP_MakeSureOrderMessageCell.m */,
+			);
+			path = ZP_MakeSureOrderMessage;
+			sourceTree = "<group>";
+		};
+		C45C418D1FE8AC8F00F1135D /* ZP_MakeSureOrderAddress */ = {
+			isa = PBXGroup;
+			children = (
+				C45C418E1FE8ACDB00F1135D /* ZP_MakeSureOrderAddressCell.h */,
+				C45C418F1FE8ACDB00F1135D /* ZP_MakeSureOrderAddressCell.m */,
+			);
+			path = ZP_MakeSureOrderAddress;
 			sourceTree = "<group>";
 		};
 		C45D82FF1FAB0077003C35EB /* ZP_registrationTimerBut */ = {
@@ -3758,6 +3852,7 @@
 				C472F14D1FE2A88B0031D7B5 /* icon_lottery_trash_normal@2x.png in Resources */,
 				06F5716C1F9F15CE00D61FDB /* CollectionTableViewCell.xib in Resources */,
 				06F571901F9F16E600D61FDB /* NewsTableViewCell.xib in Resources */,
+				C45C41A11FE8B83A00F1135D /* BetSeleTableViewCell.xib in Resources */,
 				06621DB91F9758AE0030983F /* ForgetPswController.xib in Resources */,
 				06F571D61F9F1A7900D61FDB /* ResetPasswordViewController.xib in Resources */,
 				C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */,
@@ -3810,7 +3905,6 @@
 				C4D9E7081FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.xib in Resources */,
 				062C9D631F8CD6F900E14987 /* button_6@2x.png in Resources */,
 				06F571D81F9F1A7900D61FDB /* EditViewController.xib in Resources */,
-				C47BBBFE1FE55EA10000FFE6 /* BetViewcell.xib in Resources */,
 				06F572411F9F204F00D61FDB /* BillDetailViewController.xib in Resources */,
 				C47096931FB04998006EA52C /* BindingEmailController.xib in Resources */,
 				062C9D621F8CD6F900E14987 /* button_5@3x.png in Resources */,
@@ -3844,6 +3938,7 @@
 				C4D9E70E1FE76A22000D2413 /* ZP_LotteryHistoricalBettingNumberCell.xib in Resources */,
 				C46B9F4B1FDE71FE00942750 /* 选择赏金彩_spec.png in Resources */,
 				064449A61F6A9B250004DFE4 /* LICENSE in Resources */,
+				C45C41A31FE8B8F700F1135D /* BetViewcell.xib in Resources */,
 				C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */,
 				C472F1491FE2A88B0031D7B5 /* icon_lottery_jia@2x.png in Resources */,
 				062C9D611F8CD6F900E14987 /* button_5@2x.png in Resources */,
@@ -3947,6 +4042,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45C419C1FE8AD2300F1135D /* ZP_MakeSureOrderAnonymityCell.m in Sources */,
 				E37503CF1FC7BD8F00DA2950 /* ZP_ConfirmWebController.m in Sources */,
 				C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */,
 				C4137E811FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m in Sources */,
@@ -3954,6 +4050,7 @@
 				06621DB81F9758AE0030983F /* ForgetPswController.m in Sources */,
 				C492A1961FD0EDC0009FF57B /* ZP_InstructionController.m in Sources */,
 				C45F22D51FA05AA700F5DB41 /* UIFont+Extension.m in Sources */,
+				C45C419F1FE8B83300F1135D /* BetSeleTableViewCell.m in Sources */,
 				C47E76291FB5A1C7009F279A /* RightTableViewCell.m in Sources */,
 				C45F22D91FA05AB000F5DB41 /* UIView+Extension.m in Sources */,
 				C45868FA1FC7CE06000CEB92 /* collectionModel.m in Sources */,
@@ -3999,6 +4096,7 @@
 				06621DAD1F9758720030983F /* TextView.m in Sources */,
 				C4535E461FC56A1400DFFD62 /* ZP_MessageModel.m in Sources */,
 				C425BEB41FC832140097DB8F /* ZP_FootprintModel.m in Sources */,
+				C45C41931FE8ACF100F1135D /* ZP_MakeSureOrderInformationCell.m in Sources */,
 				C4D9E7071FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.m in Sources */,
 				C47096A71FB065CE006EA52C /* LanguageController.m in Sources */,
 				06F572361F9F1E8700D61FDB /* StoreViewController.m in Sources */,
@@ -4053,6 +4151,7 @@
 				C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */,
 				06F571131F9F0D6800D61FDB /* AppraiseController.m in Sources */,
 				C45F23491FA0809000F5DB41 /* FourthViewCell.m in Sources */,
+				C45C41991FE8AD1600F1135D /* ZP_MakeSureOrderMessageCell.m in Sources */,
 				0641BBD31F67F9E400E72FEF /* NSData+ImageContentType.m in Sources */,
 				C45F235A1FA099B200F5DB41 /* FifthViewCell.m in Sources */,
 				C4566B641FBED233000FCC78 /* ZP_OrderTool.m in Sources */,
@@ -4100,10 +4199,12 @@
 				065B3CE31F984F8A00A8E6D6 /* UIView+SDExtension.m in Sources */,
 				C45F23091FA0754500F5DB41 /* ZPSearchBarBUtton.m in Sources */,
 				C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */,
+				C45C41881FE8AC0A00F1135D /* MakeSureOrderController.m in Sources */,
 				C49B32271FD5AC9E007632F2 /* ZP_ExtractCell.m in Sources */,
 				C45F23381FA0757A00F5DB41 /* SecondViewCell.m in Sources */,
 				C4535E381FC55EB600DFFD62 /* ZP_ExpressDeliveryModel.m in Sources */,
 				064249751F998E6400340EBA /* ConfirmPayView.m in Sources */,
+				C45C41961FE8AD0700F1135D /* ZP_MakeSureOrderExpressDeliveryCell.m in Sources */,
 				C47E762C1FB5A1C7009F279A /* ClassificationViewController.m in Sources */,
 				C45F230D1FA0756300F5DB41 /* PositionView.m in Sources */,
 				0641BBDB1F67F9E400E72FEF /* UIButton+WebCache.m in Sources */,
@@ -4163,6 +4264,7 @@
 				0641BBDC1F67F9E400E72FEF /* UIImage+GIF.m in Sources */,
 				064449AA1F6A9B250004DFE4 /* MJRefreshFooter.m in Sources */,
 				06F571091F9F0D3A00D61FDB /* OrderViewCell.m in Sources */,
+				C45C41901FE8ACDB00F1135D /* ZP_MakeSureOrderAddressCell.m in Sources */,
 				0641BBD81F67F9E400E72FEF /* SDWebImageDownloaderOperation.m in Sources */,
 				C47E76261FB5A1C7009F279A /* LeftTableViewCell.m in Sources */,
 				064449B01F6A9B250004DFE4 /* MJRefreshBackNormalFooter.m in Sources */,

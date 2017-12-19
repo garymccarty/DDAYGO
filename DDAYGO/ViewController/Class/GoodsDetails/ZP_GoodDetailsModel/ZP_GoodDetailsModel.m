@@ -19,8 +19,8 @@
         self.productname = dic[@"productname"];
         self.productprice = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
         self.TrademarkLabel = [NSString stringWithFormat:@"%@", dic[@"cp"]];
-        self.quantity = [NSString stringWithFormat:@"%@",dic[@"per"]];
-        self.peramount = [NSString stringWithFormat:@"%@",dic[@"peramount"]];
+//        self.quantity = [NSString stringWithFormat:@"%@",dic[@"per"]];
+        self.peramount = [NSString stringWithFormat:@"%@",dic[@"productsale"]];
         self.productid = [NSString stringWithFormat:@"%@",dic[@"productid"]];
         self.productamount = [NSString stringWithFormat:@"%@",dic[@"productamount"]];
         self.state = dic[@"state"];
@@ -45,6 +45,8 @@
         model.cntype = dic[@"cntype"];
         model.productid = [NSString stringWithFormat:@"%@", dic[@"productid"]];
         model.sort = [NSString stringWithFormat:@"%@",dic[@"sort"]];
+        model.productamount = [NSString stringWithFormat:@"%@",dic[@"productamount"]];
+        model.peramount = [NSString stringWithFormat:@"%@",dic[@"productsale"]];
         model.cnid = dic[@"cnid"];
         if ([model.cntype isEqualToNumber:@1]) {
             [arr addObject:model];
@@ -62,6 +64,8 @@
         model.cntype = dic[@"cntype"];
         model.productid = [NSString stringWithFormat:@"%@", dic[@"productid"]];
         model.sort = [NSString stringWithFormat:@"%@",dic[@"sort"]];
+        model.productamount = [NSString stringWithFormat:@"%@",dic[@"productamount"]];
+        model.peramount = [NSString stringWithFormat:@"%@",dic[@"productsale"]];
         model.cnid = dic[@"cnid"];
         if ([model.cntype isEqualToNumber:@2]) {
             [arr addObject:model];

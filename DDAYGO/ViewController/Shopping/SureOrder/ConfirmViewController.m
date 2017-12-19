@@ -112,9 +112,6 @@
     }];
     _StatisticsLabel = StatisticsLabel;
     
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        _PriceLabel.text = [NSString stringWithFormat:@"%.2f", [_PriceStr floatValue]];
-//    });
 //      提交订单
     UIButton * Clearing = [UIButton new];
     Clearing.backgroundColor = ZP_pricebackground;
@@ -375,20 +372,20 @@
             
             return 95;
             
-        }else
-            if (indexPath.section == 2){
+    }else
+        if (indexPath.section == 2){
                 
-                return 45;
+            return 45;
                 
-            }else
-                if (indexPath.section == 3){
+    }else
+        if (indexPath.section == 3){
                     
-                    return 90;
+            return 90;
                     
-                }else {
+    }else {
                     
-                    return 45;
-                }
+        return 45;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
