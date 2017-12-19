@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UILabel * numLabel;  // 数量
 @property (nonatomic, strong) UIButton * addButton;  // 增加
 
+@property (nonatomic, copy) void (^btnClickBlock) (NSString * str);
+
 - (void)cellWithModel:(ZP_CartsModel *)model;
 //- (void)cellWithDic:(NSDictionary *)dic ;
 @end

@@ -64,6 +64,7 @@
 @interface ZP_CartsShopModel : NSObject
 @property (nonatomic, strong) NSNumber *supplierid;
 @property (nonatomic, strong) NSString *shopname;
+@property (nonatomic, strong) NSMutableArray * array;
 + (NSMutableArray *)arrayWithArray:(NSArray *)array;
 @end
 
