@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
 @property (weak, nonatomic) IBOutlet UIButton * LoginBtn;
 //@property (nonatomic, strong) UIView * Boview;
+@property (weak, nonatomic) IBOutlet UIButton *ProtocolBut;
 
 @end
 
@@ -24,10 +25,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self touchesBegan];
     [self initUI];
 }
 
 - (void)initUI {
+    self.title = NSLocalizedString(@"ICUE登录", nil);
+    self.QuickLoginscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
+    
     _LoginBtn.layer.cornerRadius             = 8.0;
     _LoginBtn.layer.masksToBounds            = YES;
     
@@ -35,10 +40,23 @@
     
     _ZPPswTextField.showBtn                  = NO;
     _ZPPswTextField.showEyeBtn               = YES;
-    [_ZPPswTextField.functionBtn addTarget:self action:@selector(secureTextEntry) forControlEvents:UIControlEventTouchUpInside];
+//    [_ZPPswTextField.functionBtn addTarget:self action:@selector(secureTextEntry) forControlEvents:UIControlEventTouchUpInside];
 }
 
+//  登录
 - (IBAction)LoginClick:(id)sender {
+    if (_ZPEmailTextField.textField.text.length < 1) {
+        [SVProgressHUD showInfoWithStatus:@"邮箱不能为空"];
+    }
+    if (_ZPPswTextField.textField.text.length < 1) {
+        [SVProgressHUD showInfoWithStatus:@"密码不能为空"];
+    }
+    if (!_ProtocolBut.selected) {
+        [SVProgressHUD showInfoWithStatus:@"请选择同意用户协议协议"];
+        ZPLog(@"同意协议");
+        return;
+    }
+    
     [self AllData];
     ZPLog(@"数据");
 }
@@ -59,10 +77,10 @@
                 [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
         }else {
             if ([adic[@"result"]isEqualToString:@"acc_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"账号为空"];
+                [SVProgressHUD showInfoWithStatus:@"请输入账号"];
         }else {
             if ([adic[@"result"]isEqualToString:@"pwd_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"密码为空"];
+                [SVProgressHUD showInfoWithStatus:@"请输入密码"];
         }else {
             if ([adic[@"result"]isEqualToString:@"sys_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"系统错误"];
@@ -71,7 +89,7 @@
                 [SVProgressHUD showInfoWithStatus:@"token以存在"];
         }else {
             if ([adic[@"result"]isEqualToString:@"failure"]) {
-                [SVProgressHUD showInfoWithStatus:@"登入失败"];
+                [SVProgressHUD showInfoWithStatus:@"账号或密码错误"];
                                }
                             }
                         }
@@ -84,16 +102,16 @@
     }];
 }
 
-#pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -
-- (BOOL)validateEmail:(NSString *)email {
-    
-    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    
-    return [emailTest evaluateWithObject:email];
-    
-}
+//#pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -
+//- (BOOL)validateEmail:(NSString *)email {
+//
+//    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+//
+//    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+//
+//    return [emailTest evaluateWithObject:email];
+//
+//}
 
 #pragma mark - 安全输入
 -(void)secureTextEntry {
@@ -104,6 +122,11 @@
     }else {
         [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_open.png"] forState:UIControlStateNormal];
     }
+}
+
+#pragma mark - 用戶協議
+- (IBAction)UserAgreementBut:(UIButton *)sender {
+    sender.selected = !sender.selected;
 }
 
 //  键盘触摸
