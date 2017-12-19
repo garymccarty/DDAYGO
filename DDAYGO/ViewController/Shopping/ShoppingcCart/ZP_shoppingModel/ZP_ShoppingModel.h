@@ -43,9 +43,9 @@
 @property (nonatomic, strong) NSNumber *normid;
 @property (nonatomic, strong) NSNumber *productprice;
 @property (nonatomic, strong) NSNumber *cp;
-@property (nonatomic, strong) NSNumber *supplierid;
-@property (nonatomic, strong) NSNumber *weight;
-@property (nonatomic, strong) NSNumber *priceamount;
+@property (nonatomic, strong) NSNumber * supplierid;
+@property (nonatomic, strong) NSNumber * weight;
+@property (nonatomic, strong) NSNumber * priceamount;
 @property (nonatomic, strong) NSNumber *productcost;
 
 @property (nonatomic, strong) NSString *createtime;

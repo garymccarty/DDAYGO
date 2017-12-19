@@ -61,8 +61,8 @@
 }
 
 //  商品评价
-+ (void)requEvaluates:(NSDictionary *)spxq success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
-    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getproductreview?productid=%@&page=%@&pagesize=%@", URLAPI,spxq[@"productid"],spxq[@"page"],spxq[@"pagesize"]] parameters:nil success:^(NSDictionary *responseObject) {
++ (void)requEvaluates:(NSDictionary *)sppj success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getproductreview?productid=%@&page=%@&pagesize=%@", URLAPI,sppj[@"productid"],sppj[@"page"],sppj[@"pagesize"]] parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);

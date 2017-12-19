@@ -20,6 +20,7 @@
     NSArray * nameArray;
     BOOL _bjBool;
     NSString * _modelstockid;
+    NSMutableArray * indexArray;
 }
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -107,6 +108,7 @@
 #pragma makr -   编辑
 //  编辑
 - (void)onClickedSweep:(UIButton *)sup {
+    [self EditorUI];
     sup.selected = !sup.selected;
     _bjBool = !_bjBool;
     if (_bjBool) {
@@ -121,6 +123,17 @@
     }
     [self.tableView reloadData];
    
+}
+// 编辑弹出view
+- (void)EditorUI {
+    UIView * EditorView = [UIView new];
+    EditorView.backgroundColor = ZP_WhiteColor;
+    [EditorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(80);
+        make.top.equalTo(self).offset(0);
+        make.width.mas_equalTo(120);
+        make.height.mas_equalTo(120);
+    }];
 }
 
 - (void)initUI {
@@ -232,7 +245,7 @@
         }
     }
     
-    [self updateData];
+    [self updateData:sender.tag];
     
 }
 
@@ -259,10 +272,10 @@
         }
     }
     
-    [self updateDataa];
+    [self updateDataa:sender.tag];
 }
 
-- (void)updateData {
+- (void)updateData:(NSInteger)tag {
 //   更新选中数量
     NSInteger count = 0;
     NSInteger data = 0;
@@ -273,9 +286,11 @@
             ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
             ZP_CartsModel *model = dataArray[i];
             if (cell.buttom.selected ) {
-                
-                NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB:"];
-                data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
+                ZP_CartsShopModel * models = nameArray[0];
+                ZP_CartsModel *model = models.array[tag];
+                //  NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
+                //  data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
+                data += [model.productprice floatValue]*[model.amount integerValue];
                 dataCount += [cell.QuantityLabel.text integerValue];
                 count ++;
                 NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
@@ -319,7 +334,7 @@
     [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
 }
 
-- (void)updateDataa {
+- (void)updateDataa:(NSInteger)tag {
     //   更新选中数量
     NSInteger count = 0;
     NSInteger data = 0;
@@ -328,11 +343,14 @@
 
         if (!_bjBool) {
             ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            ZP_CartsModel *model = dataArray[i];
+//            ZP_CartsModel *model = dataArray[i];
+//             购物车价格错乱
             if (cell.buttom.selected ) {
-                
-                NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
-                data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
+                ZP_CartsShopModel * models = nameArray[0];
+                ZP_CartsModel *model = models.array[tag];
+              //  NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
+              //  data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
+                data += [model.priceamount integerValue] *[model.productprice floatValue];
                 dataCount += [cell.QuantityLabel.text integerValue];
                 count ++;
                 NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
@@ -375,6 +393,7 @@
         self.Shopchoosebuttom.selected = NO;
         
     }
+   
 //       更新合计数据
     self.PriceLabel.text = [@(data) stringValue];
     [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
@@ -386,7 +405,7 @@
 - (void)ClearingBut:(UIButton *)sender {
     _stockids = nil;
     _modelstockid = nil;
-    [self updateData];
+    [self updateData:sender.tag];
     if ([self YESOrNoPush]) {
         if (sender.selected) {
             

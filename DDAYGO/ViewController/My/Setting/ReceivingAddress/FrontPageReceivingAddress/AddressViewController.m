@@ -104,6 +104,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ZP_FrontPageReceivingAddressModel * model = self.newsData[indexPath.row];
+    self.popBlock(model);
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 138;
 }

@@ -58,6 +58,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self allData];
+    [self evaluation];
     self.navigationController.navigationBar.hidden = YES;
     [self.detailTableView registerNib:[UINib nibWithNibName:@"ProductTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProductTableViewCell"];
     [self.detailTableView registerNib:[UINib nibWithNibName:@"EvaluateTableViewCell" bundle:nil] forCellReuseIdentifier:@"EvaluateTableViewCell"];
@@ -143,7 +144,7 @@
         NSDictionary *tempDic = @{@"productid":_productId,@"page":@(1),@"pagesize":@(5)};
         [ZP_ClassViewTool requEvaluates:tempDic success:^(id obj) {
             [self.evaluateArray addObject:obj];
-            NSLog(@"%@",obj);
+//            NSLog(@"%@",obj);
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
         }];
@@ -152,7 +153,7 @@
         _shoucangBtn.selected = [model.state boolValue];
         NSString *value = [obj objectForKey:@"colornorms"];
         if ((NSNull *)value == [NSNull null]) {
-            NSLog(@"kkk");
+//            NSLog(@"kkk");
         }else{
             NSArray *colorArr = obj[@"colornorms"];
             if (colorArr.count > 0) {
@@ -173,7 +174,7 @@
 - (void)getRightItemDataWithProducttypeid:(NSInteger)producttypeid {
     NSDictionary * dictt = @{@"productid":@"2",@"fatherid":[@(producttypeid + 1) stringValue]};
     [ZP_ClassViewTool requClassIficationrj:dictt success:^(id obj) {
-        ZPLog(@"%@",obj);
+//        ZPLog(@"%@",obj);
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
@@ -192,6 +193,19 @@
     _peramountLable.text = model.peramount;
     _productidLable.text = model.productid;
     _ShoppingIdLabel.text = model.TrademarkLabel;
+    
+}
+// 获取评价数据
+- (void)evaluation {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"productid"] = @"7";
+    dic[@"page"] = @"1";
+    dic[@"pagesize"] = @"5";
+    [ZP_ClassViewTool requEvaluates:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
+    } failure:^(NSError *error) {
+        ZPLog(@"%@",error);
+    }];
     
 }
 //  自定义返回按钮

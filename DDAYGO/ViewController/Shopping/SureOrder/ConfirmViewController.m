@@ -393,6 +393,18 @@
     if (indexPath.section == 0 && !self.noEdit) {
         self.hidesBottomBarWhenPushed = YES;
         AddressViewController * addres = [[AddressViewController alloc]init];
+        addres.popBlock = ^(ZP_FrontPageReceivingAddressModel *model) {
+            self.dataArrar = [[NSMutableArray alloc]init];
+            ZP_ComfirmModel * models = [[ZP_ComfirmModel alloc]init];
+            models.receiptname = model.eeceiptname;
+            models.receiptphone = model.eeceiptphone;
+            models.addressdetail = model.addressdetail;
+            models.addressid = model.addressid;
+            
+            [self.dataArrar addObject:models];
+            NSIndexSet * indexset = [NSIndexSet indexSetWithIndex:0];
+            [self.tableView reloadSections:indexset withRowAnimation:UITableViewRowAnimationTop];
+        };
         [self.navigationController pushViewController:addres animated:YES];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
