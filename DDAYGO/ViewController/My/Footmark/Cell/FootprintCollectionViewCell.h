@@ -11,7 +11,8 @@
 @interface FootprintCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView * defaultimg; // 图片
 @property (strong, nonatomic) IBOutlet UILabel * productname;  // 标题
-@property (strong, nonatomic) IBOutlet UILabel *productprice; // 商品价格
+@property (strong, nonatomic) IBOutlet UILabel * CurrencySymbolLabel; // 货币符号
+@property (weak, nonatomic) IBOutlet UILabel *productprice; // 价格
 @property (strong, nonatomic) IBOutlet UILabel * cp; // 商品cp
 @property (weak, nonatomic) IBOutlet UIButton *deleBtn;
 

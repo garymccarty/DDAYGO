@@ -18,8 +18,9 @@
     if (self == [super init]) {
         self.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
         self.productname = dic[@"productname"];
-        self.productprice = [NSString stringWithFormat:@"RMB:%@",dic[@"productprice"]];
-        self.cp = [NSString stringWithFormat:@"RMB:%@",dic[@"cp"]];
+        self.productprice = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
+        self.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];
+         self.CurrencySymbolLabel = @"RMB:";
     }
     return self;
 }
@@ -36,12 +37,14 @@
     if (array.count > 0) {
 
     for (NSDictionary * dic in array[0][@"historylist"]) {
+        
         ZP_FootprintModel * model = [[ZP_FootprintModel alloc]init];
         model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
         model.productname = dic[@"productname"];
-        model.productprice = [NSString stringWithFormat:@"RMB:%@",dic[@"productprice"]];
+        model.productprice = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
         model.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];
         model.historyid = dic[@"historyid"];
+        model.CurrencySymbolLabel = @"RMB:";
         [arr addObject:model];
     }
         

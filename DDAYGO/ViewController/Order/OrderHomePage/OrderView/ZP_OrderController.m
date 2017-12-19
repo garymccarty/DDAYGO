@@ -21,6 +21,7 @@
 #import "ConfirmViewController.h"
 #import "AppraiseController.h"
 @interface ZP_OrderController ()<FSPageContentViewDelegate,FSSegmentTitleViewDelegate> {
+//    int _i;
     NSArray * dataArray;
     NSArray * _ModeldataArray;
 }
@@ -31,9 +32,9 @@
 @property (nonatomic, strong)UILabel * line;
 @property (nonatomic, strong)UITableView * tableview;
 
-@property (nonatomic, strong) FSPageContentView *pageContentView;
-@property (nonatomic, strong) FSSegmentTitleView *titleView;
-
+@property (nonatomic, strong) FSPageContentView * pageContentView;
+@property (nonatomic, strong) FSSegmentTitleView * titleView;
+//@property (nonatomic, strong) NSMutableArray * newsData;
 @end
 
 @implementation ZP_OrderController
@@ -50,10 +51,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addUI];
+//    [self addRefresh];
     //数据都写在这个页面·刷新什么的都在这个页面写·
 }
 
-
+//- (void)addRefresh {
+//    self.tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [self.newsData removeAllObjects];
+//        _i = 0;
+//        [self getDataWithState];
+//    }];
+//    //    进入刷新
+//    [self.tableview.mj_header beginRefreshing];
+//
+//    self.tableview.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+////        [_ModeldataArray reverseObjectEnumerator];
+//        _i+=10;
+//        [self getDataWithState];
+//    }];
+//}
 -(void)addUI {
     
     self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width , ZP_height - NavBarHeight - 40)];
@@ -169,7 +185,7 @@
     OrdersdetailModel * model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
     ConfirmViewController *confirm = [[ConfirmViewController alloc]init];
     confirm.stockidsString = [NSString stringWithFormat:@"%@_%@",model2.stockid,model2.amount];
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     confirm.noEdit = YES;
     confirm.ordersnumber = model.ordersnumber;
     [self.navigationController pushViewController:confirm animated:YES];

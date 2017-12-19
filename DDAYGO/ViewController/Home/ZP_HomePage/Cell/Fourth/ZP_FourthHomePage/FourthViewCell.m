@@ -18,7 +18,9 @@
 
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong)NSMutableArray * newsData;
+
 @end
+
 @implementation FourthViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -115,14 +117,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 1;
+
+    return self.newsData.count;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 2;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//
+//    return self.newsData.count;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     

@@ -52,6 +52,7 @@
         //38接口显示·返回只有2个结果·以防止崩溃·加判断
         if ([obj[@"result"] isEqualToString:@"no"]) {
             [SVProgressHUD showInfoWithStatus:@"供货商不存在"];
+            [self.navigationController popViewControllerAnimated:YES];
         }else {
             _sid = obj[@"result"];
             [self MerchantsBalance];

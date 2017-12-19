@@ -75,7 +75,7 @@
             NSDictionary * dic = [obj firstObject];
             ZPLog(@"%@",dic);
             _model = [ZP_ShoppingModel CreateWithDict:[obj firstObject]];
-          //  dataArray = [ZP_CartsModel arrayWithArray:dic[@"cart"]];
+            dataArray = [ZP_CartsModel arrayWithArray:dic[@"cart"]];
             nameArray = [ZP_CartsShopModel arrayWithArray:obj];
             [self.tableView reloadData];
             
@@ -113,15 +113,14 @@
         _StatisticsLabel.hidden = YES;
         _PriceLabel.hidden = YES;
         _ClearingButt.selected = YES;
-        
+
     }else{
         _StatisticsLabel.hidden = NO;
         _PriceLabel.hidden = NO;
         _ClearingButt.selected = NO;
     }
     [self.tableView reloadData];
-    
-    NSLog(@"编辑");
+   
 }
 
 - (void)initUI {
@@ -507,10 +506,6 @@
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -637,7 +632,6 @@
                     
                     [SVProgressHUD showInfoWithStatus:@"删除失败"];
                 }
-//            NSLog(@"%@",obj);
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
         }];
@@ -645,8 +639,6 @@
         [dataArray removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-        //        [_data  removeObjectAtIndex:indexPath.row];
-        //        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
     }
 }
 

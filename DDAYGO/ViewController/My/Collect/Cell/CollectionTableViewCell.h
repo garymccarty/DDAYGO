@@ -11,6 +11,7 @@
 @interface CollectionTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView * ShopimageView;  // 主图
 @property (weak, nonatomic) IBOutlet UILabel * shopTextLabel;  // 标题
+@property (weak, nonatomic) IBOutlet UILabel *CurrencySymbolLabel; // 货币符号
 @property (weak, nonatomic) IBOutlet UILabel * priceLabel;  // 价格
 @property (strong, nonatomic) IBOutlet UILabel * Cp; // 编号
 

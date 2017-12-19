@@ -17,6 +17,7 @@
         model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@", dic[@"defaultimg"]];
         model.productname = dic[@"productname"];
         model.productprice = dic[@"productprice"];
+        model.CurrencySymbolLabel = @"RMB:";
         model.productid =  dic[@"productid"];
         model.cp = dic[@"cp"];
         [arr addObject:model];

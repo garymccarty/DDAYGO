@@ -11,7 +11,8 @@
 @interface ZP_FootprintModel : NSObject
 @property (strong, nonatomic) NSString * defaultimg; // 图片
 @property (strong, nonatomic) NSString * productname;  // 标题
-@property (strong, nonatomic) NSString *productprice; // 商品价格
+@property (nonatomic, strong) NSString * CurrencySymbolLabel; // 货币符号
+@property (strong, nonatomic) NSString * productprice; // 商品价格
 @property (strong, nonatomic) NSString * cp; // 商品cp
 
 @property (nonatomic, strong) NSNumber * historyid;

@@ -24,6 +24,8 @@
 @property (nonatomic, strong) NSNumber * cp;
 //商品ID
 @property (nonatomic, strong) NSNumber * productid;
+//货币符号
+@property (nonatomic, strong) NSString * CurrencySymbolLabel;
 //商品价格
 @property (nonatomic, strong) NSNumber * productprice;
 //商品状态

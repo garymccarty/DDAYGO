@@ -20,6 +20,7 @@
     _productname.text = model.productname;
     _productprice.text = [NSString stringWithFormat:@"%@",model.productprice];
     _cp.text = [NSString stringWithFormat:@"%@",model.cp];
+    _CurrencySymbolLabel.text = model.CurrencySymbolLabel;
     
 }
 @end

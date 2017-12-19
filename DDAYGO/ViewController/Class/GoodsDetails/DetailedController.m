@@ -428,8 +428,8 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ZP_Width, 30)];
-    label.backgroundColor = [UIColor redColor];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(8, 0, ZP_Width - 8, 30)];
+    label.backgroundColor = [UIColor whiteColor];
     if (section == 0) {
         label.text = @"产品内容";
     } else if (section == 1) {

@@ -40,7 +40,8 @@
     dic[@"nonce"] = @(i);
     [ZP_MyTool requtsFootprint:dic success:^(id obj) {
         ZPLog(@"%@",obj);
-        self.newsData = [ZP_FootprintModel arrayWithArray:obj[@"historyslist"]];
+        NSDictionary * dic = obj;
+        self.newsData = [ZP_FootprintModel arrayWithArray:dic[@"historyslist"]];
         if (self.newsData.count < 1) {
             UIImageView * image = [UIImageView new];
             image.image = [UIImage imageNamed:@"icon_fail"];
@@ -73,7 +74,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    CGFloat width=(self.view.frame.size.width-51)/3;
+    CGFloat width=(self.view.frame.size.width-55)/3;
     return CGSizeMake(width, width *137 / 110);
 }
 
