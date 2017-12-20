@@ -128,8 +128,18 @@
         _headImageBut.layer.masksToBounds = YES;
         [_headImageBut setImage:image forState:UIControlStateNormal];
     }
+//    判断是否登录
+    if (!DD_HASLOGIN) {
+        if (![MyViewController sharedInstanceTool].hasRemind) {
+            [MyViewController sharedInstanceTool].hasRemind = YES;
+            LogregisterController *viewcontroller = [[LogregisterController alloc] init];
+            [self.navigationController pushViewController:viewcontroller animated:YES];
+      }
+    }else {
+        
     [self AllDatas];
     [self allData];
+}
 }
 
 - (void)viewDidAppear:(BOOL)animated {

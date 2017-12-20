@@ -32,6 +32,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     [self allData];
     
 }
@@ -87,12 +88,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     AddressTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"AddressTableViewCell" forIndexPath:indexPath];
     ZP_FrontPageReceivingAddressModel * model = self.newsData[indexPath.row];
-    cell.defBtn.tag = indexPath.row;
-    [cell.defBtn addTarget:self action:@selector(seleClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+//    默认地址
+        cell.defBtn.tag = indexPath.row;
+        [cell.defBtn addTarget:self action:@selector(seleClick:) forControlEvents:UIControlEventTouchUpInside];
+//    删除
+        cell.DeletingBut.tag = indexPath.row;
+        [cell.DeletingBut addTarget:self action:@selector(DeletingClick:) forControlEvents:UIControlEventTouchUpInside];
+
     [cell cellWithdic:model];
     cell.finishBlock = ^(id response) {
         EditViewController * viewController = [[EditViewController alloc] init];
@@ -147,6 +151,44 @@
         }
     }
     
+}
+
+// 删除按钮
+- (void)DeletingClick:(UIButton *)sender {
+#pragma make -- 提示框
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        ZPLog(@"取消");
+         }];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+//        响应事件
+    NSLog(@"action = %@", action);
+         ZP_FrontPageReceivingAddressModel * model = self.newsData[sender.tag];
+        NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+        dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+        dic[@"adsid"] = model.addressid;
+        [ZP_MyTool requesDeleteAddress:dic success:^(id obj) {
+            if ([obj[@"result"]isEqualToString:@"ok"]) {
+                [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+            }else {
+                if ([obj[@"result"]isEqualToString:@"isdefault_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"默认地址不能删除"];
+                }else {
+                    if ([obj[@"result"]isEqualToString:@"failure"]) {
+                        [SVProgressHUD showInfoWithStatus:@"操作失败"];
+                    }
+                }
+            }
+            ZPLog(@"%@",obj);
+        } failure:^(NSError * error) {
+            ZPLog(@"%@",error);
+        }];
+        
+    }];
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

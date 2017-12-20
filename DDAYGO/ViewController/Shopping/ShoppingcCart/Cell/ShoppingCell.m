@@ -199,7 +199,7 @@
     _descLabel.text = model.colorname;
     _SizeLabel.text = model.normname;
     _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.priceamount];
-    _PriceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice];
+//    _PriceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = [NSString stringWithFormat:@"%@",model.cp];
     _QuantityLabel.text = [NSString stringWithFormat:@"%@",model.amount];

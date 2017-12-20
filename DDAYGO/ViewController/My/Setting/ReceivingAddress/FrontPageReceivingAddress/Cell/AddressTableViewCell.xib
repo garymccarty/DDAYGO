@@ -84,9 +84,6 @@
                         <state key="normal" title="删除" image="icon_address_delete_normal@2x">
                             <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
-                        <connections>
-                            <action selector="DeletingBut:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hcW-Cu-oHA"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -115,6 +112,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="AddressLabel" destination="DQX-2A-oMK" id="pc7-3c-4Ph"/>
+                <outlet property="DeletingBut" destination="xUE-ly-bQU" id="a4O-kh-t31"/>
                 <outlet property="NameLabel" destination="sgT-1E-MbV" id="HlC-kA-ySB"/>
                 <outlet property="PhoneLabel" destination="4ba-Lv-ohB" id="d7h-28-Kos"/>
                 <outlet property="defBtn" destination="wXs-eE-jWb" id="6PV-nF-dwD"/>

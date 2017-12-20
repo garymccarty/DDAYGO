@@ -11,6 +11,6 @@
 
 @interface AddressViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSNumber * oid;
+@property (nonatomic, strong) NSNumber * oid; // 地址id
 @property (nonatomic, copy) void(^popBlock)(ZP_FrontPageReceivingAddressModel * model);
 @end

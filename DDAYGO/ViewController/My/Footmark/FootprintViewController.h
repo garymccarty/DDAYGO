@@ -10,5 +10,6 @@
 
 @interface FootprintViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) UILabel * RemindLabel;
 
 @end

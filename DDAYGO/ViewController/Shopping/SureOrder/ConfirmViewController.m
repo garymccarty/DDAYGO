@@ -269,7 +269,7 @@
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
         //        NSDictionary * dic = obj;
         NSLog(@"freightamount : %@",obj[@"freightamount"]);
-        //        self.ConfirmArray = [ZP_ExpressDeliveryModel arrayWithArray:obj[@"freightamount"]];
+//                self.ConfirmArray = [ZP_ExpressDeliveryModel arrayWithArray:obj[@"freightamount"]];
         
         [self.tableView reloadData];
     } failure:^(NSError * error) {

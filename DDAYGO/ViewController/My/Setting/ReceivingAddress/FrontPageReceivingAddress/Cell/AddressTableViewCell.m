@@ -16,16 +16,13 @@
     [super awakeFromNib];
     // Initialization code
 }
+//  编辑
 - (IBAction)editAction:(id)sender {
     if (self.finishBlock) {
         self.finishBlock(nil);
     }
 }
-- (IBAction)DeletingBut:(id)sender {
-//    if (self.finishBlock) {
-//        self.finishBlock(nil);
-//    }
-}
+
 
 - (void)cellWithdic:(ZP_FrontPageReceivingAddressModel *)model {
     _NameLabel.text = model.eeceiptname;

@@ -48,9 +48,17 @@
             [self.view addSubview:image];
             [image mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
-                make.top.equalTo(self.view).offset(20);
+                make.top.equalTo(self.view).offset(ZP_Width / 2 - 25);
                 make.width.mas_offset(50);
                 make.height.mas_equalTo(50);
+            }];
+            ZP_GeneralLabel * RemindLabel = [ZP_GeneralLabel initWithtextLabel:_RemindLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
+            RemindLabel.text = @"数据空空如也";
+            [self.view addSubview:RemindLabel];
+            [RemindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.view).offset(ZP_Width / 2 -30);
+                make.top.equalTo(image).offset(55);
+                make.height.mas_offset(15);
             }];
         }
         [self.collectionView reloadData];
@@ -58,8 +66,10 @@
         ZPLog(@"error");
     }];
 }
+
 #pragma mark --- collectionView delegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     return self.newsData.count;
 }
 

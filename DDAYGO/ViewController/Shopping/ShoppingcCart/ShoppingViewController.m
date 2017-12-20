@@ -68,7 +68,7 @@
 
 - (void)allData {
     
-    NSLog(@"token : %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]);
+//    NSLog(@"token : %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]);
     [ZP_shoopingTool requesshoppingData:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] success:^(id obj) {
         ZPLog(@"%@",obj);
         NSArray *arr = obj;
@@ -410,21 +410,26 @@
         if (sender.selected) {
             
 #pragma make -- 提示框
-    UIAlertController * al = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction * act = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            }];
-        UIAlertAction * act2 = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定要删除吗？",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-                dic[@"stockid"] =_modelstockid;
-                dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-                [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
-                    NSLog(@"%@",obj);
-                } failure:^(NSError *error) {
-                    NSLog(@"%@",error);
-                }];
-            }];
-            [al addAction:act];
-            [al addAction:act2];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
+            
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        ZPLog(@"取消");
+    }];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    //        响应事件
+        NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+        dic[@"stockid"] =_modelstockid;
+        dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+        [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
+            NSLog(@"%@",obj);
+        } failure:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
+        }];
+        [alert addAction:defaultAction];
+        [alert addAction:cancelAction];
+        [self presentViewController:alert animated:YES completion:nil];
+            
         }else {
             
             ConfirmViewController * Confirm = [[ConfirmViewController alloc]init];
