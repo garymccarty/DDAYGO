@@ -286,6 +286,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (0 == section) {
         return _dataArrar.count;
+        
     }else
         if (1 == section) {
             //        return InformatonArray.count;

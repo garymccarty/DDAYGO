@@ -70,7 +70,17 @@
         make.top.equalTo(titleLabel).offset(30);
     }];
     _descLabel = descLabel;
-    
+//  货币符号
+    UILabel * CurrencySymbolLabel = [UILabel new];
+    CurrencySymbolLabel.textAlignment = NSTextAlignmentLeft;
+    CurrencySymbolLabel.textColor = ZP_pricebackground;
+    CurrencySymbolLabel.font = ZP_titleFont;
+    [self.contentView addSubview:CurrencySymbolLabel];
+    [CurrencySymbolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(FigureImage).offset(80);
+        make.top.equalTo(descLabel).offset(15);
+    }];
+    _CurrencySymbolLabel = CurrencySymbolLabel;
 //  优惠价格
     UILabel * PreferentialLabel = [UILabel new];
     PreferentialLabel.textAlignment = NSTextAlignmentLeft;
@@ -78,7 +88,7 @@
     PreferentialLabel.font = ZP_titleFont;
     [self.contentView addSubview:PreferentialLabel];
     [PreferentialLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(80); // 左
+        make.left.equalTo(CurrencySymbolLabel).offset(35); // 左
         make.top.equalTo(descLabel).offset(15); // 上
     }];
     _PreferentialLabel = PreferentialLabel;
@@ -160,7 +170,8 @@
     [_FigureImage sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     _titleLabel.text = model.productname;
 //    _descLabel.text = dic[@"desc"];
-   _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice]; // 优惠价格
+    _CurrencySymbolLabel.text = @"RMB:";
+   _PreferentialLabel.text = [NSString stringWithFormat:@"%@",model.productprice]; // 优惠价格
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = model.cp;
     _QuantityLabel.text = model.amount;

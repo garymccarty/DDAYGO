@@ -436,9 +436,9 @@
             Confirm.NumStr = self.ClearingButt.titleLabel.text;
             Confirm.stockidsString = _stockids;
             
-            self.hidesBottomBarWhenPushed = YES;
+//            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:Confirm animated:YES];
-            self.hidesBottomBarWhenPushed = NO;
+//            self.hidesBottomBarWhenPushed = NO;
             self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
             self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
         }
