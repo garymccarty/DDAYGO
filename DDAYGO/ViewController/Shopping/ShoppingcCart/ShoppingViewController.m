@@ -103,33 +103,33 @@
 #pragma makr -   编辑
 //  编辑
 - (void)onClickedSweep:(UIButton *)sup {
-    [self EditorUI];
-    sup.selected = !sup.selected;
-    _bjBool = !_bjBool;
-    if (_bjBool) {
-        _StatisticsLabel.hidden = YES;
-        _PriceLabel.hidden = YES;
-        _ClearingButt.selected = YES;
-
-    }else{
-        _StatisticsLabel.hidden = NO;
-        _PriceLabel.hidden = NO;
-        _ClearingButt.selected = NO;
-    }
-    [self.tableView reloadData];
+//    [self EditorUI];
+//    sup.selected = !sup.selected;
+//    _bjBool = !_bjBool;
+//    if (_bjBool) {
+//        _StatisticsLabel.hidden = YES;
+//        _PriceLabel.hidden = YES;
+//        _ClearingButt.selected = YES;
+//
+//    }else{
+//        _StatisticsLabel.hidden = NO;
+//        _PriceLabel.hidden = NO;
+//        _ClearingButt.selected = NO;
+//    }
+//    [self.tableView reloadData];
    
 }
-// 编辑弹出view
-- (void)EditorUI {
-    UIView * EditorView = [UIView new];
-    EditorView.backgroundColor = ZP_WhiteColor;
-    [EditorView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(80);
-        make.top.equalTo(self).offset(0);
-        make.width.mas_equalTo(120);
-        make.height.mas_equalTo(120);
-    }];
-}
+//// 编辑弹出view
+//- (void)EditorUI {
+//    UIView * EditorView = [UIView new];
+//    EditorView.backgroundColor = ZP_WhiteColor;
+//    [EditorView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self).offset(80);
+//        make.top.equalTo(self).offset(0);
+//        make.width.mas_equalTo(120);
+//        make.height.mas_equalTo(120);
+//    }];
+//}
 
 - (void)initUI {
     
@@ -183,13 +183,21 @@
     }];
     _PriceLabel = PriceLabel;
     
+//    货币符号
+    ZP_GeneralLabel * CurrencySymbolLabel = [ZP_GeneralLabel initWithtextLabel:_CurrencySymbolLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    CurrencySymbolLabel.text = @"RMB:";
+    [bottomView addSubview:CurrencySymbolLabel];
+    [CurrencySymbolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(PriceLabel).offset(-35);
+        make.top.equalTo(PriceLabel).offset(0);
+    }];
 //   合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    StatisticsLabel.text = NSLocalizedString(@"TotalRMB:", nil);
+    StatisticsLabel.text = NSLocalizedString(@"Total", nil);
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(PriceLabel).offset(-70); // 左边
-        make.bottom.equalTo(PriceLabel).offset(0); // 下
+        make.left.equalTo(CurrencySymbolLabel).offset(-32.5); // 左边
+        make.bottom.equalTo(CurrencySymbolLabel).offset(0); // 下
     }];
     _StatisticsLabel = StatisticsLabel;
     
@@ -197,7 +205,7 @@
     UIButton * ClearingBut = [UIButton new];
     ClearingBut.backgroundColor = ZP_pricebackground;
     [ClearingBut setTitle:NSLocalizedString(@"Clearing(0)", nil) forState:UIControlStateNormal];
-    [ClearingBut setTitle:NSLocalizedString(@"Delete", nil) forState:UIControlStateSelected];
+//    [ClearingBut setTitle:NSLocalizedString(@"Delete", nil) forState:UIControlStateSelected];
     ClearingBut.titleLabel.font = ZP_TooBarFont;
     [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
     

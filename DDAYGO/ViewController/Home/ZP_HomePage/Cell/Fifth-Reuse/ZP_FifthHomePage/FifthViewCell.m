@@ -81,11 +81,12 @@
     }
     
     return cell;
-}
+} 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld",indexPath.row);
     if (self.ThirdBlock) {
-        ZP_FifthModel *model = self.newsData[indexPath.row];
+        ZP_FifthModel *model = self.newsData[indexPath.row + 2];
         self.ThirdBlock([model.producid longValue]);
     }
     NSLog(@"选中%ld",(long)indexPath.item);

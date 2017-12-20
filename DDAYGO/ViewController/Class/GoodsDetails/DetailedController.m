@@ -42,8 +42,8 @@
 @property (nonatomic, strong) ProductDescriptionView * productDescriptionView;
 @property (nonatomic, strong) PurchaseView * purchaseView;
 @property (nonatomic ,strong) NSMutableArray * newsData;
-@property (weak, nonatomic) IBOutlet UIButton *ljgmBtn;
-@property (weak, nonatomic) IBOutlet UIButton *jrgwcBtn;
+@property (weak, nonatomic) IBOutlet UIButton * ljgmBtn;
+@property (weak, nonatomic) IBOutlet UIButton * jrgwcBtn;
 @property (nonatomic, strong) ZP_GoodDetailsModel * model;
 @property (nonatomic, strong) NSArray * normsArr;
 @property (nonatomic, strong) NSArray * typeArr;
@@ -197,8 +197,9 @@
 }
 // 获取评价数据
 - (void)evaluation {
+//    55b9b460d9150998bedc6f069c5d0afd
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"productid"] = @"7";
+    dic[@"productid"] = _productId;
     dic[@"page"] = @"1";
     dic[@"pagesize"] = @"5";
     [ZP_ClassViewTool requEvaluates:dic success:^(id obj) {

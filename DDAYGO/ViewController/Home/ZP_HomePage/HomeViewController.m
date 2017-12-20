@@ -253,9 +253,9 @@
         if (indexPath.section == 4){
             static NSString * FourthID = @"Fourthcell";
             FourthViewCell * cell = [tableView dequeueReusableCellWithIdentifier:FourthID];
-            cell.ThirdBlock = ^(NSInteger tag){
+            cell.FourthBlock = ^(NSInteger tag){
                 DetailedController *viewController = [[DetailedController alloc] init];
-//                self.hidesBottomBarWhenPushed = YES;
+                viewController.productId = @(tag);
                 [self.navigationController pushViewController:viewController animated:YES];
 //                self.hidesBottomBarWhenPushed = NO;
             };
@@ -268,6 +268,7 @@
             static NSString * FifthID = @"ceaaa";
             FifthViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FifthID];
             cell.ThirdBlock = ^(NSInteger tag){
+                ZPLog(@"%ld",tag);
                 DetailedController *viewController = [[DetailedController alloc] init];
 //                self.hidesBottomBarWhenPushed = YES;
                 viewController.productId = @(tag);

@@ -19,8 +19,16 @@
 /**库存*/
 @property (nonatomic, strong) NSString * productamount;
 
-//productamount
+// 评价数据
+@property (nonatomic, strong) NSNumber * reviewscount;
+@property (nonatomic, strong) NSString * bad_percent;
+@property (nonatomic, strong) NSString * good_percent;
+@property (nonatomic, strong) NSString * mid_percent;
+@property (nonatomic, strong) NSNumber * page;
+@property (nonatomic, strong) NSNumber * pagesize;
+@property (nonatomic, strong) NSNumber * pagestr;
 
+/***************/
 @property (nonatomic, strong) NSNumber * cnid; // 货号ID
 @property (nonatomic, strong) NSString * cnimg; // 货号ID
 @property (nonatomic, strong) NSString * cnname; // 货号ID

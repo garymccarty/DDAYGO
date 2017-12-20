@@ -33,6 +33,12 @@
     }
     return self;
 }
+//  注册
+- (void)Registration {
+    
+    [self.tableView registerClass:[CustomCell class] forCellReuseIdentifier:@"customCell"];
+    
+}
 
 - (void)initUI {
 //    标题
@@ -69,7 +75,7 @@
 }
 - (void)InformationWithDic:(NSDictionary *)dic {
     
-//    _Titlelabel.text = dic[@"title"];
+    _Titlelabel.text = dic[@"title"];
     _imageView1.image = [UIImage imageNamed:@"img_home_advertisemen"];
     [self allData];
 }
@@ -78,8 +84,6 @@
 /*****************************************************/
 //  定制Cell
 - (void)CustomCell {
-//    CustomAArray = @[@{@"Titlelabel":@"RFFP burberry 天然植物萃取让你有话说不出...",@"Preferentia":@"RMB:1000.00",@"Price":@"RMB:1200.00",@"Trademark":@"6666"}];
-    
     self.tableView = [[UITableView alloc]init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
     self.tableView.backgroundColor = ZP_Graybackground;
@@ -94,9 +98,8 @@
         make.top.equalTo(self).offset(30);
     }];
 }
-
+// 数据
 - (void)allData {
-    
     NSDictionary * dict = @{@"count":@"5",@"countrycode":@"886"};
     [ZP_HomeTool requestSellLikeHotCakes:dict success:^(id obj) {
         NSArray * arr = obj;
@@ -109,12 +112,7 @@
 }
 
 
-//  注册
-- (void)Registration {
-    
-    [self.tableView registerClass:[CustomCell class] forCellReuseIdentifier:@"customCell"];
-    
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -143,8 +141,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.ThirdBlock) {
-        self.ThirdBlock(indexPath.row);
+    if (self.FourthBlock) {
+        ZP_FourthModel * model = self.newsData[indexPath.row];
+        self.FourthBlock([model.producid longLongValue]);
     }
         NSLog(@"111");
 }

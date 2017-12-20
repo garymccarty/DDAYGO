@@ -11,6 +11,7 @@
 #import "RightTableViewCell.h"
 #import "PrefixHeader.pch"
 #import "CPViewController.h"
+#import "FourthViewCell.h"
 #import "ZP_ClassViewTool.h"
 #import "ZP_LeftModel.h"
 #import "ZP_RightModel.h"
