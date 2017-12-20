@@ -43,8 +43,8 @@
     dic[@"adsid"] = @"0";
     dic[@"name"] = _ContactpersonTextField.text;
     dic[@"phone"] = _ContactnumberTextField.text;
-    dic[@"cell"] = nil;
-    dic[@"email"] = nil;
+    dic[@"cell"] = @"";
+    dic[@"email"] = @"";
     dic[@"zipcode"] = _ZipcodeaddressTextField.text;
     dic[@"address"] = _ReceivingaddressTextField.text;
     dic[@"isdefault"] = [NSNumber numberWithBool: _acquiescence.selected];
@@ -63,9 +63,23 @@
         }else {
             if ([dic[@"result"] isEqualToString:@"sys_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"服务器连接至火星"];
+        }else {
+            if ([dic[@"result"] isEqualToString:@"name_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"姓名不能为空"];
+        }else {
+            if ([dic[@"result"] isEqualToString:@"phone_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"电话号码不能为空"];
+        }else {
+            if ([dic[@"result"] isEqualToString:@"address_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"地址不能为空"];
+            }
+                
+            
+                    }
                 }
             }
         }
+    }
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];

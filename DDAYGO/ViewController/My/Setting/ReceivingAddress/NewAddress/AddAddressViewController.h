@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITextField * ReceivingareaTextField; // 收货地区
 @property (weak, nonatomic) IBOutlet UITextField * ReceivingaddressTextField; //收货地址
 @property (weak, nonatomic) IBOutlet UITextField * ZipcodeaddressTextField;  // 邮编
+@property (nonatomic, strong) NSNumber * oid;
 
 @end

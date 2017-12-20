@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="RegBtn" destination="GKj-Ls-auH" id="pgW-PL-rEL"/>
                 <outlet property="RegisterscrollView" destination="TRI-ux-pVu" id="C4i-fp-I0I"/>
+                <outlet property="UserAgreementBut" destination="vQq-JO-7h7" id="FyA-4o-Lw8"/>
                 <outlet property="ZPCodeTextField" destination="lDH-Lx-MdD" id="ghr-hZ-nhy"/>
                 <outlet property="ZPCountryTextField" destination="OOF-id-nlj" id="D2v-cc-3ZF"/>
                 <outlet property="ZPEmailTextFiled" destination="GPa-QM-Vzo" id="45e-Nh-Yfu"/>

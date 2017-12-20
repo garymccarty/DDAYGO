@@ -29,27 +29,28 @@
     self.navigationItem.rightBarButtonItem = item;
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
 }
-
+//  生命周期
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
     [self allData];
+//    [self DeletingClick:];
+    [_tableView reloadData]; // 刷新数据
     
 }
 
 - (void)addAddress {
-    AddAddressViewController *viewController = [[AddAddressViewController alloc] init];
+    AddAddressViewController * viewController = [[AddAddressViewController alloc] init];
     viewController.contentDic = @{@"asd":@(YES)};
     [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
-
+// 获取地址数据
 - (void)allData {
+    
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     dic[@"aid"] = _oid;
-//    ZPLog(@"%@",dic);
     [ZP_MyTool requesAddress:dic success:^(id obj) {
 //        if (self.newsData.count < 1) {
 //            UIImageView * image = [UIImageView new];
@@ -74,7 +75,7 @@
 #pragma mark ---tableView delegate
 //3.设置cell之间headerview的高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 10.;
+    return 10;
 }
 //4.设置headerview的颜色
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -154,6 +155,7 @@
 }
 
 // 删除按钮
+
 - (void)DeletingClick:(UIButton *)sender {
 #pragma make -- 提示框
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
@@ -162,8 +164,6 @@
         ZPLog(@"取消");
          }];
     UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-//        响应事件
-    NSLog(@"action = %@", action);
          ZP_FrontPageReceivingAddressModel * model = self.newsData[sender.tag];
         NSMutableDictionary * dic = [NSMutableDictionary dictionary];
         dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
@@ -171,20 +171,20 @@
         [ZP_MyTool requesDeleteAddress:dic success:^(id obj) {
             if ([obj[@"result"]isEqualToString:@"ok"]) {
                 [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+//                 [_tableView reloadData]; // 刷新数据
             }else {
                 if ([obj[@"result"]isEqualToString:@"isdefault_err"]) {
                     [SVProgressHUD showInfoWithStatus:@"默认地址不能删除"];
-                }else {
-                    if ([obj[@"result"]isEqualToString:@"failure"]) {
-                        [SVProgressHUD showInfoWithStatus:@"操作失败"];
-                    }
+            }else {
+                if ([obj[@"result"]isEqualToString:@"failure"]) {
+                    [SVProgressHUD showInfoWithStatus:@"操作失败"];
                 }
             }
-            ZPLog(@"%@",obj);
-        } failure:^(NSError * error) {
+        }
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
             ZPLog(@"%@",error);
         }];
-        
     }];
     [alert addAction:defaultAction];
     [alert addAction:cancelAction];

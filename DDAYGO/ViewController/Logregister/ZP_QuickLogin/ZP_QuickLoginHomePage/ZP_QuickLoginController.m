@@ -71,10 +71,12 @@
         ZPLog(@"%@",obj);
         if ([adic[@"result"]isEqualToString:@"no_reg"]) {
             [SVProgressHUD showInfoWithStatus:@"ICUE登录成功，请继续操作"];
+            
         }else {
             if ([adic[@"result"]isEqualToString:@"ok"]) {
                 DD_HASLOGIN = YES;
                 [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
+                [self.navigationController popToRootViewControllerAnimated:YES];
         }else {
             if ([adic[@"result"]isEqualToString:@"acc_null_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"请输入账号"];
@@ -90,6 +92,7 @@
         }else {
             if ([adic[@"result"]isEqualToString:@"failure"]) {
                 [SVProgressHUD showInfoWithStatus:@"账号或密码错误"];
+                
                                }
                             }
                         }

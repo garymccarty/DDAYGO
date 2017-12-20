@@ -36,7 +36,7 @@
     dic[@"adsid"] = @"1";
     dic[@"name"] = _ContactpersonTextField.text;
     dic[@"phone"] = _ContactnumberTextField.text;
-    dic[@"cell"] = @"123456789";
+    dic[@"cell"] = @"";
     dic[@"zipcode"] = _ZipcodeaddressTextField.text;
     dic[@"address"] = _ReceivingaddressTextField.text;
     dic[@"isdefault"] = [NSNumber numberWithBool: _acquiescence.selected];

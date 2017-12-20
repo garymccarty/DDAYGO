@@ -216,7 +216,7 @@
 }
 #pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -
 - (BOOL)validateEmail:(NSString *)email {
-    
+//     邮箱正则式
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
@@ -224,6 +224,32 @@
     return [emailTest evaluateWithObject:email];
     
 }
+
+- (BOOL)JudgeTheillegalCharacter:(NSString *)content {
+//    提示标签不能输入特殊字符
+    NSString *str =@"^[A-Za-z0-9\\u4e00-\u9fa5]+$";
+    
+    NSPredicate* emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", str];
+       return [emailTest evaluateWithObject:content];
+        
+    }
+
+- (BOOL)judgePassWordLegal:(NSString *)pass {
+    
+    BOOL result ;
+    
+    // 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
+    
+    NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$";
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    
+    result = [pred evaluateWithObject:pass];
+    
+    return result;
+    
+}
+
 //  安全输入
 -(void)secureTextEntry {
     
