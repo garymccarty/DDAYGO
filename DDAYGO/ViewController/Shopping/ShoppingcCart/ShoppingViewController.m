@@ -338,7 +338,7 @@
     NSInteger dataCount = 0;
     for (int i = 0; i < dataArray.count; i ++) {
 
-        if (!_bjBool) {
+//        if (!_bjBool) {
             ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
 //            ZP_CartsModel *model = dataArray[i];
             if (cell.buttom.selected ) {
@@ -356,27 +356,27 @@
                     _stockids = str;
                 }
             }
-        }else{
-            
-            EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            ZP_CartsModel *model = dataArray[i];
-            if (cell.button.selected ) {
-                dataCount += [cell.numLabel.text integerValue];
-                count ++;
-                NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
-                NSString *str1 = [NSString stringWithFormat:@"%@",model.stockid];
-                if (_modelstockid.length > 0) {
-                    _modelstockid = [_modelstockid stringByAppendingString:[NSString stringWithFormat:@",%@",str1]];
-                }else{
-                    _modelstockid = str;
-                }
-                if (_stockids.length > 0) {
-                    _stockids = [_stockids stringByAppendingString:[NSString stringWithFormat:@",%@",str]];
-                }else{
-                    _stockids = str;
-                }
-            }
-        }
+//        }else{
+//
+//            EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+//            ZP_CartsModel *model = dataArray[i];
+//            if (cell.button.selected ) {
+//                dataCount += [cell.numLabel.text integerValue];
+//                count ++;
+//                NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
+//                NSString *str1 = [NSString stringWithFormat:@"%@",model.stockid];
+//                if (_modelstockid.length > 0) {
+//                    _modelstockid = [_modelstockid stringByAppendingString:[NSString stringWithFormat:@",%@",str1]];
+//                }else{
+//                    _modelstockid = str;
+//                }
+//                if (_stockids.length > 0) {
+//                    _stockids = [_stockids stringByAppendingString:[NSString stringWithFormat:@",%@",str]];
+//                }else{
+//                    _stockids = str;
+//                }
+//            }
+//        }
         
     }
     
@@ -492,37 +492,38 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (!_bjBool) {
+//    if (!_bjBool) {
         ShoppingCell * cell = [tableView dequeueReusableCellWithIdentifier:@"shoppingCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
         self.tableView.tableFooterView = [[UIView alloc] init];
         ZP_CartsShopModel * models = nameArray[indexPath.section];
-        ZP_CartsModel *model = models.array[indexPath.row];
+        ZP_CartsModel * model = models.array[indexPath.row];
         cell.buttom.tag = indexPath.row;
         [cell.buttom removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.buttom addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell cellWithModel:model];
-     //   [self registerForPreviewingWithDelegate:self sourceView:cell];
+        [self registerForPreviewingWithDelegate:self sourceView:cell];
         return cell;
-    }else{
-        static NSString * EditorID = @"editorViewCell";
-        EditorViewCell * cell = [tableView dequeueReusableCellWithIdentifier:EditorID];
-        if(cell == nil){
-            cell = [[EditorViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EditorID];
-        }
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
-        self.tableView.tableFooterView = [[UIView alloc] init];
-        ZP_CartsShopModel * models = nameArray[indexPath.section];
-        ZP_CartsModel *model = models.array[indexPath.row];
-        cell.button.tag = indexPath.row;
-        [cell.button removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.button addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
-        [cell cellWithModel:model];
-        cell.btnClickBlock = ^(NSString *str) {
-            
-        };
-        return cell;
-    }
+//    }
+//    else{
+//        static NSString * EditorID = @"editorViewCell";
+//        EditorViewCell * cell = [tableView dequeueReusableCellWithIdentifier:EditorID];
+//        if(cell == nil){
+//            cell = [[EditorViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EditorID];
+//        }
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
+//        self.tableView.tableFooterView = [[UIView alloc] init];
+//        ZP_CartsShopModel * models = nameArray[indexPath.section];
+//        ZP_CartsModel *model = models.array[indexPath.row];
+//        cell.button.tag = indexPath.row;
+//        [cell.button removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
+//        [cell.button addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
+//        [cell cellWithModel:model];
+//        cell.btnClickBlock = ^(NSString *str) {
+//
+//        };
+//        return cell;
+//    }
     
 }
 

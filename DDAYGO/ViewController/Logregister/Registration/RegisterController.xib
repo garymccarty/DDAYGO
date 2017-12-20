@@ -14,7 +14,6 @@
                 <outlet property="RegBtn" destination="GKj-Ls-auH" id="pgW-PL-rEL"/>
                 <outlet property="RegisterscrollView" destination="TRI-ux-pVu" id="C4i-fp-I0I"/>
                 <outlet property="UserAgreementBut" destination="vQq-JO-7h7" id="FyA-4o-Lw8"/>
-                <outlet property="ZPCodeTextField" destination="lDH-Lx-MdD" id="ghr-hZ-nhy"/>
                 <outlet property="ZPCountryTextField" destination="OOF-id-nlj" id="D2v-cc-3ZF"/>
                 <outlet property="ZPEmailTextFiled" destination="GPa-QM-Vzo" id="45e-Nh-Yfu"/>
                 <outlet property="ZPPswTextField" destination="Ok2-Lc-LMm" id="BKY-Bh-2np"/>
@@ -31,44 +30,34 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPa-QM-Vzo" customClass="TextView">
-                            <rect key="frame" x="20" y="69" width="280" height="35"/>
+                            <rect key="frame" x="20" y="62" width="280" height="35"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="9dG-OA-lVU"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="输入邮箱"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="请输入字母与数字组合的账号"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="showBtn" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDH-Lx-MdD" customClass="TextView">
-                            <rect key="frame" x="20" y="120" width="280" height="35"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="Ybj-Qb-82O"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="输入验证码"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="keyboardType">
-                                    <integer key="value" value="4"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ok2-Lc-LMm" customClass="TextView">
-                            <rect key="frame" x="20" y="172" width="280" height="35"/>
+                            <rect key="frame" x="20" y="110" width="280" height="35"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="TrG-qm-JVO"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="输入密码"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="请输入6-20位大小写与数字的密码"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="showBtn" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOF-id-nlj" customClass="TextView">
-                            <rect key="frame" x="20" y="224" width="280" height="35"/>
+                            <rect key="frame" x="20" y="160" width="280" height="35"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="TzZ-a6-bfd"/>
@@ -78,7 +67,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKj-Ls-auH">
-                            <rect key="frame" x="20" y="334" width="280" height="45"/>
+                            <rect key="frame" x="20" y="273" width="280" height="45"/>
                             <color key="backgroundColor" red="1" green="0.49803921569999998" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="yge-CZ-rY1"/>
@@ -92,7 +81,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfa-xS-Sf7">
-                            <rect key="frame" x="41" y="387" width="23" height="30"/>
+                            <rect key="frame" x="41" y="326" width="23" height="30"/>
                             <state key="normal" image="ic_registered_choose_normal"/>
                             <state key="selected" image="ic_registered_choose_pressed"/>
                             <connections>
@@ -100,13 +89,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已阅读并同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQq-JO-7h7">
-                            <rect key="frame" x="66" y="392" width="115" height="21"/>
+                            <rect key="frame" x="66" y="331" width="115" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISZ-Gw-HFI">
-                            <rect key="frame" x="177" y="387" width="123" height="30"/>
+                            <rect key="frame" x="177" y="326" width="123" height="30"/>
                             <state key="normal" title="《用户服务协议》">
                                 <color key="titleColor" red="1" green="0.49803921569999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -118,29 +107,26 @@
                     <constraints>
                         <constraint firstItem="Ok2-Lc-LMm" firstAttribute="leading" secondItem="OOF-id-nlj" secondAttribute="leading" id="1rM-3z-1wl"/>
                         <constraint firstItem="OOF-id-nlj" firstAttribute="leading" secondItem="GKj-Ls-auH" secondAttribute="leading" id="48F-UX-XSz"/>
-                        <constraint firstItem="lDH-Lx-MdD" firstAttribute="leading" secondItem="Ok2-Lc-LMm" secondAttribute="leading" id="4Hl-iB-JYI"/>
-                        <constraint firstItem="GPa-QM-Vzo" firstAttribute="leading" secondItem="lDH-Lx-MdD" secondAttribute="leading" id="5QK-PW-p5N"/>
+                        <constraint firstItem="Ok2-Lc-LMm" firstAttribute="leading" secondItem="GPa-QM-Vzo" secondAttribute="leading" id="5DD-bL-dWa"/>
                         <constraint firstItem="Kfa-xS-Sf7" firstAttribute="leading" secondItem="TRI-ux-pVu" secondAttribute="leading" constant="41" id="66a-ax-8f1"/>
                         <constraint firstItem="vQq-JO-7h7" firstAttribute="top" secondItem="GKj-Ls-auH" secondAttribute="bottom" constant="13" id="6PY-kI-h10"/>
                         <constraint firstItem="GKj-Ls-auH" firstAttribute="trailing" secondItem="ISZ-Gw-HFI" secondAttribute="trailing" id="7aS-gN-cP8"/>
                         <constraint firstItem="Kfa-xS-Sf7" firstAttribute="top" secondItem="ISZ-Gw-HFI" secondAttribute="top" id="9oU-gi-D93"/>
-                        <constraint firstItem="lDH-Lx-MdD" firstAttribute="top" secondItem="GPa-QM-Vzo" secondAttribute="bottom" constant="16" id="F2A-MJ-d6n"/>
                         <constraint firstItem="GPa-QM-Vzo" firstAttribute="leading" secondItem="TRI-ux-pVu" secondAttribute="leading" constant="20" id="Fbv-50-S8P"/>
-                        <constraint firstItem="GPa-QM-Vzo" firstAttribute="trailing" secondItem="lDH-Lx-MdD" secondAttribute="trailing" id="Fzu-pz-3aP"/>
                         <constraint firstAttribute="trailing" secondItem="GPa-QM-Vzo" secondAttribute="trailing" constant="20" id="JXx-lo-W9q"/>
                         <constraint firstItem="Ok2-Lc-LMm" firstAttribute="trailing" secondItem="OOF-id-nlj" secondAttribute="trailing" id="LRy-nN-qUf"/>
-                        <constraint firstItem="GKj-Ls-auH" firstAttribute="top" secondItem="TRI-ux-pVu" secondAttribute="top" constant="334" id="PsQ-2c-tpy"/>
+                        <constraint firstItem="GKj-Ls-auH" firstAttribute="top" secondItem="TRI-ux-pVu" secondAttribute="top" constant="273" id="PsQ-2c-tpy"/>
                         <constraint firstItem="GPa-QM-Vzo" firstAttribute="centerX" secondItem="TRI-ux-pVu" secondAttribute="centerX" id="Q8w-BQ-dFg"/>
-                        <constraint firstItem="Ok2-Lc-LMm" firstAttribute="top" secondItem="lDH-Lx-MdD" secondAttribute="bottom" constant="17" id="Qcb-YV-MLE"/>
+                        <constraint firstItem="Ok2-Lc-LMm" firstAttribute="top" secondItem="GPa-QM-Vzo" secondAttribute="bottom" constant="13" id="QpA-NY-mq1"/>
+                        <constraint firstItem="Ok2-Lc-LMm" firstAttribute="trailing" secondItem="GPa-QM-Vzo" secondAttribute="trailing" id="Rdl-W5-WS7"/>
                         <constraint firstItem="OOF-id-nlj" firstAttribute="trailing" secondItem="GKj-Ls-auH" secondAttribute="trailing" id="W71-wi-vhZ"/>
                         <constraint firstItem="Kfa-xS-Sf7" firstAttribute="centerY" secondItem="vQq-JO-7h7" secondAttribute="centerY" id="YJu-gR-BhS"/>
-                        <constraint firstItem="GPa-QM-Vzo" firstAttribute="top" secondItem="TRI-ux-pVu" secondAttribute="top" constant="69" id="ZTg-IW-plz"/>
+                        <constraint firstItem="GPa-QM-Vzo" firstAttribute="top" secondItem="TRI-ux-pVu" secondAttribute="top" constant="62" id="ZTg-IW-plz"/>
                         <constraint firstItem="Kfa-xS-Sf7" firstAttribute="top" secondItem="GKj-Ls-auH" secondAttribute="bottom" constant="8" symbolic="YES" id="bvT-i4-yz5"/>
-                        <constraint firstItem="lDH-Lx-MdD" firstAttribute="trailing" secondItem="Ok2-Lc-LMm" secondAttribute="trailing" id="iEe-9J-Fxn"/>
                         <constraint firstItem="vQq-JO-7h7" firstAttribute="leading" secondItem="Kfa-xS-Sf7" secondAttribute="trailing" constant="2" id="k0e-17-z5m"/>
-                        <constraint firstItem="OOF-id-nlj" firstAttribute="top" secondItem="Ok2-Lc-LMm" secondAttribute="bottom" constant="17" id="m6h-nW-RGe"/>
+                        <constraint firstItem="OOF-id-nlj" firstAttribute="top" secondItem="Ok2-Lc-LMm" secondAttribute="bottom" constant="15" id="m6h-nW-RGe"/>
                         <constraint firstItem="Kfa-xS-Sf7" firstAttribute="bottom" secondItem="ISZ-Gw-HFI" secondAttribute="bottom" id="m6q-fa-BgY"/>
-                        <constraint firstAttribute="bottom" secondItem="Kfa-xS-Sf7" secondAttribute="bottom" constant="151" id="yfT-N6-rO7"/>
+                        <constraint firstAttribute="bottom" secondItem="Kfa-xS-Sf7" secondAttribute="bottom" constant="212" id="yfT-N6-rO7"/>
                     </constraints>
                 </scrollView>
             </subviews>

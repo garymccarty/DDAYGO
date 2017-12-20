@@ -14,6 +14,7 @@
 //  注册
 + (void)requestRegiser:(NSDictionary *)Regiser success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     //get 请求 格式
+//    http://www.ddaygo.com/api/Test/register?email=zach45666&pwd=999999&countrycode=886&icueaccount=&emailverify=1138276415@qq.com
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/Register?email=%@&pwd=%@&vcode=%@&countrycode=%@",Regiser[@"email"],Regiser[@"pwd"],Regiser[@"vcode"],Regiser[@"countrycode"]] parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
         NSLog(@"%@",responseObject);

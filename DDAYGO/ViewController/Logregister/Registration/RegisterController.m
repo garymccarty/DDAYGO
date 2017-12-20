@@ -19,7 +19,7 @@
     UIButton * _chooseCityBtn;
 }
 @property (weak, nonatomic) IBOutlet TextView * ZPEmailTextFiled;
-@property (weak, nonatomic) IBOutlet TextView * ZPCodeTextField;
+//@property (weak, nonatomic) IBOutlet TextView * ZPCodeTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPCountryTextField;
 @property (weak, nonatomic) IBOutlet UIButton * RegBtn;
@@ -51,9 +51,9 @@
     _RegBtn.layer.cornerRadius = 8.0;
     _RegBtn.layer.masksToBounds = YES;
     
-    
-    [_ZPCodeTextField.functionBtn addTarget:self action:@selector(getMSNCode) forControlEvents:UIControlEventTouchUpInside];
-    _ZPCodeTextField.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+//
+//    [_ZPCodeTextField.functionBtn addTarget:self action:@selector(getMSNCode) forControlEvents:UIControlEventTouchUpInside];
+//    _ZPCodeTextField.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
     
     [_ZPCountryTextField.functionBtn setTitle:@"点击选择" forState:UIControlStateNormal];
@@ -69,25 +69,31 @@
 //  注册
 - (IBAction)rEgBut:(id)sender {
     
-    if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
+    if (![self JudgeTheillegalCharacter:_ZPEmailTextFiled.textField.text]) {
+//        [![self JudgeTheillegalCharacter:_ZPEmailTextFiled.textField.text]]
         [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
         return;
     }
-    if (_ZPCodeTextField.textField.text.length < 1) {
-        [SVProgressHUD showInfoWithStatus:@"验证码不能为空"];
-        ZPLog(@"请输入验证码");
-        return;
-    }
-    if (![_ZPCodeTextField.textField.text isEqualToString:_codeStr]) {
-        [SVProgressHUD showInfoWithStatus:@"请输入正确验证码"];
-        NSLog(@"请输入正确验证码");
-        return;
-    }
-    if (_ZPPswTextField.textField.text.length < 6||_ZPPswTextField.textField.text.length >12) {
-        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于6大于12"];
+//    if (_ZPCodeTextField.textField.text.length < 1) {
+//        [SVProgressHUD showInfoWithStatus:@"验证码不能为空"];
+//        ZPLog(@"请输入验证码");
+//        return;
+//    }
+//    if (![_ZPCodeTextField.textField.text isEqualToString:_codeStr]) {
+//        [SVProgressHUD showInfoWithStatus:@"请输入正确验证码"];
+//        NSLog(@"请输入正确验证码");
+//        return;
+//    }
+    if (_ZPPswTextField.textField.text.length < 6||_ZPPswTextField.textField.text.length >20) {
+        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于12"];
         ZPLog(@"密码不足6位");
         return;
     }
+//    if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
+//        [SVProgressHUD showInfoWithStatus:@"密码必须大小写数字组合"];
+//        ZPLog(@"密码不足6位");
+//        return;
+//    }
     if (_ZPCountryTextField.textField.text.length < 1) {
         [SVProgressHUD showInfoWithStatus:@"选择国家"];
         ZPLog(@"选择国家");
@@ -106,11 +112,12 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[@"email"] = _ZPEmailTextFiled.textField.text;
     dict[@"pwd"] = [self md5:_ZPPswTextField.textField.text];
-    dict[@"vcode"] = _ZPCodeTextField.textField.text;
+//    dict[@"vcode"] = _ZPCodeTextField.textField.text;
     dict[@"countrycode"] = _CountCode;
     [ZP_LoginTool requestRegiser:dict success:^(id obj) {
+        ZPLog(@"%@",obj);
         NSDictionary * dic = obj;
-        if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
+        if (![self JudgeTheillegalCharacter:_ZPEmailTextFiled.textField.text]) {
             if ([dic[@"result"] isEqualToString:@"ok"]) {
                 NSLog(@"注册成功");
                 [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
@@ -141,45 +148,45 @@
 
 
 #pragma mark - - - - - - - - - - - - - - - event response 事件相应 - - - - - - - - - - - - - -
-- (void)getMSNCode{
-    if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
-        
-        [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
-        return;
-    }
-    
-    __weak typeof (self) WeakSelf = self;
-    [_ZPCodeTextField.functionBtn startWithTime:60 title:NSLocalizedString(@"重新获取", nil) titleColor:[UIColor whiteColor]countDownTitle:@"s" countDownTitleColor:[UIColor whiteColor] mainColor:ZP_PayColor countColor:ZP_PayColor];
-    [WeakSelf qurestCode];  // 开始获取验证码
-}
-
-//  发生网络请求 --> 获取验证码
-- (void)qurestCode {
-    ZPLog(@"发生网络请求 --> 获取验证码");
-    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
-    dict[@"email"] = _ZPEmailTextFiled.textField.text;
-    
-    [ZP_LoginTool requestVerificationcode:dict success:^(id obj) {
-        NSDictionary * dic = obj;
-        ZPLog(@"%@",dic);
-        if ([dic[@"result"] isEqualToString:@"ok"]) {
-            [SVProgressHUD showSuccessWithStatus:@"发送成功!"];
-            ZPLog(@"发送成功");
-            _codeStr = dic[@"code"];
-        }else {
-            if ([dic[@"result"] isEqualToString:@"email_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"邮箱已存在"];
-        }else {
-            if ([dic[@"result"] isEqualToString:@"Error"]) {
-                [SVProgressHUD showInfoWithStatus:@"已连接至火星"];
-                
-                }
-            }
-        }
-    } failure:^(NSError * error) {
-        ZPLog(@"%@", error);
-    }];
-}
+//- (void)getMSNCode{
+//    if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
+//
+//        [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
+//        return;
+//    }
+//
+//    __weak typeof (self) WeakSelf = self;
+//    [_ZPCodeTextField.functionBtn startWithTime:60 title:NSLocalizedString(@"重新获取", nil) titleColor:[UIColor whiteColor]countDownTitle:@"s" countDownTitleColor:[UIColor whiteColor] mainColor:ZP_PayColor countColor:ZP_PayColor];
+//    [WeakSelf qurestCode];  // 开始获取验证码
+//}
+//
+////  发生网络请求 --> 获取验证码
+//- (void)qurestCode {
+//    ZPLog(@"发生网络请求 --> 获取验证码");
+//    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+//    dict[@"email"] = _ZPEmailTextFiled.textField.text;
+//
+//    [ZP_LoginTool requestVerificationcode:dict success:^(id obj) {
+//        NSDictionary * dic = obj;
+//        ZPLog(@"%@",dic);
+//        if ([dic[@"result"] isEqualToString:@"ok"]) {
+//            [SVProgressHUD showSuccessWithStatus:@"发送成功!"];
+//            ZPLog(@"发送成功");
+//            _codeStr = dic[@"code"];
+//        }else {
+//            if ([dic[@"result"] isEqualToString:@"email_err"]) {
+//                [SVProgressHUD showInfoWithStatus:@"邮箱已存在"];
+//        }else {
+//            if ([dic[@"result"] isEqualToString:@"Error"]) {
+//                [SVProgressHUD showInfoWithStatus:@"已连接至火星"];
+//
+//                }
+//            }
+//        }
+//    } failure:^(NSError * error) {
+//        ZPLog(@"%@", error);
+//    }];
+//}
 
 - (void)choseCountry {
     [self PositionallData];
@@ -216,15 +223,15 @@
     ZPLog(@"用户协议 ");
 }
 #pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -
-- (BOOL)validateEmail:(NSString *)email {
-//     邮箱正则式
-    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    
-    return [emailTest evaluateWithObject:email];
-    
-}
+//- (BOOL)validateEmail:(NSString *)email {
+////     邮箱正则式
+//    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+//    
+//    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+//    
+//    return [emailTest evaluateWithObject:email];
+//    
+//}
 
 - (BOOL)JudgeTheillegalCharacter:(NSString *)content {
 //    提示标签不能输入特殊字符
@@ -240,7 +247,6 @@
     BOOL result ;
     
     // 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
-    
     NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$";
     
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
@@ -277,7 +283,7 @@
 // 触发事件
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
     [_ZPEmailTextFiled resignFirstResponder];
-    [_ZPCodeTextField resignFirstResponder];
+//    [_ZPCodeTextField resignFirstResponder];
     [_ZPPswTextField resignFirstResponder];
     [_ZPCountryTextField resignFirstResponder];
 }
