@@ -399,9 +399,9 @@
 #pragma mark - 结算
 //  结算按钮
 - (void)ClearingBut:(UIButton *)sender {
-    _stockids = nil;
+   // _stockids = nil;
     _modelstockid = nil;
-    [self updateData:sender.tag];
+   // [self updateData:sender.tag];
     if ([self YESOrNoPush]) {
         if (sender.selected) {
             
@@ -499,10 +499,10 @@
         ZP_CartsShopModel * models = nameArray[indexPath.section];
         ZP_CartsModel * model = models.array[indexPath.row];
         cell.buttom.tag = indexPath.row;
-        [cell.buttom removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
+       // [cell.buttom removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.buttom addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell cellWithModel:model];
-        [self registerForPreviewingWithDelegate:self sourceView:cell];
+
         return cell;
 //    }
 //    else{
