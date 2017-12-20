@@ -68,6 +68,7 @@
 
 //  注册
 - (IBAction)rEgBut:(id)sender {
+    
     if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
         [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
         return;

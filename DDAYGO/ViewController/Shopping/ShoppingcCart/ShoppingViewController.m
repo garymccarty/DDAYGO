@@ -24,8 +24,8 @@
 }
 
 @property(nonatomic,strong)UITableView * tableView;
-@property(nonatomic,strong)ZP_ShoppingModel *model;
-@property(nonatomic,strong)NSString *stockids;
+@property(nonatomic,strong)ZP_ShoppingModel * model;
+@property(nonatomic,strong)NSString * stockids;
 
 @end
 
@@ -60,26 +60,21 @@
             self.hidesBottomBarWhenPushed = NO;
         }
     } else {
-//        self.hidesBottomBarWhenPushed = YES;
         [self allData];
-//        self.hidesBottomBarWhenPushed = NO;
     }
 }
-
+// 获取购物车数据
 - (void)allData {
-    
-//    NSLog(@"token : %@",[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]);
     [ZP_shoopingTool requesshoppingData:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] success:^(id obj) {
-        ZPLog(@"%@",obj);
+//        ZPLog(@"%@",obj);
         NSArray *arr = obj;
         if (arr.count > 0) {
             NSDictionary * dic = [obj firstObject];
-            ZPLog(@"%@",dic);
+//            ZPLog(@"%@",dic);
             _model = [ZP_ShoppingModel CreateWithDict:[obj firstObject]];
             dataArray = [ZP_CartsModel arrayWithArray:dic[@"cart"]];
             nameArray = [ZP_CartsShopModel arrayWithArray:obj];
             [self.tableView reloadData];
-            
         }
         
     } failure:^(NSError *error) {
@@ -145,7 +140,7 @@
     self.tableView.separatorStyle = NO;
     [self.view addSubview:self.tableView];
     
-//        注册
+//   注册
     [self.tableView registerClass:[ShoppingCell class] forCellReuseIdentifier:@"shoppingCell"];
     [self.tableView registerClass:[EditorViewCell class] forCellReuseIdentifier:@"editorViewCell"];
     
@@ -154,7 +149,7 @@
     bottomView.frame = CGRectMake(0, ZP_height - TabbarHeight - 50 - NavBarHeight, ZP_Width, 50);
     [self.view addSubview:bottomView];
     
-//       全选按钮
+//   全选按钮
     self.AllButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.AllButton.layer.masksToBounds = YES;
     self.AllButton.layer.cornerRadius = self.AllButton.frame.size.height/2;
@@ -175,7 +170,7 @@
         make.height.mas_offset(20);
     }];
     
-//        总金额
+//  总金额
     UILabel * PriceLabel = [UILabel new];
     PriceLabel.textAlignment = NSTextAlignmentLeft;
     PriceLabel.textColor = ZP_TypefaceColor;
@@ -188,11 +183,9 @@
     }];
     _PriceLabel = PriceLabel;
     
-//        合计
+//   合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    //    StatisticsLabel.textAlignment = NSTextAlignmentLeft;
     StatisticsLabel.text = NSLocalizedString(@"TotalRMB:", nil);
-    
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(PriceLabel).offset(-70); // 左边
@@ -200,7 +193,7 @@
     }];
     _StatisticsLabel = StatisticsLabel;
     
-//       结算按钮
+//  结算按钮
     UIButton * ClearingBut = [UIButton new];
     ClearingBut.backgroundColor = ZP_pricebackground;
     [ClearingBut setTitle:NSLocalizedString(@"Clearing(0)", nil) forState:UIControlStateNormal];
@@ -208,13 +201,13 @@
     ClearingBut.titleLabel.font = ZP_TooBarFont;
     [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
     
-    //  保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
+//  保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
     [ClearingBut addTarget:self action:@selector(preventFlicker:) forControlEvents:UIControlEventAllTouchEvents];
     [bottomView addSubview:ClearingBut];
     [ClearingBut mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(ZP_Width - 100);  //左边
-        make.right.equalTo(self.view).offset(0); // 右边
-        make.top.equalTo(bottomView).offset(0); //上边
+        make.left.equalTo(self.view).offset(ZP_Width - 100);
+        make.right.equalTo(self.view).offset(0);
+        make.top.equalTo(bottomView).offset(0);
         make.height.mas_equalTo(50);
     }];
     _ClearingButt = ClearingBut;
@@ -222,7 +215,6 @@
 
 //  全选
 - (void)selectClick:(UIButton *)sender {
-    
     sender.selected = !sender.selected;
     if (self.AllButton == sender ) {
         for (int i = 0; i < dataArray.count; i ++) {
@@ -244,9 +236,7 @@
             cell.button.selected = sender.selected;
         }
     }
-    
     [self updateData:sender.tag];
-    
 }
 
 //  店铺选择按钮
@@ -271,7 +261,6 @@
             cell.button.selected = sender.selected;
         }
     }
-    
     [self updateDataa:sender.tag];
 }
 
@@ -284,7 +273,7 @@
         
         if (!_bjBool) {
             ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            ZP_CartsModel *model = dataArray[i];
+//            ZP_CartsModel *model = dataArray[i];
             if (cell.buttom.selected ) {
                 ZP_CartsShopModel * models = nameArray[0];
                 ZP_CartsModel *model = models.array[tag];
@@ -344,7 +333,6 @@
         if (!_bjBool) {
             ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
 //            ZP_CartsModel *model = dataArray[i];
-//             购物车价格错乱
             if (cell.buttom.selected ) {
                 ZP_CartsShopModel * models = nameArray[0];
                 ZP_CartsModel *model = models.array[tag];

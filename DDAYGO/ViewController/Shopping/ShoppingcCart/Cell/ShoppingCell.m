@@ -15,6 +15,7 @@
     self = [super initWithStyle:style reuseIdentifier:ShoppingID];
     if (self) {
         [self initUI];
+//        [self ininViewUI];
     }
     return self;
 }
@@ -89,16 +90,25 @@
         make.top.equalTo(descLabel).offset(0);
 //        make.width.mas_offset(25);
     }];
-
+    
+// 货币符号
+    ZP_GeneralLabel * CurrencySymbolLabel = [ZP_GeneralLabel initWithtextLabel:_CurrencySymbolLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
+    [self.contentView addSubview:CurrencySymbolLabel];
+    [CurrencySymbolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(imageView).offset(95);
+        make.top.equalTo(SizeLabel).offset(20);
+        make.height.mas_offset(15);
+    }];
+    
 //  优惠价格
     ZP_GeneralLabel * PreferentialLabel = [ZP_GeneralLabel initWithtextLabel:_PreferentialLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self.contentView addSubview:PreferentialLabel];
     _PreferentialLabel = PreferentialLabel;
     [PreferentialLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(imageView).offset(95); //左边
+        make.left.equalTo(CurrencySymbolLabel).offset(25); //左边
         make.top.equalTo(SizeLabel).offset(20);
         make.height.mas_offset(15);
-        make.width.mas_offset(100);
+//        make.width.mas_offset(100);
     }];
 
 ////  价格
@@ -129,7 +139,7 @@
     UIImageView * TrademarkImage = [UIImageView new];
     [self.contentView addSubview:TrademarkImage];
     [TrademarkImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(PreferentialLabel).offset(95);
+        make.left.equalTo(PreferentialLabel).offset(80);
         make.top.equalTo(PreferentialLabel).offset(20);
         make.width.mas_offset(10);
         make.height.mas_offset(10);
@@ -188,9 +198,7 @@
     }];
 }
 
-
-
-
+//  数据
 - (void)cellWithModel:(ZP_CartsModel *)model {
     
     [_leftImageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:nil];;
@@ -198,7 +206,8 @@
     _MerchandiseIntroducedLabel.text = model.productremark;
     _descLabel.text = model.colorname;
     _SizeLabel.text = model.normname;
-    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.priceamount];
+//    _CurrencySymbolLabel.text = model.symbol;
+    _PreferentialLabel.text = [NSString stringWithFormat:@"%@",model.productprice];
 //    _PriceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = [NSString stringWithFormat:@"%@",model.cp];
@@ -206,6 +215,104 @@
     
 }
 
+/**
+ 编辑模式下的View
+ */
+- (void)ininViewUI {
+    UIView * EditorView = [UIView new];
+    EditorView.backgroundColor = [UIColor orangeColor];
+    [self.contentView addSubview:EditorView];
+    [EditorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(90);
+        make.top.equalTo(self).offset(5);
+        make.width.mas_offset(120);
+    }];
+    //  筛选按钮
+    UIButton * ScreeningBut = [UIButton new];
+    [ScreeningBut setImage:[UIImage imageNamed:@"ic_shop_down"] forState:UIControlStateNormal];
+    ScreeningBut.layer.borderColor = [UIColor clearColor].CGColor;
+    ScreeningBut.layer.borderWidth = 1;
+    [ScreeningBut addTarget:self action:@selector(ScreeningBut:) forControlEvents:UIControlEventTouchUpInside];
+    [EditorView addSubview:ScreeningBut];
+    [ScreeningBut mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(EditorView).offset(95);
+        make.top.equalTo(EditorView).offset(55);
+        make.width.mas_equalTo(15);
+        make.height.mas_equalTo(15);
+    }];
+    //  背景
+    UIView * backgroundView = [UIView new];
+    backgroundView.layer.borderWidth = 1;
+    backgroundView.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+//    backgroundView.backgroundColor = [UIColor orangeColor];
+    [EditorView addSubview:backgroundView];
+    [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(EditorView).offset(95);
+        make.bottom.equalTo(self).offset(-23.5);
+        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(100);
+    }];
+    
+    //  减少
+    UIButton * Reducebutton = [UIButton buttonWithType:UIButtonTypeCustom];
+    Reducebutton.frame = CGRectMake(0, 0, 20, 20);
+    [Reducebutton setImage:[UIImage imageNamed:@"ic_shopping_less"] forState:UIControlStateNormal];
+    Reducebutton.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+    Reducebutton.layer.borderWidth = 1;
+    [Reducebutton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [backgroundView addSubview:Reducebutton];
+    _Reducebutton = Reducebutton;
+    
+    //  个数
+    UILabel * numLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 0, 60, 20)];
+    numLabel.textAlignment = NSTextAlignmentCenter;
+    numLabel.textColor = [UIColor blackColor];
+    numLabel.text = @"0";
+    numLabel.font = [UIFont systemFontOfSize:14];
+    [backgroundView addSubview:numLabel];
+    _numLabel = numLabel;
+    
+    //  添加
+    UIButton * addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    addButton.frame = CGRectMake(80, 0, 20, 20);
+    [addButton setImage:[UIImage imageNamed:@"ic_shopping_add"] forState:UIControlStateNormal];
+    addButton.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
+    addButton.layer.borderWidth = 1;
+    [addButton addTarget:self action:@selector(addClick:) forControlEvents:UIControlEventTouchUpInside];
+    [backgroundView addSubview:addButton];
+    _addButton = addButton;
+    
+    //  分割线
+    UIView * view1 = [UIView new];
+    view1.backgroundColor = ZP_Graybackground;
+    [self.contentView addSubview:view1];
+    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(100);
+        make.right.equalTo(self).offset(ZP_Width); //长
+        make.bottom.equalTo(self).offset(0); // 高
+        make.height.mas_equalTo(1); // 高
+    }];
+    
+}
 
+- (void)buttonClick:(UIButton *)sender {
+    if ([_numLabel.text integerValue]<=0) {
+        _numLabel.text = @"0";
+    }else {
+        _numLabel.text = [NSString stringWithFormat:@"%ld",[_numLabel.text integerValue]-1];
+        self.btnClickBlock(_numLabel.text);
+    }
+}
+
+- (void)addClick:(UIButton *)sender {
+    
+    _numLabel.text = [NSString stringWithFormat:@"%ld",[_numLabel.text integerValue]+1];
+    self.btnClickBlock(_numLabel.text);
+}
+
+//  筛选
+- (void)ScreeningBut:(UIButton *)sender {
+    NSLog(@"筛选");
+}
 @end
 

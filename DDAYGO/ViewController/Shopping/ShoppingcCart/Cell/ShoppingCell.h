@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UILabel * descLabel;  // 规格
 @property (nonatomic, strong) UILabel * PreferentialLabel;  // 颜色
 @property (nonatomic, strong) UILabel * SizeLabel;  // 尺码
+@property (nonatomic, strong) UILabel * CurrencySymbolLabel; // 货币符号
 @property (nonatomic, strong) UILabel * PriceLabel;  // 价格
 @property (nonatomic, strong) UIView * backView;  // 竖线
 @property (nonatomic, strong) UIImageView * TrademarkImage;  // 商标图
@@ -25,5 +26,15 @@
 @property (nonatomic, strong) UILabel * SharacterLabel;  // X
 
 - (void)cellWithModel:(ZP_CartsModel *)model;
+
+
+
+/**
+ 编辑下的View
+ */
+@property (nonatomic, strong) UIButton * Reducebutton;   // 减少按钮
+@property (nonatomic, strong) UILabel * numLabel;  // 数量
+@property (nonatomic, strong) UIButton * addButton;  // 增加
+@property (nonatomic, copy) void (^btnClickBlock) (NSString * str);
 @end
 

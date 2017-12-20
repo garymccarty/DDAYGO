@@ -68,6 +68,7 @@
     for (NSDictionary *dic in array) {
         ZP_CartsShopModel *model = [[ZP_CartsShopModel alloc]init];
         model.shopname = dic[@"shopname"];
+//        model.symbol = dic[@"symbol"];
         model.supplierid = dic[@"supplierid"];
         NSArray * arrays = dic[@"cart"];
         if (arrays.count>0) {
