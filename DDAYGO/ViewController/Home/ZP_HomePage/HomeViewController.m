@@ -50,6 +50,7 @@
     [self.tableView.mj_header beginRefreshing];
     
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [self.newsData removeAllObjects];
         _i+=10;
         [self allData];
     }];

@@ -177,7 +177,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVi-Ua-aoT">
                                     <rect key="frame" x="66" y="231" width="68" height="36"/>
                                     <attributedString key="attributedText">
-                                        <fragment content="2白球+1红球  1白球+1红球">
+                                        <fragment content="1白球+1红球">
                                             <attributes>
                                                 <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>

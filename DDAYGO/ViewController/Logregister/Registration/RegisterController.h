@@ -10,5 +10,5 @@
 
 @interface RegisterController : UIViewController
 @property (strong, nonatomic) IBOutlet UIScrollView * RegisterscrollView;
-@property (weak, nonatomic) IBOutlet UILabel * UserAgreementBut;  // 用户协议
+//@property (weak, nonatomic) IBOutlet UILabel * UserAgreementBut;  // 用户协议
 @end

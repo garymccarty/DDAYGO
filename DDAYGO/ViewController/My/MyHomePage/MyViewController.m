@@ -85,13 +85,14 @@
             [ZP_LoginTool requestLogin:dic success:^(id obj) {
                 NSLog(@"obj---%@",obj);
                 NSDictionary * dic = obj;
-                [[NSUserDefaults standardUserDefaults] setObject:dic[@"token"] forKey:@"token"];
+                [[NSUserDefaults standardUserDefaults] setObject:Token forKey:@"token"];
+                
         if ([dic[@"result"] isEqualToString:@"ok"]) {
-            [ZP_LoginTool getAccountInfo:dic[@"token"] success:^(id obj) {
+            [ZP_LoginTool getAccountInfo:Token success:^(id obj) {
                 NSDictionary * tempDic = obj;
                 NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"]};
                 [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
-                DD_HASLOGIN = YES;
+//                DD_HASLOGIN = YES;
         if (success) {
              success(nil);
             }
@@ -129,14 +130,13 @@
         [_headImageBut setImage:image forState:UIControlStateNormal];
     }
 //    判断是否登录
-    if (!DD_HASLOGIN) {
+    if (!Token) {
         if (![MyViewController sharedInstanceTool].hasRemind) {
             [MyViewController sharedInstanceTool].hasRemind = YES;
             LogregisterController *viewcontroller = [[LogregisterController alloc] init];
             [self.navigationController pushViewController:viewcontroller animated:YES];
       }
     }else {
-        
     [self AllDatas];
     [self allData];
 }
@@ -159,7 +159,8 @@
 //  个人资料
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
 //    dic[@"nonce"] = @"adf";
@@ -182,7 +183,8 @@
 // 获取浏览记录、收藏的数量
 - (void)AllDatas {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    dic[@"token"] = Token;
     [ZP_MyTool requesBrowseCollection:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
         ZP_MyHopageModel * model = [[ZP_MyHopageModel alloc]init];
@@ -220,7 +222,7 @@
 }
 
 - (void)updateUserInfo {
-    if (DD_HASLOGIN) {
+    if (Token) {
         NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"userInfo"];
         self.NameLabel.text = dic[@"nickname"];
     }

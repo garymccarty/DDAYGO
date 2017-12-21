@@ -9,6 +9,10 @@
 #import "Const.h"
 /** Token */
 NSString * Token = nil;
+
+NSNumber * CountCode = nil;
+
+
 @implementation Const
 
 @end

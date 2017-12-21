@@ -11,7 +11,14 @@
 #import "MainViewController.h"
 #import "NotificationMacro.h"
 #import "NSBundle+Language.h"
-@interface AppDelegate ()
+#import "PrefixHeader.pch"
+#import "HomeViewController.h"
+#import "ClassificationViewController.h"
+#import "ShoppingViewController.h"
+#import "OrderViewController.h"
+#import "MyViewController.h"
+#import "LogregisterController.h"
+@interface AppDelegate ()<UITabBarControllerDelegate>
 #define ScreenHeight [[UIScreen mainScreen] bounds].size.height
 #define ScreenWidth [[UIScreen mainScreen] bounds].size.width
 @end
@@ -29,9 +36,75 @@
 - (void)MainViewController {
     
     MainViewController * rootViewController = [[MainViewController alloc]init];
+    rootViewController.delegate = self;
     self.window.rootViewController = rootViewController;
     self.window.backgroundColor = [UIColor whiteColor];
 }
+
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        
+        UINavigationController * nav = viewController;
+        UIViewController *firstVC = [nav.viewControllers firstObject];
+        
+        UINavigationController *homeVC = tabBarController.selectedViewController;
+        if ([firstVC isMemberOfClass:[HomeViewController class]]) {
+            return YES;
+            
+        }
+        else if ([firstVC isMemberOfClass:[ClassificationViewController class]]) {
+            return YES;
+        }
+        else if ([firstVC isMemberOfClass:[ShoppingViewController class]]) {
+            if (Token.length > 0) {
+                return YES;
+            }else{
+                //跳转到登录
+                LogregisterController * Login = [[LogregisterController alloc]init];
+                [homeVC pushViewController:Login animated:YES];
+                [SVProgressHUD showErrorWithStatus:@"denglu"];
+                
+                return NO;}
+            
+        }
+        else if ([firstVC isMemberOfClass:[OrderViewController class]]) {
+            if (Token.length > 0) {
+                return YES;
+            }else{
+                //跳转到登录
+                LogregisterController * Login = [[LogregisterController alloc]init];
+                [homeVC pushViewController:Login animated:YES];
+                [SVProgressHUD showErrorWithStatus:@"denglu"];
+                return NO;
+                
+            }
+            
+        }
+        else {
+            if (Token.length > 0) {
+                return YES;
+                
+            }else {
+                //跳转到登录
+                LogregisterController * Login = [[LogregisterController alloc]init];
+                [homeVC pushViewController:Login animated:YES];
+                [SVProgressHUD showErrorWithStatus:@"denglu"];
+                return NO;
+                
+            }
+            
+        }
+        
+    }
+    else {
+        return YES;
+    }
+
+}
+    
+
 - (void)initUserDefaultConfig {
     NSString * themeName = [[NSUserDefaults standardUserDefaults] objectForKey:kThemeChangedNotification];
     ThemeManager * themeManager = [ThemeManager sharedThemeManager];

@@ -50,7 +50,9 @@
 //  数据
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
+    
 //    dic[@"nonce"] = @"adf";
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
@@ -61,7 +63,7 @@
         model.nickname = obj[@"nickname"];
         model.realname = obj[@"realname"];
         model.icueaccount = obj[@"icueaccount"];
-        model.email = obj[@"email"];
+        model.email = obj[@"emailverify"];
         model.introducer = obj[@"introducer"];
         
         self.dataDic[@"nickname"] = obj[@"nickname"];
@@ -249,7 +251,8 @@
     alert.popoverPresentationController.barButtonItem = self.navigationItem.leftBarButtonItem;
     //  添加按钮
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", nil)  style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-         DD_HASLOGIN = NO;
+//         DD_HASLOGIN = NO;
+        Token = nil;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
         [self.navigationController popViewControllerAnimated:YES];
         NSLog(@"点击了确定按钮");
@@ -291,7 +294,8 @@
     if (!_dataDic) {
         _dataDic = [NSMutableDictionary dictionary];
 //        _dataDic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";
-        _dataDic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//        _dataDic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+        _dataDic[@"token"] = Token;
     }
     return _dataDic;
 }

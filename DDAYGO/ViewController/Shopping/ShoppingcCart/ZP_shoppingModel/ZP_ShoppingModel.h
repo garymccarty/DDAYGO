@@ -15,9 +15,9 @@
 
 
 /**运费总金额*/
-@property (nonatomic, strong) NSNumber *freightamount;
+@property (nonatomic, strong) NSNumber * freightamount;
 /**订单总金额*/
-@property (nonatomic, strong) NSNumber *allamount;
+@property (nonatomic, strong) NSNumber * allamount;
 
 @property (nonatomic, strong) NSNumber *chooseadsid;
 /**

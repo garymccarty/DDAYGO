@@ -48,7 +48,8 @@
     dic[@"zipcode"] = _ZipcodeaddressTextField.text;
     dic[@"address"] = _ReceivingaddressTextField.text;
     dic[@"isdefault"] = [NSNumber numberWithBool: _acquiescence.selected];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     ZPLog(@"%@",dic);
     [ZP_MyTool requesnewAaddress:dic success:^(id obj) {
         NSDictionary * dic = obj;

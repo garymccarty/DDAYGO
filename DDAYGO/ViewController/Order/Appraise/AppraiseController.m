@@ -75,7 +75,8 @@
     dic[@"supscore"] = @""; // 店家评分
     dic[@"sreview"] = @""; //店家评论
 
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    dic[@"token"] = Token;
     [ZP_OrderTool requestAppraise:dic success:^(id obj) {
         
         ZPLog(@"%@",obj);

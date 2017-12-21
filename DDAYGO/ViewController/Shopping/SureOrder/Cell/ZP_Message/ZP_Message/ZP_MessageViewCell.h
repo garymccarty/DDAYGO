@@ -16,5 +16,8 @@
 @property (nonatomic, strong) UILabel * SmallLabel;           // 小计
 @property (nonatomic, strong) UILabel * ComputationsLabel;   // 价格
 
+@property (nonatomic, strong) NSString *allMoney;
+@property (nonatomic, strong) NSString *allCount;
+
 - (void)MessageDic:(ZP_InformationModel *)model;
 @end

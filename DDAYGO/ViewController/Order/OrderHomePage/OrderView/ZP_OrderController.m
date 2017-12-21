@@ -21,9 +21,9 @@
 #import "ConfirmViewController.h"
 #import "AppraiseController.h"
 @interface ZP_OrderController ()<FSPageContentViewDelegate,FSSegmentTitleViewDelegate> {
-//    int _i;
+    int _i;
     NSArray * dataArray;
-    NSArray * _ModeldataArray;
+//    NSArray * _ModeldataArray;
 }
 @property (nonatomic, strong)UIButton * btn;
 @property (nonatomic, strong)UIView * views;
@@ -34,7 +34,7 @@
 
 @property (nonatomic, strong) FSPageContentView * pageContentView;
 @property (nonatomic, strong) FSSegmentTitleView * titleView;
-//@property (nonatomic, strong) NSMutableArray * newsData;
+@property (nonatomic, strong) NSMutableArray * newsData;
 @end
 
 @implementation ZP_OrderController
@@ -48,28 +48,29 @@
     }
     return _line;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     [self addUI];
-//    [self addRefresh];
+    
     //数据都写在这个页面·刷新什么的都在这个页面写·
 }
-
-//- (void)addRefresh {
-//    self.tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        [self.newsData removeAllObjects];
-//        _i = 0;
-//        [self getDataWithState];
-//    }];
-//    //    进入刷新
-//    [self.tableview.mj_header beginRefreshing];
-//
-//    self.tableview.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-////        [_ModeldataArray reverseObjectEnumerator];
-//        _i+=10;
-//        [self getDataWithState];
-//    }];
-//}
+// 刷新
+- (void)addRefresh {
+    self.tableview.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.newsData removeAllObjects];
+        _i = 0;
+        [self getDataWithState];
+    }];
+    
+    self.tableview.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+//        [_ModeldataArray reverseObjectEnumerator];
+        _i+=10;
+        [self getDataWithState];
+    }];
+}
+// UI
 -(void)addUI {
     
     self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width , ZP_height - NavBarHeight - 40)];
@@ -81,7 +82,7 @@
     self.tableview.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     [self.view addSubview:self.tableview];
 }
-
+// 订单协议
 - (void)getDataWithState {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     if ([_titleStr isEqualToString:@"全部"]) {
@@ -100,13 +101,15 @@
         dic[@"sta"] = @"4";
     }
     dic[@"days"] = @"7";
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     dic[@"orderno"] = @"";
     [ZP_OrderTool requestGetorders:dic success:^(id json) {
         ZPLog(@"%@",json);
-        _ModeldataArray = [OrderModel arrayWithArray:json];
-        
-        [self.tableview reloadData];
+        self.newsData = [OrderModel arrayWithArray:json];
+        [self.tableview.mj_header endRefreshing];  // 刷新
+//        [self.tableview mj_footer ]
+    [self.tableview reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
@@ -114,7 +117,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+     [self addRefresh];
     if (DD_HASLOGIN ) {
       [self getDataWithState];
     }
@@ -127,13 +130,13 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _ModeldataArray.count;
+    return self.newsData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString * ID = @"orderViewCell";
-    OrderModel * model = _ModeldataArray[indexPath.row];
+    OrderModel * model = self.newsData[indexPath.row];
 //    OrdersdetailModel * model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
     
     OrderViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -181,7 +184,7 @@
 //  再次购买
 - (void)OnceagainBut:(UIButton *)OnceagainBut {
     NSLog(@"再次购买");
-    OrderModel *model = _ModeldataArray[OnceagainBut.tag];
+    OrderModel *model = self.newsData[OnceagainBut.tag];
     OrdersdetailModel * model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail[0]];
     ConfirmViewController *confirm = [[ConfirmViewController alloc]init];
     confirm.stockidsString = [NSString stringWithFormat:@"%@_%@",model2.stockid,model2.amount];

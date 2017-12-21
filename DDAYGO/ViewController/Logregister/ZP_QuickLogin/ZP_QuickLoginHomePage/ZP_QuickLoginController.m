@@ -69,12 +69,14 @@
     [ZP_LoginTool requsetICUELogin:dic success:^(id obj) {
         NSDictionary * adic = obj;
         ZPLog(@"%@",obj);
+        //目前不是参数的类型··可能会崩,s
+        Token = obj[@"token"];
         if ([adic[@"result"]isEqualToString:@"no_reg"]) {
             [SVProgressHUD showInfoWithStatus:@"ICUE登录成功，请继续操作"];
             
         }else {
             if ([adic[@"result"]isEqualToString:@"ok"]) {
-                DD_HASLOGIN = YES;
+//                DD_HASLOGIN = YES;
                 [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
         }else {

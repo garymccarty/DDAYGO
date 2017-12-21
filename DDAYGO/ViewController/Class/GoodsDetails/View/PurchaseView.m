@@ -237,7 +237,8 @@
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         dic[@"amount"] = self.numLabel.text;
         dic[@"stockid"] = self.stockid;
-        dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//        dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+        dic[@"token"] = Token;
         [ZP_ClassViewTool requAddToCart:dic success:^(id obj) {
             if ([obj[@"result"] isEqualToString:@"ok"]) {
                 [SVProgressHUD showSuccessWithStatus:@"添加成功"];

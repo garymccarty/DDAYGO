@@ -10,5 +10,5 @@
 
 @interface LoginController : UIViewController
 @property (strong, nonatomic) IBOutlet UIScrollView * LoginscrollView;
-
+//@property (nonatomic, strong) NSNumber * CountCode;
 @end

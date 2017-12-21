@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSString * suppliername; // 供货商名
 @property (nonatomic, strong) NSString * stockid;     // 库存ID
 @property (nonatomic, strong) NSString * amount;     // 购买数量
+@property (nonatomic, strong) NSString * allamount; // 总数量
 
 + (instancetype)GetInformationData:(NSDictionary *)dic;
 

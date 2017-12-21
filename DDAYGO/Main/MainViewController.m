@@ -65,10 +65,12 @@
 }
 
 - (void) initTabBarUI {
-    //[[NSUserDefaults standardUserDefaults] setObject:@"6d864a3ef88554499df1878adcd65429" forKey:@"token"];
+//    [[NSUserDefaults standardUserDefaults] setObject:@"6d864a3ef88554499df1878adcd65429" forKey:@"token"];
     //  字体颜色
     //    NSDictionary * dictHome = [NSDictionary dictionaryWithObject:[UIColor orangeColor] forKey:NSForegroundColorAttributeName];
     //  主页
+    
+    Token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     
     [self setupOneChirlVc:[[HomeViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_home_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_home_pressed.png"] title:NSLocalizedString(@"Home", nil)];
     

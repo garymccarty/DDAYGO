@@ -39,7 +39,8 @@
 - (void)Supplier {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
 //    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    dic[@"token"] = Token;
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requesSupplier:dic success:^(id obj) {
@@ -78,7 +79,8 @@
 - (void)MerchantsBalance {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
 //    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    dic[@"token"] = Token;
     dic[@"sid"] = _sid;
     [ZP_MyTool requesMerchantsBalance:dic success:^(id obj) {
         ZPLog(@"%@",obj);

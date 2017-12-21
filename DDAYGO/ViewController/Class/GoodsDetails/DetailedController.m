@@ -130,7 +130,7 @@
     }
     NSDictionary * dic;
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
-        dic = @{@"productid":_productId,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
+        dic = @{@"productid":_productId,@"token":Token};
     } else {
         dic = @{@"productid":_productId};
     }
@@ -227,7 +227,8 @@
     DD_CHECK_HASLONGIN;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[@"productid"] = _model.productid;
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     if (!sender.selected) {
         //收藏
         [ZP_ClassViewTool requshoucang:dic success:^(id obj) {

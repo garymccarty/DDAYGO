@@ -96,7 +96,7 @@
     [self.contentView addSubview:ComputationsLabel];
     [ComputationsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.equalTo(SmallLabel).offset(25);
+        make.left.equalTo(SmallLabel).offset(30);
         make.bottom.equalTo(self).offset(-15);
     }];
     _ComputationsLabel = ComputationsLabel;
@@ -123,9 +123,8 @@
 
 - (void)MessageDic:(ZP_InformationModel *)model {
 
-    _TotalLabel.text = [NSString stringWithFormat:@"共计%@件商品",model.amount];
-    
-    _ComputationsLabel.text = [NSString stringWithFormat:@"RMB:%.2f",model.amount.intValue * model.productprice.floatValue];
+    _TotalLabel.text = [NSString stringWithFormat:@"共计%@件商品",_allCount];
+    _ComputationsLabel.text = [NSString stringWithFormat:@"%@", _allMoney];
 }
 @end
 

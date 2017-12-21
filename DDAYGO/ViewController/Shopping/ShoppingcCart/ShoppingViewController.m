@@ -46,6 +46,7 @@
         self.tableView.estimatedSectionHeaderHeight = 0;
         self.tableView.estimatedSectionFooterHeight = 0;
     }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -274,9 +275,9 @@
 //            ZP_CartsModel *model = dataArray[i];
             if (cell.buttom.selected ) {
                 ZP_CartsShopModel * models = nameArray[0];
-                ZP_CartsModel *model = models.array[tag];
-//                  NSArray * array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
-//                  data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
+                ZP_CartsModel *model = models.array[i];
+                NSLog(@"%@-%@",model.productprice,model.amount);
+
                 data += [model.productprice floatValue]*[model.amount integerValue];
                 dataCount += [cell.QuantityLabel.text integerValue];
                 count ++;
@@ -334,6 +335,7 @@
             if (cell.buttom.selected ) {
                 ZP_CartsShopModel * models = nameArray[0];
                 ZP_CartsModel *model = models.array[tag];
+                
               //  NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
               //  data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
                 data += [model.priceamount integerValue] *[model.productprice floatValue];
@@ -405,7 +407,8 @@
     //        响应事件
         NSMutableDictionary * dic = [NSMutableDictionary dictionary];
         dic[@"stockid"] =_modelstockid;
-        dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//        dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+        dic[@"token"] = Token;
         [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
             NSLog(@"%@",obj);
         } failure:^(NSError *error) {
@@ -634,7 +637,8 @@
         ZP_CartsModel *model = dataArray[indexPath.row];
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         dic[@"stockid"] = model.stockid;
-        dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//        dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+        dic[@"token"] = Token;
         [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
             if ([obj[@"result"]isEqualToString:@"ok"]) {
                 [SVProgressHUD showSuccessWithStatus:@"删除成功!"];

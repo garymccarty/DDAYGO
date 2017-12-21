@@ -18,14 +18,14 @@
 @interface RegisterController () <UITextFieldDelegate>{
     UIButton * _chooseCityBtn;
 }
-@property (weak, nonatomic) IBOutlet TextView * ZPEmailTextFiled;
-//@property (weak, nonatomic) IBOutlet TextView * ZPCodeTextField;
-@property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
-@property (weak, nonatomic) IBOutlet TextView * ZPCountryTextField;
-@property (weak, nonatomic) IBOutlet UIButton * RegBtn;
-@property (weak, nonatomic) IBOutlet UIButton * agreeBtn;
+@property (weak, nonatomic) IBOutlet TextView * ZPAccountNumberTextFiled; // 账号
+@property (weak, nonatomic) IBOutlet TextView * ZPPswTextField; // 密码
+@property (weak, nonatomic) IBOutlet TextView * ZPEmailTextFiled;  // 邮箱
+@property (weak, nonatomic) IBOutlet TextView * ZPCountryTextField;  // 国家
+@property (weak, nonatomic) IBOutlet UIButton * RegBtn; // 注册按钮
+@property (weak, nonatomic) IBOutlet UIButton * agreeBtn; 
 
-@property (nonatomic, strong) NSString * codeStr;
+//@property (nonatomic, strong) NSString * codeStr;
 @property (nonatomic, strong) NSNumber * CountCode;
 
 @end
@@ -69,26 +69,25 @@
 //  注册
 - (IBAction)rEgBut:(id)sender {
     
-    if (![self JudgeTheillegalCharacter:_ZPEmailTextFiled.textField.text]) {
-//        [![self JudgeTheillegalCharacter:_ZPEmailTextFiled.textField.text]]
-        [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
+    if (![self JudgeTheillegalCharacter:_ZPAccountNumberTextFiled.textField.text]) {
+        [SVProgressHUD showInfoWithStatus:@"账号格式不正确"];
         return;
     }
-//    if (_ZPCodeTextField.textField.text.length < 1) {
+//    if (_ZPEmailTextFiled.textField.text.length < 1) {
 //        [SVProgressHUD showInfoWithStatus:@"验证码不能为空"];
 //        ZPLog(@"请输入验证码");
 //        return;
 //    }
-//    if (![_ZPCodeTextField.textField.text isEqualToString:_codeStr]) {
-//        [SVProgressHUD showInfoWithStatus:@"请输入正确验证码"];
-//        NSLog(@"请输入正确验证码");
-//        return;
-//    }
     if (_ZPPswTextField.textField.text.length < 6||_ZPPswTextField.textField.text.length >20) {
-        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于12"];
+        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于20"];
         ZPLog(@"密码不足6位");
         return;
     }
+//    if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
+//        [SVProgressHUD showInfoWithStatus:@"请输入正确邮箱"];
+//        NSLog(@"请输入正确邮箱");
+//        return;
+//    }
 //    if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
 //        [SVProgressHUD showInfoWithStatus:@"密码必须大小写数字组合"];
 //        ZPLog(@"密码不足6位");
@@ -110,36 +109,51 @@
 // 数据
 - (void)allData {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"email"] = _ZPEmailTextFiled.textField.text;
+    dict[@"email"] = _ZPAccountNumberTextFiled.textField.text;
     dict[@"pwd"] = [self md5:_ZPPswTextField.textField.text];
-//    dict[@"vcode"] = _ZPCodeTextField.textField.text;
+    dict[@"emailverify"] = _ZPEmailTextFiled.textField.text;
+//这里是不是国家
     dict[@"countrycode"] = _CountCode;
     [ZP_LoginTool requestRegiser:dict success:^(id obj) {
         ZPLog(@"%@",obj);
         NSDictionary * dic = obj;
-        if (![self JudgeTheillegalCharacter:_ZPEmailTextFiled.textField.text]) {
+//        if (![self JudgeTheillegalCharacter:_ZPAccountNumberTextFiled.textField.text]) {
             if ([dic[@"result"] isEqualToString:@"ok"]) {
                 NSLog(@"注册成功");
                 [SVProgressHUD showSuccessWithStatus:@"注册成功!"];
+
+                CountCode = _CountCode;   // 保存国家
                 [self.navigationController popViewControllerAnimated:YES];
-            }else {
-                if ([dic[@"result"] isEqualToString:@"add_error"]) {
-                    [SVProgressHUD showInfoWithStatus:@"添加失败"];
-                    [self.navigationController popViewControllerAnimated:YES];
-            }else {
-                if ([dic[@"result"] isEqualToString:@"email_erro"]) {
+            }else
+                if ([dic[@"result"] isEqualToString:@"sys_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"注册失败"];
+            }else
+                if ([dic[@"result"] isEqualToString:@"email_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"账号为空错误"];
+            }else
+                if ([dic[@"result"] isEqualToString:@"email_format_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"账号格式错误"];
+            }else
+                if ([dic[@"result"] isEqualToString:@"email_key_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"註冊帳號不能以ICUE开头"];
+            }else
+                if ([dic[@"result"] isEqualToString:@"pwd_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"密码为空错误"];
+            }else
+                if ([dic[@"result"] isEqualToString:@"email_exist_err"]) {
                     [SVProgressHUD showInfoWithStatus:@"账号已存在"];
-                    [self.navigationController popViewControllerAnimated:YES];
-            }else {
-                if ([dic[@"result"] isEqualToString:@"vcode_err"]) {
-                    [SVProgressHUD showInfoWithStatus:@"验证码不能为空"];
-                    [self.navigationController popViewControllerAnimated:YES];
-                    
-                    }
-                 }
-              }
-           }
-        }
+            }else
+                if ([dic[@"result"] isEqualToString:@"emailverify_formart_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"验证邮箱格式错误"];
+            }else
+                if ([dic[@"result"] isEqualToString:@"emailverify_exist_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"邮箱已被绑定"];
+            }else
+                if ([dic[@"result"] isEqualToString:@"verify_send_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"邮箱验证信投递失败"];
+//                                      }
+                                   }
+        
     } failure:^(NSError *error) {
         
         ZPLog(@"%@",error);
@@ -188,11 +202,12 @@
 //    }];
 //}
 
+// 选择国家
 - (void)choseCountry {
     [self PositionallData];
     ZPLog(@"选择国家");
 }
-//  定位数据
+//  国家列表数据
 - (void)PositionallData {
     
     [ZP_HomeTool requesPosition:nil success:^(id obj) {
@@ -215,23 +230,23 @@
 
 - (IBAction)agreeClick:(UIButton *)sender {
     sender.selected = !sender.selected;
-    ZPLog(@"tong yi ");
+    ZPLog(@"同意");
     
 }
 
 - (IBAction)userServerClick:(id)sender {
-    ZPLog(@"用户协议 ");
+    ZPLog(@"用户服务协议 ");
 }
 #pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -
-//- (BOOL)validateEmail:(NSString *)email {
-////     邮箱正则式
-//    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-//    
-//    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-//    
-//    return [emailTest evaluateWithObject:email];
-//    
-//}
+- (BOOL)validateEmail:(NSString *)email {
+//     邮箱正则式
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:email];
+    
+}
 
 - (BOOL)JudgeTheillegalCharacter:(NSString *)content {
 //    提示标签不能输入特殊字符
@@ -282,9 +297,9 @@
 }
 // 触发事件
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
-    [_ZPEmailTextFiled resignFirstResponder];
-//    [_ZPCodeTextField resignFirstResponder];
+    [_ZPAccountNumberTextFiled resignFirstResponder];
     [_ZPPswTextField resignFirstResponder];
+    [_ZPEmailTextFiled resignFirstResponder];
     [_ZPCountryTextField resignFirstResponder];
 }
 //  MD5加密方法

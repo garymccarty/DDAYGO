@@ -28,8 +28,9 @@
 @interface ConfirmViewController () <UITableViewDelegate, UITableViewDataSource> {
     
     NSArray * InformatonArray;
-    NSArray * messageArray;
-    
+    NSArray * messageArray;;
+    NSString * allMoney;
+    NSString * allCount;
 }
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -51,6 +52,7 @@
     [self ImmobilizationView];
     self.title = NSLocalizedString(@"确认订单", nil);
 
+    // 666shi dindaingjiemian
     if (self.type == 666) {
         [self Mainorder];
         [self getAddData];
@@ -161,7 +163,7 @@
 
 // 选择支付方式数据
 - (void)ConfirmData {
-    NSDictionary * dic = @{@"countrycode":@"886"};
+    NSDictionary * dic = @{@"countrycode":CountCode};
     [ZP_shoopingTool requetMethodpay:dic success:^(id obj) {
         
         ConfirmPayView * PayView = [[ConfirmPayView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -176,7 +178,8 @@
             NSLog(@"payname = %@",model.payname);
             ZP_ComfirmModel *modell = _dataArrar[0];
             NSMutableDictionary *dic =[NSMutableDictionary dictionary];
-            dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//            dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+            dic[@"token"] = Token;
             dic[@"adsid"] = modell.addressid;
             dic[@"stockids"] =_stockidsString;
             dic[@"logistic"] = @1;
@@ -207,7 +210,8 @@
 // 确认地址
 - (void)getAddData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     dic[@"stockids"] = self.stockidsString;
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
         ZPLog(@"%@",obj);
@@ -242,12 +246,12 @@
 // 获取确认订单
 - (void)MakeSureOrder {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     dic[@"stockids"] = self.stockidsString;
     //    stockids：库存字符串，库存ID与数量拼接，多个用逗号连接，如：42_2,43_1
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
         NSDictionary * dic = obj;
-        ZPLog(@"%@",dic);
         self.NewData = [ZP_InformationModel arrayWithArray:dic[@"carts"]];
         ZP_ExpressDeliveryModel * model = [[ZP_ExpressDeliveryModel alloc] init];
         model.freightamount = dic[@"freightamount"];
@@ -259,20 +263,24 @@
         
     }];
 }
-
+// zongji
 - (void)upfataStatisticsLabel {
     float asd = 0.0;
+    int qwe = 0;
     for (ZP_InformationModel *model in self.NewData) {
         asd += model.amount.intValue * model.productprice.floatValue;
+        qwe += model.amount.intValue;
     }
-    
+    allMoney = [NSString stringWithFormat:@"%.2f",asd];
+    allCount = [NSString stringWithFormat:@"%d",qwe];
     self.PriceLabel.text = [NSString stringWithFormat:@"%.2f",asd];
 }
 
 // 快递费
 - (void)ExpressDelivery {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     dic[@"stockids"] = self.stockidsString;
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
         //        NSDictionary * dic = obj;
@@ -289,7 +297,8 @@
 // 获取订单界面确认订单数据
 - (void)Mainorder {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     dic[@"orderno"] = _ordersnumber;
     [ZP_shoopingTool requesOrders:dic success:^(id obj) {
         NSDictionary * dic = obj;
@@ -307,7 +316,8 @@
 // 获取确认订单界面支付数据
 - (void)MainorderPay {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"token"] = Token;
     dic[@"orderno"] = _ordersnumber;
         dic[@"adsid"] = @"1";
         dic[@"logistic"] = @1;
@@ -380,7 +390,9 @@
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;  // 取消cell点击变灰
                     self.tableView.tableFooterView = [[UIView alloc]init];
                     if (self.NewData.count > indexPath.row) {
-                        ZP_InformationModel *model = self.NewData[indexPath.row];
+                        cell.allMoney = allMoney;
+                        cell.allCount = allCount;
+                        ZP_InformationModel * model = self.NewData[indexPath.row];
                         [cell MessageDic:model];
                     }
                     

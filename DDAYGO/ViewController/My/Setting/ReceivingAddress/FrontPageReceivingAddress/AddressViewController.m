@@ -49,7 +49,8 @@
 - (void)allData {
     
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    dic[@"token"] = Token;
     dic[@"aid"] = _oid;
     [ZP_MyTool requesAddress:dic success:^(id obj) {
 //        if (self.newsData.count < 1) {
@@ -127,7 +128,8 @@
         if (btn.selected) {
             ZP_FrontPageReceivingAddressModel * model = self.newsData[btn.tag];
             NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-            dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//            dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+            dic[@"token"] = Token;
             dic[@"adsid"] = model.addressid;
             [ZP_MyTool requestDefaultAddress:dic success:^(id obj) {
                 ZPLog(@"%@",obj);
@@ -166,7 +168,8 @@
     UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
          ZP_FrontPageReceivingAddressModel * model = self.newsData[sender.tag];
         NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-        dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+//        dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+        dic[@"token"] = Token;
         dic[@"adsid"] = model.addressid;
         [ZP_MyTool requesDeleteAddress:dic success:^(id obj) {
             if ([obj[@"result"]isEqualToString:@"ok"]) {

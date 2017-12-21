@@ -181,14 +181,14 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Npt-XD-6SL">
-                                            <rect key="frame" x="173.5" y="30" width="1" height="243"/>
+                                            <rect key="frame" x="174" y="30" width="1" height="243"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="1" id="csL-Jh-7nw"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcR-B8-y6W">
-                                            <rect key="frame" x="239" y="30" width="1" height="243"/>
+                                            <rect key="frame" x="239.5" y="30" width="1" height="243"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="1" id="DH8-ix-Eu4"/>
@@ -223,7 +223,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奖项金额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCM-nc-1yX">
-                                            <rect key="frame" x="110" y="0.0" width="64.5" height="30"/>
+                                            <rect key="frame" x="110" y="0.0" width="65" height="30"/>
                                             <color key="backgroundColor" red="0.98431372549019602" green="0.5607843137254902" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="sIN-r0-Ku1"/>
@@ -233,7 +233,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中奖注数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ai-wG-KJX">
-                                            <rect key="frame" x="174.5" y="0.0" width="64.5" height="30"/>
+                                            <rect key="frame" x="175" y="0.0" width="64.5" height="30"/>
                                             <color key="backgroundColor" red="0.98431372549019602" green="0.5607843137254902" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="6HX-db-aGn"/>
@@ -243,7 +243,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="悬赏金额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0X-ex-XyR">
-                                            <rect key="frame" x="239" y="0.0" width="65" height="30"/>
+                                            <rect key="frame" x="239.5" y="0.0" width="64.5" height="30"/>
                                             <color key="backgroundColor" red="0.98431372549019602" green="0.5607843137254902" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="GQc-mf-CWY"/>
@@ -338,7 +338,7 @@
                                             <attributedString key="attributedText">
                                                 <fragment content="白球5个         +             红球1个">
                                                     <attributes>
-                                                        <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
+                                                        <font key="NSFont" size="10" name=".PingFangSC-Regular"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -388,7 +388,7 @@
                                                 <constraint firstAttribute="height" constant="47" id="eKg-Ne-iOm"/>
                                             </constraints>
                                             <attributedString key="attributedText">
-                                                <fragment content="2白球+1红球1白球+1红球">
+                                                <fragment content="1白球+1红球">
                                                     <attributes>
                                                         <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -398,7 +398,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEN-7L-jGh">
-                                            <rect key="frame" x="112" y="31" width="60.5" height="43"/>
+                                            <rect key="frame" x="112" y="31" width="61" height="43"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -410,7 +410,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZi-S0-0LM">
-                                            <rect key="frame" x="112" y="77" width="60.5" height="45"/>
+                                            <rect key="frame" x="112" y="77" width="61" height="45"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -422,7 +422,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qd9-Ci-gbq">
-                                            <rect key="frame" x="112" y="125" width="60.5" height="49"/>
+                                            <rect key="frame" x="112" y="125" width="61" height="49"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -434,7 +434,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwo-6Z-Feu">
-                                            <rect key="frame" x="112" y="177" width="60.5" height="47"/>
+                                            <rect key="frame" x="112" y="177" width="61" height="47"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -446,13 +446,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKz-5s-F30">
-                                            <rect key="frame" x="112" y="227" width="60.5" height="44"/>
+                                            <rect key="frame" x="112" y="227" width="61" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25K-48-pLg">
-                                            <rect key="frame" x="175.5" y="31" width="62.5" height="43"/>
+                                            <rect key="frame" x="176" y="31" width="62.5" height="43"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -464,7 +464,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAQ-sa-WWl">
-                                            <rect key="frame" x="175" y="77" width="63" height="45"/>
+                                            <rect key="frame" x="175.5" y="77" width="63" height="45"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -476,7 +476,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3u-6S-Fa0">
-                                            <rect key="frame" x="173" y="125" width="65" height="51"/>
+                                            <rect key="frame" x="173.5" y="125" width="65" height="51"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -488,7 +488,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4l-8O-atS">
-                                            <rect key="frame" x="175" y="177" width="63" height="47"/>
+                                            <rect key="frame" x="175.5" y="177" width="63" height="47"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -500,13 +500,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIY-0A-e22">
-                                            <rect key="frame" x="175.5" y="225" width="64.5" height="46"/>
+                                            <rect key="frame" x="176" y="225" width="64.5" height="46"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGl-XE-fCc">
-                                            <rect key="frame" x="241" y="31" width="61" height="43"/>
+                                            <rect key="frame" x="241.5" y="31" width="60.5" height="43"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -518,7 +518,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUX-yq-R9l">
-                                            <rect key="frame" x="241" y="77" width="61" height="45"/>
+                                            <rect key="frame" x="241.5" y="77" width="60.5" height="45"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -530,7 +530,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCL-Of-0a3">
-                                            <rect key="frame" x="241" y="125" width="60.5" height="49"/>
+                                            <rect key="frame" x="241.5" y="125" width="60" height="49"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -542,7 +542,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdO-sX-4tK">
-                                            <rect key="frame" x="241" y="177" width="62" height="47"/>
+                                            <rect key="frame" x="241.5" y="177" width="61.5" height="47"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="300">
                                                     <attributes>
@@ -554,7 +554,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyW-pZ-mZq">
-                                            <rect key="frame" x="241" y="227" width="61" height="44"/>
+                                            <rect key="frame" x="241.5" y="227" width="60.5" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

@@ -10,6 +10,8 @@
 
 /** Token  */
 extern NSString * Token;
+
+extern NSNumber * CountCode;
 @interface Const : NSObject
 
 @end

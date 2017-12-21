@@ -61,29 +61,39 @@
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[@"email"] = _ZPEmailTextField.textField.text;
     dic[@"pwd"] = [self md5:_ZPPswTextField.textField.text];
-    dic[@"countrycode"] = @"886";
+    dic[@"countrycode"] = CountCode;
+    
+    NSLog(@"count %@",CountCode);
+    
     [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"loginData"];
     [ZP_LoginTool requestLogin:dic success:^(id obj) {
         NSLog(@"obj---%@",obj);
         NSDictionary * aadic = obj;
-        if ([aadic[@"result"] isEqualToString:@"ok"]) {
-            [ZP_LoginTool getAccountInfo:aadic[@"token"] success:^(id obj) {
-                NSDictionary * tempDic = obj;
-                NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"],@"token":aadic[@"token"]};
-                [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
-                [[NSUserDefaults standardUserDefaults] setObject:aadic[@"token"] forKey:@"token"];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                DD_HASLOGIN = YES;
-                [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
-                [self.navigationController popToRootViewControllerAnimated:YES];
-            } failure:^(NSError *error) {
-                NSLog(@"%@",error);
-            }];
-        }else {
-            if ([aadic[@"result"]isEqualToString:@"acc_pwd_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"邮箱或密码不正确"];
-            }
-        }
+        Token = aadic[@"token"];
+        [[NSUserDefaults standardUserDefaults] setObject:Token forKey:@"token"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
+        
+//        if ([aadic[@"result"] isEqualToString:@"ok"]) {
+//            [ZP_LoginTool getAccountInfo:aadic[@"token"] success:^(id obj) {
+//                NSDictionary * tempDic = obj;
+//                NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"],@"token":aadic[@"token"]};
+//                [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
+//                [[NSUserDefaults standardUserDefaults] setObject:aadic[@"token"] forKey:@"token"];
+//                [[NSUserDefaults standardUserDefaults] synchronize];
+//                DD_HASLOGIN = YES;
+//                [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
+//                [self.navigationController popToRootViewControllerAnimated:YES];
+//            } failure:^(NSError *error) {
+//                NSLog(@"%@",error);
+//            }];
+//        }else {
+//            if ([aadic[@"result"]isEqualToString:@"acc_pwd_err"]) {
+//                [SVProgressHUD showInfoWithStatus:@"邮箱或密码不正确"];
+//            }
+//        }
     } failure:^(NSError *error) {
         
         NSLog(@"%@",error);
