@@ -12,6 +12,9 @@
 extern NSString * Token;
 
 extern NSNumber * CountCode;
+
+extern NSString * Symbol;
+extern NSString * countrycode;
 @interface Const : NSObject
 
 @end

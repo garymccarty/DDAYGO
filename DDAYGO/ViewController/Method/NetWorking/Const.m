@@ -12,7 +12,9 @@ NSString * Token = nil;
 
 NSNumber * CountCode = nil;
 
+NSString * Symbol = nil;
 
+NSString * countrycode = nil;
 @implementation Const
 
 @end

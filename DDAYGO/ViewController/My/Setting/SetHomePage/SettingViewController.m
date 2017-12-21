@@ -251,9 +251,10 @@
     alert.popoverPresentationController.barButtonItem = self.navigationItem.leftBarButtonItem;
     //  添加按钮
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", nil)  style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-//         DD_HASLOGIN = NO;
         Token = nil;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"symbol"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"countrycode"];
         [self.navigationController popViewControllerAnimated:YES];
         NSLog(@"点击了确定按钮");
     }]];
