@@ -45,6 +45,7 @@
         failure(error);
     }];
 }
+
 // 添加订单并付款
 + (void)requesAddOrdersPay:(NSDictionary *)AddOrdersPay success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"http://localhost:39499/api/Test/addorder?token=%@&stockids=%@&adsid=%@&logistic=%@&payway=%@&leavemsg=%@&icuetoken=%@",AddOrdersPay[@"token"],AddOrdersPay[@"stockids"],AddOrdersPay[@"adsid"],AddOrdersPay[@"logistic"],AddOrdersPay[@"payway"],AddOrdersPay[@"leavemsg"],AddOrdersPay[@"icuetoken"]] parameters:nil success:^(NSDictionary *responseObject) {
@@ -55,8 +56,17 @@
 }
 
 // 获取确认订单界面数据
-+ (void)requesOrders:(NSDictionary *)Orders success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updateorderpay?token=%@&orderno=%@&adsid=%@&logistic=%@&payway=%@&leavemsg=%@&icuetoken=%@",URLAPI,Orders[@"token"],Orders[@"orderno"],Orders[@"adsid"],Orders[@"logistic"],Orders[@"payway"],Orders[@"leavemsg"],Orders[@"icuetoken"]] parameters:nil success:^(id responseObject) {
++ (void)requesOrders:(NSDictionary *)Oredrs success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@%@",URLAPI,MakeOrderAPI] parameters:Oredrs success:^(NSDictionary *responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+//获取确认订单界面付款数据数据
++ (void)requesOrdersPay:(NSDictionary *)OrdersPay success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updateorderpay?token=%@&orderno=%@&adsid=%@&logistic=%@&payway=%@&leavemsg=%@&icuetoken=%@",URLAPI,OrdersPay[@"token"],OrdersPay[@"orderno"],OrdersPay[@"adsid"],OrdersPay[@"logistic"],OrdersPay[@"payway"],OrdersPay[@"leavemsg"],OrdersPay[@"icuetoken"]] parameters:nil success:^(id responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);

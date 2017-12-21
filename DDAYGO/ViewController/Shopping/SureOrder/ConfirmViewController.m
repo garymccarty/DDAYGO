@@ -50,15 +50,16 @@
     [self initUI];
     [self ImmobilizationView];
     self.title = NSLocalizedString(@"确认订单", nil);
-   
-   
+
     if (self.type == 666) {
+        [self Mainorder];
+        [self getAddData];
         ZPLog(@"^^^");
     }else{
          [self getAddData];
          [self MakeSureOrder];
     }
-    //    [self ExpressDelivery];
+        [self ExpressDelivery];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     InformatonArray = _dataArray;
     if (_PriceStr && _NumStr) {
@@ -94,7 +95,6 @@
 }
 
 - (void)ImmobilizationView {
-    
     UIView * bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, ZP_height - TabbarHeight - NavBarHeight , ZP_Width, 50)];
     bottomView.backgroundColor = ZP_textWite;
     [self.view addSubview:bottomView];
@@ -158,7 +158,8 @@
         [self ConfirmData];
     }
 }
-// ConfirmView数据
+
+// 选择支付方式数据
 - (void)ConfirmData {
     NSDictionary * dic = @{@"countrycode":@"886"};
     [ZP_shoopingTool requetMethodpay:dic success:^(id obj) {
@@ -209,11 +210,12 @@
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"stockids"] = self.stockidsString;
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
         NSDictionary * dic = obj;
         NSArray * modelArr = [ZP_ComfirmModel arrayWithArray:dic[@"receipts"]];
         if (modelArr.count == 0) {
             [SVProgressHUD showErrorWithStatus:@"请添加地址"];
-            AddAddressViewController *viewController = [[AddAddressViewController alloc] init];
+            AddAddressViewController * viewController = [[AddAddressViewController alloc] init];
             [self.navigationController pushViewController:viewController animated:YES];
             viewController.contentDic = @{@"asd":@(YES)};
         } else {
@@ -247,7 +249,7 @@
         NSDictionary * dic = obj;
         ZPLog(@"%@",dic);
         self.NewData = [ZP_InformationModel arrayWithArray:dic[@"carts"]];
-        ZP_ExpressDeliveryModel *model = [[ZP_ExpressDeliveryModel alloc] init];
+        ZP_ExpressDeliveryModel * model = [[ZP_ExpressDeliveryModel alloc] init];
         model.freightamount = dic[@"freightamount"];
         model.chooselogistic = dic[@"chooselogistic"];
         [_ConfirmArray addObject:model];
@@ -275,33 +277,51 @@
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
         //        NSDictionary * dic = obj;
         NSLog(@"freightamount : %@",obj[@"freightamount"]);
-//                self.ConfirmArray = [ZP_ExpressDeliveryModel arrayWithArray:obj[@"freightamount"]];
+//      self.ConfirmArray = [ZP_ExpressDeliveryModel arrayWithArray:obj[@"freightamount"]];
         
         [self.tableView reloadData];
     } failure:^(NSError * error) {
         
     }];
 }
+
+/***************订单*******************/
 // 获取订单界面确认订单数据
-- (void)Order {
+- (void)Mainorder {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-    dic[@"orderno"] = @"";
-    dic[@"adsid"] = @"";
-    dic[@"logistic"] = @"";
-    dic[@"payway"] = @"";
-    dic[@"leavemsg"] = @"";
-    dic[@"icuetoken"] = @"";
+    dic[@"orderno"] = _ordersnumber;
     [ZP_shoopingTool requesOrders:dic success:^(id obj) {
+        NSDictionary * dic = obj;
+        ZPLog(@"%@",dic);
+        self.NewData = [ZP_InformationModel arrayWithArray:dic[@"carts"]];
+        ZP_ExpressDeliveryModel * model = [[ZP_ExpressDeliveryModel alloc] init];
+        model.freightamount = dic[@"freightamount"];
+        model.chooselogistic = dic[@"chooselogistic"];
+        [_ConfirmArray addObject:model];
+        [self upfataStatisticsLabel];
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+// 获取确认订单界面支付数据
+- (void)MainorderPay {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"orderno"] = _ordersnumber;
+        dic[@"adsid"] = @"1";
+        dic[@"logistic"] = @1;
+        dic[@"payway"] = @"allpay_creditcard";
+        dic[@"leavemsg"] = @"";
+        dic[@"icuetoken"] = @"";
+    [ZP_shoopingTool requesOrdersPay:dic success:^(id obj) {
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
 }
 
-
 #pragma Mark - TableViewDelegate
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 5;

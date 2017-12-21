@@ -19,7 +19,10 @@
 + (void)requesAddOrdersPay:(NSDictionary *)AddOrdersPay success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 获取确认订单界面数据
-+ (void)requesOrders:(NSDictionary *)Orders success:(void (^)(id))success failure:(void (^)(NSError *))failure;
++ (void)requesOrders:(NSDictionary *)Oredrs success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 获取确认订单界面支付数据
++ (void)requesOrdersPay:(NSDictionary *)OrdersPay success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 获取购物车信息
 + (void)requesshoppingData:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;

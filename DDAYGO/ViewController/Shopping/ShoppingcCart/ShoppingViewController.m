@@ -119,18 +119,8 @@
 //    [self.tableView reloadData];
    
 }
-//// 编辑弹出view
-//- (void)EditorUI {
-//    UIView * EditorView = [UIView new];
-//    EditorView.backgroundColor = ZP_WhiteColor;
-//    [EditorView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self).offset(80);
-//        make.top.equalTo(self).offset(0);
-//        make.width.mas_equalTo(120);
-//        make.height.mas_equalTo(120);
-//    }];
-//}
 
+// UI
 - (void)initUI {
     
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 10, ZP_Width, ZP_height-TabbarHeight -50) style:UITableViewStylePlain];
@@ -285,12 +275,12 @@
             if (cell.buttom.selected ) {
                 ZP_CartsShopModel * models = nameArray[0];
                 ZP_CartsModel *model = models.array[tag];
-                //  NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
-                //  data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
+//                  NSArray * array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
+//                  data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
                 data += [model.productprice floatValue]*[model.amount integerValue];
                 dataCount += [cell.QuantityLabel.text integerValue];
                 count ++;
-                NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
+                NSString * str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
                 if (_stockids.length > 0) {
                     _stockids = [_stockids stringByAppendingString:[NSString stringWithFormat:@",%@",str]];
                 }else{
