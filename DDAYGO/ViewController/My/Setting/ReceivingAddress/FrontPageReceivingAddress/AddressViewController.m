@@ -171,7 +171,7 @@
         [ZP_MyTool requesDeleteAddress:dic success:^(id obj) {
             if ([obj[@"result"]isEqualToString:@"ok"]) {
                 [SVProgressHUD showSuccessWithStatus:@"删除成功"];
-//                 [_tableView reloadData]; // 刷新数据
+                [self allData]; //删除后刷新表格里面的数据
             }else {
                 if ([obj[@"result"]isEqualToString:@"isdefault_err"]) {
                     [SVProgressHUD showInfoWithStatus:@"默认地址不能删除"];

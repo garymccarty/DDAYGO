@@ -175,10 +175,10 @@
 }
 
 - (IBAction)genderBooy:(UIButton *)sender {
-    NSLog(@"%d",sender.selected);
+//    NSLog(@"%d",sender.selected);
     if (sender.selected) {
         return;
-    }else{
+    }else {
         _genderGail.selected = NO;
         sender.selected = !sender.selected;
         self.dataDic[@"sex"] = @"男";
@@ -189,17 +189,15 @@
                 if ([json[@"result"]isEqualToString:@"sys_error"]) {
                     [SVProgressHUD showInfoWithStatus:@"修改失败"];
                 }
-//            ZPLog(@"%@",json);
         } failure:^(NSError *error) {
             ZPLog(@"%@",error);
         }];
-        
-//        NSLog(@"男");
     }
 }
+
 //  收货地址
 - (IBAction)shdzAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     AddressViewController *viewController = [[AddressViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
@@ -208,21 +206,21 @@
 
 //  绑定ICUE
 - (IBAction)bdICUEAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     BindingICUEViewController *viewController = [[BindingICUEViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
 }
 //  绑定邮箱
 - (IBAction)BindingEmail:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     BindingEmailController * Email = [[BindingEmailController alloc]init];
     [self.navigationController pushViewController:Email animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
 }
 // 绑定推荐人
 - (IBAction)bdIntroduce:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     BindingIntroduce * introduce = [[BindingIntroduce alloc]init];
     [self.navigationController pushViewController:introduce animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
@@ -230,7 +228,7 @@
 
 //  修改密码
 - (IBAction)xgmmAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     ResetPasswordViewController *viewController = [[ResetPasswordViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
@@ -238,7 +236,7 @@
 }
 //  语言
 - (IBAction)languageAction:(id)sender {
-    self.hidesBottomBarWhenPushed = YES;
+//    self.hidesBottomBarWhenPushed = YES;
     LanguageController * Language = [[LanguageController alloc]init];
     [self.navigationController pushViewController:Language animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
@@ -246,26 +244,18 @@
 
 //  登出
 - (IBAction)logoutAction:(id)sender {
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"reminding", nil) message: NSLocalizedString(@"Are you sure you want to log out?", nil)preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"reminding", nil) message: NSLocalizedString(@"Are you sure you want to log out?", nil)preferredStyle:UIAlertControllerStyleActionSheet];
     //  设置popover指向的item
     alert.popoverPresentationController.barButtonItem = self.navigationItem.leftBarButtonItem;
     //  添加按钮
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", nil)  style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        
-        
          DD_HASLOGIN = NO;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
         [self.navigationController popViewControllerAnimated:YES];
-        
-        
-        
-//
         NSLog(@"点击了确定按钮");
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         NSLog(@"点击了取消按钮");
-        
     }]];
     [self presentViewController:alert animated:YES completion:nil];
 }
