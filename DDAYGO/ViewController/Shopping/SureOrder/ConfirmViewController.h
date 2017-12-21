@@ -11,6 +11,8 @@
 
 
 @interface ConfirmViewController : UIViewController
+@property (nonatomic, assign) NSInteger type;
+
 @property (nonatomic, assign) NSInteger shopNum;
 @property (nonatomic, strong) NSString * shopMoney;
 @property (nonatomic, strong) NSNumber * stockid;

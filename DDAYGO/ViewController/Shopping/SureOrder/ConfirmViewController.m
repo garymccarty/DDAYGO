@@ -50,8 +50,14 @@
     [self initUI];
     [self ImmobilizationView];
     self.title = NSLocalizedString(@"确认订单", nil);
-    [self getAddData];
-    [self MakeSureOrder];
+   
+   
+    if (self.type == 666) {
+        ZPLog(@"^^^");
+    }else{
+         [self getAddData];
+         [self MakeSureOrder];
+    }
     //    [self ExpressDelivery];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     InformatonArray = _dataArray;
@@ -276,6 +282,24 @@
         
     }];
 }
+// 获取订单界面确认订单数据
+- (void)Order {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    dic[@"orderno"] = @"";
+    dic[@"adsid"] = @"";
+    dic[@"logistic"] = @"";
+    dic[@"payway"] = @"";
+    dic[@"leavemsg"] = @"";
+    dic[@"icuetoken"] = @"";
+    [ZP_shoopingTool requesOrders:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+
+
 #pragma Mark - TableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
