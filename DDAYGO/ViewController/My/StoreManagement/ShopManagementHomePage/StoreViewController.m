@@ -58,7 +58,8 @@
         }
 
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 // 获取商家余额(方法1)
@@ -84,7 +85,8 @@
         [self AllData:model];
         
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 

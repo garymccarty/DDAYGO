@@ -346,14 +346,14 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.99215686270000003" green="0.6588235294" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <color key="tintColor" red="0.99215686270000003" green="0.6588235294" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.1647058824" green="0.37254901959999998" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="TRP-HX-xQv" secondAttribute="bottom" id="EBs-Mg-kt5"/>
                 <constraint firstItem="TRP-HX-xQv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LAJ-YK-452"/>
                 <constraint firstItem="TRP-HX-xQv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-20" id="T1R-Px-NAL"/>
                 <constraint firstAttribute="trailing" secondItem="TRP-HX-xQv" secondAttribute="trailing" id="Wld-vF-XTj"/>
             </constraints>
+            <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>

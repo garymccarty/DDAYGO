@@ -287,6 +287,9 @@
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTw-o1-YLZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="49" id="egg-Yq-xbu"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="绑定ICUE账号">

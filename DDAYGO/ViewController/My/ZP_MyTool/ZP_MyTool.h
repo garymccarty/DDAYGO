@@ -70,6 +70,10 @@
 
 // 获取本期下注查看更多
 + (void)requseMoreMore:(NSDictionary *)MoreMore uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
-//
+// 邮箱验证
++ (void)requesEmail:(NSDictionary *)Email uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 验证码
++ (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end
 

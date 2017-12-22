@@ -206,7 +206,8 @@
         
         [PayView showInView:self.view];
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 
@@ -242,7 +243,8 @@
 //        }];
         [self.tableView reloadData];
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 // 获取确认订单
@@ -309,7 +311,8 @@
         [_ConfirmArray addObject:model];
         [self upfataStatisticsLabel];
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 // 获取确认订单界面支付数据
@@ -325,7 +328,8 @@
     [ZP_shoopingTool requesOrdersPay:dic success:^(id obj) {
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 

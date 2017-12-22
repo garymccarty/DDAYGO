@@ -89,8 +89,8 @@
         [self fillData:model];
         
     } failure:^(NSError * error) {
-        
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 
@@ -99,7 +99,7 @@
     if (ZPICUEToken.length > 0) {
         _BangDingLayout.constant = CGFLOAT_MIN;
         _IcueNumLayout.constant = CGFLOAT_MIN;
-        _view3Layout.constant = 98.0;
+        _view3Layout.constant = 100.0;
     }
     
     [_headerImage sd_setImageWithURL:[NSURL URLWithString:model.avatarimg] placeholderImage:[UIImage imageNamed:@"HeadrImage"]];
@@ -108,8 +108,7 @@
     _bindingEmailLabel.text = model.email;  // 邮箱
     _BindingICUELabel.text = model.icueaccount; // ICUE  不显示
     _BindingIntroduce.text = model.introducer; // ICUE  不显示
-    
-    
+
 }
 
 - (IBAction)touxiangAction:(id)sender {
@@ -160,7 +159,8 @@
                 NSLog(@"xiugai success");
                 self.nicknameLabel.text = (NSString *)response;
             } failure:^(NSError * error) {
-                ZPLog(@"%@",error);
+//                ZPLog(@"%@",error);
+                [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
             }];
     }];
 }
@@ -182,7 +182,8 @@
                 }
 //            NSLog(@"%@",json);
         } failure:^(NSError *error) {
-            ZPLog(@"%@",error);
+//            ZPLog(@"%@",error);
+            [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
         }];
     }
 }
@@ -203,7 +204,8 @@
                     [SVProgressHUD showInfoWithStatus:@"修改失败"];
                 }
         } failure:^(NSError *error) {
-            ZPLog(@"%@",error);
+//            ZPLog(@"%@",error);
+            [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
         }];
     }
 }

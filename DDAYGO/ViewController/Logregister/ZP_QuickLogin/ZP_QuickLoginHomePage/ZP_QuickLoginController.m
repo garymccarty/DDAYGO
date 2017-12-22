@@ -116,7 +116,8 @@
             }
         }
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 //  调用55的接口
@@ -183,7 +184,7 @@
             }
         }
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:@"网络连接失败"];
     }];
 }

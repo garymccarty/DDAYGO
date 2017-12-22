@@ -191,7 +191,8 @@
         model.historycount = obj[@"historycount"];
         [self setAllDatas:model];
     } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 - (void)setAllDatas:(ZP_MyHopageModel *)model {

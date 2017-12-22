@@ -53,7 +53,8 @@
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);
-        ZPLog(@"%@",error);
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 //  设定默认地址
@@ -230,10 +231,29 @@
 }
 
 
+// 邮箱验证
++ (void)requesEmail:(NSDictionary *)Email uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@getemailverify?token=%@&emailverify=%@",URLAPI,Email[@"token"],Email[@"emailverify"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 
-
-
-
+// 验证码
++ (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@sendvercode?email=%@",URLAPI,Yzm[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
+        
+        success(responseObject);
+        
+        ZPLog(@"%@",responseObject);
+        
+    } failure:^(NSError *error) {
+//        ZPLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        
+    }];
+}
 
 @end
 
