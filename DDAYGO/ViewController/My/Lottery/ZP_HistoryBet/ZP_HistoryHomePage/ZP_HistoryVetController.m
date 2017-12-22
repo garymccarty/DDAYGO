@@ -24,7 +24,7 @@
 }
 - (void)initUI {
     
-    self.title = NSLocalizedString(@"历史下注", nil);
+    self.title = NSLocalizedString(@"历史填写", nil);
     //    static NSString * ZP_HistoryID = @"ZP_HistoryBetCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_HistoryBetCell" bundle:nil] forCellReuseIdentifier:@"ZP_HistoryBetCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条

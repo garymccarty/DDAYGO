@@ -200,7 +200,7 @@
     
     UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
     but.frame = CGRectMake(20, CGRectGetMaxY(_OrderNumView.frame) + 10, ZP_Width - 40, 40);
-    [but setTitle:@"下注" forState:UIControlStateNormal];
+    [but setTitle:@"填写" forState:UIControlStateNormal];
     [but addTarget:self action:@selector(betAction) forControlEvents:UIControlEventTouchUpInside];
     but.backgroundColor = [UIColor redColor];
     [self.scrollView addSubview:but];
@@ -210,7 +210,7 @@
     
     UIButton *but2 = [UIButton buttonWithType:UIButtonTypeCustom];
     but2.frame = CGRectMake(20, CGRectGetMaxY(but.frame)+10, ZP_Width - 40, 40);
-    [but2 setTitle:@"历史下注号码" forState:UIControlStateNormal];
+    [but2 setTitle:@"历史填写号码" forState:UIControlStateNormal];
     [but2 addTarget:self action:@selector(HistoricalBetAction) forControlEvents:UIControlEventTouchUpInside];
     but2.backgroundColor = [UIColor orangeColor];
     [self.scrollView addSubview:but2];

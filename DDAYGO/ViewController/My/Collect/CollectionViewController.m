@@ -43,7 +43,6 @@
 
 - (void)getData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     dic[@"screen"] = @1;
     [ZP_MyTool requestgetcollections:dic success:^(id json) {

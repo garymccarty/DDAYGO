@@ -24,6 +24,10 @@
 
 // 地区
 + (void) requsetArea:(NSDictionary *)Area success:(void (^)(id))success failure:(void (^)(NSError *))failure;
-//  ICUE 登录
+
+// ICUE号首次登入（55）
 + (void)requsetICUELogin:(NSDictionary *)ICUELogin success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// ICUE 首次登陆（58）
++ (void)requesForFirstTimeLogin:(NSDictionary *)ForFirstTimeLogin success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end

@@ -8,13 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
-/** Token  */
+/**
+ *Token
+ */
 extern NSString * Token;
 
-extern NSNumber * CountCode;
+/**
+ *ICUEToken
+ */
+extern NSString * ZPICUEToken;
 
+/**
+ *国家代码
+ */
+extern NSNumber * CountCode;// 国家代码
+
+/**
+ * 货币符号
+ */
 extern NSString * Symbol;
+
+/**
+ *
+ */
 extern NSString * countrycode;
+
 @interface Const : NSObject
 
 @end

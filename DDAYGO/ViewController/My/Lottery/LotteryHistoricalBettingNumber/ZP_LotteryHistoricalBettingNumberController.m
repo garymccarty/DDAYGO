@@ -24,7 +24,7 @@
 
 //  UI
 - (void)initUI {
-    self.title = NSLocalizedString(@"历史下注号码", nil);
+    self.title = NSLocalizedString(@"历史填写号码", nil);
 //    static NSString * LotteryID = @"ZP_LotteryHistoricalBettingNumberCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_LotteryHistoricalBettingNumberCell" bundle:nil] forCellReuseIdentifier:@"ZP_LotteryHistoricalBettingNumberCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条

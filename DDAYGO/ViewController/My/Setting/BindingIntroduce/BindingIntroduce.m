@@ -33,7 +33,6 @@
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"acc"] = _BindingIntroduceTextField.text;
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     [ZP_MyTool requesIntroduce:dic success:^(id obj) {
         NSDictionary * dic = obj;

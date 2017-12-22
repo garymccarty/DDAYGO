@@ -66,7 +66,8 @@
 }
 // 获取购物车数据
 - (void)allData {
-    [ZP_shoopingTool requesshoppingData:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] success:^(id obj) {
+    //我说的是这里的token··如果用iuce 登录··用那一个
+    [ZP_shoopingTool requesshoppingData:Token success:^(id obj) {
 //        ZPLog(@"%@",obj);
         NSArray *arr = obj;
         if (arr.count > 0) {
@@ -409,7 +410,6 @@
     //        响应事件
         NSMutableDictionary * dic = [NSMutableDictionary dictionary];
         dic[@"stockid"] =_modelstockid;
-//        dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
         dic[@"token"] = Token;
         [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
             NSLog(@"%@",obj);
@@ -640,7 +640,6 @@
         ZP_CartsModel *model = dataArray[indexPath.row];
         NSMutableDictionary *dic = [NSMutableDictionary dictionary];
         dic[@"stockid"] = model.stockid;
-//        dic[@"token"]  = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
         dic[@"token"] = Token;
         [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
             if ([obj[@"result"]isEqualToString:@"ok"]) {

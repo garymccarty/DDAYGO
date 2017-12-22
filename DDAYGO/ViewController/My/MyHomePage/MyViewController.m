@@ -38,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    
 //    [self AllDatas];
     
     [self autoLogin:^(id obj) {
@@ -159,7 +160,6 @@
 //  个人资料
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
@@ -183,7 +183,6 @@
 // 获取浏览记录、收藏的数量
 - (void)AllDatas {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     dic[@"token"] = Token;
     [ZP_MyTool requesBrowseCollection:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);

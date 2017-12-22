@@ -101,7 +101,6 @@
         dic[@"sta"] = @"4";
     }
     dic[@"days"] = @"7";
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     dic[@"orderno"] = @"";
     [ZP_OrderTool requestGetorders:dic success:^(id json) {

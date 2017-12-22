@@ -38,8 +38,6 @@
 // 数据
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"]
     dic[@"token"] = Token;;
     dic[@"sid"] = _supplierId;
     dic[@"page"] = @"2";

@@ -182,7 +182,6 @@
             ZP_ComfirmModel *modell = _dataArrar[0];
             
             NSMutableDictionary *dic =[NSMutableDictionary dictionary];
-//            dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
             dic[@"token"] = Token;
             dic[@"adsid"] = modell.addressid;
             dic[@"stockids"] =_stockidsString;
@@ -214,7 +213,6 @@
 // 确认地址
 - (void)getAddData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     dic[@"stockids"] = self.stockidsString;
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
@@ -250,7 +248,6 @@
 // 获取确认订单
 - (void)MakeSureOrder {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     dic[@"stockids"] = self.stockidsString;
     //    stockids：库存字符串，库存ID与数量拼接，多个用逗号连接，如：42_2,43_1
@@ -283,7 +280,6 @@
 // 快递费
 - (void)ExpressDelivery {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     dic[@"stockids"] = self.stockidsString;
     [ZP_shoopingTool requesMakeSureOrder:dic success:^(id obj) {
@@ -301,7 +297,6 @@
 // 获取订单界面确认订单数据
 - (void)Mainorder {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     dic[@"orderno"] = _ordersnumber;
     [ZP_shoopingTool requesOrders:dic success:^(id obj) {
@@ -320,7 +315,6 @@
 // 获取确认订单界面支付数据
 - (void)MainorderPay {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     dic[@"orderno"] = _ordersnumber;
         dic[@"adsid"] = @"1";

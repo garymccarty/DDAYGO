@@ -27,6 +27,7 @@
 //**Xib 拖过来然后填写数据**/
 @property (nonatomic, strong)UIImageView * ShopImageView;
 @property (weak, nonatomic) IBOutlet UILabel * ShopNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel * CurrencySymbolLabel;
 @property (weak, nonatomic) IBOutlet UILabel * ShopMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel * ShopOldMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel * quantityLable;
@@ -58,7 +59,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self allData];
-    [self evaluation];
+//    [self evaluation];
     self.navigationController.navigationBar.hidden = YES;
     [self.detailTableView registerNib:[UINib nibWithNibName:@"ProductTableViewCell" bundle:nil] forCellReuseIdentifier:@"ProductTableViewCell"];
     [self.detailTableView registerNib:[UINib nibWithNibName:@"EvaluateTableViewCell" bundle:nil] forCellReuseIdentifier:@"EvaluateTableViewCell"];
@@ -102,7 +103,7 @@
         [self.scrollView addSubview:self.pageControl];
         [self.shoucangBtn resizeWithDistance:5];
         [self.gouwuBtn resizeWithDistance:5];
-        [self.dianpuBtn resizeWithDistance:5]; 
+//        [self.dianpuBtn resizeWithDistance:5]; // 暂时不需要商铺按钮
     }
     else{
         self.onScrollViewWidth.constant = ZP_Width * 1;
@@ -118,7 +119,7 @@
         
         [self.shoucangBtn resizeWithDistance:5];
         [self.gouwuBtn resizeWithDistance:5];
-        [self.dianpuBtn resizeWithDistance:5];
+//        [self.dianpuBtn resizeWithDistance:5]; // 暂时不需要商铺按钮
     }
     
 }
@@ -129,7 +130,7 @@
         return;
     }
     NSDictionary * dic;
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) {
+    if (Token) {
         dic = @{@"productid":_productId,@"token":Token};
     } else {
         dic = @{@"productid":_productId};
@@ -197,7 +198,6 @@
 }
 // 获取评价数据
 - (void)evaluation {
-//    55b9b460d9150998bedc6f069c5d0afd
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"productid"] = _productId;
     dic[@"page"] = @"1";
@@ -227,7 +227,6 @@
     DD_CHECK_HASLONGIN;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[@"productid"] = _model.productid;
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     if (!sender.selected) {
         //收藏

@@ -65,9 +65,7 @@
 // 数据
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     dic[@"token"] = Token;
-//    dic[@"token"] = @"d4668f7f74078e1aa211b97e06d2b4a7";
     dic[@"poolid"] = @"1";
     [ZP_MyTool requseMoreMore:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);

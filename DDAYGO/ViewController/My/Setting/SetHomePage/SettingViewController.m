@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "AddressViewController.h"
+#import "HomeViewController.h"
 #import "MyViewController.h"
 #import "BindingICUEViewController.h"
 #import "DialogBox.h"
@@ -27,6 +28,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *genderGail;
 @property (weak, nonatomic) IBOutlet UIButton *genderBooy;
 @property (nonatomic, strong)NSMutableArray * newsData;
+/** 调整是否为ICUE登录*/
+@property (weak, nonatomic) IBOutlet UIButton *IuceNumBut;
+@property (weak, nonatomic) IBOutlet UIButton *BangDingBut;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *BangDingLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *IcueNumLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *view3Layout;
 
 @property (nonatomic, strong)NSMutableDictionary * dataDic;
 
@@ -50,10 +57,7 @@
 //  数据
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
-    
-//    dic[@"nonce"] = @"adf";
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
@@ -91,8 +95,15 @@
 }
 
 - (void)fillData:(ZP_HomePageModel *)model{
+//     判断是否为ICUE登录
+    if (ZPICUEToken.length > 0) {
+        _BangDingLayout.constant = CGFLOAT_MIN;
+        _IcueNumLayout.constant = CGFLOAT_MIN;
+        _view3Layout.constant = 98.0;
+    }
+    
     [_headerImage sd_setImageWithURL:[NSURL URLWithString:model.avatarimg] placeholderImage:[UIImage imageNamed:@"HeadrImage"]];
-    _AccountNumber.text = model.realname; // 账号
+    _AccountNumber.text = model.email; // 账号
     _nicknameLabel.text = model.nickname; // 昵称
     _bindingEmailLabel.text = model.email;  // 邮箱
     _BindingICUELabel.text = model.icueaccount; // ICUE  不显示
@@ -256,6 +267,8 @@
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"symbol"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"countrycode"];
         [self.navigationController popViewControllerAnimated:YES];
+//        HomeViewController * Home = [[HomeViewController alloc]init];
+//        [self.navigationController pushViewController:Home animated:YES];
         NSLog(@"点击了确定按钮");
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
@@ -294,8 +307,6 @@
 - (NSMutableDictionary *)dataDic {
     if (!_dataDic) {
         _dataDic = [NSMutableDictionary dictionary];
-//        _dataDic[@"token"] = @"6a82c076d36524b8e7b8c2b8e3db37b1";
-//        _dataDic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
         _dataDic[@"token"] = Token;
     }
     return _dataDic;

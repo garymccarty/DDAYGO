@@ -100,8 +100,8 @@
                                     <color key="textColor" red="1" green="0.29717373609999997" blue="0.080588528029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111111111111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWS-ZI-z4H">
-                                    <rect key="frame" x="180" y="10" width="57.5" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWS-ZI-z4H">
+                                    <rect key="frame" x="180" y="10" width="6.5" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="4r8-XM-zoN"/>
                                     </constraints>
@@ -109,8 +109,8 @@
                                     <color key="textColor" red="1" green="0.29717373609999997" blue="0.080588528029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uz-ym-H0t">
-                                    <rect key="frame" x="240.5" y="10" width="10.5" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="彩金点数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uz-ym-H0t">
+                                    <rect key="frame" x="189.5" y="10" width="41" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="KFx-e0-8jI"/>
                                     </constraints>
@@ -927,7 +927,7 @@
                                 <constraint firstItem="plJ-Gj-weF" firstAttribute="leading" secondItem="2Wq-Qj-3dJ" secondAttribute="leading" constant="8" id="uj4-AM-AOd"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本期下注号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKT-fW-4fb">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本期填写号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKT-fW-4fb">
                             <rect key="frame" x="8" y="450" width="80" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="MgX-Wn-CFN"/>

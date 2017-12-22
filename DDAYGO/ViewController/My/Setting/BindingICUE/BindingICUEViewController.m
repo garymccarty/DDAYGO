@@ -37,7 +37,6 @@
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"icueaccount"] = _AccountnumbertextField.text;
     dic[@"pwd"] = _PassWordtextField.text;
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     ZPLog(@"%@",dic);
     [ZP_MyTool requestBindingICUE:dic success:^(id obj) {

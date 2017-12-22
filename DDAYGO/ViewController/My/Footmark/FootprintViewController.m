@@ -25,6 +25,7 @@
     [self.collectionView registerNib:[UINib nibWithNibName:@"FootprintCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"FootprintCollectionViewCell"];
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+//    self.collectionView.alwaysBounceVertical = YES;
     
 }
 
@@ -35,7 +36,6 @@
 
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
@@ -105,7 +105,6 @@
     }
     ZP_FootprintModel *model = self.newsData[btn.tag];
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-//    dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
     dic[@"token"] = Token;
     dic[@"historyid"] = model.historyid;
     [ZP_MyTool requtsDeleFootprint:dic success:^(id obj) {

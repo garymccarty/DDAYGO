@@ -51,7 +51,7 @@
 
 - (void)allData {
 //    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
-    NSDictionary * dict = @{@"count":@"5",@"countrycode":@"86"};
+    NSDictionary * dict = @{@"count":@"5",@"countrycode":@"886"};
     [ZP_HomeTool requestSellLikeHotCakes:dict success:^(id obj) {
         ZPLog(@"%@",obj);
         NSArray * arr = obj;

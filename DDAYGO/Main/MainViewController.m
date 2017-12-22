@@ -71,6 +71,7 @@
     //  主页
     
     Token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
+    ZPICUEToken = [[NSUserDefaults standardUserDefaults]objectForKey:@"icuetoken"];
     
     [self setupOneChirlVc:[[HomeViewController alloc] init] withImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_home_normal.png"] selImage:[UIImage imageNamedWithOriginalImage:@"ic_tab_home_pressed.png"] title:NSLocalizedString(@"Home", nil)];
     

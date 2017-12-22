@@ -90,7 +90,7 @@
                 //跳转到登录
                 LogregisterController * Login = [[LogregisterController alloc]init];
                 [homeVC pushViewController:Login animated:YES];
-                [SVProgressHUD showErrorWithStatus:@"denglu"];
+                [SVProgressHUD showErrorWithStatus:@"请登录"];
                 return NO;
                 
             }

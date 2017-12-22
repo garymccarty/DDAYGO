@@ -18,8 +18,7 @@ static AFHTTPSessionManager *_manager = nil;
     _manager.requestSerializer = [AFJSONRequestSerializer serializer];
 //    _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain", @"text/json", @"text/javascript", @"text/html",@"image/jpeg", nil];
-    NSString * tipCode = [UserDefultManage objectForKey:@"token"];
-    
+    NSString * tipCode = [UserDefultManage objectForKey:@"token"]; 
     if (tipCode.length >10) {
         
         [_manager.requestSerializer setValue:tipCode forHTTPHeaderField:@"token"];

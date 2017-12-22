@@ -41,7 +41,7 @@
        forToolbarPosition:UIToolbarPositionAny];
     //  添加button
     NSMutableArray * buttons = [[NSMutableArray alloc]initWithCapacity:1];
-    UIBarButtonItem * Instruction = [[UIBarButtonItem alloc]initWithTitle:@"下注" style:UIBarButtonItemStyleDone target:self action:@selector(Instruction)];
+    UIBarButtonItem * Instruction = [[UIBarButtonItem alloc]initWithTitle:@"提交" style:UIBarButtonItemStyleDone target:self action:@selector(Instruction)];
     Instruction.tintColor=[UIColor whiteColor];
     [buttons addObject:Instruction];
     [tools setItems:buttons animated:NO];
@@ -100,7 +100,7 @@
     
     //    元
     ZP_GeneralLabel * YuanLabel = [ZP_GeneralLabel initWithtextLabel:_YuanLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    YuanLabel.text = @"元";
+    YuanLabel.text = @"彩金點數";
     [myView addSubview:YuanLabel];
     [YuanLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(AmountLabel).offset(75);

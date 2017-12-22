@@ -7,14 +7,17 @@
 //
 
 #import "Const.h"
-/** Token */
+/**Token*/
 NSString * Token = nil;
+
+NSString * ZPICUEToken = nil;
 
 NSNumber * CountCode = nil;
 
 NSString * Symbol = nil;
 
 NSString * countrycode = nil;
+
 @implementation Const
 
 @end

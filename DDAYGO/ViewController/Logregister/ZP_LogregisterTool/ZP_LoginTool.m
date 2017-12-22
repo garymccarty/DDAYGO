@@ -90,10 +90,18 @@
     }];
 }
 
-// ICUE 登录
+// ICUE号首次登入（55）
 + (void)requsetICUELogin:(NSDictionary *)ICUELogin success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@icuelogin?acc=%@&pwd=%@",URLAPI,ICUELogin[@"acc"],ICUELogin[@"pwd"]] parameters:nil success:^(id responseObject) {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@icueloginfirst?acc=%@&pwd=%@&countrycode=%@",URLAPI,ICUELogin[@"acc"],ICUELogin[@"pwd"],ICUELogin[@"countrycode"]] parameters:nil success:^(id responseObject) {
         success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+// ICUE登入（如返回首次登入则调用55再请求）（58）
++ (void)requesForFirstTimeLogin:(NSDictionary *)ForFirstTimeLogin success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@icuelogin?acc=%@&pwd=%@",URLAPI,ForFirstTimeLogin[@"acc"],ForFirstTimeLogin[@"pwd"]] parameters:nil success:^(id responseObject) {
+        success (responseObject);
     } failure:^(NSError *error) {
         failure(error);
     }];
