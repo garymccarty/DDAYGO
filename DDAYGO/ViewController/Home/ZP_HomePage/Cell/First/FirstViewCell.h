@@ -13,4 +13,5 @@
 @property (nonatomic, copy) void(^firstBlock)(NSInteger tag);
 
 - (void)first:(NSArray *)sup;
+
 @end

@@ -8,6 +8,7 @@
 
 #import "FirstViewCell.h"
 #import "PrefixHeader.pch"
+#import "ZP_HomeTool.h"
 #import "UIButton+UIButtonImageWithLable.h"
 @implementation FirstViewCell
 
@@ -15,6 +16,7 @@
     self = [super initWithStyle:style reuseIdentifier:@"First"];
     if (self) {
         self.contentView.userInteractionEnabled = YES;
+        [self Alldata];
     }
     return self;
 }
@@ -57,6 +59,16 @@
     
 }
 
+- (void)Alldata {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"countrycode"] = @"886";
+    [ZP_HomeTool requesFirst:dic success:^(id obj) {
+        
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
 - (void)buttonType:(UIButton *)sender {
     
     self.firstBlock(sender.tag);

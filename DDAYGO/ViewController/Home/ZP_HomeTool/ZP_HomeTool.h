@@ -14,6 +14,9 @@
 
 // 获取国家列表
 + (void)requesPosition:(NSDictionary *)Position success:(void(^)(id obj))success failure:(void (^)(NSError *error))failure;
+//  获取首页八大分类
++ (void)requesFirst:(NSDictionary *)First success:(void (^)(id))success failure:(void (^)(NSError *))failure ;
+
 // 获取热销商品
 +(void)requestSellLikeHotCakes:(NSDictionary *)sd success:(void(^)(id obj))success failure:(void (^)(NSError *error))failure;
 
