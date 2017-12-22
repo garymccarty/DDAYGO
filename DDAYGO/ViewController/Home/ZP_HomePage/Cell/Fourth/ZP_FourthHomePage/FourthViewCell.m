@@ -100,6 +100,7 @@
 }
 // 数据
 - (void)allData {
+//    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
     NSDictionary * dict = @{@"count":@"5",@"countrycode":@"886"};
     [ZP_HomeTool requestSellLikeHotCakes:dict success:^(id obj) {
         NSArray * arr = obj;

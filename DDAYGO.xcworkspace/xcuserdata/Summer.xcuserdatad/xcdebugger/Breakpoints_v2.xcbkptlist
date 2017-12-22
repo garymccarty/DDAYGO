@@ -41,8 +41,8 @@
                   symbolName = "__30-[MyViewController autoLogin:]_block_invoke"
                   moduleName = "DDAYGO"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhangpeng/Desktop/%E4%BB%A3%E7%A0%81/DDAYGO/DDAYGO/ViewController/My/MyHomePage/MyViewController.m"
-                  timestampString = "535551726.893513"
+                  urlString = "file:///Users/Summer/Desktop/DDAYGO/DDAYGO/ViewController/My/MyHomePage/MyViewController.m"
+                  timestampString = "535562427.737993"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
@@ -56,8 +56,8 @@
                   symbolName = "__30-[MyViewController autoLogin:]_block_invoke_2"
                   moduleName = "DDAYGO"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zhangpeng/Desktop/%E4%BB%A3%E7%A0%81/DDAYGO/DDAYGO/ViewController/My/MyHomePage/MyViewController.m"
-                  timestampString = "535551726.894877"
+                  urlString = "file:///Users/Summer/Desktop/DDAYGO/DDAYGO/ViewController/My/MyHomePage/MyViewController.m"
+                  timestampString = "535562427.74196"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
@@ -65,6 +65,38 @@
                   offsetFromSymbolStart = "39">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DDAYGO/ViewController/Shopping/SureOrder/ConfirmViewController.m"
+            timestampString = "535562427.554584"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "-ConfirmData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DDAYGO/ViewController/Logregister/Login/LoginController.m"
+            timestampString = "535562427.554678"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "-allData"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

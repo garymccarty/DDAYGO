@@ -156,14 +156,17 @@
         AddAddressViewController *viewController = [[AddAddressViewController alloc] init];
         [self.navigationController pushViewController:viewController animated:YES];
         viewController.contentDic = @{@"asd":@(YES)};
+        
     } else {
         [self ConfirmData];
+        
     }
 }
 
 // 选择支付方式数据
 - (void)ConfirmData {
-    NSDictionary * dic = @{@"countrycode":CountCode};
+//    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
+    NSDictionary * dic = @{@"countrycode":@"886"};
     [ZP_shoopingTool requetMethodpay:dic success:^(id obj) {
         
         ConfirmPayView * PayView = [[ConfirmPayView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -177,6 +180,7 @@
             ZP_ConfirmPayModel * model = response;
             NSLog(@"payname = %@",model.payname);
             ZP_ComfirmModel *modell = _dataArrar[0];
+            
             NSMutableDictionary *dic =[NSMutableDictionary dictionary];
 //            dic[@"token"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
             dic[@"token"] = Token;

@@ -70,7 +70,13 @@
         NSLog(@"obj---%@",obj);
         NSDictionary * aadic = obj;
         Token = aadic[@"token"];
-        [[NSUserDefaults standardUserDefaults] setObject:Token forKey:@"token"];
+        [[NSUserDefaults standardUserDefaults] setObject:Token forKey:@"token"];// Token缓存本地
+        [[NSUserDefaults standardUserDefaults] synchronize]; // Token缓存本地
+    
+        [[NSUserDefaults standardUserDefaults] setObject:aadic[@"symbol"] forKey:@"symbol"]; // 台币缓存本地
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:aadic[@"countrycode"] forKey:@"countrycode"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
         [self.navigationController popToRootViewControllerAnimated:YES];

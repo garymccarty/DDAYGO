@@ -51,6 +51,7 @@
 //  点击确认按钮需要的参数
 - (void)btnClick {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+//    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
 //    dic[@"token"] = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     dic[@"token"] = Token;
 //    dic[@"token"] = @"ec77b922d25bb303f27f63d23de84f73";

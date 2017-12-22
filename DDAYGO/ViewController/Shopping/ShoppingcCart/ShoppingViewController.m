@@ -80,6 +80,7 @@
         
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服务器链接失败 ", nil)];
     }];
 }
 
@@ -176,7 +177,8 @@
     
 //    货币符号
     ZP_GeneralLabel * CurrencySymbolLabel = [ZP_GeneralLabel initWithtextLabel:_CurrencySymbolLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    CurrencySymbolLabel.text = @"RMB:";
+    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"symbol"];
+    CurrencySymbolLabel.text = [NSString stringWithFormat:@"%@:",str];
     [bottomView addSubview:CurrencySymbolLabel];
     [CurrencySymbolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(PriceLabel).offset(-35);
@@ -413,6 +415,7 @@
             NSLog(@"%@",obj);
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
+            [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服务器链接失败 ", nil)];
         }];
         }];
         [alert addAction:defaultAction];
@@ -649,6 +652,7 @@
                 }
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
+             [SVProgressHUD showInfoWithStatus:@"链接服务器失败"];
         }];
         
         [dataArray removeObjectAtIndex:indexPath.row];

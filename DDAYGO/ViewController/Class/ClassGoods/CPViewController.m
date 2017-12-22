@@ -178,7 +178,7 @@
 }
 //  数据
 - (void)allData {
-
+//    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
     NSDictionary * dic =@{@"fatherid":_fatherId,@"seq":@"desc",@"word":@"",@"countrycode":@"886",@"page":@"1",@"pagesize":@"10"};
     
     [ZP_ClassViewTool requMerchandise:dic WithIndex:0 success:^(id obj) {
@@ -209,6 +209,7 @@
     
 //    NSDictionary * dic =@{@"fatherid":_fatherId,@"seq":@"desc",@"word":@"",@"countrycode":@"886",@"page":@"1",@"pagesize":@"10"};
     NSMutableDictionary * dic  = [NSMutableDictionary dictionary];
+//    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
     dic[@"fatherid"] = _fatherId;
     dic[@"seq"] = @"desc";
     dic[@"word"] = @"";

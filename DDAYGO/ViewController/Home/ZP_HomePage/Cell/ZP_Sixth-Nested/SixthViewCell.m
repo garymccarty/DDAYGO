@@ -101,6 +101,7 @@
 }
 
 - (void)allData {
+//    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
     NSDictionary * dict = @{@"acount":@"5",@"countrycode":@"886"};
     [ZP_HomeTool requSelectLikeHotCakes:dict success:^(id obj) {
 //        NSLog(@"%@",dict[@""]);
