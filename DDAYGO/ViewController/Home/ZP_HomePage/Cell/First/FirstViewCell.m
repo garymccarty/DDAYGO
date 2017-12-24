@@ -10,6 +10,7 @@
 #import "PrefixHeader.pch"
 #import "ZP_HomeTool.h"
 #import "UIButton+UIButtonImageWithLable.h"
+#import "ZP_FirstModel.h"
 @implementation FirstViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -20,9 +21,21 @@
     }
     return self;
 }
-- (void)first:(NSString *)sup {
-    NSArray * arr = @[@"精选商品",@"热销商品",@"升级套餐",@"限时抢购",@"选商品",@"销商品",@"级套餐",@"更多"];
-    NSArray * arrar = @[@"button_7",@"button_1",@"button_2",@"button_4",@"button_5",@"button_6",@"button_4",@"button_3"];
+- (void)first:(NSArray *)sup {
+//    NSArray * arr = @[@"精选商品",@"热销商品",@"升级套餐",@"限时抢购",@"选商品",@"销商品",@"级套餐",@"更多"];
+    NSMutableArray *arr = [NSMutableArray array];
+    NSMutableArray *arrar = [NSMutableArray array];
+    NSMutableArray *arrid = [NSMutableArray array];
+    for (ZP_FirstModel *model in sup) {
+        [arr addObject:model.menuname];
+        [arrar addObject:[NSString stringWithFormat:@"http://www.ddaygo.com%@",model.imgurl]];
+        [arrid addObject:model.typeid];
+    }
+    
+//    NSArray * arrar = @[@"button_7",@"button_1",@"button_2",@"button_4",@"button_5",@"button_6",@"button_4",@"button_3"];
+    
+    
+    
     NSInteger num = 0;
     for (int z = 0; z <= 1; z ++) {
         UIView * view = [UIView new];
@@ -49,7 +62,8 @@
             }
             button.titleLabel.font = ZP_titleFont;
             [button setTitleColor:ZP_textblack forState:UIControlStateNormal];
-            button.tag = num;
+//            NSLog(@"%ld",num);
+            button.tag = [arrid[num] integerValue];
             [button addTarget:self action:@selector(buttonType:) forControlEvents:UIControlEventTouchUpInside];
             [button resizeWithDistance:10];
             [self.contentView addSubview:button];
@@ -63,14 +77,18 @@
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"countrycode"] = @"886";
     [ZP_HomeTool requesFirst:dic success:^(id obj) {
-        
+
+        NSArray *ARR = [ZP_FirstModel mj_objectArrayWithKeyValuesArray:obj];
+        [self first:ARR];
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
 }
+
+
 - (void)buttonType:(UIButton *)sender {
-    
+    NSLog(@"%ld",sender.tag);
     self.firstBlock(sender.tag);
 }
 

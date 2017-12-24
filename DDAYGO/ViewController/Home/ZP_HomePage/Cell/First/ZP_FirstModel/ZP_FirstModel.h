@@ -10,4 +10,11 @@
 
 @interface ZP_FirstModel : NSObject
 
+@property (nonatomic,strong) NSString *imgurl;
+@property (nonatomic,strong) NSNumber *countrycode;
+@property (nonatomic,strong) NSString *menuname;
+@property (nonatomic,strong) NSNumber *typeid;
+
+
+
 @end

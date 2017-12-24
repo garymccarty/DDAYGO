@@ -12,6 +12,7 @@
 #import "ZP_PositionModel.h"
 #import "DetailedController.h"
 #import "SelectedViewController.h"
+#import "CPViewController.h"
 @interface HomeViewController () <SDCycleScrollViewDelegate,UITableViewDelegate, UITableViewDataSource> {
     int _i;
     UIButton * _chooseCityBtn;
@@ -219,12 +220,12 @@
             static NSString * FirstID = @"First";
             FirstViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FirstID];
             cell.firstBlock = ^(NSInteger tag) {
-                SelectedViewController *viewController = [[SelectedViewController alloc] init];
-//                self.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:viewController animated:YES];
-//                self.hidesBottomBarWhenPushed = NO;
+                NSLog(@"id %ld",tag);
+                CPViewController * CVPView = [[CPViewController alloc]init];
+                CVPView.fatherId =[NSNumber numberWithInteger:tag];
+                [self.navigationController pushViewController:CVPView animated:YES];
             };
-            [cell first:A];
+//            [cell first:A];
             return cell;
     }else
         if (indexPath.section == 2){

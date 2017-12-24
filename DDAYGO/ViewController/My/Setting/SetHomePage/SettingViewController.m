@@ -34,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *BangDingLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *IcueNumLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *view3Layout;
+@property (weak, nonatomic) IBOutlet UIView *view1;
+@property (weak, nonatomic) IBOutlet UIView *view3;
 
 @property (nonatomic, strong)NSMutableDictionary * dataDic;
 
@@ -97,8 +99,11 @@
 - (void)fillData:(ZP_HomePageModel *)model{
 //     判断是否为ICUE登录
     if (ZPICUEToken.length > 0) {
+        
         _BangDingLayout.constant = CGFLOAT_MIN;
         _IcueNumLayout.constant = CGFLOAT_MIN;
+        _view1.hidden = YES;
+        _view3.hidden = YES;
         _view3Layout.constant = 100.0;
     }
     
