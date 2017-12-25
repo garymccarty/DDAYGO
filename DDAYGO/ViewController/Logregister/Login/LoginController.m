@@ -12,7 +12,7 @@
 #import "PrefixHeader.pch"
 #import "UINavigationBar+Awesome.h"
 #import "ZP_LoginTool.h"
-@interface LoginController ()<UITextFieldDelegate>
+@interface LoginController ()
 
 @property (weak, nonatomic) IBOutlet TextView * ZPEmailTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
@@ -26,13 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    _ZPEmailTextField.textField.delegate = self;
-    _ZPPswTextField.textField.delegate = self;
     self.title = NSLocalizedString(@"Login", nil) ;
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
-//    self.LoginscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
+    self.LoginscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
@@ -154,89 +152,21 @@
         [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_open.png"] forState:UIControlStateNormal];
     }
 }
-- (void)textFieldDidBeginEditing:(UITextField *)textField
 
-{
-    
-    NSLog(@"textFieldDidBeginEditing");
-    
-    CGRect frame = textField.frame;
-    
-    CGFloat heights = self.view.frame.size.height;
-    
-    // 当前点击textfield的坐标的Y值 + 当前点击textFiled的高度 - （屏幕高度- 键盘高度 - 键盘上tabbar高度）
-    
-    // 在这一部 就是了一个 当前textfile的的最大Y值 和 键盘的最全高度的差值，用来计算整个view的偏移量
-    
-    int offset = frame.origin.y + 42- ( heights - 216.0-35.0);//键盘高度216
-    
-    NSTimeInterval animationDuration = 0.30f;
-    
-    [UIView beginAnimations:@"ResizeForKeyBoard" context:nil];
-    
-    [UIView setAnimationDuration:animationDuration];
-    
-    float width = self.view.frame.size.width;
-    
-    float height = self.view.frame.size.height;
-    
-    if(offset > 0)
-        
-    {
-        
-        CGRect rect = CGRectMake(0.0f, -offset,width,height);
-        
-        self.view.frame = rect;
-        
-    }
-    
-    [UIView commitAnimations];
+//  键盘触摸
+- (void)touchesBegan {
+    UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //  设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //  将触摸事件添加到当前view
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     
 }
-
-/**
- 
- *  textField 取消选中状态
- 
- *
- 
- */
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-
-{
-    
-    NSLog(@"touchesBegan");
-    
-    [self.view endEditing:YES];
-    
-    NSTimeInterval animationDuration = 0.30f;
-    
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    
-    [UIView setAnimationDuration:animationDuration];
-    
-    CGRect rect = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
-    
-    self.view.frame = rect;
-    
-    [UIView commitAnimations];
-    
+// 触发事件
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
+    [_ZPEmailTextField resignFirstResponder];
+    [_ZPPswTextField resignFirstResponder];
 }
-////  键盘触摸
-//- (void)touchesBegan {
-//    UITapGestureRecognizer * tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
-//    //  设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
-//    tapGestureRecognizer.cancelsTouchesInView = NO;
-//    //  将触摸事件添加到当前view
-//    [self.view addGestureRecognizer:tapGestureRecognizer];
-//
-//}
-//// 触发事件
-//-(void)keyboardHide:(UITapGestureRecognizer*)tap{
-//    [_ZPEmailTextField resignFirstResponder];
-//    [_ZPPswTextField resignFirstResponder];
-//}
 
 //  MD5加密方法
 -(NSString *)md5:(NSString *)input {
