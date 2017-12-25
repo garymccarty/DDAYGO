@@ -31,11 +31,12 @@
 /** 调整是否为ICUE登录*/
 @property (weak, nonatomic) IBOutlet UIButton *IuceNumBut;
 @property (weak, nonatomic) IBOutlet UIButton *BangDingBut;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *BangDingLayout;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *IcueNumLayout;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *view3Layout;
-@property (weak, nonatomic) IBOutlet UIView *view1;
-@property (weak, nonatomic) IBOutlet UIView *view3;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * BangDingLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * IcueNumLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * view3Layout;
+@property (weak, nonatomic) IBOutlet UIView * view1;
+@property (weak, nonatomic) IBOutlet UIView * view3;
+@property (weak, nonatomic) IBOutlet UIView * DividingLineView; // 分割线
 
 @property (nonatomic, strong)NSMutableDictionary * dataDic;
 
@@ -49,11 +50,20 @@
     [self allData];
     self.title = NSLocalizedString(@"Setting", nil) ;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //     判断是否为ICUE登录
+    if (ZPICUEToken.length > 0) {
+        _BangDingLayout.constant = CGFLOAT_MIN;
+        _IcueNumLayout.constant = CGFLOAT_MIN;
+        _DividingLineView.hidden = YES;
+        _view1.hidden = YES;
+        _view3.hidden = YES;
+        _view3Layout.constant = 100.0;
+    }
+    
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];
 }
 //  数据
@@ -69,7 +79,8 @@
         model.nickname = obj[@"nickname"];
         model.realname = obj[@"realname"];
         model.icueaccount = obj[@"icueaccount"];
-        model.email = obj[@"emailverify"];
+        model.email = obj[@"email"];
+        model.emailverify = obj[@"emailverify"];
         model.introducer = obj[@"introducer"];
         
         self.dataDic[@"nickname"] = obj[@"nickname"];
@@ -80,10 +91,8 @@
         self.dataDic[@"address"] = obj[@"address"];
         
         if ([obj[@"sex"] isEqualToString:@"男"]) {
-//            [self genderBooy:_genderBooy];
             _genderBooy.selected = YES;
         }else{
-//            [self genderGail:_genderGail];
             _genderGail.selected = YES;
         }
         
@@ -91,29 +100,18 @@
         [self fillData:model];
         
     } failure:^(NSError * error) {
-//        ZPLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 
 - (void)fillData:(ZP_HomePageModel *)model{
-//     判断是否为ICUE登录
-    if (ZPICUEToken.length > 0) {
-        
-        _BangDingLayout.constant = CGFLOAT_MIN;
-        _IcueNumLayout.constant = CGFLOAT_MIN;
-        _view1.hidden = YES;
-        _view3.hidden = YES;
-        _view3Layout.constant = 100.0;
-    }
-    
+
     [_headerImage sd_setImageWithURL:[NSURL URLWithString:model.avatarimg] placeholderImage:[UIImage imageNamed:@"HeadrImage"]];
     _AccountNumber.text = model.email; // 账号
     _nicknameLabel.text = model.nickname; // 昵称
-    _bindingEmailLabel.text = model.email;  // 邮箱
-    _BindingICUELabel.text = model.icueaccount; // ICUE  不显示
-    _BindingIntroduce.text = model.introducer; // ICUE  不显示
-
+    _bindingEmailLabel.text = model.emailverify;  // 邮箱
+    _BindingICUELabel.text = model.icueaccount; // ICUE 绑定
+    _BindingIntroduce.text = model.introducer; // ICUE 介绍人
 }
 
 - (IBAction)touxiangAction:(id)sender {
@@ -148,6 +146,7 @@
 - (IBAction)zhanghaoAction:(id)sender {
     NSLog(@"账号");
 }
+
 //  修改昵称
 - (IBAction)nichengAction:(id)sender {
     
@@ -217,7 +216,6 @@
 
 //  收货地址
 - (IBAction)shdzAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     AddressViewController *viewController = [[AddressViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
@@ -226,21 +224,18 @@
 
 //  绑定ICUE
 - (IBAction)bdICUEAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     BindingICUEViewController *viewController = [[BindingICUEViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
 }
 //  绑定邮箱
 - (IBAction)BindingEmail:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     BindingEmailController * Email = [[BindingEmailController alloc]init];
     [self.navigationController pushViewController:Email animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
 }
 // 绑定推荐人
 - (IBAction)bdIntroduce:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     BindingIntroduce * introduce = [[BindingIntroduce alloc]init];
     [self.navigationController pushViewController:introduce animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
@@ -248,7 +243,6 @@
 
 //  修改密码
 - (IBAction)xgmmAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     ResetPasswordViewController *viewController = [[ResetPasswordViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
@@ -256,7 +250,6 @@
 }
 //  语言
 - (IBAction)languageAction:(id)sender {
-//    self.hidesBottomBarWhenPushed = YES;
     LanguageController * Language = [[LanguageController alloc]init];
     [self.navigationController pushViewController:Language animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
@@ -273,6 +266,8 @@
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"symbol"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"countrycode"];
+        ZPICUEToken = nil;
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"icuetoken"];
         [self.navigationController popViewControllerAnimated:YES];
 //        HomeViewController * Home = [[HomeViewController alloc]init];
 //        [self.navigationController pushViewController:Home animated:YES];

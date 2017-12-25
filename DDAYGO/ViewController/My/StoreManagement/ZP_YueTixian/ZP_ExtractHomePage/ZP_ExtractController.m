@@ -42,7 +42,9 @@
     dic[@"sid"] = _supplierId;
     dic[@"page"] = @"2";
     [ZP_MyTool requesWithdrawalRecord:dic uccess:^(id obj) {
-        ZPLog(@"%@",obj);
+        
+    ZPLog(@"%@",obj);
+        
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];

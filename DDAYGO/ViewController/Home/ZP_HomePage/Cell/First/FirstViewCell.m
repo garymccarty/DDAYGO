@@ -22,20 +22,16 @@
     return self;
 }
 - (void)first:(NSArray *)sup {
-//    NSArray * arr = @[@"精选商品",@"热销商品",@"升级套餐",@"限时抢购",@"选商品",@"销商品",@"级套餐",@"更多"];
     NSMutableArray *arr = [NSMutableArray array];
     NSMutableArray *arrar = [NSMutableArray array];
+
     NSMutableArray *arrid = [NSMutableArray array];
     for (ZP_FirstModel *model in sup) {
         [arr addObject:model.menuname];
-        [arrar addObject:[NSString stringWithFormat:@"http://www.ddaygo.com%@",model.imgurl]];
+        [arrar addObject:[NSString stringWithFormat:@"http://www.ddaygo.com%@",[model.imgurl stringByReplacingOccurrencesOfString:@"~" withString:@""]]];
         [arrid addObject:model.typeid];
     }
-    
-//    NSArray * arrar = @[@"button_7",@"button_1",@"button_2",@"button_4",@"button_5",@"button_6",@"button_4",@"button_3"];
-    
-    
-    
+
     NSInteger num = 0;
     for (int z = 0; z <= 1; z ++) {
         UIView * view = [UIView new];
@@ -51,21 +47,16 @@
         for (int i = 0; i <= 3; i ++) {
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * ZP_Width / 4 , z * ZP_Width / 4 , ZP_Width / 4 , ZP_Width / 4 )];
             button.backgroundColor = [UIColor whiteColor];
-            button.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 5, 0);
-            if (z == 0) {
-                [button setTitle:arr[i] forState:UIControlStateNormal];
-                [button setImage:[UIImage imageNamed:arrar[i]] forState:UIControlStateNormal];
-            }
-            if (z == 1) {
-                [button setTitle:arr[i + 4] forState:UIControlStateNormal];
-                [button setImage:[UIImage imageNamed:arrar[i + 4]] forState:UIControlStateNormal];
-            }
             button.titleLabel.font = ZP_titleFont;
             [button setTitleColor:ZP_textblack forState:UIControlStateNormal];
-//            NSLog(@"%ld",num);
+            if (z == 0) {
+                [self ZP_setButton:button ImageWithUrl:arrar[i] WithName:arr[i]];
+            }
+            if (z == 1) {
+                [self ZP_setButton:button ImageWithUrl:arrar[i+4] WithName:arr[i]];
+            }
             button.tag = [arrid[num] integerValue];
             [button addTarget:self action:@selector(buttonType:) forControlEvents:UIControlEventTouchUpInside];
-            [button resizeWithDistance:10];
             [self.contentView addSubview:button];
             num ++;
         }
@@ -91,5 +82,45 @@
     NSLog(@"%ld",sender.tag);
     self.firstBlock(sender.tag);
 }
+
+
+- (void)ZP_setButton:(UIButton *)btn ImageWithUrl:(NSString *)urlStr WithName:(NSString *)name{
+    
+    [[SDImageCache sharedImageCache] storeImage:btn.imageView.image forKey:urlStr toDisk:NO];
+    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:urlStr] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        // 主线程刷新UI
+        dispatch_async(dispatch_get_main_queue(), ^{
+            CGSize imagesize;
+            imagesize.height = ZP_Width/4-30;
+            imagesize.width = ZP_Width/4-30;
+            UIImage *image1 = [self imageWithImage:image scaledToSize:imagesize];
+            [btn setImage:image1 forState:UIControlStateNormal];
+            [btn setTitle:name forState:UIControlStateNormal];
+            btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 5, 0);
+            [btn resizeWithDistance:10];
+        });
+    }];
+}
+
+
+- (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize {
+    // Create a graphics image context
+    UIGraphicsBeginImageContext(newSize);
+    
+    // Tell the old image to draw in this new context, with the desired
+    // new size
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    
+    // Get the new image from the context
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // End the context
+    UIGraphicsEndImageContext();
+    
+    // Return the new image.
+    return newImage;
+}
+
+
 
 @end

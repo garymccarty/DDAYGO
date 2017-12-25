@@ -150,9 +150,8 @@
                 
                 [[NSUserDefaults standardUserDefaults] setObject:Token forKey:@"token"];// Token缓存本地
                 [[NSUserDefaults standardUserDefaults] setObject:ZPICUEToken forKey:@"icuetoken"];
-                [[NSUserDefaults standardUserDefaults] setObject:obj[@"symbol"] forKey:@"symbol"]; // 台币缓存本地
+                [[NSUserDefaults standardUserDefaults] setObject:obj[@"symbol"] forKey:@"symbol"]; // 货币符号缓存本地
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"countrycode"] forKey:@"countrycode"];  // 国别缓存本地
-                
                 [[NSUserDefaults standardUserDefaults] synchronize];  // 国别缓存本地
                 [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
@@ -184,7 +183,6 @@
             }
         }
     } failure:^(NSError * error) {
-//        ZPLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:@"网络连接失败"];
     }];
 }
@@ -199,23 +197,29 @@
     
     [ZP_HomeTool requesPosition:nil success:^(id obj) {
         NSArray * arr = [ZP_PositionModel arrayWithArray:obj];
-        //        ZPLog(@"%@",obj);
         PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
         [position Position:arr];
         position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
-
             CountCode = code;
-            // 接口55
-            [self ForFirstTimeLogin];
+#pragma make -- 提示框
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"地区一但设置成功无法更改！",nil) preferredStyle:UIAlertControllerStyleAlert];
+            
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                ZPLog(@"取消");
+        }];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        // 接口55
+        [self ForFirstTimeLogin];
+            }];
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
             
         };
         //  显示
         [position showInView:self.navigationController.view];
-        
     } failure:^(NSError *error) {
-        //        ZPLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:@"网络连接失败"];
-        
     }];
 }
 
@@ -231,6 +235,7 @@
 //}
 
 #pragma mark - 安全输入
+
 -(void)secureTextEntry {
     _ZPPswTextField.textField.secureTextEntry = !_ZPPswTextField.textField.secureTextEntry;
     
@@ -255,6 +260,7 @@
     [self.view addGestureRecognizer:tapGestureRecognizer];
     
 }
+
 // 触发事件
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
     [_ZPEmailTextField resignFirstResponder];

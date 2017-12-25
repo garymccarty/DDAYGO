@@ -154,7 +154,6 @@
 //  数据
 - (void)allData {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        NSLog(@"1.8");
         [self.tableView.mj_header endRefreshing];
         [self.tableView.mj_footer endRefreshing];
     });
@@ -163,7 +162,7 @@
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 #pragma mark -- tabeView delegate
@@ -200,7 +199,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray * A = @[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h"];
     NSArray * B = @[@"a",@"b",@"c",@"d"];
     NSArray * C = @[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j"];
     dataArray = @[@{@"title":NSLocalizedString( @"Best-selling products", nil)}];
@@ -209,9 +207,7 @@
         ZeroViewCell * cell = [tableView dequeueReusableCellWithIdentifier: ZeroID];
         cell.finishBlock = ^(id response) {
             DetailedController *viewController = [[DetailedController alloc] init];
-//            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:viewController animated:YES];
-//            self.hidesBottomBarWhenPushed = NO;
         };
         cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
         return cell;
@@ -225,7 +221,6 @@
                 CVPView.fatherId =[NSNumber numberWithInteger:tag];
                 [self.navigationController pushViewController:CVPView animated:YES];
             };
-//            [cell first:A];
             return cell;
     }else
         if (indexPath.section == 2){
@@ -246,9 +241,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             cell.ThirdBlock = ^(NSInteger tag){
                 DetailedController *viewController = [[DetailedController alloc] init];
-//                self.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:viewController animated:YES];
-//                self.hidesBottomBarWhenPushed = NO;
             };
             [cell Third:C];
             return cell;

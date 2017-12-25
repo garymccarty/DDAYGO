@@ -93,11 +93,8 @@
 - (BOOL)validateEmail:(NSString *)email {
     //     邮箱正则式
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    
     return [emailTest evaluateWithObject:email];
-    
 }
 
 //  键盘弹起

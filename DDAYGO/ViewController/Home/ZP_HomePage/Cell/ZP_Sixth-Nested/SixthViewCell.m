@@ -104,14 +104,12 @@
 //    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
     NSDictionary * dict = @{@"acount":@"5",@"countrycode":@"886"};
     [ZP_HomeTool requSelectLikeHotCakes:dict success:^(id obj) {
-//        NSLog(@"%@",dict[@""]);
         NSArray * arr = obj;
-//        NSLog(@"*%@",arr);
+        NSLog(@"%@",arr);
         self.newsData = [ZP_SixthModel arrayWithArray:arr];
-        
         [self.bottomCV reloadData];
     } failure:^(NSError *reeor) {
-//        NSLog(@"%@",reeor);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 

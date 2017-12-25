@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"ICUC绑定";
-    self.AccountnumbertextField.secureTextEntry = YES;
+//    self.AccountnumbertextField.secureTextEntry = YES;
     self.PassWordtextField.secureTextEntry = YES;
     self.AccountnumbertextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     self.PassWordtextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
@@ -28,7 +28,6 @@
 }
 
 - (IBAction)buildingAction:(id)sender {
-    
     
     [self allData];
 }
@@ -44,7 +43,6 @@
         if ([dic[@"result"] isEqualToString:@"ok"]) {
             ZPLog(@"加入成功");
             [SVProgressHUD showSuccessWithStatus:@"绑定成功"];
-//            [[DialogBox getInstance] showDialogBoxWithOperation:DDABuildingICUC FinishBlock:nil];
             [self.navigationController popViewControllerAnimated:YES];
         }else {
             if ([dic[@"result"]isEqualToString:@"icue_err：icue"]) {

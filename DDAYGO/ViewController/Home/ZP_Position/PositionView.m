@@ -40,7 +40,7 @@
  *  设置视图的基本内容
  */
 - (void)setupViews {
-    //  添加手势，点击背景视图消失
+//  添加手势，点击背景视图消失
     UITapGestureRecognizer *tapBackGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeView)];
     tapBackGesture.delegate = self;
     [self addGestureRecognizer:tapBackGesture];
@@ -51,13 +51,13 @@
     self.contentView = bounceView;
     [bounceView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
-        make.top.equalTo(self).offset(200);
+        make.top.equalTo(self).offset(150);
         make.right.equalTo(self).offset(-15);
-        make.bottom.equalTo(self).offset(-50);
+        make.bottom.equalTo(self).offset(-TabbarHeight);
         
     }];
     
-    //  标题
+//  标题
     UILabel * titleLabel = [UILabel new];
     titleLabel.textColor = [UIColor blackColor];
     titleLabel.textColor = ZP_textblack;
@@ -85,11 +85,11 @@
         if (i>0 && i%2==0) {
             z ++;
         }
-        UIView * view = [[UIView alloc]initWithFrame:CGRectMake((i-z*2) * (ZP_Width-40) / 2 + 5, z * 50 + 70, (ZP_Width-40) / 2 - 5, 1)];
+        UIView * view = [[UIView alloc]initWithFrame:CGRectMake((i-z*2) * (ZP_Width-40) / 2 + 5, z * 45 + 65, (ZP_Width-40) / 2 - 5, 1)];
         [view setBackgroundColor:ZP_DeepBlue];
         
         [self.contentView addSubview:view];
-        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake((i-z*2) * (ZP_Width -40) / 2 + 10 , z * 30 + 85, ZP_Width / 2- 30 , 50)];
+        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake((i-z*2) * ZP_Width / 2 + 10 , z * 45 + 70, ZP_Width / 2- 40 , 35)];
         btn.titleLabel.font = ZP_titleFont;
         [btn setTitleColor:ZP_textblack forState:UIControlStateNormal];
         
@@ -172,26 +172,6 @@
             btn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         });
     }];
-    
-    //    NSURL * url = [NSURL URLWithString:urlStr];
-    //    // 根据图片的url下载图片数据
-    //    dispatch_queue_t ZPQueue = dispatch_queue_create("loadImage", NULL); // 创建GCD线程队列
-    //    dispatch_async(ZPQueue, ^{
-    //
-    //        // 异步下载图片
-    //        UIImage * img = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-    //        // 主线程刷新UI
-    //        dispatch_async(dispatch_get_main_queue(), ^{
-    //            CGSize imagesize;
-    //            imagesize.height = 40;
-    //            imagesize.width = img.size.width/(img.size.height/40);
-    //            UIImage *image = [self imageWithImage:img scaledToSize:imagesize];
-    //            [btn setImage:image forState:UIControlStateNormal];
-    //            [btn setTitle:name forState:UIControlStateNormal];
-    //            btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    //            btn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
-    //        });
-    //    });
 }
 
 

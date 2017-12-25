@@ -80,7 +80,7 @@
         }
         
     } failure:^(NSError *error) {
-        NSLog(@"%@",error);
+//        NSLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服务器链接失败 ", nil)];
     }];
 }
@@ -126,7 +126,7 @@
 // UI
 - (void)initUI {
     
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 10, ZP_Width, ZP_height-TabbarHeight -50) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height-TabbarHeight -50) style:UITableViewStylePlain];
     self.tableView.backgroundColor = ZP_Graybackground;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -572,8 +572,8 @@
     [myView addSubview:view0];
     [view0 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(myView).offset(5);  // 左
-        make.right.equalTo(myView).offset(ZP_Width); // 长
-        make.bottom.equalTo(myView).offset(- 1); // 下
+        make.right.equalTo(myView).offset(ZP_Width - 5); // 长
+        make.bottom.equalTo(myView).offset(- 0); // 下
         make.height.mas_equalTo(1); // 高
     }];
     return myView;

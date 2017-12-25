@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController">
             <connections>
-                <outlet property="AccountNumber" destination="KlA-8m-EzM" id="qmz-Gj-TGi"/>
+                <outlet property="AccountNumber" destination="KlA-8m-EzM" id="R25-U6-5zH"/>
                 <outlet property="BangDingBut" destination="GTw-o1-YLZ" id="gTk-Vr-5sK"/>
                 <outlet property="BangDingLayout" destination="6Qi-LT-npZ" id="ZI5-5p-kVF"/>
-                <outlet property="BindingICUELabel" destination="4xT-zw-ycA" id="Iex-7F-UNK"/>
-                <outlet property="BindingIntroduce" destination="xDx-UY-EhQ" id="4ql-vb-M3j"/>
+                <outlet property="BindingICUELabel" destination="4xT-zw-ycA" id="oVE-nh-GK4"/>
+                <outlet property="BindingIntroduce" destination="xDx-UY-EhQ" id="ksL-vU-Y0P"/>
+                <outlet property="DividingLineView" destination="NFv-Zk-B9g" id="ip2-ab-S3S"/>
                 <outlet property="IcueNumLayout" destination="zhQ-iJ-ieF" id="FMF-oK-AMT"/>
                 <outlet property="IuceNumBut" destination="lIK-lF-bcl" id="kZr-1U-Riu"/>
                 <outlet property="PhotoImage" destination="VSQ-p6-o0u" id="jmm-m2-15b"/>
-                <outlet property="bindingEmailLabel" destination="Z6A-Ma-YCN" id="P37-nZ-tmN"/>
+                <outlet property="bindingEmailLabel" destination="Z6A-Ma-YCN" id="Zdz-4T-G6V"/>
                 <outlet property="genderBooy" destination="JlW-SS-5Mu" id="tqb-Ly-Fle"/>
                 <outlet property="genderGail" destination="e8s-H7-s4G" id="m5b-Eu-3EB"/>
                 <outlet property="headerImage" destination="VSQ-p6-o0u" id="GiR-qy-ri1"/>
-                <outlet property="nicknameLabel" destination="zHZ-mp-Ts3" id="eqz-E9-ftF"/>
+                <outlet property="nicknameLabel" destination="zHZ-mp-Ts3" id="o8S-aa-s3z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="view1" destination="j59-5c-d7A" id="FyV-hq-Gdb"/>
                 <outlet property="view3" destination="3LT-aI-Ujf" id="bIk-nn-20g"/>
@@ -302,9 +303,9 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xT-zw-ycA">
-                                            <rect key="frame" x="150" y="0.0" width="115" height="49"/>
+                                            <rect key="frame" x="122" y="0.0" width="143" height="49"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="115" id="c63-7f-uue"/>
+                                                <constraint firstAttribute="width" constant="143" id="c63-7f-uue"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -347,9 +348,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6A-Ma-YCN">
-                                            <rect key="frame" x="150" y="0.0" width="115" height="49"/>
+                                            <rect key="frame" x="122" y="0.0" width="143" height="49"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="115" id="0DD-jc-Rsw"/>
+                                                <constraint firstAttribute="width" constant="143" id="0DD-jc-Rsw"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -393,9 +394,9 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDx-UY-EhQ">
-                                            <rect key="frame" x="150" y="0.0" width="115" height="49"/>
+                                            <rect key="frame" x="122" y="0.0" width="143" height="49"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="115" id="Ypm-gn-sp7"/>
+                                                <constraint firstAttribute="width" constant="143" id="Ypm-gn-sp7"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>

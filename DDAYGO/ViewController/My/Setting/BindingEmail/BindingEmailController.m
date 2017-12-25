@@ -38,8 +38,8 @@
     _BinDing.layer.cornerRadius = 8.0;
     _BinDing.layer.masksToBounds = YES;
     
-    [_ZPCodeTextField.functionBtn addTarget:self action:@selector(getMSNCode) forControlEvents:UIControlEventTouchUpInside];
-    _ZPCodeTextField.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+//    [_ZPCodeTextField.functionBtn addTarget:self action:@selector(getMSNCode) forControlEvents:UIControlEventTouchUpInside];
+//    _ZPCodeTextField.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
 //    _ZPPswTextField.showBtn                    = NO;
 //    _ZPPswTextField.showEyeBtn                 = YES;
@@ -52,17 +52,17 @@
         [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
         return;
     }
-    if (_ZPCodeTextField.textField.text.length < 1) {
-        [SVProgressHUD showInfoWithStatus:@"验证码不能为空"];
-        ZPLog(@"请输入验证码");
-        return;
-    }
-    if (![_ZPCodeTextField.textField.text isEqualToString:_codeStr]) {
-        [SVProgressHUD showInfoWithStatus:@"请输入正确验证码"];
-        NSLog(@"请输入正确验证码");
-        return;
-    }
-    
+//    if (_ZPCodeTextField.textField.text.length < 1) {
+//        [SVProgressHUD showInfoWithStatus:@"验证码不能为空"];
+//        ZPLog(@"请输入验证码");
+//        return;
+//    }
+//    if (![_ZPCodeTextField.textField.text isEqualToString:_codeStr]) {
+//        [SVProgressHUD showInfoWithStatus:@"请输入正确验证码"];
+//        NSLog(@"请输入正确验证码");
+//        return;
+//    }
+//
     [self allData]; // 数据
 //    ZPLog(@"----");
 }
@@ -73,7 +73,7 @@
     dic[@"emailverify"] = _ZPEmailTextFiled.textField.text;
     [ZP_MyTool requesEmail:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
-        if ([dic[@"result"]isEqualToString:@"OK"]) {
+        if ([dic[@"result"]isEqualToString:@"ok"]) {
             [SVProgressHUD showSuccessWithStatus:@"绑定成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else
@@ -107,45 +107,45 @@
 }
 
 #pragma mark - - - - - - - - - - - - - - - event response 事件相应 - - - - - - - - - - - - - -
-- (void)getMSNCode{
-    if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
-        
-        [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
-        return;
-    }
-    
-    __weak typeof (self) WeakSelf = self;
-    [_ZPCodeTextField.functionBtn startWithTime:60 title:NSLocalizedString(@"重新获取", nil) titleColor:[UIColor whiteColor]countDownTitle:@"s" countDownTitleColor:[UIColor whiteColor] mainColor:ZP_PayColor countColor:ZP_PayColor];
-    [WeakSelf qurestCode];  // 开始获取验证码
-}
-
-//  发生网络请求 --> 获取验证码
-- (void)qurestCode {
-    ZPLog(@"发生网络请求 --> 获取验证码");
-    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
-    dict[@"email"] = _ZPEmailTextFiled.textField.text;
-    [ZP_MyTool requestVerificationcode:dict success:^(id obj) {
-        NSDictionary * dic = obj;
-        ZPLog(@"%@",dic);
-        if ([dic[@"result"] isEqualToString:@"ok"]) {
-            [SVProgressHUD showSuccessWithStatus:@"发送成功!"];
-            ZPLog(@"发送成功");
-            _codeStr = dic[@"code"];
-        }else {
-            if ([dic[@"result"] isEqualToString:@"email_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"邮箱已存在"];
-        }else {
-            if ([dic[@"result"] isEqualToString:@"Error"]) {
-                [SVProgressHUD showInfoWithStatus:@"已连接至火星"];
-                    
-                }
-            }
-        }
-    } failure:^(NSError * error) {
-        ZPLog(@"%@", error);
-    }];
-    
-}
+//- (void)getMSNCode{
+//    if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
+//
+//        [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
+//        return;
+//    }
+//
+//    __weak typeof (self) WeakSelf = self;
+//    [_ZPCodeTextField.functionBtn startWithTime:60 title:NSLocalizedString(@"重新获取", nil) titleColor:[UIColor whiteColor]countDownTitle:@"s" countDownTitleColor:[UIColor whiteColor] mainColor:ZP_PayColor countColor:ZP_PayColor];
+//    [WeakSelf qurestCode];  // 开始获取验证码
+//}
+//
+////  发生网络请求 --> 获取验证码
+//- (void)qurestCode {
+//    ZPLog(@"发生网络请求 --> 获取验证码");
+//    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+//    dict[@"email"] = _ZPEmailTextFiled.textField.text;
+//    [ZP_MyTool requestVerificationcode:dict success:^(id obj) {
+//        NSDictionary * dic = obj;
+//        ZPLog(@"%@",dic);
+//        if ([dic[@"result"] isEqualToString:@"ok"]) {
+//            [SVProgressHUD showSuccessWithStatus:@"发送成功!"];
+//            ZPLog(@"发送成功");
+//            _codeStr = dic[@"code"];
+//        }else {
+//            if ([dic[@"result"] isEqualToString:@"email_err"]) {
+//                [SVProgressHUD showInfoWithStatus:@"邮箱已存在"];
+//        }else {
+//            if ([dic[@"result"] isEqualToString:@"Error"]) {
+//                [SVProgressHUD showInfoWithStatus:@"已连接至火星"];
+//
+//                }
+//            }
+//        }
+//    } failure:^(NSError * error) {
+//        ZPLog(@"%@", error);
+//    }];
+//
+//}
 
 #pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -
 - (BOOL)validateEmail:(NSString *)email {

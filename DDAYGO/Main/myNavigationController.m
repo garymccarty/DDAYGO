@@ -35,7 +35,7 @@
         UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
         
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        dict[NSFontAttributeName] = [UIFont systemFontOfSize:18];
+        dict[NSFontAttributeName] = [UIFont systemFontOfSize:15];
         //        dict[NSForegroundColorAttributeName] = [UIColor colorWithHexString:mainFont];
         [navBar setTitleTextAttributes:dict];
         

@@ -21,6 +21,7 @@
         self.icueaccount = dic[@"icueaccount"];
         self.introducer = dic[@"introducer"];
         self.email = dic[@"email"];
+        self.emailverify = dic[@"emailverify"];
     }
     return self;
 }
@@ -42,6 +43,7 @@
         model.icueaccount = dic[@"icueaccount"];
         model.introducer = dic[@"introducer"];
         model.email = dic[@"email"];
+        model.emailverify = dic[@"emailverify"];
         [arr addObject:model];
     }
     return arr;
