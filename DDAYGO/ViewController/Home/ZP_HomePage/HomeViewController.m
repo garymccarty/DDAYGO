@@ -184,23 +184,16 @@
         }
     return 0;
 }
-// 组尾
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//
-//    if (section == 6) {
-//        return 25;
-//    }
-//    return 0;
-//}
+
 // cell个数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 7;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray * B = @[@"a",@"b",@"c",@"d"];
-    NSArray * C = @[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j"];
+//    NSArray * B = @[@"a",@"b",@"c",@"d"];
+//    NSArray * C = @[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j"];
     dataArray = @[@{@"title":NSLocalizedString( @"Best-selling products", nil)}];
     if (indexPath.section == 0) {
         static NSString * ZeroID = @"ceaa";
@@ -223,30 +216,30 @@
             };
             return cell;
     }else
+//        if (indexPath.section == 2){
+//            static NSString * SecondID = @"Secondcell";
+//            SecondViewCell * cell = [tableView dequeueReusableCellWithIdentifier: SecondID];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
+//            cell.SecondBlock = ^(NSInteger tag){
+//                DetailedController *viewController = [[DetailedController alloc] init];
+////                self.hidesBottomBarWhenPushed = YES;
+//                [self.navigationController pushViewController:viewController animated:YES];//                self.hidesBottomBarWhenPushed = NO;
+//            };
+//            [cell Second:B];
+//            return cell;
+//    }else
+//        if (indexPath.section == 3){
+//            static NSString * ThirdID = @"Thirdcell";
+//            ThirdViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ThirdID];
+//            cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
+//            cell.ThirdBlock = ^(NSInteger tag){
+//                DetailedController *viewController = [[DetailedController alloc] init];
+//                [self.navigationController pushViewController:viewController animated:YES];
+//            };
+//            [cell Third:C];
+//            return cell;
+//    }else
         if (indexPath.section == 2){
-            static NSString * SecondID = @"Secondcell";
-            SecondViewCell * cell = [tableView dequeueReusableCellWithIdentifier: SecondID];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
-            cell.SecondBlock = ^(NSInteger tag){
-                DetailedController *viewController = [[DetailedController alloc] init];
-//                self.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:viewController animated:YES];//                self.hidesBottomBarWhenPushed = NO;
-            };
-            [cell Second:B];
-            return cell;
-    }else
-        if (indexPath.section == 3){
-            static NSString * ThirdID = @"Thirdcell";
-            ThirdViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ThirdID];
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
-            cell.ThirdBlock = ^(NSInteger tag){
-                DetailedController *viewController = [[DetailedController alloc] init];
-                [self.navigationController pushViewController:viewController animated:YES];
-            };
-            [cell Third:C];
-            return cell;
-    }else
-        if (indexPath.section == 4){
             static NSString * FourthID = @"Fourthcell";
             FourthViewCell * cell = [tableView dequeueReusableCellWithIdentifier:FourthID];
             cell.FourthBlock = ^(NSInteger tag){
@@ -260,7 +253,7 @@
             [cell InformationWithDic:dic];
             return cell;
     }else
-        if (indexPath.section == 5){
+        if (indexPath.section ==3){
             static NSString * FifthID = @"ceaaa";
             FifthViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FifthID];
             cell.ThirdBlock = ^(NSInteger tag){
@@ -296,16 +289,16 @@
         if (indexPath.section ==1){
             return ZP_Width / 2;
     }else
+//        if (indexPath.section == 2){
+//            return ZP_Width;
+//    }else
+//        if (indexPath.section == 3){
+//            return 210;
+//    }else
         if (indexPath.section == 2){
-            return ZP_Width;
-    }else
-        if (indexPath.section == 3){
-            return 210;
-    }else
-        if (indexPath.section == 4){
             return 190;
     }else
-        if (indexPath.section == 5){
+        if (indexPath.section == 3){
             return ZP_Width / 4;
     }else {
         return ZP_Width / 3 * 2 + 35;
@@ -324,22 +317,22 @@
             
         }
             break;
+//        case 2:
+//        {
+//            
+//        }
+//            break;
+//        case 3:
+//        {
+//            
+//        }
+//            break;
         case 2:
         {
             
         }
             break;
         case 3:
-        {
-            
-        }
-            break;
-        case 4:
-        {
-            
-        }
-            break;
-        case 5:
         {
             
         }

@@ -324,7 +324,8 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.93323183059692383" green="0.9333917498588562" blue="0.93322181701660156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="dI8-bY-gfZ" secondAttribute="trailing" id="G9x-i4-wwG"/>
                         <constraint firstItem="mDy-f9-02s" firstAttribute="leading" secondItem="7k6-oe-5YX" secondAttribute="leading" id="HQy-EF-RsJ"/>
@@ -346,7 +347,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.1647058824" green="0.37254901959999998" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.99215686270000003" green="0.6588235294" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="TRP-HX-xQv" secondAttribute="bottom" id="EBs-Mg-kt5"/>
                 <constraint firstItem="TRP-HX-xQv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LAJ-YK-452"/>
@@ -354,7 +355,7 @@
                 <constraint firstAttribute="trailing" secondItem="TRP-HX-xQv" secondAttribute="trailing" id="Wld-vF-XTj"/>
             </constraints>
             <nil key="simulatedBottomBarMetrics"/>
-            <point key="canvasLocation" x="25.5" y="51.5"/>
+            <point key="canvasLocation" x="-19" y="25"/>
         </view>
     </objects>
     <resources>

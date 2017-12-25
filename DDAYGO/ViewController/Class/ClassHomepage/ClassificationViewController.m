@@ -23,7 +23,7 @@
 @property (assign ,nonatomic)NSInteger rightSelectRow;
 @property (nonatomic ,strong) NSMutableArray * newsData;
 @property (nonatomic, strong) NSMutableDictionary * rightData;
-@property (strong ,nonatomic)NSString *titleStr;
+@property (strong ,nonatomic)NSString * titleStr;
 
 @end
 
@@ -65,7 +65,7 @@
     self.rightSelectRow = sender.tag;
     [self.rightTableView reloadData];
 }
-
+// 数据
 - (void)allData {
     NSDictionary * dict = @{@"level":@"1",@"language":@"zh-tw"};
     [ZP_ClassViewTool requClassIfication:dict success:^(id obj) {

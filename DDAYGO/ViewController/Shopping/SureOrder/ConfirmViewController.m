@@ -263,10 +263,10 @@
         [self upfataStatisticsLabel];
         [self.tableView reloadData];
     } failure:^(NSError * error) {
-        
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
-// zongji
+// 总计金额
 - (void)upfataStatisticsLabel {
     float asd = 0.0;
     int qwe = 0;
@@ -291,7 +291,7 @@
         
         [self.tableView reloadData];
     } failure:^(NSError * error) {
-        
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 
