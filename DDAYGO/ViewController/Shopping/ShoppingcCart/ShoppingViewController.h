@@ -19,5 +19,6 @@
 @property (nonatomic, strong) UILabel * PriceLabel; // 总金额
 @property (nonatomic, strong) UIButton * ClearingButt; // 结算按钮
 //- (void)cellWithDic:(NSDictionary *)dic;  // 获取总金额
+@property (nonatomic, strong) UILabel * RemindLabel;
 
 @end

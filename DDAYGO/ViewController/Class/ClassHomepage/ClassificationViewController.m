@@ -75,6 +75,7 @@
         [self.leftTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
   }];
 }
 
@@ -86,6 +87,7 @@
         [self.rightTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 

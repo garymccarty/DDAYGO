@@ -59,6 +59,7 @@
         [self.bottomCV reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 

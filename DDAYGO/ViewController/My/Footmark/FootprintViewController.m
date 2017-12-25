@@ -40,9 +40,9 @@
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requtsFootprint:dic success:^(id obj) {
-        ZPLog(@"%@",obj);
         NSDictionary * dic = obj;
         self.newsData = [ZP_FootprintModel arrayWithArray:dic[@"historyslist"]];
+//       数据为空时提示
         if (self.newsData.count < 1) {
             UIImageView * image = [UIImageView new];
             image.image = [UIImage imageNamed:@"icon_fail"];

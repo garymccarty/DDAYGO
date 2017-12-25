@@ -86,13 +86,13 @@
 
 #pragma mark --
 - (void)FSSegmentTitleView:(FSSegmentTitleView *)titleView startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex {
-    NSLog(@"222 %ld- %ld",endIndex,startIndex);
+    NSLog(@"222 %ld- %ld",(long)endIndex,(long)startIndex);
     self.pageContentView.contentViewCurrentIndex = endIndex;
     //    self.title = self.titleView.titlesArr[endIndex];
 }
 
 - (void)FSContenViewDidEndDecelerating:(FSPageContentView *)contentView startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex {
-    NSLog(@"111 %ld- %ld",endIndex,startIndex);
+    NSLog(@"111 %ld- %ld",(long)endIndex,(long)startIndex);
     self.titleView.selectIndex = endIndex;
     //    self.title = self.titleView.titlesArr[endIndex];
 }

@@ -9,6 +9,7 @@
 #import "myNavigationController.h"
 #import "UIImage+Image.h"
 #import "UIViewController+Utit.h"
+#import "PrefixHeader.pch"
 #define AboveIOS9  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 @interface myNavigationController ()<UIGestureRecognizerDelegate>
 
@@ -32,10 +33,10 @@
 
 +(void)load {
     if (AboveIOS9) {
-        UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
+        UINavigationBar * navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
         
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        dict[NSFontAttributeName] = [UIFont systemFontOfSize:15];
+        NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+        dict[NSFontAttributeName] = ZP_addBtnTextdetaFont;
         //        dict[NSForegroundColorAttributeName] = [UIColor colorWithHexString:mainFont];
         [navBar setTitleTextAttributes:dict];
         

@@ -12,6 +12,8 @@
 @property (nonatomic, strong) NSString *titleStr;
 @property (nonatomic, assign) NSInteger num;
 
+@property (nonatomic, strong) UILabel * RemindLabel;
+
 @end
 
 

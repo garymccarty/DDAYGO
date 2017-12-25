@@ -88,11 +88,11 @@
 //        NSLog(@"请输入正确邮箱");
 //        return;
 //    }
-//    if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
-//        [SVProgressHUD showInfoWithStatus:@"密码必须大小写数字组合"];
-//        ZPLog(@"密码不足6位");
-//        return;
-//    }
+    if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
+        [SVProgressHUD showInfoWithStatus:@"密码必须大小写数字组合"];
+        ZPLog(@"密码不足8位");
+        return;
+    }
     if (_ZPCountryTextField.textField.text.length < 1) {
         [SVProgressHUD showInfoWithStatus:@"选择国家"];
         ZPLog(@"选择国家");
@@ -261,7 +261,6 @@
 - (BOOL)judgePassWordLegal:(NSString *)pass {
     
     BOOL result ;
-    
     // 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
     NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$";
     

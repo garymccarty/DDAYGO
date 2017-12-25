@@ -94,7 +94,7 @@
         NSLog(@"error = %@",error);
     }];
 }
-
+// UI
 - (void)initUI {
     [self.tableView registerNib:[UINib nibWithNibName:@"PayViewCell" bundle:nil] forCellReuseIdentifier:@"PayViewCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

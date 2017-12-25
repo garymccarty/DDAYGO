@@ -47,17 +47,17 @@
 
 //  登录
 - (IBAction)LoginClick:(id)sender {
-    if (_ZPEmailTextField.textField.text.length < 1) {
-        [SVProgressHUD showInfoWithStatus:@"邮箱不能为空"];
-    }
-    if (_ZPPswTextField.textField.text.length < 1) {
-        [SVProgressHUD showInfoWithStatus:@"密码不能为空"];
-    }
-    if (!_ProtocolBut.selected) {
-        [SVProgressHUD showInfoWithStatus:@"请选择同意用户协议协议"];
-        ZPLog(@"同意协议");
-        return;
-    }
+//    if (_ZPEmailTextField.textField.text.length < 1) {
+//        [SVProgressHUD showInfoWithStatus:@"邮箱不能为空"];
+//    }
+//    if (_ZPPswTextField.textField.text.length < 1) {
+//        [SVProgressHUD showInfoWithStatus:@"密码不能为空"];
+//    }
+//    if (!_ProtocolBut.selected) {
+//        [SVProgressHUD showInfoWithStatus:@"请选择同意用户协议协议"];
+//        ZPLog(@"同意协议");
+//        return;
+//    }
     
     [self AllData];
     ZPLog(@"数据");
@@ -202,7 +202,7 @@
         position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
             CountCode = code;
 #pragma make -- 提示框
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"地区一但设置成功无法更改！",nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"地区一但设置成功将无法更改！",nil) preferredStyle:UIAlertControllerStyleAlert];
             
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                 ZPLog(@"取消");

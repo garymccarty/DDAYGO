@@ -66,9 +66,29 @@
 }
 // 获取购物车数据
 - (void)allData {
-    //我说的是这里的token··如果用iuce 登录··用那一个
     [ZP_shoopingTool requesshoppingData:Token success:^(id obj) {
 //        ZPLog(@"%@",obj);
+//         数据为空时提示
+        if (dataArray.count < 1) {
+            UIImageView * image = [UIImageView new];
+            image.image = [UIImage imageNamed:@"icon_fail"];
+            [self.view addSubview:image];
+            [image mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
+                make.top.equalTo(self.view).offset(55);
+                make.width.mas_offset(50);
+                make.height.mas_equalTo(50);
+            }];
+            ZP_GeneralLabel * RemindLabel = [ZP_GeneralLabel initWithtextLabel:_RemindLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentCenter bakcgroundColor:nil];
+            RemindLabel.text = @"数据空空如也";
+            [self.view addSubview:RemindLabel];
+            [RemindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self.view).offset(ZP_Width / 2 -30);
+                make.top.equalTo(image).offset(55);
+                make.height.mas_offset(15);
+            }];
+        }
+        
         NSArray *arr = obj;
         if (arr.count > 0) {
             NSDictionary * dic = [obj firstObject];

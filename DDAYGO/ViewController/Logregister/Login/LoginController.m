@@ -52,8 +52,11 @@
 
 - (IBAction)LoginClick:(id)sender {
     if (![self validateEmail:_ZPEmailTextField.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
+        [SVProgressHUD showInfoWithStatus:@"账号格式不正确"];
         }
+    if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
+         [SVProgressHUD showInfoWithStatus:@"密码必须8-20位大小写数组组合"];
+    }
     [self allData];
 }
 
@@ -62,44 +65,47 @@
     dic[@"email"] = _ZPEmailTextField.textField.text;
     dic[@"pwd"] = [self md5:_ZPPswTextField.textField.text];
     dic[@"countrycode"] = CountCode;
-    
     NSLog(@"count %@",CountCode);
     
     [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"loginData"];
     [ZP_LoginTool requestLogin:dic success:^(id obj) {
         NSLog(@"obj---%@",obj);
+    if ([obj[@"result"]isEqualToString:@"ok"]) {
         NSDictionary * aadic = obj;
         Token = aadic[@"token"];
         [[NSUserDefaults standardUserDefaults] setObject:Token forKey:@"token"];// Token缓存本地
         [[NSUserDefaults standardUserDefaults] synchronize]; // Token缓存本地
-    
         [[NSUserDefaults standardUserDefaults] setObject:aadic[@"symbol"] forKey:@"symbol"]; // 台币缓存本地
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
         [[NSUserDefaults standardUserDefaults] setObject:aadic[@"countrycode"] forKey:@"countrycode"];  // 国别缓存本地
         [[NSUserDefaults standardUserDefaults] synchronize];  // 国别缓存本地
         [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
         [self.navigationController popToRootViewControllerAnimated:YES];
-        
-        
-//        if ([aadic[@"result"] isEqualToString:@"ok"]) {
-//            [ZP_LoginTool getAccountInfo:aadic[@"token"] success:^(id obj) {
-//                NSDictionary * tempDic = obj;
-//                NSDictionary *asdic = @{@"address":tempDic[@"address"],@"aid":tempDic[@"aid"],@"avatarimg":tempDic[@"avatarimg"],@"countrycode":tempDic[@"countrycode"],@"email":tempDic[@"email"],@"nickname":tempDic[@"nickname"],@"phone":tempDic[@"phone"],@"realname":tempDic[@"realname"],@"sex":tempDic[@"sex"],@"state":tempDic[@"state"],@"token":aadic[@"token"]};
-//                [[NSUserDefaults standardUserDefaults] setObject:asdic forKey:@"userInfo"];
-//                [[NSUserDefaults standardUserDefaults] setObject:aadic[@"token"] forKey:@"token"];
-//                [[NSUserDefaults standardUserDefaults] synchronize];
-//                DD_HASLOGIN = YES;
-//                [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
-//                [self.navigationController popToRootViewControllerAnimated:YES];
-//            } failure:^(NSError *error) {
-//                NSLog(@"%@",error);
-//            }];
-//        }else {
-//            if ([aadic[@"result"]isEqualToString:@"acc_pwd_err"]) {
-//                [SVProgressHUD showInfoWithStatus:@"邮箱或密码不正确"];
-//            }
-//        }
+    }else {
+        if ([obj[@"result"]isEqualToString:@"failure"]) {
+            [SVProgressHUD showInfoWithStatus:@"登陆失败"];
+        }else {
+            if ([obj[@"result"]isEqualToString:@"acc_pwd_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"账号或密码错误"];
+        }else {
+            if ([obj[@"result"]isEqualToString:@"acc_null_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"账号为空"];
+        }else {
+            if ([obj[@"result"]isEqualToString:@"pwd_null_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"密码为空"];
+        }else {
+            if ([obj[@"result"]isEqualToString:@"sys_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"系统错误"];
+        }else {
+            if ([obj[@"result"]isEqualToString:@"token_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"token 已存在"];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     } failure:^(NSError *error) {
         
         NSLog(@"%@",error);
@@ -122,6 +128,19 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     
     return [emailTest evaluateWithObject:email];
+    
+}
+- (BOOL)judgePassWordLegal:(NSString *)pass {
+    
+    BOOL result ;
+    // 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
+    NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$";
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    
+    result = [pred evaluateWithObject:pass];
+    
+    return result;
     
 }
 

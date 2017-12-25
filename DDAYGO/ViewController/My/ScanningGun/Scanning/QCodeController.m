@@ -50,7 +50,6 @@
 
 #pragma mark 初始化扫描
 - (void)InitScan {
-    
 //    创建扫描边框
     // 创建扫描边框
     self.scanningView = [[QRCodeReaderView alloc] initWithFrame:self.view.frame outsideViewLayer:self.view.layer];
@@ -89,26 +88,30 @@
     [_session setSessionPreset:AVCaptureSessionPresetHigh];
     
     // 5.1 添加会话输入
-    [_session addInput:input];
-    
-    // 5.2 添加会话输出
-    [_session addOutput:output];
-    
-    // 6、设置输出数据类型，需要将元数据输出添加到会话后，才能指定元数据类型，否则会报错
-    // 设置扫码支持的编码格式(如下设置条形码和二维码兼容)
-    output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,  AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
-    
-    // 7、实例化预览图层, 传递_session是为了告诉图层将来显示什么内容
-    self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
-    _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    _previewLayer.frame = self.view.layer.bounds;
-    
-    // 8、将图层插入当前视图
-    [self.view.layer insertSublayer:_previewLayer atIndex:0];
-    
-    // 9、启动会话
-    [_session startRunning];
+    if (input == nil) {
+        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"相机不可使用", nil)];
+//        [self.navigationController popViewControllerAnimated:YES];
+    }else {
+        [_session addInput:input];
+        // 5.2 添加会话输出
+        [_session addOutput:output];
+        // 6、设置输出数据类型，需要将元数据输出添加到会话后，才能指定元数据类型，否则会报错
+        // 设置扫码支持的编码格式(如下设置条形码和二维码兼容)
+        output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,  AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
+        
+        // 7、实例化预览图层, 传递_session是为了告诉图层将来显示什么内容
+        self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
+        _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        _previewLayer.frame = self.view.layer.bounds;
+        
+        // 8、将图层插入当前视图
+        [self.view.layer insertSublayer:_previewLayer atIndex:0];
+        
+        // 9、启动会话
+        [_session startRunning];
+    }
 }
+
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     // 会频繁的扫描，调用代理方法
     // 1. 如果扫描完成，停止会话
