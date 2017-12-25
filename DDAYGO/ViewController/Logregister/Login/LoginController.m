@@ -27,6 +27,7 @@
     [super viewDidLoad];
     [self initUI];
     self.title = NSLocalizedString(@"Login", nil) ;
+    
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.LoginscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
@@ -43,10 +44,10 @@
     _LoginBtn.layer.cornerRadius             = 8.0;
     _LoginBtn.layer.masksToBounds            = YES;
     
-    _ZPEmailTextField.textField.keyboardType = UIKeyboardTypeEmailAddress;
-    
+    _ZPEmailTextField.textField.keyboardType =  UIKeyboardTypeEmailAddress;
     _ZPPswTextField.showBtn                  = NO;
     _ZPPswTextField.showEyeBtn               = YES;
+    _ZPPswTextField.textField.keyboardType = UIKeyboardTypeDefault;
     [_ZPPswTextField.functionBtn addTarget:self action:@selector(secureTextEntry) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -54,9 +55,6 @@
     if (![self validateEmail:_ZPEmailTextField.textField.text]) {
         [SVProgressHUD showInfoWithStatus:@"账号格式不正确"];
         }
-    if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
-         [SVProgressHUD showInfoWithStatus:@"密码必须8-20位大小写数组组合"];
-    }
     [self allData];
 }
 

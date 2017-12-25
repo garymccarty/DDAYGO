@@ -13,7 +13,8 @@
 @property (strong, nonatomic) IBOutlet UIScrollView * AddAddressScrollView;
 @property (weak, nonatomic) IBOutlet UITextField * ContactpersonTextField; //联系人
 @property (weak, nonatomic) IBOutlet UITextField * ContactnumberTextField; // 联系电话
-@property (weak, nonatomic) IBOutlet UITextField * ReceivingareaTextField; // 收货地区
+//@property (weak, nonatomic) IBOutlet UITextField * ReceivingareaTextField; // 收货地区
+@property (weak, nonatomic) IBOutlet UILabel * regionLabel; // 地區Label
 @property (weak, nonatomic) IBOutlet UITextField * ReceivingaddressTextField; //收货地址
 @property (weak, nonatomic) IBOutlet UITextField * ZipcodeaddressTextField;  // 邮编
 @property (nonatomic, strong) NSNumber * oid;

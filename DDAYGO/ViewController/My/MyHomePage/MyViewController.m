@@ -301,6 +301,9 @@
 
 // 彩票
 - (IBAction)CaipiaoAction:(id)sender {
+#pragma make -- 提示框
+//    [SVProgressHUD showInfoWithStatus:@"暂时未到开放日期"];
+    
     LotteryController * Lottery = [[LotteryController alloc]init];
     [self.navigationController pushViewController:Lottery animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil]; // 隐藏返回按钮上的文字

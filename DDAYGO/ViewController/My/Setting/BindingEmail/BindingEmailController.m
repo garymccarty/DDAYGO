@@ -37,7 +37,7 @@
     
     _BinDing.layer.cornerRadius = 8.0;
     _BinDing.layer.masksToBounds = YES;
-    
+    _ZPEmailTextFiled.textField.keyboardType = UIKeyboardTypeEmailAddress;
 //    [_ZPCodeTextField.functionBtn addTarget:self action:@selector(getMSNCode) forControlEvents:UIControlEventTouchUpInside];
 //    _ZPCodeTextField.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     

@@ -55,13 +55,14 @@
 //    [_ZPCodeTextField.functionBtn addTarget:self action:@selector(getMSNCode) forControlEvents:UIControlEventTouchUpInside];
 //    _ZPCodeTextField.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
-    
+    _ZPAccountNumberTextFiled.textField.keyboardType = UIKeyboardTypeNamePhonePad;
     [_ZPCountryTextField.functionBtn setTitle:@"点击选择" forState:UIControlStateNormal];
     [_ZPCountryTextField.functionBtn addTarget:self action:@selector(choseCountry) forControlEvents:UIControlEventTouchUpInside];
     _ZPCountryTextField.textField.delegate = self;
     
     _ZPPswTextField.showBtn                    = NO;
     _ZPPswTextField.showEyeBtn                 = YES;
+    _ZPPswTextField.textField.keyboardType = UIKeyboardTypeNamePhonePad;
     [_ZPPswTextField.functionBtn addTarget:self action:@selector(secureTextEntry) forControlEvents:UIControlEventTouchUpInside];
     
 }
@@ -78,7 +79,7 @@
 //        ZPLog(@"请输入验证码");
 //        return;
 //    }
-    if (_ZPPswTextField.textField.text.length < 6||_ZPPswTextField.textField.text.length >20) {
+    if (_ZPPswTextField.textField.text.length < 8||_ZPPswTextField.textField.text.length >20) {
         [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于20"];
         ZPLog(@"密码不足6位");
         return;
@@ -89,7 +90,7 @@
 //        return;
 //    }
     if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"密码必须大小写数字组合"];
+        [SVProgressHUD showInfoWithStatus:@"密码必须8-20大小写数字组合"];
         ZPLog(@"密码不足8位");
         return;
     }

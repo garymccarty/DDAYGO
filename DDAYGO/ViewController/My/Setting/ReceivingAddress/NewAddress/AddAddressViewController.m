@@ -18,14 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _ContactnumberTextField.keyboardType = UIKeyboardTypeNumberPad;
+    
+    _ZipcodeaddressTextField.keyboardType = UIKeyboardTypeNumberPad;
     [self touchesBegan]; //触摸事件
+//    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countCode"];
+//    _regionLabel.text = [NSString stringWithFormat:@"%@",str];
 }
 
 - (void)setContentDic:(NSDictionary *)contentDic {
     if (contentDic) {
         self.title = NSLocalizedString(@"新增地址", nil);
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveAddress)];
+        UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveAddress)];
         self.navigationItem.rightBarButtonItem = item;
         [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
         self.AddAddressScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
@@ -50,8 +55,10 @@
     dic[@"isdefault"] = [NSNumber numberWithBool: _acquiescence.selected];
     dic[@"token"] = Token;
     ZPLog(@"%@",dic);
+    
     [ZP_MyTool requesnewAaddress:dic success:^(id obj) {
         NSDictionary * dic = obj;
+        
         ZPLog(@"%@",obj);
         if ([dic[@"result"] isEqualToString:@"ok"]) {
             ZPLog(@"加入成功");
@@ -98,7 +105,7 @@
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
     [_ContactpersonTextField resignFirstResponder];
     [_ContactnumberTextField resignFirstResponder];
-    [_ReceivingareaTextField resignFirstResponder];
+//    [_ReceivingareaTextField resignFirstResponder];
     [_ReceivingaddressTextField resignFirstResponder];
     [_ZipcodeaddressTextField resignFirstResponder];
 }

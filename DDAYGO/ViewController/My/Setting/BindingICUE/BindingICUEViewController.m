@@ -21,6 +21,8 @@
     self.title = @"ICUC绑定";
 //    self.AccountnumbertextField.secureTextEntry = YES;
     self.PassWordtextField.secureTextEntry = YES;
+//    _AccountnumbertextField.textField.keyboardType = UIKeyboardTypeNamePhonePad;
+    _AccountnumbertextField.keyboardType = UIKeyboardTypeASCIICapable;
     self.AccountnumbertextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     self.PassWordtextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
@@ -31,6 +33,7 @@
     
     [self allData];
 }
+
 // 数据
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
