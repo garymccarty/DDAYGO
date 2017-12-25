@@ -89,7 +89,7 @@
         [view setBackgroundColor:ZP_DeepBlue];
         
         [self.contentView addSubview:view];
-        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake((i-z*2) * (ZP_Width -40) / 2 + 10 , z * 30 + 85, ZP_Width / 2- 30 , z * 30 + 30)];
+        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake((i-z*2) * (ZP_Width -40) / 2 + 10 , z * 30 + 85, ZP_Width / 2- 30 , 50)];
         btn.titleLabel.font = ZP_titleFont;
         [btn setTitleColor:ZP_textblack forState:UIControlStateNormal];
         

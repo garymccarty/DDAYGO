@@ -13,7 +13,7 @@
 static AFHTTPSessionManager *_manager = nil;
 
 //get请求
-+ (void)GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSDictionary *))success failure:(void (^)(NSError *))failure{
++ (void)GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(id ))success failure:(void (^)(NSError *))failure {
     _manager = [AFHTTPSessionManager manager];
     _manager.requestSerializer = [AFJSONRequestSerializer serializer];
 //    _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -26,9 +26,10 @@ static AFHTTPSessionManager *_manager = nil;
 
     [_manager GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
         
-    } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  responseObject) {
         if (success) {
             
+//            success(responseObject);
             success(responseObject);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

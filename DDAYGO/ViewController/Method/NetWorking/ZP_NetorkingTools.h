@@ -10,7 +10,7 @@
 
 @interface ZP_NetorkingTools : NSObject
 // GET
-+ (void)GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(NSDictionary *responseObject))success failure:(void (^)(NSError *error))failure;
++ (void)GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(id ))success failure:(void (^)(NSError *))failure;
 
 //  POST
 + (void)POST:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
