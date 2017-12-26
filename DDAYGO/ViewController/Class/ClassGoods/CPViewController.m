@@ -55,6 +55,7 @@
 //    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
     self.title = _titleString;
+//    self.title = _tagid;
     [self allData];
     [self addRefresh];
 }

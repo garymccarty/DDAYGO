@@ -244,7 +244,8 @@
                 ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
                 cell.buttom.selected = sender.selected;
                 
-            }else {
+            }
+            else {
                 EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
                 cell.button.selected = sender.selected;
             }

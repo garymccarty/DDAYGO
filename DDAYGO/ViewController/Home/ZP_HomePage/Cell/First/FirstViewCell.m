@@ -77,17 +77,16 @@
     }];
 }
 
-
 - (void)buttonType:(UIButton *)sender {
     NSLog(@"%ld",sender.tag);
     self.firstBlock(sender.tag);
 }
 
 
-- (void)ZP_setButton:(UIButton *)btn ImageWithUrl:(NSString *)urlStr WithName:(NSString *)name{
+- (void)ZP_setButton:(UIButton *)btn ImageWithUrl:(NSString *)urlStr WithName:(NSString *)name {
     
     [[SDImageCache sharedImageCache] storeImage:btn.imageView.image forKey:urlStr toDisk:NO];
-    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:urlStr] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:urlStr] options:0 progress:nil completed:^(UIImage * image, NSError * error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         // 主线程刷新UI
         dispatch_async(dispatch_get_main_queue(), ^{
             CGSize imagesize;

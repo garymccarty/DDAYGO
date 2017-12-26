@@ -24,7 +24,7 @@
 +(void)requClassIficationrj:(NSDictionary *)dflrj success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@%@", URLAPI, AdvertisingAPI] parameters:dflrj success:^(NSDictionary *responseObject) {
         success(responseObject);
-        
+        NSLog(@"%@",responseObject);
     } failure:^(NSError *error) {
         failure(error);
     }];

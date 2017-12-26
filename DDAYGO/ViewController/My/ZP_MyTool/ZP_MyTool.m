@@ -230,7 +230,6 @@
         }];
 }
 
-
 // 邮箱验证
 + (void)requesEmail:(NSDictionary *)Email uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@getemailverify?token=%@&emailverify=%@",URLAPI,Email[@"token"],Email[@"emailverify"]] parameters:nil success:^(id responseObject) {
@@ -240,18 +239,12 @@
     }];
 }
 
-// 验证码
-+ (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@sendvercode?email=%@",URLAPI,Yzm[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
-        
-        success(responseObject);
-        
-        ZPLog(@"%@",responseObject);
-        
+// 修改密码
++ (void)requestRestPassword:(NSDictionary *)RestPassword success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updatepassword?token=%@&opwd=%@&npwd=%@",URLAPI,RestPassword[@"tokem"],RestPassword[@"opwd"],RestPassword[@"npwd"]] parameters:nil success:^(id responseObject) {
+        success(RestPassword);
     } failure:^(NSError *error) {
-//        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
-        
+        failure(error);
     }];
 }
 

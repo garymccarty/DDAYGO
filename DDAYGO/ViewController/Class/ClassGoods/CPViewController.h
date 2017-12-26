@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) NSNumber * fatherId;
 @property (nonatomic, copy) NSString * titleString;
+//@property (nonatomic, strong) NSString * tagid;
 
 @property (nonatomic, strong) UILabel * RemindLabel;
 @end

@@ -74,6 +74,8 @@
 + (void)requesEmail:(NSDictionary *)Email uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 验证码
-+ (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure;
++ (void)requestRestPassword:(NSDictionary *)RestPassword success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+
 @end
 
