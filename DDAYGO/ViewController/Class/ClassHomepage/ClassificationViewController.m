@@ -82,9 +82,9 @@
 
 //  数据（右边）
 - (void)getRightItemDataWithProducttypeid:(NSInteger)producttypeid {
-    
     NSDictionary * dictt = @{@"level":@"2",@"language":@"zh-tw",@"fatherid":[NSNumber numberWithInteger:producttypeid]};
     [ZP_ClassViewTool requClassIficationrj:dictt success:^(id obj) {
+        ZPLog(@"%@",obj);
         NSArray * arr = obj;
         [self.rightData setObject:[ZP_RightModel arrayWithArray:arr] forKey:@(producttypeid)];
         [self.rightTableView reloadData];
@@ -99,14 +99,15 @@
     if (tableView == self.leftTableView) {
         return self.newsData.count;
     } else {
-        NSArray *array = self.rightData[@(self.leftSelectRow)];
+        NSArray * array = self.rightData[@(self.leftSelectRow)];
         return array.count;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (tableView == self.leftTableView) {
-        LeftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LeftTableViewCell"];
+        LeftTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"LeftTableViewCell"];
         [cell updateData:self.newsData[indexPath.row]];
         cell.contentBtn.tag = indexPath.row;
         [cell.contentBtn removeTarget:self action:@selector(selectLeftCell:) forControlEvents:UIControlEventTouchUpInside];
