@@ -58,7 +58,8 @@
 //    [_ZPCodeTextField.functionBtn addTarget:self action:@selector(getMSNCode) forControlEvents:UIControlEventTouchUpInside];
 //    _ZPCodeTextField.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
-    _ZPAccountNumberTextFiled.textField.keyboardType = UIKeyboardTypeNamePhonePad;
+    _ZPAccountNumberTextFiled.textField.keyboardType = UIKeyboardTypeASCIICapable;
+    _ZPEmailTextFiled.textField.keyboardType = UIKeyboardTypeASCIICapable;
     [_ZPCountryTextField.functionBtn setTitle:@"点击选择" forState:UIControlStateNormal];
     [_ZPCountryTextField.functionBtn addTarget:self action:@selector(choseCountry) forControlEvents:UIControlEventTouchUpInside];
     _ZPCountryTextField.textField.delegate = self;

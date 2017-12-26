@@ -79,11 +79,9 @@
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="42"/>
+                                            <integer key="value" value="35"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="5"/>
-                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70f-JJ-vAZ">

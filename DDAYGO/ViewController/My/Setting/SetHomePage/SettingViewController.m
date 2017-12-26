@@ -47,13 +47,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setHead];
-    [self allData];
     self.title = NSLocalizedString(@"Setting", nil) ;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+     [self allData];
     //     判断是否为ICUE登录
     if (ZPICUEToken.length > 0) {
         _BangDingLayout.constant = CGFLOAT_MIN;
@@ -156,13 +156,13 @@
                 ZPLog(@"%@",obj);
                 if ([obj[@"result"]isEqualToString:@"ok"]) {
                     [SVProgressHUD showSuccessWithStatus:@"修改成功"];
-                    
                 }else
                     if ([obj[@"result"]isEqualToString:@"sys_error"]) {
                         [SVProgressHUD showInfoWithStatus:@"修改失败"];
                     }
                 NSLog(@"xiugai success");
                 self.nicknameLabel.text = (NSString *)response;
+                [self allData]; //刷新表格里面的数据
             } failure:^(NSError * error) {
                 ZPLog(@"%@",error);
 //                [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];

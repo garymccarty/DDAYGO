@@ -49,7 +49,7 @@
     _LoginBtn.layer.cornerRadius             = 8.0;
     _LoginBtn.layer.masksToBounds            = YES;
     
-    _ZPEmailTextField.textField.keyboardType =  UIKeyboardTypeEmailAddress;
+    _ZPEmailTextField.textField.keyboardType =  UIKeyboardTypeASCIICapable;
     _ZPPswTextField.showBtn                  = NO;
     _ZPPswTextField.showEyeBtn               = YES;
     _ZPPswTextField.textField.keyboardType = UIKeyboardTypeDefault;

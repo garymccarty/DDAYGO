@@ -35,12 +35,10 @@
 
 - (void)initUI {
     self.title = NSLocalizedString(@"ICUE登录", nil);
-    self.QuickLoginscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
-    
+    self.QuickLoginscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐
     _LoginBtn.layer.cornerRadius             = 8.0;
     _LoginBtn.layer.masksToBounds            = YES;
-    
-    _ZPEmailTextField.textField.keyboardType = UIKeyboardTypeNamePhonePad;
+    _ZPEmailTextField.textField.keyboardType = UIKeyboardTypeASCIICapable;
     
     _ZPPswTextField.showBtn                  = NO;
     _ZPPswTextField.showEyeBtn               = YES;
@@ -70,7 +68,6 @@
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"acc"] = _ZPEmailTextField.textField.text;
     dic[@"pwd"] = _ZPPswTextField.textField.text;
-    
     [ZP_LoginTool requesForFirstTimeLogin:dic success:^(id obj) {
         NSDictionary * adic = obj;
         ZPLog(@"%@",obj);
@@ -81,7 +78,6 @@
             if ([adic[@"result"]isEqualToString:@"ok"]) {
                 Token = obj[@"token"];
                 ZPICUEToken = obj[@"icuetoken"];
-                
                 [[NSUserDefaults standardUserDefaults] setObject:Token forKey:@"token"];// Token缓存本地
                 [[NSUserDefaults standardUserDefaults] setObject:ZPICUEToken forKey:@"icuetoken"];
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"symbol"] forKey:@"symbol"]; // 台币缓存本地
@@ -89,37 +85,30 @@
                 [[NSUserDefaults standardUserDefaults] synchronize];  // 国别缓存本地
                 [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
-                
-                [self.navigationController popToRootViewControllerAnimated:YES];
-        }else {
+        }else
             if ([adic[@"result"]isEqualToString:@"failure"]) {
                 [SVProgressHUD showInfoWithStatus:@"登陆失败"];
-        }else {
+        }else
             if ([adic[@"result"]isEqualToString:@"acc_pwd_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"账号或密码错误"];
-        }else {
+        }else
             if ([adic[@"result"]isEqualToString:@"acc_null_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"账号为空"];
-        }else {
+        }else
             if ([adic[@"result"]isEqualToString:@"pwd_null_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"密码为空"];
-        }else {
+        }else
             if ([adic[@"result"]isEqualToString:@"sys_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"系统错误"];
-        }else {
+        }else
             if ([adic[@"result"]isEqualToString:@"token_err"]) {
                     [SVProgressHUD showInfoWithStatus:@"token 已存在"];
-                                  }
-                               }
-                            }
-                        }
-                    }
-                }
+
             }
         }
     } failure:^(NSError * error) {
-//        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        ZPLog(@"%@",error);
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 //  调用55的接口
@@ -146,9 +135,6 @@
             if ([adic[@"result"]isEqualToString:@"ok"]) {
                 Token = obj[@"token"];
                 ZPICUEToken = obj[@"icuetoken"];
-                
-//                NSDictionary * aadic = obj;
-//                Token = aadic[@"token"];
                 
                 [[NSUserDefaults standardUserDefaults] setObject:Token forKey:@"token"];// Token缓存本地
                 [[NSUserDefaults standardUserDefaults] setObject:ZPICUEToken forKey:@"icuetoken"];
@@ -253,22 +239,6 @@
     sender.selected = !sender.selected;
 }
 
-//  键盘触摸
-- (void)touchesBegan {
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
-    //  设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
-    tapGestureRecognizer.cancelsTouchesInView = NO;
-    //  将触摸事件添加到当前view
-    [self.view addGestureRecognizer:tapGestureRecognizer];
-    
-}
-
-// 触发事件
--(void)keyboardHide:(UITapGestureRecognizer*)tap{
-    [_ZPEmailTextField.textField resignFirstResponder];
-    [_ZPPswTextField.textField resignFirstResponder];
-}
-
 //  MD5加密方法
 -(NSString *)md5:(NSString *)input {
     const char * cStr = [input UTF8String];
@@ -282,4 +252,36 @@
     return output;
 }
 
+/***********鍵盤************/
+-(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
+    [UIView animateWithDuration:0.4 animations:^{
+        self.QuickLoginscrollView.contentOffset = CGPointMake(0, ZP_Width - 210);
+    }];
+    
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.QuickLoginscrollView.contentOffset = CGPointMake(0, 0);
+    }];
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.QuickLoginscrollView endEditing:YES];
+}
+
+// 键盘触摸
+- (void)touchesBegan {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //将触摸事件添加到当前view
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+    
+}
+// 触发事件
+-(void)keyboardHide:(UITapGestureRecognizer*)tap {
+    [_ZPEmailTextField.textField resignFirstResponder];
+    [_ZPPswTextField.textField resignFirstResponder];
+}
 @end

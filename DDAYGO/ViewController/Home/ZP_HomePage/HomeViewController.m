@@ -56,8 +56,8 @@
         [self allData];
     }];
 }
+
 - (void)initUI {
-    
     self.tableView = [[UITableView alloc]init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
     self.tableView.backgroundColor = ZP_Graybackground;
@@ -71,6 +71,7 @@
         make.top.equalTo(self.view).offset(0);
     }];
 }
+
 - (void)registration {
     //  注册
     [self.tableView registerClass:[ZeroViewCell class] forCellReuseIdentifier:@"ceaa"];
@@ -136,7 +137,6 @@
             position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
                 NSLog(@"c = %@",ContStr);
                 [_chooseCityBtn setTitle:NSLocalizedString(ContStr, nil) forState:UIControlStateNormal];
-                
             };
             //  显示
             [position showInView:self.navigationController.view];
