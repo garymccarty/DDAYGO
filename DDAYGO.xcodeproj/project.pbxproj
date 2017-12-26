@@ -195,6 +195,16 @@
 		C425BEB01FC818480097DB8F /* ZP_OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEAF1FC818480097DB8F /* ZP_OrderController.m */; };
 		C425BEB41FC832140097DB8F /* ZP_FootprintModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEB31FC832140097DB8F /* ZP_FootprintModel.m */; };
 		C42A172D1FF2404100680F92 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C42A172C1FF2404100680F92 /* DDAYGO IHTTP协议1.0.docx */; };
+		C42A17311FF252F400680F92 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A172E1FF252F300680F92 /* BetViewController.m */; };
+		C42A17321FF252F400680F92 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42A172F1FF252F300680F92 /* BetViewController.xib */; };
+		C42A173C1FF2532400680F92 /* BetTableViewMyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A17331FF2532300680F92 /* BetTableViewMyCell.m */; };
+		C42A173D1FF2532400680F92 /* BetTableViewCellTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A17361FF2532400680F92 /* BetTableViewCellTwo.m */; };
+		C42A173E1FF2532400680F92 /* BetTableViewMyCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42A17371FF2532400680F92 /* BetTableViewMyCell2.xib */; };
+		C42A173F1FF2532400680F92 /* BetTableViewMyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42A17391FF2532400680F92 /* BetTableViewMyCell.xib */; };
+		C42A17401FF2532400680F92 /* BetTableViewCellTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42A173A1FF2532400680F92 /* BetTableViewCellTwo.xib */; };
+		C42A17411FF2532400680F92 /* BetTableViewMyCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A173B1FF2532400680F92 /* BetTableViewMyCell2.m */; };
+		C42A17451FF2544100680F92 /* tableHeadView1.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A17421FF2544000680F92 /* tableHeadView1.m */; };
+		C42A17461FF2544100680F92 /* tableHeadView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42A17441FF2544100680F92 /* tableHeadView1.xib */; };
 		C435171F1FB2AC180066302E /* ConcernShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43517211FB2AC180066302E /* ConcernShopTableViewCell.xib */; };
 		C43517281FB2AC4B0066302E /* ConcernShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C435172A1FB2AC4B0066302E /* ConcernShopViewController.xib */; };
 		C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43517331FB2AC6D0066302E /* FootprintViewController.xib */; };
@@ -221,13 +231,8 @@
 		C4535E3E1FC5654500DFFD62 /* PayMoneyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4535E3C1FC5654500DFFD62 /* PayMoneyCell.xib */; };
 		C4535E421FC56A0000DFFD62 /* ZP_MessageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4535E411FC56A0000DFFD62 /* ZP_MessageViewCell.m */; };
 		C4566B641FBED233000FCC78 /* ZP_OrderTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C4566B631FBED233000FCC78 /* ZP_OrderTool.m */; };
-		C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4573F351FCFA3A6001DFE97 /* BetViewController.m */; };
-		C4573F3E1FCFA3A6001DFE97 /* BetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4573F361FCFA3A6001DFE97 /* BetViewController.xib */; };
 		C45868FA1FC7CE06000CEB92 /* collectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45868F91FC7CE06000CEB92 /* collectionModel.m */; };
 		C45869011FC80C8E000CEB92 /* ZP_OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */; };
-		C45C419F1FE8B83300F1135D /* BetSeleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45C419E1FE8B83300F1135D /* BetSeleTableViewCell.m */; };
-		C45C41A11FE8B83A00F1135D /* BetSeleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45C41A01FE8B83A00F1135D /* BetSeleTableViewCell.xib */; };
-		C45C41A31FE8B8F700F1135D /* BetViewcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45C41A21FE8B8F600F1135D /* BetViewcell.xib */; };
 		C45D83051FAB00EB003C35EB /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C45D83041FAB00EB003C35EB /* UIButton+countDown.m */; };
 		C45F22BF1FA017E800F5DB41 /* button_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C45F22BD1FA017E800F5DB41 /* button_7@2x.png */; };
 		C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C45F22BE1FA017E800F5DB41 /* button_7@3x.png */; };
@@ -313,7 +318,6 @@
 		C47BBBF11FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47BBBEF1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib */; };
 		C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */; };
 		C47BBBF91FE5128F0000FFE6 /* ZP_CheckMoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */; };
-		C47BBBFD1FE55EA10000FFE6 /* BetViewcell.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBFB1FE55EA10000FFE6 /* BetViewcell.m */; };
 		C47E75861FB573F2009F279A /* ZP_HomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75851FB573F2009F279A /* ZP_HomeTool.m */; };
 		C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E758C1FB575C5009F279A /* ZP_shoopingTool.m */; };
 		C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75901FB57846009F279A /* ZP_ShoppingModel.m */; };
@@ -737,6 +741,21 @@
 		C425BEB21FC832140097DB8F /* ZP_FootprintModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_FootprintModel.h; sourceTree = "<group>"; };
 		C425BEB31FC832140097DB8F /* ZP_FootprintModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_FootprintModel.m; sourceTree = "<group>"; };
 		C42A172C1FF2404100680F92 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
+		C42A172E1FF252F300680F92 /* BetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
+		C42A172F1FF252F300680F92 /* BetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetViewController.xib; sourceTree = "<group>"; };
+		C42A17301FF252F300680F92 /* BetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
+		C42A17331FF2532300680F92 /* BetTableViewMyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetTableViewMyCell.m; sourceTree = "<group>"; };
+		C42A17341FF2532300680F92 /* BetTableViewMyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetTableViewMyCell.h; sourceTree = "<group>"; };
+		C42A17351FF2532300680F92 /* BetTableViewCellTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetTableViewCellTwo.h; sourceTree = "<group>"; };
+		C42A17361FF2532400680F92 /* BetTableViewCellTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetTableViewCellTwo.m; sourceTree = "<group>"; };
+		C42A17371FF2532400680F92 /* BetTableViewMyCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetTableViewMyCell2.xib; sourceTree = "<group>"; };
+		C42A17381FF2532400680F92 /* BetTableViewMyCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetTableViewMyCell2.h; sourceTree = "<group>"; };
+		C42A17391FF2532400680F92 /* BetTableViewMyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetTableViewMyCell.xib; sourceTree = "<group>"; };
+		C42A173A1FF2532400680F92 /* BetTableViewCellTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetTableViewCellTwo.xib; sourceTree = "<group>"; };
+		C42A173B1FF2532400680F92 /* BetTableViewMyCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetTableViewMyCell2.m; sourceTree = "<group>"; };
+		C42A17421FF2544000680F92 /* tableHeadView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableHeadView1.m; sourceTree = "<group>"; };
+		C42A17431FF2544000680F92 /* tableHeadView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableHeadView1.h; sourceTree = "<group>"; };
+		C42A17441FF2544100680F92 /* tableHeadView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableHeadView1.xib; sourceTree = "<group>"; };
 		C43517201FB2AC180066302E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ConcernShopTableViewCell.xib; sourceTree = "<group>"; };
 		C43517231FB2AC1D0066302E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ConcernShopTableViewCell.strings; sourceTree = "<group>"; };
 		C43517251FB2AC1F0066302E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ConcernShopTableViewCell.strings"; sourceTree = "<group>"; };
@@ -793,17 +812,10 @@
 		C4535E411FC56A0000DFFD62 /* ZP_MessageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_MessageViewCell.m; sourceTree = "<group>"; };
 		C4566B621FBED233000FCC78 /* ZP_OrderTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderTool.h; sourceTree = "<group>"; };
 		C4566B631FBED233000FCC78 /* ZP_OrderTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_OrderTool.m; sourceTree = "<group>"; };
-		C4573F341FCFA3A6001DFE97 /* BetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetViewController.h; sourceTree = "<group>"; };
-		C4573F351FCFA3A6001DFE97 /* BetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetViewController.m; sourceTree = "<group>"; };
-		C4573F361FCFA3A6001DFE97 /* BetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetViewController.xib; sourceTree = "<group>"; };
 		C45868F81FC7CE06000CEB92 /* collectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = collectionModel.h; sourceTree = "<group>"; };
 		C45868F91FC7CE06000CEB92 /* collectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = collectionModel.m; sourceTree = "<group>"; };
 		C45868FF1FC80C8E000CEB92 /* ZP_OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_OrderModel.h; sourceTree = "<group>"; };
 		C45869001FC80C8E000CEB92 /* ZP_OrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_OrderModel.m; sourceTree = "<group>"; };
-		C45C419D1FE8B82A00F1135D /* BetSeleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetSeleTableViewCell.h; sourceTree = "<group>"; };
-		C45C419E1FE8B83300F1135D /* BetSeleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetSeleTableViewCell.m; sourceTree = "<group>"; };
-		C45C41A01FE8B83A00F1135D /* BetSeleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetSeleTableViewCell.xib; sourceTree = "<group>"; };
-		C45C41A21FE8B8F600F1135D /* BetViewcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BetViewcell.xib; sourceTree = "<group>"; };
 		C45D83031FAB00EB003C35EB /* UIButton+countDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+countDown.h"; sourceTree = "<group>"; };
 		C45D83041FAB00EB003C35EB /* UIButton+countDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+countDown.m"; sourceTree = "<group>"; };
 		C45F22BD1FA017E800F5DB41 /* button_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_7@2x.png"; sourceTree = "<group>"; };
@@ -967,8 +979,6 @@
 		C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardMOdel.m; sourceTree = "<group>"; };
 		C47BBBF71FE5128F0000FFE6 /* ZP_CheckMoreModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_CheckMoreModel.h; sourceTree = "<group>"; };
 		C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_CheckMoreModel.m; sourceTree = "<group>"; };
-		C47BBBFA1FE55EA10000FFE6 /* BetViewcell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetViewcell.h; sourceTree = "<group>"; };
-		C47BBBFB1FE55EA10000FFE6 /* BetViewcell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BetViewcell.m; sourceTree = "<group>"; };
 		C47E75841FB573F2009F279A /* ZP_HomeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HomeTool.h; sourceTree = "<group>"; };
 		C47E75851FB573F2009F279A /* ZP_HomeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomeTool.m; sourceTree = "<group>"; };
 		C47E758B1FB575C5009F279A /* ZP_shoopingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_shoopingTool.h; sourceTree = "<group>"; };
@@ -2484,9 +2494,9 @@
 		C4573F291FCFA3A6001DFE97 /* ZP_LotteryBet */ = {
 			isa = PBXGroup;
 			children = (
-				C4573F341FCFA3A6001DFE97 /* BetViewController.h */,
-				C4573F351FCFA3A6001DFE97 /* BetViewController.m */,
-				C4573F361FCFA3A6001DFE97 /* BetViewController.xib */,
+				C42A17301FF252F300680F92 /* BetViewController.h */,
+				C42A172E1FF252F300680F92 /* BetViewController.m */,
+				C42A172F1FF252F300680F92 /* BetViewController.xib */,
 				C4573F2A1FCFA3A6001DFE97 /* BetHeaderCell */,
 			);
 			path = ZP_LotteryBet;
@@ -2495,12 +2505,18 @@
 		C4573F2A1FCFA3A6001DFE97 /* BetHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
-				C47BBBFA1FE55EA10000FFE6 /* BetViewcell.h */,
-				C47BBBFB1FE55EA10000FFE6 /* BetViewcell.m */,
-				C45C41A21FE8B8F600F1135D /* BetViewcell.xib */,
-				C45C419D1FE8B82A00F1135D /* BetSeleTableViewCell.h */,
-				C45C419E1FE8B83300F1135D /* BetSeleTableViewCell.m */,
-				C45C41A01FE8B83A00F1135D /* BetSeleTableViewCell.xib */,
+				C42A17351FF2532300680F92 /* BetTableViewCellTwo.h */,
+				C42A17361FF2532400680F92 /* BetTableViewCellTwo.m */,
+				C42A173A1FF2532400680F92 /* BetTableViewCellTwo.xib */,
+				C42A17341FF2532300680F92 /* BetTableViewMyCell.h */,
+				C42A17331FF2532300680F92 /* BetTableViewMyCell.m */,
+				C42A17391FF2532400680F92 /* BetTableViewMyCell.xib */,
+				C42A17381FF2532400680F92 /* BetTableViewMyCell2.h */,
+				C42A173B1FF2532400680F92 /* BetTableViewMyCell2.m */,
+				C42A17371FF2532400680F92 /* BetTableViewMyCell2.xib */,
+				C42A17431FF2544000680F92 /* tableHeadView1.h */,
+				C42A17421FF2544000680F92 /* tableHeadView1.m */,
+				C42A17441FF2544100680F92 /* tableHeadView1.xib */,
 			);
 			path = BetHeaderCell;
 			sourceTree = "<group>";
@@ -3735,7 +3751,6 @@
 				062C9D5A1F8CD6F900E14987 /* button_1@3x.png in Resources */,
 				06F5716C1F9F15CE00D61FDB /* CollectionTableViewCell.xib in Resources */,
 				06F571901F9F16E600D61FDB /* NewsTableViewCell.xib in Resources */,
-				C45C41A11FE8B83A00F1135D /* BetSeleTableViewCell.xib in Resources */,
 				06621DB91F9758AE0030983F /* ForgetPswController.xib in Resources */,
 				06F571D61F9F1A7900D61FDB /* ResetPasswordViewController.xib in Resources */,
 				C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */,
@@ -3777,6 +3792,7 @@
 				06F5722D1F9F1E8700D61FDB /* OrderManagerViewController.xib in Resources */,
 				06F571D21F9F1A7900D61FDB /* BindingICUEViewController.xib in Resources */,
 				C44C9DB21FEA392D00CD7D4D /* ZP_QuickLoginController.xib in Resources */,
+				C42A17321FF252F400680F92 /* BetViewController.xib in Resources */,
 				C46B9F4A1FDE71FE00942750 /* 赏金彩_spec.png in Resources */,
 				062C9D5E1F8CD6F900E14987 /* button_3@3x.png in Resources */,
 				C45F22C01FA017E800F5DB41 /* button_7@3x.png in Resources */,
@@ -3804,13 +3820,14 @@
 				C472F1511FE2A88B0031D7B5 /* 选择赏金彩_spec.png in Resources */,
 				C492A1971FD0EDC0009FF57B /* ZP_InstructionController.xib in Resources */,
 				06F571DC1F9F1A7900D61FDB /* AddressTableViewCell.xib in Resources */,
+				C42A173F1FF2532400680F92 /* BetTableViewMyCell.xib in Resources */,
+				C42A17401FF2532400680F92 /* BetTableViewCellTwo.xib in Resources */,
 				06F572351F9F1E8700D61FDB /* ReceivingController.xib in Resources */,
 				C47E76391FB5A1C7009F279A /* PurchaseView.xib in Resources */,
 				C492A18C1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.xib in Resources */,
 				C43517281FB2AC4B0066302E /* ConcernShopViewController.xib in Resources */,
 				C4D2FEF41FD5636C00F546AB /* 商店管理_spec_spec.png in Resources */,
 				C4535E3E1FC5654500DFFD62 /* PayMoneyCell.xib in Resources */,
-				C4573F3E1FCFA3A6001DFE97 /* BetViewController.xib in Resources */,
 				0682BE6B1F906D7B00894F4E /* Shopping2.png in Resources */,
 				C492A17E1FD0ECB7009FF57B /* ZP_HistoryVetController.xib in Resources */,
 				06F5722B1F9F1E8700D61FDB /* OrderManagerCollectionViewCell.xib in Resources */,
@@ -3818,8 +3835,8 @@
 				C4D9E70E1FE76A22000D2413 /* ZP_LotteryHistoricalBettingNumberCell.xib in Resources */,
 				C46B9F4B1FDE71FE00942750 /* 选择赏金彩_spec.png in Resources */,
 				064449A61F6A9B250004DFE4 /* LICENSE in Resources */,
-				C45C41A31FE8B8F700F1135D /* BetViewcell.xib in Resources */,
 				C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */,
+				C42A173E1FF2532400680F92 /* BetTableViewMyCell2.xib in Resources */,
 				062C9D611F8CD6F900E14987 /* button_5@2x.png in Resources */,
 				C45F22BF1FA017E800F5DB41 /* button_7@2x.png in Resources */,
 				C47E76521FB5A42F009F279A /* ClassificationViewController.xib in Resources */,
@@ -3827,6 +3844,7 @@
 				063FE0521F614D24009910FF /* Assets.xcassets in Resources */,
 				C47E76371FB5A1C7009F279A /* ProductDescriptionView.xib in Resources */,
 				C407AC131FD7E917004A8DE8 /* 提现记录_spec.png in Resources */,
+				C42A17461FF2544100680F92 /* tableHeadView1.xib in Resources */,
 				06F5716E1F9F15CE00D61FDB /* CollectionViewController.xib in Resources */,
 				C46B9F481FDE71FE00942750 /* 历史下注号码_spec.png in Resources */,
 				0682BE801F90C8F000894F4E /* seven.png in Resources */,
@@ -3920,13 +3938,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37503CF1FC7BD8F00DA2950 /* ZP_ConfirmWebController.m in Sources */,
+				C42A17311FF252F400680F92 /* BetViewController.m in Sources */,
 				C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */,
 				C4137E811FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m in Sources */,
 				C47E763B1FB5A1C7009F279A /* ZPHomeCell.m in Sources */,
 				06621DB81F9758AE0030983F /* ForgetPswController.m in Sources */,
 				C492A1961FD0EDC0009FF57B /* ZP_InstructionController.m in Sources */,
 				C45F22D51FA05AA700F5DB41 /* UIFont+Extension.m in Sources */,
-				C45C419F1FE8B83300F1135D /* BetSeleTableViewCell.m in Sources */,
 				C47E76291FB5A1C7009F279A /* RightTableViewCell.m in Sources */,
 				C45F22D91FA05AB000F5DB41 /* UIView+Extension.m in Sources */,
 				C45868FA1FC7CE06000CEB92 /* collectionModel.m in Sources */,
@@ -3956,6 +3974,7 @@
 				C47E76401FB5A1C7009F279A /* ZPLoopViewLayout.m in Sources */,
 				065099DF1F6247F7002F62D4 /* UIImage+Extension.m in Sources */,
 				C47E76231FB5A1C7009F279A /* CPViewController.m in Sources */,
+				C42A17451FF2544100680F92 /* tableHeadView1.m in Sources */,
 				06F5710A1F9F0D3A00D61FDB /* OrderViewController.m in Sources */,
 				06DD47501F94721B007E4D17 /* CIImage+Extension.m in Sources */,
 				06F571D31F9F1A7900D61FDB /* DialogBox.m in Sources */,
@@ -3969,6 +3988,7 @@
 				C4D9E70D1FE76A22000D2413 /* ZP_LotteryHistoricalBettingNumberCell.m in Sources */,
 				C45F22ED1FA0746300F5DB41 /* NSString+Additions.m in Sources */,
 				C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */,
+				C42A17411FF2532400680F92 /* BetTableViewMyCell2.m in Sources */,
 				06621DAD1F9758720030983F /* TextView.m in Sources */,
 				C425BEB41FC832140097DB8F /* ZP_FootprintModel.m in Sources */,
 				C4D9E7071FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.m in Sources */,
@@ -4022,7 +4042,6 @@
 				C47BBBF01FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m in Sources */,
 				C479C6A11FE3CB5800A58A2A /* MJExtensionConst.m in Sources */,
 				C47E763F1FB5A1C7009F279A /* ZPLoopViewCell.m in Sources */,
-				C4573F3D1FCFA3A6001DFE97 /* BetViewController.m in Sources */,
 				06F571131F9F0D6800D61FDB /* AppraiseController.m in Sources */,
 				C45F23491FA0809000F5DB41 /* FourthViewCell.m in Sources */,
 				0641BBD31F67F9E400E72FEF /* NSData+ImageContentType.m in Sources */,
@@ -4114,12 +4133,13 @@
 				0641BBD71F67F9E400E72FEF /* SDWebImageDownloader.m in Sources */,
 				C47E763C1FB5A1C7009F279A /* ZPHomeLayout.m in Sources */,
 				C45FAF3C1FCD48CC00BD4CE1 /* EditorViewCell.m in Sources */,
-				C47BBBFD1FE55EA10000FFE6 /* BetViewcell.m in Sources */,
 				06F571831F9F16A600D61FDB /* FootprintCollectionViewCell.m in Sources */,
 				C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */,
 				0641BBE01F67F9E400E72FEF /* UIView+WebCacheOperation.m in Sources */,
 				064449AB1F6A9B250004DFE4 /* MJRefreshHeader.m in Sources */,
 				C479C6A71FE3CB5800A58A2A /* NSObject+MJCoding.m in Sources */,
+				C42A173D1FF2532400680F92 /* BetTableViewCellTwo.m in Sources */,
+				C42A173C1FF2532400680F92 /* BetTableViewMyCell.m in Sources */,
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
 				C46B9F4F1FDE764000942750 /* ZP_ExtractModel.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,

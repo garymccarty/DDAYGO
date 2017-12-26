@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *rightTableView;
 
 - (void)getRightItemDataWithProducttypeid:(NSInteger)producttypeid;
+
 @end

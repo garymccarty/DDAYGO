@@ -61,11 +61,11 @@
 
 // 右边
 - (void)selectRightCell:(UIButton *)sender {
-    
     self.rightSelectRow = sender.tag;
     [self.rightTableView reloadData];
 }
-// 数据
+
+// 数据（左边）
 - (void)allData {
     NSDictionary * dict = @{@"level":@"1",@"language":@"zh-tw"};
     [ZP_ClassViewTool requClassIfication:dict success:^(id obj) {
@@ -80,8 +80,10 @@
   }];
 }
 
+//  数据（右边）
 - (void)getRightItemDataWithProducttypeid:(NSInteger)producttypeid {
-    NSDictionary * dictt = @{@"level":@"2",@"language":@"zh-tw",@"fatherid":[@(producttypeid + 1) stringValue]};
+    
+    NSDictionary * dictt = @{@"level":@"2",@"language":@"zh-tw",@"fatherid":[NSNumber numberWithInteger:producttypeid]};
     [ZP_ClassViewTool requClassIficationrj:dictt success:^(id obj) {
         NSArray * arr = obj;
         [self.rightData setObject:[ZP_RightModel arrayWithArray:arr] forKey:@(producttypeid)];

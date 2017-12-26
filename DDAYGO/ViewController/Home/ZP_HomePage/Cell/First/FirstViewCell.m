@@ -68,12 +68,12 @@
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"countrycode"] = @"886";
     [ZP_HomeTool requesFirst:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
         NSArray *ARR = [ZP_FirstModel mj_objectArrayWithKeyValuesArray:obj];
         [self first:ARR];
-        ZPLog(@"%@",obj);
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 

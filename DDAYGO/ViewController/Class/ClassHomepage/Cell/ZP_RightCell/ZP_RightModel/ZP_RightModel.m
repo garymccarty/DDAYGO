@@ -33,7 +33,9 @@
         model.contentLabel = dic[@"producttypename"];
         model.fatherid = dic[@"fatherid"];
     [arr addObject:model];
+        
     }
+    
     return arr;
 }
 @end
