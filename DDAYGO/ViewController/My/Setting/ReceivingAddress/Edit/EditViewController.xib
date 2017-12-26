@@ -111,7 +111,7 @@
                                         <constraint firstAttribute="height" constant="40" id="dPo-Dg-cWd"/>
                                     </constraints>
                                 </imageView>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="莉莉安" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vd1-eh-sAJ">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="莉莉安" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vd1-eh-sAJ">
                                     <rect key="frame" x="96" y="0.0" width="224" height="50"/>
                                     <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -132,10 +132,24 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="XXXXX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-DL-dMa">
-                                    <rect key="frame" x="96" y="153" width="224" height="74"/>
-                                    <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-DL-dMa">
+                                    <rect key="frame" x="96" y="153" width="216" height="74"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="傲霜斗雪宝爱的不是简单简单解决大家的简单解决的解决大家大家">
+                                            <attributes>
+                                                <color key="NSColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="jdjdj">
+                                            <attributes>
+                                                <color key="NSColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="414245" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUP-bX-yUh">
@@ -152,6 +166,9 @@
                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <state key="selected" image="ic_Shopping_Choice_pressed"/>
+                                    <connections>
+                                        <action selector="acquiescence:" destination="-1" eventType="touchUpInside" id="ATB-bD-vU2"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,7 +179,7 @@
                                 <constraint firstItem="VUP-bX-yUh" firstAttribute="top" secondItem="QD4-vm-GF9" secondAttribute="bottom" id="3ki-sg-YdW"/>
                                 <constraint firstItem="Vie-KG-udn" firstAttribute="leading" secondItem="uoq-Ku-sBE" secondAttribute="leading" constant="16" id="AeG-je-MJC"/>
                                 <constraint firstItem="Qkd-cM-g5b" firstAttribute="leading" secondItem="uoq-Ku-sBE" secondAttribute="leading" constant="16" id="DHQ-2j-K5A"/>
-                                <constraint firstAttribute="trailing" secondItem="5XP-DL-dMa" secondAttribute="trailing" id="Egq-uk-VPq"/>
+                                <constraint firstAttribute="trailing" secondItem="5XP-DL-dMa" secondAttribute="trailing" constant="8" id="Egq-uk-VPq"/>
                                 <constraint firstItem="Vd1-eh-sAJ" firstAttribute="leading" secondItem="Qkd-cM-g5b" secondAttribute="trailing" id="EvT-bI-ILe"/>
                                 <constraint firstItem="hSd-yW-SR7" firstAttribute="leading" secondItem="uoq-Ku-sBE" secondAttribute="leading" id="IfR-pr-2KQ"/>
                                 <constraint firstItem="QD4-vm-GF9" firstAttribute="top" secondItem="33W-1r-AZH" secondAttribute="bottom" constant="74" id="J2J-Uz-QGg"/>

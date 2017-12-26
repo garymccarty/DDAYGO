@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZP_FrontPageReceivingAddressModel.h"
 @interface EditViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView * EditscrollView; // 滚动视图
 @property (weak, nonatomic) IBOutlet UITextField * ContactpersonTextField; //联系人
@@ -16,4 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField * ReceivingaddressTextField; //收货地址
 @property (weak, nonatomic) IBOutlet UITextField * ZipcodeaddressTextField;  // 邮编
 @property (nonatomic, strong) NSString * oid; // 地址id
+
+@property (nonatomic, strong) ZP_FrontPageReceivingAddressModel *model;
+
 @end

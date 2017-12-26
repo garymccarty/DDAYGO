@@ -15,7 +15,7 @@
 #import "ClassificationViewController.h"
 #import "ZP_ClassGoodsModel.h"
 @interface CPViewController ()<UIScrollViewDelegate> {
-    
+    int _i;
     NSArray * array;
 }
 #define fDeviceWidth ([UIScreen mainScreen].bounds.size.width)
@@ -49,13 +49,62 @@
     
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
 }
+
 // 生命周期
 - (void)viewWillAppear:(BOOL)animated {
 //    [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
     self.title = _titleString;
     [self allData];
+    [self addRefresh];
 }
+// 刷新
+- (void)addRefresh {
+//    下拉刷新
+    self.collectionView1.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.newsData removeAllObjects];
+        _i = 0;
+        [self allData];
+    }];
+    self.collectionView2.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.newsData removeAllObjects];
+        _i = 0;
+        [self allData];
+    }];
+    self.collectionView3.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.newsData removeAllObjects];
+        _i = 0;
+        [self allData];
+    }];
+    self.collectionView4.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.newsData removeAllObjects];
+        _i = 0;
+        [self allData];
+    }];
+    
+//   上拉刷新
+    self.collectionView1.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        //        [_ModeldataArray reverseObjectEnumerator];
+        _i+=10;
+        [self allData];
+    }];
+    self.collectionView2.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        //        [_ModeldataArray reverseObjectEnumerator];
+        _i+=10;
+        [self allData];
+    }];
+    self.collectionView3.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        //        [_ModeldataArray reverseObjectEnumerator];
+        _i+=10;
+        [self allData];
+    }];
+    self.collectionView4.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        //        [_ModeldataArray reverseObjectEnumerator];
+        _i+=10;
+        [self allData];
+    }];
+}
+
 //- (void)viewWillDisappear:(BOOL)animated {
 //    [super viewWillDisappear:animated];
 //    if ([self.navigationController.viewControllers.lastObject isKindOfClass:[ClassificationViewController class]]) {
@@ -188,7 +237,14 @@
         NSArray * arr = dict[@"datalist"];
         self.newsData = [ZP_ClassGoodsModel arrayWithArray:arr];
         [self.collectionView1 reloadData];
-
+        [self.collectionView1.mj_header endRefreshing];  // 結束下拉刷新
+        [self.collectionView2.mj_header endRefreshing];  // 結束下拉刷新
+        [self.collectionView3.mj_header endRefreshing];  // 結束下拉刷新
+        [self.collectionView4.mj_header endRefreshing];  // 結束下拉刷新
+        [self.collectionView1.mj_footer endRefreshing];  // 結束上拉刷新
+        [self.collectionView2.mj_footer endRefreshing];  // 結束上拉刷新
+        [self.collectionView3.mj_footer endRefreshing];  // 結束上拉刷新
+        [self.collectionView4.mj_footer endRefreshing];  // 結束上拉刷新
 //        NSLog(@"%ld",(unsigned long)arr.count);
 
     } failure:^(NSError *error) {

@@ -34,10 +34,10 @@
     NSLog(@"保存");
    
 }
-//  数据
+// 保存修改后的数据
 - (void)acquiring {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"adsid"] = _oid;
+    dic[@"adsid"] = @"0";
     dic[@"name"] = _ContactpersonTextField.text;
     dic[@"phone"] = _ContactnumberTextField.text;
     dic[@"cell"] = @"";
@@ -70,18 +70,7 @@
 
 // 获取地址数据
 - (void)allData {
-    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = Token;
-    dic[@"aid"] = _oid;
-    [ZP_MyTool requesAddress:dic success:^(id obj) {
-        ZPLog(@"%@",obj);
-        NSArray * arr = obj;
-        self.newsData = [ZP_FrontPageReceivingAddressModel arrayWithArray:arr];
-
-    } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
-    }];
+    [self cellWithdic:_model];
 }
 
 - (void)cellWithdic:(ZP_FrontPageReceivingAddressModel *)model {
@@ -90,6 +79,10 @@
     _ReceivingaddressTextField.text = model.addressdetail;
     _ZipcodeaddressTextField.text = model.zipcode;
     
+}
+// 设置默认地址
+- (IBAction)acquiescence:(UIButton *)sender {
+    sender.selected = !sender.selected;
 }
 
 /***********鍵盤************/

@@ -125,7 +125,7 @@
 //            }];
 //        }
         self.newsData = [OrderModel arrayWithArray:json];
-        [self.tableview.mj_header endRefreshing];  // 刷新
+        [self.tableview.mj_header endRefreshing];  // 結束刷新
 //        [self.tableview mj_footer ]
     [self.tableview reloadData];
     } failure:^(NSError *error) {

@@ -70,12 +70,13 @@
     NSDictionary * dict = @{@"level":@"1",@"language":@"zh-tw"};
     [ZP_ClassViewTool requClassIfication:dict success:^(id obj) {
         NSArray * arr = obj;
+        ZPLog(@"%@",obj);
         self.newsData = [ZP_LeftModel arrayWithArray:arr];
         [self getRightItemDataWithProducttypeid:0];
         [self.leftTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
   }];
 }
 
@@ -87,7 +88,7 @@
         [self.rightTableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 

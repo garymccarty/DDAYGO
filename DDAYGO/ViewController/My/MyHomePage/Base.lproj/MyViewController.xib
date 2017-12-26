@@ -36,6 +36,17 @@
                         <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="ivX-Ep-Crm">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmu-dK-wjr">
+                                    <rect key="frame" x="273" y="23" width="40" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="8BM-ed-IEB"/>
+                                        <constraint firstAttribute="width" constant="40" id="a4x-B8-nRL"/>
+                                    </constraints>
+                                    <state key="normal" image="ic_mine_set"/>
+                                    <connections>
+                                        <action selector="settingAction:" destination="-1" eventType="touchUpInside" id="EUp-Pc-3iC"/>
+                                    </connections>
+                                </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-bn-57G">
                                     <rect key="frame" x="8" y="118" width="304" height="142"/>
                                     <subviews>
@@ -194,21 +205,10 @@
                                     <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmu-dK-wjr">
-                                    <rect key="frame" x="242" y="24" width="64" height="64"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="64" id="8BM-ed-IEB"/>
-                                        <constraint firstAttribute="width" constant="64" id="a4x-B8-nRL"/>
-                                    </constraints>
-                                    <state key="normal" image="ic_mine_set"/>
-                                    <connections>
-                                        <action selector="settingAction:" destination="-1" eventType="touchUpInside" id="EUp-Pc-3iC"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.98737674951553345" green="0.66514742374420166" blue="0.32908639311790466" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="Wmu-dK-wjr" secondAttribute="trailing" constant="14" id="33K-S8-g0B"/>
+                                <constraint firstAttribute="trailing" secondItem="Wmu-dK-wjr" secondAttribute="trailing" constant="7" id="33K-S8-g0B"/>
                                 <constraint firstItem="OTg-9H-to4" firstAttribute="centerY" secondItem="ivX-Ep-Crm" secondAttribute="centerY" id="3O7-Fv-RvO"/>
                                 <constraint firstItem="LFs-vK-Df4" firstAttribute="centerX" secondItem="OTg-9H-to4" secondAttribute="centerX" id="DRm-q1-Dsi"/>
                                 <constraint firstItem="LFs-vK-Df4" firstAttribute="centerY" secondItem="OTg-9H-to4" secondAttribute="centerY" id="HGm-8h-s8T"/>
@@ -217,7 +217,7 @@
                                 <constraint firstAttribute="trailing" secondItem="f7h-bn-57G" secondAttribute="trailing" constant="8" id="OHU-wn-4ja"/>
                                 <constraint firstAttribute="height" constant="260" id="aJm-TN-itX"/>
                                 <constraint firstItem="Yfb-7E-S8p" firstAttribute="top" secondItem="OTg-9H-to4" secondAttribute="bottom" constant="10" id="fOV-ng-U2p"/>
-                                <constraint firstItem="Wmu-dK-wjr" firstAttribute="top" secondItem="ivX-Ep-Crm" secondAttribute="top" constant="24" id="gyH-uc-Mwq"/>
+                                <constraint firstItem="Wmu-dK-wjr" firstAttribute="top" secondItem="ivX-Ep-Crm" secondAttribute="top" constant="23" id="gyH-uc-Mwq"/>
                                 <constraint firstAttribute="bottom" secondItem="f7h-bn-57G" secondAttribute="bottom" id="l2l-Tq-9Qa"/>
                                 <constraint firstItem="Yfb-7E-S8p" firstAttribute="centerX" secondItem="ivX-Ep-Crm" secondAttribute="centerX" id="s5l-Lu-9uD"/>
                             </constraints>
@@ -352,7 +352,7 @@
                 <constraint firstAttribute="trailing" secondItem="TRP-HX-xQv" secondAttribute="trailing" id="Wld-vF-XTj"/>
             </constraints>
             <nil key="simulatedBottomBarMetrics"/>
-            <point key="canvasLocation" x="25" y="51"/>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
     <resources>

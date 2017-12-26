@@ -25,11 +25,10 @@
     }
     return dic;
 }
+
 + (NSMutableArray *)arrayWithArray:(NSArray *)array {
     NSMutableArray * arr = [[NSMutableArray alloc]init];
-    
     for (NSDictionary * dic in array) {
-        
         ZP_RightModel * model = [[ZP_RightModel alloc]init];
         model.contentLabel = dic[@"producttypename"];
         model.fatherid = dic[@"fatherid"];

@@ -104,7 +104,7 @@
     _chooseCityBtn.contentEdgeInsets = UIEdgeInsetsMake(6, -15, 6, 5);
     _chooseCityBtn.titleLabel.font = ZP_TooBarFont;
     [_chooseCityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_chooseCityBtn setTitle:NSLocalizedString(@"Position", nil) forState:UIControlStateNormal];
+    [_chooseCityBtn setTitle:NSLocalizedString(@"臺灣", nil) forState:UIControlStateNormal];
     [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
     CGFloat imageWidth = _chooseCityBtn.imageView.bounds.size.width;
     CGFloat labelWidth = _chooseCityBtn.titleLabel.bounds.size.width;
@@ -123,20 +123,28 @@
 }
 
 //  位置按钮点击事件
-- (void)buttonAction:(id)sender {
-    [self PositionallData];
-    NSLog(@"位置");
-    PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
-//数据
-    [position Position:_postionArray];
-//返回
-    position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
-        NSLog(@"c = %@",ContStr);
-        [_chooseCityBtn setTitle:NSLocalizedString(ContStr, nil) forState:UIControlStateNormal];
-        
-    };
-    //  显示
-    [position showInView:self.navigationController.view];
+- (void)buttonAction:(UIButton *)sender {
+    if (!DD_HASLOGIN) {
+        if (![MyViewController sharedInstanceTool].hasRemind) {
+//            [MyViewController sharedInstanceTool].hasRemind = YES;
+            [self PositionallData];
+            NSLog(@"位置");
+            PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
+            //数据
+            [position Position:_postionArray];
+            //返回
+            position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
+                NSLog(@"c = %@",ContStr);
+                [_chooseCityBtn setTitle:NSLocalizedString(ContStr, nil) forState:UIControlStateNormal];
+                
+            };
+            //  显示
+            [position showInView:self.navigationController.view];
+        }
+    } else {
+//        return;
+        ZPLog(@"已登錄");
+    }
     
 }
 //  定位数据

@@ -10,7 +10,7 @@
 
 @interface ZP_RightModel : NSObject
 @property (nonatomic, strong) NSString * contentLabel;
-@property (nonatomic, strong) NSNumber *fatherid;
+@property (nonatomic, strong) NSNumber * fatherid;
 
 + (NSMutableArray *)arrayWithArray:(NSArray *)dic;
 @end

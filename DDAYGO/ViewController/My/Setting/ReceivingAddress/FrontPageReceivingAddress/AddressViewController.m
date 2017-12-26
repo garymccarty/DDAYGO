@@ -25,6 +25,7 @@
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     [self.tableView registerNib:[UINib nibWithNibName:@"AddressTableViewCell" bundle:nil] forCellReuseIdentifier:@"AddressTableViewCell"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
     UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"新增地址", nil)  style:UIBarButtonItemStylePlain target:self action:@selector(addAddress)];
     self.navigationItem.rightBarButtonItem = item;
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
@@ -91,6 +92,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AddressTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"AddressTableViewCell" forIndexPath:indexPath];
+    
     ZP_FrontPageReceivingAddressModel * model = self.newsData[indexPath.row];
 //    默认地址
         cell.defBtn.tag = indexPath.row;
@@ -102,6 +104,7 @@
     [cell cellWithdic:model];
     cell.finishBlock = ^(id response) {//在这里传点击编辑的数据
         EditViewController * viewController = [[EditViewController alloc] init];
+        viewController.model = model;
         [self.navigationController pushViewController:viewController animated:YES];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
         self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
