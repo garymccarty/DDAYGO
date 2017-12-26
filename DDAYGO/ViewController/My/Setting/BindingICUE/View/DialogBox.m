@@ -28,30 +28,36 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     _textfield.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)]; // 觸發事件
     self.BGView.userInteractionEnabled = YES;
-    [self.BGView addGestureRecognizer:tap];
+//    [self.BGView addGestureRecognizer:tap];
     self.hidden = YES;
 }
 
 
 
-
+// 取消
 - (IBAction)cancelAction:(id)sender {
-    
+    ZPLog(@"qqqq");
     [self dismiss];
 }
-
+//確定
 - (IBAction)ensureAction:(id)sender {
+    if (self.textfield.text.length < 1) {
+        [SVProgressHUD showInfoWithStatus:@"輸入框不能為空"];
+    }else {
     if (self.finishBlock) {
         self.finishBlock(_textfield.text);
     }
     [self dismiss];
+    }
+    
 }
 
-- (IBAction)icucEnsure:(id)sender {
-    [self dismiss];
-}
+//- (IBAction)icucEnsure:(id)sender {
+//    ZPLog(@"222");
+//    [self dismiss];
+//}
 
 - (void)showDialogBoxWithOperation:(DDAOperation)operation FinishBlock:(FinishBlock)finishBlock {
     
@@ -84,7 +90,7 @@
         self.BGView.alpha = 0.5;
         self.dialogView.alpha = 1;
     } completion:^(BOOL finished) {
-        
+
     }];
 }
 

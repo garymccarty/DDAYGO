@@ -21,8 +21,8 @@ typedef void (^FinishBlock)(id response);
 @property (weak, nonatomic) IBOutlet UILabel * titleLabel;
 @property (weak, nonatomic) IBOutlet UIView * textfileBottomView;
 @property (weak, nonatomic) IBOutlet UITextField * textfield;
-@property (weak, nonatomic) IBOutlet UIButton *cancelBtn;
-@property (weak, nonatomic) IBOutlet UIButton *ensureBtn;
+@property (weak, nonatomic) IBOutlet UIButton * cancelBtn;
+@property (weak, nonatomic) IBOutlet UIButton * ensureBtn;
 //@property (nonatomic, strong) NSString * TextID;
 //  ICUC
 @property (weak, nonatomic) IBOutlet UIView *icucView;

@@ -10,7 +10,7 @@
 #import "PromptBox.h"
 #import "ZP_MyTool.h"
 #import "PrefixHeader.pch"
-@interface BindingIntroduce ()
+@interface BindingIntroduce ()<UITextFieldDelegate>
 
 @end
 
@@ -18,9 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self touchesBegan];
     self.title = NSLocalizedString(@"绑定推荐人", nil);
+    
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     _BindingIntroduceTextField.keyboardType = UIKeyboardTypeASCIICapable;
+    _BindingIntroduceTextField.delegate = self;
      _BindingIntroduceTextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     self.BindingIntroducscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
     
@@ -59,11 +62,18 @@
     }];
 }
 
-//  键盘弹起
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{
+// 键盘触摸
+- (void)touchesBegan {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //将触摸事件添加到当前view
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     
-    [self.view endEditing:YES];
-    
+}
+// 触发事件
+-(void)keyboardHide:(UITapGestureRecognizer*)tap {
+    [_BindingIntroduceTextField resignFirstResponder];
 }
 
 @end

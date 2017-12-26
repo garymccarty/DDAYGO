@@ -11,7 +11,7 @@
 #import "ZP_MyTool.h"
 #import "PromptBox.h"
 #import "TextView.h"
-@interface BindingEmailController ()
+@interface BindingEmailController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet TextView * ZPEmailTextFiled;
 @property (weak, nonatomic) IBOutlet TextView * ZPCodeTextField;
 //@property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
@@ -24,6 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self touchesBegan];
+    _ZPEmailTextFiled.textField.delegate = self;
+    _ZPCodeTextField.textField.delegate = self;
     self.title = NSLocalizedString(@"绑定邮箱", nil);
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.BindingEmailscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
@@ -73,36 +76,35 @@
     dic[@"emailverify"] = _ZPEmailTextFiled.textField.text;
     [ZP_MyTool requesEmail:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
-        if ([dic[@"result"]isEqualToString:@"ok"]) {
+        if ([obj[@"result"]isEqualToString:@"ok"]) {
             [SVProgressHUD showSuccessWithStatus:@"绑定成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else
-            if ([dic[@"result"]isEqualToString:@"token_err"]) {
+            if ([obj[@"result"]isEqualToString:@"token_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"令牌无效"];
         }else
-            if ([dic[@"result"]isEqualToString:@"emailverify_null_er"]) {
+            if ([obj[@"result"]isEqualToString:@"emailverify_null_er"]) {
                 [SVProgressHUD showInfoWithStatus:@"邮箱地址为空"];
         }else
-            if ([dic[@"result"]isEqualToString:@"emailverify_format_err"]) {
+            if ([obj[@"result"]isEqualToString:@"emailverify_format_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"邮箱地址格式错误"];
                         
         }else
-            if ([dic[@"result"]isEqualToString:@"emailverify_exist_err"]) {
+            if ([obj[@"result"]isEqualToString:@"emailverify_exist_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"邮箱地址已被绑定"];
                 
         }else
-            if ([dic[@"result"]isEqualToString:@"failed_send_err"]) {
+            if ([obj[@"result"]isEqualToString:@"failed_send_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"邮件发送失败"];
                                 
         }else
-            if ([dic[@"result"]isEqualToString:@"failed"]) {
+            if ([obj[@"result"]isEqualToString:@"failed"]) {
                 [SVProgressHUD showInfoWithStatus:@"操作失败"];
-                
         }
         
     } failure:^(NSError * error) {
-//        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        ZPLog(@"%@",error);
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 
@@ -168,10 +170,47 @@
 //        [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_open.png"] forState:UIControlStateNormal];
 //    }
 //}
-//  键盘弹起
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event{
-    
-    [self.view endEditing:YES];
+
+/***********鍵盤************/
+-(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
+    [UIView animateWithDuration:0.4 animations:^{
+        self.BindingEmailscrollView.contentOffset = CGPointMake(0, ZP_Width - 210);
+    }];
     
 }
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.BindingEmailscrollView.contentOffset = CGPointMake(0, 0);
+    }];
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.BindingEmailscrollView endEditing:YES];
+}
+
+////隐藏键盘
+//- (void)keyboardWillHide:(NSNotification *)notification {
+//    //将contentInset的值设回原来的默认值
+//    UIEdgeInsets e = UIEdgeInsetsMake(0, 0, 0, 0);
+//    [self.LoginscrollView setContentInset:e];
+//
+//    NSLog(@"scrollView.height = %f", self.LoginscrollView.contentSize.height);
+//}
+
+// 键盘触摸
+- (void)touchesBegan {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //将触摸事件添加到当前view
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+    
+}
+// 触发事件
+-(void)keyboardHide:(UITapGestureRecognizer*)tap {
+    [_ZPEmailTextFiled.textField resignFirstResponder];
+    [_ZPCodeTextField.textField resignFirstResponder];
+}
+
 @end

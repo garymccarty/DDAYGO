@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="BinDing" destination="hTS-Jd-kvu" id="1Bh-Z5-d9r"/>
                 <outlet property="BindingEmailscrollView" destination="53e-o4-U5F" id="WQI-qC-i4F"/>
-                <outlet property="ZPCodeTextField" destination="RxJ-IJ-izv" id="V8c-VB-Die"/>
                 <outlet property="ZPEmailTextFiled" destination="HDt-RL-ZCR" id="Exl-am-cIH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -38,21 +37,8 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RxJ-IJ-izv" customClass="TextView">
-                            <rect key="frame" x="20" y="140" width="280" height="35"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="VQ9-Ml-I2O"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="输入验证码"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="keyboardType">
-                                    <integer key="value" value="4"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTS-Jd-kvu">
-                            <rect key="frame" x="20" y="279" width="280" height="45"/>
+                            <rect key="frame" x="20" y="236" width="280" height="45"/>
                             <color key="backgroundColor" red="1" green="0.49803921569999998" blue="0.0" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="AM9-Au-Sxy"/>
@@ -71,17 +57,14 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="HDt-RL-ZCR" firstAttribute="trailing" secondItem="RxJ-IJ-izv" secondAttribute="trailing" id="6u7-PH-Jiv"/>
-                        <constraint firstItem="hTS-Jd-kvu" firstAttribute="top" secondItem="53e-o4-U5F" secondAttribute="top" constant="279" id="7kg-vl-M9U"/>
+                        <constraint firstItem="hTS-Jd-kvu" firstAttribute="top" secondItem="53e-o4-U5F" secondAttribute="top" constant="236" id="7kg-vl-M9U"/>
+                        <constraint firstItem="hTS-Jd-kvu" firstAttribute="trailing" secondItem="HDt-RL-ZCR" secondAttribute="trailing" id="DQr-f7-SW9"/>
                         <constraint firstItem="HDt-RL-ZCR" firstAttribute="top" secondItem="53e-o4-U5F" secondAttribute="top" constant="90" id="Hi2-fU-rL3"/>
                         <constraint firstAttribute="trailing" secondItem="HDt-RL-ZCR" secondAttribute="trailing" constant="20" id="Kf6-BY-obe"/>
-                        <constraint firstAttribute="bottom" secondItem="hTS-Jd-kvu" secondAttribute="bottom" constant="488" id="MNq-46-7A2"/>
-                        <constraint firstItem="hTS-Jd-kvu" firstAttribute="leading" secondItem="RxJ-IJ-izv" secondAttribute="leading" id="QSy-Ur-eHE"/>
+                        <constraint firstAttribute="bottom" secondItem="hTS-Jd-kvu" secondAttribute="bottom" constant="287" id="MNq-46-7A2"/>
+                        <constraint firstItem="hTS-Jd-kvu" firstAttribute="leading" secondItem="HDt-RL-ZCR" secondAttribute="leading" id="bkM-wQ-KIA"/>
                         <constraint firstItem="HDt-RL-ZCR" firstAttribute="centerX" secondItem="53e-o4-U5F" secondAttribute="centerX" id="ce1-3y-DpS"/>
                         <constraint firstItem="HDt-RL-ZCR" firstAttribute="leading" secondItem="53e-o4-U5F" secondAttribute="leading" constant="20" id="hKx-Ft-3vu"/>
-                        <constraint firstItem="hTS-Jd-kvu" firstAttribute="trailing" secondItem="RxJ-IJ-izv" secondAttribute="trailing" id="oP3-Gd-vNa"/>
-                        <constraint firstItem="RxJ-IJ-izv" firstAttribute="top" secondItem="HDt-RL-ZCR" secondAttribute="bottom" constant="15" id="qww-iV-Ndi"/>
-                        <constraint firstItem="HDt-RL-ZCR" firstAttribute="leading" secondItem="RxJ-IJ-izv" secondAttribute="leading" id="tuF-CL-hZK"/>
                     </constraints>
                 </scrollView>
             </subviews>
