@@ -26,6 +26,7 @@
             }
             UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
             but.frame = CGRectMake(j * ZP_Width / 8, i * ZP_Width / 8, 30, 30);
+            but.titleLabel.font = ZP_TrademarkFont;
             [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_whiteball_normal"] forState:UIControlStateNormal];
             if (row == 0) {
                 [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_whiteball_pressed"] forState:UIControlStateSelected];
@@ -47,8 +48,7 @@
     [self.contentView rightAnchor];
 }
 
-- (void)butClick:(UIButton *)btn
-{
+- (void)butClick:(UIButton *)btn {
     NSLog(@"-%ld - %ld",self.but1Array.count,self.but2Array.count);
     if (btn.selected) {
         NSLog(@"go");
@@ -79,15 +79,14 @@
     
 }
 
-- (NSMutableArray *)but1Array
-{
+- (NSMutableArray *)but1Array {
     if (!_but1Array) {
         _but1Array = [NSMutableArray array];
     }
     return _but1Array;
 }
-- (NSMutableArray *)but2Array
-{
+
+- (NSMutableArray *)but2Array {
     if (!_but2Array) {
         _but2Array = [NSMutableArray array];
     }

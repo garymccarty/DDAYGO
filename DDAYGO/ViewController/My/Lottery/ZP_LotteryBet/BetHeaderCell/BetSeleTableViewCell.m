@@ -29,9 +29,11 @@
     for (int i = 0; i < arr.count; i ++) {
         
         UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-        but.frame = CGRectMake(i * ZP_Width / 8,5, 30, 30);
+        but.frame = CGRectMake(i * ZP_Width / 10,5, 25, 25);
         [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_whiteball_pressed"] forState:UIControlStateNormal];
         [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_redball"] forState:UIControlStateSelected];
+//        btn.OpenAppURL.titleLabel.font    = [UIFont systemFontOfSize: 12];
+        but.titleLabel.font = ZP_TrademarkFont;
         if ([arr[i] integerValue] > 99) {
          [but setTitle:[NSString stringWithFormat:@"%ld",[arr[i] integerValue] - 100] forState:UIControlStateNormal];
             but.selected = YES;
@@ -45,6 +47,7 @@
     }
 
 }
+
 
 - (void)removeAllSubviews {
     //[self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];

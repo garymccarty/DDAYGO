@@ -29,6 +29,7 @@
     self.title = @"促销彩下注";
     [self.tableView registerNib:[UINib nibWithNibName:@"BetViewcell" bundle:nil] forCellReuseIdentifier:@"BetViewcell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BetSeleTableViewCell" bundle:nil] forCellReuseIdentifier:@"BetSeleTableViewCell"];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
     
     //    self.whiteBallHeaderView = [[NSBundle mainBundle] loadNibNamed:@"BetHeaderView" owner:self options:nil].lastObject;
     //    self.redBallHeaderView   = [[NSBundle mainBundle] loadNibNamed:@"BetHeaderView" owner:self options:nil].lastObject;
@@ -121,6 +122,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BetViewcell * cell = [tableView dequeueReusableCellWithIdentifier:@"BetViewcell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
     if (indexPath.row == 0) {
         [cell updateCount:59 WithIndex:indexPath.row];
         cell.howLabel.text = [NSString stringWithFormat:@"0"];
