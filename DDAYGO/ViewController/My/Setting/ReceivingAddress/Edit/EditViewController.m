@@ -9,8 +9,10 @@
 #import "EditViewController.h"
 #import "PrefixHeader.pch"
 #import "ZP_MyTool.h"
-@interface EditViewController ()
+#import "ZP_FrontPageReceivingAddressModel.h"
+@interface EditViewController ()<UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UIButton * acquiescence;
+@property (nonatomic, strong) NSMutableArray * newsData;
 @end
 
 @implementation EditViewController
@@ -18,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self touchesBegan];
+     [self allData];
+    self.ZipcodeaddressTextField.delegate = self;
     self.title = @"编辑地址";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"保存", nil)  style:UIBarButtonItemStylePlain target:self action:@selector(EditAddress)];
@@ -26,14 +30,14 @@
 }
 // 保存点击事件
 - (void)EditAddress {
-    
+    [self acquiring];
     NSLog(@"保存");
-    [self allData];
+   
 }
 //  数据
-- (void)allData {
+- (void)acquiring {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"adsid"] = @"1";
+    dic[@"adsid"] = _oid;
     dic[@"name"] = _ContactpersonTextField.text;
     dic[@"phone"] = _ContactnumberTextField.text;
     dic[@"cell"] = @"";
@@ -59,10 +63,62 @@
             }
         }
     } failure:^(NSError * error) {
-//        ZPLog(@"%@",error);
+        ZPLog(@"%@",error);
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+    }];
+}
+
+// 获取地址数据
+- (void)allData {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = Token;
+    dic[@"aid"] = _oid;
+    [ZP_MyTool requesAddress:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
+        NSArray * arr = obj;
+        self.newsData = [ZP_FrontPageReceivingAddressModel arrayWithArray:arr];
+
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
+
+- (void)cellWithdic:(ZP_FrontPageReceivingAddressModel *)model {
+    _ContactpersonTextField.text = model.eeceiptname;
+    _ContactnumberTextField.text = model.eeceiptphone;
+    _ReceivingaddressTextField.text = model.addressdetail;
+    _ZipcodeaddressTextField.text = model.zipcode;
+    
+}
+
+/***********鍵盤************/
+-(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
+    [UIView animateWithDuration:0.4 animations:^{
+        self.EditscrollView.contentOffset = CGPointMake(0, ZP_Width - 210);
+    }];
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.EditscrollView.contentOffset = CGPointMake(0, 0);
+    }];
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.EditscrollView endEditing:YES];
+}
+
+//隐藏键盘
+- (void)keyboardWillHide:(NSNotification *)notification {
+    //将contentInset的值设回原来的默认值
+    UIEdgeInsets e = UIEdgeInsetsMake(0, 0, 0, 0);
+    [self.EditscrollView setContentInset:e];
+    
+    NSLog(@"scrollView.height = %f", self.EditscrollView.contentSize.height);
+}
+
+
 // 键盘触摸
 - (void)touchesBegan {
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
@@ -73,11 +129,9 @@
 
 }
 // 触发事件
--(void)keyboardHide:(UITapGestureRecognizer*)tap{
-    
+-(void)keyboardHide:(UITapGestureRecognizer*)tap {
         [_ContactpersonTextField resignFirstResponder];
         [_ContactnumberTextField resignFirstResponder];
-        [_ReceivingareaTextField resignFirstResponder];
         [_ReceivingaddressTextField resignFirstResponder];
         [_ZipcodeaddressTextField resignFirstResponder];
 }

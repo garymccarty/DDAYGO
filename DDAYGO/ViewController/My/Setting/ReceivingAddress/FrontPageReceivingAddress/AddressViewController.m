@@ -100,7 +100,7 @@
         [cell.DeletingBut addTarget:self action:@selector(DeletingClick:) forControlEvents:UIControlEventTouchUpInside];
 
     [cell cellWithdic:model];
-    cell.finishBlock = ^(id response) {
+    cell.finishBlock = ^(id response) {//在这里传点击编辑的数据
         EditViewController * viewController = [[EditViewController alloc] init];
         [self.navigationController pushViewController:viewController animated:YES];
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字

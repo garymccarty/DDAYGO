@@ -35,6 +35,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    _ZPAccountNumberTextFiled.textField.delegate = self;
+    _ZPPswTextField.textField.delegate = self;
+    _ZPEmailTextFiled.textField.delegate = self;
     [self touchesBegan]; //触摸事件
     self.title = @"注册";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
@@ -286,23 +289,49 @@
     }
 }
 
-//  键盘弹起
-//  键盘触摸
+/***********鍵盤************/
+-(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
+    [UIView animateWithDuration:0.4 animations:^{
+        self.RegisterscrollView.contentOffset = CGPointMake(0, ZP_Width - 210);
+    }];
+    
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.RegisterscrollView.contentOffset = CGPointMake(0, 0);
+    }];
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.RegisterscrollView endEditing:YES];
+}
+
+//隐藏键盘
+- (void)keyboardWillHide:(NSNotification *)notification {
+    //将contentInset的值设回原来的默认值
+    UIEdgeInsets e = UIEdgeInsetsMake(0, 0, 0, 0);
+    [self.RegisterscrollView setContentInset:e];
+    
+    NSLog(@"scrollView.height = %f", self.RegisterscrollView.contentSize.height);
+}
+
+// 键盘触摸
 - (void)touchesBegan {
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
-    //  设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
     tapGestureRecognizer.cancelsTouchesInView = NO;
-    //  将触摸事件添加到当前view
+    //将触摸事件添加到当前view
     [self.view addGestureRecognizer:tapGestureRecognizer];
     
 }
 // 触发事件
--(void)keyboardHide:(UITapGestureRecognizer*)tap{
-    [_ZPAccountNumberTextFiled resignFirstResponder];
-    [_ZPPswTextField resignFirstResponder];
-    [_ZPEmailTextFiled resignFirstResponder];
-    [_ZPCountryTextField resignFirstResponder];
+-(void)keyboardHide:(UITapGestureRecognizer*)tap {
+    [_ZPAccountNumberTextFiled.textField resignFirstResponder];
+     [_ZPPswTextField.textField resignFirstResponder];
+     [_ZPEmailTextFiled.textField resignFirstResponder];
 }
+
 //  MD5加密方法
 -(NSString *)md5:(NSString *)input {
     const char * cStr = [input UTF8String];
@@ -314,7 +343,6 @@
     }
     return output;
 }
-
 
 #pragma mark - - - - - - - - - - - - - - delegate 视图委托 - - - - - - - - - - - - - -
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{

@@ -36,19 +36,19 @@
     _MessageLabel = MessageLabel;
     
     //  文本输入框
-    UITextField * TextField = [UITextField new];
-    TextField.textAlignment = NSTextAlignmentLeft;
-    TextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-    TextField.textColor = ZP_TabBarTextColor;
-    TextField.font = ZP_titleFont;
-    TextField.placeholder = NSLocalizedString(@"对其事项说明...", nil);
-    [self.contentView addSubview:TextField];
-    [TextField mas_makeConstraints:^(MASConstraintMaker *make) {
+    UITextField * MessagetextField = [UITextField new];
+    MessagetextField.textAlignment = NSTextAlignmentLeft;
+    MessagetextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
+    MessagetextField.textColor = ZP_TabBarTextColor;
+    MessagetextField.font = ZP_titleFont;
+    MessagetextField.placeholder = NSLocalizedString(@"对其事项说明...", nil);
+    [self.contentView addSubview:MessagetextField];
+    [MessagetextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(70);
         make.top.equalTo(self).offset(15);
         make.width.mas_offset(ZP_Width - 70 - 15);
     }];
-    _TextField = TextField;
+    _MessagetextField = MessagetextField;
     
     //  下划线
     UIView * Underline2 = [UIView new];
@@ -114,11 +114,46 @@
     }];
 }
 
-//  键盘弹起
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+///***********鍵盤************/
+//-(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
+//    [UIView animateWithDuration:0.4 animations:^{
+//        self.contentOffset = CGPointMake(0, ZP_Width - 210);
+//    }];
+//
+//}
+//- (void)textFieldDidEndEditing:(UITextField *)textField{
+//    [UIView animateWithDuration:0.3 animations:^{
+//        self.contentOffset = CGPointMake(0, 0);
+//    }];
+//
+//}
+//
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    [self.contentView endEditing:YES];
+//}
+//
+//////隐藏键盘
+////- (void)keyboardWillHide:(NSNotification *)notification {
+////    //将contentInset的值设回原来的默认值
+////    UIEdgeInsets e = UIEdgeInsetsMake(0, 0, 0, 0);
+////    [self setContentInset:e];
+////
+////    NSLog(@"scrollView.height = %f", self.contentSize.height);
+////}
+
+// 键盘触摸
+- (void)touchesBegan {
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //将触摸事件添加到当前view
+    [self addGestureRecognizer:tapGestureRecognizer];
     
-    [super touchesBegan:touches withEvent:event];
-    [self.TextField resignFirstResponder];
+}
+// 触发事件
+-(void)keyboardHide:(UITapGestureRecognizer*)tap {
+    [_MessagetextField resignFirstResponder];
+
 }
 
 - (void)MessageDic:(ZP_InformationModel *)model {

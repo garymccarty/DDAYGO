@@ -20,6 +20,7 @@
         self.addressid = Dic[@"addressid"];
         self.addressdetail = Dic[@"addressdetail"];
         self.isdefault = Dic[@"isdefault"];
+        self.zipcode = Dic[@"zipcode"];
     }
     return self;
 }
@@ -39,6 +40,7 @@
         model.addressdetail = dic[@"addressdetail"];
         model.addressid = dic[@"addressid"];
         model.isdefault = dic[@"isdefault"];
+        model.zipcode = dic[@"zipcode"];
         [arr addObject:model];
     }
     return arr;

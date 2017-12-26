@@ -13,7 +13,7 @@
 #import "ZP_HomeTool.h"
 #import "ZP_PositionModel.h"
 #import "UINavigationBar+Awesome.h"
-@interface ZP_QuickLoginController ()
+@interface ZP_QuickLoginController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet TextView * ZPEmailTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
@@ -27,7 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self touchesBegan];
+    self.ZPEmailTextField.textField.delegate = self;
+    self.ZPPswTextField.textField.delegate = self;
+    [self touchesBegan];
     [self initUI];
 }
 
@@ -263,8 +265,8 @@
 
 // 触发事件
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
-    [_ZPEmailTextField resignFirstResponder];
-    [_ZPPswTextField resignFirstResponder];
+    [_ZPEmailTextField.textField resignFirstResponder];
+    [_ZPPswTextField.textField resignFirstResponder];
 }
 
 //  MD5加密方法
@@ -279,6 +281,5 @@
     }
     return output;
 }
-
 
 @end
