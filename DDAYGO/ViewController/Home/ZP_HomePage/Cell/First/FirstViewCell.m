@@ -80,6 +80,7 @@
 - (void)buttonType:(UIButton *)sender {
     NSLog(@"%ld",sender.tag);
     self.firstBlock(sender.tag);
+    
 }
 
 

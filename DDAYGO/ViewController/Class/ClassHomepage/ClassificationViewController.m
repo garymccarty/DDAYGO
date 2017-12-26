@@ -82,7 +82,8 @@
 
 //  数据（右边）
 - (void)getRightItemDataWithProducttypeid:(NSInteger)producttypeid {
-    NSDictionary * dictt = @{@"level":@"2",@"language":@"zh-tw",@"fatherid":@(producttypeid)};
+    NSDictionary * dictt = @{@"level":@"2",@"language":@"zh-tw",@"fatherid":[NSNumber numberWithInteger:producttypeid]};
+//     NSDictionary * dictt = @{@"level":@"2",@"language":@"zh-tw",@"fatherid": [NSString stringWithFormat:@"producttypeid+%ld",producttypeid]};
     NSLog(@"%@",dictt);
     [ZP_ClassViewTool requClassIficationrj:dictt success:^(id obj) {
         ZPLog(@"%@",obj);

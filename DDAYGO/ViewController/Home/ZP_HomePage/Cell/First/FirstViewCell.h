@@ -11,6 +11,7 @@
 @interface FirstViewCell : UITableViewCell
 
 @property (nonatomic, copy) void(^firstBlock)(NSInteger tag);
+//@property (nonatomic, copy) void(^firstBlock)(NSInteger name);
 
 - (void)first:(NSArray *)sup;
 
