@@ -20,6 +20,7 @@
         model.CurrencySymbolLabel = @"RMB:";
         model.productid =  dic[@"productid"];
         model.cp = dic[@"cp"];
+        model.state = dic[@"state"];
         [arr addObject:model];
     }
     return arr;

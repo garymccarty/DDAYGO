@@ -9,6 +9,7 @@
 
 #import "CollectionTableViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "PrefixHeader.pch"
 @implementation CollectionTableViewCell
 
 - (void)awakeFromNib {
@@ -23,8 +24,13 @@
 - (void)setModel:(collectionModel *)model {
     [_ShopimageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     _priceLabel.text = [NSString stringWithFormat:@"%@",model.productprice];
-    _CurrencySymbolLabel.text = model.CurrencySymbolLabel;
+//    _CurrencySymbolLabel.text = model.CurrencySymbolLabel;
+     NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"symbol"];
+   _CurrencySymbolLabel.text = [NSString stringWithFormat:@"%@:",str];
     _Cp.text = [NSString stringWithFormat:@"%@",model.cp];
+//    if (model.state = 4) {
+//        _StateLabel.text = @"已下架";
+//    }
     _shopTextLabel.text = model.productname;
 }
 

@@ -20,7 +20,7 @@
         self.productname = dic[@"productname"];
         self.productprice = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
         self.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];
-         self.CurrencySymbolLabel = @"RMB:";
+        self.state = dic[@"state"];
     }
     return self;
 }
@@ -44,7 +44,7 @@
         model.productprice = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
         model.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];
         model.historyid = dic[@"historyid"];
-        model.CurrencySymbolLabel = @"RMB:";
+        model.state = dic[@"state"];
         [arr addObject:model];
     }
         

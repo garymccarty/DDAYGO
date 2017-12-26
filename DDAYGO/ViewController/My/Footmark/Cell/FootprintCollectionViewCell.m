@@ -19,8 +19,9 @@
     [_defaultimg sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     _productname.text = model.productname;
     _productprice.text = [NSString stringWithFormat:@"%@",model.productprice];
+    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"symbol"];
+    _CurrencySymbolLabel.text = [NSString stringWithFormat:@"%@:",str];
     _cp.text = [NSString stringWithFormat:@"%@",model.cp];
-    _CurrencySymbolLabel.text = model.CurrencySymbolLabel;
     
 }
 @end

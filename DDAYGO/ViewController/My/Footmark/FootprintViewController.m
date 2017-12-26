@@ -33,13 +33,14 @@
     [super viewWillAppear:animated];
     [self allData];
 }
-
+// 获取数据
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = Token;
     int i = arc4random_uniform(999);  // 随机数
     dic[@"nonce"] = @(i);
     [ZP_MyTool requtsFootprint:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
         NSDictionary * dic = obj;
         self.newsData = [ZP_FootprintModel arrayWithArray:dic[@"historyslist"]];
 //       数据为空时提示
@@ -65,6 +66,31 @@
         [self.collectionView reloadData];
     } failure:^(NSError * error) {
         ZPLog(@"error");
+    }];
+}
+
+//  删除按钮
+- (void)deleBtn:(UIButton *)btn{
+    if (self.newsData.count == 0) {
+        return;
+    }
+    
+    ZP_FootprintModel *model = self.newsData[btn.tag];
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = Token;
+    dic[@"historyid"] = model.historyid;
+    [ZP_MyTool requtsDeleFootprint:dic success:^(id obj) {
+        NSLog(@"dele %@",obj);
+        [self allData];
+        if ([obj[@"result"]isEqualToString:@"ok"]) {
+            [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+        }else {
+            if ([obj[@"result"]isEqualToString:@"failure"]) {
+                [SVProgressHUD showInfoWithStatus:@"删除失败"];
+            }
+        }
+    } failure:^(NSError * error) {
+        NSLog(@"dele %@",error);
     }];
 }
 
@@ -97,30 +123,6 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
-//  删除按钮
-- (void)deleBtn:(UIButton *)btn{
-    if (self.newsData.count == 0) {
-       
-        return;
-    }
-    ZP_FootprintModel *model = self.newsData[btn.tag];
-    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = Token;
-    dic[@"historyid"] = model.historyid;
-    [ZP_MyTool requtsDeleFootprint:dic success:^(id obj) {
-        NSLog(@"dele %@",obj);
-        [self allData];
-        if ([obj[@"result"]isEqualToString:@"ok"]) {
-            [SVProgressHUD showSuccessWithStatus:@"删除成功"];
-        }else {
-            if ([obj[@"result"]isEqualToString:@"failure"]) {
-                [SVProgressHUD showInfoWithStatus:@"删除失败"];
-            }
-        }
-    } failure:^(NSError * error) {
-        NSLog(@"dele %@",error);
-    }];
-}
 
 - (NSMutableArray *)newsData {
     

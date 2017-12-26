@@ -46,7 +46,7 @@
     dic[@"token"] = Token;
     dic[@"screen"] = @1;
     [ZP_MyTool requestgetcollections:dic success:^(id json) {
-//        ZPLog(@"%@",json);
+        ZPLog(@"%@",json);
 //    if (_dataArray.count < 1) {
 //        UIImageView * image = [UIImageView new];
 //        image.image = [UIImage imageNamed:@"icon_fail"];
@@ -75,6 +75,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     collectionModel * model = _dataArray[indexPath.row];
     CollectionTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"CollectionTableViewCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
     cell.model = model;
     return cell;
 }
@@ -83,5 +84,9 @@
     return 102;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ZPLog(@"%ld",indexPath.row);
+}
 @end
 

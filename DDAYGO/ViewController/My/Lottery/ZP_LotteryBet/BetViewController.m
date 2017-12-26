@@ -207,6 +207,16 @@
     }
     
 }
+// 随机
+- (IBAction)randomBut:(id)sender {
+   
+    
+}
+// 确定
+- (IBAction)determineBut:(id)sender {
+    
+    
+}
 
 - (void)dele:(UIButton *)but
 {

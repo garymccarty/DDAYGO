@@ -38,9 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    
-//    [self AllDatas];
-    
     [self autoLogin:^(id obj) {
         if (!DD_HASLOGIN) {
             if (![MyViewController sharedInstanceTool].hasRemind) {
@@ -79,7 +76,7 @@
     if (DD_HASLOGIN) {
         if (success) {
             success(nil);
-        }
+    }
     } else {
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"loginData"]) {
             NSDictionary * dic = [[NSUserDefaults standardUserDefaults] objectForKey:@"loginData"];
@@ -123,6 +120,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    
 //    本地数据调用
     UIImage * image = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
     if (image) {
@@ -130,6 +128,7 @@
         _headImageBut.layer.masksToBounds = YES;
         [_headImageBut setImage:image forState:UIControlStateNormal];
     }
+    
 //    判断是否登录
     if (!Token) {
         if (![MyViewController sharedInstanceTool].hasRemind) {
@@ -137,6 +136,7 @@
             LogregisterController *viewcontroller = [[LogregisterController alloc] init];
             [self.navigationController pushViewController:viewcontroller animated:YES];
       }
+        
     }else {
     [self AllDatas];
     [self allData];
