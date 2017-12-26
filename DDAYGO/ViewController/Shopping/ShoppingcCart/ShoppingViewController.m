@@ -598,10 +598,13 @@
     }];
     return myView;
 }
+
 //  设置表头高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    return 40;
+//    return 40;
+    ZP_CartsShopModel * model = nameArray[section];
+    return model.array.count;
 }
 
 /*
