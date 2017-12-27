@@ -47,7 +47,7 @@
         navBar.translucent = NO;
     }else{
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        dict[NSFontAttributeName] = [UIFont systemFontOfSize:18];
+        dict[NSFontAttributeName] = ZP_NavTextFont;
         [[UINavigationBar appearance] setTitleTextAttributes:dict];
         [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
         [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];

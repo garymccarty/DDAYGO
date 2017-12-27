@@ -15,7 +15,10 @@
 #import "ZP_LotteryHistoricalBettingNumberController.h"
 #import "ZP_MyTool.h"
 #import "ZP_LotterModel.h"
-@interface LotteryController ()
+
+@interface LotteryController () {
+    UIButton * _chooseCityBtn;
+}
 
 @property (strong ,nonatomic) NSArray *titleArray;
 @property (strong ,nonatomic) NSArray *titleLabelArray;
@@ -40,6 +43,7 @@
     
     [self initUI];
     [self getData];
+    [self addNavigationBar];
 }
 
 - (void)getData {
@@ -110,7 +114,8 @@
 //    self.periodsLabel.text = [NSString stringWithFormat:@"第%@期",[self.prizeDic[@"lottery"][@"periods"] stringValue]];
 //    self.dateLabel.text = self.prizeDic[@"lottery"][@"createtime"];
 //    //$
-    [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@"$"];
+//    [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@"$"];
+     [self updateBounctyViewWithBonus:[self.prizeDic[@"lottery"][@"poolamount"] integerValue] Suffix:@""];
 //
 //    NSArray *prizeArray = self.prizeDic[@"lotterywin"];
 //    for (int i = 0; i < prizeArray.count - 1; i ++) {
@@ -182,27 +187,36 @@
     [tools setBackgroundImage:[UIImage new]forToolbarPosition:UIBarPositionAny                      barMetrics:UIBarMetricsDefault];
     [tools setShadowImage:[UIImage new]
        forToolbarPosition:UIToolbarPositionAny];
-//  添加两个button
-    NSMutableArray * buttons = [[NSMutableArray alloc]initWithCapacity:2];
-    
-    UIBarButtonItem * Instruction = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bg_lottery_record"] style: UIBarButtonItemStyleDone target:self action:@selector(Instruction)];
-    
-    UIBarButtonItem * HistoryLottery = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bg_lottery_explan"] style: UIBarButtonItemStyleDone target:self action:@selector(HistoryLottery)];
-    Instruction.tintColor=[UIColor whiteColor];
-    HistoryLottery.tintColor=[UIColor whiteColor];
-    [buttons addObject:HistoryLottery];
-    [buttons addObject:Instruction];
-    [tools setItems:buttons animated:NO];
-    UIBarButtonItem * btn =[[UIBarButtonItem alloc]initWithCustomView:tools];
-    self.navigationItem.rightBarButtonItem = btn;
+//
+//    [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
+//    CGFloat imageWidth = _chooseCityBtn.imageView.bounds.size.width;
+//    CGFloat labelWidth = _chooseCityBtn.titleLabel.bounds.size.width;
+//    _chooseCityBtn.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth   , 0, -labelWidth);
+//    _chooseCityBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, 0, imageWidth);
+//    [_chooseCityBtn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:_chooseCityBtn];
+////  添加两个button
+//    NSMutableArray * buttons = [[NSMutableArray alloc]initWithCapacity:2];
+//
+//    UIBarButtonItem * Instruction = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bg_lottery_record"] style: UIBarButtonItemStyleDone target:self action:@selector(Instruction)];
+//
+//    UIBarButtonItem * HistoryLottery = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bg_lottery_explan"] style: UIBarButtonItemStyleDone target:self action:@selector(HistoryLottery)];
+//    Instruction.tintColor=[UIColor whiteColor];
+//    HistoryLottery.tintColor=[UIColor whiteColor];
+//    [buttons addObject:HistoryLottery];
+//    [buttons addObject:Instruction];
+//    [tools setItems:buttons animated:NO];
+//    UIBarButtonItem * btn =[[UIBarButtonItem alloc]initWithCustomView:tools];
+//    self.navigationItem.rightBarButtonItem = btn;
     
     // 调这里 fame就好
     
     UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
     but.frame = CGRectMake(20, CGRectGetMaxY(_OrderNumView.frame) + 10, ZP_Width - 40, 40);
+    but.layer.cornerRadius = 5;
     [but setTitle:@"填写" forState:UIControlStateNormal];
     [but addTarget:self action:@selector(betAction) forControlEvents:UIControlEventTouchUpInside];
-    but.backgroundColor = [UIColor redColor];
+    but.backgroundColor = [UIColor orangeColor];
     [self.scrollView addSubview:but];
     
     NSLog(@"%f",_OrderNumView.frame.origin.y);
@@ -210,7 +224,8 @@
     
     UIButton *but2 = [UIButton buttonWithType:UIButtonTypeCustom];
     but2.frame = CGRectMake(20, CGRectGetMaxY(but.frame)+10, ZP_Width - 40, 40);
-    [but2 setTitle:@"历史填写号码" forState:UIControlStateNormal];
+    but2.layer.cornerRadius = 5;
+    [but2 setTitle:@"历史提交号码" forState:UIControlStateNormal];
     [but2 addTarget:self action:@selector(HistoricalBetAction) forControlEvents:UIControlEventTouchUpInside];
     but2.backgroundColor = [UIColor orangeColor];
     [self.scrollView addSubview:but2];
@@ -219,6 +234,23 @@
     self.currentPeriodArray = @[self.currentPeriodLabel1,self.currentPeriodLabel2,self.currentPeriodLabel3,self.currentPeriodLabel4];
     self.winnersNumArray = @[self.winnersNumLabel1,self.winnersNumLabel2,self.winnersNumLabel3,self.winnersNumLabel4];
     self.bountyArray = @[self.bountyLabel1,self.bountyLabel2,self.bountyLabel3,self.bountyLabel4];
+}
+
+
+- (void)addNavigationBar {
+    
+    __weak LotteryController *controller = self;
+    [self addNavigationBarItemWithType:LLNavigationBarItemTypeRightFirst handler:^(UIButton *button) {
+       
+        [button setImage:[UIImage imageNamed:@"bg_lottery_record"] forState:UIControlStateNormal];
+        [button addTarget:controller action:@selector(Instruction) forControlEvents:UIControlEventTouchUpInside];
+    }];
+    
+    [self addNavigationBarItemWithType:LLNavigationBarItemTypeRightSecond handler:^(UIButton *button) {
+        
+        [button setImage:[UIImage imageNamed:@"bg_lottery_explan"] forState:UIControlStateNormal];
+        [button addTarget:controller action:@selector(HistoryLottery) forControlEvents:UIControlEventTouchUpInside];
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -17,7 +17,9 @@
 #import "BetTableViewMyCell.h"
 #import "BetTableViewMyCell2.h"
 
-@interface BetViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface BetViewController ()<UITableViewDelegate,UITableViewDataSource> {
+    UIButton * _chooseCityBtn;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //@property (nonatomic ,strong) BetHeaderView *whiteBallHeaderView;
 //@property (nonatomic ,strong) BetHeaderView *redBallHeaderView;
@@ -59,26 +61,60 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewCellTwo" bundle:nil] forCellReuseIdentifier:@"BetTableViewCellTwo"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewMyCell2" bundle:nil] forCellReuseIdentifier:@"BetTableViewMyCell2"];
 
-    UIToolbar * tools = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 0, 15)];
-    // 解决出现的那条线
-    tools.clipsToBounds = YES;
-    // 解决tools背景颜色的问题
-    [tools setBackgroundImage:[UIImage new]forToolbarPosition:UIBarPositionAny                      barMetrics:UIBarMetricsDefault];
-    [tools setShadowImage:[UIImage new]
-       forToolbarPosition:UIToolbarPositionAny];
-    //  添加两个button
-    NSMutableArray * buttons = [[NSMutableArray alloc]initWithCapacity:1];
+    
+    CGRect frame = _chooseCityBtn.frame;
+    frame.size.width = 50;
+    frame.size.height = 35;
+    _chooseCityBtn.frame = frame;
+    _chooseCityBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+//    [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
+    [_chooseCityBtn setTitle:NSLocalizedString(@"提交", nil) forState:UIControlStateNormal];
+    CGFloat imageWidth = _chooseCityBtn.imageView.bounds.size.width;
+    CGFloat labelWidth = _chooseCityBtn.titleLabel.bounds.size.width;
 
-    UIBarButtonItem * Instruction = [[UIBarButtonItem alloc]initWithTitle:@"下注" style:UIBarButtonItemStyleDone target:self action:@selector(Instruction)];
-    Instruction.tintColor=[UIColor whiteColor];
-    [buttons addObject:Instruction];
-    [tools setItems:buttons animated:NO];
-    UIBarButtonItem * btn =[[UIBarButtonItem alloc]initWithCustomView:tools];
-    self.navigationItem.rightBarButtonItem = btn;
+    _chooseCityBtn.frame =CGRectMake(0, 0, 40.0f, 25.0f);
+    _chooseCityBtn.titleLabel.font = ZP_TooBarFont;
+    _chooseCityBtn.layer.cornerRadius = 3;
+    _chooseCityBtn.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth   , 0, -labelWidth);
+    _chooseCityBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, 0, imageWidth);
+    
+    [_chooseCityBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    _chooseCityBtn.backgroundColor = [UIColor whiteColor];
+    [_chooseCityBtn addTarget:self action:@selector(Instruction) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc]initWithCustomView:_chooseCityBtn]];
+    
+    
+//    //  添加两个button
+//    NSMutableArray * buttons = [[NSMutableArray alloc]initWithCapacity:1];
+//
+//    UIBarButtonItem * Instruction = [[UIBarButtonItem alloc]initWithTitle:@"下注" style:UIBarButtonItemStyleDone target:self action:@selector(Instruction)];
+//    Instruction.tintColor=[UIColor whiteColor];
+//    [buttons addObject:Instruction];
+//    [tools setItems:buttons animated:NO];
+//    UIBarButtonItem * btn =[[UIBarButtonItem alloc]initWithCustomView:tools];
+//    self.navigationItem.rightBarButtonItem = btn;
+//    __weak BetViewController *controller = self;
+//    [self addNavigationBarItemWithType:LLNavigationBarItemTypeRightFirst handler:^(UIButton *button) {
+//
+//        [button setTitle:NSLocalizedString( @"提交", nil) forState:UIControlStateNormal];
+//        [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+//        button.backgroundColor = [UIColor whiteColor];
+//        [button addTarget:controller action:@selector(Instruction) forControlEvents:UIControlEventTouchUpInside];
+//
+//        CGRect frame = button.frame;
+//        frame.size.width = 50;
+//        button.frame = frame;
+//        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.right.equalTo(controller.view).offset(10);
+//            make.bottom.equalTo(controller.view).offset(8);
+//            make.width.mas_offset(10);
+//            make.height.mas_offset(15);
+//        }];
+//    }];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+
+- (void)viewDidAppear:(BOOL)animated {
     self.tableView.frame =CGRectMake(0, 0, ZP_Width, ZP_height-TabbarHeight -NavBarHeight);
     
 }
@@ -127,21 +163,22 @@
     }
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 3;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (self.dicArray.count > 0) {
+        return 3;
+    }
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //这个+1
     if (section == 2) {
-        return self.dicArray.count + 1;
+        return self.dicArray.count;
     }
     return 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
      return CGFLOAT_MIN;
 }
 
@@ -204,7 +241,7 @@
         };
         return cell;
      }else{
-          BetTableViewCellTwo *cell1 = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewCellTwo"];
+          BetTableViewCellTwo *cell1 = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewCellTwo" forIndexPath:indexPath];
          if (self.dicArray.count > 0) {             
              if (indexPath.row == self.dicArray.count) {
                  [cell1 updateCount:self.Selearray];
@@ -251,11 +288,12 @@
         }else{
             [self.dicArray removeObjectAtIndex:but.tag];
             NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
-            [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView reloadData];
         }
     }
     
 }
+// 机选
 - (IBAction)suijiBut:(id)sender {
     self.array1 = [NSMutableArray array];
     for (int i = 0; i< 5; i++) {
@@ -269,9 +307,8 @@
     self.Selearray = [NSMutableArray arrayWithArray:self.array1];
     [self.Selearray addObject:[NSNumber numberWithInt:a]];
     
-    [self.tableView reloadData];
 }
-
+// 确定
 - (IBAction)sureBut:(id)sender {
     if (self.Selearray.count == 6) {
         [self.dicArray addObject:self.Selearray];

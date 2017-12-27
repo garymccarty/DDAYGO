@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BetTableViewCellTwo : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *deleBut;
+
+@property (weak, nonatomic) IBOutlet UIButton * deleBut;
 
 - (void)updateCount:(NSArray *)arr;
 

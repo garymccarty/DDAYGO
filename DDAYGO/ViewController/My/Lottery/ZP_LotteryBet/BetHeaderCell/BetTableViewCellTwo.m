@@ -21,9 +21,7 @@
 
 - (void)updateCount:(NSArray *)arr {
     NSLog(@"sele - %ld",arr.count);
-    
     [self removeAllSubviews];
-    
     for (int i = 0; i < arr.count; i ++) {
         
         UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -44,7 +42,6 @@
     }
     
 }
-
 
 - (void)removeAllSubviews {
     //[self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];

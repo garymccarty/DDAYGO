@@ -18,14 +18,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-5e-dph">
-                        <rect key="frame" x="241" y="5" width="63" height="25"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-5e-dph">
+                        <rect key="frame" x="250" y="5" width="65" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="PX3-sY-ckl"/>
+                        </constraints>
                         <state key="normal" title="删除">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Lih-5e-dph" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="7hB-d0-HiN"/>
+                    <constraint firstAttribute="trailing" secondItem="Lih-5e-dph" secondAttribute="trailing" constant="5" id="tTG-4l-uO5"/>
+                    <constraint firstItem="Lih-5e-dph" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="250" id="wi3-ao-zcK"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="deleBut" destination="Lih-5e-dph" id="2gm-9Q-6FI"/>

@@ -57,8 +57,9 @@
     }];
 }
 
+
 - (void)initUI {
-    self.tableView = [[UITableView alloc]init];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
     self.tableView.backgroundColor = ZP_Graybackground;
     self.tableView.delegate = self;
@@ -106,6 +107,10 @@
     _chooseCityBtn.titleLabel.font = ZP_TooBarFont;
     [_chooseCityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_chooseCityBtn setTitle:NSLocalizedString(@"臺灣", nil) forState:UIControlStateNormal];
+    
+    
+    
+    
     [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
     CGFloat imageWidth = _chooseCityBtn.imageView.bounds.size.width;
     CGFloat labelWidth = _chooseCityBtn.titleLabel.bounds.size.width;
@@ -180,6 +185,7 @@
 }
 //  组头
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
     if (section ==2) {
         return 15;
     }else
@@ -189,9 +195,12 @@
            if (section ==4) {
             return 15;
         }
-    return 0;
+    return 0.001;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0001;
+}
 // cell个数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -214,19 +223,15 @@
         if (indexPath.section == 1){
             static NSString * FirstID = @"First";
             FirstViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FirstID];
-//            cell.firstBlock = ^(NSInteger tag) {
             cell.firstBlock = ^(NSInteger tag, NSString *name) {
-                NSLog(@"id %ld",tag);
-                
-                //说了跟id 一样传过去· 你传了吗
                 CPViewController * CVPView = [[CPViewController alloc]init];
                 CVPView.fatherId =[NSNumber numberWithInteger:tag];
                 CVPView.titleString = name;
-                
                 [self.navigationController pushViewController:CVPView animated:YES];
             };
             return cell;
     }else
+        
 /*************暂时不需要*************/
 //        if (indexPath.section == 2){
 //            static NSString * SecondID = @"Secondcell";

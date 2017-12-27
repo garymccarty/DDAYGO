@@ -190,7 +190,9 @@
 		C409F8721FA1758E009DE7B1 /* ZP_SixthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F8711FA1758E009DE7B1 /* ZP_SixthModel.m */; };
 		C409F8901FA1E280009DE7B1 /* ZP_ZeroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F88F1FA1E280009DE7B1 /* ZP_ZeroModel.m */; };
 		C4137E811FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */; };
-		C420EDE21FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C420EDE11FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx */; };
+		C420EDE51FF3D397005ECE30 /* UIViewController+LLProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */; };
+		C420EDE81FF3D7E9005ECE30 /* CALayer+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE71FF3D7E9005ECE30 /* CALayer+UIColor.m */; };
+		C420EDEA1FF3EDD6005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C420EDE91FF3EDD5005ECE30 /* DDAYGO IHTTP协议1.0.docx */; };
 		C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA51FC813C30097DB8F /* FSPageContentView.m */; };
 		C425BEAA1FC813C30097DB8F /* FSSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA81FC813C30097DB8F /* FSSegmentTitleView.m */; };
 		C425BEB01FC818480097DB8F /* ZP_OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEAF1FC818480097DB8F /* ZP_OrderController.m */; };
@@ -729,7 +731,11 @@
 		C409F88F1FA1E280009DE7B1 /* ZP_ZeroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_ZeroModel.m; sourceTree = "<group>"; };
 		C4137E7F1FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_FrontPageReceivingAddressModel.h; sourceTree = "<group>"; };
 		C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_FrontPageReceivingAddressModel.m; sourceTree = "<group>"; };
-		C420EDE11FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
+		C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LLProgress.m"; sourceTree = "<group>"; };
+		C420EDE41FF3D397005ECE30 /* UIViewController+LLProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LLProgress.h"; sourceTree = "<group>"; };
+		C420EDE61FF3D7E9005ECE30 /* CALayer+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+UIColor.h"; sourceTree = "<group>"; };
+		C420EDE71FF3D7E9005ECE30 /* CALayer+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+UIColor.m"; sourceTree = "<group>"; };
+		C420EDE91FF3EDD5005ECE30 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C425BEA41FC813C30097DB8F /* FSPageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPageContentView.h; sourceTree = "<group>"; };
 		C425BEA51FC813C30097DB8F /* FSPageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPageContentView.m; sourceTree = "<group>"; };
 		C425BEA61FC813C30097DB8F /* FSScrollContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScrollContentView.h; sourceTree = "<group>"; };
@@ -1185,7 +1191,7 @@
 		063FE0441F614D24009910FF /* DDAYGO */ = {
 			isa = PBXGroup;
 			children = (
-				C420EDE11FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx */,
+				C420EDE91FF3EDD5005ECE30 /* DDAYGO IHTTP协议1.0.docx */,
 				0641BB971F67B60B00E72FEF /* Testbag */,
 				063FE0AE1F615CEB009910FF /* ViewController */,
 			);
@@ -2889,8 +2895,12 @@
 		C47096961FB04B2D006EA52C /* ZP_registrationTimerBut */ = {
 			isa = PBXGroup;
 			children = (
+				C420EDE61FF3D7E9005ECE30 /* CALayer+UIColor.h */,
+				C420EDE71FF3D7E9005ECE30 /* CALayer+UIColor.m */,
 				C47096971FB04B2D006EA52C /* UIButton+countDown.h */,
 				C47096981FB04B2D006EA52C /* UIButton+countDown.m */,
+				C420EDE41FF3D397005ECE30 /* UIViewController+LLProgress.h */,
+				C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */,
 			);
 			path = ZP_registrationTimerBut;
 			sourceTree = "<group>";
@@ -3783,7 +3793,7 @@
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
 				C44D6D121FD8CF070002DAF2 /* PayViewController.xib in Resources */,
 				C4D9E7081FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.xib in Resources */,
-				C420EDE21FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */,
+				C420EDEA1FF3EDD6005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				062C9D631F8CD6F900E14987 /* button_6@2x.png in Resources */,
 				06F571D81F9F1A7900D61FDB /* EditViewController.xib in Resources */,
 				06F572411F9F204F00D61FDB /* BillDetailViewController.xib in Resources */,
@@ -3973,6 +3983,7 @@
 				C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */,
 				C42A17411FF2532400680F92 /* BetTableViewMyCell2.m in Sources */,
 				06621DAD1F9758720030983F /* TextView.m in Sources */,
+				C420EDE81FF3D7E9005ECE30 /* CALayer+UIColor.m in Sources */,
 				C425BEB41FC832140097DB8F /* ZP_FootprintModel.m in Sources */,
 				C4D9E7071FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.m in Sources */,
 				C47096A71FB065CE006EA52C /* LanguageController.m in Sources */,
@@ -4064,6 +4075,7 @@
 				064449B91F6A9B250004DFE4 /* UIScrollView+MJRefresh.m in Sources */,
 				C47E76491FB5A1C7009F279A /* Pop-upMenuView.m in Sources */,
 				064449A81F6A9B250004DFE4 /* MJRefreshBackFooter.m in Sources */,
+				C420EDE51FF3D397005ECE30 /* UIViewController+LLProgress.m in Sources */,
 				C47212B81FB1A5DC0055578E /* CustomCell.m in Sources */,
 				C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */,
 				06F571141F9F0D6800D61FDB /* AppraiseViewCell.m in Sources */,
