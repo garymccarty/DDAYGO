@@ -110,7 +110,7 @@
     static CGFloat const kButtonWidth = 63.0f;
     static CGFloat const kButtonHeight = 43.0f;
     UIButton *cartButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    cartButton.frame = CGRectMake(0.0f, 0.0f, kButtonWidth, kButtonHeight);
+    cartButton.frame = CGRectMake(0.0f, 0.0f, kButtonWidth - 50, kButtonHeight);
     cartButton.backgroundColor = [UIColor clearColor];
     
     [cartButton setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];

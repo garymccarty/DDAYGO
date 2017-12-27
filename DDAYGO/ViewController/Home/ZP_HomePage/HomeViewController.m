@@ -217,6 +217,7 @@
             static NSString * FirstID = @"First";
             FirstViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FirstID];
             cell.firstBlock = ^(NSInteger tag) {
+                
                 NSLog(@"id %ld",tag);
                 CPViewController * CVPView = [[CPViewController alloc]init];
                 CVPView.fatherId =[NSNumber numberWithInteger:tag];
