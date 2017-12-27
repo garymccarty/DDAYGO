@@ -190,7 +190,7 @@
 		C409F8721FA1758E009DE7B1 /* ZP_SixthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F8711FA1758E009DE7B1 /* ZP_SixthModel.m */; };
 		C409F8901FA1E280009DE7B1 /* ZP_ZeroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F88F1FA1E280009DE7B1 /* ZP_ZeroModel.m */; };
 		C4137E811FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */; };
-		C420EDE01FF36F40005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C420EDDF1FF36F40005ECE30 /* DDAYGO IHTTP协议1.0.docx */; };
+		C420EDE21FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C420EDE11FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx */; };
 		C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA51FC813C30097DB8F /* FSPageContentView.m */; };
 		C425BEAA1FC813C30097DB8F /* FSSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA81FC813C30097DB8F /* FSSegmentTitleView.m */; };
 		C425BEB01FC818480097DB8F /* ZP_OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEAF1FC818480097DB8F /* ZP_OrderController.m */; };
@@ -729,7 +729,7 @@
 		C409F88F1FA1E280009DE7B1 /* ZP_ZeroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_ZeroModel.m; sourceTree = "<group>"; };
 		C4137E7F1FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_FrontPageReceivingAddressModel.h; sourceTree = "<group>"; };
 		C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_FrontPageReceivingAddressModel.m; sourceTree = "<group>"; };
-		C420EDDF1FF36F40005ECE30 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
+		C420EDE11FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C425BEA41FC813C30097DB8F /* FSPageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPageContentView.h; sourceTree = "<group>"; };
 		C425BEA51FC813C30097DB8F /* FSPageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPageContentView.m; sourceTree = "<group>"; };
 		C425BEA61FC813C30097DB8F /* FSScrollContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScrollContentView.h; sourceTree = "<group>"; };
@@ -1185,7 +1185,7 @@
 		063FE0441F614D24009910FF /* DDAYGO */ = {
 			isa = PBXGroup;
 			children = (
-				C420EDDF1FF36F40005ECE30 /* DDAYGO IHTTP协议1.0.docx */,
+				C420EDE11FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx */,
 				0641BB971F67B60B00E72FEF /* Testbag */,
 				063FE0AE1F615CEB009910FF /* ViewController */,
 			);
@@ -3783,7 +3783,7 @@
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
 				C44D6D121FD8CF070002DAF2 /* PayViewController.xib in Resources */,
 				C4D9E7081FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.xib in Resources */,
-				C420EDE01FF36F40005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */,
+				C420EDE21FF3B1F2005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				062C9D631F8CD6F900E14987 /* button_6@2x.png in Resources */,
 				06F571D81F9F1A7900D61FDB /* EditViewController.xib in Resources */,
 				06F572411F9F204F00D61FDB /* BillDetailViewController.xib in Resources */,
