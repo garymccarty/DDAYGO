@@ -115,8 +115,8 @@
 //    }
 //}
 
+// UI
 -(void)initUI {
-    
     NSArray * allTitle = @[NSLocalizedString(@"Acquiescence", nil),NSLocalizedString(@"Sales Volume", nil),NSLocalizedString(@"Latest", nil),NSLocalizedString(@"Price", nil)];
     UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 37)];
     topView.backgroundColor = [UIColor whiteColor];
@@ -158,6 +158,7 @@
     
 }
 
+// CollectionView
 - (void)initCollectionView {
     
     UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc]init];

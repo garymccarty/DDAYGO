@@ -10,9 +10,9 @@
 
 @interface FirstViewCell : UITableViewCell
 
-@property (nonatomic, copy) void(^firstBlock)(NSInteger tag);
-@property (nonatomic, strong) NSString * menuname;
-//@property (nonatomic, copy) void(^firstBlock)(NSInteger name);
+
+@property (nonatomic, strong) NSArray * Allarr;
+@property (nonatomic, copy) void(^firstBlock)(NSInteger tag,NSString * name);
 
 - (void)first:(NSArray *)sup;
 

@@ -24,9 +24,9 @@
 - (void)first:(NSArray *)sup {
     NSMutableArray * arr = [NSMutableArray array];
     NSMutableArray * arrar = [NSMutableArray array];
-
-    NSMutableArray *arrid = [NSMutableArray array];
-    for (ZP_FirstModel *model in sup) {
+    _Allarr = sup;
+    NSMutableArray * arrid = [NSMutableArray array];
+    for (ZP_FirstModel * model in sup) {
         [arr addObject:model.menuname];
         [arrar addObject:[NSString stringWithFormat:@"http://www.ddaygo.com%@",[model.imgurl stringByReplacingOccurrencesOfString:@"~" withString:@""]]];
         [arrid addObject:model.typeid];
@@ -78,14 +78,19 @@
 }
 
 - (void)buttonType:(UIButton *)sender {
-    NSLog(@"%ld",sender.tag);
-    self.firstBlock(sender.tag);
+
+    NSMutableArray * arrid = [NSMutableArray array];
     
+    for (ZP_FirstModel * model in _Allarr) {
+        [arrid addObject:model.typeid];
+        if ([model.typeid integerValue] == sender.tag) {
+             self.firstBlock(sender.tag,model.menuname);
+        }
+    }
     
 }
 
 - (void)ZP_setButton:(UIButton *)btn ImageWithUrl:(NSString *)urlStr WithName:(NSString *)name {
-    
     [[SDImageCache sharedImageCache] storeImage:btn.imageView.image forKey:urlStr toDisk:NO];
     [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:urlStr] options:0 progress:nil completed:^(UIImage * image, NSError * error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         // 主线程刷新UI

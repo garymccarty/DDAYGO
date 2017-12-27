@@ -26,6 +26,8 @@
     [self initUI];
     self.title = NSLocalizedString(@"collect", nil);
 }
+
+//UI
 - (void)initUI {
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
@@ -60,7 +62,6 @@
 //    }
     _dataArray = [collectionModel arrayWithArray:json[@"list"]];
     [self.tableView reloadData];
-        
     } failure:^(NSError *error) {
         ZPLog(@"error");
         

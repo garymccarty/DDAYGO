@@ -85,21 +85,10 @@
                         </constraints>
                         <state key="normal" image="ic_cp"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已下架" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xs2-Cc-m0k">
-                        <rect key="frame" x="8" y="76" width="92" height="15"/>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="V4i-um-Fbt"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="nSL-kj-gLK" firstAttribute="top" secondItem="A0p-VQ-TKJ" secondAttribute="bottom" constant="4" id="0pi-rJ-mJ9"/>
                     <constraint firstItem="W1e-m4-kIK" firstAttribute="leading" secondItem="otV-Dq-b6g" secondAttribute="trailing" constant="136" id="13X-2B-SdL"/>
-                    <constraint firstItem="xs2-Cc-m0k" firstAttribute="top" secondItem="sgc-ol-QRs" secondAttribute="top" constant="76" id="2yJ-iy-vPx"/>
                     <constraint firstItem="UlF-Tk-dWI" firstAttribute="leading" secondItem="NhN-r3-pHL" secondAttribute="trailing" constant="8" id="6b5-rZ-4p1"/>
                     <constraint firstItem="yDF-sZ-3mY" firstAttribute="top" secondItem="UlF-Tk-dWI" secondAttribute="bottom" constant="2" id="AZt-sn-pwo"/>
                     <constraint firstAttribute="trailing" secondItem="nSL-kj-gLK" secondAttribute="trailing" id="Bx6-Qy-AQI"/>
@@ -109,7 +98,6 @@
                     <constraint firstItem="UlF-Tk-dWI" firstAttribute="top" secondItem="sgc-ol-QRs" secondAttribute="top" constant="8" id="J88-R6-FRc"/>
                     <constraint firstItem="NhN-r3-pHL" firstAttribute="centerY" secondItem="sgc-ol-QRs" secondAttribute="centerY" id="Osb-Ee-97X"/>
                     <constraint firstItem="DYA-FP-Cd3" firstAttribute="top" secondItem="UlF-Tk-dWI" secondAttribute="bottom" constant="2" id="Q0z-YK-tfb"/>
-                    <constraint firstItem="otV-Dq-b6g" firstAttribute="leading" secondItem="xs2-Cc-m0k" secondAttribute="trailing" constant="8" id="Qyk-Z0-CW7"/>
                     <constraint firstItem="A0p-VQ-TKJ" firstAttribute="leading" secondItem="otV-Dq-b6g" secondAttribute="trailing" constant="1" id="VKK-UT-x0w"/>
                     <constraint firstItem="otV-Dq-b6g" firstAttribute="top" secondItem="W1e-m4-kIK" secondAttribute="top" constant="24" id="VKz-r1-gcT"/>
                     <constraint firstItem="W1e-m4-kIK" firstAttribute="trailing" secondItem="sgc-ol-QRs" secondAttribute="trailingMargin" id="cI5-2h-vvf"/>
@@ -117,14 +105,12 @@
                     <constraint firstItem="DYA-FP-Cd3" firstAttribute="leading" secondItem="NhN-r3-pHL" secondAttribute="trailing" constant="8" id="gaw-yJ-gIw"/>
                     <constraint firstItem="yDF-sZ-3mY" firstAttribute="leading" secondItem="DYA-FP-Cd3" secondAttribute="trailing" constant="3" id="gqG-R7-fAV"/>
                     <constraint firstAttribute="bottom" secondItem="nSL-kj-gLK" secondAttribute="bottom" id="tNa-wN-ivl"/>
-                    <constraint firstItem="xs2-Cc-m0k" firstAttribute="leading" secondItem="sgc-ol-QRs" secondAttribute="leading" constant="8" id="ufc-pg-TZj"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="Cp" destination="A0p-VQ-TKJ" id="jaK-Wp-vjX"/>
                 <outlet property="CurrencySymbolLabel" destination="DYA-FP-Cd3" id="TsV-r9-pYR"/>
                 <outlet property="ShopimageView" destination="NhN-r3-pHL" id="vmt-6h-SZo"/>
-                <outlet property="StateLabel" destination="xs2-Cc-m0k" id="l03-yg-H7E"/>
                 <outlet property="priceLabel" destination="yDF-sZ-3mY" id="L0P-SS-Zrb"/>
                 <outlet property="shopTextLabel" destination="UlF-Tk-dWI" id="dVg-9O-Tjd"/>
             </connections>

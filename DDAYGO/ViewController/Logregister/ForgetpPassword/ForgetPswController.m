@@ -130,6 +130,9 @@
         }else
             if ([obj[@"result"] isEqualToString:@"npwd_null_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"密码为空"];
+        }else
+            if ([obj[@"result"] isEqualToString:@"sys_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"修改失败"];
         }
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {

@@ -266,6 +266,7 @@
     [self updateData:sender.tag];
 }
 }
+
 //  店铺选择按钮
 - (void)ShopClick:(UIButton *)sender {
     sender.selected = !sender.selected;

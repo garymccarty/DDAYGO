@@ -214,11 +214,15 @@
         if (indexPath.section == 1){
             static NSString * FirstID = @"First";
             FirstViewCell * cell = [tableView dequeueReusableCellWithIdentifier: FirstID];
-            cell.firstBlock = ^(NSInteger tag) {
-                
+//            cell.firstBlock = ^(NSInteger tag) {
+            cell.firstBlock = ^(NSInteger tag, NSString *name) {
                 NSLog(@"id %ld",tag);
+                
+                //说了跟id 一样传过去· 你传了吗
                 CPViewController * CVPView = [[CPViewController alloc]init];
                 CVPView.fatherId =[NSNumber numberWithInteger:tag];
+                CVPView.titleString = name;
+                
                 [self.navigationController pushViewController:CVPView animated:YES];
             };
             return cell;

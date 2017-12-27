@@ -88,7 +88,10 @@
     
     ZPLog(@"下注");
 }
-
+// 下注
+- (void)AllData {
+    
+}
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     

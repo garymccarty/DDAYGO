@@ -20,8 +20,14 @@
 @property (nonatomic, strong) UICollectionView * collectionView4;
 
 @property (nonatomic, strong) NSNumber * fatherId;
+
+@property (nonatomic, strong) NSString * nameStr;
+
 @property (nonatomic, copy) NSString * titleString;
 //@property (nonatomic, strong) NSString * tagid;
+
+
+
 
 @property (nonatomic, strong) UILabel * RemindLabel;
 @end

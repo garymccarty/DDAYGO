@@ -96,31 +96,18 @@
                             <constraint firstAttribute="bottom" secondItem="tzT-YR-bO9" secondAttribute="bottom" constant="15" id="ylr-FM-G7h"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已下架" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwU-uD-Xlp">
-                        <rect key="frame" x="0.0" y="66" width="110" height="15"/>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="Jhr-ps-uEQ"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Hk3-b8-2zb" firstAttribute="top" secondItem="E2p-Rc-CTb" secondAttribute="bottom" constant="1" id="6kz-I5-KkM"/>
                 <constraint firstAttribute="trailing" secondItem="E2p-Rc-CTb" secondAttribute="trailing" id="7ZR-yt-pUf"/>
-                <constraint firstItem="MwU-uD-Xlp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9OI-GK-c0S"/>
                 <constraint firstAttribute="bottom" secondItem="Hk3-b8-2zb" secondAttribute="bottom" id="GMF-I6-by4"/>
                 <constraint firstItem="E2p-Rc-CTb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="O1l-iG-g6L"/>
                 <constraint firstItem="E2p-Rc-CTb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OUd-9c-d0J"/>
-                <constraint firstAttribute="trailing" secondItem="MwU-uD-Xlp" secondAttribute="trailing" id="Tts-38-Xj1"/>
                 <constraint firstAttribute="trailing" secondItem="0rk-AD-jAl" secondAttribute="trailing" id="mBL-8B-cJq"/>
                 <constraint firstItem="Hk3-b8-2zb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qEp-48-mQi"/>
                 <constraint firstItem="0rk-AD-jAl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qeO-qx-pMV"/>
-                <constraint firstItem="MwU-uD-Xlp" firstAttribute="top" secondItem="0rk-AD-jAl" secondAttribute="bottom" constant="26" id="y7n-OD-UOq"/>
                 <constraint firstAttribute="trailing" secondItem="Hk3-b8-2zb" secondAttribute="trailing" id="yuW-YP-JAU"/>
             </constraints>
             <size key="customSize" width="110" height="130"/>

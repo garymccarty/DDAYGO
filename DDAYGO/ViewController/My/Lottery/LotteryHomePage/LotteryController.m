@@ -161,7 +161,7 @@
 //}
 
 - (void)initUI {
-    self.title = NSLocalizedString(@"赏金彩", nil);
+    self.title = NSLocalizedString(@"促销彩", nil);
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];  //  更改导航栏颜色
     

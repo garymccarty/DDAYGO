@@ -70,8 +70,8 @@
     [ZP_MyTool requseMoreMore:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {
-//        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        ZPLog(@"%@",error);
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 
@@ -88,7 +88,6 @@
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(myView).offset(8);
         make.centerY.equalTo(OrderLabel).offset(0);
-        //        make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
     }];
     
@@ -127,8 +126,7 @@
 - (void)AwardBut {
     ZPLog(@"按钮");
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
-{
+-(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
     return 3;
 }
 
