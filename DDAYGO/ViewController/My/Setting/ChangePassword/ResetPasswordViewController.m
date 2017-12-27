@@ -33,6 +33,9 @@
     self.oldpwTextfield.delegate = self;
     self.newpwTextfield.delegate = self;
     self.againpwTextfield.delegate = self;
+    self.oldpwTextfield.keyboardType = UIKeyboardTypeDefault;
+    self.newpwTextfield.keyboardType = UIKeyboardTypeDefault;
+    self.againpwTextfield.keyboardType = UIKeyboardTypeDefault;
     self.oldpwTextfield.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     self.newpwTextfield.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     self.againpwTextfield.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
@@ -40,7 +43,6 @@
 
 // 确定按钮
 - (IBAction)DetermineBut:(id)sender {
-    
     if (self.newpwTextfield.text.length < 8 || self.newpwTextfield.text.length >20) {
         [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于20"];
         ZPLog(@"密码不足6位");
@@ -51,7 +53,11 @@
         ZPLog(@"密码不足8位");
         return;
     }
+    if (self.newpwTextfield.text != self.againpwTextfield.text) {
+        [SVProgressHUD showInfoWithStatus:@"两次密码不一致"];
+    }else {
     [self allData];
+    }
 }
 
 // 数据

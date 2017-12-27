@@ -69,11 +69,8 @@
 // 验证码
 + (void)requestVerificationcode:(NSDictionary *)Yzm success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@sendvercode?email=%@",URLAPI,Yzm[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
-        
         success(responseObject);
-        
         ZPLog(@"%@",responseObject);
-        
     } failure:^(NSError *error) {
 //        ZPLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
@@ -102,6 +99,24 @@
 + (void)requesForFirstTimeLogin:(NSDictionary *)ForFirstTimeLogin success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@icuelogin?acc=%@&pwd=%@",URLAPI,ForFirstTimeLogin[@"acc"],ForFirstTimeLogin[@"pwd"]] parameters:nil success:^(id responseObject) {
         success (responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+// 找回密码（第一步）
++ (void)requestForgetPsw1:(NSDictionary *)ForgetPsw success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getverifycode?acc=%@",URLAPI,ForgetPsw[@"acc"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError * error) {
+        failure(error);
+    }];
+}
+
+// 找回密码（第二步）
++ (void)requestForgetPsw2:(NSDictionary *)ForgetPsw success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updatenewpassword?acc=%@&verifyemail=%@&npwd=%@",URLAPI,ForgetPsw[@"acc"],ForgetPsw[@"verifyemail"],ForgetPsw[@"npwd"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
     } failure:^(NSError *error) {
         failure(error);
     }];

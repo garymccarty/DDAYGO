@@ -50,9 +50,9 @@
     _LoginBtn.layer.masksToBounds            = YES;
     
     _ZPEmailTextField.textField.keyboardType =  UIKeyboardTypeASCIICapable;
+    _ZPPswTextField.textField.keyboardType = UIKeyboardTypeDefault;
     _ZPPswTextField.showBtn                  = NO;
     _ZPPswTextField.showEyeBtn               = YES;
-    _ZPPswTextField.textField.keyboardType = UIKeyboardTypeDefault;
     [_ZPPswTextField.functionBtn addTarget:self action:@selector(secureTextEntry) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -62,14 +62,13 @@
         }
     [self allData];
 }
-
+// 数据
 - (void)allData {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[@"email"] = _ZPEmailTextField.textField.text;
     dic[@"pwd"] = [self md5:_ZPPswTextField.textField.text];
     dic[@"countrycode"] = CountCode;
-    NSLog(@"count %@",CountCode);
-    
+//    NSLog(@"count %@",CountCode);
     [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"loginData"];
     [ZP_LoginTool requestLogin:dic success:^(id obj) {
         NSLog(@"obj---%@",obj);

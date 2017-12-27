@@ -19,11 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _ContactnumberTextField.keyboardType = UIKeyboardTypeNumberPad;
-    
     _ZipcodeaddressTextField.keyboardType = UIKeyboardTypeNumberPad;
     [self touchesBegan]; //触摸事件
-//    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countCode"];
-//    _regionLabel.text = [NSString stringWithFormat:@"%@",str];
 }
 
 - (void)setContentDic:(NSDictionary *)contentDic {

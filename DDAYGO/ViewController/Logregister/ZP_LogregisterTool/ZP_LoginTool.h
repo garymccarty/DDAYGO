@@ -30,4 +30,10 @@
 
 // ICUE 首次登陆（58）
 + (void)requesForFirstTimeLogin:(NSDictionary *)ForFirstTimeLogin success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 找回密码（第一步）
++ (void)requestForgetPsw1:(NSDictionary *)ForgetPsw success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+// 找回密码（第二步）
++ (void)requestForgetPsw2:(NSDictionary *)ForgetPsw success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 @end
