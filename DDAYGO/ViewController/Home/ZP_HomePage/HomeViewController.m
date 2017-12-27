@@ -290,7 +290,9 @@
         return ZP_Width / 2;
     }else
         if (indexPath.section ==1){
-
+//            if (_newsData.count == 0) {
+//                return 0;
+//            }
             return ZP_Width / 2;
     }else
 /**********暂时不需要***********/
@@ -301,17 +303,20 @@
 //            return 210;
 //    }else
         if (indexPath.section == 2){
+//            if (_newsData.count == 0) {
+//                return 0;
+//            }
             return 190;
     }else
         if (indexPath.section == 3){
 /*********有问题***********/
-            if (_newsData.count == nil) {
+            if (_newsData.count == 0) {
                 return 0;
             }
             return ZP_Width / 4;
             
     }else {
-        if (_newsData.count == nil) {
+        if (_newsData.count == 0) {
             return 0;
         }
         return ZP_Width / 3 * 2 + 35;

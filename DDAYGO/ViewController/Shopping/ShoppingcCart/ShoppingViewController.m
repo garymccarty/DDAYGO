@@ -237,11 +237,11 @@
 
 //  全选
 - (void)selectClick:(UIButton *)sender {
-    if (dataArray.count > 0) {
+    /*******为了按钮点击不动写的，不知道有数据是否能点击***************/
+    if (dataArray.count == 0) {
         sender.selected = sender.selected;
     }else {
         sender.selected =! sender.selected;
-    }
     
     if (self.AllButton == sender ) {
         for (int i = 0; i < dataArray.count; i ++) {
@@ -265,7 +265,7 @@
     }
     [self updateData:sender.tag];
 }
-
+}
 //  店铺选择按钮
 - (void)ShopClick:(UIButton *)sender {
     sender.selected = !sender.selected;
