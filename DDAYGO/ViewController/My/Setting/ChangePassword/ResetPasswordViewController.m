@@ -119,6 +119,7 @@
 }
 // 触发事件
 -(void)keyboardHide:(UITapGestureRecognizer*)tap {
+    
     [self.oldpwTextfield resignFirstResponder];
     [self.oldpwTextfield resignFirstResponder];
     [self.againpwTextfield resignFirstResponder];

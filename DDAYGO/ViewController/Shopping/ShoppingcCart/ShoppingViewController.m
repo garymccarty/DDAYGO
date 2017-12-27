@@ -237,10 +237,10 @@
 
 //  全选
 - (void)selectClick:(UIButton *)sender {
-    if (dataArray.count > 1) {
+    if (dataArray.count > 0) {
         sender.selected = sender.selected;
     }else {
-        sender.selected = !sender.selected;
+        sender.selected =! sender.selected;
     }
     
     if (self.AllButton == sender ) {
@@ -248,7 +248,6 @@
             if (!_bjBool) {
                 ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
                 cell.buttom.selected = sender.selected;
-                
             }
             else {
                 EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];

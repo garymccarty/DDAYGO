@@ -166,7 +166,6 @@
         [self.tableView.mj_footer endRefreshing];
     });
     [ZP_HomeTool requestSellLikeHotCakes:nil success:^(id obj) {
-//       获取首页的？ 就这个数据 首页没有数据，我都是在cell里面嵌套的
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
@@ -291,6 +290,7 @@
         return ZP_Width / 2;
     }else
         if (indexPath.section ==1){
+
             return ZP_Width / 2;
     }else
 /**********暂时不需要***********/
@@ -304,8 +304,16 @@
             return 190;
     }else
         if (indexPath.section == 3){
+/*********有问题***********/
+            if (_newsData.count == nil) {
+                return 0;
+            }
             return ZP_Width / 4;
+            
     }else {
+        if (_newsData.count == nil) {
+            return 0;
+        }
         return ZP_Width / 3 * 2 + 35;
     }
 }
