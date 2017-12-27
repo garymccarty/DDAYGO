@@ -47,7 +47,7 @@
     dic[@"token"] = Token;
     dic[@"opwd"] = [self md5:self.oldpwTextfield.text];
     dic[@"npwd"] = [self md5:self.newpwTextfield.text];
-//    dic[@"npwd"] = [self md5:self.againpwTextfield.text];
+    dic[@"npwd"] = [self md5:self.againpwTextfield.text];
     [ZP_MyTool requestRestPassword:dic success:^(id obj) {
 //        if ([obj[@"result"] isEqualToString:@"ok"]) {
 //

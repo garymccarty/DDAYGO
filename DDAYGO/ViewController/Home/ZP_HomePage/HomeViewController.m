@@ -20,7 +20,7 @@
     NSArray * dataArray;
 }
 @property(nonatomic, strong)UITableView * tableView;
-@property (nonatomic, strong)NSArray * advertisingArray;
+//@property (nonatomic, strong)NSArray * advertisingArray;
 @property (nonatomic, strong)NSMutableArray * newsData;
 @property (nonatomic, strong)NSArray * postionArray;
 
@@ -166,7 +166,7 @@
         [self.tableView.mj_footer endRefreshing];
     });
     [ZP_HomeTool requestSellLikeHotCakes:nil success:^(id obj) {
-        
+//       获取首页的？ 就这个数据 首页没有数据，我都是在cell里面嵌套的
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
@@ -200,8 +200,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSArray * B = @[@"a",@"b",@"c",@"d"];
-//    NSArray * C = @[@"a",@"b",@"c",@"d",@"e",@"f",@"g",@"h",@"i",@"j"];
+
     dataArray = @[@{@"title":NSLocalizedString( @"Best-selling products", nil)}];
     if (indexPath.section == 0) {
         static NSString * ZeroID = @"ceaa";
@@ -255,7 +254,6 @@
                 DetailedController *viewController = [[DetailedController alloc] init];
                 viewController.productId = @(tag);
                 [self.navigationController pushViewController:viewController animated:YES];
-//                self.hidesBottomBarWhenPushed = NO;
             };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             NSDictionary * dic = dataArray[indexPath.row];
@@ -268,10 +266,8 @@
             cell.ThirdBlock = ^(NSInteger tag){
                 ZPLog(@"%ld",tag);
                 DetailedController *viewController = [[DetailedController alloc] init];
-//                self.hidesBottomBarWhenPushed = YES;
                 viewController.productId = @(tag);
                 [self.navigationController pushViewController:viewController animated:YES];
-//                self.hidesBottomBarWhenPushed = NO;
             };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             return cell;
@@ -281,9 +277,7 @@
         cell.ThirdBlock = ^(NSInteger tag){
             DetailedController *viewController = [[DetailedController alloc] init];
             viewController.productId = @(tag);
-//            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:viewController animated:YES];
-//            self.hidesBottomBarWhenPushed = NO;
         };
             cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
             return cell;

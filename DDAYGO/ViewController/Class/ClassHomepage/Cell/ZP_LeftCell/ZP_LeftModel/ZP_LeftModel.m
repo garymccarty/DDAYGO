@@ -16,6 +16,7 @@
 - (instancetype)initWithLeftData:(NSDictionary *)Dic {
     if (self == [super init]) {
         self.contentLabel = Dic[@"producttypename"];
+        self.producttypeid = Dic[@"producttypeid"];
     }
     return self;
 }
@@ -35,7 +36,7 @@
         ZP_LeftModel * model = [[ZP_LeftModel alloc]init];
         
         model.contentLabel = dic[@"producttypename"];
-        
+        model.producttypeid = dic[@"producttypeid"];
         [arr addObject:model];
     }
     return arr;
