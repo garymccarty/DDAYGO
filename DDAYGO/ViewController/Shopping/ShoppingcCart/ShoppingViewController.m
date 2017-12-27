@@ -237,7 +237,12 @@
 
 //  全选
 - (void)selectClick:(UIButton *)sender {
-    sender.selected = !sender.selected;
+    if (dataArray.count > 1) {
+        sender.selected = sender.selected;
+    }else {
+        sender.selected = !sender.selected;
+    }
+    
     if (self.AllButton == sender ) {
         for (int i = 0; i < dataArray.count; i ++) {
             if (!_bjBool) {
@@ -312,6 +317,7 @@
                     _stockids = str;
                 }
             }
+            
         }else{
             EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
             ZP_CartsModel *model = dataArray[i];
@@ -332,7 +338,6 @@
                 }
             }
         }
-        
     }
     if (count == dataArray.count) {
         self.AllButton.selected = YES;
@@ -393,19 +398,13 @@
 //                }
 //            }
 //        }
-        
     }
     
-    if (count == dataArray.count) {
-        
+if (count == dataArray.count) {
         self.Shopchoosebuttom.selected = YES;
-        
     } else {
-        
         self.Shopchoosebuttom.selected = NO;
-        
     }
-   
 //       更新合计数据
     self.PriceLabel.text = [@(data) stringValue];
     [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
@@ -453,9 +452,7 @@
             Confirm.NumStr = self.ClearingButt.titleLabel.text;
             Confirm.stockidsString = _stockids;
             
-//            self.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:Confirm animated:YES];
-//            self.hidesBottomBarWhenPushed = NO;
             self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
             self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
         }
@@ -553,11 +550,11 @@
 
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    ZP_CartsShopModel *model;
+    ZP_CartsShopModel * model;
     if (nameArray.count > 0) {
         model = nameArray[section];
     }
-    UIView *myView = [[UIView alloc]init];
+    UIView * myView = [[UIView alloc]init];
     self.tableView.tableHeaderView = myView; // 表头跟着cell一起滚动
     [myView setBackgroundColor:[UIColor whiteColor]];
     

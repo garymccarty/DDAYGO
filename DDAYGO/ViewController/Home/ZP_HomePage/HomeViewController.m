@@ -11,7 +11,7 @@
 #import "ZP_HomeTool.h"
 #import "ZP_PositionModel.h"
 #import "DetailedController.h"
-#import "SelectedViewController.h"
+//#import "SelectedViewController.h"
 #import "CPViewController.h"
 @interface HomeViewController () <SDCycleScrollViewDelegate,UITableViewDelegate, UITableViewDataSource> {
     int _i;
@@ -224,6 +224,7 @@
             };
             return cell;
     }else
+/*************暂时不需要*************/
 //        if (indexPath.section == 2){
 //            static NSString * SecondID = @"Secondcell";
 //            SecondViewCell * cell = [tableView dequeueReusableCellWithIdentifier: SecondID];
@@ -292,6 +293,7 @@
         if (indexPath.section ==1){
             return ZP_Width / 2;
     }else
+/**********暂时不需要***********/
 //        if (indexPath.section == 2){
 //            return ZP_Width;
 //    }else

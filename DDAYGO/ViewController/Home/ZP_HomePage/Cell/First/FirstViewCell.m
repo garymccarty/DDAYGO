@@ -22,8 +22,8 @@
     return self;
 }
 - (void)first:(NSArray *)sup {
-    NSMutableArray *arr = [NSMutableArray array];
-    NSMutableArray *arrar = [NSMutableArray array];
+    NSMutableArray * arr = [NSMutableArray array];
+    NSMutableArray * arrar = [NSMutableArray array];
 
     NSMutableArray *arrid = [NSMutableArray array];
     for (ZP_FirstModel *model in sup) {
@@ -83,7 +83,6 @@
     
     
 }
-
 
 - (void)ZP_setButton:(UIButton *)btn ImageWithUrl:(NSString *)urlStr WithName:(NSString *)name {
     

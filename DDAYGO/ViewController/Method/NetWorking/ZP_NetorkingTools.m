@@ -58,6 +58,8 @@ static AFHTTPSessionManager *_manager = nil;
         
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        ZPLog(@"res %@",responseObject);
+        
         if (success) {
             success(responseObject);
         }

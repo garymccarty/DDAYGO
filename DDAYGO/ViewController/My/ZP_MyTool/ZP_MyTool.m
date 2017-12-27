@@ -240,13 +240,16 @@
 }
 
 // 修改密码
+//http://www.ddaygo.com/api/Test/updatepassword?token=1abab579c88683c0b6e77dcec02032f4&opwd=52c69e3a57331081823331c4e69d3f2e&npwd=52c69e3a57331081823331c4e69d3f2e
 + (void)requestRestPassword:(NSDictionary *)RestPassword success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updatepassword?token=%@&opwd=%@&npwd=%@",URLAPI,RestPassword[@"tokem"],RestPassword[@"opwd"],RestPassword[@"npwd"]] parameters:nil success:^(id responseObject) {
-        success(RestPassword);
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/updatepassword?token=%@&opwd=%@&npwd=%@",RestPassword[@"token"],RestPassword[@"opwd"],RestPassword[@"npwd"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
     } failure:^(NSError *error) {
         failure(error);
     }];
 }
+
+//http://www.ddaygo.com/api/Test/updatepassword?token=d2f38cc152c6c0f8504a25a70f7cc727&opwd=7fa8282ad93047a4d6fe6111c93b308a&npwd=fcea920f7412b5da7be0cf42b8c93759
 
 @end
 

@@ -9,6 +9,7 @@
 #import "ResetPasswordViewController.h"
 #import "PrefixHeader.pch"
 #import "ZP_MyTool.h"
+#import "MyViewController.h"
 @interface ResetPasswordViewController ()<UITextFieldDelegate>
 
 @end
@@ -18,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self touchesBegan];
     self.title = NSLocalizedString(@"修改密码", nil);
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.ResetPasswordscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
@@ -38,6 +40,17 @@
 
 // 确定按钮
 - (IBAction)DetermineBut:(id)sender {
+    
+    if (self.newpwTextfield.text.length < 8 || self.newpwTextfield.text.length >20) {
+        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于20"];
+        ZPLog(@"密码不足6位");
+        return;
+    }
+    if (![self judgePassWordLegal:self.newpwTextfield.text]) {
+        [SVProgressHUD showInfoWithStatus:@"密码必须8-20大小写数字组合"];
+        ZPLog(@"密码不足8位");
+        return;
+    }
     [self allData];
 }
 
@@ -49,22 +62,34 @@
     dic[@"npwd"] = [self md5:self.newpwTextfield.text];
     dic[@"npwd"] = [self md5:self.againpwTextfield.text];
     [ZP_MyTool requestRestPassword:dic success:^(id obj) {
-//        if ([obj[@"result"] isEqualToString:@"ok"]) {
-//
-//        }
-        ZPLog(@"%@",obj);
+        if ([obj[@"result"]isEqualToString:@"ok"]) {
+            Token = nil;
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"symbol"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"countrycode"];
+            ZPICUEToken = nil;
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"icuetoken"];
+            MyViewController * MyController = self.navigationController.viewControllers[1];
+            [self.navigationController popToViewController:MyController animated:YES];
+        }else
+            if ([obj[@"result"]isEqualToString:@"token_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"令牌无效"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"opwd_null_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"原密码不能为空"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"npwd_null_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"新密码不能为空"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"opwd_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"原密码错误"];
+        }
+        ZPLog(@"obj %@",obj);
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
 }
 
-//// 键盘弹起
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [super touchesBegan:touches withEvent:event];
-//    [self.oldpwTextfield resignFirstResponder];
-//    [self.newpwTextfield resignFirstResponder];
-//    [self.againpwTextfield resignFirstResponder];
-//}
 /***********鍵盤************/
 -(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
     [UIView animateWithDuration:0.4 animations:^{
@@ -82,15 +107,6 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [self.ResetPasswordscrollView endEditing:YES];
 }
-
-////隐藏键盘
-//- (void)keyboardWillHide:(NSNotification *)notification {
-//    //将contentInset的值设回原来的默认值
-//    UIEdgeInsets e = UIEdgeInsetsMake(0, 0, 0, 0);
-//    [self.LoginscrollView setContentInset:e];
-//
-//    NSLog(@"scrollView.height = %f", self.LoginscrollView.contentSize.height);
-//}
 
 // 键盘触摸
 - (void)touchesBegan {
@@ -126,5 +142,38 @@
         [output appendFormat:@"%02x",digest[i]];
     }
     return output;
+}
+#pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -
+- (BOOL)validateEmail:(NSString *)email {
+    //     邮箱正则式
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    
+    return [emailTest evaluateWithObject:email];
+    
+}
+
+- (BOOL)JudgeTheillegalCharacter:(NSString *)content {
+    //    提示标签不能输入特殊字符
+    NSString *str =@"^[A-Za-z0-9\\u4e00-\u9fa5]+$";
+    
+    NSPredicate* emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", str];
+    return [emailTest evaluateWithObject:content];
+    
+}
+
+- (BOOL)judgePassWordLegal:(NSString *)pass {
+    
+    BOOL result ;
+    // 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
+    NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$";
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    
+    result = [pred evaluateWithObject:pass];
+    
+    return result;
+    
 }
 @end

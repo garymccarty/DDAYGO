@@ -262,8 +262,6 @@
 		C45F23611FA09A7C00F5DB41 /* ZP_FifthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C45F23601FA09A7C00F5DB41 /* ZP_FifthModel.m */; };
 		C45FAEE71FCD055B00BD4CE1 /* myNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAEE61FCD055B00BD4CE1 /* myNavigationController.m */; };
 		C45FAF3C1FCD48CC00BD4CE1 /* EditorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAF3A1FCD48CC00BD4CE1 /* EditorViewCell.m */; };
-		C45FAF8C1FCD564C00BD4CE1 /* SelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAF8A1FCD564C00BD4CE1 /* SelectedViewController.m */; };
-		C45FAF8D1FCD564C00BD4CE1 /* SelectedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45FAF8B1FCD564C00BD4CE1 /* SelectedViewController.xib */; };
 		C45FAF931FCD680D00BD4CE1 /* UIViewController+Utit.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAF921FCD680D00BD4CE1 /* UIViewController+Utit.m */; };
 		C45FAF961FCD688000BD4CE1 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAF951FCD688000BD4CE1 /* UIView+Frame.m */; };
 		C45FAF991FCD68C200BD4CE1 /* UIImage+Render.m in Sources */ = {isa = PBXBuildFile; fileRef = C45FAF981FCD68C200BD4CE1 /* UIImage+Render.m */; };
@@ -873,9 +871,6 @@
 		C45FAEE61FCD055B00BD4CE1 /* myNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myNavigationController.m; sourceTree = "<group>"; };
 		C45FAF3A1FCD48CC00BD4CE1 /* EditorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditorViewCell.m; sourceTree = "<group>"; };
 		C45FAF3B1FCD48CC00BD4CE1 /* EditorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditorViewCell.h; sourceTree = "<group>"; };
-		C45FAF891FCD564C00BD4CE1 /* SelectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedViewController.h; sourceTree = "<group>"; };
-		C45FAF8A1FCD564C00BD4CE1 /* SelectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedViewController.m; sourceTree = "<group>"; };
-		C45FAF8B1FCD564C00BD4CE1 /* SelectedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedViewController.xib; sourceTree = "<group>"; };
 		C45FAF911FCD680D00BD4CE1 /* UIViewController+Utit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utit.h"; sourceTree = "<group>"; };
 		C45FAF921FCD680D00BD4CE1 /* UIViewController+Utit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utit.m"; sourceTree = "<group>"; };
 		C45FAF941FCD688000BD4CE1 /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
@@ -2696,7 +2691,6 @@
 			children = (
 				C45F23161FA0757A00F5DB41 /* FirstViewCell.h */,
 				C45F23171FA0757A00F5DB41 /* FirstViewCell.m */,
-				C45FAF881FCD564C00BD4CE1 /* ZP_Selected */,
 				C409F88C1FA1E25B009DE7B1 /* ZP_FirstModel */,
 			);
 			path = First;
@@ -2806,16 +2800,6 @@
 				C4573F671FD01B5A001DFE97 /* ZP_InstructionBet */,
 			);
 			path = Lottery;
-			sourceTree = "<group>";
-		};
-		C45FAF881FCD564C00BD4CE1 /* ZP_Selected */ = {
-			isa = PBXGroup;
-			children = (
-				C45FAF891FCD564C00BD4CE1 /* SelectedViewController.h */,
-				C45FAF8A1FCD564C00BD4CE1 /* SelectedViewController.m */,
-				C45FAF8B1FCD564C00BD4CE1 /* SelectedViewController.xib */,
-			);
-			path = ZP_Selected;
 			sourceTree = "<group>";
 		};
 		C45FAF8E1FCD672C00BD4CE1 /* MainMethod */ = {
@@ -3810,7 +3794,6 @@
 				064449B51F6A9B250004DFE4 /* MJRefresh.bundle in Resources */,
 				C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */,
 				064249821F99F36000340EBA /* PayPassController.xib in Resources */,
-				C45FAF8D1FCD564C00BD4CE1 /* SelectedViewController.xib in Resources */,
 				C47BBBF11FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */,
 				06F571DA1F9F1A7900D61FDB /* AddressViewController.xib in Resources */,
 				C46B9F491FDE71FE00942750 /* 本期下注号码_spec.png in Resources */,
@@ -4065,7 +4048,6 @@
 				C470ADF31FA95B5200BAC2CA /* ZP_registrationModel.m in Sources */,
 				C409F8721FA1758E009DE7B1 /* ZP_SixthModel.m in Sources */,
 				C4780BEF1FD6A1F600DDE25D /* ZP_ShopManagementModel.m in Sources */,
-				C45FAF8C1FCD564C00BD4CE1 /* SelectedViewController.m in Sources */,
 				C45FAEE71FCD055B00BD4CE1 /* myNavigationController.m in Sources */,
 				06418F521F7A076A00479523 /* MASConstraintMaker.m in Sources */,
 				064449A71F6A9B250004DFE4 /* MJRefreshAutoFooter.m in Sources */,
