@@ -23,7 +23,7 @@
     for (int i = 0; i < arr.count; i ++) {
         
         UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-        but.frame = CGRectMake(i * ZP_Width / 10,5, 35, 35);
+        but.frame = CGRectMake(i * ZP_Width / 10,5, 40, 40);
         [but setBackgroundImage:[UIImage imageNamed:@"bg_white_ball"] forState:UIControlStateNormal];
         [but setBackgroundImage:[UIImage imageNamed:@"bg_red_ball_receive"] forState:UIControlStateSelected];
         but.titleLabel.font = ZP_TrademarkFont;

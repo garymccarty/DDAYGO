@@ -12,7 +12,7 @@
 #import "ZP_MyTool.h"
 @interface ZP_CheckMoreController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView * tableview;
-
+@property (nonatomic, strong) NSMutableArray * newsData;
 @end
 
 @implementation ZP_CheckMoreController
@@ -37,7 +37,7 @@
     [myView setBackgroundColor:ZP_Graybackground];
     //     标题1
     ZP_GeneralLabel * TitleLabel1 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel1.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    TitleLabel1.text = @"第2017136期";
+//    TitleLabel1.text = @"第2017136期";
     [myView addSubview:TitleLabel1];
     _TitleLabel1 = TitleLabel1;
     [TitleLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -49,7 +49,7 @@
     
     //     标题2
     ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    TitleLabel2.text = @"2017-11-19（周日）";
+//    TitleLabel2.text = @"2017-11-19（周日）";
     [myView addSubview:TitleLabel2];
     _TitleLabel2 = TitleLabel2;
     [TitleLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,13 +87,14 @@
     _OrderLabel = OrderLabel;
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(myView).offset(8);
+        make.top.equalTo(myView).offset(5);
         make.centerY.equalTo(OrderLabel).offset(0);
         make.height.mas_equalTo(15);
     }];
     
 //     订单号
     ZP_GeneralLabel * OrderNumberLabel = [ZP_GeneralLabel initWithtextLabel:_OrderNumberLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    OrderNumberLabel.text = @"5678908765456";
+//    OrderNumberLabel.text = @"5678908765456";
     [myView addSubview:OrderNumberLabel];
     _OrderNumberLabel = OrderNumberLabel;
     [OrderNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -106,7 +107,7 @@
     //     button
     UIButton * button = [[UIButton alloc] init];
     [myView addSubview:button];
-    [button setTitle:@"领奖" forState:UIControlStateNormal];
+//    [button setTitle:@"领奖" forState:UIControlStateNormal];
     button.titleLabel.font = ZP_TooBarFont;
     [button setTitleColor:ZP_TypefaceColor forState:UIControlStateNormal];
      [button addTarget:self action:@selector(AwardBut) forControlEvents:UIControlEventTouchUpInside];
@@ -127,7 +128,7 @@
     ZPLog(@"按钮");
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    return 3;
+    return self.newsData.count;
 }
 
 /*设置标题头的宽度*/

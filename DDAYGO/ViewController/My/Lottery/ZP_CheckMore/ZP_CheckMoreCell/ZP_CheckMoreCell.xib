@@ -25,7 +25,7 @@
                             <constraint firstAttribute="width" constant="30" id="uJ1-lq-iVi"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -36,7 +36,7 @@
                             <constraint firstAttribute="height" constant="30" id="vyZ-bG-cXw"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -47,7 +47,7 @@
                             <constraint firstAttribute="width" constant="30" id="GHi-1x-QQC"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -58,7 +58,7 @@
                             <constraint firstAttribute="height" constant="30" id="qXb-iS-P9i"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -69,7 +69,7 @@
                             <constraint firstAttribute="height" constant="30" id="ORf-bV-A2c"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -80,7 +80,7 @@
                             <constraint firstAttribute="height" constant="30" id="dyn-Y8-aHI"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="5" backgroundImage="bg_choose_redball">
+                        <state key="normal" title="5" backgroundImage="bg_red_ball">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
@@ -113,7 +113,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bg_choose_redball" width="32" height="32"/>
-        <image name="bg_choose_whiteball_pressed" width="32" height="32"/>
+        <image name="bg_red_ball" width="39" height="39"/>
+        <image name="bg_white_ball" width="39" height="39"/>
     </resources>
 </document>

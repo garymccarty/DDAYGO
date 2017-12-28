@@ -273,17 +273,22 @@
     [self.navigationController pushViewController:LotteryHistoricalBettingNumber animated:YES];
 }
 
-// 说明
+// 历史下注
 - (void)Instruction {
+    ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
+    [self.navigationController pushViewController:History animated:YES];
+    ZPLog(@"历史");
+    
+}
+
+// 说明
+-(void)HistoryLottery {
     ZP_InstructionController * Instruction = [[ZP_InstructionController alloc]init];
     [self.navigationController pushViewController:Instruction animated:YES];
     ZPLog(@"说明");
 }
-// 历史下注
--(void)HistoryLottery {
-    ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
-    [self.navigationController pushViewController:History animated:YES];
-    ZPLog(@"历史");
+- (IBAction)awardBut:(id)sender {
+    
 }
 
 // 查看更多

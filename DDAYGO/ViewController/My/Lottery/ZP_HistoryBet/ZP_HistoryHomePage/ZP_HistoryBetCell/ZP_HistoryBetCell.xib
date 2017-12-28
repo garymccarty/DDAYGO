@@ -32,7 +32,8 @@
                             <constraint firstAttribute="width" constant="30" id="3Yk-5U-fy3"/>
                             <constraint firstAttribute="height" constant="30" id="FJJ-bA-3IU"/>
                         </constraints>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
                     </button>
@@ -42,7 +43,8 @@
                             <constraint firstAttribute="width" constant="30" id="C1o-AU-Cjd"/>
                             <constraint firstAttribute="height" constant="30" id="o7m-Hx-RdU"/>
                         </constraints>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
                     </button>
@@ -52,7 +54,8 @@
                             <constraint firstAttribute="height" constant="30" id="T20-I8-fGQ"/>
                             <constraint firstAttribute="width" constant="30" id="WY2-4n-UZr"/>
                         </constraints>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
                     </button>
@@ -62,7 +65,8 @@
                             <constraint firstAttribute="width" constant="30" id="ELW-q0-4XB"/>
                             <constraint firstAttribute="height" constant="30" id="eeQ-6n-ufk"/>
                         </constraints>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
                     </button>
@@ -72,7 +76,8 @@
                             <constraint firstAttribute="height" constant="30" id="BzR-GB-PL1"/>
                             <constraint firstAttribute="width" constant="30" id="Z9m-3b-dzs"/>
                         </constraints>
-                        <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="5" backgroundImage="bg_white_ball">
                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         </state>
                     </button>
@@ -82,8 +87,9 @@
                             <constraint firstAttribute="width" constant="30" id="T0k-4I-1Xi"/>
                             <constraint firstAttribute="height" constant="30" id="yeO-M8-F4i"/>
                         </constraints>
-                        <state key="normal" title="5" backgroundImage="bg_choose_redball">
-                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="5" backgroundImage="bg_red_ball">
+                            <color key="titleColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
                 </subviews>
@@ -116,8 +122,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bg_choose_redball" width="32" height="32"/>
-        <image name="bg_choose_whiteball_pressed" width="32" height="32"/>
+        <image name="bg_red_ball" width="39" height="39"/>
+        <image name="bg_white_ball" width="39" height="39"/>
         <image name="icon_forward_right" width="9" height="16"/>
     </resources>
 </document>

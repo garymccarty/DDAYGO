@@ -31,11 +31,11 @@
                 return;
             }
             UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-            but.frame = CGRectMake(j * ZP_Width / 8, i * ZP_Width / 8, 40, 40);
+            but.frame = CGRectMake(j * ZP_Width / 8, i * ZP_Width / 8, 30, 30);
             but.titleLabel.font = ZP_TrademarkFont;
-            [but setBackgroundImage:[UIImage imageNamed:@"bg_white_ball"] forState:UIControlStateNormal];
+            [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_whiteball_normal"] forState:UIControlStateNormal];
      
-            [but setBackgroundImage:[UIImage imageNamed:@"bg_white_ball_receive"] forState:UIControlStateSelected];
+            [but setBackgroundImage:[UIImage imageNamed:@"bg_white_ball"] forState:UIControlStateSelected];
             but.tag = num;
             [self.butArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 NSLog(@"obj =%@",obj);

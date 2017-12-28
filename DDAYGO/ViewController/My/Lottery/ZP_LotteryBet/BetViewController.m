@@ -17,7 +17,7 @@
 @interface BetViewController ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton * _chooseCityBtn;
 }
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet IQTableView * tableView;
 //@property (nonatomic ,strong) BetHeaderView *whiteBallHeaderView;
 //@property (nonatomic ,strong) BetHeaderView *redBallHeaderView;
 @property (nonatomic,strong) tableHeadView1   *tableHeadView1;
@@ -145,6 +145,20 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 0) {
+        return 59 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
+    }
+    if (indexPath.section == 1) {
+        return 26 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
+    }else{
+        return 15;
+    }
+    
+}
+
+
 //  设置表头高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
@@ -253,6 +267,8 @@
                  [_cell1 updateCount:self.Selearray];
          }
          _cell1.deleBut.tag = indexPath.row;
+         _cell1.jiaBut.tag = indexPath.row;
+         _cell1.jianBut.tag = indexPath.row;
          [_cell1.deleBut addTarget:self action:@selector(dele:) forControlEvents:UIControlEventTouchUpInside];
          [_cell1.jiaBut addTarget:self action:@selector(jia:) forControlEvents:UIControlEventTouchUpInside];
          [_cell1.jianBut addTarget:self action:@selector(jian:) forControlEvents:UIControlEventTouchUpInside];
@@ -260,12 +276,11 @@
     }
 
 }
-
-- (void)jia:(UIButton *)but
-{
+//  加
+- (void)jia:(UIButton *)but {
     NSArray *arr = self.dicArray[but.tag];
     NSString *str = arr[6];
-    
+
     if ([str integerValue] == 20) {
         [SVProgressHUD showInfoWithStatus:@"最高不能多于20注"];
         NSLog(@"20");
@@ -274,11 +289,12 @@
     [self.dicArray[but.tag] removeObjectAtIndex:6];
     NSString *jStr = [NSString stringWithFormat:@"%d",[str integerValue] + 1];
     [self.dicArray[but.tag] addObject:jStr];
-    NSIndexPath *index = [NSIndexPath indexPathForRow:but.tag inSection:2];
-    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
+    NSIndexPath * index = [NSIndexPath indexPathForRow:but.tag inSection:2];
+    [self.tableView reloadMoveToBottom];
+//    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
  
 }
-
+// 减
 - (void)jian:(UIButton *)but {
 
     NSArray *arr = self.dicArray[but.tag];
@@ -290,33 +306,24 @@
         return;
     }
     [self.dicArray[but.tag] removeObjectAtIndex:6];
-    NSString *jStr = [NSString stringWithFormat:@"%d",[str integerValue] - 1];
+    NSString * jStr = [NSString stringWithFormat:@"%d",[str integerValue] - 1];
     [self.dicArray[but.tag] addObject:jStr];
 
     NSIndexPath *index = [NSIndexPath indexPathForRow:but.tag inSection:2];
-    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView reloadMoveToBottom];
+//    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    if (indexPath.section == 0) {
-        return 59 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
-    }
-    if (indexPath.section == 1) {
-        return 26 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
-    }else{
-        return 35;
-    }
-    
-}
-
+//  删除
 - (void)dele:(UIButton *)but {
     if (self.dicArray.count > 0 ) {
         if (but.tag == self.dicArray.count) {
             if (self.Selearray.count > 0) {
                 [self.Selearray removeLastObject];
                 NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
-                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+//                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+                
+                [self.tableView reloadMoveToBottom];
             }else{
                 NSLog(@"没有选定 ");
                 [SVProgressHUD showInfoWithStatus:@"没有选定"];
@@ -325,14 +332,17 @@
             [self.dicArray removeObjectAtIndex:but.tag];
             NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
             if (self.dicArray.count > 0) {
-                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+//                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+                [self.tableView reloadMoveToBottom];
             }else{
-                [self.tableView reloadData];
+//                [self.tableView reloadData];
+                [self.tableView reloadMoveToBottom];
             }
         }
     }
     
 }
+
 
 // 机选
 - (IBAction)suijiBut:(id)sender {
