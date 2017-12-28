@@ -11,6 +11,10 @@
 @interface BetTableViewCellTwo : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton * deleBut;
+@property (weak, nonatomic) IBOutlet UIView *jiajianVIEw;
+@property (weak, nonatomic) IBOutlet UIButton *jianBut;
+@property (weak, nonatomic) IBOutlet UILabel *shuliangLabel;
+@property (weak, nonatomic) IBOutlet UIButton *jiaBut;
 
 - (void)updateCount:(NSArray *)arr;
 

@@ -239,6 +239,15 @@
     }];
 }
 
+// 促销彩下注
++ (void)requestBte:(NSDictionary *)Bte uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addlotteryorder?token=%@&ballstr=%@&count=%@",URLAPI,Bte[@"token"],Bte[@"ballstr"],Bte[@"count"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 // 邮箱验证
 + (void)requesEmail:(NSDictionary *)Email uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@getemailverify?token=%@&emailverify=%@",URLAPI,Email[@"token"],Email[@"emailverify"]] parameters:nil success:^(id responseObject) {

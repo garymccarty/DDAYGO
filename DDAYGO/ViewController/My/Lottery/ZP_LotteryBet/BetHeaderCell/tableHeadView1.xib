@@ -15,15 +15,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您目前可使用彩劵" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz3-iV-ueV">
-                    <rect key="frame" x="135" y="45" width="98.5" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="KLV-0r-gpQ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pEJ-yh-LeU">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                     <subviews>
@@ -37,20 +28,20 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16天22小时45分" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prQ-rP-ghp">
-                            <rect key="frame" x="173.5" y="0.0" width="92" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="ETg-qg-bnP"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014137" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plk-Mg-pGB">
                             <rect key="frame" x="76" y="0.0" width="48" height="21"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="cm2-V1-thE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16天22小时45分" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prQ-rP-ghp">
+                            <rect key="frame" x="173.5" y="0.0" width="92" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="ETg-qg-bnP"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
@@ -101,6 +92,15 @@
                         <constraint firstItem="Gge-1d-TGw" firstAttribute="top" secondItem="prQ-rP-ghp" secondAttribute="bottom" constant="2" id="zjq-F5-3gM"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您目前可使用彩劵" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz3-iV-ueV">
+                    <rect key="frame" x="135" y="45" width="98.5" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="KLV-0r-gpQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您派彩彩劵注数不足不能下注" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKf-YH-JND">
                     <rect key="frame" x="144.5" y="67" width="159.5" height="21"/>
                     <constraints>
@@ -110,17 +110,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="白球：5个" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDs-rk-Yt4">
-                    <rect key="frame" x="0.0" y="96" width="57" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="pCG-D6-NXr"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trY-cH-7Ny">
-                    <rect key="frame" x="233.5" y="45" width="8" height="21"/>
+                    <rect key="frame" x="233" y="45" width="8" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="6AO-ob-KUR"/>
                     </constraints>
@@ -129,12 +120,21 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fiu-LW-8oH">
-                    <rect key="frame" x="241.5" y="45" width="12.5" height="21"/>
+                    <rect key="frame" x="241" y="45" width="12.5" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Tg1-Ii-PV3"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" red="1" green="0.29717373609999997" blue="0.080588528029999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="白球：5个" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDs-rk-Yt4">
+                    <rect key="frame" x="0.0" y="96" width="57" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="pCG-D6-NXr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=",已选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-gG-jBo">
@@ -188,6 +188,13 @@
                 <constraint firstAttribute="trailing" secondItem="pEJ-yh-LeU" secondAttribute="trailing" id="vnc-iD-Pwx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="AmountLabel" destination="Gge-1d-TGw" id="gjS-68-AyK"/>
+                <outlet property="BallLabel" destination="Evu-cn-tDA" id="S1k-kq-HjY"/>
+                <outlet property="ItmeLanel" destination="prQ-rP-ghp" id="iCZ-3v-TYN"/>
+                <outlet property="NperLabel" destination="plk-Mg-pGB" id="uda-vu-CUQ"/>
+                <outlet property="NumberLabel" destination="trY-cH-7Ny" id="I6r-u3-iKn"/>
+            </connections>
             <point key="canvasLocation" x="22" y="45"/>
         </view>
     </objects>

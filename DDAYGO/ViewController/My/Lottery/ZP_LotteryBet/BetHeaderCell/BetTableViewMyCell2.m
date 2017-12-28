@@ -28,17 +28,17 @@
                 return;
             }
             UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-            but.frame = CGRectMake(j * ZP_Width / 8, i * ZP_Width / 8, 30, 30);
+            but.frame = CGRectMake(j * ZP_Width / 8, i * ZP_Width / 8, 40, 40);
             but.titleLabel.font = ZP_TrademarkFont;
             [but setTitle:[NSString stringWithFormat:@"%ld",num] forState:UIControlStateNormal];
             [but setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];            
-            [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_whiteball_normal"] forState:UIControlStateNormal];
+            [but setBackgroundImage:[UIImage imageNamed:@"bg_red_ball"] forState:UIControlStateNormal];
             
-            [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_redball"] forState:UIControlStateSelected];
+            [but setBackgroundImage:[UIImage imageNamed:@"bg_red_ball_receive"] forState:UIControlStateSelected];
             but.tag = num + 100;
         
             [self.butArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                NSLog(@"obj =%@",obj);
+           
                 if (but.tag == [obj integerValue]) {
                     but.selected = YES;
                 }

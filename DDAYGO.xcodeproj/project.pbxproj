@@ -214,6 +214,10 @@
 		C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43517451FB2ACD60066302E /* StoreViewController.xib */; };
 		C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C435174E1FB2ACE80066302E /* OrdersViewController.xib */; };
 		C43987751FF48B5D00044E21 /* RegistrationAgreementController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43987741FF48B5D00044E21 /* RegistrationAgreementController.m */; };
+		C439877A1FF4BDD300044E21 /* SupplierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43987781FF4BDD300044E21 /* SupplierViewController.m */; };
+		C439877B1FF4BDD300044E21 /* SupplierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43987791FF4BDD300044E21 /* SupplierViewController.xib */; };
+		C43987801FF4C67100044E21 /* SupplierTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C439877E1FF4C67100044E21 /* SupplierTableViewCell.m */; };
+		C43987811FF4C67100044E21 /* SupplierTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C439877F1FF4C67100044E21 /* SupplierTableViewCell.xib */; };
 		C4399D6F1FCE84A000B7B96D /* LotteryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4399D691FCE849F00B7B96D /* LotteryController.m */; };
 		C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4399D6A1FCE849F00B7B96D /* LotteryController.xib */; };
 		C44C9DB11FEA392D00CD7D4D /* ZP_QuickLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44C9DAE1FEA392C00CD7D4D /* ZP_QuickLoginController.m */; };
@@ -785,6 +789,12 @@
 		C43517511FB2ACF40066302E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OrdersViewController.xib; sourceTree = "<group>"; };
 		C43987731FF48B5D00044E21 /* RegistrationAgreementController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationAgreementController.h; sourceTree = "<group>"; };
 		C43987741FF48B5D00044E21 /* RegistrationAgreementController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationAgreementController.m; sourceTree = "<group>"; };
+		C43987771FF4BDD300044E21 /* SupplierViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierViewController.h; sourceTree = "<group>"; };
+		C43987781FF4BDD300044E21 /* SupplierViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierViewController.m; sourceTree = "<group>"; };
+		C43987791FF4BDD300044E21 /* SupplierViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierViewController.xib; sourceTree = "<group>"; };
+		C439877D1FF4C67100044E21 /* SupplierTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierTableViewCell.h; sourceTree = "<group>"; };
+		C439877E1FF4C67100044E21 /* SupplierTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierTableViewCell.m; sourceTree = "<group>"; };
+		C439877F1FF4C67100044E21 /* SupplierTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierTableViewCell.xib; sourceTree = "<group>"; };
 		C4399D681FCE849F00B7B96D /* LotteryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryController.h; sourceTree = "<group>"; };
 		C4399D691FCE849F00B7B96D /* LotteryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryController.m; sourceTree = "<group>"; };
 		C4399D6A1FCE849F00B7B96D /* LotteryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryController.xib; sourceTree = "<group>"; };
@@ -1690,6 +1700,7 @@
 				06F571631F9F15CE00D61FDB /* Collect */,
 				06F5716F1F9F163F00D61FDB /* TrackingTheStore */,
 				06F5717B1F9F16A600D61FDB /* Footmark */,
+				C43987761FF4BDA200044E21 /* Supplier */,
 				06F571E21F9F1E8700D61FDB /* StoreManagement */,
 				06F571871F9F16E600D61FDB /* LatestNews */,
 				06F571931F9F193300D61FDB /* ScanningGun */,
@@ -2366,6 +2377,27 @@
 			path = RegistrationAgreement;
 			sourceTree = "<group>";
 		};
+		C43987761FF4BDA200044E21 /* Supplier */ = {
+			isa = PBXGroup;
+			children = (
+				C43987771FF4BDD300044E21 /* SupplierViewController.h */,
+				C43987781FF4BDD300044E21 /* SupplierViewController.m */,
+				C43987791FF4BDD300044E21 /* SupplierViewController.xib */,
+				C439877C1FF4C65600044E21 /* SupplierCell */,
+			);
+			path = Supplier;
+			sourceTree = "<group>";
+		};
+		C439877C1FF4C65600044E21 /* SupplierCell */ = {
+			isa = PBXGroup;
+			children = (
+				C439877D1FF4C67100044E21 /* SupplierTableViewCell.h */,
+				C439877E1FF4C67100044E21 /* SupplierTableViewCell.m */,
+				C439877F1FF4C67100044E21 /* SupplierTableViewCell.xib */,
+			);
+			path = SupplierCell;
+			sourceTree = "<group>";
+		};
 		C4399D671FCE849F00B7B96D /* LotteryHomePage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2522,18 +2554,18 @@
 		C4573F2A1FCFA3A6001DFE97 /* BetHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
-				C42A17351FF2532300680F92 /* BetTableViewCellTwo.h */,
-				C42A17361FF2532400680F92 /* BetTableViewCellTwo.m */,
-				C42A173A1FF2532400680F92 /* BetTableViewCellTwo.xib */,
+				C42A17431FF2544000680F92 /* tableHeadView1.h */,
+				C42A17421FF2544000680F92 /* tableHeadView1.m */,
+				C42A17441FF2544100680F92 /* tableHeadView1.xib */,
 				C42A17341FF2532300680F92 /* BetTableViewMyCell.h */,
 				C42A17331FF2532300680F92 /* BetTableViewMyCell.m */,
 				C42A17391FF2532400680F92 /* BetTableViewMyCell.xib */,
 				C42A17381FF2532400680F92 /* BetTableViewMyCell2.h */,
 				C42A173B1FF2532400680F92 /* BetTableViewMyCell2.m */,
 				C42A17371FF2532400680F92 /* BetTableViewMyCell2.xib */,
-				C42A17431FF2544000680F92 /* tableHeadView1.h */,
-				C42A17421FF2544000680F92 /* tableHeadView1.m */,
-				C42A17441FF2544100680F92 /* tableHeadView1.xib */,
+				C42A17351FF2532300680F92 /* BetTableViewCellTwo.h */,
+				C42A17361FF2532400680F92 /* BetTableViewCellTwo.m */,
+				C42A173A1FF2532400680F92 /* BetTableViewCellTwo.xib */,
 			);
 			path = BetHeaderCell;
 			sourceTree = "<group>";
@@ -3801,6 +3833,7 @@
 				C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */,
 				0641BBA31F67B60B00E72FEF /* Third.png in Resources */,
 				063FE0551F614D24009910FF /* LaunchScreen.storyboard in Resources */,
+				C439877B1FF4BDD300044E21 /* SupplierViewController.xib in Resources */,
 				4D0948F21FDD9BDC00FC4BCA /* ProductTableViewCell.xib in Resources */,
 				062C9D5B1F8CD6F900E14987 /* button_2@2x.png in Resources */,
 				C47E765D1FB5A5A6009F279A /* DetailedController.xib in Resources */,
@@ -3874,6 +3907,7 @@
 				064448DF1F6A16A00004DFE4 /* banner_jiazai.jpg in Resources */,
 				0641BBA11F67B60B00E72FEF /* Second.png in Resources */,
 				063FE0501F614D24009910FF /* Main.storyboard in Resources */,
+				C43987811FF4C67100044E21 /* SupplierTableViewCell.xib in Resources */,
 				C492A1781FD0ECB7009FF57B /* ZP_HistoryBetCell.xib in Resources */,
 				C470969C1FB0602F006EA52C /* Localizable.strings in Resources */,
 				C435173A1FB2AC830066302E /* FootprintCollectionViewCell.xib in Resources */,
@@ -4013,6 +4047,7 @@
 				C420EDE81FF3D7E9005ECE30 /* CALayer+UIColor.m in Sources */,
 				C425BEB41FC832140097DB8F /* ZP_FootprintModel.m in Sources */,
 				C4D9E7071FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.m in Sources */,
+				C43987801FF4C67100044E21 /* SupplierTableViewCell.m in Sources */,
 				C47096A71FB065CE006EA52C /* LanguageController.m in Sources */,
 				06F572361F9F1E8700D61FDB /* StoreViewController.m in Sources */,
 				C47E764B1FB5A1C7009F279A /* Pop-upTableViewDelegate.m in Sources */,
@@ -4143,6 +4178,7 @@
 				06F570EB1F9F0ABA00D61FDB /* ShoppingCell.m in Sources */,
 				C492A17D1FD0ECB7009FF57B /* ZP_HistoryVetController.m in Sources */,
 				06F571DD1F9F1A7900D61FDB /* AddAddressViewController.m in Sources */,
+				C439877A1FF4BDD300044E21 /* SupplierViewController.m in Sources */,
 				065B3CE21F984F8A00A8E6D6 /* SDCycleScrollView.m in Sources */,
 				C47BBC041FF40A180000FFE6 /* ZP_HistoryModel.m in Sources */,
 				064AB1951F73B2FF007FE5F0 /* MainViewController.m in Sources */,

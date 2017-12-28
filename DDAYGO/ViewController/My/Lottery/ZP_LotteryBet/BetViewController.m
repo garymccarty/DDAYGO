@@ -7,12 +7,9 @@
 //
 
 #import "BetViewController.h"
-//#import "BetHeaderView.h"
 #import "PrefixHeader.pch"
-//#import "BetTableViewCell.h"
-//#import "BetTwoTVCell.h"
 #import "tableHeadView1.h"
-
+#import "ZP_MyTool.h"
 #import "BetTableViewCellTwo.h"
 #import "BetTableViewMyCell.h"
 #import "BetTableViewMyCell2.h"
@@ -25,7 +22,8 @@
 //@property (nonatomic ,strong) BetHeaderView *redBallHeaderView;
 @property (nonatomic,strong) tableHeadView1   *tableHeadView1;
 
-
+@property (nonatomic, strong) UILabel *label3;
+@property (nonatomic, strong) BetTableViewCellTwo *cell1;
 //* 数据**/
 @property (nonatomic, strong) NSMutableArray *Selearray;
 
@@ -61,56 +59,24 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewCellTwo" bundle:nil] forCellReuseIdentifier:@"BetTableViewCellTwo"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewMyCell2" bundle:nil] forCellReuseIdentifier:@"BetTableViewMyCell2"];
 
-    
+//     添加一个按钮
     CGRect frame = _chooseCityBtn.frame;
     frame.size.width = 50;
     frame.size.height = 35;
     _chooseCityBtn.frame = frame;
     _chooseCityBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//    [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
     [_chooseCityBtn setTitle:NSLocalizedString(@"提交", nil) forState:UIControlStateNormal];
     CGFloat imageWidth = _chooseCityBtn.imageView.bounds.size.width;
     CGFloat labelWidth = _chooseCityBtn.titleLabel.bounds.size.width;
-
     _chooseCityBtn.frame =CGRectMake(0, 0, 40.0f, 25.0f);
     _chooseCityBtn.titleLabel.font = ZP_TooBarFont;
     _chooseCityBtn.layer.cornerRadius = 3;
     _chooseCityBtn.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth   , 0, -labelWidth);
     _chooseCityBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -imageWidth, 0, imageWidth);
-    
     [_chooseCityBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     _chooseCityBtn.backgroundColor = [UIColor whiteColor];
     [_chooseCityBtn addTarget:self action:@selector(Instruction) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc]initWithCustomView:_chooseCityBtn]];
-    
-    
-//    //  添加两个button
-//    NSMutableArray * buttons = [[NSMutableArray alloc]initWithCapacity:1];
-//
-//    UIBarButtonItem * Instruction = [[UIBarButtonItem alloc]initWithTitle:@"下注" style:UIBarButtonItemStyleDone target:self action:@selector(Instruction)];
-//    Instruction.tintColor=[UIColor whiteColor];
-//    [buttons addObject:Instruction];
-//    [tools setItems:buttons animated:NO];
-//    UIBarButtonItem * btn =[[UIBarButtonItem alloc]initWithCustomView:tools];
-//    self.navigationItem.rightBarButtonItem = btn;
-//    __weak BetViewController *controller = self;
-//    [self addNavigationBarItemWithType:LLNavigationBarItemTypeRightFirst handler:^(UIButton *button) {
-//
-//        [button setTitle:NSLocalizedString( @"提交", nil) forState:UIControlStateNormal];
-//        [button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-//        button.backgroundColor = [UIColor whiteColor];
-//        [button addTarget:controller action:@selector(Instruction) forControlEvents:UIControlEventTouchUpInside];
-//
-//        CGRect frame = button.frame;
-//        frame.size.width = 50;
-//        button.frame = frame;
-//        [button mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.right.equalTo(controller.view).offset(10);
-//            make.bottom.equalTo(controller.view).offset(8);
-//            make.width.mas_offset(10);
-//            make.height.mas_offset(15);
-//        }];
-//    }];
 }
 
 
@@ -121,29 +87,54 @@
 
 // 下注
 - (void)Instruction {
-    
-    ZPLog(@"下注");
+    [self AllData];
 }
 // 下注
 - (void)AllData {
-    
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"]  = Token;
+    dic[@"count"] =_dicArray;
+    dic[@"count"] = @"3";
+    [ZP_MyTool requestBte:dic uccess:^(id obj) {
+        if ([obj[@"result"]isEqualToString:@"time_err"]) {
+            [SVProgressHUD showInfoWithStatus:@"还没到开放时间"];
+        }
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
 }
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     if (section == 0) {
         self.tableHeadView1 = [[[NSBundle mainBundle] loadNibNamed:@"tableHeadView1" owner:nil options:nil] firstObject];
+         self.tableHeadView1.BallLabel.text  = [NSString stringWithFormat:@"%ld",self.array1.count];
         return self.tableHeadView1;
     }
     if (section == 1) {
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 44)];
         view.backgroundColor = [UIColor whiteColor];
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 200, 44)];
-        label.text = @"红球：1个，已选 1 个";
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 65, 44)];
+        label.text = @"红球：1个,";
         label.font = [UIFont systemFontOfSize:13];
         [view addSubview:label];
+        UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(80, 0, 30, 44)];
+        label2.text = @"已选";
+        label2.font = [UIFont systemFontOfSize:13];
+        [view addSubview:label2];
+        _label3 = [[UILabel alloc]initWithFrame:CGRectMake(110, 0, 10, 44)];
+        _label3.text  = [NSString stringWithFormat:@"%ld",self.arrayT.count];
+        [_label3 setTextColor:[UIColor redColor]];
+        _label3.font = [UIFont systemFontOfSize:13];
+        [view addSubview:_label3];
+        UILabel *label4 = [[UILabel alloc]initWithFrame:CGRectMake(120, 0, 15, 44)];
+        label4.text = @"个";
+        label4.font = [UIFont systemFontOfSize:13];
+        [view addSubview:label4];
         return view;
     }else{
+
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 44)];
         view.backgroundColor = [UIColor whiteColor];
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 200, 44)];
@@ -187,11 +178,11 @@
     
     if (indexPath.section == 0) {
         BetTableViewMyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewMyCell"];
-        NSLog(@"you go");
+//        NSLog(@"you go");
         cell.butArray = self.array1;
         [cell upDataButtonWith:59];
         cell.arrayBlock = ^(NSMutableArray *arr1) {
-            
+           self.tableHeadView1.BallLabel.text = [NSString stringWithFormat:@"%ld",arr1.count];
             if (self.Selearray.count > 0) {
                 for (NSNumber *Nstr in self.Selearray) {
                     if ([Nstr integerValue] > 99) {
@@ -205,8 +196,11 @@
             }else{
                 self.Selearray = [NSMutableArray arrayWithArray:arr1];
             }
-            NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
-            [tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            if (_dicArray.count >0) {
+                NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
+                [tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
+            
         };
         return cell;
     }else
@@ -217,6 +211,7 @@
          cell.butArray = self.arrayT;
         [cell upDataButtonWith:26];
         cell.arrayBlock = ^(NSMutableArray *arr2) {
+            _label3.text = [NSString stringWithFormat:@"%ld",arr2.count];
             _arrayT = arr2;
             if (arr2.count == 0) {
                 [self.Selearray removeLastObject];
@@ -234,29 +229,72 @@
                     self.Selearray = [NSMutableArray arrayWithArray:arr2];
                 }
             }
-            NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
-            [tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            if (_dicArray.count > 0) {
+                NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
+                [tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            }
             
-
         };
         return cell;
      }else{
-          BetTableViewCellTwo *cell1 = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewCellTwo" forIndexPath:indexPath];
-         if (self.dicArray.count > 0) {             
+          _cell1 = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewCellTwo" forIndexPath:indexPath];
+         if (self.dicArray.count > 0) {
+             
+
              if (indexPath.row == self.dicArray.count) {
-                 [cell1 updateCount:self.Selearray];
+                 [_cell1 updateCount:self.Selearray];
              }else{
-                 NSArray *arr = self.dicArray[indexPath.row];
-                 [cell1 updateCount:arr];
+                 NSMutableArray  *arr = [NSMutableArray arrayWithArray:self.dicArray[indexPath.row]];
+                 _cell1.shuliangLabel.text = arr[6];
+                 [arr removeObjectAtIndex:6];
+                 [_cell1 updateCount:arr];
              }
          }else{
-                 [cell1 updateCount:self.Selearray];
+                 [_cell1 updateCount:self.Selearray];
          }
-         cell1.deleBut.tag = indexPath.row;
-         [cell1.deleBut addTarget:self action:@selector(dele:) forControlEvents:UIControlEventTouchUpInside];
-        return cell1;
+         _cell1.deleBut.tag = indexPath.row;
+         [_cell1.deleBut addTarget:self action:@selector(dele:) forControlEvents:UIControlEventTouchUpInside];
+         [_cell1.jiaBut addTarget:self action:@selector(jia:) forControlEvents:UIControlEventTouchUpInside];
+         [_cell1.jianBut addTarget:self action:@selector(jian:) forControlEvents:UIControlEventTouchUpInside];
+        return _cell1;
     }
 
+}
+
+- (void)jia:(UIButton *)but
+{
+    NSArray *arr = self.dicArray[but.tag];
+    NSString *str = arr[6];
+    
+    if ([str integerValue] == 20) {
+        [SVProgressHUD showInfoWithStatus:@"最高不能多于20注"];
+        NSLog(@"20");
+        return;
+    }
+    [self.dicArray[but.tag] removeObjectAtIndex:6];
+    NSString *jStr = [NSString stringWithFormat:@"%d",[str integerValue] + 1];
+    [self.dicArray[but.tag] addObject:jStr];
+    NSIndexPath *index = [NSIndexPath indexPathForRow:but.tag inSection:2];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
+ 
+}
+
+- (void)jian:(UIButton *)but {
+
+    NSArray *arr = self.dicArray[but.tag];
+    NSString *str = arr[6];
+    
+    if ([str integerValue] == 1) {
+        [SVProgressHUD showInfoWithStatus:@"最低不能少于1注"];
+        NSLog(@"1");
+        return;
+    }
+    [self.dicArray[but.tag] removeObjectAtIndex:6];
+    NSString *jStr = [NSString stringWithFormat:@"%d",[str integerValue] - 1];
+    [self.dicArray[but.tag] addObject:jStr];
+
+    NSIndexPath *index = [NSIndexPath indexPathForRow:but.tag inSection:2];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -272,7 +310,6 @@
     
 }
 
-
 - (void)dele:(UIButton *)but {
     if (self.dicArray.count > 0 ) {
         if (but.tag == self.dicArray.count) {
@@ -282,12 +319,16 @@
                 [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
             }else{
                 NSLog(@"没有选定 ");
-                [SVProgressHUD showErrorWithStatus:@"没有选定"];
+                [SVProgressHUD showInfoWithStatus:@"没有选定"];
             }
         }else{
             [self.dicArray removeObjectAtIndex:but.tag];
             NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
-            [self.tableView reloadData];
+            if (self.dicArray.count > 0) {
+                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            }else{
+                [self.tableView reloadData];
+            }
         }
     }
     
@@ -300,25 +341,60 @@
         int i = arc4random_uniform(59);
         [self.array1 addObject:[NSNumber numberWithInt:i]];
     }
-    int a = arc4random_uniform(26)+100;
+//    self.tableHeadView1.BallLabel.text  = [NSString stringWithFormat:@"%ld",self.array1.count];
+    int a = arc4random_uniform(26);
      self.arrayT = [NSMutableArray array];
-    [self.arrayT addObject:[NSNumber numberWithInt:a]];
-    
+    [self.arrayT addObject:[NSNumber numberWithInt:a+ 100]];
+//    _label3.text  = [NSString stringWithFormat:@"%ld",self.arrayT.count];
     self.Selearray = [NSMutableArray arrayWithArray:self.array1];
-    [self.Selearray addObject:[NSNumber numberWithInt:a]];
+    [self.Selearray addObject:[NSNumber numberWithInt:a+100]];
     [self.tableView reloadData];
     
 }
+
 // 确定
 - (IBAction)sureBut:(id)sender {
-    if (self.Selearray.count == 6) {
-        [self.dicArray addObject:self.Selearray];
-        NSLog(@"%ld - %@",self.dicArray.count ,self.dicArray);
-        self.array1 = nil;
-        self.arrayT = nil;
-        self.Selearray = nil;
-        [self.tableView reloadData];
+    
+    NSLog(@"everyall %@  all %@  bai %@  hong zhe%@",self.Selearray,self.dicArray,self.array1,self.arrayT);
+
+    if (self.array1.count < 5) {
+//        tishi
+        [SVProgressHUD showInfoWithStatus:@"请选择五个白球"];
+        return;
     }
+    if (self.arrayT.count < 1) {
+        //tishi
+        [SVProgressHUD showInfoWithStatus:@"请选择一个红球"];
+        return;
+    }
+    if (self.Selearray.count< 6) {
+        //
+        [SVProgressHUD showInfoWithStatus:@"请选择五个白球与一个红球"];
+        return;
+    }
+
+#pragma make -- 提示框
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定选择该组号码吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        ZPLog(@"取消");
+    }];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+//        响应事件
+        if (self.Selearray.count == 6) {
+            [self.Selearray addObject:@"1"];
+            [self.dicArray addObject:self.Selearray];
+    
+            self.array1 = nil;
+            self.arrayT = nil;
+            self.Selearray = nil;
+            [self.tableView reloadData];
+        }
+    }];
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+//    }
 }
 
 - (NSMutableArray *)Selearray {

@@ -53,7 +53,7 @@
                 [self ZP_setButton:button ImageWithUrl:arrar[i] WithName:arr[i]];
             }
             if (z == 1) {
-                [self ZP_setButton:button ImageWithUrl:arrar[i+4] WithName:arr[i]];
+                [self ZP_setButton:button ImageWithUrl:arrar[i+4] WithName:arr[i+4]];
             }
             button.tag = [arrid[num] integerValue];
             [button addTarget:self action:@selector(buttonType:) forControlEvents:UIControlEventTouchUpInside];

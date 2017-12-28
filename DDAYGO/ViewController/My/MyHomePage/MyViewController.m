@@ -22,11 +22,12 @@
 #import "ZP_HomePageModel.h"
 #import "ZP_LoginTool.h"
 #import "ZP_MyHopageModel.h"
+#import "SupplierViewController.h"
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIView * userBackView;
 @property (weak, nonatomic) IBOutlet UIView * sdglView;
-//@property (weak, nonatomic) IBOutlet UIView * xfjlView; 暂不需要
-@property (weak, nonatomic) IBOutlet UIView * zxxxView;
+@property (weak, nonatomic) IBOutlet UIView * xfjlView;
+//@property (weak, nonatomic) IBOutlet UIView * zxxxView;
 @property (weak, nonatomic) IBOutlet UIView * scanView;
 @property (weak, nonatomic) IBOutlet UIView * CaipiaoView;
 @property (weak, nonatomic) IBOutlet UIButton *headImageBut;
@@ -208,14 +209,13 @@
     self.sdglView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.sdglView.layer.shadowOffset = CGSizeMake(0, 0);
     self.sdglView.layer.shadowOpacity = 0.3;
-    /** 暂不需要
     self.xfjlView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.xfjlView.layer.shadowOffset = CGSizeMake(0, 0);
     self.xfjlView.layer.shadowOpacity = 0.3;
-     */
-    self.zxxxView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    self.zxxxView.layer.shadowOffset = CGSizeMake(0, 0);
-    self.zxxxView.layer.shadowOpacity = 0.3;
+     
+//    self.zxxxView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+//    self.zxxxView.layer.shadowOffset = CGSizeMake(0, 0);
+//    self.zxxxView.layer.shadowOpacity = 0.3;
     self.scanView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.scanView.layer.shadowOffset = CGSizeMake(0, 0);
     self.scanView.layer.shadowOpacity = 0.3;
@@ -277,20 +277,24 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
 }
-/**暂不需要***
+
 // 申请开店
 - (IBAction)sskdAction:(id)sender {
-    
-}
-*/
-
-// 最新消息
-- (IBAction)zxxxAction:(id)sender {
-    NewsViewController *newsViewController = [[NewsViewController alloc] init];
-    [self.navigationController pushViewController:newsViewController animated:YES];
+    SupplierViewController * Supplier = [[SupplierViewController alloc]init];
+    [self.navigationController pushViewController:Supplier animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
+ 
 }
+
+
+//// 最新消息
+//- (IBAction)zxxxAction:(id)sender {
+//    NewsViewController *newsViewController = [[NewsViewController alloc] init];
+//    [self.navigationController pushViewController:newsViewController animated:YES];
+//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+//    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
+//}
 //  扫一扫
 - (IBAction)scanAction:(id)sender {
     QCodeController * CodeController = [[QCodeController alloc]init];

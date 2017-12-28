@@ -73,7 +73,8 @@
 
 // 获取历史下注号码
 + (void)requestHistoricalBet:(NSDictionary *)HistoricalBet uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
-
+// 促销彩下注
++ (void)requestBte:(NSDictionary *)Bte uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 // 邮箱验证
 + (void)requesEmail:(NSDictionary *)Email uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 

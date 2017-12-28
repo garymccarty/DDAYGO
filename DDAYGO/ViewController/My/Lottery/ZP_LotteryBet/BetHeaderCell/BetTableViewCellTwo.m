@@ -13,24 +13,22 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    _deleBut.layer.borderWidth = 0.5f;
-    _deleBut.layer.borderColor = [[UIColor redColor]CGColor];
+//    _deleBut.layer.borderWidth = 0.5f;
+//    _deleBut.layer.borderColor = [[UIColor redColor]CGColor];
 }
 
-
-
 - (void)updateCount:(NSArray *)arr {
-    NSLog(@"sele - %ld",arr.count);
+
     [self removeAllSubviews];
     for (int i = 0; i < arr.count; i ++) {
         
         UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-        but.frame = CGRectMake(i * ZP_Width / 10,5, 25, 25);
-        [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_whiteball_pressed"] forState:UIControlStateNormal];
-        [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_redball"] forState:UIControlStateSelected];
-        //        btn.OpenAppURL.titleLabel.font    = [UIFont systemFontOfSize: 12];
+        but.frame = CGRectMake(i * ZP_Width / 10,5, 35, 35);
+        [but setBackgroundImage:[UIImage imageNamed:@"bg_white_ball"] forState:UIControlStateNormal];
+        [but setBackgroundImage:[UIImage imageNamed:@"bg_red_ball_receive"] forState:UIControlStateSelected];
         but.titleLabel.font = ZP_TrademarkFont;
         if ([arr[i] integerValue] > 99) {
+            
             [but setTitle:[NSString stringWithFormat:@"%ld",[arr[i] integerValue] - 100] forState:UIControlStateNormal];
             but.selected = YES;
         }else{
@@ -40,13 +38,17 @@
         [self.contentView addSubview:but];
         
     }
-    
+   
 }
+
 
 - (void)removeAllSubviews {
     //[self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     while (self.contentView.subviews.count) {
         if ([self.contentView.subviews.lastObject isEqual:_deleBut]) {
+            return;
+        }
+        if ([self.contentView.subviews.lastObject isEqual:_jiajianVIEw]) {
             return;
         }
         [self.contentView.subviews.lastObject removeFromSuperview];
