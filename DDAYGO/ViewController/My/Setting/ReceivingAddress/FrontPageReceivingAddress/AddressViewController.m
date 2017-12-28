@@ -115,7 +115,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ZP_FrontPageReceivingAddressModel * model = self.newsData[indexPath.row];
-    self.popBlock(model);
+    if (self.popBlock) {
+        self.popBlock(model);
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

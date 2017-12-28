@@ -37,7 +37,7 @@
 // 保存修改后的数据
 - (void)acquiring {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"adsid"] = @"0";
+    dic[@"adsid"] = self.model.addressid;
     dic[@"name"] = _ContactpersonTextField.text;
     dic[@"phone"] = _ContactnumberTextField.text;
     dic[@"cell"] = @"";

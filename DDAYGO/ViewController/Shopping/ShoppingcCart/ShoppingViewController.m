@@ -89,6 +89,9 @@
             }];
         }
         
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            return ;
+        }
         NSArray *arr = obj;
         if (arr.count > 0) {
             NSDictionary * dic = [obj firstObject];
