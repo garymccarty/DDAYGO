@@ -21,7 +21,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E2p-Rc-CTb">
                         <rect key="frame" x="0.0" y="0.0" width="110" height="88"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="E2p-Rc-CTb" secondAttribute="height" multiplier="5:4" id="0bV-k5-ZZO"/>
                             <constraint firstAttribute="height" constant="88" id="icE-h4-IrS"/>

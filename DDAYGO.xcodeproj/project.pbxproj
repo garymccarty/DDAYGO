@@ -213,6 +213,7 @@
 		C435173A1FB2AC830066302E /* FootprintCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C435173C1FB2AC830066302E /* FootprintCollectionViewCell.xib */; };
 		C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43517451FB2ACD60066302E /* StoreViewController.xib */; };
 		C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C435174E1FB2ACE80066302E /* OrdersViewController.xib */; };
+		C43987751FF48B5D00044E21 /* RegistrationAgreementController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43987741FF48B5D00044E21 /* RegistrationAgreementController.m */; };
 		C4399D6F1FCE84A000B7B96D /* LotteryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4399D691FCE849F00B7B96D /* LotteryController.m */; };
 		C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4399D6A1FCE849F00B7B96D /* LotteryController.xib */; };
 		C44C9DB11FEA392D00CD7D4D /* ZP_QuickLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44C9DAE1FEA392C00CD7D4D /* ZP_QuickLoginController.m */; };
@@ -782,6 +783,8 @@
 		C43517491FB2ACDD0066302E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/StoreViewController.strings"; sourceTree = "<group>"; };
 		C435174B1FB2ACDF0066302E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/StoreViewController.strings"; sourceTree = "<group>"; };
 		C43517511FB2ACF40066302E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OrdersViewController.xib; sourceTree = "<group>"; };
+		C43987731FF48B5D00044E21 /* RegistrationAgreementController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationAgreementController.h; sourceTree = "<group>"; };
+		C43987741FF48B5D00044E21 /* RegistrationAgreementController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationAgreementController.m; sourceTree = "<group>"; };
 		C4399D681FCE849F00B7B96D /* LotteryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryController.h; sourceTree = "<group>"; };
 		C4399D691FCE849F00B7B96D /* LotteryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryController.m; sourceTree = "<group>"; };
 		C4399D6A1FCE849F00B7B96D /* LotteryController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryController.xib; sourceTree = "<group>"; };
@@ -1642,6 +1645,7 @@
 				06621DA51F9758720030983F /* Login */,
 				06621DB41F9758AE0030983F /* ForgetpPassword */,
 				06621DAE1F9758840030983F /* Registration */,
+				C43987721FF48B2F00044E21 /* RegistrationAgreement */,
 				C495B3331FE7B9DC002BBB32 /* ZP_QuickLogin */,
 				C470ADF41FA95BB400BAC2CA /* ZP_LogregisterTool */,
 			);
@@ -2351,6 +2355,15 @@
 				C425BEB31FC832140097DB8F /* ZP_FootprintModel.m */,
 			);
 			path = ZP_FootprintModel;
+			sourceTree = "<group>";
+		};
+		C43987721FF48B2F00044E21 /* RegistrationAgreement */ = {
+			isa = PBXGroup;
+			children = (
+				C43987731FF48B5D00044E21 /* RegistrationAgreementController.h */,
+				C43987741FF48B5D00044E21 /* RegistrationAgreementController.m */,
+			);
+			path = RegistrationAgreement;
 			sourceTree = "<group>";
 		};
 		C4399D671FCE849F00B7B96D /* LotteryHomePage */ = {
@@ -3970,6 +3983,7 @@
 				C479C6AA1FE3CB5800A58A2A /* NSString+MJExtension.m in Sources */,
 				C4D2FEB31FD552A000F546AB /* YueTixianController.m in Sources */,
 				06418F501F7A076A00479523 /* MASCompositeConstraint.m in Sources */,
+				C43987751FF48B5D00044E21 /* RegistrationAgreementController.m in Sources */,
 				C45F23071FA0754500F5DB41 /* SearchGooodsController.m in Sources */,
 				C47E76481FB5A1C7009F279A /* Pop-upMenuSingleton.m in Sources */,
 				06418F581F7A076A00479523 /* View+MASAdditions.m in Sources */,

@@ -23,7 +23,7 @@
 
 - (void)setModel:(collectionModel *)model {
     
-     [_ShopimageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
+     [_ShopimageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@"bg_footprint_frame"]];
     if ([model.state intValue] == 4) {
         _ShopimageView.alpha = 0.5;
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, _ShopimageView.frame.size.width, 17)];

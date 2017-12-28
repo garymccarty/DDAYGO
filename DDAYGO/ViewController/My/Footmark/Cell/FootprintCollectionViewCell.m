@@ -18,6 +18,7 @@
 - (void)FootprintCollection:(ZP_FootprintModel *)model {
     [_defaultimg sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     if ([model.state intValue] == 4) {
+//        _defaultimg.image = [UIImage imageNamed:@"bg_invalid_frame"];
         _defaultimg.alpha = 0.5;
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, _defaultimg.frame.size.width, 17)];
         label.center = _defaultimg.center;
@@ -27,6 +28,7 @@
         label.font = [UIFont systemFontOfSize:14];
         [_defaultimg addSubview:label];
     }else{
+        
     [_defaultimg sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
 
     }

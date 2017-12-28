@@ -262,53 +262,25 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="659-LA-Aa6">
                                     <rect key="frame" x="225" y="35" width="68.5" height="31"/>
-                                    <attributedString key="attributedText">
-                                        <fragment content="1%">
-                                            <attributes>
-                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <attributedString key="attributedText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3F-fq-fpo">
                                     <rect key="frame" x="220" y="71" width="78.5" height="54"/>
-                                    <attributedString key="attributedText">
-                                        <fragment content="0.5%">
-                                            <attributes>
-                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <attributedString key="attributedText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uo-MT-MgD">
                                     <rect key="frame" x="225" y="131" width="68.5" height="38"/>
-                                    <attributedString key="attributedText">
-                                        <fragment content="0.5%">
-                                            <attributes>
-                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <attributedString key="attributedText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnQ-EF-PmL">
                                     <rect key="frame" x="225" y="180" width="68.5" height="40"/>
-                                    <attributedString key="attributedText">
-                                        <fragment content="0.5%">
-                                            <attributes>
-                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <attributedString key="attributedText"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVD-Bc-FMg">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVD-Bc-FMg">
                                     <rect key="frame" x="225" y="231" width="68.5" height="36"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <nil key="textColor"/>
@@ -390,14 +362,14 @@
                                     </constraints>
                                 </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_explan_first" translatesAutoresizingMaskIntoConstraints="NO" id="RoD-ci-3iv">
-                                    <rect key="frame" x="8" y="319" width="20" height="20"/>
+                                    <rect key="frame" x="8" y="315" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="ISn-oi-V3i"/>
                                         <constraint firstAttribute="width" constant="20" id="Qkt-Oz-and"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHn-Qb-NeU">
-                                    <rect key="frame" x="36" y="319" width="235" height="21.5"/>
+                                    <rect key="frame" x="36" y="315" width="235" height="21.5"/>
                                     <attributedString key="attributedText">
                                         <fragment content="賞金彩開獎號碼以美國">
                                             <attributes>
@@ -427,14 +399,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_explan_second" translatesAutoresizingMaskIntoConstraints="NO" id="d6p-Ex-kor">
-                                    <rect key="frame" x="8" y="347" width="20" height="20"/>
+                                    <rect key="frame" x="8" y="343" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="71e-a4-nTL"/>
                                         <constraint firstAttribute="width" constant="20" id="g00-Jz-ZhT"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whq-Wc-LOd">
-                                    <rect key="frame" x="36" y="347" width="256" height="18"/>
+                                    <rect key="frame" x="36" y="343" width="256" height="18"/>
                                     <attributedString key="attributedText">
                                         <fragment content="本賞金彩,為會員參加競拍出價後,公司提發盈餘作為出價會員制福利,當期未參加競拍之會員無法享有此福利。">
                                             <attributes>
@@ -446,14 +418,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_explan_third" translatesAutoresizingMaskIntoConstraints="NO" id="1g0-5V-Rqd">
-                                    <rect key="frame" x="8" y="372" width="20" height="20"/>
+                                    <rect key="frame" x="8" y="368" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="DPO-5O-iek"/>
                                         <constraint firstAttribute="height" constant="20" id="ZQl-An-4if"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-6n-ZUv">
-                                    <rect key="frame" x="36" y="372" width="256" height="40"/>
+                                    <rect key="frame" x="36" y="368" width="256" height="40"/>
                                     <attributedString key="attributedText">
                                         <fragment content="頭獎、二獎、三獎及四獎由各該獎之所有中獎注數均分（計算至兌獎領獎金，全數歸入下期獎金盈餘)。如係一人中獎則為讀得；如無人中獎注數，則獎金列入次期之『總賞金』計算。">
                                             <attributes>
@@ -465,14 +437,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_explan_fourth" translatesAutoresizingMaskIntoConstraints="NO" id="xMe-bf-Gcj">
-                                    <rect key="frame" x="8" y="417" width="20" height="20"/>
+                                    <rect key="frame" x="8" y="413" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="Mcq-v7-bWN"/>
                                         <constraint firstAttribute="width" constant="20" id="yds-Da-Oh6"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOJ-eR-xBX">
-                                    <rect key="frame" x="36" y="430" width="256" height="19"/>
+                                    <rect key="frame" x="36" y="426" width="256" height="19"/>
                                     <attributedString key="attributedText">
                                         <fragment content="美國東岸時間(DST)：每週三：10:59:00 及每週六：10:59:00;">
                                             <attributes>
@@ -499,7 +471,7 @@
                                     <color key="highlightedColor" red="0.21631812543670492" green="0.24796392064791714" blue="0.92717826366424561" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開獎時間（開獎2小時系統將停止下注）" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipy-gy-zE2">
-                                    <rect key="frame" x="36" y="412" width="180" height="21"/>
+                                    <rect key="frame" x="36" y="408" width="180" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="MWI-Yj-r8C"/>
                                     </constraints>
@@ -508,14 +480,14 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_explan_fire" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-h4-1kg">
-                                    <rect key="frame" x="8" y="459" width="20" height="20"/>
+                                    <rect key="frame" x="8" y="455" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="fJj-ll-WKN"/>
                                         <constraint firstAttribute="width" constant="20" id="hEW-dr-SPs"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysZ-Kc-QPI">
-                                    <rect key="frame" x="36" y="459" width="256" height="25"/>
+                                    <rect key="frame" x="36" y="455" width="256" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="PB7-EW-fY8"/>
                                     </constraints>
@@ -530,7 +502,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsd-A7-PBG">
-                                    <rect key="frame" x="36" y="492" width="256" height="25"/>
+                                    <rect key="frame" x="36" y="488" width="256" height="25"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="JxX-1V-b6I"/>
                                     </constraints>
@@ -544,8 +516,8 @@
                                     </attributedString>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_explan_fire" translatesAutoresizingMaskIntoConstraints="NO" id="OPF-TV-5dz">
-                                    <rect key="frame" x="8" y="492" width="20" height="20"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_explan_six" translatesAutoresizingMaskIntoConstraints="NO" id="OPF-TV-5dz">
+                                    <rect key="frame" x="8" y="488" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="Lhj-6b-1zH"/>
                                         <constraint firstAttribute="height" constant="20" id="MZB-aU-ckx"/>
@@ -555,7 +527,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="QyR-mU-Gvh" firstAttribute="leading" secondItem="08y-sG-8E9" secondAttribute="trailing" id="05m-ZL-fAK"/>
-                                <constraint firstItem="XHn-Qb-NeU" firstAttribute="top" secondItem="qUD-Eb-97t" secondAttribute="bottom" constant="46" id="0Jt-gP-lLz"/>
+                                <constraint firstItem="XHn-Qb-NeU" firstAttribute="top" secondItem="qUD-Eb-97t" secondAttribute="bottom" constant="42" id="0Jt-gP-lLz"/>
                                 <constraint firstAttribute="trailing" secondItem="XHn-Qb-NeU" secondAttribute="trailing" constant="29" id="0la-Zp-sqb"/>
                                 <constraint firstItem="xMe-bf-Gcj" firstAttribute="top" secondItem="1g0-5V-Rqd" secondAttribute="bottom" constant="25" id="1Mc-Hy-yMi"/>
                                 <constraint firstItem="vOJ-eR-xBX" firstAttribute="top" secondItem="gQI-6n-ZUv" secondAttribute="bottom" constant="18" id="1SV-vc-mu4"/>
@@ -681,7 +653,7 @@
                                 <constraint firstItem="nl9-Kh-uIR" firstAttribute="leading" secondItem="zml-NN-O7f" secondAttribute="leading" id="nq2-73-xQb"/>
                                 <constraint firstItem="XsL-pl-7bZ" firstAttribute="leading" secondItem="zml-NN-O7f" secondAttribute="leading" id="pHb-bS-fL8"/>
                                 <constraint firstItem="nl9-Kh-uIR" firstAttribute="top" secondItem="O4d-Uv-2TT" secondAttribute="bottom" constant="5" id="pqi-3J-VeL"/>
-                                <constraint firstItem="RoD-ci-3iv" firstAttribute="top" secondItem="qUD-Eb-97t" secondAttribute="bottom" constant="46" id="q0b-NA-Wkr"/>
+                                <constraint firstItem="RoD-ci-3iv" firstAttribute="top" secondItem="qUD-Eb-97t" secondAttribute="bottom" constant="42" id="q0b-NA-Wkr"/>
                                 <constraint firstItem="3Gv-Xr-9y6" firstAttribute="top" secondItem="xfh-kG-h4j" secondAttribute="bottom" constant="5" id="q3H-TP-wx7"/>
                                 <constraint firstItem="14f-lB-49u" firstAttribute="leading" secondItem="3Ig-My-UsJ" secondAttribute="trailing" constant="5" id="qY1-cg-eOe"/>
                                 <constraint firstItem="EnQ-EF-PmL" firstAttribute="top" secondItem="nl9-Kh-uIR" secondAttribute="bottom" constant="5" id="rhC-Qv-PYa"/>
@@ -736,6 +708,7 @@
         <image name="icon_explan_first" width="20" height="23"/>
         <image name="icon_explan_fourth" width="20" height="23"/>
         <image name="icon_explan_second" width="20" height="23"/>
+        <image name="icon_explan_six" width="20" height="23"/>
         <image name="icon_explan_third" width="20" height="23"/>
     </resources>
 </document>

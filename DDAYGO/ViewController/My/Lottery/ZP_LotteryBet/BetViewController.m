@@ -273,8 +273,7 @@
 }
 
 
-- (void)dele:(UIButton *)but
-{
+- (void)dele:(UIButton *)but {
     if (self.dicArray.count > 0 ) {
         if (but.tag == self.dicArray.count) {
             if (self.Selearray.count > 0) {
@@ -293,6 +292,7 @@
     }
     
 }
+
 // 机选
 - (IBAction)suijiBut:(id)sender {
     self.array1 = [NSMutableArray array];
@@ -306,6 +306,7 @@
     
     self.Selearray = [NSMutableArray arrayWithArray:self.array1];
     [self.Selearray addObject:[NSNumber numberWithInt:a]];
+    [self.tableView reloadData];
     
 }
 // 确定
@@ -320,8 +321,7 @@
     }
 }
 
-- (NSMutableArray *)Selearray
-{
+- (NSMutableArray *)Selearray {
     if (!_Selearray) {
         _Selearray = [NSMutableArray array];
     }

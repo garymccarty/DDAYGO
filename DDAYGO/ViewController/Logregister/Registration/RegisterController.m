@@ -15,6 +15,7 @@
 #import "UIButton+countDown.h"
 #import "ZP_HomeTool.h"
 #import "ZP_PositionModel.h"
+#import "RegistrationAgreementController.h"
 @interface RegisterController () <UITextFieldDelegate>{
     UIButton * _chooseCityBtn;
 }
@@ -242,6 +243,8 @@
 }
 
 - (IBAction)userServerClick:(id)sender {
+    RegistrationAgreementController * RegistrationAgreement = [[RegistrationAgreementController alloc]init];
+    [self.navigationController pushViewController:RegistrationAgreement animated:YES];
     ZPLog(@"用户服务协议 ");
 }
 #pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -

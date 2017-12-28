@@ -684,44 +684,44 @@
                                     <rect key="frame" x="8" y="74" width="213" height="30"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AE8-wf-Cco">
-                                            <rect key="frame" x="8" y="0.0" width="25" height="25"/>
+                                            <rect key="frame" x="8" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRy-Pl-N0X">
-                                            <rect key="frame" x="175" y="0.0" width="25" height="25"/>
+                                            <rect key="frame" x="175" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="6" backgroundImage="bg_choose_redball">
+                                            <state key="normal" title="6" backgroundImage="bg_red_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHp-aP-pwg">
-                                            <rect key="frame" x="40" y="0.0" width="25" height="25"/>
+                                            <rect key="frame" x="40" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5io-w1-wpD">
-                                            <rect key="frame" x="74" y="0.0" width="25" height="25"/>
+                                            <rect key="frame" x="74" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xid-gc-rVP">
-                                            <rect key="frame" x="107" y="0.0" width="25" height="25"/>
+                                            <rect key="frame" x="107" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pO-Mv-7Gy">
-                                            <rect key="frame" x="140" y="0.0" width="25" height="25"/>
+                                            <rect key="frame" x="140" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
@@ -819,44 +819,44 @@
                                     <rect key="frame" x="8" y="34" width="213" height="30"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXw-a2-3Vb">
-                                            <rect key="frame" x="8" y="2" width="25" height="25"/>
+                                            <rect key="frame" x="8" y="-1" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPc-ep-tsc">
-                                            <rect key="frame" x="40" y="3" width="25" height="25"/>
+                                            <rect key="frame" x="40" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKA-rB-ZG4">
-                                            <rect key="frame" x="74" y="3" width="25" height="25"/>
+                                            <rect key="frame" x="74" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXd-1M-c2k">
-                                            <rect key="frame" x="107" y="3" width="25" height="25"/>
+                                            <rect key="frame" x="107" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuG-rZ-U4a">
-                                            <rect key="frame" x="140" y="3" width="25" height="25"/>
+                                            <rect key="frame" x="140" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_whiteball_pressed">
+                                            <state key="normal" title="5" backgroundImage="bg_white_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slb-CA-W3k">
-                                            <rect key="frame" x="175" y="3" width="25" height="25"/>
+                                            <rect key="frame" x="175" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="5" backgroundImage="bg_choose_redball">
+                                            <state key="normal" title="5" backgroundImage="bg_red_ball">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
@@ -945,7 +945,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_choose_redball" width="32" height="32"/>
-        <image name="bg_choose_whiteball_pressed" width="32" height="32"/>
+        <image name="bg_red_ball" width="39" height="39"/>
+        <image name="bg_white_ball" width="39" height="39"/>
     </resources>
 </document>
