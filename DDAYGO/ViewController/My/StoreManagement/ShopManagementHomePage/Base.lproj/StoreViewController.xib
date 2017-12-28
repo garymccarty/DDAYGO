@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -294,12 +295,60 @@
                         <constraint firstItem="F5Z-ZZ-147" firstAttribute="top" secondItem="sMA-bM-g8J" secondAttribute="bottom" constant="1" id="z40-7d-04m"/>
                     </constraints>
                 </scrollView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3oB-cG-qzt">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79I-cX-RYs">
+                            <rect key="frame" x="20" y="340" width="280" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="tt0-YP-6At"/>
+                            </constraints>
+                            <state key="normal" title="重新申请">
+                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ler-zk-i9Q">
+                            <rect key="frame" x="130" y="112" width="60" height="60"/>
+                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="FWr-Ap-Ixn"/>
+                                <constraint firstAttribute="width" constant="60" id="cDQ-bg-hTd"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-dd-9eP">
+                            <rect key="frame" x="145.5" y="180" width="29.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="79I-cX-RYs" secondAttribute="trailing" constant="20" id="2Hd-J6-71Q"/>
+                        <constraint firstItem="79I-cX-RYs" firstAttribute="leading" secondItem="3oB-cG-qzt" secondAttribute="leading" constant="20" id="IK3-S2-Uay"/>
+                        <constraint firstItem="Jo8-dd-9eP" firstAttribute="centerX" secondItem="ler-zk-i9Q" secondAttribute="centerX" id="R3x-y9-8aK"/>
+                        <constraint firstItem="ler-zk-i9Q" firstAttribute="centerY" secondItem="3oB-cG-qzt" secondAttribute="centerY" multiplier="0.5" id="Uy2-jI-WfS"/>
+                        <constraint firstItem="ler-zk-i9Q" firstAttribute="centerX" secondItem="3oB-cG-qzt" secondAttribute="centerX" id="hfg-5p-Hwm"/>
+                        <constraint firstItem="Jo8-dd-9eP" firstAttribute="top" secondItem="ler-zk-i9Q" secondAttribute="bottom" constant="8" id="m2P-02-xao"/>
+                        <constraint firstItem="79I-cX-RYs" firstAttribute="centerY" secondItem="3oB-cG-qzt" secondAttribute="centerY" multiplier="1.25" id="z5o-em-fYV"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="IEL-uU-znQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8Y0-1A-38D"/>
                 <constraint firstAttribute="trailing" secondItem="IEL-uU-znQ" secondAttribute="trailing" id="9W7-69-1xQ"/>
+                <constraint firstItem="3oB-cG-qzt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="F9e-26-oh2"/>
+                <constraint firstAttribute="bottom" secondItem="3oB-cG-qzt" secondAttribute="bottom" id="URV-lh-YdV"/>
                 <constraint firstItem="IEL-uU-znQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="USR-jc-Hoe"/>
+                <constraint firstItem="3oB-cG-qzt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ihO-Gu-bJF"/>
+                <constraint firstAttribute="trailing" secondItem="3oB-cG-qzt" secondAttribute="trailing" id="nsz-Lx-c6s"/>
                 <constraint firstAttribute="bottom" secondItem="IEL-uU-znQ" secondAttribute="bottom" id="zfD-da-UOy"/>
             </constraints>
             <point key="canvasLocation" x="24" y="50"/>

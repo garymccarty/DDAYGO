@@ -10,6 +10,7 @@
 #import "SupplierTableViewCell.h"
 #import "PrefixHeader.pch"
 @interface SupplierViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIView *noStoreView;
 
 @end
 
