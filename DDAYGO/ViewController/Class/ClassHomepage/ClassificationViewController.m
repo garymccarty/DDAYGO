@@ -50,6 +50,7 @@
 }
 //  左边
 - (void)selectLeftCell:(UIButton *)sender {
+    self.title = sender.titleLabel.text;
     self.leftSelectRow = sender.tag;
     [self.leftTableView reloadData];
     if (![self.rightData objectForKey:@(self.leftSelectRow)]) {
@@ -70,6 +71,8 @@
     NSDictionary * dict = @{@"level":@"1",@"language":@"zh-tw"};
     [ZP_ClassViewTool requClassIfication:dict success:^(id obj) {
         NSArray * arr = obj;
+        NSDictionary *tempDic = arr.firstObject;
+        self.title = tempDic[@"producttypename"];
         ZPLog(@"%@",obj);
         self.newsData = [ZP_LeftModel arrayWithArray:arr];
         [self getRightItemDataWithProducttypeid:0];
