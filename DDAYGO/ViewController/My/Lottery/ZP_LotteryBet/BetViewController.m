@@ -106,13 +106,13 @@
 }
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
     if (section == 0) {
         self.tableHeadView1 = [[[NSBundle mainBundle] loadNibNamed:@"tableHeadView1" owner:nil options:nil] firstObject];
          self.tableHeadView1.BallLabel.text  = [NSString stringWithFormat:@"%ld",self.array1.count];
         return self.tableHeadView1;
     }
     if (section == 1) {
+        
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 44)];
         view.backgroundColor = [UIColor whiteColor];
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 65, 44)];
@@ -133,11 +133,12 @@
         label4.font = [UIFont systemFontOfSize:13];
         [view addSubview:label4];
         return view;
+        
     }else{
 
-        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 44)];
+        UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 30)];
         view.backgroundColor = [UIColor whiteColor];
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 200, 44)];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 200, 30)];
         label.text = @"选定的号码";
         label.font = [UIFont systemFontOfSize:13];
         [view addSubview:label];
@@ -152,8 +153,10 @@
     }
     if (indexPath.section == 1) {
         return 26 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
+        
     }else{
-        return 15;
+        
+        return 35;
     }
     
 }

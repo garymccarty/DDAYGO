@@ -185,6 +185,7 @@
 		4D0949011FDEF77500FC4BCA /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0948FF1FDEF77500FC4BCA /* EvaluateTableViewCell.xib */; };
 		6FA32ACCA83E0A32B68FDCFC /* libPods-DDAYGO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */; };
 		C40763711FF50E9A00180975 /* IQTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C407636F1FF50E9A00180975 /* IQTableView.m */; };
+		C40763731FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C40763721FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx */; };
 		C407AC131FD7E917004A8DE8 /* 提现记录_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C407AC121FD7E916004A8DE8 /* 提现记录_spec.png */; };
 		C409F86E1FA17336009DE7B1 /* NestedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86A1FA17336009DE7B1 /* NestedCollectionViewCell.m */; };
 		C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F86C1FA17336009DE7B1 /* SixthViewCell.m */; };
@@ -193,7 +194,6 @@
 		C4137E811FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */; };
 		C420EDE51FF3D397005ECE30 /* UIViewController+LLProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */; };
 		C420EDE81FF3D7E9005ECE30 /* CALayer+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE71FF3D7E9005ECE30 /* CALayer+UIColor.m */; };
-		C420EDEA1FF3EDD6005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C420EDE91FF3EDD5005ECE30 /* DDAYGO IHTTP协议1.0.docx */; };
 		C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA51FC813C30097DB8F /* FSPageContentView.m */; };
 		C425BEAA1FC813C30097DB8F /* FSSegmentTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA81FC813C30097DB8F /* FSSegmentTitleView.m */; };
 		C425BEB01FC818480097DB8F /* ZP_OrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEAF1FC818480097DB8F /* ZP_OrderController.m */; };
@@ -729,6 +729,7 @@
 		949508FD8C61CA662D6E2034 /* Pods-DDAYGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.debug.xcconfig"; sourceTree = "<group>"; };
 		C407636F1FF50E9A00180975 /* IQTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTableView.m; sourceTree = "<group>"; };
 		C40763701FF50E9A00180975 /* IQTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQTableView.h; sourceTree = "<group>"; };
+		C40763721FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C407AC121FD7E916004A8DE8 /* 提现记录_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "提现记录_spec.png"; sourceTree = "<group>"; };
 		C409F8691FA17336009DE7B1 /* NestedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NestedCollectionViewCell.h; sourceTree = "<group>"; };
 		C409F86A1FA17336009DE7B1 /* NestedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NestedCollectionViewCell.m; sourceTree = "<group>"; };
@@ -744,7 +745,6 @@
 		C420EDE41FF3D397005ECE30 /* UIViewController+LLProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LLProgress.h"; sourceTree = "<group>"; };
 		C420EDE61FF3D7E9005ECE30 /* CALayer+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+UIColor.h"; sourceTree = "<group>"; };
 		C420EDE71FF3D7E9005ECE30 /* CALayer+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+UIColor.m"; sourceTree = "<group>"; };
-		C420EDE91FF3EDD5005ECE30 /* DDAYGO IHTTP协议1.0.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DDAYGO IHTTP协议1.0.docx"; sourceTree = "<group>"; };
 		C425BEA41FC813C30097DB8F /* FSPageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPageContentView.h; sourceTree = "<group>"; };
 		C425BEA51FC813C30097DB8F /* FSPageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPageContentView.m; sourceTree = "<group>"; };
 		C425BEA61FC813C30097DB8F /* FSScrollContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSScrollContentView.h; sourceTree = "<group>"; };
@@ -1210,7 +1210,7 @@
 		063FE0441F614D24009910FF /* DDAYGO */ = {
 			isa = PBXGroup;
 			children = (
-				C420EDE91FF3EDD5005ECE30 /* DDAYGO IHTTP协议1.0.docx */,
+				C40763721FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx */,
 				0641BB971F67B60B00E72FEF /* Testbag */,
 				063FE0AE1F615CEB009910FF /* ViewController */,
 			);
@@ -3840,6 +3840,7 @@
 				063FE0551F614D24009910FF /* LaunchScreen.storyboard in Resources */,
 				C439877B1FF4BDD300044E21 /* SupplierViewController.xib in Resources */,
 				4D0948F21FDD9BDC00FC4BCA /* ProductTableViewCell.xib in Resources */,
+				C40763731FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				062C9D5B1F8CD6F900E14987 /* button_2@2x.png in Resources */,
 				C47E765D1FB5A5A6009F279A /* DetailedController.xib in Resources */,
 				C4D2FEF51FD5636C00F546AB /* 提现_spec.png in Resources */,
@@ -3857,7 +3858,6 @@
 				C47096951FB04998006EA52C /* PromptBox.xib in Resources */,
 				C44D6D121FD8CF070002DAF2 /* PayViewController.xib in Resources */,
 				C4D9E7081FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.xib in Resources */,
-				C420EDEA1FF3EDD6005ECE30 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				062C9D631F8CD6F900E14987 /* button_6@2x.png in Resources */,
 				06F571D81F9F1A7900D61FDB /* EditViewController.xib in Resources */,
 				06F572411F9F204F00D61FDB /* BillDetailViewController.xib in Resources */,
