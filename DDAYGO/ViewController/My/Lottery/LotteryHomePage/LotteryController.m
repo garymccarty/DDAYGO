@@ -49,6 +49,7 @@
 - (void)getData {
 
     [ZP_MyTool getPrizeInfo:^(id obj) {
+        ZPLog(@"%@",obj);
         //这个是一次的数据
         ZP_LotterModel * model = [ZP_LotterModel mj_objectWithKeyValues:obj];
         self.prizeDic = obj;
@@ -57,7 +58,6 @@
         
     }];
 }
-
 - (void)updateData:(ZP_LotterModel *)model{
     
      lotteryModel *model1 = [lotteryModel mj_objectWithKeyValues:model.lottery];
@@ -236,7 +236,7 @@
     self.bountyArray = @[self.bountyLabel1,self.bountyLabel2,self.bountyLabel3,self.bountyLabel4];
 }
 
-
+// NavButton
 - (void)addNavigationBar {
     
     __weak LotteryController *controller = self;

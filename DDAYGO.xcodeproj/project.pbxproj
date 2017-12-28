@@ -318,6 +318,7 @@
 		C47BBBF11FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47BBBEF1FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.xib */; };
 		C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */; };
 		C47BBBF91FE5128F0000FFE6 /* ZP_CheckMoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */; };
+		C47BBC041FF40A180000FFE6 /* ZP_HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47BBC031FF40A180000FFE6 /* ZP_HistoryModel.m */; };
 		C47E75861FB573F2009F279A /* ZP_HomeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75851FB573F2009F279A /* ZP_HomeTool.m */; };
 		C47E758D1FB575C5009F279A /* ZP_shoopingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E758C1FB575C5009F279A /* ZP_shoopingTool.m */; };
 		C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47E75901FB57846009F279A /* ZP_ShoppingModel.m */; };
@@ -980,6 +981,8 @@
 		C47BBBF41FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_DetailsSistoryAwardMOdel.m; sourceTree = "<group>"; };
 		C47BBBF71FE5128F0000FFE6 /* ZP_CheckMoreModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_CheckMoreModel.h; sourceTree = "<group>"; };
 		C47BBBF81FE5128F0000FFE6 /* ZP_CheckMoreModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_CheckMoreModel.m; sourceTree = "<group>"; };
+		C47BBC021FF40A180000FFE6 /* ZP_HistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HistoryModel.h; sourceTree = "<group>"; };
+		C47BBC031FF40A180000FFE6 /* ZP_HistoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HistoryModel.m; sourceTree = "<group>"; };
 		C47E75841FB573F2009F279A /* ZP_HomeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_HomeTool.h; sourceTree = "<group>"; };
 		C47E75851FB573F2009F279A /* ZP_HomeTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_HomeTool.m; sourceTree = "<group>"; };
 		C47E758B1FB575C5009F279A /* ZP_shoopingTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_shoopingTool.h; sourceTree = "<group>"; };
@@ -3093,6 +3096,15 @@
 			path = ZP_CheckMoreModel;
 			sourceTree = "<group>";
 		};
+		C47BBC011FF409F50000FFE6 /* ZP_HistoryModel */ = {
+			isa = PBXGroup;
+			children = (
+				C47BBC021FF40A180000FFE6 /* ZP_HistoryModel.h */,
+				C47BBC031FF40A180000FFE6 /* ZP_HistoryModel.m */,
+			);
+			path = ZP_HistoryModel;
+			sourceTree = "<group>";
+		};
 		C47E75821FB573A2009F279A /* ZP_shoppingTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -3474,6 +3486,7 @@
 				C492A1751FD0ECB7009FF57B /* ZP_HistoryVetController.m */,
 				C492A1761FD0ECB7009FF57B /* ZP_HistoryVetController.xib */,
 				C492A16A1FD0ECB7009FF57B /* ZP_HistoryBetCell */,
+				C47BBC011FF409F50000FFE6 /* ZP_HistoryModel */,
 			);
 			path = ZP_HistoryHomePage;
 			sourceTree = "<group>";
@@ -4117,6 +4130,7 @@
 				C492A17D1FD0ECB7009FF57B /* ZP_HistoryVetController.m in Sources */,
 				06F571DD1F9F1A7900D61FDB /* AddAddressViewController.m in Sources */,
 				065B3CE21F984F8A00A8E6D6 /* SDCycleScrollView.m in Sources */,
+				C47BBC041FF40A180000FFE6 /* ZP_HistoryModel.m in Sources */,
 				064AB1951F73B2FF007FE5F0 /* MainViewController.m in Sources */,
 				06418F571F7A076A00479523 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				C45F233B1FA0757A00F5DB41 /* ThirdViewCell.m in Sources */,

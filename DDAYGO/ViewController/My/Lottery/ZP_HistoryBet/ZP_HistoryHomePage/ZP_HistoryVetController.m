@@ -10,9 +10,11 @@
 #import "ZP_HistoryBetCell.h"
 #import "ZP_DetailsSistoryAwardController.h"
 #import "PrefixHeader.pch"
+#import "ZP_HistoryModel.h"
+#import "ZP_MyTool.h"
 @interface ZP_HistoryVetController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
-
+@property (nonatomic, strong)NSMutableArray * newsData;
 @end
 
 @implementation ZP_HistoryVetController
@@ -20,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self allData];
     [self initTableHeadView];
 }
 - (void)initUI {
@@ -68,7 +71,26 @@
     
     self.tableView.tableHeaderView = myView;
 }
-
+// 数据
+- (void)allData {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = Token;
+    dic[@"page"] = @"1";
+    dic[@"pagesize"] = @"6";
+    [ZP_MyTool requestHistoricalBet:dic uccess:^(id obj) {
+        ZPLog(@"%@",obj);
+        ZP_HistoryModel * model = [ZP_HistoryModel mj_objectWithKeyValues:obj];
+        [self WithHistoryAllData:model];
+         [self.tableView reloadData];
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+- (void)WithHistoryAllData:(ZP_HistoryModel *) model {
+//    _OrderLabel.text = model.
+    _OrderNumberLabel.text = [model.createtime stringValue];
+    
+}
 //表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0, 5, ZP_Width, 20)];
@@ -104,7 +126,7 @@
     ZPLog(@"按钮");
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    return 3;
+    return self.newsData.count;
 }
 
 /*设置标题头的宽度*/
@@ -113,8 +135,7 @@
 }
 
 /*设置cell 的宽度 */
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 35;
     
