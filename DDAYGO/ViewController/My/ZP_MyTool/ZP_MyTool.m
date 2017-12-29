@@ -267,6 +267,15 @@
     }];
 }
 
+// 获取用户商家状态
++ (void)requestUserBusinessStatus:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure{
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/getsupplierstate?token=%@",token] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
 //http://www.ddaygo.com/api/Test/updatepassword?token=d2f38cc152c6c0f8504a25a70f7cc727&opwd=7fa8282ad93047a4d6fe6111c93b308a&npwd=fcea920f7412b5da7be0cf42b8c93759
 
 @end

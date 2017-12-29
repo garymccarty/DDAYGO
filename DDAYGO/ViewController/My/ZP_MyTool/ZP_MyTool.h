@@ -81,6 +81,9 @@
 // 验证码
 + (void)requestRestPassword:(NSDictionary *)RestPassword success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+// 获取用户商家状态
++ (void)requestUserBusinessStatus:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
 
 @end
 
