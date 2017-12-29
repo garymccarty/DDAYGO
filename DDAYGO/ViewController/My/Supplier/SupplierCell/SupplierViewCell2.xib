@@ -44,6 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Bvs-kT-QqE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="5Me-cN-fPn"/>
                     <constraint firstItem="yfP-yV-Pwp" firstAttribute="leading" secondItem="37M-zL-5RR" secondAttribute="trailing" constant="10" id="8hP-M8-gsE"/>
@@ -53,10 +54,12 @@
                     <constraint firstItem="Bvs-kT-QqE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="pdz-uJ-Jvs"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="SelectBut" destination="yfP-yV-Pwp" id="uBa-rM-gbx"/>
                 <outlet property="TissueMorphologyLabel" destination="37M-zL-5RR" id="gbH-xk-OcZ"/>
             </connections>
-            <point key="canvasLocation" x="34" y="54.5"/>
+            <point key="canvasLocation" x="82" y="-117"/>
         </tableViewCell>
     </objects>
     <resources>

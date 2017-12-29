@@ -215,8 +215,6 @@
 		C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43517451FB2ACD60066302E /* StoreViewController.xib */; };
 		C435174C1FB2ACE80066302E /* OrdersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C435174E1FB2ACE80066302E /* OrdersViewController.xib */; };
 		C43987751FF48B5D00044E21 /* RegistrationAgreementController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43987741FF48B5D00044E21 /* RegistrationAgreementController.m */; };
-		C439877A1FF4BDD300044E21 /* SupplierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43987781FF4BDD300044E21 /* SupplierViewController.m */; };
-		C439877B1FF4BDD300044E21 /* SupplierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43987791FF4BDD300044E21 /* SupplierViewController.xib */; };
 		C43987801FF4C67100044E21 /* SupplierTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C439877E1FF4C67100044E21 /* SupplierTableViewCell.m */; };
 		C43987811FF4C67100044E21 /* SupplierTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C439877F1FF4C67100044E21 /* SupplierTableViewCell.xib */; };
 		C4399D6F1FCE84A000B7B96D /* LotteryController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4399D691FCE849F00B7B96D /* LotteryController.m */; };
@@ -389,9 +387,9 @@
 		C49B32281FD5AC9E007632F2 /* ZP_ExtractCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32261FD5AC9E007632F2 /* ZP_ExtractCell.xib */; };
 		C4C4D1461FF64A810075D8D8 /* SupplierViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D1441FF64A810075D8D8 /* SupplierViewCell2.m */; };
 		C4C4D1471FF64A810075D8D8 /* SupplierViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D1451FF64A810075D8D8 /* SupplierViewCell2.xib */; };
-		C4C4D14B1FF64FC10075D8D8 /* SupplierViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D1491FF64FC10075D8D8 /* SupplierViewCell.m */; };
-		C4C4D14C1FF64FC10075D8D8 /* SupplierViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D14A1FF64FC10075D8D8 /* SupplierViewCell.xib */; };
-		C4C4D14F1FF658610075D8D8 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D14E1FF658610075D8D8 /* ScreenView.m */; };
+		C4C4D1531FF6823D0075D8D8 /* Supplier1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D1511FF6823D0075D8D8 /* Supplier1ViewController.m */; };
+		C4C4D1541FF6823D0075D8D8 /* Supplier1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D1521FF6823D0075D8D8 /* Supplier1ViewController.xib */; };
+		C4C4D1571FF6926E0075D8D8 /* SupplierView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D1561FF6926E0075D8D8 /* SupplierView.m */; };
 		C4D2FEA71FD519A100F546AB /* ZP_QrCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */; };
 		C4D2FEB31FD552A000F546AB /* YueTixianController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEB11FD552A000F546AB /* YueTixianController.m */; };
 		C4D2FEB41FD552A000F546AB /* YueTixianController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEB21FD552A000F546AB /* YueTixianController.xib */; };
@@ -797,9 +795,6 @@
 		C43517511FB2ACF40066302E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/OrdersViewController.xib; sourceTree = "<group>"; };
 		C43987731FF48B5D00044E21 /* RegistrationAgreementController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationAgreementController.h; sourceTree = "<group>"; };
 		C43987741FF48B5D00044E21 /* RegistrationAgreementController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationAgreementController.m; sourceTree = "<group>"; };
-		C43987771FF4BDD300044E21 /* SupplierViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierViewController.h; sourceTree = "<group>"; };
-		C43987781FF4BDD300044E21 /* SupplierViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierViewController.m; sourceTree = "<group>"; };
-		C43987791FF4BDD300044E21 /* SupplierViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierViewController.xib; sourceTree = "<group>"; };
 		C439877D1FF4C67100044E21 /* SupplierTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierTableViewCell.h; sourceTree = "<group>"; };
 		C439877E1FF4C67100044E21 /* SupplierTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierTableViewCell.m; sourceTree = "<group>"; };
 		C439877F1FF4C67100044E21 /* SupplierTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierTableViewCell.xib; sourceTree = "<group>"; };
@@ -1123,11 +1118,11 @@
 		C4C4D1431FF64A810075D8D8 /* SupplierViewCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierViewCell2.h; sourceTree = "<group>"; };
 		C4C4D1441FF64A810075D8D8 /* SupplierViewCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierViewCell2.m; sourceTree = "<group>"; };
 		C4C4D1451FF64A810075D8D8 /* SupplierViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierViewCell2.xib; sourceTree = "<group>"; };
-		C4C4D1481FF64FC10075D8D8 /* SupplierViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierViewCell.h; sourceTree = "<group>"; };
-		C4C4D1491FF64FC10075D8D8 /* SupplierViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierViewCell.m; sourceTree = "<group>"; };
-		C4C4D14A1FF64FC10075D8D8 /* SupplierViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierViewCell.xib; sourceTree = "<group>"; };
-		C4C4D14D1FF658610075D8D8 /* ScreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
-		C4C4D14E1FF658610075D8D8 /* ScreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
+		C4C4D1501FF6823D0075D8D8 /* Supplier1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Supplier1ViewController.h; sourceTree = "<group>"; };
+		C4C4D1511FF6823D0075D8D8 /* Supplier1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Supplier1ViewController.m; sourceTree = "<group>"; };
+		C4C4D1521FF6823D0075D8D8 /* Supplier1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Supplier1ViewController.xib; sourceTree = "<group>"; };
+		C4C4D1551FF6926E0075D8D8 /* SupplierView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierView.h; sourceTree = "<group>"; };
+		C4C4D1561FF6926E0075D8D8 /* SupplierView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierView.m; sourceTree = "<group>"; };
 		C4D2FEA51FD519A100F546AB /* ZP_QrCodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_QrCodeModel.h; sourceTree = "<group>"; };
 		C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_QrCodeModel.m; sourceTree = "<group>"; };
 		C4D2FEB01FD552A000F546AB /* YueTixianController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YueTixianController.h; sourceTree = "<group>"; };
@@ -2396,9 +2391,9 @@
 		C43987761FF4BDA200044E21 /* Supplier */ = {
 			isa = PBXGroup;
 			children = (
-				C43987771FF4BDD300044E21 /* SupplierViewController.h */,
-				C43987781FF4BDD300044E21 /* SupplierViewController.m */,
-				C43987791FF4BDD300044E21 /* SupplierViewController.xib */,
+				C4C4D1501FF6823D0075D8D8 /* Supplier1ViewController.h */,
+				C4C4D1511FF6823D0075D8D8 /* Supplier1ViewController.m */,
+				C4C4D1521FF6823D0075D8D8 /* Supplier1ViewController.xib */,
 				C439877C1FF4C65600044E21 /* SupplierCell */,
 			);
 			path = Supplier;
@@ -2413,11 +2408,8 @@
 				C4C4D1431FF64A810075D8D8 /* SupplierViewCell2.h */,
 				C4C4D1441FF64A810075D8D8 /* SupplierViewCell2.m */,
 				C4C4D1451FF64A810075D8D8 /* SupplierViewCell2.xib */,
-				C4C4D1481FF64FC10075D8D8 /* SupplierViewCell.h */,
-				C4C4D1491FF64FC10075D8D8 /* SupplierViewCell.m */,
-				C4C4D14A1FF64FC10075D8D8 /* SupplierViewCell.xib */,
-				C4C4D14D1FF658610075D8D8 /* ScreenView.h */,
-				C4C4D14E1FF658610075D8D8 /* ScreenView.m */,
+				C4C4D1551FF6926E0075D8D8 /* SupplierView.h */,
+				C4C4D1561FF6926E0075D8D8 /* SupplierView.m */,
 			);
 			path = SupplierCell;
 			sourceTree = "<group>";
@@ -3859,7 +3851,6 @@
 				C43517431FB2ACD60066302E /* StoreViewController.xib in Resources */,
 				0641BBA31F67B60B00E72FEF /* Third.png in Resources */,
 				063FE0551F614D24009910FF /* LaunchScreen.storyboard in Resources */,
-				C439877B1FF4BDD300044E21 /* SupplierViewController.xib in Resources */,
 				4D0948F21FDD9BDC00FC4BCA /* ProductTableViewCell.xib in Resources */,
 				C40763731FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				062C9D5B1F8CD6F900E14987 /* button_2@2x.png in Resources */,
@@ -3895,7 +3886,6 @@
 				06F571DA1F9F1A7900D61FDB /* AddressViewController.xib in Resources */,
 				C46B9F491FDE71FE00942750 /* 本期下注号码_spec.png in Resources */,
 				06F571DE1F9F1A7900D61FDB /* AddAddressViewController.xib in Resources */,
-				C4C4D14C1FF64FC10075D8D8 /* SupplierViewCell.xib in Resources */,
 				062C9D591F8CD6F900E14987 /* button_1@2x.png in Resources */,
 				C472F1511FE2A88B0031D7B5 /* 选择赏金彩_spec.png in Resources */,
 				C492A1971FD0EDC0009FF57B /* ZP_InstructionController.xib in Resources */,
@@ -3927,6 +3917,7 @@
 				C42A17461FF2544100680F92 /* tableHeadView1.xib in Resources */,
 				06F5716E1F9F15CE00D61FDB /* CollectionViewController.xib in Resources */,
 				C46B9F481FDE71FE00942750 /* 历史下注号码_spec.png in Resources */,
+				C4C4D1541FF6823D0075D8D8 /* Supplier1ViewController.xib in Resources */,
 				0682BE801F90C8F000894F4E /* seven.png in Resources */,
 				062C9D681F8CDB7900E14987 /* headImage.jpg in Resources */,
 				C44D6D101FD8CF070002DAF2 /* PayViewCell.xib in Resources */,
@@ -4101,7 +4092,6 @@
 				06F571611F9F154E00D61FDB /* MyViewController.m in Sources */,
 				C47750811FBA9A1E00AE8B3F /* ZP_FirstModel.m in Sources */,
 				06F572261F9F1E8700D61FDB /* OrdersViewController.m in Sources */,
-				C4C4D14F1FF658610075D8D8 /* ScreenView.m in Sources */,
 				C46837FC1FDA78EE000E7D7C /* ZP_MyHopageModel.m in Sources */,
 				C47E76421FB5A1C7009F279A /* ZPHomeHeaderLayout.m in Sources */,
 				C45F23081FA0754500F5DB41 /* SearchBar.m in Sources */,
@@ -4114,6 +4104,7 @@
 				06F5716B1F9F15CE00D61FDB /* CollectionTableViewCell.m in Sources */,
 				06621D9B1F9757B40030983F /* UIView+SDAutoLayout.m in Sources */,
 				06418F511F7A076A00479523 /* MASConstraint.m in Sources */,
+				C4C4D1531FF6823D0075D8D8 /* Supplier1ViewController.m in Sources */,
 				065B3CDF1F984F8A00A8E6D6 /* TADotView.m in Sources */,
 				C45F22E21FA05B3D00F5DB41 /* ZP_NetorkingTools.m in Sources */,
 				065B3CE11F984F8A00A8E6D6 /* SDCollectionViewCell.m in Sources */,
@@ -4172,7 +4163,6 @@
 				C47212B81FB1A5DC0055578E /* CustomCell.m in Sources */,
 				C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */,
 				06F571141F9F0D6800D61FDB /* AppraiseViewCell.m in Sources */,
-				C4C4D14B1FF64FC10075D8D8 /* SupplierViewCell.m in Sources */,
 				C47E764D1FB5A1C7009F279A /* ZP_ClassViewTool.m in Sources */,
 				C4535E241FC51E5300DFFD62 /* ZP_InformationCell.m in Sources */,
 				065B3CDD1F984F8A00A8E6D6 /* TAAbstractDotView.m in Sources */,
@@ -4210,7 +4200,6 @@
 				06F570EB1F9F0ABA00D61FDB /* ShoppingCell.m in Sources */,
 				C492A17D1FD0ECB7009FF57B /* ZP_HistoryVetController.m in Sources */,
 				06F571DD1F9F1A7900D61FDB /* AddAddressViewController.m in Sources */,
-				C439877A1FF4BDD300044E21 /* SupplierViewController.m in Sources */,
 				065B3CE21F984F8A00A8E6D6 /* SDCycleScrollView.m in Sources */,
 				C47BBC041FF40A180000FFE6 /* ZP_HistoryModel.m in Sources */,
 				064AB1951F73B2FF007FE5F0 /* MainViewController.m in Sources */,
@@ -4234,6 +4223,7 @@
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
 				C46B9F4F1FDE764000942750 /* ZP_ExtractModel.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,
+				C4C4D1571FF6926E0075D8D8 /* SupplierView.m in Sources */,
 				C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */,
 				C479C6A21FE3CB5800A58A2A /* MJFoundation.m in Sources */,
 				C47E76321FB5A1C7009F279A /* DetailedController.m in Sources */,

@@ -18,11 +18,11 @@
 #import "LotteryController.h"
 #import "LogregisterController.h"
 #import "PrefixHeader.pch"
+#import "Supplier1ViewController.h"
 #import "ZP_MyTool.h"
 #import "ZP_HomePageModel.h"
 #import "ZP_LoginTool.h"
 #import "ZP_MyHopageModel.h"
-#import "SupplierViewController.h"
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIView * userBackView;
 @property (weak, nonatomic) IBOutlet UIView * sdglView;
@@ -47,7 +47,7 @@
     if (result.length == YES) {
         _SdglLayoutConstraint.constant = CGFLOAT_MIN;
          _sdglView.hidden = YES;
-        _viewLayoutConstraint.constant = 50.0;
+//        _viewLayoutConstraint.constant = 50.0;
     }
 }
 // 登录状态
@@ -307,7 +307,7 @@
 
 // 申请开店
 - (IBAction)sskdAction:(id)sender {
-    SupplierViewController * Supplier = [[SupplierViewController alloc]init];
+    Supplier1ViewController * Supplier = [[Supplier1ViewController alloc]init];
     [self.navigationController pushViewController:Supplier animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;

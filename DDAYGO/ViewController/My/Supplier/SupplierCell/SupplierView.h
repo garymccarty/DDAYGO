@@ -1,5 +1,5 @@
 //
-//  ScreenView.h
+//  SupplierView.h
 //  DDAYGO
 //
 //  Created by Summer on 2017/12/29.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScreenView : UIView
+@interface SupplierView : UIView
 /**
  *  显示属性选择视图
  *
@@ -22,6 +22,4 @@
 - (void)removeView;
 
 @property (nonatomic, copy) void(^ThirdBlock)(NSString *ContStr,NSNumber *code);
-
-- (void)Position:(NSArray *)sup;
 @end
