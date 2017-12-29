@@ -24,8 +24,12 @@ typedef NS_ENUM(NSUInteger, DDPopKind)
 @property (nonatomic ,assign) BOOL hasLogin;
 @property (nonatomic ,assign) BOOL hasRemind;
 @property (nonatomic ,assign) DDPopKind popKind;
-
+@property (nonatomic, strong) NSString * RequestStatusStr;
 + (MyViewController *)sharedInstanceTool;
 
 - (void)autoLogin:(void (^)(id obj))success;
+
+
+
+
 @end

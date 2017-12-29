@@ -217,12 +217,25 @@
 // 供货商状态请求
 - (void) SupplierAllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    
     dic[@"token"] = Token;
     [ZP_MyTool requestSupplier:dic success:^(id obj) {
         ZPLog(@"%@",obj);
         ZP_MyHopageModel2 * model = [[ZP_MyHopageModel2 alloc]init];
         model.state = obj[@"state"];
         [self SupplierData:model];
+//        if ([_RequestStatusStr isEqualToString: [NSString stringWithFormat:@"%@",@"待审核"]]) {
+//            obj[@"state"] = @"2";
+//        }
+//        if ([_RequestStatusStr isEqualToString:@"已审核"]) {
+//            obj[@"state"] = @"3";
+//        }
+//        if ([_RequestStatusStr isEqualToString:@"以退件"]) {
+//            obj[@"state"] = @"7";
+//        }
+//        if ([_RequestStatusStr isEqualToString:@"已取消"]) {
+//            obj[@"state"] = @"0";
+//        }
         if ([obj[@"result"]isEqualToString:@"token_err"]) {
             [SVProgressHUD showInfoWithStatus:@"令牌无效"];
         }else
@@ -233,7 +246,9 @@
         ZPLog(@"%@",error);
     }];
 }
+
 - (void)SupplierData:(ZP_MyHopageModel2 *)model {
+    
     _RequestStatusLabel.text = [NSString stringWithFormat:@"%@",model.state];
 }
 
