@@ -183,6 +183,8 @@
 		4D0948F21FDD9BDC00FC4BCA /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0948F01FDD9BDC00FC4BCA /* ProductTableViewCell.xib */; };
 		4D0949001FDEF77500FC4BCA /* EvaluateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0948FE1FDEF77400FC4BCA /* EvaluateTableViewCell.m */; };
 		4D0949011FDEF77500FC4BCA /* EvaluateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D0948FF1FDEF77500FC4BCA /* EvaluateTableViewCell.xib */; };
+		4D32DDA21FF675340063F682 /* ListBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D32DDA01FF675330063F682 /* ListBoxView.m */; };
+		4D32DDA31FF675340063F682 /* ListBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D32DDA11FF675330063F682 /* ListBoxView.xib */; };
 		6FA32ACCA83E0A32B68FDCFC /* libPods-DDAYGO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9B15E33AA25F355BC51C7 /* libPods-DDAYGO.a */; };
 		C40763711FF50E9A00180975 /* IQTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C407636F1FF50E9A00180975 /* IQTableView.m */; };
 		C40763731FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx in Resources */ = {isa = PBXBuildFile; fileRef = C40763721FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx */; };
@@ -730,6 +732,9 @@
 		4D0948FD1FDEF77400FC4BCA /* EvaluateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateTableViewCell.h; sourceTree = "<group>"; };
 		4D0948FE1FDEF77400FC4BCA /* EvaluateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateTableViewCell.m; sourceTree = "<group>"; };
 		4D0948FF1FDEF77500FC4BCA /* EvaluateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvaluateTableViewCell.xib; sourceTree = "<group>"; };
+		4D32DD9F1FF675320063F682 /* ListBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListBoxView.h; sourceTree = "<group>"; };
+		4D32DDA01FF675330063F682 /* ListBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListBoxView.m; sourceTree = "<group>"; };
+		4D32DDA11FF675330063F682 /* ListBoxView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListBoxView.xib; sourceTree = "<group>"; };
 		6A14FE6EC0BD7CDD0156BD7F /* Pods-DDAYGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.release.xcconfig"; sourceTree = "<group>"; };
 		949508FD8C61CA662D6E2034 /* Pods-DDAYGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDAYGO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO.debug.xcconfig"; sourceTree = "<group>"; };
 		C407636F1FF50E9A00180975 /* IQTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQTableView.m; sourceTree = "<group>"; };
@@ -2396,6 +2401,9 @@
 		C43987761FF4BDA200044E21 /* Supplier */ = {
 			isa = PBXGroup;
 			children = (
+				4D32DD9F1FF675320063F682 /* ListBoxView.h */,
+				4D32DDA01FF675330063F682 /* ListBoxView.m */,
+				4D32DDA11FF675330063F682 /* ListBoxView.xib */,
 				C43987771FF4BDD300044E21 /* SupplierViewController.h */,
 				C43987781FF4BDD300044E21 /* SupplierViewController.m */,
 				C43987791FF4BDD300044E21 /* SupplierViewController.xib */,
@@ -3863,6 +3871,7 @@
 				4D0948F21FDD9BDC00FC4BCA /* ProductTableViewCell.xib in Resources */,
 				C40763731FF52DDC00180975 /* DDAYGO IHTTP协议1.0.docx in Resources */,
 				062C9D5B1F8CD6F900E14987 /* button_2@2x.png in Resources */,
+				4D32DDA31FF675340063F682 /* ListBoxView.xib in Resources */,
 				C47E765D1FB5A5A6009F279A /* DetailedController.xib in Resources */,
 				C4D2FEF51FD5636C00F546AB /* 提现_spec.png in Resources */,
 				06F572311F9F1E8700D61FDB /* OrderSearchView.xib in Resources */,
@@ -4092,6 +4101,7 @@
 				064449AF1F6A9B250004DFE4 /* MJRefreshBackGifFooter.m in Sources */,
 				06418F531F7A076A00479523 /* MASLayoutConstraint.m in Sources */,
 				064249861F99FBEB00340EBA /* PayFailController.m in Sources */,
+				4D32DDA21FF675340063F682 /* ListBoxView.m in Sources */,
 				C47096941FB04998006EA52C /* PromptBox.m in Sources */,
 				C4535E301FC55A9E00DFFD62 /* ZP_ComfirmModel.m in Sources */,
 				06F572281F9F1E8700D61FDB /* OrderDetailViewController.m in Sources */,

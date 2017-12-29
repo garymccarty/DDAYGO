@@ -13,9 +13,11 @@
 #import "ScreenView.h"
 #import "SupplierViewCell.h"
 #import "ZP_MyTool.h"
+#import "ListBoxView.h"
 @interface SupplierViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong)NSArray * array;
 @property (nonatomic, strong)NSArray * postionArray;
+@property (nonatomic, strong) ListBoxView *listBoxView;
 @end
 
 @implementation SupplierViewController
@@ -64,14 +66,14 @@
 -  (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView * myView = [[UIView alloc]init];
     self.tableview.tableHeaderView = myView; // 表头跟着cell一起滚动
-    [myView setBackgroundColor:ZP_DeepBlue];
+    [myView setBackgroundColor:ZP_customWite];
     
     UIImageView * imageview = [UIImageView new];
     [myView addSubview:imageview];
     imageview.image = [UIImage imageNamed:@"icon_business_country"];
     [imageview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(myView).offset(8);
-        make.top.equalTo(myView).offset(5);
+        make.top.equalTo(myView).offset(10);
         make.width.mas_offset(25);
         make.height.mas_offset(25);
     }];
@@ -81,8 +83,8 @@
     [myView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(imageview).offset(30);
-        make.top.equalTo(imageview).offset(5);
-        make.height.mas_offset(15);
+        make.top.equalTo(imageview).offset(0);
+        make.height.mas_offset(25);
     }];
     
     ZP_GeneralLabel * CountriesLabel = [ZP_GeneralLabel initWithtextLabel:_CountriesLabel.text textColor:ZP_textblack font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
@@ -92,17 +94,14 @@
     [CountriesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(titleLabel).offset(60);
         make.top.equalTo(titleLabel).offset(0);
-        make.height.mas_offset(15);
+        make.height.mas_offset(25);
     }];
     return myView;
 }
-// 设置表头的高度
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-    return 35.0f;
-    
-}
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 22;
+}
 
 //
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -114,7 +113,11 @@
     static NSString * SupplierID = @"SupplierTableViewCell";
     SupplierTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:SupplierID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
-    
+    if (indexPath.row == 0) {
+        cell.backgroundColor = [UIColor redColor];
+    } else {
+        cell.backgroundColor = ZP_customWite;
+    }
     if (2 == indexPath.row) {
         cell.textField.placeholder = NSLocalizedString(@"如:50 - 100 人", nil);
     }
@@ -142,7 +145,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 14) {
-        return 80;
+        return 100;
     }
     
     return 60;
@@ -150,18 +153,36 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 5) {
-            NSLog(@"go");
-        ScreenView * position = [[ScreenView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
-        //数据
-        [position Position:_postionArray];
-        //返回
-        position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
-            NSLog(@"c = %@",ContStr);
-//            [indexPath setTitle:NSLocalizedString(ContStr, nil) forState:UIControlStateNormal];
-        };
-        //  显示
-        [position showInView:self.navigationController.view];
+//            NSLog(@"go");
+//        ScreenView * position = [[ScreenView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
+//        //数据
+//        [position Position:_postionArray];
+//        //返回
+//        position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
+//            NSLog(@"c = %@",ContStr);
+////            [indexPath setTitle:NSLocalizedString(ContStr, nil) forState:UIControlStateNormal];
+//        };
+//        //  显示
+//        [position showInView:self.navigationController.view];
         
+        SupplierViewCell2 *cell = [tableView cellForRowAtIndexPath:indexPath];
+        self.listBoxView = [[NSBundle mainBundle] loadNibNamed:@"ListBoxView" owner:self options:nil].firstObject;
+        self.listBoxView.curString = cell.TissueMorphologyLabel.text;
+        self.listBoxView.frame = self.view.frame;
+        [[UIApplication sharedApplication].keyWindow addSubview:self.listBoxView];
+        CGRect rectInTableView = [tableView rectForRowAtIndexPath:indexPath];//获取cell在tableView中的位置
+        
+        
+        CGRect rectInSuperview = [tableView convertRect:rectInTableView toView:[tableView superview]];
+        
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        dic[@"data"] = @[@"总厂",@"经销商",@"总代理",@"进出口商",@"其他"];
+        dic[@"width"] = @150;
+        dic[@"higth"] = @400;
+        
+        [self.listBoxView showTableViewWithDic:dic SuperViewFrame:self.view.frame SenderBtnFrame:rectInSuperview ListBoxBlock:^(id obj) {
+            cell.TissueMorphologyLabel.text = obj;
+        }];
     }
     
     if (indexPath.row == 14) {

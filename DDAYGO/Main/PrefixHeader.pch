@@ -22,6 +22,7 @@
 #import "UIImage+Extension.h"
 #import "UIColor+Extension.h"
 #import "UIFont+Extension.h"
+#import "UIView+Additions.h"
 #import "CALayer+UIColor.h"
 #import "UIViewController+LLProgress.h"
 #import "Masonry.h"
@@ -89,6 +90,7 @@
 #define ZP_NavigationCorlor [UIColor colorWithHexString:@"#fb8f25"]
 #define ZP_textblack [UIColor colorWithHexString:@"#090909"]
 #define ZP_textWite [UIColor colorWithHexString:@"#fefefe"]
+#define ZP_customWite [UIColor colorWithHexString:@"#ebebeb"]
 #define ZP_DeepBlue [UIColor colorWithHexString:@"#cccccc"] // 分割线
 #define ZP_Graybackground [UIColor colorWithHexString:@"#eeeeee"]
 #define ZP_pricebackground [UIColor colorWithHexString:@"#f46506"]
