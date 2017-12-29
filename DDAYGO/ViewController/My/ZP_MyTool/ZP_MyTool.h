@@ -73,22 +73,19 @@
 
 // 获取历史下注号码
 + (void)requestHistoricalBet:(NSDictionary *)HistoricalBet uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
 // 促销彩下注
 + (void)requestBte:(NSDictionary *)Bte uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
 // 邮箱验证
 + (void)requesEmail:(NSDictionary *)Email uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 验证码
 + (void)requestRestPassword:(NSDictionary *)RestPassword success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
-<<<<<<< HEAD
-// 申请成为供货商
+// 申请成为供货商状态
 + (void)requestSupplier:(NSDictionary *)Supplier success:(void (^)(id))success failure:(void (^)(NSError *))failure;
-=======
-// 获取用户商家状态
-+ (void)requestUserBusinessStatus:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
 
->>>>>>> 7be2979e71225b179e20659ee4600e612a4ab148
 
 @end
 

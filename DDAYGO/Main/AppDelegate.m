@@ -18,6 +18,9 @@
 #import "OrderViewController.h"
 #import "MyViewController.h"
 #import "LogregisterController.h"
+
+#import <IQKeyboardManager.h>
+
 @interface AppDelegate ()<UITabBarControllerDelegate>
 #define ScreenHeight [[UIScreen mainScreen] bounds].size.height
 #define ScreenWidth [[UIScreen mainScreen] bounds].size.width
@@ -29,6 +32,10 @@
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"Language"] && ![[[NSUserDefaults standardUserDefaults] objectForKey:@"Language"] isEqualToString:@""]) {
         [NSBundle setLanguage:[[NSUserDefaults standardUserDefaults] objectForKey:@"Language"]];
     }
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    
+    
     [self MainViewController];
     [self initUserDefaultConfig];
     return YES;

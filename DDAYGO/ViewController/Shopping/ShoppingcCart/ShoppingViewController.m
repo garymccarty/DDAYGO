@@ -606,6 +606,7 @@ if (count == dataArray.count) {
 //    return 40;
     ZP_CartsShopModel * model = nameArray[section];
     return model.array.count;
+    
 }
 
 /*

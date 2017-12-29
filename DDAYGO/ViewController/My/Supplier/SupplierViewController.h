@@ -10,6 +10,8 @@
 
 @interface SupplierViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-
+@property (nonatomic, strong) UILabel * titleLabel;
+@property (nonatomic, strong) UILabel * CountriesLabel;  // 国家
+@property (nonatomic, strong) UILabel * TissueMorphologyLabel; // 组织形态
 
 @end

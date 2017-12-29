@@ -12,11 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//    [self initUI];
+
 }
 
 
-- (void)initWithData:(NSDictionary *)dic {
-    
-}
 @end

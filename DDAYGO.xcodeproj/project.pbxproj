@@ -387,6 +387,11 @@
 		C49B32221FD5A995007632F2 /* ZP_ExtractController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */; };
 		C49B32271FD5AC9E007632F2 /* ZP_ExtractCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B32251FD5AC9E007632F2 /* ZP_ExtractCell.m */; };
 		C49B32281FD5AC9E007632F2 /* ZP_ExtractCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32261FD5AC9E007632F2 /* ZP_ExtractCell.xib */; };
+		C4C4D1461FF64A810075D8D8 /* SupplierViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D1441FF64A810075D8D8 /* SupplierViewCell2.m */; };
+		C4C4D1471FF64A810075D8D8 /* SupplierViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D1451FF64A810075D8D8 /* SupplierViewCell2.xib */; };
+		C4C4D14B1FF64FC10075D8D8 /* SupplierViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D1491FF64FC10075D8D8 /* SupplierViewCell.m */; };
+		C4C4D14C1FF64FC10075D8D8 /* SupplierViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D14A1FF64FC10075D8D8 /* SupplierViewCell.xib */; };
+		C4C4D14F1FF658610075D8D8 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D14E1FF658610075D8D8 /* ScreenView.m */; };
 		C4D2FEA71FD519A100F546AB /* ZP_QrCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */; };
 		C4D2FEB31FD552A000F546AB /* YueTixianController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEB11FD552A000F546AB /* YueTixianController.m */; };
 		C4D2FEB41FD552A000F546AB /* YueTixianController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEB21FD552A000F546AB /* YueTixianController.xib */; };
@@ -1115,6 +1120,14 @@
 		C49B32241FD5AC9E007632F2 /* ZP_ExtractCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ExtractCell.h; sourceTree = "<group>"; };
 		C49B32251FD5AC9E007632F2 /* ZP_ExtractCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ExtractCell.m; sourceTree = "<group>"; };
 		C49B32261FD5AC9E007632F2 /* ZP_ExtractCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_ExtractCell.xib; sourceTree = "<group>"; };
+		C4C4D1431FF64A810075D8D8 /* SupplierViewCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierViewCell2.h; sourceTree = "<group>"; };
+		C4C4D1441FF64A810075D8D8 /* SupplierViewCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierViewCell2.m; sourceTree = "<group>"; };
+		C4C4D1451FF64A810075D8D8 /* SupplierViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierViewCell2.xib; sourceTree = "<group>"; };
+		C4C4D1481FF64FC10075D8D8 /* SupplierViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierViewCell.h; sourceTree = "<group>"; };
+		C4C4D1491FF64FC10075D8D8 /* SupplierViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierViewCell.m; sourceTree = "<group>"; };
+		C4C4D14A1FF64FC10075D8D8 /* SupplierViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SupplierViewCell.xib; sourceTree = "<group>"; };
+		C4C4D14D1FF658610075D8D8 /* ScreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
+		C4C4D14E1FF658610075D8D8 /* ScreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
 		C4D2FEA51FD519A100F546AB /* ZP_QrCodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_QrCodeModel.h; sourceTree = "<group>"; };
 		C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_QrCodeModel.m; sourceTree = "<group>"; };
 		C4D2FEB01FD552A000F546AB /* YueTixianController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YueTixianController.h; sourceTree = "<group>"; };
@@ -2397,6 +2410,14 @@
 				C439877D1FF4C67100044E21 /* SupplierTableViewCell.h */,
 				C439877E1FF4C67100044E21 /* SupplierTableViewCell.m */,
 				C439877F1FF4C67100044E21 /* SupplierTableViewCell.xib */,
+				C4C4D1431FF64A810075D8D8 /* SupplierViewCell2.h */,
+				C4C4D1441FF64A810075D8D8 /* SupplierViewCell2.m */,
+				C4C4D1451FF64A810075D8D8 /* SupplierViewCell2.xib */,
+				C4C4D1481FF64FC10075D8D8 /* SupplierViewCell.h */,
+				C4C4D1491FF64FC10075D8D8 /* SupplierViewCell.m */,
+				C4C4D14A1FF64FC10075D8D8 /* SupplierViewCell.xib */,
+				C4C4D14D1FF658610075D8D8 /* ScreenView.h */,
+				C4C4D14E1FF658610075D8D8 /* ScreenView.m */,
 			);
 			path = SupplierCell;
 			sourceTree = "<group>";
@@ -3849,6 +3870,7 @@
 				06F5722F1F9F1E8700D61FDB /* ReturnDetailViewController.xib in Resources */,
 				06F5722D1F9F1E8700D61FDB /* OrderManagerViewController.xib in Resources */,
 				06F571D21F9F1A7900D61FDB /* BindingICUEViewController.xib in Resources */,
+				C4C4D1471FF64A810075D8D8 /* SupplierViewCell2.xib in Resources */,
 				C44C9DB21FEA392D00CD7D4D /* ZP_QuickLoginController.xib in Resources */,
 				C42A17321FF252F400680F92 /* BetViewController.xib in Resources */,
 				C46B9F4A1FDE71FE00942750 /* 赏金彩_spec.png in Resources */,
@@ -3873,6 +3895,7 @@
 				06F571DA1F9F1A7900D61FDB /* AddressViewController.xib in Resources */,
 				C46B9F491FDE71FE00942750 /* 本期下注号码_spec.png in Resources */,
 				06F571DE1F9F1A7900D61FDB /* AddAddressViewController.xib in Resources */,
+				C4C4D14C1FF64FC10075D8D8 /* SupplierViewCell.xib in Resources */,
 				062C9D591F8CD6F900E14987 /* button_1@2x.png in Resources */,
 				C472F1511FE2A88B0031D7B5 /* 选择赏金彩_spec.png in Resources */,
 				C492A1971FD0EDC0009FF57B /* ZP_InstructionController.xib in Resources */,
@@ -3977,6 +4000,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DDAYGO/Pods-DDAYGO-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -4077,6 +4101,7 @@
 				06F571611F9F154E00D61FDB /* MyViewController.m in Sources */,
 				C47750811FBA9A1E00AE8B3F /* ZP_FirstModel.m in Sources */,
 				06F572261F9F1E8700D61FDB /* OrdersViewController.m in Sources */,
+				C4C4D14F1FF658610075D8D8 /* ScreenView.m in Sources */,
 				C46837FC1FDA78EE000E7D7C /* ZP_MyHopageModel.m in Sources */,
 				C47E76421FB5A1C7009F279A /* ZPHomeHeaderLayout.m in Sources */,
 				C45F23081FA0754500F5DB41 /* SearchBar.m in Sources */,
@@ -4147,6 +4172,7 @@
 				C47212B81FB1A5DC0055578E /* CustomCell.m in Sources */,
 				C47E75911FB57846009F279A /* ZP_ShoppingModel.m in Sources */,
 				06F571141F9F0D6800D61FDB /* AppraiseViewCell.m in Sources */,
+				C4C4D14B1FF64FC10075D8D8 /* SupplierViewCell.m in Sources */,
 				C47E764D1FB5A1C7009F279A /* ZP_ClassViewTool.m in Sources */,
 				C4535E241FC51E5300DFFD62 /* ZP_InformationCell.m in Sources */,
 				065B3CDD1F984F8A00A8E6D6 /* TAAbstractDotView.m in Sources */,
@@ -4200,6 +4226,7 @@
 				06F571831F9F16A600D61FDB /* FootprintCollectionViewCell.m in Sources */,
 				C409F86F1FA17336009DE7B1 /* SixthViewCell.m in Sources */,
 				0641BBE01F67F9E400E72FEF /* UIView+WebCacheOperation.m in Sources */,
+				C4C4D1461FF64A810075D8D8 /* SupplierViewCell2.m in Sources */,
 				064449AB1F6A9B250004DFE4 /* MJRefreshHeader.m in Sources */,
 				C479C6A71FE3CB5800A58A2A /* NSObject+MJCoding.m in Sources */,
 				C42A173D1FF2532400680F92 /* BetTableViewCellTwo.m in Sources */,

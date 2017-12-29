@@ -109,8 +109,6 @@
     [_chooseCityBtn setTitle:NSLocalizedString(@"臺灣", nil) forState:UIControlStateNormal];
     
     
-    
-    
     [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
     CGFloat imageWidth = _chooseCityBtn.imageView.bounds.size.width;
     CGFloat labelWidth = _chooseCityBtn.titleLabel.bounds.size.width;
