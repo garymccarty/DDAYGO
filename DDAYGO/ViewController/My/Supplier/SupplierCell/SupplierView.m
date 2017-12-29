@@ -8,10 +8,10 @@
 
 #import "SupplierView.h"
 #import "PrefixHeader.pch"
-#define kATTR_VIEW_HEIGHT (kHeight-150)
+#define kATTR_VIEW_HEIGHT (kHeight-50)
 
 ///******* 屏幕尺寸 *******/
-#define     kWidth      [UIScreen mainScreen].bounds.size.width - 150
+#define     kWidth      [UIScreen mainScreen].bounds.size.width - 60
 #define     kHeight     [UIScreen mainScreen].bounds.size.height - 40
 @interface SupplierView ()<UIGestureRecognizerDelegate>
 @property (nonatomic, strong) UIView * contenView;
@@ -35,18 +35,18 @@
 - (void)showInView:(UIView *)view {
     [view addSubview:self];
     __weak typeof(self) _weakSelf = self;
-    self.contenView.frame = CGRectMake(150, kHeight, kWidth, kATTR_VIEW_HEIGHT);;
+    self.contenView.frame = CGRectMake(180, kHeight, kWidth, kATTR_VIEW_HEIGHT);;
     
     [UIView animateWithDuration:0.3 animations:^{
         
         _weakSelf.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
-        _weakSelf.contenView.frame = CGRectMake(150, kHeight - kATTR_VIEW_HEIGHT, kWidth, kATTR_VIEW_HEIGHT);
+        _weakSelf.contenView.frame = CGRectMake(180, kHeight - kATTR_VIEW_HEIGHT, kWidth, kATTR_VIEW_HEIGHT);
     }];
 }
 
 - (void)setupViews {
     __weak typeof (self) _weakSelf = self;
-    CGRect frame = CGRectMake(150, kHeight, kWidth, kATTR_VIEW_HEIGHT);
+    CGRect frame = CGRectMake(180, kHeight, kWidth, kATTR_VIEW_HEIGHT);
     
     _weakSelf.backgroundColor = [UIColor clearColor];
     _weakSelf.contenView.frame = frame;
@@ -55,16 +55,16 @@
     UITapGestureRecognizer *tapBackGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeView)];
     tapBackGesture.delegate = self;
     [self addGestureRecognizer:tapBackGesture];
+    
 /****************/
     UIView * bounceView = [UIView new];
     bounceView.backgroundColor = ZP_Graybackground;
     bounceView.layer.cornerRadius = 5.0;// View圆角弧度
     [self addSubview:bounceView];
     self.contenView = bounceView;
-   
     self.contenView.frame = frame;
     [UIView animateWithDuration:0.3 animations:^{
-    bounceView.frame = CGRectMake(150, 20, kWidth, kATTR_VIEW_HEIGHT);
+    bounceView.frame = CGRectMake(180, kHeight, kWidth, kATTR_VIEW_HEIGHT);
     } completion:^(BOOL finished) {
         
     }];
@@ -76,7 +76,7 @@
 - (void)removeView {
     __weak typeof(self) _weakSelf = self;
     
-    CGRect frame = CGRectMake(150, kHeight, kWidth, kATTR_VIEW_HEIGHT);
+    CGRect frame = CGRectMake(180, kHeight, kWidth, kATTR_VIEW_HEIGHT);
     [UIView animateWithDuration:0.3 animations:^{
         _weakSelf.backgroundColor = [UIColor clearColor];
         _weakSelf.contenView.frame = frame;

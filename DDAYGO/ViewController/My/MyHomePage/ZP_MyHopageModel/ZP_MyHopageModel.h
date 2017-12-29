@@ -17,7 +17,6 @@
 
 
 @interface ZP_MyHopageModel2 : NSObject
-
-@property (nonatomic, strong) NSNumber * state; // 浏览
+@property (nonatomic, strong) NSNumber * state; // 供应商状态
 
 @end

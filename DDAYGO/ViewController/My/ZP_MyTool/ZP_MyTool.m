@@ -24,10 +24,10 @@
     NSString * nickname = Modifydata[@"nickname"];
     NSString * address = Modifydata[@"address"];
     NSString * sex = Modifydata[@"sex"];
-//    http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=女&birth=1993-04-08T00:00:00&phone=15118041624&address=\U6e56\U5317&token=eb12616dbe8a351d23c2f3a79a4110de
-//  http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=%E5%A5%B3&birth=1967-04-08&phone=15118041624&address=%5CU6e56%5CU5317&token=a45f1a207aac999dc240d1bc5187c086
- //   http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=(null)&birth=1967-04-08&phone=15118041624&address=%5CU6e56%5CU5317&token=2de2b5e8ef78178a0b7f694286b1135c
-//    NSLog(@"url%@",);
+    //    http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=女&birth=1993-04-08T00:00:00&phone=15118041624&address=\U6e56\U5317&token=eb12616dbe8a351d23c2f3a79a4110de
+    //  http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=%E5%A5%B3&birth=1967-04-08&phone=15118041624&address=%5CU6e56%5CU5317&token=a45f1a207aac999dc240d1bc5187c086
+    //   http://www.ddaygo.com/api/Test/updateaccountinfo?nickname=Summer&realname=zach&sex=(null)&birth=1967-04-08&phone=15118041624&address=%5CU6e56%5CU5317&token=2de2b5e8ef78178a0b7f694286b1135c
+    //    NSLog(@"url%@",);
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@updateaccountinfo?nickname=%@&realname=%@&sex=%@&birth=%@&phone=%@&address=%@&token=%@",URLAPI,nickname.encodeToPercentEscapeString,Modifydata[@"realname"],sex.encodeToPercentEscapeString ,Modifydata[@"birth"],Modifydata[@"phone"],address.encodeToPercentEscapeString,Modifydata[@"token"]] parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
@@ -53,7 +53,7 @@
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);
-//        ZPLog(@"%@",error);
+        //        ZPLog(@"%@",error);
         [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
@@ -162,13 +162,13 @@
 
 // 添加提现申请  addsuppliertakeout
 + (void)requesAddSupplierTakeOut:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-//    NSString * str = [NSString stringWithFormat:@"%@addsuppliertakeout?token=%@&sid=%@&amount=%@&bankname=%@&bankcardno=%@&bankcardname=%@&phone=%@&email=%@",URLAPI,QrCoed[@"token"],QrCoed[@"sid"],QrCoed[@"amount"],QrCoed[@"bankname"],QrCoed[@"bankcardno"],QrCoed[@"bankcardname"],QrCoed[@"phone"],QrCoed[@"email"]];
-//    NSString * urlString = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//    [ZP_NetorkingTools POST:urlString parameters:nil success:^(NSDictionary *responseObject) {
-//        success(responseObject);
-//    } failure:^(NSError *error) {
-//        failure(error);
-//    }];
+    //    NSString * str = [NSString stringWithFormat:@"%@addsuppliertakeout?token=%@&sid=%@&amount=%@&bankname=%@&bankcardno=%@&bankcardname=%@&phone=%@&email=%@",URLAPI,QrCoed[@"token"],QrCoed[@"sid"],QrCoed[@"amount"],QrCoed[@"bankname"],QrCoed[@"bankcardno"],QrCoed[@"bankcardname"],QrCoed[@"phone"],QrCoed[@"email"]];
+    //    NSString * urlString = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //    [ZP_NetorkingTools POST:urlString parameters:nil success:^(NSDictionary *responseObject) {
+    //        success(responseObject);
+    //    } failure:^(NSError *error) {
+    //        failure(error);
+    //    }];
     
     [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addsuppliertakeout?token=%@&sid=%@&amount=%@&bankname=%@&bankcardno=%@&bankcardname=%@&phone=%@&email=%@",URLAPI,QrCoed[@"token"],QrCoed[@"sid"],QrCoed[@"amount"],QrCoed[@"bankname"],QrCoed[@"bankcardno"],QrCoed[@"bankcardname"],QrCoed[@"phone"],QrCoed[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
@@ -191,7 +191,7 @@
 + (void)requesOrdPay:(NSDictionary *)OrdPay uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getpayresult?poid=%@",@"http://www.ddaygo.com/receive/",OrdPay[@"poid"]] parameters:nil success:^(NSDictionary *responseObject) {
         success(responseObject);
-//        http://www.ddaygo.com/receive/getpayresult?poid=DG12345645544
+        //        http://www.ddaygo.com/receive/getpayresult?poid=DG12345645544
     } failure:^(NSError *error) {
         failure(error);
     }];
@@ -223,11 +223,11 @@
 
 // 获取本期下注查看更多
 + (void)requseMoreMore:(NSDictionary *)MoreMore uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
-        [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getlastlotterybuyrecord?token=%@&poolid=%@",URLAPI,MoreMore[@"token"],MoreMore[@"poolid"]] parameters:nil success:^(NSDictionary *responseObject) {
-            success(responseObject);
-        } failure:^(NSError *error) {
-            failure(error);
-        }];
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getlastlotterybuyrecord?token=%@&poolid=%@",URLAPI,MoreMore[@"token"],MoreMore[@"poolid"]] parameters:nil success:^(NSDictionary *responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
 }
 
 // 获取历史开奖
@@ -276,17 +276,40 @@
     }];
 }
 
- // 申请成为供货商状态
-+ (void)requestSupplier:(NSDictionary *)Supplier success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getsupplierstate?token=%@",URLAPI,Supplier[@"token"]] parameters:nil success:^(id responseObject) {
+// 申请成为供货商状态
++ (void)requestSupplier:(NSDictionary *)Suppliers success:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getsupplierstate?token=%@",URLAPI,Suppliers[@"token"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError * error) {
+        failure(error);
+    }];
+//    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getsupplierstate?token=%@",URLAPI,Supplier[@"token"]] parameters:nil success:^(id responseObject) {
+//        success(responseObject);
+//    } failure:^(NSError * error) {
+//        failure(error);
+//    }];
+}
+
+// 获取组织形状
++ (void)requestCompanyType:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
+    [ZP_NetorkingTools GET:@"http://www.ddaygo.com/api/Test/getcompanytype?countrycode=886" parameters:nil success:^(id responseObject) {
         success(responseObject);
     } failure:^(NSError * error) {
         failure(error);
     }];
 }
 
-
-
-
+// 添加供货商申请
++ (void)requestSupplierRequest:(NSDictionary *)SupplierRequest success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
+//     这个接口对起来真特么类
+    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addsupplierapply?token=%@&companyname=%@&companycode=%@&poeplecount=%@&capital=%@&companydate=%@&companytype=%@&address=%@&phone=%@&fax=%@&companyuri=%@&contact=%@&contactphone=%@&contactemail=%@&companyproduct=%@&projectinfo=%@",URLAPI,SupplierRequest[@"token"],SupplierRequest[@"companyname"],SupplierRequest[@"companycode"],SupplierRequest[@"poeplecount"],SupplierRequest[@"capital"],SupplierRequest[@"companydate"],SupplierRequest[@"companytype"],SupplierRequest[@"address"],SupplierRequest[@"phone"],SupplierRequest[@"fax"],SupplierRequest[@"companyuri"],SupplierRequest[@"contact"],SupplierRequest[@"contactphone"],SupplierRequest[@"contactemail"],SupplierRequest[@"companyproduct"],SupplierRequest[@"projectinfo"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+    
+    
+    
+}
 @end
 

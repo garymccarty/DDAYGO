@@ -33,6 +33,9 @@
                             <constraint firstAttribute="height" constant="30" id="trT-fq-k4n"/>
                         </constraints>
                         <state key="normal" image="icon_business_down"/>
+                        <connections>
+                            <action selector="SelectBut:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eDA-FR-7Qe"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="组织形态:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvs-kT-QqE">
                         <rect key="frame" x="8" y="5" width="57" height="15"/>

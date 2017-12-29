@@ -33,7 +33,7 @@
 + (void)requesIntroduce:(NSDictionary *)Introduce success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 获取用户收藏商品列表
- 
+
 + (void)requestgetcollections:(NSDictionary *)Binding success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 获取浏览记录
@@ -86,8 +86,12 @@
 + (void)requestRestPassword:(NSDictionary *)RestPassword success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 申请成为供货商状态
-+ (void)requestSupplier:(NSDictionary *)Supplier success:(void (^)(id))success failure:(void (^)(NSError *))failure;
++ (void)requestSupplier:(NSDictionary *)Suppliers success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+// 获取组织形状
++ (void)requestCompanyType:(NSDictionary *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
 
+// 添加供货商申请
++ (void)requestSupplierRequest:(NSDictionary *)SupplierRequest success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
 @end
 

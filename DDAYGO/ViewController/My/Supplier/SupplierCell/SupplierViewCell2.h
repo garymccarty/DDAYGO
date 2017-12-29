@@ -10,6 +10,10 @@
 
 @interface SupplierViewCell2 : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *TissueMorphologyLabel;
-@property (weak, nonatomic) IBOutlet UIButton *SelectBut;
+@property (weak, nonatomic) IBOutlet UIButton * SelectBut;
+
+typedef void (^FinishBlock)(id response);
+
+@property (nonatomic , copy) FinishBlock finishBlock;
 
 @end

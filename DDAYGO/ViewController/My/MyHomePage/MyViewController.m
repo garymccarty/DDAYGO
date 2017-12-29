@@ -44,7 +44,7 @@
     [self LoginJudde];
     [self SupplierAllData];
 //     判断是否是供货商
-    if (result.length == YES) {
+    if (result.length == NO) {
         _SdglLayoutConstraint.constant = CGFLOAT_MIN;
          _sdglView.hidden = YES;
 //        _viewLayoutConstraint.constant = 50.0;
@@ -218,14 +218,23 @@
 - (void) SupplierAllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = Token;
-    [ZP_MyTool requesSupplier:dic success:^(id obj) {
+    [ZP_MyTool requestSupplier:dic success:^(id obj) {
         ZPLog(@"%@",obj);
+        ZP_MyHopageModel2 * model = [[ZP_MyHopageModel2 alloc]init];
+        model.state = obj[@"state"];
+        [self SupplierData:model];
+        if ([obj[@"result"]isEqualToString:@"token_err"]) {
+            [SVProgressHUD showInfoWithStatus:@"令牌无效"];
+        }else
+            if ([obj[@"result"]isEqualToString:@"isagent"]) {
+                [SVProgressHUD showInfoWithStatus:@"账号是代理商不可申请供货商"];
+            }
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
 }
 - (void)SupplierData:(ZP_MyHopageModel2 *)model {
-    
+    _RequestStatusLabel.text = [NSString stringWithFormat:@"%@",model.state];
 }
 
 // UI

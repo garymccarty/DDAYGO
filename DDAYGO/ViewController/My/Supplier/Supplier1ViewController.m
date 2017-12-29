@@ -61,6 +61,9 @@
         SupplierViewCell2 * cell2 = [tableView dequeueReusableCellWithIdentifier:@"SupplierViewCell2"];
         cell2.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
         cell2.TissueMorphologyLabel.text = @"请选择组织形态";
+        cell2.finishBlock = ^(id response) {
+            [self.navigationController pushViewController:response animated:YES];
+        };
         return cell2;
     }
     if (10 == indexPath.row) {
@@ -75,16 +78,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
-    SupplierView * position = [[SupplierView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
-    //数据
-//    [position Position:_postionArray];
-    //返回
-    position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
-        NSLog(@"c = %@",ContStr);
-        //            [indexPath setTitle:NSLocalizedString(ContStr, nil) forState:UIControlStateNormal];
-    };
-    //  显示
-    [position showInView:self.navigationController.view];
+//    SupplierView * position = [[SupplierView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
+//    //数据
+////    [position Position:_postionArray];
+//    //返回
+//    position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
+//        NSLog(@"c = %@",ContStr);
+//        //            [indexPath setTitle:NSLocalizedString(ContStr, nil) forState:UIControlStateNormal];
+//    };
+//    //  显示
+//    [position showInView:self.navigationController.view];
     ZPLog(@"%ld",(long)indexPath.row);
 }
 
