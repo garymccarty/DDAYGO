@@ -52,9 +52,7 @@
 
 - (void)initUI {
     self.title = @"促销彩下注";
-    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewMyCell" bundle:nil] forCellReuseIdentifier:@"BetTableViewMyCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewCellTwo" bundle:nil] forCellReuseIdentifier:@"BetTableViewCellTwo"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewMyCell2" bundle:nil] forCellReuseIdentifier:@"BetTableViewMyCell2"];
@@ -79,7 +77,6 @@
     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc]initWithCustomView:_chooseCityBtn]];
 }
 
-
 - (void)viewDidAppear:(BOOL)animated {
     self.tableView.frame =CGRectMake(0, 0, ZP_Width, ZP_height-TabbarHeight -NavBarHeight);
     
@@ -93,7 +90,7 @@
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"]  = Token;
-    dic[@"count"] =_dicArray;
+    dic[@"count"] = _dicArray;
     dic[@"count"] = @"3";
     [ZP_MyTool requestBte:dic uccess:^(id obj) {
         if ([obj[@"result"]isEqualToString:@"time_err"]) {
@@ -104,6 +101,7 @@
         ZPLog(@"%@",error);
     }];
 }
+
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 0) {
@@ -149,23 +147,21 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return 59 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
+        return 69 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
     }
     if (indexPath.section == 1) {
         return 26 / 8 * [UIScreen mainScreen].bounds.size.width/8 + 40;
         
     }else{
         
-        return 35;
+        return 45;
     }
-    
 }
-
 
 //  设置表头高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return 120.0f;
+        return 140.0f;
     }else{
         return 44.0f;
     }
@@ -197,7 +193,7 @@
         BetTableViewMyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewMyCell"];
 //        NSLog(@"you go");
         cell.butArray = self.array1;
-        [cell upDataButtonWith:59];
+        [cell upDataButtonWith:69];
         cell.arrayBlock = ^(NSMutableArray *arr1) {
            self.tableHeadView1.BallLabel.text = [NSString stringWithFormat:@"%ld",arr1.count];
             if (self.Selearray.count > 0) {
@@ -351,7 +347,7 @@
 - (IBAction)suijiBut:(id)sender {
     self.array1 = [NSMutableArray array];
     for (int i = 0; i< 5; i++) {
-        int i = arc4random_uniform(59);
+        int i = arc4random_uniform(69);
         [self.array1 addObject:[NSNumber numberWithInt:i]];
     }
 //    self.tableHeadView1.BallLabel.text  = [NSString stringWithFormat:@"%ld",self.array1.count];

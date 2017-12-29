@@ -81,6 +81,8 @@
 // 验证码
 + (void)requestRestPassword:(NSDictionary *)RestPassword success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+// 申请成为供货商
++ (void)requestSupplier:(NSDictionary *)Supplier success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 @end
 

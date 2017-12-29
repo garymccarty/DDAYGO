@@ -25,7 +25,7 @@
     [self removeAllSubviews];
     
     NSInteger num = 0;
-    for (int i = 0; i < 8; i ++) {
+    for (int i = 0; i < 9; i ++) {
         for (int j = 0; j < 8; j ++){
             if (num > count) {
                 return;
@@ -60,7 +60,7 @@
     if (btn.selected) {
         btn.selected = !btn.selected;
         [self.butArray removeObject:[NSNumber numberWithInteger:btn.tag]];
-        [self upDataButtonWith:59];
+        [self upDataButtonWith:69];
         
     } else {
         if (self.butArray.count == 5) {

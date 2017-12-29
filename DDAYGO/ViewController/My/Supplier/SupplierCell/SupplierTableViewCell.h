@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SupplierTableViewCell : UITableViewCell
-
+@property (nonatomic, strong)UILabel * titleLabel;
 @end

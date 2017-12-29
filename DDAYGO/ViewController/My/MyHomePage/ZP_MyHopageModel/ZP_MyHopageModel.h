@@ -13,5 +13,11 @@
 @property (nonatomic, strong) NSNumber * collecedcount; // 收藏
 @property (nonatomic, strong) NSNumber * historycount; // 浏览
 
+@end
+
+
+@interface ZP_MyHopageModel2 : NSObject
+
+@property (nonatomic, strong) NSNumber * state; // 浏览
 
 @end

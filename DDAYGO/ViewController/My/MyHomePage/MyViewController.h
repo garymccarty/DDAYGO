@@ -17,8 +17,9 @@ typedef NS_ENUM(NSUInteger, DDPopKind)
 
 @property (strong, nonatomic) IBOutlet UILabel * NameLabel; // 名字
 @property (strong, nonatomic) IBOutlet UILabel * CollectionLabel; // 收藏
-@property (weak, nonatomic) IBOutlet UILabel *TrackingStoreLabel; // 关注店铺
+//@property (weak, nonatomic) IBOutlet UILabel *TrackingStoreLabel; // 关注店铺
 @property (strong, nonatomic) IBOutlet UILabel * BrowseLabel; // 足迹
+@property (weak, nonatomic) IBOutlet UILabel * RequestStatusLabel; // 申请状态
 
 @property (nonatomic ,assign) BOOL hasLogin;
 @property (nonatomic ,assign) BOOL hasRemind;

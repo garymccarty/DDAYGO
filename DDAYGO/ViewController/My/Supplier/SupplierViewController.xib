@@ -6,13 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SupplierViewController">
             <connections>
-                <outlet property="noStoreView" destination="qZg-OH-60o" id="4wQ-9C-ckA"/>
                 <outlet property="tableview" destination="ObE-8Q-bPQ" id="196-6V-SnU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,61 +28,13 @@
                         <outlet property="delegate" destination="-1" id="JHD-oN-8hA"/>
                     </connections>
                 </tableView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZg-OH-60o">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afv-yE-GIN">
-                            <rect key="frame" x="20" y="340" width="280" height="30"/>
-                            <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="dGK-xa-e2D"/>
-                            </constraints>
-                            <state key="normal" title="重新申请">
-                                <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hr1-YA-yVh">
-                            <rect key="frame" x="130" y="112" width="60" height="60"/>
-                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="60" id="eJ5-sd-C3Q"/>
-                                <constraint firstAttribute="height" constant="60" id="piE-Xq-fjQ"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWb-lH-MBa">
-                            <rect key="frame" x="145.5" y="180" width="29.5" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="Afv-yE-GIN" firstAttribute="centerY" secondItem="qZg-OH-60o" secondAttribute="centerY" multiplier="1.25" id="0Cv-nQ-54v"/>
-                        <constraint firstItem="Afv-yE-GIN" firstAttribute="leading" secondItem="qZg-OH-60o" secondAttribute="leading" constant="20" id="4bC-bj-cx9"/>
-                        <constraint firstItem="mWb-lH-MBa" firstAttribute="centerX" secondItem="hr1-YA-yVh" secondAttribute="centerX" id="76K-zh-p4p"/>
-                        <constraint firstItem="hr1-YA-yVh" firstAttribute="centerY" secondItem="qZg-OH-60o" secondAttribute="centerY" multiplier="0.5" id="EE4-vi-oOh"/>
-                        <constraint firstAttribute="trailing" secondItem="Afv-yE-GIN" secondAttribute="trailing" constant="20" id="roe-b2-2B1"/>
-                        <constraint firstItem="hr1-YA-yVh" firstAttribute="centerX" secondItem="qZg-OH-60o" secondAttribute="centerX" id="scE-WD-SZN"/>
-                        <constraint firstItem="mWb-lH-MBa" firstAttribute="top" secondItem="hr1-YA-yVh" secondAttribute="bottom" constant="8" id="z6c-8i-qxj"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="qZg-OH-60o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ANo-Jm-hNX"/>
                 <constraint firstAttribute="trailing" secondItem="ObE-8Q-bPQ" secondAttribute="trailing" id="HjW-P5-Hri"/>
-                <constraint firstItem="qZg-OH-60o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ngn-QD-7BZ"/>
-                <constraint firstAttribute="bottom" secondItem="qZg-OH-60o" secondAttribute="bottom" id="OyU-z7-S2d"/>
                 <constraint firstAttribute="bottom" secondItem="ObE-8Q-bPQ" secondAttribute="bottom" id="T4b-cs-r9R"/>
                 <constraint firstItem="ObE-8Q-bPQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="X0G-eP-sw1"/>
                 <constraint firstItem="ObE-8Q-bPQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iuS-Xt-hl6"/>
-                <constraint firstAttribute="trailing" secondItem="qZg-OH-60o" secondAttribute="trailing" id="rtP-kJ-Zjk"/>
             </constraints>
             <point key="canvasLocation" x="39" y="64"/>
         </view>

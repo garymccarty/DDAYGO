@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface tableHeadView1 : UIView
-@property (weak, nonatomic) IBOutlet UILabel *NperLabel; // 期数
+@property (weak, nonatomic) IBOutlet UILabel *YearsLabel; // 期数(年)
+@property (weak, nonatomic) IBOutlet UILabel *MonthLabel; // 期数（月）
+@property (weak, nonatomic) IBOutlet UILabel *DyaLabel; // 期数（日）
 @property (weak, nonatomic) IBOutlet UILabel *ItmeLanel; // 时间
 @property (weak, nonatomic) IBOutlet UILabel *AmountLabel; // 奖池金额
 @property (weak, nonatomic) IBOutlet UILabel *NumberLabel; // 彩金劵数

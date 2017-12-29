@@ -7,18 +7,16 @@
 //
 
 #import "SupplierTableViewCell.h"
-
+#import "PrefixHeader.pch"
 @implementation SupplierTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+//    [self initUI];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+- (void)initWithData:(NSDictionary *)dic {
+    
 }
-
 @end

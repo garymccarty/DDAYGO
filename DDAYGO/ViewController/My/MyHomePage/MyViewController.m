@@ -39,6 +39,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self LoginJudde];
+    [self SupplierAllData];
+   
+}
+// 登录状态
+- (void)LoginJudde {
     [self autoLogin:^(id obj) {
         if (!DD_HASLOGIN) {
             if (![MyViewController sharedInstanceTool].hasRemind) {
@@ -53,7 +59,6 @@
         }
     }];
 }
-
 + (MyViewController *)sharedInstanceTool {
     static MyViewController *instance = nil;
     static NSString *language = nil;
@@ -202,6 +207,21 @@
     _BrowseLabel.text = [NSString stringWithFormat:@"%@",model.historycount];
 }
 
+// 供货商状态请求
+- (void) SupplierAllData {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = Token;
+    [ZP_MyTool requesSupplier:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+- (void)SupplierData:(ZP_MyHopageModel2 *)model {
+    
+}
+
+// UI
 - (void)initUI {
     self.userBackView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.userBackView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
