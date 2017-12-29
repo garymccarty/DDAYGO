@@ -31,6 +31,9 @@
 @property (weak, nonatomic) IBOutlet UIView * scanView;
 @property (weak, nonatomic) IBOutlet UIView * CaipiaoView;
 @property (weak, nonatomic) IBOutlet UIButton *headImageBut;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewLayoutConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *SdglLayoutConstraint;
+@property (weak, nonatomic) IBOutlet UIView *Sdglview;
 
 @end
 
@@ -41,6 +44,9 @@
     [self initUI];
     [self LoginJudde];
     [self SupplierAllData];
+    _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+    _viewLayoutConstraint.constant = 50.0;
+    _sdglView.hidden = YES;
    
 }
 // 登录状态
