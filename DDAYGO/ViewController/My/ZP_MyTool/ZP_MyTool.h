@@ -81,8 +81,14 @@
 // 验证码
 + (void)requestRestPassword:(NSDictionary *)RestPassword success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+<<<<<<< HEAD
 // 申请成为供货商
 + (void)requestSupplier:(NSDictionary *)Supplier success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+=======
+// 获取用户商家状态
++ (void)requestUserBusinessStatus:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
+>>>>>>> 7be2979e71225b179e20659ee4600e612a4ab148
 
 @end
 

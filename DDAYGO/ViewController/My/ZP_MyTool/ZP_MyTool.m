@@ -267,6 +267,7 @@
     }];
 }
 
+<<<<<<< HEAD
 // 申请成为供货商
 + (void)requestSupplier:(NSDictionary *)Supplier success:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getsupplierstate?token=%@",URLAPI,Supplier[@"token"]] parameters:nil success:^(id responseObject) {
@@ -275,6 +276,18 @@
         failure(error);
     }];
 }
+=======
+// 获取用户商家状态
++ (void)requestUserBusinessStatus:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure{
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"http://www.ddaygo.com/api/Test/getsupplierstate?token=%@",token] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+//http://www.ddaygo.com/api/Test/updatepassword?token=d2f38cc152c6c0f8504a25a70f7cc727&opwd=7fa8282ad93047a4d6fe6111c93b308a&npwd=fcea920f7412b5da7be0cf42b8c93759
+>>>>>>> 7be2979e71225b179e20659ee4600e612a4ab148
 
 @end
 

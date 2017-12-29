@@ -9,6 +9,7 @@
 #import "SupplierViewController.h"
 #import "SupplierTableViewCell.h"
 #import "PrefixHeader.pch"
+#import "ZP_MyTool.h"
 @interface SupplierViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *noStoreView;
 
@@ -19,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self alldata];
 }
 
 - (void)initUI {
@@ -27,6 +29,24 @@
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];  //  更改导航栏颜色
     [self.tableview registerNib:[UINib nibWithNibName:@"SupplierTableViewCell" bundle:nil] forCellReuseIdentifier:@"SupplierTableViewCell"];
 }
+
+- (void)alldata {
+    DD_CHECK_HASLONGIN;
+    [ZP_MyTool requestUserBusinessStatus:DD_TOKEN success:^(id obj) {
+        NSDictionary *dic = obj;
+        if ([dic[@"resault"] isEqualToString:@"token_err"]) {
+            [SVProgressHUD showErrorWithStatus:@"token错误"];
+        } else if ([dic[@"resault"] isEqualToString:@"isagent"]) {
+            [SVProgressHUD showErrorWithStatus:@"账号是代理商不可申请供货商"];
+        } else if ([dic[@"resault"] isEqualToString:@"ok"]) {
+            
+        }
+        NSLog(@"%@",obj);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
 #pragma mark --delegate
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
