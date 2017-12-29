@@ -38,13 +38,39 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"SupplierViewCell2" bundle:nil] forCellReuseIdentifier:@"SupplierViewCell2"];
      _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
 }
-
-
+// 提交按钮
+- (IBAction)SubmitBut:(id)sender {
+    [self AllData];
+}
+// 数据
+- (void)AllData {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = Token;
+    dic[@"companyname"] = @"测试测试";
+    dic[@"companycode"] = @"51155455454";
+    dic[@"poeplecount"] = @"100人";
+    dic[@"capital"] = @"100万";
+    dic[@"companydate"] = @"2017-10-11";
+    dic[@"companytype"] = @"1";
+    dic[@"address"] = @"公司地址公司地址公司地址公司地址";
+    dic[@"phone"] = @"141414414441441";
+    dic[@"fax"] = @"4545554545";
+    dic[@"companyuri"] = @"www.iii.com";
+    dic[@"contact"] = @"张鹏";
+    dic[@"contactphone"] = @"16161661616";
+    dic[@"contactemail"] = @"110@qq.com";
+    dic[@"companyproduct"] = @"你好吗";
+    dic[@"projectinfo"] = @"你好你好";
+    [ZP_MyTool requestSupplierRequest:dic success:^(id obj) {
+        ZPLog(@"%@",obj);
+    } failure:^(NSError *error) {
+        ZPLog(@"%@",error);
+    }];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.array.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * SupplierID = @"SupplierTableViewCell";

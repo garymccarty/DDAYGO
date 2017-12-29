@@ -58,45 +58,45 @@
     }];
     
     //     标题2
-    ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
     TitleLabel2.text = @"2017";
     [myView addSubview:TitleLabel2];
     _TitleLabel2 = TitleLabel2;
     [TitleLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(TitleLabel1).offset(5);
+        make.left.equalTo(TitleLabel1).offset(15);
         make.top.equalTo(TitleLabel1).offset(0);
         //        make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
     }];
     //     标题3
-    ZP_GeneralLabel * TitleLabel3 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel3.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    ZP_GeneralLabel * TitleLabel3 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel3.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
     TitleLabel3.text = @"12";
     [myView addSubview:TitleLabel3];
     _TitleLabel3 = TitleLabel3;
     [TitleLabel3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(TitleLabel2).offset(8);
+        make.left.equalTo(TitleLabel2).offset(30);
         make.top.equalTo(TitleLabel2).offset(0);
         //        make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
     }];
     //     标题3
-    ZP_GeneralLabel * TitleLabel4 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel4.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    ZP_GeneralLabel * TitleLabel4 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel4.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
     TitleLabel4.text = @"31";
     [myView addSubview:TitleLabel4];
     _TitleLabel4 = TitleLabel4;
     [TitleLabel4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(TitleLabel3).offset(8);
+        make.left.equalTo(TitleLabel3).offset(15);
         make.top.equalTo(TitleLabel3).offset(0);
         //        make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
     }];
     //     标题4
-    ZP_GeneralLabel * TitleLabel5 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel5.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    ZP_GeneralLabel * TitleLabel5 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel5.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
     TitleLabel5.text = @"2017-11-19（周日）";
     [myView addSubview:TitleLabel5];
     _TitleLabel5 = TitleLabel5;
     [TitleLabel5 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(TitleLabel4.mas_trailing);
+        make.leading.equalTo(TitleLabel4).offset(15);
         make.top.equalTo(TitleLabel4).offset(0);
         //        make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
@@ -116,7 +116,7 @@
     [myView addSubview:OrderLabel];
     _OrderLabel = OrderLabel;
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(myView).offset(8);
+        make.leading.equalTo(myView).offset(15);
         make.centerY.equalTo(OrderLabel).offset(0);
 //                make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
@@ -144,13 +144,18 @@
     dic[@"pagesize"] = @"10";
     [ZP_MyTool requestHistoryPrize:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
+        ZP_HistoryModel * model = [[ZP_HistoryModel alloc]init];
+        model.createtime = obj[@"createtime"];
+        [self WithHistoryAllData:model];
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
 }
 - (void)WithHistoryAllData:(ZP_HistoryModel *) model {
     //    _OrderLabel.text = model.
-    _OrderNumberLabel.text = [model.createtime stringValue];
+    _TitleLabel2.text = [model.yyyy stringValue];
+    _TitleLabel5.text = [model.createtime stringValue];
+//    _TitleLabel5.text = [NSString stringWithFormat:@"%@",model.createtime ];
     
 }
 

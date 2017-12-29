@@ -54,7 +54,7 @@
     } failure:^(NSError *error) {
         failure(error);
         //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 //  设定默认地址
@@ -302,12 +302,13 @@
 // 添加供货商申请
 + (void)requestSupplierRequest:(NSDictionary *)SupplierRequest success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
 //     这个接口对起来真特么类
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addsupplierapply?token=%@&companyname=%@&companycode=%@&poeplecount=%@&capital=%@&companydate=%@&companytype=%@&address=%@&phone=%@&fax=%@&companyuri=%@&contact=%@&contactphone=%@&contactemail=%@&companyproduct=%@&projectinfo=%@",URLAPI,SupplierRequest[@"token"],SupplierRequest[@"companyname"],SupplierRequest[@"companycode"],SupplierRequest[@"poeplecount"],SupplierRequest[@"capital"],SupplierRequest[@"companydate"],SupplierRequest[@"companytype"],SupplierRequest[@"address"],SupplierRequest[@"phone"],SupplierRequest[@"fax"],SupplierRequest[@"companyuri"],SupplierRequest[@"contact"],SupplierRequest[@"contactphone"],SupplierRequest[@"contactemail"],SupplierRequest[@"companyproduct"],SupplierRequest[@"projectinfo"]] parameters:nil success:^(id responseObject) {
+    NSString * str = [NSString stringWithFormat:@"%@addsupplierapply?token=%@&companyname=%@&companycode=%@&poeplecount=%@&capital=%@&companydate=%@&companytype=%@&address=%@&phone=%@&fax=%@&companyuri=%@&contact=%@&contactphone=%@&contactemail=%@&companyproduct=%@&projectinfo=%@",URLAPI,SupplierRequest[@"token"],SupplierRequest[@"companyname"],SupplierRequest[@"companycode"],SupplierRequest[@"poeplecount"],SupplierRequest[@"capital"],SupplierRequest[@"companydate"],SupplierRequest[@"companytype"],SupplierRequest[@"address"],SupplierRequest[@"phone"],SupplierRequest[@"fax"],SupplierRequest[@"companyuri"],SupplierRequest[@"contact"],SupplierRequest[@"contactphone"],SupplierRequest[@"contactemail"],SupplierRequest[@"companyproduct"],SupplierRequest[@"projectinfo"]];
+    NSString * urlString = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [ZP_NetorkingTools POST:urlString parameters:nil success:^(id responseObject) {
         success(responseObject);
     } failure:^(NSError *error) {
         failure(error);
     }];
-    
     
     
 }
