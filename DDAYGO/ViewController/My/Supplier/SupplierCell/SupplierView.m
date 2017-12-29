@@ -55,8 +55,7 @@
     UITapGestureRecognizer *tapBackGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(removeView)];
     tapBackGesture.delegate = self;
     [self addGestureRecognizer:tapBackGesture];
-//****************
-    
+/****************/
     UIView * bounceView = [UIView new];
     bounceView.backgroundColor = ZP_Graybackground;
     bounceView.layer.cornerRadius = 5.0;// View圆角弧度
