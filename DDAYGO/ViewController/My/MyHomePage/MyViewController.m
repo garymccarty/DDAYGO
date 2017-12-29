@@ -33,7 +33,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *headImageBut;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *SdglLayoutConstraint;
-@property (weak, nonatomic) IBOutlet UIView *Sdglview;
 
 @end
 
@@ -44,10 +43,12 @@
     [self initUI];
     [self LoginJudde];
     [self SupplierAllData];
-    _SdglLayoutConstraint.constant = CGFLOAT_MIN;
-    _viewLayoutConstraint.constant = 50.0;
-    _sdglView.hidden = YES;
-   
+//     判断是否是供货商
+    if (result.length == YES) {
+        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+         _sdglView.hidden = YES;
+        _viewLayoutConstraint.constant = 50.0;
+    }
 }
 // 登录状态
 - (void)LoginJudde {

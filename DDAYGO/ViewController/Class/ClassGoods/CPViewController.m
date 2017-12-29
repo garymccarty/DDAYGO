@@ -347,11 +347,9 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * identify = @"cell";
     CPCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
-    
     [cell sizeToFit];
     ZP_ClassGoodsModel * model = self.newsData[indexPath.row];
     [cell cellWithdic:model];
-    
     return cell;
 }
 

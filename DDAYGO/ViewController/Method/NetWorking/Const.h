@@ -33,6 +33,11 @@ extern NSString * Symbol;
  */
 extern NSString * countrycode;
 
+/**
+ * 供货商ID
+ */
+extern NSString * result;
+
 @interface Const : NSObject
 
 @end

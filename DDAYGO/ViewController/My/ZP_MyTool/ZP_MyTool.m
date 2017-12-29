@@ -230,6 +230,15 @@
         }];
 }
 
+// 获取历史开奖
++ (void)requestHistoryPrize:(NSDictionary *)HistoryPrize uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+    [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getlotterywinhistory?token=%@&page=%@&pagesize=%@",URLAPI,HistoryPrize[@"token"],HistoryPrize[@"page"],HistoryPrize[@"pagesize"]] parameters:nil success:^(id responseObject) {
+        success(responseObject);
+    } failure:^(NSError * error) {
+        failure(error);
+    }];
+}
+
 // 获取历史下注号码
 + (void)requestHistoricalBet:(NSDictionary *)HistoricalBet uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getuserlotteryhistory?token=%@&page=%@&pagesize=%@",URLAPI,HistoricalBet[@"token"],HistoricalBet[@"page"],HistoricalBet[@"pagesize"]] parameters:nil success:^(id responseObject) {

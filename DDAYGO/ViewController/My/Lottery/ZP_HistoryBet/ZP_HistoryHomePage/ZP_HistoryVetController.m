@@ -28,7 +28,6 @@
 - (void)initUI {
     
     self.title = NSLocalizedString(@"历史开奖", nil);
-    //    static NSString * ZP_HistoryID = @"ZP_HistoryBetCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_HistoryBetCell" bundle:nil] forCellReuseIdentifier:@"ZP_HistoryBetCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
 //    self.tableView.backgroundColor = [UIColor grayColor];
@@ -41,13 +40,14 @@
     
 }
 
+
 - (void)initTableHeadView {
     UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 30)];
-    //    self.tableview.tableHeaderView = myView; // 表头跟着cell一起滚动
+//        self.tableview.tableHeaderView = myView; // 表头跟着cell一起滚动
     [myView setBackgroundColor:ZP_Graybackground];
     //     标题1
     ZP_GeneralLabel * TitleLabel1 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel1.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-//    TitleLabel1.text = @"第2017136期";
+    TitleLabel1.text = @"第";
     [myView addSubview:TitleLabel1];
     _TitleLabel1 = TitleLabel1;
     [TitleLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -59,7 +59,7 @@
     
     //     标题2
     ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-//    TitleLabel2.text = @"2017-11-19（周日）";
+    TitleLabel2.text = @"2017-11-19（周日）";
     [myView addSubview:TitleLabel2];
     _TitleLabel2 = TitleLabel2;
     [TitleLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -71,26 +71,7 @@
     
     self.tableView.tableHeaderView = myView;
 }
-// 数据
-- (void)allData {
-    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = Token;
-    dic[@"page"] = @"1";
-    dic[@"pagesize"] = @"6";
-    [ZP_MyTool requestHistoricalBet:dic uccess:^(id obj) {
-        ZPLog(@"%@",obj);
-        ZP_HistoryModel * model = [ZP_HistoryModel mj_objectWithKeyValues:obj];
-        [self WithHistoryAllData:model];
-         [self.tableView reloadData];
-    } failure:^(NSError * error) {
-        ZPLog(@"%@",error);
-    }];
-}
-- (void)WithHistoryAllData:(ZP_HistoryModel *) model {
-//    _OrderLabel.text = model.
-    _OrderNumberLabel.text = [model.createtime stringValue];
-    
-}
+
 //表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0, 5, ZP_Width, 20)];
@@ -104,7 +85,7 @@
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(myView).offset(8);
         make.centerY.equalTo(OrderLabel).offset(0);
-        //        make.width.mas_equalTo(90);
+//                make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
     }];
     
@@ -121,12 +102,32 @@
     }];
     return myView;
 }
+
+// 数据
+- (void)allData {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = Token;
+    dic[@"page"] = @"1";
+    dic[@"pagesize"] = @"10";
+    [ZP_MyTool requestHistoryPrize:dic uccess:^(id obj) {
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+- (void)WithHistoryAllData:(ZP_HistoryModel *) model {
+    //    _OrderLabel.text = model.
+    _OrderNumberLabel.text = [model.createtime stringValue];
+    
+}
+
+
 // 领奖按钮
 - (void)AwardBut {
     ZPLog(@"按钮");
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    return self.newsData.count;
+    return 2;
 }
 
 /*设置标题头的宽度*/
@@ -143,7 +144,7 @@
 
 #pragma mark -- tableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
