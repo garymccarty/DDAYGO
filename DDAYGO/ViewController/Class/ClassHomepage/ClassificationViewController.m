@@ -50,7 +50,6 @@
 }
 //  左边
 - (void)selectLeftCell:(UIButton *)sender {
-    self.title = sender.titleLabel.text;
     self.leftSelectRow = sender.tag;
     [self.leftTableView reloadData];
     if (![self.rightData objectForKey:@(self.leftSelectRow)]) {
@@ -71,8 +70,6 @@
     NSDictionary * dict = @{@"level":@"1",@"language":@"zh-tw"};
     [ZP_ClassViewTool requClassIfication:dict success:^(id obj) {
         NSArray * arr = obj;
-        NSDictionary *tempDic = arr.firstObject;
-        self.title = tempDic[@"producttypename"];
         ZPLog(@"%@",obj);
         self.newsData = [ZP_LeftModel arrayWithArray:arr];
         [self getRightItemDataWithProducttypeid:0];
@@ -149,7 +146,7 @@
         CPViewController * CVPView = [[CPViewController alloc]init];
         ZP_RightModel * model = self.rightData[@(self.leftSelectRow)][indexPath.row];
         CVPView.fatherId = model.fatherid;
-        CVPView.titleString = _titleStr;
+        CVPView.titleString = model.contentLabel;
         [self.rightTableView deselectRowAtIndexPath:indexPath animated:YES];
         self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:CVPView animated:YES];
