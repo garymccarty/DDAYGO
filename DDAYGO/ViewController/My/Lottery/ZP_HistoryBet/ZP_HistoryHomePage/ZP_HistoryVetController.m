@@ -58,13 +58,46 @@
     }];
     
     //     标题2
-    ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    TitleLabel2.text = @"2017-11-19（周日）";
+    ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    TitleLabel2.text = @"2017";
     [myView addSubview:TitleLabel2];
     _TitleLabel2 = TitleLabel2;
     [TitleLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(TitleLabel1.mas_trailing);
+        make.left.equalTo(TitleLabel1).offset(5);
         make.top.equalTo(TitleLabel1).offset(0);
+        //        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(15);
+    }];
+    //     标题3
+    ZP_GeneralLabel * TitleLabel3 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel3.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    TitleLabel3.text = @"12";
+    [myView addSubview:TitleLabel3];
+    _TitleLabel3 = TitleLabel3;
+    [TitleLabel3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(TitleLabel2).offset(8);
+        make.top.equalTo(TitleLabel2).offset(0);
+        //        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(15);
+    }];
+    //     标题3
+    ZP_GeneralLabel * TitleLabel4 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel4.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    TitleLabel4.text = @"31";
+    [myView addSubview:TitleLabel4];
+    _TitleLabel4 = TitleLabel4;
+    [TitleLabel4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(TitleLabel3).offset(8);
+        make.top.equalTo(TitleLabel3).offset(0);
+        //        make.width.mas_equalTo(90);
+        make.height.mas_equalTo(15);
+    }];
+    //     标题4
+    ZP_GeneralLabel * TitleLabel5 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel5.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
+    TitleLabel5.text = @"2017-11-19（周日）";
+    [myView addSubview:TitleLabel5];
+    _TitleLabel5 = TitleLabel5;
+    [TitleLabel5 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(TitleLabel4.mas_trailing);
+        make.top.equalTo(TitleLabel4).offset(0);
         //        make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
     }];

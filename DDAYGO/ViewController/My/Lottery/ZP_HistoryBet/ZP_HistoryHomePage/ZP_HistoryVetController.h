@@ -11,6 +11,9 @@
 @interface ZP_HistoryVetController : UIViewController
 @property (nonatomic, strong) UILabel * TitleLabel1;
 @property (nonatomic, strong) UILabel * TitleLabel2;
+@property (nonatomic, strong) UILabel * TitleLabel3;
+@property (nonatomic, strong) UILabel * TitleLabel4;
+@property (nonatomic, strong) UILabel * TitleLabel5;
 
 @property (nonatomic, strong) UILabel * OrderLabel;
 @property (nonatomic, strong) UILabel * OrderNumberLabel;
