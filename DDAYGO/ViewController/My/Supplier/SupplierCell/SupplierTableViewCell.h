@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SupplierTableViewCell : UITableViewCell
+@interface SupplierTableViewCell : UITableViewCell<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel * titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField * textField;
+
+@property (nonatomic, copy) void (^ savaData)(NSString *title);
 
 @end

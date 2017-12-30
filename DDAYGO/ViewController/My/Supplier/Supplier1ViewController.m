@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *typeNameArray;
 @property (nonatomic, strong) NSMutableArray *typeIdArray;
 
+@property (nonatomic, strong) NSMutableDictionary *dataDic;
 
 @end
 
@@ -38,30 +39,41 @@
     self.tableView.dataSource = self;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];  //  更改导航栏颜色
-
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"SupplierTableViewCell" bundle:nil] forCellReuseIdentifier:@"SupplierTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SupplierViewCell2" bundle:nil] forCellReuseIdentifier:@"SupplierViewCell2"];
     
-     _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
+    _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
 }
 // 提交按钮
 - (IBAction)SubmitBut:(id)sender {
     
-    
-    //这里就是你需要的所以数据· 自己填上 提交就知道了
-    for (int i = 0; i < _array.count; i ++) {
-        SupplierTableViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-        if (i == 5) {
-              NSLog(@"%@",_seleStr);
-        }else{
-            NSLog(@"textf = %@",cell.textField.text);
-        }
-
+    NSArray *arr = [self.dataDic allKeys];
+    if (arr.count == 13) {
+        NSLog(@"填写完成");
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"请完善"];
+        return;
     }
     
-   NSString * a = @"199311";
-   NSString * nwqa = [NSString stringWithFormat: @"-%@",a]; //----> newa  是不是  -199311
+    if (_seleStr.length < 1) {
+        [SVProgressHUD showErrorWithStatus:@"请选择组织形态"];
+        return;
+    }
     
+    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //公司名称
+        if ([obj integerValue] == 0) {
+            NSLog(@"公司名称 = %@",self.dataDic[obj]);
+        }
+        //统一编号。依次类推   --> (没有5 因为5是组织形态)
+        if ([obj integerValue] == 1) {
+            NSLog(@"统一编号 = %@",self.dataDic[obj]);
+        }
+    }];
+    
+    //组织形态  = _seleStr
+    NSLog(@"组织形态 %@",_seleStr);
     
     [self AllData];
 }
@@ -70,21 +82,21 @@
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = Token;
-//    dic[@"companyname"] = @"测试测试";
-//    dic[@"companycode"] = @"51155455454";
-//    dic[@"poeplecount"] = @"100人";
-//    dic[@"capital"] = @"100万";
-//    dic[@"companydate"] = @"20171001";
-//    dic[@"companytype"] = @"1";
-//    dic[@"address"] = @"公司地址公司地址公司地址公司地址";
-//    dic[@"phone"] = @"141414414441441";
-//    dic[@"fax"] = @"4545554545";
-//    dic[@"companyuri"] = @"www.iii.com";
-//    dic[@"contact"] = @"张鹏";
-//    dic[@"contactphone"] = @"16161661616";
-//    dic[@"contactemail"] = @"110@qq.com";
-//    dic[@"companyproduct"] = @"你好吗";
-//    dic[@"projectinfo"] = @"你好你好";
+    //    dic[@"companyname"] = @"测试测试";
+    //    dic[@"companycode"] = @"51155455454";
+    //    dic[@"poeplecount"] = @"100人";
+    //    dic[@"capital"] = @"100万";
+    //    dic[@"companydate"] = @"20171001";
+    //    dic[@"companytype"] = @"1";
+    //    dic[@"address"] = @"公司地址公司地址公司地址公司地址";
+    //    dic[@"phone"] = @"141414414441441";
+    //    dic[@"fax"] = @"4545554545";
+    //    dic[@"companyuri"] = @"www.iii.com";
+    //    dic[@"contact"] = @"张鹏";
+    //    dic[@"contactphone"] = @"16161661616";
+    //    dic[@"contactemail"] = @"110@qq.com";
+    //    dic[@"companyproduct"] = @"你好吗";
+    //    dic[@"projectinfo"] = @"你好你好";
     [ZP_MyTool requestSupplierRequest:dic success:^(id obj) {
         ZPLog(@"%@",obj);
     } failure:^(NSError *error) {
@@ -113,8 +125,17 @@
         return cell2;
     }else {
         SupplierTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SupplierTableViewCell"];
-
+        
         cell.titleLabel.text = self.array[indexPath.row];
+        cell.savaData = ^(NSString *title) {
+            [self.dataDic setObject:title forKey:@(indexPath.row)];
+        };
+        NSArray *arr = [self.dataDic allKeys];
+        if ([arr containsObject:@(indexPath.row)]) {
+            cell.textField.text = [self.dataDic objectForKey:@(indexPath.row)];
+        }else{
+            cell.textField.text = nil;
+        }
         if (indexPath.row == 1) {
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             return cell;
@@ -179,15 +200,15 @@
         JXPopoverAction *action1 = [JXPopoverAction actionWithTitle:self.typeNameArray[i] handler:^(JXPopoverAction *action) {
             
             NSLog(@"dian ji l %@",self.typeNameArray[i]);
-           
+            
             _seleStr = self.typeNameArray[i];
             NSIndexPath *index = [NSIndexPath indexPathForRow:5 inSection:0];
             [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
             
-                }];
+        }];
         [titleArray addObject:action1];
     }
-
+    
     [popoverView showToView:but withActions:titleArray];
     
 }
@@ -210,6 +231,14 @@
         _typeNameArray = [NSMutableArray array];
     }
     return _typeNameArray;
+}
+
+- (NSMutableDictionary *)dataDic
+{
+    if (!_dataDic) {
+        _dataDic = [NSMutableDictionary dictionary];
+    }
+    return _dataDic;
 }
 
 @end
