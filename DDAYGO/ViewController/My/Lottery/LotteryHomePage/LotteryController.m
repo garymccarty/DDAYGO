@@ -101,14 +101,36 @@
     _bountyLabel4.text = [model5.winunit stringValue];
     _bountyLabel5.text = [model5.winunit stringValue];
     
-    lotteryorderModel * model6 = [lotteryorderModel mj_objectWithKeyValues:model.lottery];
-    _OrderNumberLabel.text = [model6.lotteryoid stringValue];
-    [_butt1 setTitle:[model6.white1 stringValue] forState:UIControlStateNormal];
-    [_butt2 setTitle:[model6.white2 stringValue] forState:UIControlStateNormal];
-    [_butt3 setTitle:[model6.white3 stringValue] forState:UIControlStateNormal];
-    [_butt4 setTitle:[model6.white4 stringValue] forState:UIControlStateNormal];
-    [_butt5 setTitle:[model6.white5 stringValue] forState:UIControlStateNormal];
-    [_butt6 setTitle:[model6.powerball stringValue] forState:UIControlStateNormal];
+    lotteryorderModel * model6 = [lotteryorderModel mj_objectWithKeyValues:model.lotteryorder.firstObject];
+    
+    if (model6) {
+        _butt1.hidden = NO;
+        _butt2.hidden = NO;
+        _butt3.hidden = NO;
+        _butt4.hidden = NO;
+        _butt5.hidden = NO;
+        _butt6.hidden = NO;
+        _checkMoreBtn.hidden = NO;
+        
+        _OrderNumberLabel.text = [model6.lotteryoid stringValue];
+        [_butt1 setTitle:[model6.white1 stringValue] forState:UIControlStateNormal];
+        [_butt2 setTitle:[model6.white2 stringValue] forState:UIControlStateNormal];
+        [_butt3 setTitle:[model6.white3 stringValue] forState:UIControlStateNormal];
+        [_butt4 setTitle:[model6.white4 stringValue] forState:UIControlStateNormal];
+        [_butt5 setTitle:[model6.white5 stringValue] forState:UIControlStateNormal];
+        [_butt6 setTitle:[model6.powerball stringValue] forState:UIControlStateNormal];
+    } else {
+        _butt1.hidden = YES;
+        _butt2.hidden = YES;
+        _butt3.hidden = YES;
+        _butt4.hidden = YES;
+        _butt5.hidden = YES;
+        _butt6.hidden = YES;
+        _checkMoreBtn.hidden = YES;
+        
+        _OrderNumberLabel.text = nil;
+    }
+    
     NSLog(@"m3 = %@",model.lottery);
     
 //    self.periodsLabel.text = [NSString stringWithFormat:@"第%@期",[self.prizeDic[@"lottery"][@"periods"] stringValue]];

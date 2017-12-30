@@ -37,6 +37,7 @@
         
         NSMutableDictionary * dict = [NSMutableDictionary dictionary];
         dict[NSFontAttributeName] = ZP_addBtnTextdetaFont;
+        
         //        dict[NSForegroundColorAttributeName] = [UIColor colorWithHexString:mainFont];
         [navBar setTitleTextAttributes:dict];
         

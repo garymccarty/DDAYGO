@@ -38,6 +38,7 @@
                 <outlet property="butt4" destination="CXd-1M-c2k" id="yHG-bw-fpc"/>
                 <outlet property="butt5" destination="IuG-rZ-U4a" id="Ado-c8-EBu"/>
                 <outlet property="butt6" destination="slb-CA-W3k" id="cKh-lD-A5F"/>
+                <outlet property="checkMoreBtn" destination="Nkh-15-rAj" id="7hi-A4-hLr"/>
                 <outlet property="currentPeriodLabel" destination="vCM-nc-1yX" id="Vds-NZ-3yk"/>
                 <outlet property="currentPeriodLabel1" destination="cEN-7L-jGh" id="IAP-aq-zUp"/>
                 <outlet property="currentPeriodLabel2" destination="ZZi-S0-0LM" id="Scp-oH-Ax5"/>
@@ -952,7 +953,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_red_ball" width="39" height="39"/>
-        <image name="bg_white_ball" width="39" height="39"/>
+        <image name="bg_red_ball" width="32" height="32"/>
+        <image name="bg_white_ball" width="32" height="32"/>
     </resources>
 </document>
