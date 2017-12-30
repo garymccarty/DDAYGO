@@ -46,6 +46,8 @@
                 <outlet property="currentPeriodLabel4" destination="cwo-6Z-Feu" id="vk2-qZ-qAw"/>
                 <outlet property="currentPeriodLabel5" destination="XKz-5s-F30" id="izj-MM-ypP"/>
                 <outlet property="dateLabel" destination="OeE-E4-aVf" id="FN4-WS-AkV"/>
+                <outlet property="dingdanhaoLabel" destination="A2v-g2-vrn" id="3Zu-el-VDc"/>
+                <outlet property="lingjiangBtn" destination="1AC-dD-Rv7" id="IFf-w1-UKj"/>
                 <outlet property="outVIew" destination="ofB-K0-bhm" id="p5S-5z-iH4"/>
                 <outlet property="periodsLabel" destination="4La-cI-cea" id="5b3-Br-YDA"/>
                 <outlet property="prizeLabel" destination="zmM-eh-aKI" id="0Va-sC-9Hb"/>
@@ -83,7 +85,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWS-ZI-z4H">
-                                    <rect key="frame" x="200" y="10" width="7" height="20"/>
+                                    <rect key="frame" x="196.5" y="10" width="7" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="4r8-XM-zoN"/>
                                     </constraints>
@@ -92,7 +94,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的彩金点数:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eri-Yy-Koq">
-                                    <rect key="frame" x="110" y="10" width="78" height="20"/>
+                                    <rect key="frame" x="106.5" y="10" width="78" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="JcW-J4-dS8"/>
                                     </constraints>
@@ -103,11 +105,11 @@
                             </subviews>
                             <color key="backgroundColor" red="0.90196078430000004" green="0.8980392157" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
-                                <constraint firstItem="sWS-ZI-z4H" firstAttribute="top" secondItem="ofB-K0-bhm" secondAttribute="top" constant="10" id="1V8-YM-yaU"/>
-                                <constraint firstItem="sWS-ZI-z4H" firstAttribute="leading" secondItem="Eri-Yy-Koq" secondAttribute="trailing" constant="12" id="7uA-vv-l5g"/>
+                                <constraint firstItem="sWS-ZI-z4H" firstAttribute="leading" secondItem="Eri-Yy-Koq" secondAttribute="trailing" constant="12" id="4Uz-1w-5wL"/>
+                                <constraint firstItem="sWS-ZI-z4H" firstAttribute="centerX" secondItem="ofB-K0-bhm" secondAttribute="centerX" constant="40" id="Lvi-td-NIY"/>
+                                <constraint firstItem="Eri-Yy-Koq" firstAttribute="centerY" secondItem="ofB-K0-bhm" secondAttribute="centerY" id="So1-Vx-cJs"/>
                                 <constraint firstAttribute="height" constant="40" id="djD-Ds-rqT"/>
-                                <constraint firstItem="Eri-Yy-Koq" firstAttribute="leading" secondItem="ofB-K0-bhm" secondAttribute="leading" constant="110" id="lQN-ck-dqI"/>
-                                <constraint firstItem="Eri-Yy-Koq" firstAttribute="top" secondItem="ofB-K0-bhm" secondAttribute="top" constant="10" id="zAZ-dg-LzX"/>
+                                <constraint firstItem="sWS-ZI-z4H" firstAttribute="centerY" secondItem="ofB-K0-bhm" secondAttribute="centerY" id="nIX-pK-j6S"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-LB-z8P">

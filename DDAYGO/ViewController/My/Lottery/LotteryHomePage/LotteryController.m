@@ -111,6 +111,8 @@
         _butt5.hidden = NO;
         _butt6.hidden = NO;
         _checkMoreBtn.hidden = NO;
+        _dingdanhaoLabel.hidden = NO;
+        _lingjiangBtn.hidden = NO;
         
         _OrderNumberLabel.text = [model6.lotteryoid stringValue];
         [_butt1 setTitle:[model6.white1 stringValue] forState:UIControlStateNormal];
@@ -127,6 +129,8 @@
         _butt5.hidden = YES;
         _butt6.hidden = YES;
         _checkMoreBtn.hidden = YES;
+        _dingdanhaoLabel.hidden = YES;
+        _lingjiangBtn.hidden = YES;
         
         _OrderNumberLabel.text = nil;
     }
