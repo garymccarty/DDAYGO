@@ -223,7 +223,7 @@
         ZPLog(@"%@",obj);
         ZP_MyHopageModel2 * model = [[ZP_MyHopageModel2 alloc]init];
         model.state = obj[@"state"];
-        
+        self.RequestStatusStr = model.state;
         switch (model.state.integerValue) {
             case 0:
             {
@@ -250,24 +250,6 @@
                 break;
         }
         [self SupplierData:model];
-//        if ([_RequestStatusStr isEqualToString: [NSString stringWithFormat:@"%@",@"待审核"]]) {
-//            obj[@"state"] = @"2";
-//        }
-//        if ([_RequestStatusStr isEqualToString:@"已审核"]) {
-//            obj[@"state"] = @"3";
-//        }
-//        if ([_RequestStatusStr isEqualToString:@"以退件"]) {
-//            obj[@"state"] = @"7";
-//        }
-//        if ([_RequestStatusStr isEqualToString:@"已取消"]) {
-//            obj[@"state"] = @"0";
-//        }
-//        if ([obj[@"result"]isEqualToString:@"token_err"]) {
-//            [SVProgressHUD showInfoWithStatus:@"令牌无效"];
-//        }else
-//            if ([obj[@"result"]isEqualToString:@"isagent"]) {
-//                [SVProgressHUD showInfoWithStatus:@"账号是代理商不可申请供货商"];
-//            }
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
@@ -358,6 +340,7 @@
 // 申请开店
 - (IBAction)sskdAction:(id)sender {
     Supplier1ViewController * Supplier = [[Supplier1ViewController alloc]init];
+    Supplier.stausType = self.RequestStatusStr.integerValue;
     [self.navigationController pushViewController:Supplier animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;

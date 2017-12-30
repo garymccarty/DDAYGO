@@ -29,9 +29,40 @@
     [self initUI];
     [self SupplierllData];
 }
+- (IBAction)requstAction:(id)sender {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.noStoreView.alpha = 0;
+    } completion:^(BOOL finished) {
+        self.noStoreView.hidden = YES;
+    }];
+}
 
 // UI
 -(void)initUI {
+    self.noStoreView.hidden = YES;
+    self.sendingBtn.hidden = YES;
+    switch (self.stausType) {
+        case 2:
+        {
+            self.noStoreView.hidden = NO;
+        }
+            break;
+        case 3:
+        {
+            
+        }
+            break;
+        case 7:
+        case 0:
+        {
+            self.noStoreView.hidden = NO;
+            self.sendingBtn.hidden = NO;
+        }
+            break;
+            
+        default:
+            break;
+    }
     self.title = NSLocalizedString(@"供货商", nil);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
