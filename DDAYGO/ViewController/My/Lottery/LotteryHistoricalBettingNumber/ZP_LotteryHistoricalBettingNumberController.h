@@ -14,4 +14,5 @@
 
 @property (nonatomic, strong) UILabel * OrderLabel;
 @property (nonatomic, strong) UILabel * OrderNumberLabel;
+@property (strong ,nonatomic) NSNumber *pollid;
 @end

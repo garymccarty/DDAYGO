@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZP_LotterModel.h"
 
 @interface ZP_DetailsSistoryAwardTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton * butt1;
@@ -15,5 +16,5 @@
 @property (weak, nonatomic) IBOutlet UIButton * butt4;
 @property (weak, nonatomic) IBOutlet UIButton * butt5;
 @property (weak, nonatomic) IBOutlet UIButton * butt6;
-
+- (void)HistoryBet:(lotteryorderModel *)model;
 @end

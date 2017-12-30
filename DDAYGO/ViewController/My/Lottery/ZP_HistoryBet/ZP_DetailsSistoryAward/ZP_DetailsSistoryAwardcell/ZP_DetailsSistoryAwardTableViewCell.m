@@ -15,4 +15,14 @@
     
 }
 
+- (void)HistoryBet:(lotteryorderModel *)model {
+    //    ZP_HistoryModel * model = [ZP_HistoryModel mj_objectWithKeyValues:model.pollid];
+    [_butt1 setTitle:[NSString stringWithFormat:@"%02d",model.white1.intValue] forState:UIControlStateNormal];
+    [_butt2 setTitle:[NSString stringWithFormat:@"%02d",model.white2.intValue] forState:UIControlStateNormal];
+    [_butt3 setTitle:[NSString stringWithFormat:@"%02d",model.white3.intValue] forState:UIControlStateNormal];
+    [_butt4 setTitle:[NSString stringWithFormat:@"%02d",model.white4.intValue] forState:UIControlStateNormal];
+    [_butt5 setTitle:[NSString stringWithFormat:@"%02d",model.white5.intValue] forState:UIControlStateNormal];
+    [_butt6 setTitle:[NSString stringWithFormat:@"%02d",model.powerball.intValue] forState:UIControlStateNormal];
+}
+
 @end

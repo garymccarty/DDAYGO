@@ -713,17 +713,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本期开奖累计总金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUp-ZN-yv7">
-                                    <rect key="frame" x="108" y="370" width="104" height="20"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="20" id="zME-EA-U8v"/>
-                                    </constraints>
+                                    <rect key="frame" x="109.5" y="370" width="101.5" height="13.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkg-9A-mQm">
                                     <rect key="frame" x="8" y="337" width="304" height="25"/>
-                                    <color key="backgroundColor" red="0.98431372549999996" green="0.56078431370000004" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="4tw-hc-R1w"/>
                                     </constraints>
@@ -737,12 +733,11 @@
                                 <constraint firstItem="Uuy-Kq-eka" firstAttribute="top" secondItem="Kmc-Cc-mig" secondAttribute="top" constant="8" id="EXA-2i-f8r"/>
                                 <constraint firstItem="PhM-io-XNE" firstAttribute="top" secondItem="Uuy-Kq-eka" secondAttribute="bottom" constant="8" id="HzN-a9-fkp"/>
                                 <constraint firstAttribute="trailing" secondItem="Uuy-Kq-eka" secondAttribute="trailing" constant="162" id="LUS-oW-9jk"/>
-                                <constraint firstItem="bUp-ZN-yv7" firstAttribute="top" secondItem="Tkg-9A-mQm" secondAttribute="bottom" constant="8" id="NW4-wZ-1NO"/>
-                                <constraint firstItem="bUp-ZN-yv7" firstAttribute="leading" secondItem="Kmc-Cc-mig" secondAttribute="leading" constant="108" id="RV9-Ng-bl7"/>
                                 <constraint firstItem="Tkg-9A-mQm" firstAttribute="top" secondItem="PhM-io-XNE" secondAttribute="bottom" constant="65" id="S0U-8F-SSB"/>
+                                <constraint firstItem="bUp-ZN-yv7" firstAttribute="top" secondItem="Tkg-9A-mQm" secondAttribute="bottom" constant="8" id="YOD-0f-DOJ"/>
+                                <constraint firstItem="bUp-ZN-yv7" firstAttribute="centerX" secondItem="Kmc-Cc-mig" secondAttribute="centerX" id="aiW-wE-bNd"/>
                                 <constraint firstItem="Uuy-Kq-eka" firstAttribute="leading" secondItem="Kmc-Cc-mig" secondAttribute="leading" constant="8" id="hN2-IV-FcW"/>
                                 <constraint firstAttribute="height" constant="398" id="m6Z-Yf-1Qz"/>
-                                <constraint firstAttribute="trailing" secondItem="bUp-ZN-yv7" secondAttribute="trailing" constant="108" id="seT-8I-U4P"/>
                                 <constraint firstAttribute="trailing" secondItem="PhM-io-XNE" secondAttribute="trailing" constant="8" id="u8Y-om-2NN"/>
                             </constraints>
                         </view>

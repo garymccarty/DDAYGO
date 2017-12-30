@@ -157,8 +157,8 @@
     [ZP_MyTool requestHistoryPrize:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
         ZP_HistoryModel * model = [[ZP_HistoryModel alloc]init];
+        self.newsData = [NSMutableArray array];
         for (NSDictionary *dic in obj[@"datalist"]) {
-            self.newsData = [NSMutableArray array];
             ZP_HistoryModel * model = [[ZP_HistoryModel alloc]init];
             model.white1 = dic[@"white1"];
             model.white2 = dic[@"white2"];
@@ -226,6 +226,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZP_DetailsSistoryAwardController * DetailsSistoryAward = [[ZP_DetailsSistoryAwardController alloc]init];
     ZP_HistoryModel *model = self.newsData[indexPath.row];
+    DetailsSistoryAward.pollid = model.pollid;
     DetailsSistoryAward.title = [NSString stringWithFormat:@"第%@期",model.yyyy];
     [self.navigationController pushViewController:DetailsSistoryAward animated:YES];
     ZPLog(@"%ld",indexPath.row);
