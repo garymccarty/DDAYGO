@@ -307,6 +307,9 @@
 		C47750851FBADDAA00AE8B3F /* ZP_HomePageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750841FBADDAA00AE8B3F /* ZP_HomePageModel.m */; };
 		C47750881FBAFC5D00AE8B3F /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750871FBAFC5D00AE8B3F /* Const.m */; };
 		C4780BEF1FD6A1F600DDE25D /* ZP_ShopManagementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */; };
+		C47901DC1FF7303C0027AABD /* JXPopoverAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C47901D71FF7303C0027AABD /* JXPopoverAction.m */; };
+		C47901DD1FF7303C0027AABD /* JXPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = C47901D91FF7303C0027AABD /* JXPopoverView.m */; };
+		C47901DE1FF7303C0027AABD /* JXPopoverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C47901DB1FF7303C0027AABD /* JXPopoverViewCell.m */; };
 		C479C6A01FE3CB5800A58A2A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C479C6891FE3CB5800A58A2A /* LICENSE */; };
 		C479C6A11FE3CB5800A58A2A /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C68D1FE3CB5800A58A2A /* MJExtensionConst.m */; };
 		C479C6A21FE3CB5800A58A2A /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = C479C68F1FE3CB5800A58A2A /* MJFoundation.m */; };
@@ -389,7 +392,6 @@
 		C4C4D1471FF64A810075D8D8 /* SupplierViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D1451FF64A810075D8D8 /* SupplierViewCell2.xib */; };
 		C4C4D1531FF6823D0075D8D8 /* Supplier1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D1511FF6823D0075D8D8 /* Supplier1ViewController.m */; };
 		C4C4D1541FF6823D0075D8D8 /* Supplier1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4C4D1521FF6823D0075D8D8 /* Supplier1ViewController.xib */; };
-		C4C4D1571FF6926E0075D8D8 /* SupplierView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C4D1561FF6926E0075D8D8 /* SupplierView.m */; };
 		C4D2FEA71FD519A100F546AB /* ZP_QrCodeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */; };
 		C4D2FEB31FD552A000F546AB /* YueTixianController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D2FEB11FD552A000F546AB /* YueTixianController.m */; };
 		C4D2FEB41FD552A000F546AB /* YueTixianController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D2FEB21FD552A000F546AB /* YueTixianController.xib */; };
@@ -968,6 +970,12 @@
 		C47750871FBAFC5D00AE8B3F /* Const.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		C4780BED1FD6A1F600DDE25D /* ZP_ShopManagementModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ShopManagementModel.h; sourceTree = "<group>"; };
 		C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ShopManagementModel.m; sourceTree = "<group>"; };
+		C47901D61FF7303C0027AABD /* JXPopoverAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPopoverAction.h; sourceTree = "<group>"; };
+		C47901D71FF7303C0027AABD /* JXPopoverAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPopoverAction.m; sourceTree = "<group>"; };
+		C47901D81FF7303C0027AABD /* JXPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPopoverView.h; sourceTree = "<group>"; };
+		C47901D91FF7303C0027AABD /* JXPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPopoverView.m; sourceTree = "<group>"; };
+		C47901DA1FF7303C0027AABD /* JXPopoverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPopoverViewCell.h; sourceTree = "<group>"; };
+		C47901DB1FF7303C0027AABD /* JXPopoverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPopoverViewCell.m; sourceTree = "<group>"; };
 		C479C6891FE3CB5800A58A2A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C479C68B1FE3CB5800A58A2A /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		C479C68C1FE3CB5800A58A2A /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
@@ -1121,8 +1129,6 @@
 		C4C4D1501FF6823D0075D8D8 /* Supplier1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Supplier1ViewController.h; sourceTree = "<group>"; };
 		C4C4D1511FF6823D0075D8D8 /* Supplier1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Supplier1ViewController.m; sourceTree = "<group>"; };
 		C4C4D1521FF6823D0075D8D8 /* Supplier1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Supplier1ViewController.xib; sourceTree = "<group>"; };
-		C4C4D1551FF6926E0075D8D8 /* SupplierView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SupplierView.h; sourceTree = "<group>"; };
-		C4C4D1561FF6926E0075D8D8 /* SupplierView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SupplierView.m; sourceTree = "<group>"; };
 		C4D2FEA51FD519A100F546AB /* ZP_QrCodeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_QrCodeModel.h; sourceTree = "<group>"; };
 		C4D2FEA61FD519A100F546AB /* ZP_QrCodeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_QrCodeModel.m; sourceTree = "<group>"; };
 		C4D2FEB01FD552A000F546AB /* YueTixianController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YueTixianController.h; sourceTree = "<group>"; };
@@ -1542,6 +1548,7 @@
 		065099C51F62334F002F62D4 /* Method */ = {
 			isa = PBXGroup;
 			children = (
+				C47901D51FF7303C0027AABD /* JXPopoverView */,
 				C479C6881FE3CB5800A58A2A /* MJExtension */,
 				C482B26D1FC2834600D7539F /* Encapsulate-UI-Class */,
 				C47096B01FB0712D006EA52C /* Language */,
@@ -2408,8 +2415,6 @@
 				C4C4D1431FF64A810075D8D8 /* SupplierViewCell2.h */,
 				C4C4D1441FF64A810075D8D8 /* SupplierViewCell2.m */,
 				C4C4D1451FF64A810075D8D8 /* SupplierViewCell2.xib */,
-				C4C4D1551FF6926E0075D8D8 /* SupplierView.h */,
-				C4C4D1561FF6926E0075D8D8 /* SupplierView.m */,
 			);
 			path = SupplierCell;
 			sourceTree = "<group>";
@@ -3088,6 +3093,19 @@
 				C4780BEE1FD6A1F600DDE25D /* ZP_ShopManagementModel.m */,
 			);
 			path = ZP_ShopManagementModel;
+			sourceTree = "<group>";
+		};
+		C47901D51FF7303C0027AABD /* JXPopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				C47901D61FF7303C0027AABD /* JXPopoverAction.h */,
+				C47901D71FF7303C0027AABD /* JXPopoverAction.m */,
+				C47901D81FF7303C0027AABD /* JXPopoverView.h */,
+				C47901D91FF7303C0027AABD /* JXPopoverView.m */,
+				C47901DA1FF7303C0027AABD /* JXPopoverViewCell.h */,
+				C47901DB1FF7303C0027AABD /* JXPopoverViewCell.m */,
+			);
+			path = JXPopoverView;
 			sourceTree = "<group>";
 		};
 		C479C6881FE3CB5800A58A2A /* MJExtension */ = {
@@ -4064,6 +4082,7 @@
 				C47BBBF51FE510950000FFE6 /* ZP_DetailsSistoryAwardMOdel.m in Sources */,
 				C42A17411FF2532400680F92 /* BetTableViewMyCell2.m in Sources */,
 				C40763711FF50E9A00180975 /* IQTableView.m in Sources */,
+				C47901DC1FF7303C0027AABD /* JXPopoverAction.m in Sources */,
 				06621DAD1F9758720030983F /* TextView.m in Sources */,
 				C420EDE81FF3D7E9005ECE30 /* CALayer+UIColor.m in Sources */,
 				C425BEB41FC832140097DB8F /* ZP_FootprintModel.m in Sources */,
@@ -4080,6 +4099,7 @@
 				C472F1381FE29A060031D7B5 /* ZP_CheckMoreCell.m in Sources */,
 				06F571D91F9F1A7900D61FDB /* AddressViewController.m in Sources */,
 				C45F233C1FA0757A00F5DB41 /* ZeroViewCell.m in Sources */,
+				C47901DE1FF7303C0027AABD /* JXPopoverViewCell.m in Sources */,
 				064449AF1F6A9B250004DFE4 /* MJRefreshBackGifFooter.m in Sources */,
 				06418F531F7A076A00479523 /* MASLayoutConstraint.m in Sources */,
 				064249861F99FBEB00340EBA /* PayFailController.m in Sources */,
@@ -4111,6 +4131,7 @@
 				C4535E341FC55EA200DFFD62 /* ZP_ExpressDeliveryCell.m in Sources */,
 				C47750851FBADDAA00AE8B3F /* ZP_HomePageModel.m in Sources */,
 				C4D2FEA71FD519A100F546AB /* ZP_QrCodeModel.m in Sources */,
+				C47901DD1FF7303C0027AABD /* JXPopoverView.m in Sources */,
 				06F5721C1F9F1E8700D61FDB /* AllCategoriesView.m in Sources */,
 				06F571AB1F9F193300D61FDB /* QRCodeReaderView.m in Sources */,
 				C4535E421FC56A0000DFFD62 /* ZP_MessageViewCell.m in Sources */,
@@ -4223,7 +4244,6 @@
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
 				C46B9F4F1FDE764000942750 /* ZP_ExtractModel.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,
-				C4C4D1571FF6926E0075D8D8 /* SupplierView.m in Sources */,
 				C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */,
 				C479C6A21FE3CB5800A58A2A /* MJFoundation.m in Sources */,
 				C47E76321FB5A1C7009F279A /* DetailedController.m in Sources */,
