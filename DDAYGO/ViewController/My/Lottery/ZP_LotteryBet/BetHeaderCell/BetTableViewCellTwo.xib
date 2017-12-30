@@ -18,14 +18,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="45.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXf-zP-vA2">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXf-zP-vA2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="67e-ve-bmg"/>
+                        </constraints>
                     </view>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mkD-wl-XK5">
-                        <rect key="frame" x="207" y="12" width="80" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mkD-wl-XK5">
+                        <rect key="frame" x="210" y="12" width="80" height="20"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3X-PV-juf">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -70,15 +71,27 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Gpy-uj-NkM"/>
+                            <constraint firstAttribute="height" constant="20" id="pKg-u0-lXr"/>
+                        </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-5e-dph">
-                        <rect key="frame" x="295" y="12" width="19" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lih-5e-dph">
+                        <rect key="frame" x="296" y="12" width="19" height="22"/>
                         <state key="normal" image="icon_lottery_trash_pressed">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Lih-5e-dph" firstAttribute="leading" secondItem="mkD-wl-XK5" secondAttribute="trailing" constant="6" id="6Xx-vT-6UN"/>
+                    <constraint firstItem="LXf-zP-vA2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CUq-DT-ijO"/>
+                    <constraint firstItem="LXf-zP-vA2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Oer-fl-BdQ"/>
+                    <constraint firstItem="Lih-5e-dph" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PeF-8S-CnX"/>
+                    <constraint firstAttribute="trailing" secondItem="LXf-zP-vA2" secondAttribute="trailing" id="VDK-yb-Kz3"/>
+                    <constraint firstItem="mkD-wl-XK5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="W8Y-lF-A8V"/>
+                    <constraint firstAttribute="trailing" secondItem="Lih-5e-dph" secondAttribute="trailing" constant="5" id="s48-hD-tBS"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="deleBut" destination="Lih-5e-dph" id="2gm-9Q-6FI"/>
@@ -87,7 +100,7 @@
                 <outlet property="jianBut" destination="b3X-PV-juf" id="Pg7-S1-rJW"/>
                 <outlet property="shuliangLabel" destination="p5C-kD-KKU" id="Qdo-nD-ocK"/>
             </connections>
-            <point key="canvasLocation" x="35" y="59"/>
+            <point key="canvasLocation" x="-140" y="55"/>
         </tableViewCell>
     </objects>
     <resources>

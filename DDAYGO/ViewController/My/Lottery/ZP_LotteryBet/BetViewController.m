@@ -332,10 +332,9 @@
             NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
             if (self.dicArray.count > 0) {
 //                [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
-                [self.tableView reloadMoveToBottom];
+                [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
             }else{
-//                [self.tableView reloadData];
-                [self.tableView reloadMoveToBottom];
+                [self.tableView reloadData];
             }
         }
     }
@@ -347,11 +346,11 @@
 - (IBAction)suijiBut:(id)sender {
     self.array1 = [NSMutableArray array];
     for (int i = 0; i< 5; i++) {
-        int i = arc4random_uniform(69);
+        int i = arc4random_uniform(70);
         [self.array1 addObject:[NSNumber numberWithInt:i]];
     }
 //    self.tableHeadView1.BallLabel.text  = [NSString stringWithFormat:@"%ld",self.array1.count];
-    int a = arc4random_uniform(26);
+    int a = arc4random_uniform(27);
      self.arrayT = [NSMutableArray array];
     [self.arrayT addObject:[NSNumber numberWithInt:a+ 100]];
 //    _label3.text  = [NSString stringWithFormat:@"%ld",self.arrayT.count];

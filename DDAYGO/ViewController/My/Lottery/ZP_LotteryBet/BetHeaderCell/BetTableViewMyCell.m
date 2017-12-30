@@ -31,7 +31,7 @@
                 return;
             }
             UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-            but.frame = CGRectMake(j * ZP_Width / 8, i * ZP_Width / 8, 30, 30);
+            but.frame = CGRectMake(j * ZP_Width / 8 + (ZP_Width / 8 - 30) / 2, i * ZP_Width / 8 + (ZP_Width / 8 - 30) / 2, 30, 30);
             but.titleLabel.font = ZP_TrademarkFont;
             [but setBackgroundImage:[UIImage imageNamed:@"bg_choose_whiteball_normal"] forState:UIControlStateNormal];
      
@@ -44,9 +44,9 @@
                 }
             }];
 
-            [but setTitle:[NSString stringWithFormat:@"%ld",num] forState:UIControlStateNormal];
+            [but setTitle:[NSString stringWithFormat:@"%02ld",(long)num + 1] forState:UIControlStateNormal];
             [but setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            but.titleEdgeInsets = UIEdgeInsetsMake(2.5, 2.5, 2.5, 2.5);
+//            but.titleEdgeInsets = UIEdgeInsetsMake(2.5, 2.5, 2.5, 2.5);
             
             
             [but addTarget:self action:@selector(butClick:) forControlEvents:UIControlEventTouchUpInside];

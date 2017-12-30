@@ -20,21 +20,31 @@
 - (void)updateCount:(NSArray *)arr {
 
     [self removeAllSubviews];
+    CGFloat value = ZP_Width-109-30*6;
+    CGFloat superHeight = self.contentView.frame.size.height;
     for (int i = 0; i < arr.count; i ++) {
-        
         UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
-        but.frame = CGRectMake(i * ZP_Width / 10,5, 35, 35);
+        
+        if (value > 6 * 5) {
+            but.frame = CGRectMake(i * 35,(superHeight-30)/2, 30, 30);
+        } else if (value > 0) {
+            but.frame = CGRectMake(i * (30 + value/5),(superHeight-30)/2, 30, 30);
+        } else {
+            but.frame = CGRectMake(i * (30 + value/5),(superHeight-(30 + value/5))/2, (30 + value/5), (30 + value/5));
+        }
+        
         [but setBackgroundImage:[UIImage imageNamed:@"bg_white_ball"] forState:UIControlStateNormal];
         [but setBackgroundImage:[UIImage imageNamed:@"bg_red_ball_receive"] forState:UIControlStateSelected];
         but.titleLabel.font = ZP_TrademarkFont;
         if ([arr[i] integerValue] > 99) {
             
-            [but setTitle:[NSString stringWithFormat:@"%ld",[arr[i] integerValue] - 100] forState:UIControlStateNormal];
+            [but setTitle:[NSString stringWithFormat:@"%02ld",[arr[i] integerValue] - 100] forState:UIControlStateNormal];
             but.selected = YES;
         }else{
             [but setTitle:[NSString stringWithFormat:@"%@",arr[i]] forState:UIControlStateNormal];}
         [but setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        but.titleEdgeInsets = UIEdgeInsetsMake(2.5, 2.5, 2.5, 2.5);
+        [but setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+//        but.titleEdgeInsets = UIEdgeInsetsMake(2.5, 2.5, 2.5, 2.5);
         [self.contentView addSubview:but];
         
     }

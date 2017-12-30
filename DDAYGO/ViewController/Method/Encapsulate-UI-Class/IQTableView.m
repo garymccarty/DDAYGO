@@ -65,8 +65,6 @@
     _autoCurrentOffset = NO;
     _autoMoveToBottom = YES;
     [self reloadData];
-    
-    
 }
 
 - (void)reloadMoveToBottomAnimated {
