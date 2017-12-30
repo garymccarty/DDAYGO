@@ -553,9 +553,12 @@ if (count == dataArray.count) {
 
 // 表头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
     ZP_CartsShopModel * model;
     if (nameArray.count > 0) {
         model = nameArray[section];
+    } else {
+        return nil;
     }
     UIView * myView = [[UIView alloc]init];
     self.tableView.tableHeaderView = myView; // 表头跟着cell一起滚动
@@ -603,10 +606,12 @@ if (count == dataArray.count) {
 //  设置表头高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-//    return 40;
     ZP_CartsShopModel * model = nameArray[section];
-    return model.array.count;
+    if (model.array.count > 0) {
+        return 40;
+    }
     
+    return 0.1;
 }
 
 /*

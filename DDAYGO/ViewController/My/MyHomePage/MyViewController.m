@@ -223,10 +223,36 @@
         ZPLog(@"%@",obj);
         ZP_MyHopageModel2 * model = [[ZP_MyHopageModel2 alloc]init];
         model.state = obj[@"state"];
+        
+        switch (model.state.integerValue) {
+            case 0:
+            {
+                model.stateString = @"已取消";
+            }
+                break;
+            case 2:
+            {
+                model.stateString = @"待审核";
+            }
+                break;
+            case 3:
+            {
+                model.stateString = @"已审核";
+            }
+                break;
+            case 7:
+            {
+                model.stateString = @"已退件";
+            }
+                break;
+                
+            default:
+                break;
+        }
         [self SupplierData:model];
-//        if ([_RequestStatusStr isEqualToString: [NSString stringWithFormat:@"%@",@"待审核"]]) {
-//            obj[@"state"] = @"2";
-//        }
+        if ([_RequestStatusStr isEqualToString: [NSString stringWithFormat:@"%@",@"待审核"]]) {
+            obj[@"state"] = @"2";
+        }
 //        if ([_RequestStatusStr isEqualToString:@"已审核"]) {
 //            obj[@"state"] = @"3";
 //        }
@@ -236,12 +262,12 @@
 //        if ([_RequestStatusStr isEqualToString:@"已取消"]) {
 //            obj[@"state"] = @"0";
 //        }
-        if ([obj[@"result"]isEqualToString:@"token_err"]) {
-            [SVProgressHUD showInfoWithStatus:@"令牌无效"];
-        }else
-            if ([obj[@"result"]isEqualToString:@"isagent"]) {
-                [SVProgressHUD showInfoWithStatus:@"账号是代理商不可申请供货商"];
-            }
+//        if ([obj[@"result"]isEqualToString:@"token_err"]) {
+//            [SVProgressHUD showInfoWithStatus:@"令牌无效"];
+//        }else
+//            if ([obj[@"result"]isEqualToString:@"isagent"]) {
+//                [SVProgressHUD showInfoWithStatus:@"账号是代理商不可申请供货商"];
+//            }
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
@@ -249,7 +275,7 @@
 
 - (void)SupplierData:(ZP_MyHopageModel2 *)model {
     
-    _RequestStatusLabel.text = [NSString stringWithFormat:@"%@",model.state];
+    _RequestStatusLabel.text = [NSString stringWithFormat:@"%@",model.stateString];
 }
 
 // UI

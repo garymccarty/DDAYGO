@@ -146,6 +146,7 @@
         ZPLog(@"%@",obj);
         ZP_HistoryModel * model = [[ZP_HistoryModel alloc]init];
         model.createtime = obj[@"createtime"];
+        model.yyyy = obj[@"yyyy"];
         [self WithHistoryAllData:model];
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
