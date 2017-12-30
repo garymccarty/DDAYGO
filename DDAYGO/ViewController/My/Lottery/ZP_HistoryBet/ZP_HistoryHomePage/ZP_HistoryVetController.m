@@ -112,7 +112,7 @@
     [myView setBackgroundColor:ZP_WhiteColor];
     //     订单
     ZP_GeneralLabel * OrderLabel = [ZP_GeneralLabel initWithtextLabel:_OrderLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    OrderLabel.text = @"订单号";
+    OrderLabel.text = @"";
     [myView addSubview:OrderLabel];
     _OrderLabel = OrderLabel;
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -124,7 +124,7 @@
     
     //     订单号
     ZP_GeneralLabel * OrderNumberLabel = [ZP_GeneralLabel initWithtextLabel:_OrderNumberLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    OrderNumberLabel.text = @"5678908765456";
+    OrderNumberLabel.text = @"";
     [myView addSubview:OrderNumberLabel];
     _OrderNumberLabel = OrderNumberLabel;
     [OrderNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -137,7 +137,7 @@
     //    领奖
     UIButton * button = [[UIButton alloc] init];
     button.backgroundColor = [UIColor redColor];
-    [myView addSubview:button];
+//    [myView addSubview:button];
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.trailing.equalTo(myView.mas_trailing).offset(-8);
         make.top.equalTo(myView.mas_top).offset(8);
@@ -157,12 +157,24 @@
     [ZP_MyTool requestHistoryPrize:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
         ZP_HistoryModel * model = [[ZP_HistoryModel alloc]init];
-        
-        NSDictionary *dic = [(NSArray *)obj[@"datalist"] firstObject];
-        model.createtime = dic[@"createtime"];
-        NSString *string = [NSString stringWithFormat:@"%@%@%@",dic[@"yyyy"],dic[@"mm"],dic[@"periods"]];
-        model.yyyy = @(string.integerValue);
+        for (NSDictionary *dic in obj[@"datalist"]) {
+            self.newsData = [NSMutableArray array];
+            ZP_HistoryModel * model = [[ZP_HistoryModel alloc]init];
+            model.white1 = dic[@"white1"];
+            model.white2 = dic[@"white2"];
+            model.white3 = dic[@"white3"];
+            model.white4 = dic[@"white4"];
+            model.white5 = dic[@"white5"];
+            model.powerball = dic[@"powerball"];
+            model.createtime = dic[@"createtime"];
+            [self.newsData addObject:model];
+        }
+//        self.newsData = obj[@"datalist"];
+        model = self.newsData.firstObject;
+//        NSString *string = [NSString stringWithFormat:@"%@%@%@",dic[@"yyyy"],dic[@"mm"],dic[@"periods"]];
+//        model.yyyy = @(string.integerValue);
         [self WithHistoryAllData:model];
+        [self.tableView reloadData];
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
@@ -181,7 +193,7 @@
     ZPLog(@"按钮");
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    return 2;
+    return 1;
 }
 
 /*设置标题头的宽度*/
@@ -198,15 +210,17 @@
 
 #pragma mark -- tableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.newsData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZP_HistoryBetCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ZP_HistoryBetCell"];
+    [cell HistoryBet:self.newsData[indexPath.row]];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZP_DetailsSistoryAwardController * DetailsSistoryAward = [[ZP_DetailsSistoryAwardController alloc]init];
     [self.navigationController pushViewController:DetailsSistoryAward animated:YES];
     ZPLog(@"%ld",indexPath.row);

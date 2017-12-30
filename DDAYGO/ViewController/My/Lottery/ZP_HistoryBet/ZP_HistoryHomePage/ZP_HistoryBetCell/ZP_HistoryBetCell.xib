@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,13 +18,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_forward_right" translatesAutoresizingMaskIntoConstraints="NO" id="icH-5f-n2w">
-                        <rect key="frame" x="296" y="7.5" width="8" height="15"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="68a-im-1Qa">
+                        <rect key="frame" x="0.0" y="33.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="15" id="HjJ-xN-uiE"/>
-                            <constraint firstAttribute="width" constant="8" id="nWf-kE-bxp"/>
+                            <constraint firstAttribute="height" constant="1" id="aRb-Z4-Hl4"/>
                         </constraints>
-                    </imageView>
+                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYE-9j-mvV">
                         <rect key="frame" x="8" y="0.0" width="30" height="30"/>
                         <constraints>
@@ -94,17 +93,18 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="68a-im-1Qa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4lt-dg-RkA"/>
                     <constraint firstItem="yKh-Da-rsf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-1" id="5ut-0n-vaS"/>
                     <constraint firstItem="zYE-9j-mvV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="C1J-Go-vP9"/>
                     <constraint firstItem="yKh-Da-rsf" firstAttribute="leading" secondItem="HDX-5u-q6z" secondAttribute="trailing" constant="8" id="Jj2-hs-hNL"/>
+                    <constraint firstAttribute="bottom" secondItem="68a-im-1Qa" secondAttribute="bottom" id="Kge-30-eOz"/>
                     <constraint firstItem="HDX-5u-q6z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-1" id="Khc-DO-oHu"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="icH-5f-n2w" secondAttribute="trailing" id="NFw-jT-5h2"/>
-                    <constraint firstItem="icH-5f-n2w" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-2.25" id="W3i-M3-UEg"/>
                     <constraint firstItem="JO5-Hf-oYV" firstAttribute="leading" secondItem="yKh-Da-rsf" secondAttribute="trailing" constant="8" id="YeH-VB-bgD"/>
                     <constraint firstItem="JO5-Hf-oYV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bNY-l0-lBN"/>
                     <constraint firstItem="zYE-9j-mvV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hCt-e9-QKs"/>
                     <constraint firstItem="HDX-5u-q6z" firstAttribute="leading" secondItem="zYE-9j-mvV" secondAttribute="trailing" constant="8" id="nGQ-kz-Igg"/>
                     <constraint firstItem="Qid-dU-l6H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tKJ-oj-HeM"/>
+                    <constraint firstAttribute="trailing" secondItem="68a-im-1Qa" secondAttribute="trailing" id="tKK-5c-ZtK"/>
                     <constraint firstItem="Qid-dU-l6H" firstAttribute="leading" secondItem="JO5-Hf-oYV" secondAttribute="trailing" constant="8" id="vmg-Qw-CIy"/>
                     <constraint firstItem="T8v-6d-6er" firstAttribute="leading" secondItem="Qid-dU-l6H" secondAttribute="trailing" constant="8" id="yB9-qf-zgm"/>
                     <constraint firstItem="T8v-6d-6er" firstAttribute="baseline" secondItem="Qid-dU-l6H" secondAttribute="baseline" id="yPM-wt-Whu"/>
@@ -118,12 +118,11 @@
                 <outlet property="button5" destination="Qid-dU-l6H" id="Id0-6p-8yv"/>
                 <outlet property="button6" destination="T8v-6d-6er" id="0X7-fz-HBH"/>
             </connections>
-            <point key="canvasLocation" x="34" y="47"/>
+            <point key="canvasLocation" x="34" y="46.5"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="bg_red_ball" width="32" height="32"/>
         <image name="bg_white_ball" width="32" height="32"/>
-        <image name="icon_forward_right" width="9" height="16"/>
     </resources>
 </document>

@@ -17,12 +17,12 @@
 }
 - (void)HistoryBet:(ZP_HistoryModel *)model {
 //    ZP_HistoryModel * model = [ZP_HistoryModel mj_objectWithKeyValues:model.pollid];
-    [_button1 setTitle:[model.white1 stringValue] forState:UIControlStateNormal];
-    [_button2 setTitle:[model.white2 stringValue] forState:UIControlStateNormal];
-    [_button3 setTitle:[model.white3 stringValue] forState:UIControlStateNormal];
-    [_button4 setTitle:[model.white4 stringValue] forState:UIControlStateNormal];
-    [_button5 setTitle:[model.white5 stringValue] forState:UIControlStateNormal];
-    [_button6 setTitle:[model.powerball stringValue] forState:UIControlStateNormal];
+    [_button1 setTitle:[NSString stringWithFormat:@"%02d",model.white1.intValue] forState:UIControlStateNormal];
+    [_button2 setTitle:[NSString stringWithFormat:@"%02d",model.white2.intValue] forState:UIControlStateNormal];
+    [_button3 setTitle:[NSString stringWithFormat:@"%02d",model.white3.intValue] forState:UIControlStateNormal];
+    [_button4 setTitle:[NSString stringWithFormat:@"%02d",model.white4.intValue] forState:UIControlStateNormal];
+    [_button5 setTitle:[NSString stringWithFormat:@"%02d",model.white5.intValue] forState:UIControlStateNormal];
+    [_button6 setTitle:[NSString stringWithFormat:@"%02d",model.powerball.intValue] forState:UIControlStateNormal];
 }
 
 @end
