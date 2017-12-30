@@ -167,6 +167,9 @@
             model.white5 = dic[@"white5"];
             model.powerball = dic[@"powerball"];
             model.createtime = dic[@"createtime"];
+            model.pollid = dic[@"pollid"];
+            NSString *string = [NSString stringWithFormat:@"%@%@%@",dic[@"yyyy"],dic[@"mm"],dic[@"periods"]];
+            model.yyyy = @(string.integerValue);
             [self.newsData addObject:model];
         }
 //        self.newsData = obj[@"datalist"];
@@ -222,6 +225,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     ZP_DetailsSistoryAwardController * DetailsSistoryAward = [[ZP_DetailsSistoryAwardController alloc]init];
+    ZP_HistoryModel *model = self.newsData[indexPath.row];
+    DetailsSistoryAward.title = [NSString stringWithFormat:@"第%@期",model.yyyy];
     [self.navigationController pushViewController:DetailsSistoryAward animated:YES];
     ZPLog(@"%ld",indexPath.row);
 }

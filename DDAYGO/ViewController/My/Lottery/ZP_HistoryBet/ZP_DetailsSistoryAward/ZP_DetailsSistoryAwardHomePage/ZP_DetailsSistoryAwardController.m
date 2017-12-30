@@ -10,6 +10,7 @@
 #import "ZP_DetailsSistoryAwardTableViewCell.h"
 #import "PrefixHeader.pch"
 #import "ZP_MyTool.h"
+#import "ZP_LotterModel.h"
 @interface ZP_DetailsSistoryAwardController ()<UITableViewDelegate, UITableViewDataSource>
 //@property (strong, nonatomic) IBOutlet UITableView * tableView;
 
@@ -27,15 +28,28 @@
 }
 
 - (void)initUI {
-    
-    self.title = NSLocalizedString(@"第2017135期", nil);
 //    self.titleArray = @[@"奖项",@"对中奖号数",@"本期各奖项金额",@"中奖数",@"赏金金额"];
     self.tableview.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
     [self.tableview registerNib:[UINib nibWithNibName:@"ZP_DetailsSistoryAwardTableViewCell" bundle:nil] forCellReuseIdentifier:@"ZP_DetailsSistoryAwardTableViewCell"];
-//    [self AllData];
+    [self getData];
 }
 
-
+- (void)getData {
+    [ZP_MyTool requestLotterypoolwininfo:nil uccess:^(id obj) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
+    [ZP_MyTool getPrizeInfo:^(id obj) {
+        ZPLog(@"%@",obj);
+        //这个是一次的数据
+//        ZP_LotterModel * model = [ZP_LotterModel mj_objectWithKeyValues:obj];
+//        self.prizeDic = obj;
+//        [self updateData:model];
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 #pragma mark -- tableview delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

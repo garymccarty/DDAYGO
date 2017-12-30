@@ -770,16 +770,15 @@
                         <constraint firstItem="Kmc-Cc-mig" firstAttribute="top" secondItem="UyV-al-GmU" secondAttribute="bottom" id="CCL-zH-C1e"/>
                         <constraint firstItem="UyV-al-GmU" firstAttribute="leading" secondItem="kNW-LK-4Wb" secondAttribute="leading" id="FiB-Yx-Sh8"/>
                         <constraint firstItem="UyV-al-GmU" firstAttribute="top" secondItem="kNW-LK-4Wb" secondAttribute="top" id="ODv-Rx-HiD"/>
+                        <constraint firstItem="ggk-NA-BjG" firstAttribute="leading" secondItem="kNW-LK-4Wb" secondAttribute="leading" id="YjO-sx-8xq"/>
                         <constraint firstItem="VKM-fM-fKb" firstAttribute="leading" secondItem="kNW-LK-4Wb" secondAttribute="leading" constant="8" id="buc-HZ-nwp"/>
                         <constraint firstItem="VKM-fM-fKb" firstAttribute="top" secondItem="Kmc-Cc-mig" secondAttribute="bottom" constant="8" id="hHM-Ui-8mQ"/>
-                        <constraint firstAttribute="trailing" secondItem="ggk-NA-BjG" secondAttribute="trailing" id="hPn-CT-shX"/>
+                        <constraint firstAttribute="trailing" secondItem="ggk-NA-BjG" secondAttribute="trailing" id="hc9-m9-mfv"/>
                         <constraint firstAttribute="trailing" secondItem="Kmc-Cc-mig" secondAttribute="trailing" id="iMu-pq-eS1"/>
-                        <constraint firstItem="ggk-NA-BjG" firstAttribute="top" secondItem="VKM-fM-fKb" secondAttribute="bottom" constant="8" id="iW2-tC-fIL"/>
                         <constraint firstItem="UyV-al-GmU" firstAttribute="centerX" secondItem="kNW-LK-4Wb" secondAttribute="centerX" id="jlD-tu-fZj"/>
                         <constraint firstItem="Kmc-Cc-mig" firstAttribute="leading" secondItem="kNW-LK-4Wb" secondAttribute="leading" id="lsi-wH-c1b"/>
-                        <constraint firstAttribute="bottom" secondItem="ggk-NA-BjG" secondAttribute="bottom" id="nIA-57-fT9"/>
-                        <constraint firstItem="ggk-NA-BjG" firstAttribute="leading" secondItem="kNW-LK-4Wb" secondAttribute="leading" id="rXL-54-pNU"/>
-                        <constraint firstItem="ggk-NA-BjG" firstAttribute="centerX" secondItem="kNW-LK-4Wb" secondAttribute="centerX" id="ziG-Nm-7nC"/>
+                        <constraint firstItem="ggk-NA-BjG" firstAttribute="top" secondItem="VKM-fM-fKb" secondAttribute="bottom" constant="8" id="m8B-9y-akm"/>
+                        <constraint firstAttribute="bottom" secondItem="ggk-NA-BjG" secondAttribute="bottom" id="xvF-QI-7tf"/>
                     </constraints>
                 </scrollView>
             </subviews>
@@ -794,7 +793,7 @@
         </view>
     </objects>
     <resources>
-        <image name="bg_red_ball_receive" width="39" height="39"/>
-        <image name="bg_white_ball_receive" width="39" height="39"/>
+        <image name="bg_red_ball_receive" width="32" height="32"/>
+        <image name="bg_white_ball_receive" width="32" height="32"/>
     </resources>
 </document>

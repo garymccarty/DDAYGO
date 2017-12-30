@@ -69,5 +69,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *OrderNumberLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView * tableview;
+@property (strong ,nonatomic) NSNumber *pollid;
 
 @end

@@ -70,6 +70,12 @@
 // 获取历史开奖
 + (void)requestHistoryPrize:(NSDictionary *)HistoryPrize uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+// 获取某期开奖信息
++ (void)requestLotterypoolwininfo:(NSDictionary *)HistoryPrize uccess:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
+// 获取本期促销彩信息
++ (void)requestLotterynow:(NSString *)token uccess:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
+
 // 获取本期下注查看更多
 + (void)requseMoreMore:(NSDictionary *)MoreMore uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
