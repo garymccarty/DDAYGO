@@ -145,7 +145,6 @@
             [position showInView:self.navigationController.view];
         }
     } else {
-//        return;
         ZPLog(@"已登錄");
     }
     

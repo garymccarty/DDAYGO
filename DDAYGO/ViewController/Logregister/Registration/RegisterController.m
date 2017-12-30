@@ -16,7 +16,7 @@
 #import "ZP_HomeTool.h"
 #import "ZP_PositionModel.h"
 #import "RegistrationAgreementController.h"
-@interface RegisterController () <UITextFieldDelegate>{
+@interface RegisterController (){
     UIButton * _chooseCityBtn;
 }
 @property (weak, nonatomic) IBOutlet TextView * ZPAccountNumberTextFiled; // 账号
@@ -36,10 +36,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    _ZPAccountNumberTextFiled.textField.delegate = self;
-    _ZPPswTextField.textField.delegate = self;
-    _ZPEmailTextFiled.textField.delegate = self;
-    [self touchesBegan]; //触摸事件
     self.title = @"注册";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.RegisterscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
@@ -63,7 +59,6 @@
     _ZPEmailTextFiled.textField.keyboardType = UIKeyboardTypeASCIICapable;
     [_ZPCountryTextField.functionBtn setTitle:@"点击选择" forState:UIControlStateNormal];
     [_ZPCountryTextField.functionBtn addTarget:self action:@selector(choseCountry) forControlEvents:UIControlEventTouchUpInside];
-    _ZPCountryTextField.textField.delegate = self;
     
     _ZPPswTextField.showBtn                    = NO;
     _ZPPswTextField.showEyeBtn                 = YES;
@@ -279,62 +274,6 @@
     
     return result;
     
-}
-
-//  安全输入
--(void)secureTextEntry {
-    
-    _ZPPswTextField.textField.secureTextEntry = !_ZPPswTextField.textField.secureTextEntry;
-    
-    if (_ZPPswTextField.textField.secureTextEntry) {
-        [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_close.png"] forState:UIControlStateNormal];
-    }else {
-        
-        [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_open.png"] forState:UIControlStateNormal];
-    }
-}
-
-/***********鍵盤************/
--(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
-    [UIView animateWithDuration:0.4 animations:^{
-        self.RegisterscrollView.contentOffset = CGPointMake(0, ZP_Width - 210);
-    }];
-    
-}
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.RegisterscrollView.contentOffset = CGPointMake(0, 0);
-    }];
-    
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.RegisterscrollView endEditing:YES];
-}
-
-//隐藏键盘
-- (void)keyboardWillHide:(NSNotification *)notification {
-    //将contentInset的值设回原来的默认值
-    UIEdgeInsets e = UIEdgeInsetsMake(0, 0, 0, 0);
-    [self.RegisterscrollView setContentInset:e];
-    
-    NSLog(@"scrollView.height = %f", self.RegisterscrollView.contentSize.height);
-}
-
-// 键盘触摸
-- (void)touchesBegan {
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
-    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
-    tapGestureRecognizer.cancelsTouchesInView = NO;
-    //将触摸事件添加到当前view
-    [self.view addGestureRecognizer:tapGestureRecognizer];
-    
-}
-// 触发事件
--(void)keyboardHide:(UITapGestureRecognizer*)tap {
-    [_ZPAccountNumberTextFiled.textField resignFirstResponder];
-     [_ZPPswTextField.textField resignFirstResponder];
-     [_ZPEmailTextFiled.textField resignFirstResponder];
 }
 
 //  MD5加密方法

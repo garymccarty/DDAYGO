@@ -11,7 +11,7 @@
 #import "PrefixHeader.pch"
 #import "UINavigationBar+Awesome.h"
 #import "ZP_LoginTool.h"
-@interface ForgetPswController ()<UITextFieldDelegate>
+@interface ForgetPswController ()
 @property (weak, nonatomic) IBOutlet TextView * ZPEmailTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPCodeTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self touchesBegan];
     [self secureTextEntry];
     _ForgetPswscrollView.bounces = NO;
     [self initUI];
@@ -38,10 +37,6 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.ForgetPswscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
-    self.ZPEmailTextField.textField.delegate = self;
-    self.ZPCodeTextField.textField.delegate = self;
-    self.ZPPswTextField.textField.delegate = self;
-    self.ZPConPswTextField.textField.delegate = self;
     self.ZPEmailTextField.textField.keyboardType =  UIKeyboardTypeASCIICapable;
     self.ZPCodeTextField.textField.keyboardType =  UIKeyboardTypeNumberPad;
     self.ZPPswTextField.textField.keyboardType = UIKeyboardTypeDefault;
@@ -173,48 +168,6 @@
         [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_open.png"] forState:UIControlStateNormal];
     }
 }
-
-/***********鍵盤************/
--(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
-    [UIView animateWithDuration:0.4 animations:^{
-        self.ForgetPswscrollView.contentOffset = CGPointMake(0, ZP_Width - 210);
-    }];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.ForgetPswscrollView.contentOffset = CGPointMake(0, 0);
-    }];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.ForgetPswscrollView endEditing:YES];
-}
-
-//隐藏键盘
-- (void)keyboardWillHide:(NSNotification *)notification {
-    //将contentInset的值设回原来的默认值
-    UIEdgeInsets e = UIEdgeInsetsMake(0, 0, 0, 0);
-    [self.ForgetPswscrollView setContentInset:e];
-}
-
-// 键盘触摸
-- (void)touchesBegan {
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
-    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
-    tapGestureRecognizer.cancelsTouchesInView = NO;
-    //将触摸事件添加到当前view
-    [self.view addGestureRecognizer:tapGestureRecognizer];
-    
-}
-// 触发事件
--(void)keyboardHide:(UITapGestureRecognizer*)tap {
-    [_ZPEmailTextField.textField resignFirstResponder];
-    [_ZPCodeTextField.textField resignFirstResponder];
-    [_ZPPswTextField.textField resignFirstResponder];
-    [_ZPConPswTextField.textField resignFirstResponder];
-}
-
 //  MD5加密方法
 -(NSString *)md5:(NSString *)input {
     const char * cStr = [input UTF8String];

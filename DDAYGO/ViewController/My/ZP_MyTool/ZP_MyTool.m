@@ -291,8 +291,10 @@
 }
 
 // 获取组织形状
-+ (void)requestCompanyType:(NSString *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure {
-    [ZP_NetorkingTools GET:@"http://www.ddaygo.com/api/Test/getcompanytype?countrycode=886" parameters:nil success:^(id responseObject) {
++ (void)requestCompanyType:(NSDictionary *)CompanyType success:(void (^)(id))success failure:(void (^)(NSError *))failure; {
+    NSString * str = [NSString stringWithFormat:@"%@getcompanytype?countrycode=%@",URLAPI,CompanyType[@"countrycode"]];
+    NSString * Urlstring = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [ZP_NetorkingTools GET:Urlstring parameters:nil success:^(id responseObject) {
         success(responseObject);
     } failure:^(NSError * error) {
         failure(error);

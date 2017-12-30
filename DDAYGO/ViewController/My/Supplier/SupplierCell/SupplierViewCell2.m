@@ -27,8 +27,6 @@
         position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
             NSLog(@"c = %@",ContStr);
         };
-        //  显示
-        [position showInView:self];
     }
     [[NSNotificationCenter defaultCenter]postNotificationName:@"position" object:nil];
 }

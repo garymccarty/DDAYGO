@@ -18,14 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self touchesBegan];
     self.title = @"ICUC绑定";
     self.PassWordtextField.secureTextEntry = YES;
     _AccountnumbertextField.keyboardType = UIKeyboardTypeASCIICapable;
     self.AccountnumbertextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-    self.AccountnumbertextField.delegate = self;
     self.PassWordtextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
-    self.PassWordtextField.delegate = self;
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.BindingICUEscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
 }
@@ -109,21 +106,6 @@
     
     _PassWordtextField.secureTextEntry = sender.selected;
     sender.selected =!sender.selected;
-}
-
-// 键盘触摸
-- (void)touchesBegan {
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
-    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
-    tapGestureRecognizer.cancelsTouchesInView = NO;
-    //将触摸事件添加到当前view
-    [self.view addGestureRecognizer:tapGestureRecognizer];
-    
-}
-// 触发事件
--(void)keyboardHide:(UITapGestureRecognizer*)tap {
-    [self.AccountnumbertextField resignFirstResponder];
-    [self.PassWordtextField resignFirstResponder];
 }
 
 @end

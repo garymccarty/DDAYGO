@@ -89,7 +89,7 @@
 + (void)requestSupplier:(NSDictionary *)Suppliers success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 获取组织形状
-+ (void)requestCompanyType:(NSDictionary *)token success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;
++ (void)requestCompanyType:(NSDictionary *)CompanyType success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 // 添加供货商申请
 + (void)requestSupplierRequest:(NSDictionary *)SupplierRequest success:(void (^)(id obj))success failure:(void (^)(NSError *error))failure;

@@ -13,7 +13,7 @@
 #import "ZP_HomeTool.h"
 #import "ZP_PositionModel.h"
 #import "UINavigationBar+Awesome.h"
-@interface ZP_QuickLoginController ()<UITextFieldDelegate>
+@interface ZP_QuickLoginController ()
 
 @property (weak, nonatomic) IBOutlet TextView * ZPEmailTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
@@ -27,9 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.ZPEmailTextField.textField.delegate = self;
-    self.ZPPswTextField.textField.delegate = self;
-    [self touchesBegan];
     [self initUI];
 }
 
@@ -252,36 +249,4 @@
     return output;
 }
 
-/***********鍵盤************/
--(void)textFieldDidBeginEditing:(UITextField *)textField{// 文本编辑开始时
-    [UIView animateWithDuration:0.4 animations:^{
-        self.QuickLoginscrollView.contentOffset = CGPointMake(0, ZP_Width - 210);
-    }];
-    
-}
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    [UIView animateWithDuration:0.3 animations:^{
-        self.QuickLoginscrollView.contentOffset = CGPointMake(0, 0);
-    }];
-    
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.QuickLoginscrollView endEditing:YES];
-}
-
-// 键盘触摸
-- (void)touchesBegan {
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
-    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
-    tapGestureRecognizer.cancelsTouchesInView = NO;
-    //将触摸事件添加到当前view
-    [self.view addGestureRecognizer:tapGestureRecognizer];
-    
-}
-// 触发事件
--(void)keyboardHide:(UITapGestureRecognizer*)tap {
-    [_ZPEmailTextField.textField resignFirstResponder];
-    [_ZPPswTextField.textField resignFirstResponder];
-}
 @end
