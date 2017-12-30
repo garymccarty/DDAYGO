@@ -178,7 +178,7 @@
     dic[@"nonce"] = @(i);
 //    dic[@"nonce"] = @"adf";
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
-//        ZPLog(@"%@",obj);
+        ZPLog(@"%@",obj);
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.nickname = obj[@"nickname"];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
@@ -250,9 +250,9 @@
                 break;
         }
         [self SupplierData:model];
-        if ([_RequestStatusStr isEqualToString: [NSString stringWithFormat:@"%@",@"待审核"]]) {
-            obj[@"state"] = @"2";
-        }
+//        if ([_RequestStatusStr isEqualToString: [NSString stringWithFormat:@"%@",@"待审核"]]) {
+//            obj[@"state"] = @"2";
+//        }
 //        if ([_RequestStatusStr isEqualToString:@"已审核"]) {
 //            obj[@"state"] = @"3";
 //        }

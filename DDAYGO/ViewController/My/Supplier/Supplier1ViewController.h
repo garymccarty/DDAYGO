@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface Supplier1ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView * tableView;
 
+@property (weak, nonatomic) IBOutlet UILabel *LocationLabel; // 地区Label
 
 
 @end

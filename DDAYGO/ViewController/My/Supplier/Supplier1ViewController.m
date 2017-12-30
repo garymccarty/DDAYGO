@@ -15,11 +15,9 @@
 @interface Supplier1ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong)NSArray * array;
 @property (nonatomic, strong)NSArray * postionArray;
-
 @property (nonatomic, strong) NSString *seleStr;
 @property (nonatomic, strong) NSMutableArray *typeNameArray;
 @property (nonatomic, strong) NSMutableArray *typeIdArray;
-
 @property (nonatomic, strong) NSMutableDictionary *dataDic;
 
 @end
@@ -44,6 +42,15 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"SupplierViewCell2" bundle:nil] forCellReuseIdentifier:@"SupplierViewCell2"];
     
     _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
+    _LocationLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
+    switch ([[[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"] integerValue]) {
+        case 886:
+            _LocationLabel.text = @"臺灣";
+            break;
+            
+        default:
+            break;
+    }
 }
 // 提交按钮
 - (IBAction)SubmitBut:(id)sender {
@@ -98,6 +105,7 @@
     //    dic[@"companyproduct"] = @"你好吗";
     //    dic[@"projectinfo"] = @"你好你好";
     [ZP_MyTool requestSupplierRequest:dic success:^(id obj) {
+        
         ZPLog(@"%@",obj);
     } failure:^(NSError *error) {
         ZPLog(@"%@",error);
@@ -191,9 +199,7 @@
     
 }
 
-- (void)actBut:(UIButton *)but{
-    
-    
+- (void)actBut:(UIButton *)but {
     JXPopoverView *popoverView = [JXPopoverView popoverView];
     NSMutableArray *titleArray = [NSMutableArray array];
     for (int i = 0; i < self.typeNameArray.count; i ++) {
