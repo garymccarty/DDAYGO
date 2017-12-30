@@ -192,6 +192,7 @@
 		C409F8721FA1758E009DE7B1 /* ZP_SixthModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F8711FA1758E009DE7B1 /* ZP_SixthModel.m */; };
 		C409F8901FA1E280009DE7B1 /* ZP_ZeroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F88F1FA1E280009DE7B1 /* ZP_ZeroModel.m */; };
 		C4137E811FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */; };
+		C41CBE2F1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CBE2E1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m */; };
 		C420EDE51FF3D397005ECE30 /* UIViewController+LLProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */; };
 		C420EDE81FF3D7E9005ECE30 /* CALayer+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE71FF3D7E9005ECE30 /* CALayer+UIColor.m */; };
 		C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA51FC813C30097DB8F /* FSPageContentView.m */; };
@@ -746,6 +747,8 @@
 		C409F88F1FA1E280009DE7B1 /* ZP_ZeroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_ZeroModel.m; sourceTree = "<group>"; };
 		C4137E7F1FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_FrontPageReceivingAddressModel.h; sourceTree = "<group>"; };
 		C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_FrontPageReceivingAddressModel.m; sourceTree = "<group>"; };
+		C41CBE2D1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryHistoricalBettingNumberModel.h; sourceTree = "<group>"; };
+		C41CBE2E1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryHistoricalBettingNumberModel.m; sourceTree = "<group>"; };
 		C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LLProgress.m"; sourceTree = "<group>"; };
 		C420EDE41FF3D397005ECE30 /* UIViewController+LLProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LLProgress.h"; sourceTree = "<group>"; };
 		C420EDE61FF3D7E9005ECE30 /* CALayer+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+UIColor.h"; sourceTree = "<group>"; };
@@ -2363,6 +2366,15 @@
 			path = ZP_FrontPageReceivingAddress;
 			sourceTree = "<group>";
 		};
+		C41CBE2C1FF7EE9600F9B227 /* ZP_LotteryHistoricalBettingNumberModel */ = {
+			isa = PBXGroup;
+			children = (
+				C41CBE2D1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.h */,
+				C41CBE2E1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m */,
+			);
+			path = ZP_LotteryHistoricalBettingNumberModel;
+			sourceTree = "<group>";
+		};
 		C425BEA31FC813C30097DB8F /* OrderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -3695,6 +3707,7 @@
 				C4D9E7051FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.m */,
 				C4D9E7061FE769F0000D2413 /* ZP_LotteryHistoricalBettingNumberController.xib */,
 				C4D9E7091FE76A0C000D2413 /* ZP_LotteryHistoricalBettingNumberCell */,
+				C41CBE2C1FF7EE9600F9B227 /* ZP_LotteryHistoricalBettingNumberModel */,
 			);
 			path = LotteryHistoricalBettingNumber;
 			sourceTree = "<group>";
@@ -4202,6 +4215,7 @@
 				064449AC1F6A9B250004DFE4 /* MJRefreshAutoGifFooter.m in Sources */,
 				06621D9A1F9757B40030983F /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				C45F22CD1FA05A8E00F5DB41 /* ThemeManager.m in Sources */,
+				C41CBE2F1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m in Sources */,
 				065B3CDE1F984F8A00A8E6D6 /* TAAnimatedDotView.m in Sources */,
 				C47E76451FB5A1C7009F279A /* ShoplntroductionCell.m in Sources */,
 				C479C6A41FE3CB5800A58A2A /* MJPropertyKey.m in Sources */,

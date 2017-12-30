@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,7 +24,7 @@
                             <constraint firstAttribute="width" constant="30" id="01y-Ew-tNd"/>
                             <constraint firstAttribute="height" constant="30" id="06R-Wp-ruL"/>
                         </constraints>
-                        <state key="normal" title="1" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="1" backgroundImage="bg_white_ball_receive">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
@@ -34,7 +34,7 @@
                             <constraint firstAttribute="width" constant="30" id="86Q-p6-3xa"/>
                             <constraint firstAttribute="height" constant="30" id="Dan-kW-RIH"/>
                         </constraints>
-                        <state key="normal" title="1" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="1" backgroundImage="bg_white_ball_receive">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
@@ -44,7 +44,7 @@
                             <constraint firstAttribute="height" constant="30" id="Ss0-bK-Y11"/>
                             <constraint firstAttribute="width" constant="30" id="n9v-9V-GPT"/>
                         </constraints>
-                        <state key="normal" title="1" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="1" backgroundImage="bg_white_ball_receive">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
@@ -54,7 +54,7 @@
                             <constraint firstAttribute="height" constant="30" id="9a6-vp-7NB"/>
                             <constraint firstAttribute="width" constant="30" id="JRa-7J-Af7"/>
                         </constraints>
-                        <state key="normal" title="1" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="1" backgroundImage="bg_white_ball_receive">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
@@ -64,7 +64,7 @@
                             <constraint firstAttribute="height" constant="30" id="HOz-sM-zNv"/>
                             <constraint firstAttribute="width" constant="30" id="uIu-l9-5Mn"/>
                         </constraints>
-                        <state key="normal" title="1" backgroundImage="bg_choose_whiteball_pressed">
+                        <state key="normal" title="1" backgroundImage="bg_white_ball_receive">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
@@ -74,8 +74,8 @@
                             <constraint firstAttribute="width" constant="30" id="6T5-Ip-OPY"/>
                             <constraint firstAttribute="height" constant="30" id="TAd-NS-Tgj"/>
                         </constraints>
-                        <state key="normal" title="1" backgroundImage="bg_choose_redball">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="1" backgroundImage="bg_red_ball_receive">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
                 </subviews>
@@ -107,7 +107,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bg_choose_redball" width="32" height="32"/>
-        <image name="bg_choose_whiteball_pressed" width="32" height="32"/>
+        <image name="bg_red_ball_receive" width="32" height="32"/>
+        <image name="bg_white_ball_receive" width="32" height="32"/>
     </resources>
 </document>

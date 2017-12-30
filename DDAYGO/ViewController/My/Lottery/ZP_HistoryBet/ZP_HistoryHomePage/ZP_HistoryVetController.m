@@ -185,7 +185,7 @@
 - (void)WithHistoryAllData:(ZP_HistoryModel *) model {
     //    _OrderLabel.text = model.
     _TitleLabel2.text = [[model.yyyy stringValue] stringByAppendingString:@"期"];
-    _TitleLabel5.text = model.createtime;
+    _TitleLabel5.text =  [NSString stringWithFormat:@"@%",model.createtime];
 //    _TitleLabel5.text = [NSString stringWithFormat:@"%@",model.createtime ];
     
 }

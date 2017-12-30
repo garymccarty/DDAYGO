@@ -11,6 +11,7 @@
 @interface ZP_LotteryHistoricalBettingNumberController : UIViewController
 @property (nonatomic, strong) UILabel * TitleLabel1;
 @property (nonatomic, strong) UILabel * TitleLabel2;
+@property (nonatomic, strong) UILabel * TitleLabel3;
 
 @property (nonatomic, strong) UILabel * OrderLabel;
 @property (nonatomic, strong) UILabel * OrderNumberLabel;

@@ -8,9 +8,12 @@
 
 #import "ZP_LotteryHistoricalBettingNumberController.h"
 #import "ZP_LotteryHistoricalBettingNumberCell.h"
+#import "ZP_LotteryHistoricalBettingNumberModel.h"
+#import "ZP_MyTool.h"
 #import "PrefixHeader.pch"
 @interface ZP_LotteryHistoricalBettingNumberController () <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView * tableView;
+@property (nonatomic, strong) NSMutableArray * newsData;
 
 @end
 
@@ -20,6 +23,7 @@
     [self initTableHeadView];
     [super viewDidLoad];
     [self initUI];
+    [self AllData];
 }
 
 //  UI
@@ -41,30 +45,83 @@
     //    self.tableview.tableHeaderView = myView; // 表头跟着cell一起滚动
     [myView setBackgroundColor:ZP_Graybackground];
     //     标题1
-    ZP_GeneralLabel * TitleLabel1 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel1.text textColor:ZP_textblack font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-//    TitleLabel1.text = @"第2017136期";
+    ZP_GeneralLabel * TitleLabel1 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel1.text textColor:ZP_textblack font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
+    TitleLabel1.text = @"第";
     [myView addSubview:TitleLabel1];
     _TitleLabel1 = TitleLabel1;
     [TitleLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(myView).offset(8);
         make.centerY.equalTo(myView);
-        //        make.width.mas_equalTo(90);
+//                make.width.mas_equalTo(15);
         make.height.mas_equalTo(15);
     }];
     
     //     标题2
-    ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-//    TitleLabel2.text = @"2017-11-19（周日）";
+    ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
+    TitleLabel2.text = @"20171230";
     [myView addSubview:TitleLabel2];
     _TitleLabel2 = TitleLabel2;
     [TitleLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(TitleLabel1.mas_trailing);
+        make.leading.equalTo(TitleLabel1).offset(15);
         make.top.equalTo(TitleLabel1).offset(0);
         //        make.width.mas_equalTo(90);
         make.height.mas_equalTo(15);
     }];
     
+//    标题3
+    ZP_GeneralLabel * titleLabel3 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel3.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
+    titleLabel3.text = @"2017-12-12T17:41:32.997";
+    [myView addSubview:titleLabel3];
+    _TitleLabel3 = titleLabel3;
+    [titleLabel3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(TitleLabel2).offset(65);
+        make.top.equalTo(TitleLabel2).offset(0);
+        make.height.mas_offset(15);
+    }];
     self.tableView.tableHeaderView = myView;
+}
+// 数据
+- (void)AllData {
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"countrycode"] = CountCode;
+    dic[@"token"] = Token;
+    dic[@"page"] = @"1";
+    dic[@"pagesize"] = @"6";
+    [ZP_MyTool requestHistoricalBet:dic uccess:^(id obj) {
+        ZP_LotteryHistoricalBettingNumberModel * model = [[ZP_LotteryHistoricalBettingNumberModel alloc]init];
+        for (NSDictionary * dic in obj) {
+            NSString * string = [NSString stringWithFormat:@"%@%@%@",dic[@"yyyy"],dic[@"mm"],dic[@"periode"]];
+            model.yyyy = @(string.integerValue);
+            [self WithLotteryHistroicalTiltlBettingNumber:model];
+        }
+        for (NSDictionary * dict in obj[@"winorders"]) {
+            ZP_LotteryHistoricalBettingNumberModel2 * model2 = [[ZP_LotteryHistoricalBettingNumberModel2 alloc]init];
+            model2.lotteryoid = dict[@"lotteryoid"];
+            model2.pollid = obj[@""];
+            model2.aid = obj[@""];
+            [self WithLotteryHistroicalBettingNumber:model2];
+        }
+        for (NSDictionary * dic in obj[@"winordersdetail"]) {
+            <#statements#>
+        }
+        
+        [self.tableView reloadData];
+        ZPLog(@"%@",obj);
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+    
+}
+- (void)WithLotteryHistroicalTiltlBettingNumber:(ZP_LotteryHistoricalBettingNumberModel *)model {
+    ZP_LotteryHistoricalBettingNumberCell * cell = [[ZP_LotteryHistoricalBettingNumberCell alloc]init];
+    self.TitleLabel2.text = [[model.yyyy stringValue] stringByAppendingString:@"期"];
+    _TitleLabel3.text = model.createtime.stringValue;
+    [cell.button1 setTitle:[model.white1 stringValue] forState:UIControlStateNormal];
+    [cell.button2 setTitle:[model.white2 stringValue] forState:UIControlStateNormal];
+    [cell.button3 setTitle:[model.white3 stringValue] forState:UIControlStateNormal];
+    [cell.button4 setTitle:[model.white4 stringValue] forState:UIControlStateNormal];
+    [cell.button5 setTitle:[model.white5 stringValue] forState:UIControlStateNormal];
+    [cell.button6 setTitle:[model.powerball stringValue] forState:UIControlStateNormal];
 }
 
 //表头
@@ -97,14 +154,16 @@
     }];
     return myView;
 }
-
+- (void)WithLotteryHistroicalBettingNumber:(ZP_LotteryHistoricalBettingNumberModel2 *)model2 {
+    _OrderNumberLabel.text = [model2.lotteryoid stringValue];
+}
 //// 领奖按钮
 //- (void)AwardBut {
 //    ZPLog(@"按钮");
 //}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
-    return 3;
+    return self.newsData.count;
 }
 
 /*设置标题头的宽度*/
@@ -125,9 +184,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    static NSString * LotteryID = @"ZP_LotteryHistoricalBettingNumberCell";
     ZP_LotteryHistoricalBettingNumberCell * cell = [tableView dequeueReusableCellWithIdentifier:@"ZP_LotteryHistoricalBettingNumberCell"];
-    
     return cell;
 }
 
