@@ -190,6 +190,8 @@
         } else {
             cell.textField.text = nil;
         }
+        cell.textField.keyboardType = UIKeyboardTypeDefault;
+        
         if (indexPath.row == 1) {
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             return cell;
@@ -217,14 +219,19 @@
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
             return cell;
         }
+        if (indexPath.row == 9) {
+            cell.textField.keyboardType = UIKeyboardTypeASCIICapable;
+        }
         
         if (indexPath.row == 10) {
             cell.textField.placeholder = NSLocalizedString(@"聯繫人/職稱/分機", nil);
             return cell;
         }
+        if (indexPath.row == 11) {
+            cell.textField.keyboardType = UIKeyboardTypeNumberPad;
+        }
         
         return cell;
-        
     }
 }
 
