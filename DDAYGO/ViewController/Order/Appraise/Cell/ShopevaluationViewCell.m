@@ -62,7 +62,7 @@
     Storeratingstext.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     Storeratingstext.textColor = ZP_TypefaceColor;
     Storeratingstext.font = ZP_titleFont;
-    Storeratingstext.placeholder = NSLocalizedString(@"分享一下你对店铺的服务满意么", nil);
+    Storeratingstext.placeholder = NSLocalizedString(@"分享一下你對店鋪的服務滿意嗎", nil);
     [self.contentView addSubview:Storeratingstext];
     [Storeratingstext mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
@@ -107,7 +107,7 @@
     PromptingLabel.textAlignment = NSTextAlignmentLeft;
     PromptingLabel.textColor = ZP_TypefaceColor;
     PromptingLabel.font = ZP_TrademarkFont;
-    PromptingLabel.text = NSLocalizedString(@"你写的评价会以匿名的形式展开", nil);
+    PromptingLabel.text = NSLocalizedString(@"你寫的評價將會以匿名的形式展開", nil);
     [self.contentView addSubview:PromptingLabel];
     [PromptingLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(-10);

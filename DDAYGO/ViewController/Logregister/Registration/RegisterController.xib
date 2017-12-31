@@ -36,7 +36,7 @@
                                 <constraint firstAttribute="height" constant="35" id="BOf-02-IJn"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="请输入字母与数字组合的账号"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="請輸入字母與數字組合的賬號"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="showBtn" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="NO"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -53,7 +53,7 @@
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="showBtn" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="YES"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="请输入大小写数字组合的密码"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="請輸入大小寫數字組合的密碼"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RT-tI-UKY" customClass="TextView">
@@ -63,7 +63,7 @@
                                 <constraint firstAttribute="height" constant="35" id="KE2-IA-oSI"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="请输入邮箱"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="請輸入郵箱"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="showBtn" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="NO"/>
                             </userDefinedRuntimeAttributes>
@@ -75,7 +75,7 @@
                                 <constraint firstAttribute="height" constant="35" id="1pa-me-hKK"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="国家"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="國家"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xl3-3I-Rb5">
@@ -85,7 +85,7 @@
                                 <constraint firstAttribute="height" constant="45" id="vo0-dN-5gW"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="注册">
+                            <state key="normal" title="註冊">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -98,7 +98,7 @@
                                 <constraint firstAttribute="height" constant="30" id="SxD-SX-QQ7"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="我已同意并阅读" image="ic_registered_choose_normal">
+                            <state key="normal" title="我已同意並閱讀" image="ic_registered_choose_normal">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <state key="selected" image="ic_registered_choose_pressed"/>
@@ -111,7 +111,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="yP2-Ne-knb"/>
                             </constraints>
-                            <state key="normal" title="《用户服务协议》">
+                            <state key="normal" title="《用戶服務協議》">
                                 <color key="titleColor" red="1" green="0.49803921569999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>

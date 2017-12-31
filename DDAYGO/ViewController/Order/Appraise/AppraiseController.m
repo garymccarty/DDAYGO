@@ -81,7 +81,7 @@
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 #pragma mark - <UItableviewDelegate>

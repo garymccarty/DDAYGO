@@ -20,7 +20,7 @@
 }
 
 - (void)initUI {
-    self.title = NSLocalizedString(@"用户协议", nil);
+    self.title = NSLocalizedString(@"用戶協議", nil);
     webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     [webView setDelegate:self];
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.ddaygo.com/item/protocol"]];

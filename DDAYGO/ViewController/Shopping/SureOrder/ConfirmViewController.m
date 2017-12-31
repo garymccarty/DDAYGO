@@ -50,7 +50,7 @@
     _ConfirmArray = [NSMutableArray array];
     [self initUI];
     [self ImmobilizationView];
-    self.title = NSLocalizedString(@"确认订单", nil);
+    self.title = NSLocalizedString(@"確認訂單", nil);
 
     // 666shi dindaingjiemian
     if (self.type == 666) {
@@ -112,7 +112,7 @@
     
 //      合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    StatisticsLabel.text = NSLocalizedString(@"合计RMB:", nil);
+    StatisticsLabel.text = NSLocalizedString(@"合計RMB:", nil);
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(PriceLabel).offset(- 65); // 右
@@ -123,7 +123,7 @@
 //      提交订单
     UIButton * Clearing = [UIButton new];
     Clearing.backgroundColor = ZP_pricebackground;
-    [Clearing setTitle:NSLocalizedString(@"提交订单", nil) forState:UIControlStateNormal];
+    [Clearing setTitle:NSLocalizedString(@"提交訂單", nil) forState:UIControlStateNormal];
     Clearing.titleLabel.font = ZP_TooBarFont;
     [Clearing addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
     [bottomView addSubview:Clearing];
@@ -152,7 +152,7 @@
 // 提交订单
 - (void)ClearingBut:(UIButton *)sender {
     if (_dataArrar.count == 0) {
-        [SVProgressHUD showErrorWithStatus:@"请添加地址"];
+        [SVProgressHUD showErrorWithStatus:@"請添加地址"];
         AddAddressViewController *viewController = [[AddAddressViewController alloc] init];
         [self.navigationController pushViewController:viewController animated:YES];
         viewController.contentDic = @{@"asd":@(YES)};
@@ -201,14 +201,14 @@
                 [self.navigationController pushViewController:web animated:YES];
             } failure:^(NSError *error) {
                 NSLog(@"%@",error);
-                [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+                [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
             }];
         };
         
         [PayView showInView:self.view];
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 
@@ -222,7 +222,7 @@
         NSDictionary * dic = obj;
         NSArray * modelArr = [ZP_ComfirmModel arrayWithArray:dic[@"receipts"]];
         if (modelArr.count == 0) {
-            [SVProgressHUD showErrorWithStatus:@"请添加地址"];
+            [SVProgressHUD showErrorWithStatus:@"請添加地址"];
             AddAddressViewController * viewController = [[AddAddressViewController alloc] init];
             [self.navigationController pushViewController:viewController animated:YES];
             viewController.contentDic = @{@"asd":@(YES)};
@@ -245,7 +245,7 @@
         [self.tableView reloadData];
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 // 获取确认订单
@@ -264,7 +264,7 @@
         [self upfataStatisticsLabel];
         [self.tableView reloadData];
     } failure:^(NSError * error) {
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 // 总计金额
@@ -292,7 +292,7 @@
         
         [self.tableView reloadData];
     } failure:^(NSError * error) {
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 
@@ -313,7 +313,7 @@
         [self upfataStatisticsLabel];
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 // 获取确认订单界面支付数据
@@ -330,7 +330,7 @@
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 

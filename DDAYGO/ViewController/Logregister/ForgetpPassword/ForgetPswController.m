@@ -27,7 +27,7 @@
     [self secureTextEntry];
     _ForgetPswscrollView.bounces = NO;
     [self initUI];
-    self.title = @"忘记密码";
+    self.title = @"忘記密碼";
 }
 // UI
 - (void)initUI {
@@ -50,11 +50,11 @@
 - (void)getMSNCode {
     NSLog(@"获取验证码");
     if (![self validateEmail:self.ZPEmailTextField.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
+        [SVProgressHUD showInfoWithStatus:@"郵箱格式不正確"];
         return;
     }
     __weak typeof (self) WeakSelf = self;
-    [self.ZPCodeTextField.functionBtn startWithTime:60 title:NSLocalizedString(@"重新获取", nil) titleColor:[UIColor whiteColor]countDownTitle:@"s" countDownTitleColor:[UIColor whiteColor] mainColor:ZP_PayColor countColor:ZP_PayColor];
+    [self.ZPCodeTextField.functionBtn startWithTime:60 title:NSLocalizedString(@"重新獲取", nil) titleColor:[UIColor whiteColor]countDownTitle:@"s" countDownTitleColor:[UIColor whiteColor] mainColor:ZP_PayColor countColor:ZP_PayColor];
     [WeakSelf qurestCode];  // 开始获取验证码
 }
 
@@ -67,18 +67,18 @@
         NSDictionary * dic = obj;
         ZPLog(@"%@",dic);
     if ([dic[@"result"] isEqualToString:@"ok"]) {
-        [SVProgressHUD showSuccessWithStatus:@"发送成功!"];
+        [SVProgressHUD showSuccessWithStatus:@"發送成功!"];
         ZPLog(@"发送成功");
         _codeStr = dic[@"code"];
     }else
         if ([dic[@"result"] isEqualToString:@"acc_null_err"]) {
-            [SVProgressHUD showInfoWithStatus:@"账号不能为空"];
+            [SVProgressHUD showInfoWithStatus:@"賬號不能為空"];
     }else
         if ([dic[@"result"] isEqualToString:@"acc_email_err"]) {
             [SVProgressHUD showInfoWithStatus:@"賬號不存在"];
     }else
         if ([dic[@"result"] isEqualToString:@"send_error"]) {
-            [SVProgressHUD showInfoWithStatus:@"验证码发送失败,请稍后再试"];
+            [SVProgressHUD showInfoWithStatus:@"驗證碼發送失敗,請稍後再試"];
         }
         
     } failure:^(NSError * error) {
@@ -89,17 +89,17 @@
 // 完成按钮
 - (IBAction)DetermineBut:(id)sender {
     if (self.ZPPswTextField.textField.text.length < 8 || self.ZPPswTextField.textField.text.length >20) {
-        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于20"];
+        [SVProgressHUD showInfoWithStatus:@"密碼位數不能少於8-20位"];
         ZPLog(@"密码不足6位");
         return;
     }
     if (![self judgePassWordLegal:self.ZPConPswTextField.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"密码必须8-20大小写数字组合"];
+        [SVProgressHUD showInfoWithStatus:@"密碼必須8-20大小寫數字組合"];
         ZPLog(@"密码不足8位");
         return;
     }
     if (self.ZPPswTextField.textField.text != self.ZPConPswTextField.textField.text) {
-        [SVProgressHUD showInfoWithStatus:@"两次密码不一致"];
+        [SVProgressHUD showInfoWithStatus:@"兩次密碼不一致"];
     }else {
         [self AllData];
     }
@@ -114,20 +114,20 @@
     dic[@"npwd"] = self.ZPConPswTextField.textField.text;
     [ZP_LoginTool requestForgetPsw2:dic success:^(id obj) {
         if ([obj[@"result"] isEqualToString:@"ok"]) {
-            [SVProgressHUD showSuccessWithStatus:@"密码找回成功!"];
+            [SVProgressHUD showSuccessWithStatus:@"密碼找回成功!"];
             [self.navigationController popViewControllerAnimated:YES];
         }else
             if ([obj[@"result"] isEqualToString:@"acc_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"账号为空"];
+                [SVProgressHUD showInfoWithStatus:@"賬號為空"];
         }else
             if ([obj[@"result"] isEqualToString:@"verifyemail_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"验证邮箱为空"];
+                [SVProgressHUD showInfoWithStatus:@"驗證郵箱為空"];
         }else
             if ([obj[@"result"] isEqualToString:@"npwd_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"密码为空"];
+                [SVProgressHUD showInfoWithStatus:@"密碼為空"];
         }else
             if ([obj[@"result"] isEqualToString:@"sys_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"修改失败"];
+                [SVProgressHUD showInfoWithStatus:@"修改失敗"];
         }
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {

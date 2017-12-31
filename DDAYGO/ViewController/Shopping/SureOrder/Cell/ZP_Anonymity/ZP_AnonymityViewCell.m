@@ -26,7 +26,7 @@
     AnonymousLabel.textAlignment = NSTextAlignmentLeft;
     AnonymousLabel.textColor = ZP_textblack;
     AnonymousLabel.font = ZP_titleFont;
-    AnonymousLabel.text = NSLocalizedString(@"匿名购买:", nil);
+    AnonymousLabel.text = NSLocalizedString(@"匿名購買:", nil);
     [self.contentView addSubview:AnonymousLabel];
     [AnonymousLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);

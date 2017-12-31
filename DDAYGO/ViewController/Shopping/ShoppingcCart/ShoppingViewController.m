@@ -70,25 +70,25 @@
     [ZP_shoopingTool requesshoppingData:Token success:^(id obj) {
 //        ZPLog(@"%@",obj);
 //         数据为空时提示
-        if (dataArray.count < 1) {
-            UIImageView * image = [UIImageView new];
-            image.image = [UIImage imageNamed:@"icon_fail"];
-            [self.view addSubview:image];
-            [image mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
-                make.top.equalTo(self.view).offset(ZP_Width / 2);
-                make.width.mas_offset(50);
-                make.height.mas_equalTo(50);
-            }];
-            ZP_GeneralLabel * RemindLabel = [ZP_GeneralLabel initWithtextLabel:_RemindLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentCenter bakcgroundColor:nil];
-            RemindLabel.text = @"数据空空如也";
-            [self.view addSubview:RemindLabel];
-            [RemindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.view).offset(ZP_Width / 2 -30);
-                make.top.equalTo(image).offset(55);
-                make.height.mas_offset(15);
-            }];
-        }
+//        if (dataArray.count < 1) {
+//            UIImageView * image = [UIImageView new];
+//            image.image = [UIImage imageNamed:@"icon_fail"];
+//            [self.view addSubview:image];
+//            [image mas_makeConstraints:^(MASConstraintMaker *make) {
+//                make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
+//                make.top.equalTo(self.view).offset(ZP_Width / 2);
+//                make.width.mas_offset(50);
+//                make.height.mas_equalTo(50);
+//            }];
+////            ZP_GeneralLabel * RemindLabel = [ZP_GeneralLabel initWithtextLabel:_RemindLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentCenter bakcgroundColor:nil];
+////            RemindLabel.text = @"数据空空如也";
+////            [self.view addSubview:RemindLabel];
+////            [RemindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+////                make.left.equalTo(self.view).offset(ZP_Width / 2 -30);
+////                make.top.equalTo(image).offset(55);
+////                make.height.mas_offset(15);
+////            }];
+//        }
         
         if ([obj isKindOfClass:[NSDictionary class]]) {
             return ;
@@ -109,7 +109,7 @@
         
     } failure:^(NSError *error) {
 //        NSLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服务器链接失败 ", nil)];
+        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服務器連接失敗", nil)];
     }];
 }
 
@@ -144,14 +144,14 @@
   //      _ClearingButt.selected = YES;
         
         [sup setTitle:NSLocalizedString(@"Complete", nil) forState:UIControlStateNormal];
-        [self.ClearingButt setTitle:@"删除" forState: UIControlStateNormal];
+        [self.ClearingButt setTitle:@"刪除" forState: UIControlStateNormal];
     }else{
         _StatisticsLabel.hidden = NO;
         _PriceLabel.hidden = NO;
         _CurrencySymbolLabel.hidden = NO;
 //        _ClearingButt.selected = NO;
          [sup setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
-            [self.ClearingButt setTitle:@"结算" forState: UIControlStateNormal];
+            [self.ClearingButt setTitle:@"結算" forState: UIControlStateNormal];
     }
     [self.tableView reloadData];
    
@@ -438,12 +438,12 @@ if (count == dataArray.count) {
         if (sender.selected) {
             
 #pragma make -- 提示框
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定要删除吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"確定要刪除嗎？",nil) preferredStyle:UIAlertControllerStyleAlert];
             
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         ZPLog(@"取消");
     }];
-    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"確定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
     //        响应事件
         NSMutableDictionary * dic = [NSMutableDictionary dictionary];
         dic[@"stockid"] =_modelstockid;
@@ -452,7 +452,7 @@ if (count == dataArray.count) {
             NSLog(@"%@",obj);
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
-            [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服务器链接失败 ", nil)];
+            [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服務器諒解失敗 ", nil)];
         }];
         }];
         [alert addAction:defaultAction];
@@ -648,7 +648,7 @@ if (count == dataArray.count) {
  -(UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
  
  if (@available(iOS 11.0, *)) {
- UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+ UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"刪除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
  ZP_CartsModel *model = dataArray[indexPath.row];
  NSMutableDictionary *dic = [NSMutableDictionary dictionary];
  dic[@"stockid"] = model.stockid;
@@ -688,15 +688,15 @@ if (count == dataArray.count) {
         dic[@"token"] = Token;
         [ZP_shoopingTool requesscartitemdelte:dic success:^(id obj) {
             if ([obj[@"result"]isEqualToString:@"ok"]) {
-                [SVProgressHUD showSuccessWithStatus:@"删除成功!"];
+                [SVProgressHUD showSuccessWithStatus:@"刪除成功!"];
             }else
                 if ([obj[@"result"]isEqualToString:@"failure"]) {
                     
-                    [SVProgressHUD showInfoWithStatus:@"删除失败"];
+                    [SVProgressHUD showInfoWithStatus:@"删除失敗"];
                 }
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
-             [SVProgressHUD showInfoWithStatus:@"链接服务器失败"];
+             [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
         }];
         
         [dataArray removeObjectAtIndex:indexPath.row];

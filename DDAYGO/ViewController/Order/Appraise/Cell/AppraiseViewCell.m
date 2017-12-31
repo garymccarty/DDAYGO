@@ -37,7 +37,7 @@
     UILabel * EvaluationLabel = [UILabel new];
     EvaluationLabel.textAlignment = NSTextAlignmentLeft;
     EvaluationLabel.textColor = ZP_textblack;
-    EvaluationLabel.text = NSLocalizedString(@"商品评分", nil);
+    EvaluationLabel.text = NSLocalizedString(@"商品評分", nil);
     EvaluationLabel.font = ZP_stockFont;
     [self.contentView addSubview:EvaluationLabel];
     [EvaluationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -64,7 +64,7 @@
     Evaluationtext.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     Evaluationtext.textColor = ZP_TypefaceColor;
     Evaluationtext.font = ZP_titleFont;
-    Evaluationtext.placeholder = NSLocalizedString(@"来说说你对产品的体验，分享给想买的小伙伴", nil);
+    Evaluationtext.placeholder = NSLocalizedString(@"來說說你對產品的體驗，分享給想買的小夥伴", nil);
     [self.contentView addSubview:Evaluationtext];
     [Evaluationtext mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(10);

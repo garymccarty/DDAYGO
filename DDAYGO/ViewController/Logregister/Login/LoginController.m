@@ -55,7 +55,7 @@
 
 - (IBAction)LoginClick:(id)sender {
     if (![self validateEmail:_ZPEmailTextField.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"账号格式不正确"];
+        [SVProgressHUD showInfoWithStatus:@"賬號格式不正確"];
         }
     [self allData];
 }
@@ -80,23 +80,23 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         [[NSUserDefaults standardUserDefaults] setObject:aadic[@"countrycode"] forKey:@"countrycode"];  // 国别缓存本地
         [[NSUserDefaults standardUserDefaults] synchronize];  // 国别缓存本地
-        [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
+        [SVProgressHUD showSuccessWithStatus:@"登錄成功!"];
         [self.navigationController popToRootViewControllerAnimated:YES];
     }else {
         if ([obj[@"result"]isEqualToString:@"failure"]) {
-            [SVProgressHUD showInfoWithStatus:@"登陆失败"];
+            [SVProgressHUD showInfoWithStatus:@"登錄失敗"];
         }else {
             if ([obj[@"result"]isEqualToString:@"acc_pwd_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"账号或密码错误"];
+                [SVProgressHUD showInfoWithStatus:@"賬號或密碼錯誤"];
         }else {
             if ([obj[@"result"]isEqualToString:@"acc_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"账号为空"];
+                [SVProgressHUD showInfoWithStatus:@"賬號為空"];
         }else {
             if ([obj[@"result"]isEqualToString:@"pwd_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"密码为空"];
+                [SVProgressHUD showInfoWithStatus:@"密碼為空"];
         }else {
             if ([obj[@"result"]isEqualToString:@"sys_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"系统错误"];
+                [SVProgressHUD showInfoWithStatus:@"系統錯誤"];
         }else {
             if ([obj[@"result"]isEqualToString:@"token_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"token 已存在"];

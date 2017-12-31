@@ -76,7 +76,7 @@
     UILabel * titleLabel = [UILabel new];
     titleLabel.textColor = [UIColor blackColor];
     titleLabel.textColor = ZP_textblack;
-    titleLabel.text = @"确认付款";
+    titleLabel.text = @"確認付款";
     titleLabel.numberOfLines = 0;
     titleLabel.font = ZP_addBtnTextdetaFont;
     [bounceView addSubview:titleLabel];

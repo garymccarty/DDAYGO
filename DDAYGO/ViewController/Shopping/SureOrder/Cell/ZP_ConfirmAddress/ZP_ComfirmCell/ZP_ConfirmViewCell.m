@@ -23,7 +23,7 @@
     
 //  收货人（固定）
     ZP_GeneralLabel* ConsigneeLabel = [ZP_GeneralLabel initWithtextLabel:_ConsigneeLabel.text textColor:ZP_textblack font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    ConsigneeLabel.text = NSLocalizedString(@"收货人: ", nil);
+    ConsigneeLabel.text = NSLocalizedString(@"收貨人: ", nil);
     [self addSubview:ConsigneeLabel];
     [ConsigneeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(30); // 左
@@ -65,7 +65,7 @@
     
 //  收货地址(固定)
     ZP_GeneralLabel * AddressLabel = [ZP_GeneralLabel initWithtextLabel:_AddressLabel.text textColor:ZP_textblack font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    AddressLabel.text = NSLocalizedString(@"收货地址: ", nil);
+    AddressLabel.text = NSLocalizedString(@"收貨地址: ", nil);
     [self.contentView addSubview:AddressLabel];
     [AddressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(30);

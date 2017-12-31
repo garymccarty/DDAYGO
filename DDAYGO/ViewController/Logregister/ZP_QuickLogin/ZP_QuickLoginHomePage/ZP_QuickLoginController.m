@@ -31,7 +31,7 @@
 }
 
 - (void)initUI {
-    self.title = NSLocalizedString(@"ICUE登录", nil);
+    self.title = NSLocalizedString(@"ICUE快速登錄", nil);
     self.QuickLoginscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐
     _LoginBtn.layer.cornerRadius             = 8.0;
     _LoginBtn.layer.masksToBounds            = YES;
@@ -80,23 +80,23 @@
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"symbol"] forKey:@"symbol"]; // 台币缓存本地
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"countrycode"] forKey:@"countrycode"];  // 国别缓存本地
                 [[NSUserDefaults standardUserDefaults] synchronize];  // 国别缓存本地
-                [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
+                [SVProgressHUD showSuccessWithStatus:@"登錄成功!"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
         }else
             if ([adic[@"result"]isEqualToString:@"failure"]) {
-                [SVProgressHUD showInfoWithStatus:@"登陆失败"];
+                [SVProgressHUD showInfoWithStatus:@"登錄失敗"];
         }else
             if ([adic[@"result"]isEqualToString:@"acc_pwd_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"账号或密码错误"];
+                [SVProgressHUD showInfoWithStatus:@"賬號或密碼錯誤"];
         }else
             if ([adic[@"result"]isEqualToString:@"acc_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"账号为空"];
+                [SVProgressHUD showInfoWithStatus:@"賬號為空"];
         }else
             if ([adic[@"result"]isEqualToString:@"pwd_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"密码为空"];
+                [SVProgressHUD showInfoWithStatus:@"密碼為空"];
         }else
             if ([adic[@"result"]isEqualToString:@"sys_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"系统错误"];
+                [SVProgressHUD showInfoWithStatus:@"系統錯誤"];
         }else
             if ([adic[@"result"]isEqualToString:@"token_err"]) {
                     [SVProgressHUD showInfoWithStatus:@"token 已存在"];
@@ -126,7 +126,7 @@
         //目前不是参数的类型··可能会崩,s
        
         if ([adic[@"result"]isEqualToString:@"first_login"]) {
-            [SVProgressHUD showInfoWithStatus:@"首次登陆"];
+            [SVProgressHUD showInfoWithStatus:@"首次登錄改成"];
             
         }else {
             if ([adic[@"result"]isEqualToString:@"ok"]) {
@@ -138,24 +138,24 @@
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"symbol"] forKey:@"symbol"]; // 货币符号缓存本地
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"countrycode"] forKey:@"countrycode"];  // 国别缓存本地
                 [[NSUserDefaults standardUserDefaults] synchronize];  // 国别缓存本地
-                [SVProgressHUD showSuccessWithStatus:@"登录成功!"];
+                [SVProgressHUD showSuccessWithStatus:@"登錄成功!"];
                 [self.navigationController popToRootViewControllerAnimated:YES];
                 
         }else {
             if ([adic[@"result"]isEqualToString:@"failure"]) {
-                [SVProgressHUD showInfoWithStatus:@"登陆失败"];
+                [SVProgressHUD showInfoWithStatus:@"登錄失敗"];
         }else {
             if ([adic[@"result"]isEqualToString:@"country_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"国家编码错误"];
+                [SVProgressHUD showInfoWithStatus:@"國家編碼錯誤"];
         }else {
             if ([adic[@"result"]isEqualToString:@"acc_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"账号为空"];
+                [SVProgressHUD showInfoWithStatus:@"賬號為空"];
         }else {
             if ([adic[@"result"]isEqualToString:@"pwd_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"密码为空"];
+                [SVProgressHUD showInfoWithStatus:@"密碼為空"];
         }else {
             if ([adic[@"result"]isEqualToString:@"sys_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"系统错误"];
+                [SVProgressHUD showInfoWithStatus:@"系統錯誤"];
         }else {
             if ([adic[@"result"]isEqualToString:@"token_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"token 已存在"];
@@ -168,7 +168,7 @@
             }
         }
     } failure:^(NSError * error) {
-        [SVProgressHUD showInfoWithStatus:@"网络连接失败"];
+        [SVProgressHUD showInfoWithStatus:@"網路連接失敗"];
     }];
 }
 
@@ -187,12 +187,12 @@
         position.ThirdBlock = ^(NSString *ContStr,NSNumber *code) {
             CountCode = code;
 #pragma make -- 提示框
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"地区一但设置成功将无法更改！",nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"地區一旦設置成功將無法更改！",nil) preferredStyle:UIAlertControllerStyleAlert];
             
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                 ZPLog(@"取消");
         }];
-    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"確定",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         // 接口55
         [self ForFirstTimeLogin];
             }];
@@ -204,7 +204,7 @@
         //  显示
         [position showInView:self.navigationController.view];
     } failure:^(NSError *error) {
-        [SVProgressHUD showInfoWithStatus:@"网络连接失败"];
+        [SVProgressHUD showInfoWithStatus:@"網路連接失敗"];
     }];
 }
 

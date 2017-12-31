@@ -39,7 +39,7 @@
     CourierLabel.textAlignment = NSTextAlignmentLeft;
     CourierLabel.textColor = ZP_textblack;
     CourierLabel.font = ZP_titleFont;
-    CourierLabel.text = NSLocalizedString(@"快递: ", nil);
+    CourierLabel.text = NSLocalizedString(@"快遞: ", nil);
     [self.contentView addSubview:CourierLabel];
     [CourierLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self).offset(-55);

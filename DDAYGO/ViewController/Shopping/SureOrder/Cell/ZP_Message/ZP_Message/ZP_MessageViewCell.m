@@ -27,7 +27,7 @@
     MessageLabel.textAlignment = NSTextAlignmentLeft;
     MessageLabel.textColor = ZP_textblack;
     MessageLabel.font = ZP_titleFont;
-    MessageLabel.text = NSLocalizedString(@"卖家留言:", nil);
+    MessageLabel.text = NSLocalizedString(@"賣家留言:", nil);
     [self.contentView addSubview:MessageLabel];
     [MessageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
@@ -41,7 +41,7 @@
     MessagetextField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
     MessagetextField.textColor = ZP_TabBarTextColor;
     MessagetextField.font = ZP_titleFont;
-    MessagetextField.placeholder = NSLocalizedString(@"对其事项说明...", nil);
+    MessagetextField.placeholder = NSLocalizedString(@"對其事項說明...", nil);
     [self.contentView addSubview:MessagetextField];
     [MessagetextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(70);
@@ -67,7 +67,7 @@
     TotalLabel.textAlignment = NSTextAlignmentLeft;
     TotalLabel.textColor = ZP_textblack;
     TotalLabel.font = ZP_titleFont;
-    TotalLabel.text = NSLocalizedString(@"共计36件商品", nil);
+//    TotalLabel.text = NSLocalizedString(@"共计36件商品", nil);
     [self.contentView addSubview:TotalLabel];
     [TotalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(120);
@@ -79,7 +79,7 @@
     SmallLabel.textAlignment = NSTextAlignmentLeft;
     SmallLabel.textColor = ZP_textblack;
     SmallLabel.font = ZP_titleFont;
-    SmallLabel.text = NSLocalizedString(@"小计:", nil);
+    SmallLabel.text = NSLocalizedString(@"小計:", nil);
     [self.contentView addSubview:SmallLabel];
     [SmallLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(TotalLabel).offset(80);
