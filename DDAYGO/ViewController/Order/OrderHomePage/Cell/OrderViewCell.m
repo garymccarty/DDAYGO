@@ -362,7 +362,7 @@
     _IDLabel.text = [NSString stringWithFormat:@"%@",dic.ordersnumber];
     _DateLabel.text = model.createtime;
 
-    [_FigureImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@", dic.defaultimg]]];
+    [_FigureImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.ddaygo.com%@", dic.defaultimg]] placeholderImage:[UIImage imageNamed:@"img_login_logo"]];
     _merchantsLabel.text = [NSString stringWithFormat:@"%@",model.shopname]; // 这个参数显示不出来不
     _titleLabel.text = dic.productname;
 //    _titleLabel.text = model.shopname;

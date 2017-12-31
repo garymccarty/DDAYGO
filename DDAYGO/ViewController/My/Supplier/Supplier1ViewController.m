@@ -13,8 +13,9 @@
 #import "PrefixHeader.pch"
 #import "ZP_MyTool.h"
 @interface Supplier1ViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property(nonatomic, strong)NSArray * array;
+@property(nonatomic, strong)NSMutableDictionary * dicData;
 @property (nonatomic, strong)NSArray * postionArray;
+@property (nonatomic, strong)NSArray * array;
 @property (nonatomic, strong) NSString *seleStr;
 @property (nonatomic, strong) NSMutableArray *typeNameArray;
 @property (nonatomic, strong) NSMutableArray *typeIdArray;
@@ -71,7 +72,21 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SupplierTableViewCell" bundle:nil] forCellReuseIdentifier:@"SupplierTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SupplierViewCell2" bundle:nil] forCellReuseIdentifier:@"SupplierViewCell2"];
-    
+    self.dicData = [NSMutableDictionary dictionary];
+    self.dicData[@"公司名稱:"] = @"";
+    self.dicData[@"統一編號:"] = @"";
+    self.dicData[@"公司人數:"] = @"";
+    self.dicData[@"註冊資本:"] = @"";
+    self.dicData[@"創立日期:"] = @"";
+    self.dicData[@"組織形態:"] = @"";
+    self.dicData[@"公司地址:"] = @"";
+    self.dicData[@"公司電話:"] = @"";
+    self.dicData[@"公司傳真(選填):"] = @"";
+    self.dicData[@"公司網址(選填):"] = @"";
+    self.dicData[@"聯繫人:"] = @"";
+    self.dicData[@"聯繫電話:"] = @"";
+    self.dicData[@"經營項目:"] = @"";
+    self.dicData[@"合作項目:"] = @"";
     _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
     _LocationLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
     switch ([[[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"] integerValue]) {
@@ -144,7 +159,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.array.count;
+    return self.dicData.allKeys.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -167,12 +182,12 @@
         
         cell.titleLabel.text = self.array[indexPath.row];
         cell.savaData = ^(NSString *title) {
-            [self.dataDic setObject:title forKey:@(indexPath.row)];
+            [self.dicData setObject:title forKey:self.array[indexPath.row]];
         };
-        NSArray *arr = [self.dataDic allKeys];
-        if ([arr containsObject:@(indexPath.row)]) {
-            cell.textField.text = [self.dataDic objectForKey:@(indexPath.row)];
-        }else{
+        NSString *contentString = self.dicData[self.array[indexPath.row]];
+        if (contentString.length > 0) {
+            cell.textField.text = contentString;
+        } else {
             cell.textField.text = nil;
         }
         if (indexPath.row == 1) {

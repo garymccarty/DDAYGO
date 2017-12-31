@@ -123,6 +123,19 @@
             }
             [self.newsData addObject:model];
         }
+<<<<<<< HEAD
+=======
+        for (NSDictionary * dict in obj[@"winorders"]) {
+//            ZP_LotteryHistoricalBettingNumberModel2 * model2 = [[ZP_LotteryHistoricalBettingNumberModel2 alloc]init];
+//            model2.lotteryoid = dict[@"lotteryoid"];
+//            model2.pollid = obj[@""];
+//            model2.aid = obj[@""];
+//            [self WithLotteryHistroicalBettingNumber:model2];
+        }
+//        for (NSDictionary * dic in obj[@"winordersdetail"]) {
+//            <#statements#>
+//        }
+>>>>>>> origin/master
         
         [self.tableView reloadData];
         ZPLog(@"%@",obj);
@@ -182,7 +195,13 @@
     }];
     return myView;
 }
+<<<<<<< HEAD
 
+=======
+//- (void)WithLotteryHistroicalBettingNumber:(ZP_LotteryHistoricalBettingNumberModel2 *)model2 {
+//    _OrderNumberLabel.text = [model2.lotteryoid stringValue];
+//}
+>>>>>>> origin/master
 //// 领奖按钮
 //- (void)AwardBut {
 //    ZPLog(@"按钮");
