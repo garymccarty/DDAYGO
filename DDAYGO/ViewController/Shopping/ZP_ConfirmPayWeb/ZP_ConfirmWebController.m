@@ -58,6 +58,26 @@
 //    NSLog(@"oid = %@",_Oid);
 //    
 //    [self.view addSubview:_webView];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"ic_bar_return"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStyleDone target:self action:@selector(backAction)];
+}
+
+- (void)backAction {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"确定要退出吗?" preferredStyle:UIAlertControllerStyleAlert];
+    NSArray *array = [self.navigationController viewControllers];
+    UIViewController *viewController = array.firstObject;
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popToRootViewControllerAnimated:NO];
+        viewController.tabBarController.selectedIndex = 3;
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark -UIWebViewDelegate

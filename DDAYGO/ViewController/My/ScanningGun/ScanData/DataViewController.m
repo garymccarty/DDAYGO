@@ -34,9 +34,11 @@
 
 - (void)backAction {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"确定要退出吗?" preferredStyle:UIAlertControllerStyleAlert];
+    NSArray *array = [self.navigationController viewControllers];
+    UIViewController *viewController = array.firstObject;
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [MyViewController sharedInstanceTool].popKind = DDFromDataVC;
         [self.navigationController popToRootViewControllerAnimated:NO];
+        viewController.tabBarController.selectedIndex = 3;
     }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
