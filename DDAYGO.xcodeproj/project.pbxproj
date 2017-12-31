@@ -193,6 +193,8 @@
 		C409F8901FA1E280009DE7B1 /* ZP_ZeroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C409F88F1FA1E280009DE7B1 /* ZP_ZeroModel.m */; };
 		C4137E811FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */; };
 		C41CBE2F1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CBE2E1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m */; };
+		C41CBE321FF89A7900F9B227 /* ZP_LotterySubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CBE311FF89A7900F9B227 /* ZP_LotterySubCell.m */; };
+		C41CBE351FF89CDC00F9B227 /* ButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CBE341FF89CDC00F9B227 /* ButtonsView.m */; };
 		C420EDE51FF3D397005ECE30 /* UIViewController+LLProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */; };
 		C420EDE81FF3D7E9005ECE30 /* CALayer+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE71FF3D7E9005ECE30 /* CALayer+UIColor.m */; };
 		C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA51FC813C30097DB8F /* FSPageContentView.m */; };
@@ -749,6 +751,10 @@
 		C4137E801FB9A2A20072B1CA /* ZP_FrontPageReceivingAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_FrontPageReceivingAddressModel.m; sourceTree = "<group>"; };
 		C41CBE2D1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotteryHistoricalBettingNumberModel.h; sourceTree = "<group>"; };
 		C41CBE2E1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotteryHistoricalBettingNumberModel.m; sourceTree = "<group>"; };
+		C41CBE301FF89A7900F9B227 /* ZP_LotterySubCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotterySubCell.h; sourceTree = "<group>"; };
+		C41CBE311FF89A7900F9B227 /* ZP_LotterySubCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotterySubCell.m; sourceTree = "<group>"; };
+		C41CBE331FF89CDC00F9B227 /* ButtonsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonsView.h; sourceTree = "<group>"; };
+		C41CBE341FF89CDC00F9B227 /* ButtonsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonsView.m; sourceTree = "<group>"; };
 		C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LLProgress.m"; sourceTree = "<group>"; };
 		C420EDE41FF3D397005ECE30 /* UIViewController+LLProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LLProgress.h"; sourceTree = "<group>"; };
 		C420EDE61FF3D7E9005ECE30 /* CALayer+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+UIColor.h"; sourceTree = "<group>"; };
@@ -3718,6 +3724,10 @@
 				C4D9E70A1FE76A22000D2413 /* ZP_LotteryHistoricalBettingNumberCell.h */,
 				C4D9E70B1FE76A22000D2413 /* ZP_LotteryHistoricalBettingNumberCell.m */,
 				C4D9E70C1FE76A22000D2413 /* ZP_LotteryHistoricalBettingNumberCell.xib */,
+				C41CBE301FF89A7900F9B227 /* ZP_LotterySubCell.h */,
+				C41CBE311FF89A7900F9B227 /* ZP_LotterySubCell.m */,
+				C41CBE331FF89CDC00F9B227 /* ButtonsView.h */,
+				C41CBE341FF89CDC00F9B227 /* ButtonsView.m */,
 			);
 			path = ZP_LotteryHistoricalBettingNumberCell;
 			sourceTree = "<group>";
@@ -4041,6 +4051,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41CBE321FF89A7900F9B227 /* ZP_LotterySubCell.m in Sources */,
 				E37503CF1FC7BD8F00DA2950 /* ZP_ConfirmWebController.m in Sources */,
 				C42A17311FF252F400680F92 /* BetViewController.m in Sources */,
 				C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */,
@@ -4154,6 +4165,7 @@
 				C47BBBF01FE510600000FFE6 /* ZP_DetailsSistoryAwardTableViewCell.m in Sources */,
 				C479C6A11FE3CB5800A58A2A /* MJExtensionConst.m in Sources */,
 				C47E763F1FB5A1C7009F279A /* ZPLoopViewCell.m in Sources */,
+				C41CBE351FF89CDC00F9B227 /* ButtonsView.m in Sources */,
 				06F571131F9F0D6800D61FDB /* AppraiseController.m in Sources */,
 				C45F23491FA0809000F5DB41 /* FourthViewCell.m in Sources */,
 				0641BBD31F67F9E400E72FEF /* NSData+ImageContentType.m in Sources */,

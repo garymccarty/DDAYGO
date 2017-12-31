@@ -11,3 +11,11 @@
 @implementation ZP_LotteryHistoricalBettingNumberModel
 
 @end
+
+@implementation ZP_LotteryHistoricalBettingNumberModel2
+
+@end
+
+@implementation ZP_LotteryHistoricalBettingNumberModel3
+
+@end
