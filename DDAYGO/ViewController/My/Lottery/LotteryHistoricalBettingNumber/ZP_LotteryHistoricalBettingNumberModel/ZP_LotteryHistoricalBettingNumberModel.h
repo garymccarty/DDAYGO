@@ -41,6 +41,7 @@
 @interface ZP_LotteryHistoricalBettingNumberModel3 : NSObject
 
 @property (nonatomic, strong) NSNumber * pollid;
+@property (nonatomic, strong) NSNumber * aid;
 @property (nonatomic, strong) NSNumber * lotteryoid;
 @property (nonatomic, strong) NSNumber * state;
 @property (nonatomic, strong) NSNumber * rstate;
