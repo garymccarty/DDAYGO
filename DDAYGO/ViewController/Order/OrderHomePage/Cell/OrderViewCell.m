@@ -21,7 +21,7 @@
 - (void) initUI {
     //  订单号
     ZP_GeneralLabel * OrderLabel = [ZP_GeneralLabel initWithtextLabel:_OrderLabel.text textColor:ZP_textblack font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    OrderLabel.text = NSLocalizedString(@"订单号:", nil);
+    OrderLabel.text = NSLocalizedString(@"訂單號:", nil);
     [self.contentView addSubview:OrderLabel];
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(5);
@@ -215,7 +215,7 @@
     
 //  合计
     ZP_GeneralLabel * CountLabel = [ZP_GeneralLabel initWithtextLabel:_CountLabel.text textColor:ZP_textblack font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    CountLabel.text = NSLocalizedString(@"合计:", nil);
+    CountLabel.text = NSLocalizedString(@"合計:", nil);
     [self.contentView addSubview:CountLabel];
     [CountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(CurrencySymbolLabel).offset(60);
@@ -234,7 +234,7 @@
     
 //  运费
     ZP_GeneralLabel * FreightLabel = [ZP_GeneralLabel initWithtextLabel:_FreightLabel.text textColor:ZP_textblack font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    FreightLabel.text = NSLocalizedString(@"运费:", nil);
+    FreightLabel.text = NSLocalizedString(@"運費:", nil);
     [self.contentView addSubview:FreightLabel];
     [FreightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(AmountLabel).offset(40);
@@ -256,7 +256,7 @@
 //  评价
     UIButton * AppraiseBut = [UIButton buttonWithType:UIButtonTypeSystem];
     AppraiseBut.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
-    [AppraiseBut setTitle:NSLocalizedString(@"评价", nil) forState:UIControlStateNormal];
+    [AppraiseBut setTitle:NSLocalizedString(@"評價", nil) forState:UIControlStateNormal];
     [AppraiseBut setTitleColor:ZP_TypefaceColor forState:UIControlStateNormal];
     AppraiseBut.titleLabel.font = ZP_introduceFont;
     AppraiseBut.layer.borderWidth = 1;
@@ -289,7 +289,7 @@
     UIButton * OnceagainBut = [UIButton buttonWithType:UIButtonTypeSystem];
     OnceagainBut.layer.borderColor = [UIColor groupTableViewBackgroundColor].CGColor;
     OnceagainBut.backgroundColor = ZP_OnceagainColor;
-    [OnceagainBut setTitle:NSLocalizedString(@"再次购买", nil) forState:UIControlStateNormal];
+    [OnceagainBut setTitle:NSLocalizedString(@"再次購買", nil) forState:UIControlStateNormal];
     [OnceagainBut setTitleColor:ZP_textWite forState:UIControlStateNormal];
     OnceagainBut.titleLabel.font = ZP_introduceFont;
     OnceagainBut.layer.borderWidth = 1;
@@ -336,23 +336,23 @@
         case 1:
             _TradingLabel.text = @"待付款";
             [_OnceagainBut setTitle:@"付款" forState:UIControlStateNormal];
-            [_LogisticsBut setTitle:@"取消订单" forState:UIControlStateNormal];
+            [_LogisticsBut setTitle:@"取消訂單" forState:UIControlStateNormal];
             _AppraiseBut.hidden = YES;
             break;
         case 2:
-            _TradingLabel.text = @"待发货";
-            [_OnceagainBut setTitle:@"提醒发货" forState:UIControlStateNormal];
+            _TradingLabel.text = @"待發貨";
+            [_OnceagainBut setTitle:@"提醒發貨" forState:UIControlStateNormal];
             _LogisticsBut.hidden = YES;
             _AppraiseBut.hidden = YES;
             break;
         case 3:
-            _TradingLabel.text = @"待收货";
-            [_OnceagainBut setTitle:@"确认收货" forState:UIControlStateNormal];
+            _TradingLabel.text = @"待收貨";
+            [_OnceagainBut setTitle:@"確認收貨" forState:UIControlStateNormal];
             _AppraiseBut.hidden = YES;
             break;
         case 4:
             _TradingLabel.text = @"交易成功";
-            [_OnceagainBut setTitle:@"再次购买" forState:UIControlStateNormal];
+            [_OnceagainBut setTitle:@"再次購買" forState:UIControlStateNormal];
             break;
             
         default:

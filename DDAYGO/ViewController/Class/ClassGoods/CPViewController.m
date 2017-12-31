@@ -320,7 +320,7 @@
         }
 //
     } failure:^(NSError *error) {
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
         NSLog(@"%@",error);
         
     }];

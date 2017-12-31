@@ -91,13 +91,13 @@
     if ([_titleStr isEqualToString:@"待付款"]) {
         dic[@"sta"] = @"1";
     }
-    if ([_titleStr isEqualToString:@"待发货"]) {
+    if ([_titleStr isEqualToString:@"待發貨"]) {
         dic[@"sta"] = @"2";
     }
-    if ([_titleStr isEqualToString:@"待收货"]) {
+    if ([_titleStr isEqualToString:@"待收貨"]) {
         dic[@"sta"] = @"3";
     }
-    if ([_titleStr isEqualToString:@"评价"]) {
+    if ([_titleStr isEqualToString:@"評價"]) {
         dic[@"sta"] = @"4";
     }
     dic[@"days"] = @"7";
@@ -169,7 +169,7 @@
     [cell.OnceagainBut addTarget:self action:@selector(OnceagainBut:) forControlEvents:UIControlEventTouchUpInside];
     cell.OnceagainBut.tag = indexPath.row;
     OrdersdetailModel * model2;
-    if (![_titleStr isEqualToString:@"评价"]) {
+    if (![_titleStr isEqualToString:@"評價"]) {
          model2 = [OrdersdetailModel CreateWithDict:model.ordersdetail.firstObject];
         
         [cell InformationWithDic:model2 WithModel:model];

@@ -24,9 +24,9 @@
     self.backgroundView.userInteractionEnabled = YES;
     [self.backgroundView addGestureRecognizer:tap];
     
-    self.standardList = @[NSLocalizedString(@"商品规格", nil),NSLocalizedString(@"", nil)];
+    self.standardList = @[NSLocalizedString(@"商品規格", nil),NSLocalizedString(@"", nil)];
     
-    self.standardTypeList = @[NSLocalizedString(@"商品尺寸", nil),NSLocalizedString(@"购买数量", nil)];
+    self.standardTypeList = @[NSLocalizedString(@"商品規格", nil),NSLocalizedString(@"購買數量", nil)];
     
     //    self.standardValueList = @[@[@"200ml",@"400ml",@"600ml"],@[]];
     self.chooseView = [[ChooseView alloc] initWithFrame:CGRectMake(0, screen_Height, screen_Width, screen_Height)];
@@ -242,7 +242,7 @@
             if ([obj[@"result"] isEqualToString:@"ok"]) {
                 [SVProgressHUD showSuccessWithStatus:@"添加成功"];
             } else {
-                [SVProgressHUD showErrorWithStatus:@"添加失败"];
+                [SVProgressHUD showErrorWithStatus:@"添加失敗"];
             }
         } failure:^(NSError *error) {
             
@@ -285,7 +285,7 @@
                 self.finishBlock([NSString stringWithFormat:@"  %@",[self.selectKind stringByAppendingFormat:@"+%@件",self.numLabel.text]]);
             }
             else {
-                self.finishBlock(NSLocalizedString(@" 选择分类/规格", nil));
+                self.finishBlock(NSLocalizedString(@" 選擇分類/規格", nil));
             }
             
         }
