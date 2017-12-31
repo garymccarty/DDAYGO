@@ -279,7 +279,6 @@
 		C466403F1FA7094B00B76927 /* ZP_MyTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C466403E1FA7094B00B76927 /* ZP_MyTool.m */; };
 		C46837F81FDA645A000E7D7C /* 产品详情_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C46837EF1FDA645A000E7D7C /* 产品详情_spec.png */; };
 		C46837FC1FDA78EE000E7D7C /* ZP_MyHopageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C46837FB1FDA78EE000E7D7C /* ZP_MyHopageModel.m */; };
-		C46837FE1FDA97E6000E7D7C /* 需要解决问题.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C46837FD1FDA97E6000E7D7C /* 需要解决问题.rtf */; };
 		C46B9F481FDE71FE00942750 /* 历史下注号码_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C46B9F441FDE71FE00942750 /* 历史下注号码_spec.png */; };
 		C46B9F491FDE71FE00942750 /* 本期下注号码_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C46B9F451FDE71FE00942750 /* 本期下注号码_spec.png */; };
 		C46B9F4A1FDE71FE00942750 /* 赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C46B9F461FDE71FE00942750 /* 赏金彩_spec.png */; };
@@ -919,7 +918,6 @@
 		C46837EF1FDA645A000E7D7C /* 产品详情_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "产品详情_spec.png"; sourceTree = "<group>"; };
 		C46837FA1FDA78EE000E7D7C /* ZP_MyHopageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_MyHopageModel.h; sourceTree = "<group>"; };
 		C46837FB1FDA78EE000E7D7C /* ZP_MyHopageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_MyHopageModel.m; sourceTree = "<group>"; };
-		C46837FD1FDA97E6000E7D7C /* 需要解决问题.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "需要解决问题.rtf"; sourceTree = "<group>"; };
 		C46B9F441FDE71FE00942750 /* 历史下注号码_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "历史下注号码_spec.png"; sourceTree = "<group>"; };
 		C46B9F451FDE71FE00942750 /* 本期下注号码_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "本期下注号码_spec.png"; sourceTree = "<group>"; };
 		C46B9F461FDE71FE00942750 /* 赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赏金彩_spec.png"; sourceTree = "<group>"; };
@@ -1207,7 +1205,6 @@
 		063FE0391F614D23009910FF = {
 			isa = PBXGroup;
 			children = (
-				C46837FD1FDA97E6000E7D7C /* 需要解决问题.rtf */,
 				063FE0441F614D24009910FF /* DDAYGO */,
 				063FE0451F614D24009910FF /* Supporting Files */,
 				063FE05E1F614D24009910FF /* DDAYGOTests */,
@@ -3930,7 +3927,6 @@
 				0682BE6B1F906D7B00894F4E /* Shopping2.png in Resources */,
 				C492A17E1FD0ECB7009FF57B /* ZP_HistoryVetController.xib in Resources */,
 				06F5722B1F9F1E8700D61FDB /* OrderManagerCollectionViewCell.xib in Resources */,
-				C46837FE1FDA97E6000E7D7C /* 需要解决问题.rtf in Resources */,
 				C4D9E70E1FE76A22000D2413 /* ZP_LotteryHistoricalBettingNumberCell.xib in Resources */,
 				C46B9F4B1FDE71FE00942750 /* 选择赏金彩_spec.png in Resources */,
 				064449A61F6A9B250004DFE4 /* LICENSE in Resources */,
