@@ -303,7 +303,6 @@
 		C472F1341FE299E00031D7B5 /* ZP_CheckMoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472F1311FE299E00031D7B5 /* ZP_CheckMoreController.xib */; };
 		C472F1381FE29A060031D7B5 /* ZP_CheckMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C472F1361FE29A060031D7B5 /* ZP_CheckMoreCell.m */; };
 		C472F1391FE29A060031D7B5 /* ZP_CheckMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C472F1371FE29A060031D7B5 /* ZP_CheckMoreCell.xib */; };
-		C472F1511FE2A88B0031D7B5 /* 选择赏金彩_spec.png in Resources */ = {isa = PBXBuildFile; fileRef = C472F1481FE2A88B0031D7B5 /* 选择赏金彩_spec.png */; };
 		C472F1551FE380340031D7B5 /* ZP_LotterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C472F1541FE380330031D7B5 /* ZP_LotterModel.m */; };
 		C477507E1FBA990E00AE8B3F /* ZP_PositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C477507D1FBA990E00AE8B3F /* ZP_PositionModel.m */; };
 		C47750811FBA9A1E00AE8B3F /* ZP_FirstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C47750801FBA9A1E00AE8B3F /* ZP_FirstModel.m */; };
@@ -965,7 +964,6 @@
 		C472F1351FE29A060031D7B5 /* ZP_CheckMoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_CheckMoreCell.h; sourceTree = "<group>"; };
 		C472F1361FE29A060031D7B5 /* ZP_CheckMoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_CheckMoreCell.m; sourceTree = "<group>"; };
 		C472F1371FE29A060031D7B5 /* ZP_CheckMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZP_CheckMoreCell.xib; sourceTree = "<group>"; };
-		C472F1481FE2A88B0031D7B5 /* 选择赏金彩_spec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择赏金彩_spec.png"; sourceTree = "<group>"; };
 		C472F1531FE380330031D7B5 /* ZP_LotterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_LotterModel.h; sourceTree = "<group>"; };
 		C472F1541FE380330031D7B5 /* ZP_LotterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotterModel.m; sourceTree = "<group>"; };
 		C477507A1FBA981500AE8B3F /* Documents.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Documents.pch; sourceTree = "<group>"; };
@@ -1345,7 +1343,6 @@
 		0641BB971F67B60B00E72FEF /* Testbag */ = {
 			isa = PBXGroup;
 			children = (
-				C472F13F1FE2A88B0031D7B5 /* ios(1) */,
 				C46837E61FDA645A000E7D7C /* ios */,
 				C46B9F431FDE71FE00942750 /* 促销彩 */,
 				C4D2FEBC1FD5636C00F546AB /* 提现_ios */,
@@ -3068,14 +3065,6 @@
 			path = ZP_CheckMoreCell;
 			sourceTree = "<group>";
 		};
-		C472F13F1FE2A88B0031D7B5 /* ios(1) */ = {
-			isa = PBXGroup;
-			children = (
-				C472F1481FE2A88B0031D7B5 /* 选择赏金彩_spec.png */,
-			);
-			path = "ios(1)";
-			sourceTree = "<group>";
-		};
 		C472F1521FE380110031D7B5 /* ZP_LotterModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -3928,7 +3917,6 @@
 				C46B9F491FDE71FE00942750 /* 本期下注号码_spec.png in Resources */,
 				06F571DE1F9F1A7900D61FDB /* AddAddressViewController.xib in Resources */,
 				062C9D591F8CD6F900E14987 /* button_1@2x.png in Resources */,
-				C472F1511FE2A88B0031D7B5 /* 选择赏金彩_spec.png in Resources */,
 				C492A1971FD0EDC0009FF57B /* ZP_InstructionController.xib in Resources */,
 				06F571DC1F9F1A7900D61FDB /* AddressTableViewCell.xib in Resources */,
 				C42A173F1FF2532400680F92 /* BetTableViewMyCell.xib in Resources */,

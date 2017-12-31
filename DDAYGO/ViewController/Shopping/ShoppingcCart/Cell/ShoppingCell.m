@@ -111,30 +111,6 @@
 //        make.width.mas_offset(100);
     }];
 
-////  价格
-//    ZP_GeneralLabel * PriceLabel = [ZP_GeneralLabel initWithtextLabel:_PriceLabel.text textColor:ZP_TypefaceColor font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-//    [self.contentView addSubview:PriceLabel];
-//    _PriceLabel = PriceLabel;
-//    [PriceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(imageView).offset(95);
-//        make.top.equalTo(PreferentialLabel).offset(17);
-//        make.width.mas_offset(65);
-//
-//    }];
-//
-////  横线
-//    UIView * backView = [UIView new];
-//    backView.layer.borderWidth = 1;
-//    backView.backgroundColor = ZP_TypefaceColor;
-//    [self.contentView addSubview:backView];
-//    _backView = backView;
-//    [backView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(imageView).offset(95);  // 左
-//        make.top.equalTo(PriceLabel).offset(9);
-//        make.height.mas_equalTo(1); // 高
-//        make.width.mas_equalTo(PriceLabel);
-//    }];
-    
 //  商标
     UIImageView * TrademarkImage = [UIImageView new];
     [self.contentView addSubview:TrademarkImage];
@@ -199,7 +175,7 @@
 }
 
 //  数据
-- (void)cellWithModel:(ZP_CartsModel *)model {
+- (void)cellWithModel:(ZP_CartsModel *)model andIndexObject:(NSString *)str{
     
     [_leftImageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:nil];;
     _titleLabel.text = model.productname;
@@ -211,7 +187,7 @@
 //    _PriceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = [NSString stringWithFormat:@"%@",model.cp];
-    _QuantityLabel.text = [NSString stringWithFormat:@"%@",model.amount];
+    _QuantityLabel.text = [NSString stringWithFormat:@"%@",str];
     
 }
 

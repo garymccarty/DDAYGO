@@ -56,7 +56,6 @@
 @property (nonatomic, strong) NSString *normname;
 @property (nonatomic, strong) NSString *suppliername;
 
-
 + (NSMutableArray *)arrayWithArray:(NSArray *)array;
 
 @end

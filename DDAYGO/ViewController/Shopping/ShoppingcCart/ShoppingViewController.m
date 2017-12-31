@@ -21,6 +21,7 @@
     BOOL _bjBool;
     NSString * _modelstockid;
     NSMutableArray * indexArray;
+    NSMutableArray * selectArray;
 }
 
 @property(nonatomic,strong)UITableView * tableView;
@@ -99,6 +100,10 @@
             _model = [ZP_ShoppingModel CreateWithDict:[obj firstObject]];
             dataArray = [ZP_CartsModel arrayWithArray:dic[@"cart"]];
             nameArray = [ZP_CartsShopModel arrayWithArray:obj];
+             selectArray = [[NSMutableArray alloc]init];
+            for (ZP_CartsModel * model in dataArray) {
+                [selectArray addObject:model.amount];
+            }
             [self.tableView reloadData];
         }
         
@@ -117,7 +122,7 @@
     cartButton.backgroundColor = [UIColor clearColor];
     
     [cartButton setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
-    [cartButton setTitle:NSLocalizedString(@"Complete", nil) forState:UIControlStateSelected];
+;
     cartButton.titleLabel.font = ZP_TooBarFont;
     [cartButton addTarget:self action:@selector(onClickedSweep:) forControlEvents:UIControlEventTouchUpInside];
     cartButton.imageEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
@@ -130,24 +135,32 @@
 //  编辑
 - (void)onClickedSweep:(UIButton *)sup {
 //    [self EditorUI];
-//    sup.selected = !sup.selected;
-//    _bjBool = !_bjBool;
-//    if (_bjBool) {
-//        _StatisticsLabel.hidden = YES;
-//        _PriceLabel.hidden = YES;
-//        _ClearingButt.selected = YES;
-//
-//    }else{
-//        _StatisticsLabel.hidden = NO;
-//        _PriceLabel.hidden = NO;
+    sup.selected = !sup.selected;
+    _bjBool = !_bjBool;
+    if (_bjBool == YES) {
+        _StatisticsLabel.hidden = YES;
+        _CurrencySymbolLabel.hidden = YES;
+        _PriceLabel.hidden = YES;
+  //      _ClearingButt.selected = YES;
+        
+        [sup setTitle:NSLocalizedString(@"Complete", nil) forState:UIControlStateNormal];
+        [self.ClearingButt setTitle:@"删除" forState: UIControlStateNormal];
+    }else{
+        _StatisticsLabel.hidden = NO;
+        _PriceLabel.hidden = NO;
+        _CurrencySymbolLabel.hidden = NO;
 //        _ClearingButt.selected = NO;
-//    }
-//    [self.tableView reloadData];
+         [sup setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
+            [self.ClearingButt setTitle:@"结算" forState: UIControlStateNormal];
+    }
+    [self.tableView reloadData];
    
 }
 
 // UI
 - (void)initUI {
+    
+   
     
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height-TabbarHeight -50) style:UITableViewStylePlain];
     self.tableView.backgroundColor = ZP_Graybackground;
@@ -208,6 +221,7 @@
         make.left.equalTo(PriceLabel).offset(-35);
         make.top.equalTo(PriceLabel).offset(0);
     }];
+    _CurrencySymbolLabel = CurrencySymbolLabel;
 //   合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     StatisticsLabel.text = NSLocalizedString(@"Total", nil);
@@ -224,10 +238,10 @@
     [ClearingBut setTitle:NSLocalizedString(@"Clearing(0)", nil) forState:UIControlStateNormal];
 //    [ClearingBut setTitle:NSLocalizedString(@"Delete", nil) forState:UIControlStateSelected];
     ClearingBut.titleLabel.font = ZP_TooBarFont;
-    [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
-    
+ //   [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
+    ClearingBut.enabled = NO;
 //  保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
-    [ClearingBut addTarget:self action:@selector(preventFlicker:) forControlEvents:UIControlEventAllTouchEvents];
+ //   [ClearingBut addTarget:self action:@selector(preventFlicker:) forControlEvents:UIControlEventAllTouchEvents];
     [bottomView addSubview:ClearingBut];
     [ClearingBut mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(ZP_Width - 100);
@@ -350,8 +364,8 @@
         self.Shopchoosebuttom.selected = NO;
     }
 //   更新合计数据
-    self.PriceLabel.text = [@(data) stringValue];
-    [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
+ //   self.PriceLabel.text = [@(data) stringValue];
+//    [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
 }
 
 - (void)updateDataa:(NSInteger)tag {
@@ -361,15 +375,15 @@
     NSInteger dataCount = 0;
     for (int i = 0; i < dataArray.count; i ++) {
 
-//        if (!_bjBool) {
+        if (!_bjBool) {
             ShoppingCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
 //            ZP_CartsModel *model = dataArray[i];
             if (cell.buttom.selected ) {
                 ZP_CartsShopModel * models = nameArray[0];
                 ZP_CartsModel *model = models.array[tag];
                 
-              //  NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
-              //  data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
+//                NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
+//                data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
                 data += [model.priceamount integerValue] *[model.productprice floatValue];
                 dataCount += [cell.QuantityLabel.text integerValue];
                 count ++;
@@ -380,27 +394,27 @@
                     _stockids = str;
                 }
             }
-//        }else{
-//
-//            EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-//            ZP_CartsModel *model = dataArray[i];
-//            if (cell.button.selected ) {
-//                dataCount += [cell.numLabel.text integerValue];
-//                count ++;
-//                NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
-//                NSString *str1 = [NSString stringWithFormat:@"%@",model.stockid];
-//                if (_modelstockid.length > 0) {
-//                    _modelstockid = [_modelstockid stringByAppendingString:[NSString stringWithFormat:@",%@",str1]];
-//                }else{
-//                    _modelstockid = str;
-//                }
-//                if (_stockids.length > 0) {
-//                    _stockids = [_stockids stringByAppendingString:[NSString stringWithFormat:@",%@",str]];
-//                }else{
-//                    _stockids = str;
-//                }
-//            }
-//        }
+        }else{
+
+            EditorViewCell * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            ZP_CartsModel *model = dataArray[i];
+            if (cell.button.selected ) {
+                dataCount += [cell.numLabel.text integerValue];
+                count ++;
+                NSString *str = [NSString stringWithFormat:@"%@_%@",model.stockid,model.amount];
+                NSString *str1 = [NSString stringWithFormat:@"%@",model.stockid];
+                if (_modelstockid.length > 0) {
+                    _modelstockid = [_modelstockid stringByAppendingString:[NSString stringWithFormat:@",%@",str1]];
+                }else{
+                    _modelstockid = str;
+                }
+                if (_stockids.length > 0) {
+                    _stockids = [_stockids stringByAppendingString:[NSString stringWithFormat:@",%@",str]];
+                }else{
+                    _stockids = str;
+                }
+            }
+        }
     }
     
 if (count == dataArray.count) {
@@ -409,9 +423,9 @@ if (count == dataArray.count) {
         self.Shopchoosebuttom.selected = NO;
     }
 //       更新合计数据
-    self.PriceLabel.text = [@(data) stringValue];
-    [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
-    allNum = dataCount;
+//    self.PriceLabel.text = [@(data) stringValue];
+//    [self.ClearingButt setTitle:[NSString stringWithFormat:@"结算(%ld)",(long)dataCount] forState: UIControlStateNormal];
+//    allNum = dataCount;
 }
 
 #pragma mark - 结算
@@ -489,7 +503,6 @@ if (count == dataArray.count) {
     return NO;
 }
 
-
 #pragma mark tableviewdelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (nameArray.count) {
@@ -509,7 +522,7 @@ if (count == dataArray.count) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if (!_bjBool) {
+    if (_bjBool == NO) {
         ShoppingCell * cell = [tableView dequeueReusableCellWithIdentifier:@"shoppingCell"];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
         self.tableView.tableFooterView = [[UIView alloc] init];
@@ -518,29 +531,31 @@ if (count == dataArray.count) {
         cell.buttom.tag = indexPath.row;
        // [cell.buttom removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
         [cell.buttom addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
-        [cell cellWithModel:model];
+        NSString * str = selectArray[indexPath.row];
+        [cell cellWithModel:model andIndexObject:str];
 
         return cell;
-//    }
-//    else{
-//        static NSString * EditorID = @"editorViewCell";
-//        EditorViewCell * cell = [tableView dequeueReusableCellWithIdentifier:EditorID];
-//        if(cell == nil){
-//            cell = [[EditorViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EditorID];
-//        }
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
-//        self.tableView.tableFooterView = [[UIView alloc] init];
-//        ZP_CartsShopModel * models = nameArray[indexPath.section];
-//        ZP_CartsModel *model = models.array[indexPath.row];
-//        cell.button.tag = indexPath.row;
-//        [cell.button removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
-//        [cell.button addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
-//        [cell cellWithModel:model];
-//        cell.btnClickBlock = ^(NSString *str) {
-//
-//        };
-//        return cell;
-//    }
+    }
+    else{
+        static NSString * EditorID = @"editorViewCell";
+        EditorViewCell * cell = [tableView dequeueReusableCellWithIdentifier:EditorID];
+        if(cell == nil){
+            cell = [[EditorViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:EditorID];
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果
+        self.tableView.tableFooterView = [[UIView alloc] init];
+        ZP_CartsShopModel * models = nameArray[indexPath.section];
+        ZP_CartsModel *model = models.array[indexPath.row];
+        cell.button.tag = indexPath.row;
+        [cell.button removeTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.button addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
+        [cell cellWithModel:model];
+
+        cell.btnClickBlock = ^(NSString *str) {
+            [selectArray replaceObjectAtIndex:indexPath.row withObject:str];
+        };
+        return cell;
+    }
     
 }
 
@@ -614,7 +629,7 @@ if (count == dataArray.count) {
     return 0.1;
 }
 
-/*
+
  -(UISwipeActionsConfiguration *)tableView:(UITableView *)tableView leadingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
  if (@available(iOS 11.0, *)) {
  NSArray *array = @[[UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"delete" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
@@ -657,7 +672,7 @@ if (count == dataArray.count) {
  return nil;
  }
  }
- */
+ 
 
 -(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     

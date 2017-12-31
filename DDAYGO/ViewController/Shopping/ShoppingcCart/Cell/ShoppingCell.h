@@ -25,7 +25,7 @@
 @property (nonatomic, strong) UILabel * QuantityLabel;  // 数量
 @property (nonatomic, strong) UILabel * SharacterLabel;  // X
 
-- (void)cellWithModel:(ZP_CartsModel *)model;
+- (void)cellWithModel:(ZP_CartsModel *)model andIndexObject:(NSString *)str;
 
 
 
