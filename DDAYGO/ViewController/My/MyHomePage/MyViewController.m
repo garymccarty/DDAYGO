@@ -340,7 +340,7 @@
 // 申请开店
 - (IBAction)sskdAction:(id)sender {
     Supplier1ViewController * Supplier = [[Supplier1ViewController alloc]init];
-    Supplier.stausType = self.RequestStatusStr.integerValue;
+    Supplier.stausType = 3;
     [self.navigationController pushViewController:Supplier animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;

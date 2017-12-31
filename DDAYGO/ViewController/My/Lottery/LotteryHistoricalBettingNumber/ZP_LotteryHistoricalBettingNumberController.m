@@ -99,11 +99,11 @@
             [self WithLotteryHistroicalTiltlBettingNumber:model];
         }
         for (NSDictionary * dict in obj[@"winorders"]) {
-            ZP_LotteryHistoricalBettingNumberModel2 * model2 = [[ZP_LotteryHistoricalBettingNumberModel2 alloc]init];
-            model2.lotteryoid = dict[@"lotteryoid"];
-            model2.pollid = obj[@""];
-            model2.aid = obj[@""];
-            [self WithLotteryHistroicalBettingNumber:model2];
+//            ZP_LotteryHistoricalBettingNumberModel2 * model2 = [[ZP_LotteryHistoricalBettingNumberModel2 alloc]init];
+//            model2.lotteryoid = dict[@"lotteryoid"];
+//            model2.pollid = obj[@""];
+//            model2.aid = obj[@""];
+//            [self WithLotteryHistroicalBettingNumber:model2];
         }
 //        for (NSDictionary * dic in obj[@"winordersdetail"]) {
 //            <#statements#>
@@ -159,9 +159,9 @@
     }];
     return myView;
 }
-- (void)WithLotteryHistroicalBettingNumber:(ZP_LotteryHistoricalBettingNumberModel2 *)model2 {
-    _OrderNumberLabel.text = [model2.lotteryoid stringValue];
-}
+//- (void)WithLotteryHistroicalBettingNumber:(ZP_LotteryHistoricalBettingNumberModel2 *)model2 {
+//    _OrderNumberLabel.text = [model2.lotteryoid stringValue];
+//}
 //// 领奖按钮
 //- (void)AwardBut {
 //    ZPLog(@"按钮");

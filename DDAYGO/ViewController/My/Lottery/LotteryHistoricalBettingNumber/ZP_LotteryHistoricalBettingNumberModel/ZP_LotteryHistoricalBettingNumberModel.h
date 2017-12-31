@@ -24,18 +24,18 @@
 /*********************/
 @end
 
-@interface ZP_LotteryHistoricalBettingNumberModel2 : NSObject
-
-@property (nonatomic, strong) NSNumber * lotteryoid;
-@property (nonatomic, strong) NSNumber * pollid;
-@property (nonatomic, strong) NSNumber * aid;
-@property (nonatomic, strong) NSNumber * winamount;
-@property (nonatomic, strong) NSNumber * rstate;
-@property (nonatomic, strong) NSNumber * createtime;
-@property (nonatomic, strong) NSNumber * updatetime;
-@property (nonatomic, strong) NSNumber * winordersdetail;
-
-@end
+//@interface ZP_LotteryHistoricalBettingNumberModel2 : NSObject
+//
+//@property (nonatomic, strong) NSNumber * lotteryoid;
+//@property (nonatomic, strong) NSNumber * pollid;
+//@property (nonatomic, strong) NSNumber * aid;
+//@property (nonatomic, strong) NSNumber * winamount;
+//@property (nonatomic, strong) NSNumber * rstate;
+//@property (nonatomic, strong) NSNumber * createtime;
+//@property (nonatomic, strong) NSNumber * updatetime;
+//@property (nonatomic, strong) NSNumber * winordersdetail;
+//
+//@end
 ///*********************/
 //
 //@interface ZP_LotteryHistoricalBettingNumberModel3 : NSObject

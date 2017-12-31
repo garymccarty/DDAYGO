@@ -15,5 +15,11 @@
 
 }
 
-
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (self.savaData) {
+        self.savaData(textField.text);
+    }
+    
+    return YES;
+}
 @end
