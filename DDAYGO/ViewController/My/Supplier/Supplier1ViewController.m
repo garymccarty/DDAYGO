@@ -15,6 +15,7 @@
 @interface Supplier1ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic, strong)NSMutableDictionary * dicData;
 @property (nonatomic, strong)NSArray * postionArray;
+@property (nonatomic, strong)NSArray * array;
 @property (nonatomic, strong) NSString *seleStr;
 @property (nonatomic, strong) NSMutableArray *typeNameArray;
 @property (nonatomic, strong) NSMutableArray *typeIdArray;
@@ -86,6 +87,7 @@
     self.dicData[@"聯繫電話:"] = @"";
     self.dicData[@"經營項目:"] = @"";
     self.dicData[@"合作項目:"] = @"";
+    _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
     _LocationLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
     switch ([[[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"] integerValue]) {
         case 886:
@@ -178,11 +180,11 @@
     }else {
         SupplierTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SupplierTableViewCell"];
         
-        cell.titleLabel.text = self.dicData.allKeys[indexPath.row];
+        cell.titleLabel.text = self.array[indexPath.row];
         cell.savaData = ^(NSString *title) {
-            [self.dicData setObject:title forKey:self.dicData.allKeys[indexPath.row]];
+            [self.dicData setObject:title forKey:self.array[indexPath.row]];
         };
-        NSString *contentString = self.dicData.allValues[indexPath.row];
+        NSString *contentString = self.dicData[self.array[indexPath.row]];
         if (contentString.length > 0) {
             cell.textField.text = contentString;
         } else {
