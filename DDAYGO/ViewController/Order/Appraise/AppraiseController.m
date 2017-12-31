@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"发布评论", nil);
+    self.title = NSLocalizedString(@"發佈評論", nil);
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     [self initUI];
     [self setUpNavgationBar];

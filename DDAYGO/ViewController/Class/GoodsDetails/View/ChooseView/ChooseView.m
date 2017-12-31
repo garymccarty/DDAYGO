@@ -78,7 +78,7 @@
     
 //   商品库存
     LB_stock = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(headImage.frame)+20, CGRectGetMaxY(LB_price.frame), 80, 20)];
-    LB_stock.text = NSLocalizedString(@"库存10000件", nil);
+    LB_stock.text = NSLocalizedString(@"庫存100件", nil);
     LB_stock.textColor = [UIColor blackColor];
     LB_stock.font = ZP_stockFont;
     [whiteView addSubview:LB_stock];
@@ -100,7 +100,7 @@
     
 //   用户所选择商品的尺码和颜色
     LB_detail = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(headImage.frame)+20, CGRectGetMaxY(LB_stock.frame), 150, 20)];
-    LB_detail.text = NSLocalizedString(@"请选择 尺码 颜色分类", nil);
+    LB_detail.text = NSLocalizedString(@"請選擇尺碼 顏色 規格", nil);
     LB_detail.numberOfLines = 0;
     LB_detail.textColor = [UIColor blackColor];
     LB_detail.font = ZP_stockFont;
@@ -116,7 +116,7 @@
     [addBtn setBackgroundColor:MainColor];
     [addBtn setTitleColor:[UIColor whiteColor] forState:0];
     addBtn.titleLabel.font = ZP_addBtnTextdetaFont;
-    [addBtn setTitle:NSLocalizedString(@"加入购物车", nil) forState:0];
+    [addBtn setTitle:NSLocalizedString(@"加入購物車", nil) forState:0];
     [whiteView addSubview:addBtn];
     
 //   立即购买按钮
@@ -125,7 +125,7 @@
     [buyBtn setBackgroundColor:[UIColor colorWithRed:245/255.0f green:143/255.0f blue:43/255.0f alpha:1]];
     [buyBtn setTitleColor:[UIColor whiteColor] forState:0];
     buyBtn.titleLabel.font = ZP_addBtnTextdetaFont;
-    [buyBtn setTitle:NSLocalizedString(@"立即购买", nil) forState:0];
+    [buyBtn setTitle:NSLocalizedString(@"立即購買", nil) forState:0];
     [whiteView addSubview:buyBtn];
     
 //   库存不足按钮
@@ -134,7 +134,7 @@
     [stockBtn setBackgroundColor:[UIColor lightGrayColor]];
     [stockBtn setTitleColor:[UIColor blackColor] forState:0];
     stockBtn.titleLabel.font = ZP_addBtnTextdetaFont;
-    [stockBtn setTitle:NSLocalizedString(@"库存不足", nil) forState:0];
+    [stockBtn setTitle:NSLocalizedString(@"庫存不足", nil) forState:0];
     [whiteView addSubview:stockBtn];
 //   默认隐藏
     stockBtn.hidden = YES;
