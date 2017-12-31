@@ -46,7 +46,7 @@
     [myView setBackgroundColor:ZP_Graybackground];
     //     标题1
     ZP_GeneralLabel * TitleLabel1 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel1.text textColor:ZP_textblack font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
-    TitleLabel1.text = @"第";
+    TitleLabel1.text = @"";
     [myView addSubview:TitleLabel1];
     _TitleLabel1 = TitleLabel1;
     [TitleLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -58,7 +58,7 @@
     
     //     标题2
     ZP_GeneralLabel * TitleLabel2 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel2.text textColor:ZP_textblack font:ZP_stockFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
-    TitleLabel2.text = @"20171230";
+    TitleLabel2.text = @"";
     [myView addSubview:TitleLabel2];
     _TitleLabel2 = TitleLabel2;
     [TitleLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,7 +70,7 @@
     
 //    标题3
     ZP_GeneralLabel * titleLabel3 = [ZP_GeneralLabel initWithtextLabel:_TitleLabel3.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
-    titleLabel3.text = @"2017-12-12T17:41:32.997";
+    titleLabel3.text = @"";
     [myView addSubview:titleLabel3];
     _TitleLabel3 = titleLabel3;
     [titleLabel3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -89,6 +89,10 @@
     dic[@"pagesize"] = @"6";
     [ZP_MyTool requestHistoricalBet:dic uccess:^(id obj) {
         ZP_LotteryHistoricalBettingNumberModel * model = [[ZP_LotteryHistoricalBettingNumberModel alloc]init];
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            [SVProgressHUD showErrorWithStatus:@"无数据"];
+            return ;
+        }
         for (NSDictionary * dic in obj) {
             NSString * string = [NSString stringWithFormat:@"%@%@%@",dic[@"yyyy"],dic[@"mm"],dic[@"periode"]];
             model.yyyy = @(string.integerValue);
@@ -101,9 +105,9 @@
             model2.aid = obj[@""];
             [self WithLotteryHistroicalBettingNumber:model2];
         }
-        for (NSDictionary * dic in obj[@"winordersdetail"]) {
-            <#statements#>
-        }
+//        for (NSDictionary * dic in obj[@"winordersdetail"]) {
+//            <#statements#>
+//        }
         
         [self.tableView reloadData];
         ZPLog(@"%@",obj);
@@ -114,6 +118,7 @@
 }
 - (void)WithLotteryHistroicalTiltlBettingNumber:(ZP_LotteryHistoricalBettingNumberModel *)model {
     ZP_LotteryHistoricalBettingNumberCell * cell = [[ZP_LotteryHistoricalBettingNumberCell alloc]init];
+    self.TitleLabel1.text = @"第";
     self.TitleLabel2.text = [[model.yyyy stringValue] stringByAppendingString:@"期"];
     _TitleLabel3.text = model.createtime.stringValue;
     [cell.button1 setTitle:[model.white1 stringValue] forState:UIControlStateNormal];
