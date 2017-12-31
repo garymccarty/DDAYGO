@@ -33,8 +33,17 @@
 }
 
 - (void)backAction {
-    [MyViewController sharedInstanceTool].popKind = DDFromDataVC;
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"确定要退出吗?" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [MyViewController sharedInstanceTool].popKind = DDFromDataVC;
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 // 添加webView，加载扫描过来的内容
