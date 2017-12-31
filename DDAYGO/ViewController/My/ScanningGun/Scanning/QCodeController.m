@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"扫一扫";
+    self.title = @"掃一掃";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: ZP_textWite}];
    [self.navigationController.navigationBar setBarTintColor:ZP_NavigationCorlor];
     
@@ -89,7 +89,7 @@
     
     // 5.1 添加会话输入
     if (input == nil) {
-        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"相机不可使用", nil)];
+        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"相機不可用", nil)];
 //        [self.navigationController popViewControllerAnimated:YES];
     }else {
         [_session addInput:input];
@@ -133,7 +133,7 @@
                 pay.Oname = arr[2];
                 [self.navigationController pushViewController:pay animated:YES];
            } else {
-               [SVProgressHUD showErrorWithStatus:@"二维码错误"];
+               [SVProgressHUD showErrorWithStatus:@"二維碼錯誤"];
                [self.navigationController popViewControllerAnimated:YES];
            }
     }

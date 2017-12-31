@@ -19,7 +19,7 @@
 }
 
 - (void)initUI {
-   self.title = NSLocalizedString(@"玩转促銷彩", nil);
+   self.title = NSLocalizedString(@"玩轉促銷彩", nil);
 
 }
 

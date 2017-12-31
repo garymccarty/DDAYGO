@@ -94,7 +94,7 @@
     dic[@"count"] = @"3";
     [ZP_MyTool requestBte:dic uccess:^(id obj) {
         if ([obj[@"result"]isEqualToString:@"time_err"]) {
-            [SVProgressHUD showInfoWithStatus:@"还没到开放时间"];
+            [SVProgressHUD showInfoWithStatus:@"還沒到開放時間"];
         }
         ZPLog(@"%@",obj);
     } failure:^(NSError * error) {
@@ -114,11 +114,11 @@
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 44)];
         view.backgroundColor = [UIColor whiteColor];
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 65, 44)];
-        label.text = @"红球：1个,";
+        label.text = @"紅球：1個,";
         label.font = [UIFont systemFontOfSize:13];
         [view addSubview:label];
         UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(80, 0, 30, 44)];
-        label2.text = @"已选";
+        label2.text = @"已選";
         label2.font = [UIFont systemFontOfSize:13];
         [view addSubview:label2];
         _label3 = [[UILabel alloc]initWithFrame:CGRectMake(110, 0, 10, 44)];
@@ -127,7 +127,7 @@
         _label3.font = [UIFont systemFontOfSize:13];
         [view addSubview:_label3];
         UILabel *label4 = [[UILabel alloc]initWithFrame:CGRectMake(120, 0, 15, 44)];
-        label4.text = @"个";
+        label4.text = @"個";
         label4.font = [UIFont systemFontOfSize:13];
         [view addSubview:label4];
         return view;
@@ -137,7 +137,7 @@
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 30)];
         view.backgroundColor = [UIColor whiteColor];
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(16, 0, 200, 30)];
-        label.text = @"选定的号码";
+        label.text = @"選定的號碼";
         label.font = [UIFont systemFontOfSize:13];
         [view addSubview:label];
         return view;
@@ -281,7 +281,7 @@
     NSString *str = arr[6];
 
     if ([str integerValue] == 20) {
-        [SVProgressHUD showInfoWithStatus:@"最高不能多于20注"];
+        [SVProgressHUD showInfoWithStatus:@"最高不能高於20注"];
         NSLog(@"20");
         return;
     }
@@ -300,7 +300,7 @@
     NSString *str = arr[6];
     
     if ([str integerValue] == 1) {
-        [SVProgressHUD showInfoWithStatus:@"最低不能少于1注"];
+        [SVProgressHUD showInfoWithStatus:@"最低不能少於1注"];
         NSLog(@"1");
         return;
     }
@@ -325,7 +325,7 @@
                 [self.tableView reloadMoveToBottom];
             }else{
                 NSLog(@"没有选定 ");
-                [SVProgressHUD showInfoWithStatus:@"没有选定"];
+                [SVProgressHUD showInfoWithStatus:@"沒有選定"];
             }
         }else{
             [self.dicArray removeObjectAtIndex:but.tag];
@@ -367,22 +367,22 @@
 
     if (self.array1.count < 5) {
 //        tishi
-        [SVProgressHUD showInfoWithStatus:@"请选择五个白球"];
+        [SVProgressHUD showInfoWithStatus:@"請選擇五個白球"];
         return;
     }
     if (self.arrayT.count < 1) {
         //tishi
-        [SVProgressHUD showInfoWithStatus:@"请选择一个红球"];
+        [SVProgressHUD showInfoWithStatus:@"請選擇一個紅球"];
         return;
     }
     if (self.Selearray.count< 6) {
         //
-        [SVProgressHUD showInfoWithStatus:@"请选择五个白球与一个红球"];
+        [SVProgressHUD showInfoWithStatus:@"請選擇五個白球和一個紅球"];
         return;
     }
 
 #pragma make -- 提示框
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"确定选择该组号码吗？",nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"提示", nil) message:NSLocalizedString(@"確定選擇該組號碼嗎？",nil) preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"取消",nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         ZPLog(@"取消");

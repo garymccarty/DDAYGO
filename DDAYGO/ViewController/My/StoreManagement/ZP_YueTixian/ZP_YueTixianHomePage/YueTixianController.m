@@ -22,7 +22,7 @@
 }
 
 - (void)initUI {
-    self.title = NSLocalizedString(@"余额", nil);
+    self.title = NSLocalizedString(@"餘額", nil);
     UIBarButtonItem * ExtractBut = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_withdrawals_record"] style:UIBarButtonItemStyleDone target:self action:@selector(Extract)];
     ExtractBut.tintColor = ZP_WhiteColor;
     self.navigationItem.rightBarButtonItem = ExtractBut;
@@ -49,7 +49,7 @@
   
     [ZP_MyTool requesAddSupplierTakeOut:dic success:^(id obj) {
         if ([obj[@"result"]isEqualToString:@"ok"]) {
-            [SVProgressHUD showSuccessWithStatus:@"申请成功"];
+            [SVProgressHUD showSuccessWithStatus:@"申請成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }
 //        NSLog(@"obj %@",obj);

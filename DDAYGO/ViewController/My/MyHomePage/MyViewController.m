@@ -205,7 +205,7 @@
         [self setAllDatas:model];
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
     }];
 }
 - (void)setAllDatas:(ZP_MyHopageModel *)model {
@@ -232,12 +232,12 @@
                 break;
             case 2:
             {
-                model.stateString = @"待审核";
+                model.stateString = @"待審核";
             }
                 break;
             case 3:
             {
-                model.stateString = @"已审核";
+                model.stateString = @"已審核";
             }
                 break;
             case 7:
@@ -340,7 +340,7 @@
 // 申请开店
 - (IBAction)sskdAction:(id)sender {
     Supplier1ViewController * Supplier = [[Supplier1ViewController alloc]init];
-    Supplier.stausType = 3;
+    Supplier.stausType = self.RequestStatusStr.integerValue;
     [self.navigationController pushViewController:Supplier animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;

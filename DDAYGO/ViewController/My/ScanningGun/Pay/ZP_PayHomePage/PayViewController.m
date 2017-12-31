@@ -69,25 +69,25 @@
             [self.navigationController pushViewController:vc animated:YES];
         }else
             if ([obj[@"result"]isEqualToString:@"country_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"国家不匹配"];
+                [SVProgressHUD showInfoWithStatus:@"國家不匹配"];
         }else
             if ([obj[@"result"]isEqualToString:@"国家不匹配"]) {
-                [SVProgressHUD showInfoWithStatus:@"支付方式错误"];
+                [SVProgressHUD showInfoWithStatus:@"支付方式錯誤"];
         }else
             if ([obj[@"result"]isEqualToString:@"icuetoken_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"ICUE身份错误"];
+                [SVProgressHUD showInfoWithStatus:@"ICUE身份錯誤"];
         }else
             if ([obj[@"result"]isEqualToString:@"shopcode_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"二维码错误，错误的商家ID"];
+                [SVProgressHUD showInfoWithStatus:@"二維碼錯誤，錯誤的商家ID"];
         }else
             if ([obj[@"result"]isEqualToString:@"qrpay_state_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"商家已关闭扫码支付"];
+                [SVProgressHUD showInfoWithStatus:@"商家已關閉掃碼支付"];
         }else
             if ([obj[@"result"]isEqualToString:@"qrpay_state_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"付款金额必须大于0"];
+                [SVProgressHUD showInfoWithStatus:@"付款金額必須大於0"];
         }else
             if ([obj[@"result"]isEqualToString:@"addorder_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"订单生成失败"];
+                [SVProgressHUD showInfoWithStatus:@"訂單生成失敗"];
                 
         }
     } failure:^(NSError *error) {

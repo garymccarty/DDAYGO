@@ -32,7 +32,7 @@
 
 //  UI
 - (void)initUI {
-    self.title = NSLocalizedString(@"历史提交号码", nil);
+    self.title = NSLocalizedString(@"歷史提交號碼", nil);
 //    static NSString * LotteryID = @"ZP_LotteryHistoricalBettingNumberCell";
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_LotteryHistoricalBettingNumberCell" bundle:nil] forCellReuseIdentifier:@"ZP_LotteryHistoricalBettingNumberCell"];
     [self.tableView registerClass:[ZP_LotterySubCell class] forCellReuseIdentifier:@"lotterysubcell"];
@@ -95,7 +95,7 @@
     [ZP_MyTool requestHistoricalBet:dic uccess:^(id obj) {
         
         if ([obj isKindOfClass:[NSDictionary class]]) {
-            [SVProgressHUD showErrorWithStatus:@"无数据"];
+            [SVProgressHUD showErrorWithStatus:@"無數據"];
             return ;
         }
         self.newsData = [NSMutableArray array];
@@ -170,7 +170,7 @@
     [myView setBackgroundColor:ZP_WhiteColor];
     //     订单
     ZP_GeneralLabel * OrderLabel = [ZP_GeneralLabel initWithtextLabel:_OrderLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    OrderLabel.text = @"订单号";
+    OrderLabel.text = @"訂單號";
     [myView addSubview:OrderLabel];
     _OrderLabel = OrderLabel;
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {

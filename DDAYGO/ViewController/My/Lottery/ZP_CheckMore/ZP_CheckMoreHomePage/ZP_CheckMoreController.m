@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self AllData];
-    self.title = NSLocalizedString(@"本期下注号码", nil);
+    self.title = NSLocalizedString(@"本期下注號碼", nil);
     [self.tableview registerNib:[UINib nibWithNibName:@"ZP_CheckMoreCell" bundle:nil] forCellReuseIdentifier:@"ZP_CheckMoreCell"];
     [self initTableHeadView];
 /**** IOS 11 ****/
@@ -82,7 +82,7 @@
     [myView setBackgroundColor:ZP_WhiteColor];
 //     订单
     ZP_GeneralLabel * OrderLabel = [ZP_GeneralLabel initWithtextLabel:_OrderLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
-    OrderLabel.text = @"订单号";
+    OrderLabel.text = @"訂單號";
     [myView addSubview:OrderLabel];
     _OrderLabel = OrderLabel;
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {

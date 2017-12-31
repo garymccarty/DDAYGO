@@ -64,7 +64,7 @@
         default:
             break;
     }
-    self.title = NSLocalizedString(@"供货商", nil);
+    self.title = NSLocalizedString(@"供貨商", nil);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
@@ -105,12 +105,12 @@
     if (arr.count == 13) {
         NSLog(@"填写完成");
     }else{
-        [SVProgressHUD showErrorWithStatus:@"请完善"];
+        [SVProgressHUD showErrorWithStatus:@"請完善"];
         return;
     }
     
     if (_seleStr.length < 1) {
-        [SVProgressHUD showErrorWithStatus:@"请选择组织形态"];
+        [SVProgressHUD showErrorWithStatus:@"請選擇組織形態"];
         return;
     }
     
@@ -172,7 +172,7 @@
         if (_seleStr.length > 0) {
             cell2.TissueMorphologyLabel.text = _seleStr;
         }else{
-            cell2.TissueMorphologyLabel.text = @"请选择组织形态";
+            cell2.TissueMorphologyLabel.text = @"請選擇組織形態";
             
         }
         [cell2.SelectBut addTarget:self action:@selector(actBut:) forControlEvents:UIControlEventTouchUpInside];

@@ -50,7 +50,7 @@
 //        2、全局 方法2
         //38接口显示·返回只有2个结果·以防止崩溃·加判断
         if ([obj[@"result"] isEqualToString:@"no"]) {
-            [SVProgressHUD showInfoWithStatus:@"供货商不存在"];
+            [SVProgressHUD showInfoWithStatus:@"供貨商不存在"];
             [self.navigationController popViewControllerAnimated:YES];
         }else {
             _sid = obj[@"result"];
@@ -59,7 +59,7 @@
 
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 // 获取商家余额(方法1)
@@ -86,7 +86,7 @@
         
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 

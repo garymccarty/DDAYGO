@@ -110,20 +110,20 @@
                     [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"支付失败", nil)];
             }else
                 if ([obj[@"result"] isEqualToString:@"no_result"]) {
-                    [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"无付款记录", nil)];
+                    [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"無付款記錄", nil)];
             }else
                 if ([obj[@"result"] isEqualToString:@"oid_err"]) {
-                    [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"订单编号不能为空", nil)];
+                    [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"訂單號不能為空", nil)];
             }
             
         } failure:^(NSError * error) {
 //            ZPLog(@"%@",error);
-            [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+            [SVProgressHUD showInfoWithStatus:@"服務器臉頰失敗"];
         }];
         [SVProgressHUD dismiss];
     }else{
         
-      [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"链接错误", nil)];
+      [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"鏈接錯誤", nil)];
         
     }
 }

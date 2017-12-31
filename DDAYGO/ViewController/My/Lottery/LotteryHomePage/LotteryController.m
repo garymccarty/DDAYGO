@@ -192,7 +192,7 @@
 //}
 
 - (void)initUI {
-    self.title = NSLocalizedString(@"促销彩", nil);
+    self.title = NSLocalizedString(@"促銷彩", nil);
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_WhiteColor}];   // 更改导航栏字体颜色
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];  //  更改导航栏颜色
     
@@ -240,7 +240,7 @@
     UIButton *but = [UIButton buttonWithType:UIButtonTypeCustom];
     but.frame = CGRectMake(20, CGRectGetMaxY(_OrderNumView.frame) + 10, ZP_Width - 40, 40);
     but.layer.cornerRadius = 5;
-    [but setTitle:@"填写" forState:UIControlStateNormal];
+    [but setTitle:@"填寫" forState:UIControlStateNormal];
     [but addTarget:self action:@selector(betAction) forControlEvents:UIControlEventTouchUpInside];
     but.backgroundColor = [UIColor orangeColor];
     [self.scrollView addSubview:but];
@@ -251,7 +251,7 @@
     UIButton *but2 = [UIButton buttonWithType:UIButtonTypeCustom];
     but2.frame = CGRectMake(20, CGRectGetMaxY(but.frame)+10, ZP_Width - 40, 40);
     but2.layer.cornerRadius = 5;
-    [but2 setTitle:@"历史提交号码" forState:UIControlStateNormal];
+    [but2 setTitle:@"歷史提交號碼" forState:UIControlStateNormal];
     [but2 addTarget:self action:@selector(HistoricalBetAction) forControlEvents:UIControlEventTouchUpInside];
     but2.backgroundColor = [UIColor orangeColor];
     [self.scrollView addSubview:but2];

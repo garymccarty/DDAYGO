@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"订单管理";
+    self.title = @"訂單管理";
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(search)];
     item.image = [UIImage imageWithContentsOfFile:@"nav_menu_search"];
     self.navigationItem.rightBarButtonItem = item;

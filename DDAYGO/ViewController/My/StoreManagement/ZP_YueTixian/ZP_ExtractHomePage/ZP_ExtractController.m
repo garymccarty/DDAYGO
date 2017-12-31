@@ -23,7 +23,7 @@
 }
 
 - (void)initUI {
-    self.title = NSLocalizedString(@"提现记录", nil);
+    self.title = NSLocalizedString(@"提現記錄", nil);
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_ExtractCell" bundle:nil] forCellReuseIdentifier:@"ZP_ExtractCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = ZP_DeepBlue;
@@ -47,7 +47,7 @@
         
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 

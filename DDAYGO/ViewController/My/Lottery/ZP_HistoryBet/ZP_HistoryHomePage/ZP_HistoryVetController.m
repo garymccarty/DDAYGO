@@ -27,7 +27,7 @@
 }
 - (void)initUI {
     
-    self.title = NSLocalizedString(@"历史开奖", nil);
+    self.title = NSLocalizedString(@"歷史開獎", nil);
     [self.tableView registerNib:[UINib nibWithNibName:@"ZP_HistoryBetCell" bundle:nil] forCellReuseIdentifier:@"ZP_HistoryBetCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
 //    self.tableView.backgroundColor = [UIColor grayColor];

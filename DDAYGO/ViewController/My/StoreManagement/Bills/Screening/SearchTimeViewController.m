@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"选择时间";
+    self.title = @"選擇時間";
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(search)];
     self.navigationItem.rightBarButtonItem = item;
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];

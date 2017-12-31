@@ -62,19 +62,19 @@
             [self.navigationController popViewControllerAnimated:YES];
         }else {
             if ([dic[@"result"] isEqualToString:@"add_up_to_ten"]) {
-                [SVProgressHUD showInfoWithStatus:@"添加失败，最多只能添加10条哟"];
+                [SVProgressHUD showInfoWithStatus:@"添加失败，最多只能添加10條數據喲"];
         }else {
             if ([dic[@"result"] isEqualToString:@"sys_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"服务器连接至火星"];
+                [SVProgressHUD showInfoWithStatus:@"服務器連接至火星"];
         }else {
             if ([dic[@"result"] isEqualToString:@"name_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"姓名不能为空"];
+                [SVProgressHUD showInfoWithStatus:@"姓名不能為空"];
         }else {
             if ([dic[@"result"] isEqualToString:@"phone_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"电话号码不能为空"];
+                [SVProgressHUD showInfoWithStatus:@"電話號碼不能為空"];
         }else {
             if ([dic[@"result"] isEqualToString:@"address_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"地址不能为空"];
+                [SVProgressHUD showInfoWithStatus:@"地址不能為空"];
             }
                 
             
@@ -85,7 +85,7 @@
     }
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 

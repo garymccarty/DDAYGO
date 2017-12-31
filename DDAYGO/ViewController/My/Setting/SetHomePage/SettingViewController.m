@@ -100,7 +100,7 @@
         [self fillData:model];
         
     } failure:^(NSError * error) {
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 
@@ -158,7 +158,7 @@
                     [SVProgressHUD showSuccessWithStatus:@"修改成功"];
                 }else
                     if ([obj[@"result"]isEqualToString:@"sys_error"]) {
-                        [SVProgressHUD showInfoWithStatus:@"修改失败"];
+                        [SVProgressHUD showInfoWithStatus:@"修改失敗"];
                     }
                 NSLog(@"xiugai success");
                 self.nicknameLabel.text = (NSString *)response;
@@ -183,7 +183,7 @@
                 [SVProgressHUD showSuccessWithStatus:@"修改成功"];
             }else
                 if ([json[@"result"]isEqualToString:@"sys_error"]) {
-                    [SVProgressHUD showInfoWithStatus:@"修改失败"];
+                    [SVProgressHUD showInfoWithStatus:@"修改失敗"];
                 }
 //            NSLog(@"%@",json);
         } failure:^(NSError *error) {
@@ -206,11 +206,11 @@
                 [SVProgressHUD showSuccessWithStatus:@"修改成功"];
             }else
                 if ([json[@"result"]isEqualToString:@"sys_error"]) {
-                    [SVProgressHUD showInfoWithStatus:@"修改失败"];
+                    [SVProgressHUD showInfoWithStatus:@"修改失敗"];
                 }
         } failure:^(NSError *error) {
 //            ZPLog(@"%@",error);
-            [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+            [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
         }];
     }
 }

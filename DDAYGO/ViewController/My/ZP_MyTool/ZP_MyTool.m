@@ -216,7 +216,7 @@
             failure(error);
         }];
     } else {
-        [SVProgressHUD showErrorWithStatus:@"请先登录账号"];
+        [SVProgressHUD showErrorWithStatus:@"請先登錄賬號"];
     }
 }
 //http://www.ddaygo.com/api/Test/gethistorycount?token=4d9b2a599b3f50ebbdd150b07b5214d7

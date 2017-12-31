@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"退货详情";
+    self.title = @"退貨詳情";
 }
 
 @end

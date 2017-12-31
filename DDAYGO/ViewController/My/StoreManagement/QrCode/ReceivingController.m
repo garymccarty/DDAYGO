@@ -24,7 +24,7 @@
     [super viewDidLoad];
     [self initUI];
     [self allData];
-    self.title = NSLocalizedString(@"收款码", nil);
+    self.title = NSLocalizedString(@"收款碼", nil);
     self.view.backgroundColor = ZP_green;
     [self.navigationController.navigationBar setBarTintColor:ZP_NavigationCorlor];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
@@ -48,13 +48,13 @@
     [ZP_MyTool requesQrCode:dic success:^(id obj) {
         ZPLog(@"%@",obj);
         if ([obj[@"result"]isEqualToString:@"no_supplie"]) {
-            [SVProgressHUD showInfoWithStatus:@"此用户不是商家"];
+            [SVProgressHUD showInfoWithStatus:@"此用戶不是商家"];
         }
     _strUrl = [NSString stringWithFormat:@"ddaygo,%@,%@",obj[@"supplierid"],obj[@"shopname"]];
         [self.tableView reloadData];
     } failure:^(NSError * error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 

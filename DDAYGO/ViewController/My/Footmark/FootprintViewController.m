@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"我的足迹";
+    self.title = @"我的足跡";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     [self.collectionView registerNib:[UINib nibWithNibName:@"FootprintCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"FootprintCollectionViewCell"];
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];
@@ -55,7 +55,7 @@
                 make.height.mas_equalTo(50);
             }];
             ZP_GeneralLabel * RemindLabel = [ZP_GeneralLabel initWithtextLabel:_RemindLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
-            RemindLabel.text = @"数据空空如也";
+            RemindLabel.text = @"數據空空如也";
             [self.view addSubview:RemindLabel];
             [RemindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.view).offset(ZP_Width / 2 -30);
@@ -83,10 +83,10 @@
         NSLog(@"dele %@",obj);
         [self allData];
         if ([obj[@"result"]isEqualToString:@"ok"]) {
-            [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+            [SVProgressHUD showSuccessWithStatus:@"刪除成功"];
         }else {
             if ([obj[@"result"]isEqualToString:@"failure"]) {
-                [SVProgressHUD showInfoWithStatus:@"删除失败"];
+                [SVProgressHUD showInfoWithStatus:@"刪除失敗"];
             }
         }
     } failure:^(NSError * error) {

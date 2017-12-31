@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    self.title = NSLocalizedString(@"绑定邮箱", nil);
+    self.title = NSLocalizedString(@"綁定郵箱", nil);
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.BindingEmailscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
 }
@@ -49,7 +49,7 @@
 - (IBAction)BindingEmail:(id)sender {
     
     if (![self validateEmail:_ZPEmailTextFiled.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"邮箱格式不正确"];
+        [SVProgressHUD showInfoWithStatus:@"郵箱格式不正確"];
         return;
     }
 //    if (_ZPCodeTextField.textField.text.length < 1) {
@@ -74,29 +74,29 @@
     [ZP_MyTool requesEmail:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
         if ([obj[@"result"]isEqualToString:@"ok"]) {
-            [SVProgressHUD showSuccessWithStatus:@"绑定成功"];
+            [SVProgressHUD showSuccessWithStatus:@"綁定成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else
             if ([obj[@"result"]isEqualToString:@"token_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"令牌无效"];
+                [SVProgressHUD showInfoWithStatus:@"令牌無效"];
         }else
             if ([obj[@"result"]isEqualToString:@"emailverify_null_er"]) {
-                [SVProgressHUD showInfoWithStatus:@"邮箱地址为空"];
+                [SVProgressHUD showInfoWithStatus:@"郵箱地址為空"];
         }else
             if ([obj[@"result"]isEqualToString:@"emailverify_format_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"邮箱地址格式错误"];
+                [SVProgressHUD showInfoWithStatus:@"郵箱地址格式錯誤"];
                         
         }else
             if ([obj[@"result"]isEqualToString:@"emailverify_exist_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"邮箱地址已被绑定"];
+                [SVProgressHUD showInfoWithStatus:@"郵箱地址也被綁定"];
                 
         }else
             if ([obj[@"result"]isEqualToString:@"failed_send_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"邮件发送失败"];
+                [SVProgressHUD showInfoWithStatus:@"郵箱發送失敗"];
                                 
         }else
             if ([obj[@"result"]isEqualToString:@"failed"]) {
-                [SVProgressHUD showInfoWithStatus:@"操作失败"];
+                [SVProgressHUD showInfoWithStatus:@"操作失敗"];
         }
         
     } failure:^(NSError * error) {

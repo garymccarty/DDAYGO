@@ -20,7 +20,7 @@
     [super viewDidLoad];
     [self initUI];
     [self touchesBegan];
-    self.title = NSLocalizedString(@"修改密码", nil);
+    self.title = NSLocalizedString(@"修改密碼", nil);
      [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
     self.ResetPasswordscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
     
@@ -44,17 +44,17 @@
 // 确定按钮
 - (IBAction)DetermineBut:(id)sender {
     if (self.newpwTextfield.text.length < 8 || self.newpwTextfield.text.length >20) {
-        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于20"];
+        [SVProgressHUD showInfoWithStatus:@"密碼位數不能小於8大於20"];
         ZPLog(@"密码不足6位");
         return;
     }
     if (![self judgePassWordLegal:self.newpwTextfield.text]) {
-        [SVProgressHUD showInfoWithStatus:@"密码必须8-20大小写数字组合"];
+        [SVProgressHUD showInfoWithStatus:@"密碼必須8-20大小寫數字組合"];
         ZPLog(@"密码不足8位");
         return;
     }
     if (self.newpwTextfield.text != self.againpwTextfield.text) {
-        [SVProgressHUD showInfoWithStatus:@"两次密码不一致"];
+        [SVProgressHUD showInfoWithStatus:@"兩次密碼不一致"];
     }else {
     [self allData];
     }
@@ -79,16 +79,16 @@
             [self.navigationController popToViewController:MyController animated:YES];
         }else
             if ([obj[@"result"]isEqualToString:@"token_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"令牌无效"];
+                [SVProgressHUD showInfoWithStatus:@"令牌無效"];
         }else
             if ([obj[@"result"]isEqualToString:@"opwd_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"原密码不能为空"];
+                [SVProgressHUD showInfoWithStatus:@"原密碼不能為空"];
         }else
             if ([obj[@"result"]isEqualToString:@"npwd_null_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"新密码不能为空"];
+                [SVProgressHUD showInfoWithStatus:@"新密碼不能為空"];
         }else
             if ([obj[@"result"]isEqualToString:@"opwd_err"]) {
-                [SVProgressHUD showInfoWithStatus:@"原密码错误"];
+                [SVProgressHUD showInfoWithStatus:@"原密碼錯誤"];
         }
         ZPLog(@"obj %@",obj);
     } failure:^(NSError * error) {
