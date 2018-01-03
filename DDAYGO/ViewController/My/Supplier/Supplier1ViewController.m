@@ -89,6 +89,7 @@
     self.dicData[@"合作項目:"] = @"";
     _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
     _LocationLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
+    
     switch ([[[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"] integerValue]) {
         case 886:
             _LocationLabel.text = @"臺灣";
@@ -277,23 +278,20 @@
 }
 
 
-- (NSMutableArray *)typeIdArray
-{
+- (NSMutableArray *)typeIdArray {
     if (!_typeIdArray) {
         _typeIdArray = [NSMutableArray array];
     }
     return _typeIdArray;
 }
-- (NSMutableArray *)typeNameArray
-{
+- (NSMutableArray *)typeNameArray {
     if (!_typeNameArray) {
         _typeNameArray = [NSMutableArray array];
     }
     return _typeNameArray;
 }
 
-- (NSMutableDictionary *)dataDic
-{
+- (NSMutableDictionary *)dataDic {
     if (!_dataDic) {
         _dataDic = [NSMutableDictionary dictionary];
     }

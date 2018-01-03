@@ -374,6 +374,7 @@
 		C47E765D1FB5A5A6009F279A /* DetailedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47E765F1FB5A5A6009F279A /* DetailedController.xib */; };
 		C482B2761FC2848C00D7539F /* ZP_GeneralLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C482B2751FC2848C00D7539F /* ZP_GeneralLabel.m */; };
 		C482B2861FC2B62600D7539F /* ZP_AnonymityViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C482B2851FC2B62600D7539F /* ZP_AnonymityViewCell.m */; };
+		C4910F701FFC6D24006DA5B9 /* ddg_advertising.png in Resources */ = {isa = PBXBuildFile; fileRef = C4910F6F1FFC6D24006DA5B9 /* ddg_advertising.png */; };
 		C491D3771FCBE31D00D127E9 /* BindingIntroduce.m in Sources */ = {isa = PBXBuildFile; fileRef = C491D3751FCBE31D00D127E9 /* BindingIntroduce.m */; };
 		C491D3781FCBE31D00D127E9 /* BindingIntroduce.xib in Resources */ = {isa = PBXBuildFile; fileRef = C491D3761FCBE31D00D127E9 /* BindingIntroduce.xib */; };
 		C492A1771FD0ECB7009FF57B /* ZP_HistoryBetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A16C1FD0ECB7009FF57B /* ZP_HistoryBetCell.m */; };
@@ -1103,6 +1104,7 @@
 		C482B2751FC2848C00D7539F /* ZP_GeneralLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_GeneralLabel.m; sourceTree = "<group>"; };
 		C482B2841FC2B62600D7539F /* ZP_AnonymityViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_AnonymityViewCell.h; sourceTree = "<group>"; };
 		C482B2851FC2B62600D7539F /* ZP_AnonymityViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_AnonymityViewCell.m; sourceTree = "<group>"; };
+		C4910F6F1FFC6D24006DA5B9 /* ddg_advertising.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ddg_advertising.png; sourceTree = "<group>"; };
 		C491D3741FCBE31D00D127E9 /* BindingIntroduce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindingIntroduce.h; sourceTree = "<group>"; };
 		C491D3751FCBE31D00D127E9 /* BindingIntroduce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindingIntroduce.m; sourceTree = "<group>"; };
 		C491D3761FCBE31D00D127E9 /* BindingIntroduce.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindingIntroduce.xib; sourceTree = "<group>"; };
@@ -1184,6 +1186,7 @@
 		062C9D4A1F8CD6F900E14987 /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				C4910F6F1FFC6D24006DA5B9 /* ddg_advertising.png */,
 				062C9D4B1F8CD6F900E14987 /* button_1@2x.png */,
 				062C9D4C1F8CD6F900E14987 /* button_1@3x.png */,
 				062C9D4D1F8CD6F900E14987 /* button_2@2x.png */,
@@ -3798,7 +3801,7 @@
 				TargetAttributes = {
 					063FE0411F614D24009910FF = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ASE7SDZ5NS;
+						DevelopmentTeam = CV87W82W48;
 						ProvisioningStyle = Automatic;
 					};
 					063FE05A1F614D24009910FF = {
@@ -3865,6 +3868,7 @@
 				C4399D701FCE84A000B7B96D /* LotteryController.xib in Resources */,
 				06F571D41F9F1A7900D61FDB /* DialogBox.xib in Resources */,
 				062C9D5D1F8CD6F900E14987 /* button_3@2x.png in Resources */,
+				C4910F701FFC6D24006DA5B9 /* ddg_advertising.png in Resources */,
 				062C9D5F1F8CD6F900E14987 /* button_4@2x.png in Resources */,
 				C472F1391FE29A060031D7B5 /* ZP_CheckMoreCell.xib in Resources */,
 				062C9D641F8CD6F900E14987 /* button_6@3x.png in Resources */,
@@ -4588,7 +4592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = ASE7SDZ5NS;
+				DEVELOPMENT_TEAM = CV87W82W48;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = DDAYGO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -4611,7 +4615,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = ASE7SDZ5NS;
+				DEVELOPMENT_TEAM = CV87W82W48;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = DDAYGO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

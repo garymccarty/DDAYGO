@@ -42,7 +42,7 @@
     [super viewDidLoad];
     [self initUI];
     [self LoginJudde];
-    [self SupplierAllData];
+    
 //     判断是否是供货商
     if (result.length == NO) {
         _SdglLayoutConstraint.constant = CGFLOAT_MIN;
@@ -50,6 +50,7 @@
 //        _viewLayoutConstraint.constant = 50.0;
     }
 }
+
 // 登录状态
 - (void)LoginJudde {
     [self autoLogin:^(id obj) {
@@ -149,16 +150,17 @@
             LogregisterController *viewcontroller = [[LogregisterController alloc] init];
             [self.navigationController pushViewController:viewcontroller animated:YES];
       }
-        
     }else {
+        
     [self AllDatas];
     [self allData];
+    [self SupplierAllData];
 }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
     if (self.popKind == DDFromDataVC) {
         self.tabBarController.selectedIndex = 3;
         self.popKind = 0;
@@ -168,8 +170,10 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
+    [self SupplierAllData];
     
 }
+
 //  个人资料
 - (void)allData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
@@ -179,6 +183,7 @@
 //    dic[@"nonce"] = @"adf";
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
         ZPLog(@"%@",obj);
+        [self SupplierAllData];
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.nickname = obj[@"nickname"];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
@@ -189,6 +194,7 @@
         
     }];
 }
+
 - (void)MyViewData:(ZP_HomePageModel *) model {
     _NameLabel.text = model.nickname;
 }
@@ -224,6 +230,10 @@
         ZP_MyHopageModel2 * model = [[ZP_MyHopageModel2 alloc]init];
         model.state = obj[@"state"];
         self.RequestStatusStr = model.state;
+        if (model.state == nil) {
+            return ;
+        }
+        
         switch (model.state.integerValue) {
             case 0:
             {
@@ -249,6 +259,7 @@
             default:
                 break;
         }
+        
         [self SupplierData:model];
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);

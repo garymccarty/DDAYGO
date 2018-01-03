@@ -19,6 +19,7 @@
     UIScrollView * _scrollView;
     NSArray * dataArray;
 }
+
 @property(nonatomic, strong)UITableView * tableView;
 //@property (nonatomic, strong)NSArray * advertisingArray;
 @property (nonatomic, strong)NSMutableArray * newsData;
@@ -293,7 +294,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return ZP_Width / 2;
+        return ZP_Width / 2 - 25 ;
     }else
         if (indexPath.section ==1){
 //            if (_newsData.count == 0) {
