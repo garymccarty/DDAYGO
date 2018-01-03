@@ -34,9 +34,11 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * BangDingLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * IcueNumLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * view3Layout;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *view4Layout;
 @property (weak, nonatomic) IBOutlet UIView * view1;
 @property (weak, nonatomic) IBOutlet UIView * view3;
 @property (weak, nonatomic) IBOutlet UIView * DividingLineView; // 分割线
+//@property (weak, nonatomic) IBOutlet UIView *view4;
 
 @property (nonatomic, strong)NSMutableDictionary * dataDic;
 
@@ -58,9 +60,11 @@
     if (ZPICUEToken.length > 0) {
         _BangDingLayout.constant = CGFLOAT_MIN;
         _IcueNumLayout.constant = CGFLOAT_MIN;
+//        _view4Layout.constant = CGFLOAT_MIN;
         _DividingLineView.hidden = YES;
         _view1.hidden = YES;
         _view3.hidden = YES;
+//        _view4.hidden = YES;
         _view3Layout.constant = 100.0;
     }
     
