@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self countrycode];
      [self allData];
     self.title = @"編輯地址";
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:ZP_textWite}];   // 更改导航栏字体颜色
@@ -28,6 +29,20 @@
     self.ZipcodeaddressTextField.keyboardType = UIKeyboardTypeNumberPad;
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
 }
+
+// 国别
+- (void)countrycode {
+    self.RegionLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
+    switch ([[[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"] integerValue]) {
+        case 886:
+            self.RegionLabel.text = @"臺灣";
+            break;
+            
+        default:
+            break;
+    }
+}
+
 // 保存点击事件
 - (void)EditAddress {
     [self acquiring];

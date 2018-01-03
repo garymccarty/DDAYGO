@@ -85,12 +85,20 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vFh-Ip-qIP">
+                        <rect key="frame" x="8" y="5" width="92" height="92"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="92" id="V3I-jS-juR"/>
+                            <constraint firstAttribute="width" constant="92" id="rRJ-0R-3XU"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="nSL-kj-gLK" firstAttribute="top" secondItem="A0p-VQ-TKJ" secondAttribute="bottom" constant="26" id="0pi-rJ-mJ9"/>
                     <constraint firstItem="W1e-m4-kIK" firstAttribute="leading" secondItem="otV-Dq-b6g" secondAttribute="trailing" constant="45" id="13X-2B-SdL"/>
                     <constraint firstItem="UlF-Tk-dWI" firstAttribute="leading" secondItem="NhN-r3-pHL" secondAttribute="trailing" constant="8" id="6b5-rZ-4p1"/>
                     <constraint firstItem="yDF-sZ-3mY" firstAttribute="top" secondItem="UlF-Tk-dWI" secondAttribute="bottom" constant="2" id="AZt-sn-pwo"/>
+                    <constraint firstItem="vFh-Ip-qIP" firstAttribute="centerY" secondItem="sgc-ol-QRs" secondAttribute="centerY" id="Aub-6k-91J"/>
                     <constraint firstAttribute="trailing" secondItem="nSL-kj-gLK" secondAttribute="trailing" id="Bx6-Qy-AQI"/>
                     <constraint firstItem="nSL-kj-gLK" firstAttribute="top" secondItem="W1e-m4-kIK" secondAttribute="bottom" constant="8.5" id="Ccg-Lj-3od"/>
                     <constraint firstAttribute="trailing" secondItem="UlF-Tk-dWI" secondAttribute="trailing" constant="10" id="CeT-Zk-tcj"/>
@@ -103,6 +111,7 @@
                     <constraint firstItem="W1e-m4-kIK" firstAttribute="trailing" secondItem="sgc-ol-QRs" secondAttribute="trailingMargin" id="cI5-2h-vvf"/>
                     <constraint firstItem="nSL-kj-gLK" firstAttribute="leading" secondItem="sgc-ol-QRs" secondAttribute="leading" constant="116" id="fvY-zc-ydY"/>
                     <constraint firstItem="DYA-FP-Cd3" firstAttribute="leading" secondItem="NhN-r3-pHL" secondAttribute="trailing" constant="8" id="gaw-yJ-gIw"/>
+                    <constraint firstItem="vFh-Ip-qIP" firstAttribute="leading" secondItem="sgc-ol-QRs" secondAttribute="leading" constant="8" id="gfO-ct-2ia"/>
                     <constraint firstItem="yDF-sZ-3mY" firstAttribute="leading" secondItem="DYA-FP-Cd3" secondAttribute="trailing" constant="3" id="gqG-R7-fAV"/>
                     <constraint firstAttribute="bottom" secondItem="nSL-kj-gLK" secondAttribute="bottom" id="tNa-wN-ivl"/>
                 </constraints>
@@ -113,6 +122,7 @@
                 <outlet property="ShopimageView" destination="NhN-r3-pHL" id="vmt-6h-SZo"/>
                 <outlet property="priceLabel" destination="yDF-sZ-3mY" id="L0P-SS-Zrb"/>
                 <outlet property="shopTextLabel" destination="UlF-Tk-dWI" id="dVg-9O-Tjd"/>
+                <outlet property="showYImageVIew" destination="vFh-Ip-qIP" id="Jzd-n5-U2Z"/>
             </connections>
             <point key="canvasLocation" x="13" y="52"/>
         </tableViewCell>

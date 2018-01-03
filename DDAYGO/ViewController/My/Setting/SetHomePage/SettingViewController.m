@@ -115,6 +115,7 @@
 }
 
 - (IBAction)touxiangAction:(id)sender {
+    
     if (!_photoManager) {
         _photoManager = [[SelectPhotoManager alloc]init];
     }
@@ -133,8 +134,8 @@
 
 - (void)setHead {
     _headerImage.userInteractionEnabled = YES;
-    //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
-    //    [_headerImage addGestureRecognizer:tap];
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
+//        [_headerImage addGestureRecognizer:tap];
     //  这里是从本地取的，如果是上线项目一定要从服务器取头像地址加载
     UIImage * img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
     if (img) {

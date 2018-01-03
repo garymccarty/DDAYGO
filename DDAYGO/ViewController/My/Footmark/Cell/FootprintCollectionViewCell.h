@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *productprice; // 价格
 @property (strong, nonatomic) IBOutlet UILabel * cp; // 商品cp
 @property (weak, nonatomic) IBOutlet UIButton *deleBtn;
+@property (weak, nonatomic) IBOutlet UIImageView * _defaultimgImageVIew;
 
 - (void)FootprintCollection:(ZP_FootprintModel *)model;
 

@@ -281,8 +281,8 @@
             image.image = [UIImage imageNamed:@"icon_fail"];
             [self.view addSubview:image];
             [image mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
-                make.top.equalTo(self.view).offset(ZP_Width / 2 - 25);
+                make.left.equalTo(_collectionView1).offset(ZP_Width / 2 -25);
+                make.top.equalTo(_collectionView1).offset(ZP_Width / 2 - 25);
                 make.width.mas_offset(50);
                 make.height.mas_equalTo(50);
             }];
@@ -290,7 +290,7 @@
             RemindLabel.text = @"数据空空如也";
             [self.view addSubview:RemindLabel];
             [RemindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.view).offset(ZP_Width / 2 -30);
+                make.left.equalTo(_collectionView1).offset(ZP_Width / 2 -30);
                 make.top.equalTo(image).offset(55);
                 make.height.mas_offset(15);
             }];

@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel * Cp; // 编号
 @property (weak, nonatomic) IBOutlet UILabel * StateLabel; // 状态
 @property (nonatomic, strong) collectionModel * model;
+@property (weak, nonatomic) IBOutlet UIImageView *showYImageVIew;
 
 @end
 

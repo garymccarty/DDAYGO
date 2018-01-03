@@ -18,15 +18,18 @@
 - (void)FootprintCollection:(ZP_FootprintModel *)model {
     [_defaultimg sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     if ([model.state intValue] == 4) {
-//        _defaultimg.image = [UIImage imageNamed:@"bg_invalid_frame"];
-        _defaultimg.alpha = 0.5;
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, _defaultimg.frame.size.width, 17)];
-        label.center = _defaultimg.center;
+        __defaultimgImageVIew.hidden = NO;
+        __defaultimgImageVIew.backgroundColor = [UIColor clearColor];
+        __defaultimgImageVIew.image = [UIImage imageNamed:@"bg_footprint_frame"];
+        
+//        _defaultimg.alpha = 0.5;
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, __defaultimgImageVIew.frame.size.width / 2, __defaultimgImageVIew.frame.size.width / 2, 15)];
+        label.center = __defaultimgImageVIew.center;
         label.text = NSLocalizedString(@"已失效", nil);
         [label setTextColor:[UIColor whiteColor]];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:14];
-        [_defaultimg addSubview:label];
+        [__defaultimgImageVIew addSubview:label];
     }else{
         
     [_defaultimg sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];

@@ -96,23 +96,39 @@
                             <constraint firstAttribute="bottom" secondItem="tzT-YR-bO9" secondAttribute="bottom" constant="13" id="ylr-FM-G7h"/>
                         </constraints>
                     </view>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qgv-HA-9j5">
+                        <rect key="frame" x="0.0" y="0.0" width="110" height="88"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="110" id="2QT-ER-sdK"/>
+                            <constraint firstAttribute="height" constant="88" id="t1G-GI-C8G"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="E2p-Rc-CTb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="278-MM-RSk"/>
+                <constraint firstItem="qgv-HA-9j5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="27s-te-EWQ"/>
+                <constraint firstItem="Hk3-b8-2zb" firstAttribute="top" secondItem="E2p-Rc-CTb" secondAttribute="bottom" constant="1" id="3Ah-37-s6a"/>
                 <constraint firstItem="Hk3-b8-2zb" firstAttribute="top" secondItem="E2p-Rc-CTb" secondAttribute="bottom" constant="1" id="6kz-I5-KkM"/>
                 <constraint firstAttribute="trailing" secondItem="E2p-Rc-CTb" secondAttribute="trailing" id="7ZR-yt-pUf"/>
+                <constraint firstAttribute="trailing" secondItem="E2p-Rc-CTb" secondAttribute="trailing" id="Dt7-Eq-urW"/>
                 <constraint firstAttribute="bottom" secondItem="Hk3-b8-2zb" secondAttribute="bottom" id="GMF-I6-by4"/>
+                <constraint firstItem="qgv-HA-9j5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KJs-Nx-Jt6"/>
                 <constraint firstItem="E2p-Rc-CTb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="O1l-iG-g6L"/>
                 <constraint firstItem="E2p-Rc-CTb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OUd-9c-d0J"/>
+                <constraint firstItem="Hk3-b8-2zb" firstAttribute="top" secondItem="qgv-HA-9j5" secondAttribute="bottom" constant="1" id="kWU-ti-T4x"/>
                 <constraint firstAttribute="trailing" secondItem="0rk-AD-jAl" secondAttribute="trailing" id="mBL-8B-cJq"/>
                 <constraint firstItem="Hk3-b8-2zb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qEp-48-mQi"/>
                 <constraint firstItem="0rk-AD-jAl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qeO-qx-pMV"/>
+                <constraint firstAttribute="trailing" secondItem="qgv-HA-9j5" secondAttribute="trailing" id="roF-8Z-OCF"/>
+                <constraint firstItem="E2p-Rc-CTb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wZ6-X6-reO"/>
                 <constraint firstAttribute="trailing" secondItem="Hk3-b8-2zb" secondAttribute="trailing" id="yuW-YP-JAU"/>
             </constraints>
             <size key="customSize" width="110" height="130"/>
             <connections>
                 <outlet property="CurrencySymbolLabel" destination="zL5-NI-56j" id="GnF-Po-HqV"/>
+                <outlet property="_defaultimgImageVIew" destination="qgv-HA-9j5" id="T2e-GF-deg"/>
                 <outlet property="cp" destination="tzT-YR-bO9" id="yBx-tX-k92"/>
                 <outlet property="defaultimg" destination="E2p-Rc-CTb" id="oIB-fN-3uY"/>
                 <outlet property="deleBtn" destination="0rk-AD-jAl" id="79g-7p-19z"/>

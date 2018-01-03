@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self countrycode];
     _ContactnumberTextField.keyboardType = UIKeyboardTypeNumberPad;
     _ZipcodeaddressTextField.keyboardType = UIKeyboardTypeNumberPad;
 }
@@ -30,8 +31,23 @@
         self.navigationItem.rightBarButtonItem = item;
         [self.navigationItem.rightBarButtonItem setTintColor:[UIColor whiteColor]];
         self.AddAddressScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
+        
     }
 }
+
+// 国别
+- (void)countrycode {
+    self.regionLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
+    switch ([[[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"] integerValue]) {
+        case 886:
+            _regionLabel.text = @"臺灣";
+            break;
+            
+        default:
+            break;
+    }
+}
+
 //  保存按钮
 - (void)saveAddress {
     [self allData];
