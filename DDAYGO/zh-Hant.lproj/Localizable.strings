@@ -14,6 +14,9 @@
 "Singapore" = "新加坡";
 "Thailand" = "泰國";
 "Vietnam" = "越南";
+"Taiwan" = "臺灣";
+"Server link failed" = "服務器鏈接失敗";
+"Once logged in, no other countries will be supported" = "登錄成功后，暫時不支持更換其他國家";
 "Select erchandise ach Month" = "每月精選商品";
 "Best-selling products" = "熱銷商品";
 "erchandise" = "精選商品";

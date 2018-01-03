@@ -1,18 +1,12 @@
 
 /* Class = "UIButton"; normalTitle = "头像"; ObjectID = "70f-JJ-vAZ"; */
-"70f-JJ-vAZ.normalTitle" = "大頭貼";
+"70f-JJ-vAZ.normalTitle" = "頭像";
 
 /* Class = "UIButton"; normalTitle = "语言"; ObjectID = "BcJ-ag-DcH"; */
 "BcJ-ag-DcH.normalTitle" = "語言";
 
 /* Class = "UIButton"; normalTitle = "绑定ICUE账号"; ObjectID = "GTw-o1-YLZ"; */
 "GTw-o1-YLZ.normalTitle" = "綁定ICUE賬號";
-
-/* Class = "UIButton"; normalTitle = "男"; ObjectID = "JlW-SS-5Mu"; */
-"JlW-SS-5Mu.normalTitle" = "男";
-
-/* Class = "UILabel"; text = "Pipizhen26"; ObjectID = "KlA-8m-EzM"; */
-"KlA-8m-EzM.text" = "Pipizhen26";
 
 /* Class = "UIButton"; normalTitle = "账号"; ObjectID = "M6W-vh-Awz"; */
 "M6W-vh-Awz.normalTitle" = "賬號";
@@ -26,17 +20,14 @@
 /* Class = "UIButton"; normalTitle = "昵称"; ObjectID = "djq-6N-dQQ"; */
 "djq-6N-dQQ.normalTitle" = "暱稱";
 
-/* Class = "UIButton"; normalTitle = "女"; ObjectID = "e8s-H7-s4G"; */
-"e8s-H7-s4G.normalTitle" = "女";
-
 /* Class = "UIButton"; normalTitle = "绑定邮箱"; ObjectID = "faS-hm-H7E"; */
 "faS-hm-H7E.normalTitle" = "綁定郵箱";
+
+/* Class = "UIButton"; normalTitle = "绑定介绍人"; ObjectID = "lIK-lF-bcl"; */
+"lIK-lF-bcl.normalTitle" = "綁定介紹人";
 
 /* Class = "UIButton"; normalTitle = "登出 "; ObjectID = "od5-OI-OX3"; */
 "od5-OI-OX3.normalTitle" = "登出 ";
 
 /* Class = "UILabel"; text = "性别"; ObjectID = "uAo-vs-cWY"; */
 "uAo-vs-cWY.text" = "性別";
-
-/* Class = "UILabel"; text = "LiLian"; ObjectID = "zHZ-mp-Ts3"; */
-"zHZ-mp-Ts3.text" = "LiLian";

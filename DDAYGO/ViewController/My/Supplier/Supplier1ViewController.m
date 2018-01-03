@@ -42,7 +42,22 @@
 -(void)initUI {
     self.noStoreView.hidden = YES;
     self.sendingBtn.hidden = YES;
+    
+    // 显示 重新加载的 ··  self.noStoreView.hidden = no; self.sendingBtn.hidden = no;
+    
+    
+    // 直接显示的  self.noStoreView.hidden = YES;  self.sendingBtn.hidden = YES;
+
+    
+    
     switch (self.stausType) {
+        case -1:
+        {
+            self.noStoreView.hidden = YES;
+            self.sendingBtn.hidden = YES;
+        }
+            break;
+            
         case 2:
         {
             self.noStoreView.hidden = NO;

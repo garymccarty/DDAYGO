@@ -105,11 +105,11 @@
     NSDictionary * dict = @{@"acount":@"5",@"countrycode":@"886"};
     [ZP_HomeTool requSelectLikeHotCakes:dict success:^(id obj) {
         NSArray * arr = obj;
-        NSLog(@"%@",arr);
+        ZPLog(@"%@",arr);
         self.newsData = [ZP_SixthModel arrayWithArray:arr];
         [self.bottomCV reloadData];
     } failure:^(NSError *reeor) {
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"Select erchandise ach Month", nil)];
     }];
 }
 
@@ -135,9 +135,20 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (self.newsData.count < 1) {
+        return CGSizeMake(CGFLOAT_MIN, CGFLOAT_MIN);
+    }
     return CGSizeMake(ZP_Width/3-1, ZP_Width / 3);
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    
+    return CGSizeMake(CGFLOAT_MIN, CGFLOAT_MIN);;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    
+    return CGSizeMake(CGFLOAT_MIN, CGFLOAT_MIN);
+}
 
 @end

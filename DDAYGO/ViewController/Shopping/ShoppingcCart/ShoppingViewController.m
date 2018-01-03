@@ -452,7 +452,7 @@ if (count == dataArray.count) {
             NSLog(@"%@",obj);
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
-            [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服務器諒解失敗 ", nil)];
+            [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服務器連接失敗 ", nil)];
         }];
         }];
         [alert addAction:defaultAction];
@@ -674,7 +674,7 @@ if (count == dataArray.count) {
  }
  
 
--(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return @"删除";
 }

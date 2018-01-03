@@ -50,6 +50,15 @@
         make.height.mas_equalTo(ZP_Width / 2 - 25);
     }];
     
+    UIView * SegmentationView = [UIView new];
+    [self.contentView addSubview:SegmentationView];
+    SegmentationView.backgroundColor = ZP_DeepBlue;
+    [SegmentationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(ZP_Width / 2);
+        make.left.equalTo(self).offset(ZP_Width);
+        make.width.mas_offset(ZP_Width);
+    }];
+    
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {

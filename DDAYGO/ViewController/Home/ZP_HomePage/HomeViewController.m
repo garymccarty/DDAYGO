@@ -107,7 +107,7 @@
     _chooseCityBtn.contentEdgeInsets = UIEdgeInsetsMake(6, -15, 6, 5);
     _chooseCityBtn.titleLabel.font = ZP_TooBarFont;
     [_chooseCityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_chooseCityBtn setTitle:NSLocalizedString(@"臺灣", nil) forState:UIControlStateNormal];
+    [_chooseCityBtn setTitle:NSLocalizedString(@"Taiwan", nil) forState:UIControlStateNormal];
     
     
     [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
@@ -147,6 +147,7 @@
         }
     } else {
         ZPLog(@"已登錄");
+        [SVProgressHUD showInfoWithStatus: NSLocalizedString(@"Once logged in, no other countries will be supported", nil)];
     }
     
 }
@@ -159,7 +160,7 @@
         
     } failure:^(NSError *error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
+        [SVProgressHUD showInfoWithStatus: NSLocalizedString(@"Server link failed", nil)];
     }];
 }
 //  数据
@@ -172,7 +173,7 @@
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
-        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
+        [SVProgressHUD showInfoWithStatus: NSLocalizedString(@"Server link failed", nil)];
     }];
 }
 #pragma mark -- tabeView delegate
@@ -202,7 +203,7 @@
 // cell个数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 5;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -326,6 +327,8 @@
         if (_newsData.count == 0) {
             return 0;
         }
+        //下面空白应该是 35
+//        return ZP_Width / 3 + 35;
         return ZP_Width / 3 * 2 + 35;
     }
 }

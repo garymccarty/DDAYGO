@@ -170,7 +170,6 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
-    [self SupplierAllData];
     
 }
 
@@ -183,7 +182,7 @@
 //    dic[@"nonce"] = @"adf";
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
         ZPLog(@"%@",obj);
-        [self SupplierAllData];
+       // [self SupplierAllData];
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.nickname = obj[@"nickname"];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
@@ -214,27 +213,46 @@
         [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
     }];
 }
+
 - (void)setAllDatas:(ZP_MyHopageModel *)model {
     _CollectionLabel.text =  [NSString stringWithFormat:@"%@",model.collecedcount];
-    
     _BrowseLabel.text = [NSString stringWithFormat:@"%@",model.historycount];
 }
 
 // 供货商状态请求
 - (void) SupplierAllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    
     dic[@"token"] = Token;
     [ZP_MyTool requestSupplier:dic success:^(id obj) {
         ZPLog(@"%@",obj);
         ZP_MyHopageModel2 * model = [[ZP_MyHopageModel2 alloc]init];
         model.state = obj[@"state"];
         self.RequestStatusStr = model.state;
-        if (model.state == nil) {
+        
+//        if (model.state == nil) {
+//            _RequestStatusLabel.text = nil;
+////            return ;
+//        }
+        
+        if ([obj[@"result"] isEqualToString:@"ok"]) {
+            _RequestStatusStr = @(-1);
+            _RequestStatusLabel.text = @"";
+            
+        }
+        if (obj[@"state"]) {
+            model.state = obj[@"state"];
+        }else {
+            model.state = @(-1);
+            _RequestStatusLabel.text = nil;
             return ;
         }
-        
         switch (model.state.integerValue) {
+//            case -1:
+//            {
+//                model.stateString = @"ok";
+//                 _RequestStatusLabel.text = @"";
+//            }
+//                break;
             case 0:
             {
                 model.stateString = @"已取消";
@@ -350,13 +368,18 @@
 
 // 申请开店
 - (IBAction)sskdAction:(id)sender {
-    Supplier1ViewController * Supplier = [[Supplier1ViewController alloc]init];
-    Supplier.stausType = self.RequestStatusStr.integerValue;
-    [self.navigationController pushViewController:Supplier animated:YES];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
-    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
+
+        Supplier1ViewController * Supplier = [[Supplier1ViewController alloc]init];
+        Supplier.stausType = self.RequestStatusStr.integerValue;
+    
+    ZPLog(@"%ld -- %ld",Supplier.stausType,self.RequestStatusStr.integerValue);
+    
+        [self.navigationController pushViewController:Supplier animated:YES];
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+        self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
+    }
  
-}
+//}
 
 
 //// 最新消息

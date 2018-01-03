@@ -2,23 +2,23 @@
 /* Class = "UIButton"; normalTitle = "商店管理"; ObjectID = "55u-GW-AOe"; */
 "55u-GW-AOe.normalTitle" = "商店管理";
 
+/* Class = "UILabel"; text = ")"; ObjectID = "58r-Uf-XLQ"; */
+"58r-Uf-XLQ.text" = ")";
+
 /* Class = "UILabel"; text = "收藏"; ObjectID = "69M-1X-t0e"; */
 "69M-1X-t0e.text" = "收藏";
 
-/* Class = "UILabel"; text = "280"; ObjectID = "9Ji-Nx-7ud"; */
-"9Ji-Nx-7ud.text" = "280";
+/* Class = "UILabel"; text = "0"; ObjectID = "9Ji-Nx-7ud"; */
+"9Ji-Nx-7ud.text" = "0";
 
 /* Class = "UILabel"; text = "足迹"; ObjectID = "CMS-9M-nx2"; */
 "CMS-9M-nx2.text" = "足迹";
 
-/* Class = "UILabel"; text = "关注店铺"; ObjectID = "Cuy-R3-aqA"; */
-"Cuy-R3-aqA.text" = "关注店铺";
+/* Class = "UILabel"; text = "("; ObjectID = "EYd-Rv-7Up"; */
+"EYd-Rv-7Up.text" = "(";
 
-/* Class = "UIButton"; normalTitle = "最新消息(5)"; ObjectID = "JEK-Cu-7Lb"; */
-"JEK-Cu-7Lb.normalTitle" = "最新消息(0)";
-
-/* Class = "UILabel"; text = "136"; ObjectID = "Nxl-dy-Fb1"; */
-"Nxl-dy-Fb1.text" = "136";
+/* Class = "UIButton"; normalTitle = "申请成为供货商"; ObjectID = "PW7-pe-KJH"; */
+"PW7-pe-KJH.normalTitle" = "申请成为供货商";
 
 /* Class = "UIButton"; normalTitle = "扫一扫"; ObjectID = "SzE-mi-64s"; */
 "SzE-mi-64s.normalTitle" = "扫一扫";
@@ -26,8 +26,8 @@
 /* Class = "UILabel"; text = "johb Smith"; ObjectID = "Yfb-7E-S8p"; */
 "Yfb-7E-S8p.text" = "johb Smith";
 
-/* Class = "UILabel"; text = "368"; ObjectID = "wKB-1F-Lrk"; */
-"wKB-1F-Lrk.text" = "368";
+/* Class = "UIButton"; normalTitle = "促销彩"; ObjectID = "Yq7-mx-siu"; */
+"Yq7-mx-siu.normalTitle" = "促销彩";
 
-/* Class = "UIButton"; normalTitle = "申请开店"; ObjectID = "zbi-kA-llp"; */
-"zbi-kA-llp.normalTitle" = "申请开店";
+/* Class = "UILabel"; text = "0"; ObjectID = "wKB-1F-Lrk"; */
+"wKB-1F-Lrk.text" = "0";
