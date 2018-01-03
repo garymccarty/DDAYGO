@@ -13,7 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIView *noStoreView;
 @property (weak, nonatomic) IBOutlet UIButton *sendingBtn;
 @property (assign, nonatomic) NSInteger stausType;
-
+@property (weak, nonatomic) IBOutlet UILabel *TExtLabel; // 状态Label
+@property (nonatomic, strong) NSString * reason;
 @property (weak, nonatomic) IBOutlet UILabel *LocationLabel; // 地区Label
 
 

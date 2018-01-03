@@ -270,7 +270,8 @@
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"countrycode"];
         ZPICUEToken = nil;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"icuetoken"];
-        [self.navigationController popViewControllerAnimated:YES];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"state"];
+        [self.navigationController popToRootViewControllerAnimated:YES];// 跳转到根目录（第一个界面）
 //        HomeViewController * Home = [[HomeViewController alloc]init];
 //        [self.navigationController pushViewController:Home animated:YES];
         NSLog(@"点击了确定按钮");

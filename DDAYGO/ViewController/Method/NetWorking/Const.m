@@ -19,6 +19,8 @@ NSString * Symbol = nil;
 NSString * countrycode = nil;
 
 NSString * result = nil;
+
+NSString * state = nil;
 @implementation Const
 
 @end

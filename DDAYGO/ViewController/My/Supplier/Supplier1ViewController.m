@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.TExtLabel.text = self.reason;
     [self initUI];
     [self SupplierllData];
 }

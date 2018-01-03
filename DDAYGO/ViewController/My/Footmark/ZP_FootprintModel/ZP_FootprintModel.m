@@ -10,6 +10,24 @@
 
 @implementation ZP_FootprintModel
 
++ (NSMutableArray *)arrayWithArray:(NSArray *)array {
+    
+    NSMutableArray * arr = [[NSMutableArray alloc]init];
+    if (array.count > 0) {
+        for (NSDictionary * dic in array) {
+            ZP_FootprintModel * model = [[ZP_FootprintModel alloc]init];
+            model.createdate = dic[@"createdate"];
+            model.historyArray = [ZP_FootprintModel1 arrayWithArray1:dic[@"historylist"]];
+            [arr addObject:model];
+        }
+        
+    }
+    return arr;
+}
+@end
+
+@implementation ZP_FootprintModel1
+
 + (instancetype)gEtFootprint:(NSDictionary *)Dic {
     return [[self alloc]initWithFootprintData:Dic];
 }
@@ -24,31 +42,26 @@
     }
     return self;
 }
-+ (id)cheakNull:(id)dic {
-    if ([dic isEqual:[NSNull null]]) {
-        return @"";
-    }
-    return dic;
-}
 
-+ (NSMutableArray *)arrayWithArray:(NSArray *)array {
++ (NSMutableArray *)arrayWithArray1:(NSArray *)array {
     
     NSMutableArray * arr = [[NSMutableArray alloc]init];
     if (array.count > 0) {
-
-    for (NSDictionary * dic in array[0][@"historylist"]) {
         
-        ZP_FootprintModel * model = [[ZP_FootprintModel alloc]init];
-        model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
-        model.productname = dic[@"productname"];
-        model.productprice = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
-        model.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];
-        model.historyid = dic[@"historyid"];
-        model.state = dic[@"state"];
-        [arr addObject:model];
-    }
+        for (NSDictionary * dic in array) {
+            
+            ZP_FootprintModel1 * model = [[ZP_FootprintModel1 alloc]init];
+            model.defaultimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",dic[@"defaultimg"]];
+            model.productname = dic[@"productname"];
+            model.productprice = [NSString stringWithFormat:@"%@",dic[@"productprice"]];
+            model.cp = [NSString stringWithFormat:@"%@",dic[@"cp"]];
+            model.historyid = dic[@"historyid"];
+            model.state = dic[@"state"];
+            [arr addObject:model];
+        }
         
     }
     return arr;
 }
 @end
+

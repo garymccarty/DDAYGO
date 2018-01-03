@@ -30,10 +30,11 @@
 //@property (weak, nonatomic) IBOutlet UIView * zxxxView;
 @property (weak, nonatomic) IBOutlet UIView * scanView;
 @property (weak, nonatomic) IBOutlet UIView * CaipiaoView;
-@property (weak, nonatomic) IBOutlet UIButton *headImageBut;
+@property (weak, nonatomic) IBOutlet UIButton * headImageBut;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *SdglLayoutConstraint;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *XfjlLayoutConstraint;
+@property (nonatomic, strong) NSString * reason;
 @end
 
 @implementation MyViewController
@@ -42,11 +43,19 @@
     [super viewDidLoad];
     [self initUI];
     [self LoginJudde];
+    [self loginAllData];
     
 //     判断是否是供货商
-    if (result.length == NO) {
+    if (state.length == NO) {
         _SdglLayoutConstraint.constant = CGFLOAT_MIN;
          _sdglView.hidden = YES;
+//        _viewLayoutConstraint.constant = 50.0;
+    }
+    //     判断是否申请成功供货商
+    if (state.length == YES) {
+//        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        self.XfjlLayoutConstraint.constant = CGFLOAT_MIN;
+        self.xfjlView.hidden = YES;
 //        _viewLayoutConstraint.constant = 50.0;
     }
 }
@@ -66,6 +75,22 @@
             [self updateUserInfo];
         }
     }];
+}
+//
+- (void)loginAllData {
+    //    判断是否登录
+    if (!Token) {
+        if (![MyViewController sharedInstanceTool].hasRemind) {
+            [MyViewController sharedInstanceTool].hasRemind = YES;
+            LogregisterController *viewcontroller = [[LogregisterController alloc] init];
+            [self.navigationController pushViewController:viewcontroller animated:YES];
+        }
+    }else {
+        
+        [self AllDatas];
+        [self allData];
+        [self SupplierAllData];
+    }
 }
 + (MyViewController *)sharedInstanceTool {
     static MyViewController *instance = nil;
@@ -143,19 +168,7 @@
         [_headImageBut setImage:image forState:UIControlStateNormal];
     }
     
-//    判断是否登录
-    if (!Token) {
-        if (![MyViewController sharedInstanceTool].hasRemind) {
-            [MyViewController sharedInstanceTool].hasRemind = YES;
-            LogregisterController *viewcontroller = [[LogregisterController alloc] init];
-            [self.navigationController pushViewController:viewcontroller animated:YES];
-      }
-    }else {
-        
-    [self AllDatas];
-    [self allData];
-    [self SupplierAllData];
-}
+
     
 }
 
@@ -256,12 +269,15 @@
 //                break;
             case 0:
             {
+                self.reason = obj[@"reason"];
                 model.stateString = @"已取消";
+                self.ssdkBut.enabled = YES;
             }
                 break;
             case 2:
             {
                 model.stateString = @"待審核";
+                self.ssdkBut.enabled = NO;
             }
                 break;
             case 3:
@@ -272,6 +288,8 @@
             case 7:
             {
                 model.stateString = @"已退件";
+                self.reason = obj[@"reason"];
+                self.ssdkBut.enabled = YES;
             }
                 break;
                 
@@ -372,7 +390,7 @@
 
         Supplier1ViewController * Supplier = [[Supplier1ViewController alloc]init];
         Supplier.stausType = self.RequestStatusStr.integerValue;
-    
+        Supplier.reason = self.reason;
     ZPLog(@"%ld -- %ld",Supplier.stausType,self.RequestStatusStr.integerValue);
     
         [self.navigationController pushViewController:Supplier animated:YES];

@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface ZP_FootprintModel : NSObject
+@property (strong, nonatomic) NSString * createdate;
+@property (nonatomic, strong) NSMutableArray * historyArray;
+
++ (NSMutableArray *)arrayWithArray:(NSArray *)array;
+@end
+
+@interface ZP_FootprintModel1 : NSObject
 @property (strong, nonatomic) NSString * defaultimg; // 图片
 @property (strong, nonatomic) NSString * productname;  // 标题
 @property (strong, nonatomic) NSString * productprice; // 商品价格
@@ -16,7 +23,9 @@
 @property (nonatomic, strong) NSNumber * state;  // 商品状态
 @property (nonatomic, strong) NSNumber * historyid;
 
-+ (instancetype)gEtFootprint:(NSDictionary *)Dic;
++ (instancetype)gEtFootprint1:(NSDictionary *)Dic;
 
-+ (NSMutableArray *)arrayWithArray:(NSArray *)array;
++ (NSMutableArray *)arrayWithArray1:(NSArray *)array;
 @end
+
+

@@ -75,7 +75,7 @@
         return;
     }
     
-    ZP_FootprintModel *model = self.newsData[btn.tag];
+    ZP_FootprintModel1 *model = self.newsData[btn.tag];
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = Token;
     dic[@"historyid"] = model.historyid;
@@ -95,16 +95,19 @@
 }
 
 #pragma mark --- collectionView delegate
+
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     return self.newsData.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    ZP_FootprintModel *model = self.newsData[indexPath.row];
     FootprintCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FootprintCollectionViewCell" forIndexPath:indexPath];
     cell.deleBtn.tag = indexPath.row;
     [cell.deleBtn addTarget:self action:@selector(deleBtn:) forControlEvents:UIControlEventTouchUpInside];
-    ZP_FootprintModel *model = self.newsData[indexPath.row];
+    
     [cell FootprintCollection:model];
     return cell;
 }

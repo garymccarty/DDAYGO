@@ -17,9 +17,11 @@
                 <outlet property="NameLabel" destination="Yfb-7E-S8p" id="9B3-Bj-5NT"/>
                 <outlet property="RequestStatusLabel" destination="N31-ty-HnO" id="Sdh-fT-ONs"/>
                 <outlet property="SdglLayoutConstraint" destination="JIE-Bw-fKa" id="uBN-pO-aCd"/>
+                <outlet property="XfjlLayoutConstraint" destination="3x4-6N-7PJ" id="dic-cm-pgc"/>
                 <outlet property="headImageBut" destination="OTg-9H-to4" id="9fB-tz-BmB"/>
                 <outlet property="scanView" destination="7k6-oe-5YX" id="UHd-bb-MTZ"/>
                 <outlet property="sdglView" destination="8nF-TL-hSY" id="5v8-3h-hhn"/>
+                <outlet property="ssdkBut" destination="PW7-pe-KJH" id="vUl-9Z-h07"/>
                 <outlet property="userBackView" destination="LFs-vK-Df4" id="zsQ-47-JJe"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5Mq-cd-wI5"/>
                 <outlet property="viewLayoutConstraint" destination="0No-tJ-duv" id="BLh-6m-glm"/>
@@ -272,7 +274,6 @@
                                         <constraint firstItem="N31-ty-HnO" firstAttribute="top" secondItem="Yes-LR-scf" secondAttribute="top" constant="8" id="1Tv-xu-P2q"/>
                                         <constraint firstAttribute="height" constant="49" id="3x4-6N-7PJ"/>
                                         <constraint firstAttribute="trailing" secondItem="PW7-pe-KJH" secondAttribute="trailing" id="G14-ud-Beb"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="Ilh-9h-TBQ"/>
                                         <constraint firstItem="EYd-Rv-7Up" firstAttribute="leading" secondItem="Yes-LR-scf" secondAttribute="leading" constant="146" id="T8n-yL-Nwj"/>
                                         <constraint firstItem="N31-ty-HnO" firstAttribute="leading" secondItem="EYd-Rv-7Up" secondAttribute="trailing" constant="1" id="c9P-39-h5l"/>
                                         <constraint firstAttribute="bottom" secondItem="PW7-pe-KJH" secondAttribute="bottom" id="fB4-Uk-B7A"/>

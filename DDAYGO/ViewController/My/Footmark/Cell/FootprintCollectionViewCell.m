@@ -15,7 +15,7 @@
     // Initialization code
 }
 
-- (void)FootprintCollection:(ZP_FootprintModel *)model {
+- (void)FootprintCollection:(ZP_FootprintModel1 *)model {
     [_defaultimg sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     if ([model.state intValue] == 4) {
         __defaultimgImageVIew.hidden = NO;
