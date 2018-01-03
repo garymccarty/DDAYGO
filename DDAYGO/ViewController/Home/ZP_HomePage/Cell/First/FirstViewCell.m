@@ -98,8 +98,8 @@
             CGSize imagesize;
             imagesize.height = 60;
             imagesize.width = 60;
-            UIImage *image1 = [self imageWithImage:image scaledToSize:imagesize];
-            [btn setImage:image1 forState:UIControlStateNormal];
+//            UIImage *image1 = [self imageWithImage:image scaledToSize:imagesize];
+            [btn setImage:image forState:UIControlStateNormal];
             [btn setTitle:name forState:UIControlStateNormal];
             btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 5, 0);
             [btn resizeWithDistance:10];

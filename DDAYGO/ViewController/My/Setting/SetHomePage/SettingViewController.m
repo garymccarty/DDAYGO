@@ -275,7 +275,9 @@
         ZPICUEToken = nil;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"icuetoken"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"state"];
-        [self.navigationController popToRootViewControllerAnimated:YES];// 跳转到根目录（第一个界面）
+//        [self.navigationController popToRootViewControllerAnimated:YES];// 跳转到根目录（第一个界面）
+        [MyViewController sharedInstanceTool].hasLogin = NO;
+        [[MyViewController sharedInstanceTool].tabBarController setSelectedIndex:0];
 //        HomeViewController * Home = [[HomeViewController alloc]init];
 //        [self.navigationController pushViewController:Home animated:YES];
         NSLog(@"点击了确定按钮");
