@@ -23,6 +23,9 @@
 #import "ZP_HomePageModel.h"
 #import "ZP_LoginTool.h"
 #import "ZP_MyHopageModel.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "SDImageCache.h"
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIView * userBackView;
 @property (weak, nonatomic) IBOutlet UIView * sdglView;
@@ -30,7 +33,6 @@
 //@property (weak, nonatomic) IBOutlet UIView * zxxxView;
 @property (weak, nonatomic) IBOutlet UIView * scanView;
 @property (weak, nonatomic) IBOutlet UIView * CaipiaoView;
-@property (weak, nonatomic) IBOutlet UIButton * headImageBut;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *SdglLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *XfjlLayoutConstraint;
@@ -199,6 +201,8 @@
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.nickname = obj[@"nickname"];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
+        [self.headImageBut sd_setBackgroundImageWithURL:[NSURL URLWithString:model.avatarimg] forState:UIControlStateNormal];
+//        [self.headImageBut sd_setImageWithURL:[NSURL URLWithString:model.avatarimg]];
         [self MyViewData:model];
         
     } failure:^(NSError * error) {

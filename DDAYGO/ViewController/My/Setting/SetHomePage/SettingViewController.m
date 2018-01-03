@@ -144,6 +144,7 @@
     UIImage * img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
     if (img) {
         _headerImage.image = img;
+//        [[MyViewController sharedInstanceTool].headImageBut setImage:img forState:UIControlStateNormal];
     }
 }
 

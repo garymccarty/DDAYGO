@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,7 +18,7 @@
                 <outlet property="RequestStatusLabel" destination="N31-ty-HnO" id="Sdh-fT-ONs"/>
                 <outlet property="SdglLayoutConstraint" destination="JIE-Bw-fKa" id="uBN-pO-aCd"/>
                 <outlet property="XfjlLayoutConstraint" destination="3x4-6N-7PJ" id="dic-cm-pgc"/>
-                <outlet property="headImageBut" destination="OTg-9H-to4" id="9fB-tz-BmB"/>
+                <outlet property="headImageBut" destination="OTg-9H-to4" id="oWz-rU-uPU"/>
                 <outlet property="scanView" destination="7k6-oe-5YX" id="UHd-bb-MTZ"/>
                 <outlet property="sdglView" destination="8nF-TL-hSY" id="5v8-3h-hhn"/>
                 <outlet property="ssdkBut" destination="PW7-pe-KJH" id="vUl-9Z-h07"/>
