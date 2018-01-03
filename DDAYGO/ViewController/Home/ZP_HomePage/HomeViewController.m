@@ -185,16 +185,20 @@
 //  组头
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    if (section ==2) {
-        return 5;
-    }else
-        if (section == 3) {
-           return 5;
-        }else
-           if (section ==4) {
-            return 5;
-        }
+//    if (section ==2) {
+//        return 5;
+//    }else
+//        if (section == 3) {
+//           return 5;
+//        }else
+//           if (section ==4) {
+//            return 5;
+//        }
     return 0.001;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.1f;
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -295,13 +299,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return ZP_Width / 2 - 25 ;
+        return ZP_Width / 2 - 25 -30;
     }else
         if (indexPath.section ==1){
 //            if (_newsData.count == 0) {
 //                return 0;
 //            }
-            return ZP_Width / 2;
+            return ZP_Width / 2 - 30;
     }else
 /**********暂时不需要***********/
 //        if (indexPath.section == 2){
@@ -314,7 +318,7 @@
 //            if (_newsData.count == 0) {
 //                return 0;
 //            }
-            return 190;
+            return 190 - 30;
     }else
         if (indexPath.section == 3){
 /*********有问题***********/

@@ -3801,7 +3801,7 @@
 				TargetAttributes = {
 					063FE0411F614D24009910FF = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = CV87W82W48;
+						DevelopmentTeam = X2FE22C6A5;
 						ProvisioningStyle = Automatic;
 					};
 					063FE05A1F614D24009910FF = {
@@ -4592,7 +4592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = CV87W82W48;
+				DEVELOPMENT_TEAM = X2FE22C6A5;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = DDAYGO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -4603,7 +4603,7 @@
 					"-ObjC",
 				);
 				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ddaygo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiby.music;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 			};
@@ -4615,7 +4615,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = CV87W82W48;
+				DEVELOPMENT_TEAM = X2FE22C6A5;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = DDAYGO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -4626,7 +4626,7 @@
 					"-ObjC",
 				);
 				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ddaygo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiby.music;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 			};

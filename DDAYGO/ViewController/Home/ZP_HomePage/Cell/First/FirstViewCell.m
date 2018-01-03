@@ -96,8 +96,8 @@
         // 主线程刷新UI
         dispatch_async(dispatch_get_main_queue(), ^{
             CGSize imagesize;
-            imagesize.height = ZP_Width/4-30;
-            imagesize.width = ZP_Width/4-30;
+            imagesize.height = 60;
+            imagesize.width = 60;
             UIImage *image1 = [self imageWithImage:image scaledToSize:imagesize];
             [btn setImage:image1 forState:UIControlStateNormal];
             [btn setTitle:name forState:UIControlStateNormal];
