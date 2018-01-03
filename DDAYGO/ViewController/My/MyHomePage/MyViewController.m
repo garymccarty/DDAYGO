@@ -186,7 +186,6 @@
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.nickname = obj[@"nickname"];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
-        
         [self MyViewData:model];
         
     } failure:^(NSError * error) {
@@ -196,6 +195,8 @@
 
 - (void)MyViewData:(ZP_HomePageModel *) model {
     _NameLabel.text = model.nickname;
+//    [self.headImageBut sd_setImageWithURL:[NSURL URLWithString:model.avatarimg] placeholderImage:[UIImage imageNamed:@"HeadrImage"]];
+    
 }
 
 // 获取浏览记录、收藏的数量

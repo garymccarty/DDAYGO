@@ -131,7 +131,7 @@
 - (void)buttonAction:(UIButton *)sender {
     if (!DD_HASLOGIN) {
         if (![MyViewController sharedInstanceTool].hasRemind) {
-//            [MyViewController sharedInstanceTool].hasRemind = YES;
+            [MyViewController sharedInstanceTool].hasRemind = YES;
             [self PositionallData];
             NSLog(@"位置");
             PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
@@ -186,20 +186,20 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     if (section ==2) {
-        return 15;
+        return 5;
     }else
         if (section == 3) {
-           return 15;
+           return 5;
         }else
            if (section ==4) {
-            return 15;
+            return 5;
         }
     return 0.001;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.0001;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return 0.0001;
+//}
 // cell个数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
