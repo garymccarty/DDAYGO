@@ -76,6 +76,7 @@ float DegreesToRadians(float angle) {
         self.backgroundColor = [UIColor whiteColor];
     } else {
         self.backgroundColor = [UIColor colorWithRed:0.29 green:0.29 blue:0.29 alpha:1.00];
+//        self.backgroundColor = [UIColor yellowColor];
     }
 }
 

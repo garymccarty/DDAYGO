@@ -12,12 +12,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-
+    _textField.delegate = self;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (self.savaData) {
-        self.savaData(textField.text);
+        self.savaData([textField.text stringByReplacingCharactersInRange:range withString:string]);
     }
     
     return YES;

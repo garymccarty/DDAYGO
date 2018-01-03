@@ -13,13 +13,22 @@
 #import "PrefixHeader.pch"
 #import "ZP_MyTool.h"
 @interface Supplier1ViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property(nonatomic, strong)NSMutableDictionary * dicData;
+
 @property (nonatomic, strong)NSArray * postionArray;
 @property (nonatomic, strong)NSArray * array;
+@property (nonatomic, strong)NSArray * arrayP;
+
 @property (nonatomic, strong) NSString *seleStr;
+@property (nonatomic, strong) NSNumber *seleId;
+
+
+
 @property (nonatomic, strong) NSMutableArray *typeNameArray;
 @property (nonatomic, strong) NSMutableArray *typeIdArray;
+
 @property (nonatomic, strong) NSMutableDictionary *dataDic;
+@property (nonatomic, strong) NSMutableDictionary *PldataDic;
+
 
 @end
 
@@ -48,8 +57,6 @@
     
     // 直接显示的  self.noStoreView.hidden = YES;  self.sendingBtn.hidden = YES;
 
-    
-    
     switch (self.stausType) {
         case -1:
         {
@@ -87,22 +94,12 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SupplierTableViewCell" bundle:nil] forCellReuseIdentifier:@"SupplierTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"SupplierViewCell2" bundle:nil] forCellReuseIdentifier:@"SupplierViewCell2"];
-    self.dicData = [NSMutableDictionary dictionary];
-    self.dicData[@"公司名稱:"] = @"";
-    self.dicData[@"統一編號:"] = @"";
-    self.dicData[@"公司人數:"] = @"";
-    self.dicData[@"註冊資本:"] = @"";
-    self.dicData[@"創立日期:"] = @"";
-    self.dicData[@"組織形態:"] = @"";
-    self.dicData[@"公司地址:"] = @"";
-    self.dicData[@"公司電話:"] = @"";
-    self.dicData[@"公司傳真(選填):"] = @"";
-    self.dicData[@"公司網址(選填):"] = @"";
-    self.dicData[@"聯繫人:"] = @"";
-    self.dicData[@"聯繫電話:"] = @"";
-    self.dicData[@"經營項目:"] = @"";
-    self.dicData[@"合作項目:"] = @"";
-    _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
+
+    _array = [NSArray arrayWithObjects:@"公司名稱:",@"統一編號:",@"公司人數:",@"註冊資本:",@"創立日期:",@"組織形態:",@"公司地址:",@"公司電話:",@"公司傳真(選填):",@"公司網址(選填):",@"聯繫人:",@"聯繫人郵箱:",@"聯繫電話:",@"經營項目:",@"合作項目:", nil];
+    //这个数组是放 pl 的自己放进去·对应的放好
+    _arrayP = [NSArray arrayWithObjects:@" ",@" ",@"如:50 - 100人",@" ",@"YYYY - MM -DD",@" ",@" ",@" ",@" ",@" ",@"聯繫人/職稱/分機",@" ",@" ",@" ",@" ", nil];
+    
+    
     _LocationLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
     
     switch ([[[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"] integerValue]) {
@@ -118,7 +115,7 @@
 - (IBAction)SubmitBut:(id)sender {
     
     NSArray *arr = [self.dataDic allKeys];
-    if (arr.count == 13) {
+    if (arr.count == 14) {
         NSLog(@"填写完成");
     }else{
         [SVProgressHUD showErrorWithStatus:@"請完善"];
@@ -130,6 +127,8 @@
         return;
     }
     
+    
+    //这里我都写的很清楚了
     [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         //公司名称
         if ([obj integerValue] == 0) {
@@ -143,31 +142,97 @@
     
     //组织形态  = _seleStr
     NSLog(@"组织形态 %@",_seleStr);
-    
-    [self AllData];
+    //数据都在这个里面 self.dataDic;  key 是顺序 从上到下 0 - 13 value 是textfield的值 ·就是需要上传到接口的
+    NSLog(@"%@",self.dataDic);
+    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+    dic[@"token"] = Token;
+    dic[@"companyname"] = [self.dataDic objectForKey:@(0)];
+    dic[@"companycode"] = [self.dataDic objectForKey:@(1)];
+    dic[@"poeplecount"] = [NSString stringWithFormat:@"%@人",[self.dataDic objectForKey:@(2)]];
+    dic[@"capital"] = [NSString stringWithFormat:@"%@万",[self.dataDic objectForKey:@(3)]];
+    dic[@"companydate"] = [self.dataDic objectForKey:@(4)];
+    dic[@"companytype"] = _seleId;
+    dic[@"address"] = [self.dataDic objectForKey:@(6)];
+    dic[@"phone"] = [self.dataDic objectForKey:@(7)];
+    dic[@"fax"] = [self.dataDic objectForKey:@(8)];
+    dic[@"companyuri"] = [self.dataDic objectForKey:@(9)];
+    dic[@"contact"] = [self.dataDic objectForKey:@(10)];
+    dic[@"contactemail"] = [self.dataDic objectForKey:@(11)];
+    dic[@"contactphone"] = [self.dataDic objectForKey:@(12)];
+    dic[@"companyproduct"] = [self.dataDic objectForKey:@(13)];
+    dic[@"projectinfo"] = [self.dataDic objectForKey:@(14)];
+
+    [self AllData:dic];
 }
 
 // 数据
-- (void)AllData {
-    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"token"] = Token;
-    //    dic[@"companyname"] = @"测试测试";
-    //    dic[@"companycode"] = @"51155455454";
-    //    dic[@"poeplecount"] = @"100人";
-    //    dic[@"capital"] = @"100万";
-    //    dic[@"companydate"] = @"20171001";
-    //    dic[@"companytype"] = @"1";
-    //    dic[@"address"] = @"公司地址公司地址公司地址公司地址";
-    //    dic[@"phone"] = @"141414414441441";
-    //    dic[@"fax"] = @"4545554545";
-    //    dic[@"companyuri"] = @"www.iii.com";
-    //    dic[@"contact"] = @"张鹏";
-    //    dic[@"contactphone"] = @"16161661616";
-    //    dic[@"contactemail"] = @"110@qq.com";
-    //    dic[@"companyproduct"] = @"你好吗";
-    //    dic[@"projectinfo"] = @"你好你好";
+- (void)AllData:(NSMutableDictionary *)dic {
+ 
     [ZP_MyTool requestSupplierRequest:dic success:^(id obj) {
-        
+        if ([obj[@"result"]isEqualToString:@"ok"]) {
+            [SVProgressHUD showSuccessWithStatus:@"申請成功,等待審核"];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }else
+            if ([obj[@"result"]isEqualToString:@"token_err"]) {
+                [SVProgressHUD showInfoWithStatus:@"令牌無效"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"companyname_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"公司名称为空"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"companycode_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入統一編號"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"poeplecount_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入公司人數"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"capital_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入註冊資本"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"companydate_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入創立日期"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"companydate_formart_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"創立日期格式錯誤,之間必須以英文-來分隔"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"address_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入公司地址"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"phone_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入公司電話"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"contact_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入聯繫人"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"contactphone_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入聯繫人電話"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"contactemail_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入聯繫人郵箱"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"contactemail_format_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"郵箱格式錯誤"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"companyproduct_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入經營項目"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"projectinfo_null_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"請輸入合作項目"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"sup_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"已是供貨商或正在申請供貨商"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"agt_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"已是代理商不能申请供货商"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"cname_er"]) {
+                    [SVProgressHUD showInfoWithStatus:@"公司名稱已存在"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"ccode_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"統一編號已存在"];
+            }else
+                if ([obj[@"result"]isEqualToString:@"sys_err"]) {
+                    [SVProgressHUD showInfoWithStatus:@"添加失败"];
+            }
         ZPLog(@"%@",obj);
     } failure:^(NSError *error) {
         ZPLog(@"%@",error);
@@ -175,12 +240,10 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.dicData.allKeys.count;
+    return _array.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
     if (5 == indexPath.row) {
         SupplierViewCell2 * cell2 = [tableView dequeueReusableCellWithIdentifier:@"SupplierViewCell2"];
         cell2.selectionStyle = UITableViewCellSelectionStyleNone;  //取消Cell点击变灰效果、
@@ -198,52 +261,52 @@
         
         cell.titleLabel.text = self.array[indexPath.row];
         cell.savaData = ^(NSString *title) {
-            [self.dicData setObject:title forKey:self.array[indexPath.row]];
+            NSLog(@"title %@",title);
+            [self.dataDic setObject:title forKey:@(indexPath.row)];
         };
-        NSString *contentString = self.dicData[self.array[indexPath.row]];
-        if (contentString.length > 0) {
-            cell.textField.text = contentString;
-        } else {
+        NSArray *arr = [self.dataDic allKeys];
+        if ( [arr containsObject:@(indexPath.row)]) {
+            cell.textField.text =  [self.dataDic objectForKey:@(indexPath.row)];
+        }else{
             cell.textField.text = nil;
         }
+        cell.textField.placeholder = _arrayP[indexPath.row];
+        cell.textField.clearButtonMode = UITextFieldViewModeWhileEditing;  // 一键删除文字
         cell.textField.keyboardType = UIKeyboardTypeDefault;
         
         if (indexPath.row == 1) {
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            return cell;
-            
         }
         if (indexPath.row == 2) {
-            cell.textField.placeholder = NSLocalizedString(@"如:50 - 100 人", nil);
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            return cell;
         }
         if (indexPath.row == 3) {
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            return cell;
+
         }
         if (indexPath.row == 4) {
-            cell.textField.placeholder = NSLocalizedString(@"yyyy-MM-dd", nil);
-            cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            return cell;
+            cell.textField.keyboardType = UIKeyboardTypeASCIICapable;
+
         }
         if (indexPath.row == 7) {
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            return cell;
+
         }
         if (indexPath.row == 8) {
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
-            return cell;
+
         }
         if (indexPath.row == 9) {
             cell.textField.keyboardType = UIKeyboardTypeASCIICapable;
         }
         
         if (indexPath.row == 10) {
-            cell.textField.placeholder = NSLocalizedString(@"聯繫人/職稱/分機", nil);
-            return cell;
+
         }
         if (indexPath.row == 11) {
+            cell.textField.keyboardType = UIKeyboardTypeASCIICapable;
+        }
+        if (indexPath.row == 12) {
             cell.textField.keyboardType = UIKeyboardTypeNumberPad;
         }
         
@@ -277,6 +340,7 @@
             NSLog(@"dian ji l %@",self.typeNameArray[i]);
             
             _seleStr = self.typeNameArray[i];
+            _seleId = self.typeIdArray[i];
             NSIndexPath *index = [NSIndexPath indexPathForRow:5 inSection:0];
             [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
             
@@ -312,5 +376,13 @@
     }
     return _dataDic;
 }
+
+- (NSMutableDictionary *)PldataDic
+{
+    if (!_PldataDic) {
+        _PldataDic = [NSMutableDictionary dictionary];
+    }
+    return _PldataDic;
+    }
 
 @end
