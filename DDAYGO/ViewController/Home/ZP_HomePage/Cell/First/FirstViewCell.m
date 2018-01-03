@@ -45,7 +45,7 @@
         }];
         
         for (int i = 0; i <= 3; i ++) {
-            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * ZP_Width / 4 , z * ZP_Width / 4 , ZP_Width / 4 , ZP_Width / 4 )];
+            UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(i * ZP_Width / 4 , z * ZP_Width / 4 , ZP_Width / 4 , ZP_Width / 4 )];
             button.backgroundColor = [UIColor whiteColor];
             button.titleLabel.font = ZP_titleFont;
             [button setTitleColor:ZP_textblack forState:UIControlStateNormal];
