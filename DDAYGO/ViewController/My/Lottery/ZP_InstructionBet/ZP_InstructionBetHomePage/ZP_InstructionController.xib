@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -368,8 +368,8 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每月分上、下期(一、二期)。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHn-Qb-NeU">
-                                    <rect key="frame" x="36" y="321" width="235" height="9"/>
-                                    <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="9"/>
+                                    <rect key="frame" x="36" y="321" width="235" height="11"/>
+                                    <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="11"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -381,11 +381,11 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQI-6n-ZUv">
-                                    <rect key="frame" x="36" y="382" width="256" height="41"/>
+                                    <rect key="frame" x="36" y="386" width="256" height="37"/>
                                     <attributedString key="attributedText">
                                         <fragment content="下期(二期):每月16日~月底累積點數，隔月1日~5日填寫(若未在指定時間填寫並送出，視同放棄)，隔月6日~15日兌獎(以美國樂透6日以後的第一個開獎日為兌獎時間，開獎隔日公司公告對獎號碼)。">
                                             <attributes>
-                                                <font key="NSFont" size="10" name=".PingFangSC-Regular"/>
+                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -414,7 +414,7 @@
                                     <attributedString key="attributedText">
                                         <fragment content="當期沒人中獎累計至下期，複數人得獎，彩金點數平分轉至促銷彩帳戶">
                                             <attributes>
-                                                <font key="NSFont" size="10" name=".PingFangSC-Regular"/>
+                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -429,7 +429,7 @@
                                     <attributedString key="attributedText">
                                         <fragment content="中獎三個月內未領取則自動取消領獎資格(中獎以ICUE及Mail通知)">
                                             <attributes>
-                                                <font key="NSFont" size="10" name=".PingFangSC-Regular"/>
+                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -444,21 +444,21 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="各獎的總點數除以得獎人數=得獎點數" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7F-Wx-FpQ">
-                                    <rect key="frame" x="73" y="276" width="154" height="15"/>
+                                    <rect key="frame" x="48.5" y="276" width="204" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="15" id="CJW-qd-7gI"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKQ-hX-b0H">
-                                    <rect key="frame" x="36" y="291" width="256" height="18"/>
+                                    <rect key="frame" x="36" y="291" width="256" height="22"/>
                                     <attributedString key="attributedText">
                                         <fragment content="例：本次普獎點數是 1,00,00彩金點數得獎人數是20人每人各得500點(彩金點數)">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="9" name=".PingFangSC-Regular"/>
+                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -466,11 +466,11 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whq-Wc-LOd">
-                                    <rect key="frame" x="36" y="338" width="256" height="36"/>
+                                    <rect key="frame" x="34" y="340" width="256" height="44"/>
                                     <attributedString key="attributedText">
                                         <fragment content="上期(一期):每月1日~15日累積點數，16日~20日填寫(若未在指定時間填寫並送出，視同放棄)，21日~30日兌獎(以美國樂透20日以後的第一個開獎日為兌獎時間，開獎隔日公司公告對獎號碼)。">
                                             <attributes>
-                                                <font key="NSFont" size="9" name=".PingFangSC-Regular"/>
+                                                <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -479,12 +479,12 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="促銷彩為供貨商回饋公司手續費之10%，這個10%全部作為100%分配至各獎項。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOJ-eR-xBX">
                                     <rect key="frame" x="36" y="422" width="256" height="30"/>
-                                    <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="9"/>
+                                    <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="11"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_explan_third" translatesAutoresizingMaskIntoConstraints="NO" id="1g0-5V-Rqd">
-                                    <rect key="frame" x="6" y="382" width="20" height="20"/>
+                                    <rect key="frame" x="6" y="386" width="20" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="20" id="DPO-5O-iek"/>
                                         <constraint firstAttribute="height" constant="20" id="ZQl-An-4if"/>
@@ -497,7 +497,7 @@
                                 <constraint firstItem="XHn-Qb-NeU" firstAttribute="top" secondItem="qUD-Eb-97t" secondAttribute="bottom" constant="48" id="0Jt-gP-lLz"/>
                                 <constraint firstAttribute="trailing" secondItem="XHn-Qb-NeU" secondAttribute="trailing" constant="29" id="0la-Zp-sqb"/>
                                 <constraint firstItem="vOJ-eR-xBX" firstAttribute="trailing" secondItem="ysZ-Kc-QPI" secondAttribute="trailing" id="18U-fP-yUx"/>
-                                <constraint firstItem="xMe-bf-Gcj" firstAttribute="top" secondItem="1g0-5V-Rqd" secondAttribute="bottom" constant="20" id="1Mc-Hy-yMi"/>
+                                <constraint firstItem="xMe-bf-Gcj" firstAttribute="top" secondItem="1g0-5V-Rqd" secondAttribute="bottom" constant="16" id="1Mc-Hy-yMi"/>
                                 <constraint firstItem="xfh-kG-h4j" firstAttribute="top" secondItem="kFY-qV-d3T" secondAttribute="bottom" constant="44" id="1hL-3n-aCu"/>
                                 <constraint firstItem="h3F-fq-fpo" firstAttribute="top" secondItem="659-LA-Aa6" secondAttribute="bottom" constant="5" id="2Da-fH-fS8"/>
                                 <constraint firstItem="IC1-Ec-cwc" firstAttribute="width" secondItem="MCv-xW-zuA" secondAttribute="width" id="2Lb-ND-CJa"/>
@@ -535,7 +535,7 @@
                                 <constraint firstItem="gDJ-mJ-7Dj" firstAttribute="top" secondItem="cZD-jz-gA0" secondAttribute="bottom" constant="5" id="GKp-2Y-Zta"/>
                                 <constraint firstItem="XsL-pl-7bZ" firstAttribute="top" secondItem="zml-NN-O7f" secondAttribute="top" constant="30" id="GMa-xw-sxJ"/>
                                 <constraint firstItem="XHn-Qb-NeU" firstAttribute="leading" secondItem="RoD-ci-3iv" secondAttribute="trailing" constant="8" id="Gxf-sg-v1g"/>
-                                <constraint firstItem="whq-Wc-LOd" firstAttribute="centerY" secondItem="d6p-Ex-kor" secondAttribute="centerY" constant="7" id="HK5-m3-kQs"/>
+                                <constraint firstItem="whq-Wc-LOd" firstAttribute="centerY" secondItem="d6p-Ex-kor" secondAttribute="centerY" constant="13" id="HK5-m3-kQs"/>
                                 <constraint firstAttribute="trailing" secondItem="ysZ-Kc-QPI" secondAttribute="trailing" constant="8" id="HN5-qf-nny"/>
                                 <constraint firstItem="1H9-41-n2U" firstAttribute="leading" secondItem="ebY-gj-w1f" secondAttribute="trailing" constant="5" id="HQt-nG-zbL"/>
                                 <constraint firstItem="nl9-Kh-uIR" firstAttribute="top" secondItem="xfh-kG-h4j" secondAttribute="bottom" constant="48" id="HTM-zN-45U"/>
@@ -570,7 +570,7 @@
                                 <constraint firstItem="qUD-Eb-97t" firstAttribute="top" secondItem="gDJ-mJ-7Dj" secondAttribute="bottom" constant="5" id="Utd-Va-gQq"/>
                                 <constraint firstItem="6tQ-P8-7f5" firstAttribute="leading" secondItem="h3F-fq-fpo" secondAttribute="trailing" id="V3g-J0-su4"/>
                                 <constraint firstItem="nsd-A7-PBG" firstAttribute="top" secondItem="ysZ-Kc-QPI" secondAttribute="bottom" constant="7" id="VUm-Ia-smW"/>
-                                <constraint firstItem="1g0-5V-Rqd" firstAttribute="top" secondItem="d6p-Ex-kor" secondAttribute="bottom" constant="23" id="Vz3-o0-XDS"/>
+                                <constraint firstItem="1g0-5V-Rqd" firstAttribute="top" secondItem="d6p-Ex-kor" secondAttribute="bottom" constant="27" id="Vz3-o0-XDS"/>
                                 <constraint firstItem="659-LA-Aa6" firstAttribute="top" secondItem="Mmt-0u-EJZ" secondAttribute="bottom" constant="5" id="WXz-2t-d1z"/>
                                 <constraint firstItem="gDJ-mJ-7Dj" firstAttribute="leading" secondItem="XsL-pl-7bZ" secondAttribute="trailing" constant="5" id="WZY-G5-jis"/>
                                 <constraint firstItem="f8y-Pm-aEw" firstAttribute="leading" secondItem="XsL-pl-7bZ" secondAttribute="trailing" constant="5" id="XQm-5H-DYL"/>
@@ -581,7 +581,7 @@
                                 <constraint firstItem="Etl-hv-JJ9" firstAttribute="leading" secondItem="XsL-pl-7bZ" secondAttribute="trailing" constant="5" id="Z9l-cQ-ea6"/>
                                 <constraint firstItem="6tQ-P8-7f5" firstAttribute="leading" secondItem="EnQ-EF-PmL" secondAttribute="trailing" constant="5" id="ZBa-8d-8yZ"/>
                                 <constraint firstItem="O4d-Uv-2TT" firstAttribute="leading" secondItem="14f-lB-49u" secondAttribute="trailing" constant="5" id="aFW-AZ-L27"/>
-                                <constraint firstAttribute="trailing" secondItem="whq-Wc-LOd" secondAttribute="trailing" constant="8" id="af4-5T-eNS"/>
+                                <constraint firstAttribute="trailing" secondItem="whq-Wc-LOd" secondAttribute="trailing" constant="10" id="af4-5T-eNS"/>
                                 <constraint firstItem="1g0-5V-Rqd" firstAttribute="leading" secondItem="zml-NN-O7f" secondAttribute="leading" constant="6" id="bSa-hO-WBW"/>
                                 <constraint firstItem="duc-mz-dBT" firstAttribute="top" secondItem="kFY-qV-d3T" secondAttribute="bottom" constant="-10" id="c7J-tJ-OZ7"/>
                                 <constraint firstItem="6tQ-P8-7f5" firstAttribute="leading" secondItem="659-LA-Aa6" secondAttribute="trailing" constant="5" id="cCQ-ZG-EZg"/>
@@ -612,7 +612,7 @@
                                 <constraint firstItem="DeC-z6-0Dq" firstAttribute="leading" secondItem="QyR-mU-Gvh" secondAttribute="trailing" id="lKg-tr-awZ"/>
                                 <constraint firstItem="wYy-4l-GqU" firstAttribute="leading" secondItem="QyR-mU-Gvh" secondAttribute="trailing" constant="5" id="lLU-zo-9wC"/>
                                 <constraint firstItem="14f-lB-49u" firstAttribute="leading" secondItem="DeC-z6-0Dq" secondAttribute="trailing" id="m0N-O2-Zpx"/>
-                                <constraint firstItem="gQI-6n-ZUv" firstAttribute="top" secondItem="whq-Wc-LOd" secondAttribute="bottom" constant="8" id="m96-Zp-JKt"/>
+                                <constraint firstItem="gQI-6n-ZUv" firstAttribute="top" secondItem="whq-Wc-LOd" secondAttribute="bottom" constant="2" id="m96-Zp-JKt"/>
                                 <constraint firstItem="cZD-jz-gA0" firstAttribute="top" secondItem="y6J-X6-6AT" secondAttribute="bottom" constant="5" id="mIM-Vk-zWx"/>
                                 <constraint firstAttribute="width" secondItem="zml-NN-O7f" secondAttribute="height" multiplier="50:87" id="mTq-Ez-lBH"/>
                                 <constraint firstItem="duc-mz-dBT" firstAttribute="leading" secondItem="14f-lB-49u" secondAttribute="trailing" id="mgN-PE-Awu"/>
@@ -640,7 +640,7 @@
                                 <constraint firstItem="3Gv-Xr-9y6" firstAttribute="leading" secondItem="XsL-pl-7bZ" secondAttribute="trailing" constant="5" id="wci-vt-tGf"/>
                                 <constraint firstItem="Etl-hv-JJ9" firstAttribute="top" secondItem="OJh-iD-5Xa" secondAttribute="bottom" constant="5" id="x0c-l6-XqY"/>
                                 <constraint firstItem="qUD-Eb-97t" firstAttribute="top" secondItem="CB5-r6-EH5" secondAttribute="bottom" constant="5" id="x0e-2E-o1p"/>
-                                <constraint firstItem="whq-Wc-LOd" firstAttribute="leading" secondItem="d6p-Ex-kor" secondAttribute="trailing" constant="8" id="x6m-2Q-YQM"/>
+                                <constraint firstItem="whq-Wc-LOd" firstAttribute="leading" secondItem="d6p-Ex-kor" secondAttribute="trailing" constant="6" id="x6m-2Q-YQM"/>
                                 <constraint firstItem="3Ig-My-UsJ" firstAttribute="top" secondItem="xfh-kG-h4j" secondAttribute="bottom" constant="5" id="xjK-gD-xRC"/>
                                 <constraint firstAttribute="trailing" secondItem="kFY-qV-d3T" secondAttribute="trailing" constant="1" id="y9C-zU-MLd"/>
                                 <constraint firstAttribute="trailing" secondItem="gQI-6n-ZUv" secondAttribute="trailing" constant="8" id="yN1-9Z-ro1"/>
