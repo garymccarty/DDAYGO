@@ -268,10 +268,11 @@
 
 //  登出
 - (IBAction)logoutAction:(id)sender {
+    
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"reminding", nil) message: NSLocalizedString(@"Are you sure you want to log out?", nil)preferredStyle:UIAlertControllerStyleActionSheet];
     //  设置popover指向的item
     alert.popoverPresentationController.barButtonItem = self.navigationItem.leftBarButtonItem;
-    //  添加按钮
+    //  確定按钮
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", nil)  style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         Token = nil;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];

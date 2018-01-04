@@ -104,9 +104,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWo-5m-TAs">
-                        <rect key="frame" x="34" y="41" width="0.0" height="15"/>
+                        <rect key="frame" x="38" y="39" width="34" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="15" id="lmG-UP-Qbj"/>
+                            <constraint firstAttribute="height" constant="15" id="R4H-NM-oLx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -119,19 +119,20 @@
                 <constraint firstItem="E2p-Rc-CTb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="278-MM-RSk"/>
                 <constraint firstItem="qgv-HA-9j5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="27s-te-EWQ"/>
                 <constraint firstItem="Hk3-b8-2zb" firstAttribute="top" secondItem="E2p-Rc-CTb" secondAttribute="bottom" constant="1" id="3Ah-37-s6a"/>
+                <constraint firstItem="sWo-5m-TAs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="38" id="5Jg-Ts-yBv"/>
                 <constraint firstItem="Hk3-b8-2zb" firstAttribute="top" secondItem="E2p-Rc-CTb" secondAttribute="bottom" constant="1" id="6kz-I5-KkM"/>
                 <constraint firstAttribute="trailing" secondItem="E2p-Rc-CTb" secondAttribute="trailing" id="7ZR-yt-pUf"/>
                 <constraint firstAttribute="trailing" secondItem="E2p-Rc-CTb" secondAttribute="trailing" id="Dt7-Eq-urW"/>
                 <constraint firstAttribute="bottom" secondItem="Hk3-b8-2zb" secondAttribute="bottom" id="GMF-I6-by4"/>
-                <constraint firstItem="sWo-5m-TAs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="34" id="Ifk-xO-Ufh"/>
                 <constraint firstItem="qgv-HA-9j5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KJs-Nx-Jt6"/>
                 <constraint firstItem="E2p-Rc-CTb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="O1l-iG-g6L"/>
                 <constraint firstItem="E2p-Rc-CTb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OUd-9c-d0J"/>
+                <constraint firstItem="sWo-5m-TAs" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="acN-N0-Ufe"/>
                 <constraint firstItem="Hk3-b8-2zb" firstAttribute="top" secondItem="qgv-HA-9j5" secondAttribute="bottom" constant="1" id="kWU-ti-T4x"/>
                 <constraint firstAttribute="trailing" secondItem="0rk-AD-jAl" secondAttribute="trailing" id="mBL-8B-cJq"/>
+                <constraint firstItem="sWo-5m-TAs" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="39" id="nn5-Kq-fV5"/>
                 <constraint firstItem="Hk3-b8-2zb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qEp-48-mQi"/>
                 <constraint firstItem="0rk-AD-jAl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qeO-qx-pMV"/>
-                <constraint firstItem="sWo-5m-TAs" firstAttribute="top" secondItem="0rk-AD-jAl" secondAttribute="bottom" constant="1" id="qgH-ge-lii"/>
                 <constraint firstAttribute="trailing" secondItem="qgv-HA-9j5" secondAttribute="trailing" id="roF-8Z-OCF"/>
                 <constraint firstItem="E2p-Rc-CTb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wZ6-X6-reO"/>
                 <constraint firstAttribute="trailing" secondItem="Hk3-b8-2zb" secondAttribute="trailing" id="yuW-YP-JAU"/>

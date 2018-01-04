@@ -122,7 +122,7 @@
     cartButton.backgroundColor = [UIColor clearColor];
     
     [cartButton setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
-;
+    cartButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     cartButton.titleLabel.font = ZP_TooBarFont;
     [cartButton addTarget:self action:@selector(onClickedSweep:) forControlEvents:UIControlEventTouchUpInside];
     cartButton.imageEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
@@ -229,7 +229,7 @@
     StatisticsLabel.text = NSLocalizedString(@"Total", nil);
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(CurrencySymbolLabel).offset(-32.5); // 左边
+        make.left.equalTo(CurrencySymbolLabel).offset(-30.5); // 左边
         make.bottom.equalTo(CurrencySymbolLabel).offset(0); // 下
     }];
     _StatisticsLabel = StatisticsLabel;

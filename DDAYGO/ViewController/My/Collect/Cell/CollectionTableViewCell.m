@@ -28,14 +28,13 @@
         _showYImageVIew.hidden = NO;
         _showYImageVIew.image = [UIImage imageNamed:@"bg_invalid_frame"];
         _showYImageVIew.backgroundColor = [UIColor clearColor];
-//        _showYImageVIew.alpha = 0.5;
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(5, _ShopimageView.frame.size.width / 2, _ShopimageView.frame.size.width / 2, 15)];
-        label.center = _ShopimageView.center;
-        label.text = NSLocalizedString(@"已失效", nil);
-        [label setTextColor:[UIColor whiteColor]];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:14];
-        [_showYImageVIew addSubview:label];
+
+        _zhuangtaiLabel.center = _ShopimageView.center;
+        _zhuangtaiLabel.text = NSLocalizedString(@"已失效", nil);
+        [_zhuangtaiLabel setTextColor:[UIColor whiteColor]];
+        _zhuangtaiLabel.textAlignment = NSTextAlignmentCenter;
+        //       __defaltLabel.font = [UIFont systemFontOfSize:14];
+        [_zhuangtaiLabel addSubview:_showYImageVIew];
     }else{
         
     [_ShopimageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
