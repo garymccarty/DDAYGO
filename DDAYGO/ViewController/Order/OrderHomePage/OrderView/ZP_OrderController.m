@@ -85,19 +85,19 @@
 // 订单协议
 - (void)getDataWithState {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    if ([_titleStr isEqualToString:@"全部"]) {
+    if ([_titleStr isEqualToString:NSLocalizedString(@"all", nil)]) {
         dic[@"sta"] = @"-1";
     }
-    if ([_titleStr isEqualToString:@"待付款"]) {
+    if ([_titleStr isEqualToString:NSLocalizedString(@"Waiting payment", nil)]) {
         dic[@"sta"] = @"1";
     }
-    if ([_titleStr isEqualToString:@"待發貨"]) {
+    if ([_titleStr isEqualToString:NSLocalizedString(@"Wait delivery", nil)]) {
         dic[@"sta"] = @"2";
     }
-    if ([_titleStr isEqualToString:@"待收貨"]) {
+    if ([_titleStr isEqualToString:NSLocalizedString(@"Waiting goods", nil)]) {
         dic[@"sta"] = @"3";
     }
-    if ([_titleStr isEqualToString:@"評價"]) {
+    if ([_titleStr isEqualToString:NSLocalizedString(@"evaluation", nil)]) {
         dic[@"sta"] = @"4";
     }
     dic[@"days"] = @"7";

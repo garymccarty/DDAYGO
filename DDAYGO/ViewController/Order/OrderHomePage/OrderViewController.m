@@ -73,12 +73,12 @@
     NSMutableArray *childVCs = [[NSMutableArray alloc]init];
     [@[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待發貨", nil),NSLocalizedString(@"待收貨", nil),NSLocalizedString(@"評價", nil)] enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ZP_OrderController *vc = [[ZP_OrderController alloc]init];
-        
+
         vc.titleStr = obj;
         vc.num = idx;
         [childVCs addObject:vc];
     }];
-    
+
     self.pageContentView = [[FSPageContentView alloc]initWithFrame:CGRectMake(0,  40, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.frame)  - 40) childVCs:childVCs parentVC:self delegate:self];
     
     [self.view addSubview:_pageContentView];

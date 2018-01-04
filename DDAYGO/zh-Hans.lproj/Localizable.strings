@@ -50,6 +50,11 @@
  * 订单
  * */
 "Order" = "订单";
+"all" = "全部";
+"Waiting payment" = "待付款";
+"Wait delivery" = "待发货";
+"Waiting goods" = "待收货";
+"evaluation" = "评价";
 /*****************/
 /* *
  * 我的

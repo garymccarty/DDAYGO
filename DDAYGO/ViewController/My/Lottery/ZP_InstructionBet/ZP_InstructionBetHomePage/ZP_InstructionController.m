@@ -9,6 +9,7 @@
 #import "ZP_InstructionController.h"
 #import "ZP_MyTool.h"
 #import "PrefixHeader.pch"
+#import "ZP_InstructionBetModel.h"
 @interface ZP_InstructionController ()
 
 @end
@@ -31,8 +32,17 @@
 //    dic[@"token"] = Token;
     [ZP_MyTool requestLotterynow:Token uccess:^(id obj) {
         ZPLog(@"%@",obj);
+//        NSMutableDictionary * dic = obj[@"lotterywin"];
+//        ZP_InstructionBetModel * model = obj[1][@"lotterywin"];
+        
+//        [self initWithINstruction:model];
     } failure:^(NSError *error) {
         ZPLog(@"%@",error);
     }];
 }
+
+//- (void)initWithINstruction:(ZP_InstructionBetModel *)Model {
+//    _referAndBonusLabel1.text = [Model.winamount stringValue];
+//}
+
 @end

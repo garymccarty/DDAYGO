@@ -96,6 +96,11 @@
  * */
 //"" = "";
 "Order" = "Order";
+"all" = "all";
+"Waiting payment" = "Waiting payment";
+"Wait delivery" = "Wait delivery";
+"Waiting goods" = "Waiting goods";
+"evaluation" = "evaluation";
 "" = "";
 "" = "";
 "" = "";

@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface ZP_InstructionBetModel : NSObject
+@property (nonatomic, strong) NSNumber * winamount;
 
 @end
