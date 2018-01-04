@@ -2010,8 +2010,8 @@
 			isa = PBXGroup;
 			children = (
 				06F571CA1F9F1A7900D61FDB /* SetHomePage */,
-				06F571B91F9F1A7900D61FDB /* ReceivingAddress */,
 				06F571AD1F9F1A7900D61FDB /* BindingICUE */,
+				06F571B91F9F1A7900D61FDB /* ReceivingAddress */,
 				C470968A1FB04998006EA52C /* BindingEmail */,
 				C491D3731FCBE2EE00D127E9 /* BindingIntroduce */,
 				06F571B51F9F1A7900D61FDB /* ChangePassword */,

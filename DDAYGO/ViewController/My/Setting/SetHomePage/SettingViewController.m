@@ -39,6 +39,8 @@
 @property (weak, nonatomic) IBOutlet UIView * view3;
 @property (weak, nonatomic) IBOutlet UIView * DividingLineView; // 分割线
 //@property (weak, nonatomic) IBOutlet UIView *view4;
+@property (weak, nonatomic) IBOutlet UIView *xgview;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *xgLayout;
 
 @property (nonatomic, strong)NSMutableDictionary * dataDic;
 
@@ -61,11 +63,13 @@
         _BangDingLayout.constant = CGFLOAT_MIN;
         _IcueNumLayout.constant = CGFLOAT_MIN;
 //        _view4Layout.constant = CGFLOAT_MIN;
+        _xgLayout.constant = CGFLOAT_MIN;
+        _xgview.hidden = YES;
         _DividingLineView.hidden = YES;
         _view1.hidden = YES;
         _view3.hidden = YES;
 //        _view4.hidden = YES;
-        _view3Layout.constant = 100.0;
+        _view3Layout.constant = 50.0;
     }
     
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];

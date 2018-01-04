@@ -42,27 +42,14 @@
     [ZP_MyTool requtsFootprint:dic success:^(id obj) {
         ZPLog(@"%@",obj);
         NSDictionary * dic = obj;
-        self.newsData = [ZP_FootprintModel arrayWithArray:dic[@"historyslist"]];
-//       数据为空时提示
-        if (self.newsData.count < 1) {
-            UIImageView * image = [UIImageView new];
-            image.image = [UIImage imageNamed:@"icon_fail"];
-            [self.view addSubview:image];
-            [image mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.view).offset(ZP_Width / 2 -25);
-                make.top.equalTo(self.view).offset(ZP_Width / 2 - 25);
-                make.width.mas_offset(50);
-                make.height.mas_equalTo(50);
+        NSArray *arr = [ZP_FootprintModel arrayWithArray:dic[@"historyslist"]];
+        
+        [arr enumerateObjectsUsingBlock:^(ZP_FootprintModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
+            [model.historyArray enumerateObjectsUsingBlock:^(ZP_FootprintModel1 *model1, NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.newsData addObject:model1];
             }];
-            ZP_GeneralLabel * RemindLabel = [ZP_GeneralLabel initWithtextLabel:_RemindLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentCenter bakcgroundColor:ZP_WhiteColor];
-            RemindLabel.text = @"數據空空如也";
-            [self.view addSubview:RemindLabel];
-            [RemindLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.equalTo(self.view).offset(ZP_Width / 2 -30);
-                make.top.equalTo(image).offset(55);
-                make.height.mas_offset(15);
-            }];
-        }
+        }];
+        
         [self.collectionView reloadData];
     } failure:^(NSError * error) {
         ZPLog(@"error");
@@ -74,7 +61,6 @@
     if (self.newsData.count == 0) {
         return;
     }
-    
     ZP_FootprintModel1 *model = self.newsData[btn.tag];
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = Token;
@@ -103,12 +89,14 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ZP_FootprintModel *model = self.newsData[indexPath.row];
+    
+    ZP_FootprintModel1 *model = self.newsData[indexPath.row];
     FootprintCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FootprintCollectionViewCell" forIndexPath:indexPath];
     cell.deleBtn.tag = indexPath.row;
     [cell.deleBtn addTarget:self action:@selector(deleBtn:) forControlEvents:UIControlEventTouchUpInside];
-    
+//    ZP_FootprintModel1 *model1 = model.historyArray[0];
     [cell FootprintCollection:model];
+    
     return cell;
 }
 

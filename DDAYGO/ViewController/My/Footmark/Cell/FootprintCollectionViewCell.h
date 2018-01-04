@@ -16,7 +16,8 @@
 @property (strong, nonatomic) IBOutlet UILabel * cp; // 商品cp
 @property (weak, nonatomic) IBOutlet UIButton *deleBtn;
 @property (weak, nonatomic) IBOutlet UIImageView * _defaultimgImageVIew;
+@property (weak, nonatomic) IBOutlet UILabel *_defaltLabel;
 
-- (void)FootprintCollection:(ZP_FootprintModel *)model;
+- (void)FootprintCollection:(ZP_FootprintModel1 *)model;
 
 @end

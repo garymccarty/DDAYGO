@@ -31,7 +31,7 @@
         [arrar addObject:[NSString stringWithFormat:@"http://www.ddaygo.com%@",[model.imgurl stringByReplacingOccurrencesOfString:@"~" withString:@""]]];
         [arrid addObject:model.typeid];
     }
-
+    
     NSInteger num = 0;
     for (int z = 0; z <= 1; z ++) {
         UIView * view = [UIView new];
@@ -45,7 +45,7 @@
         }];
         
         for (int i = 0; i <= 3; i ++) {
-            UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(i * ZP_Width / 4 , z * ZP_Width / 4 , ZP_Width / 4 , ZP_Width / 4 )];
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * ZP_Width / 4 , z * ZP_Width / 4 , ZP_Width / 4 , ZP_Width / 4 )];
             button.backgroundColor = [UIColor whiteColor];
             button.titleLabel.font = ZP_titleFont;
             [button setTitleColor:ZP_textblack forState:UIControlStateNormal];
@@ -73,18 +73,18 @@
         [self first:ARR];
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
-//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        //        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
 
 - (void)buttonType:(UIButton *)sender {
-
+    
     NSMutableArray * arrid = [NSMutableArray array];
     
     for (ZP_FirstModel * model in _Allarr) {
         [arrid addObject:model.typeid];
         if ([model.typeid integerValue] == sender.tag) {
-             self.firstBlock(sender.tag,model.menuname);
+            self.firstBlock(sender.tag,model.menuname);
         }
     }
     
@@ -96,10 +96,12 @@
         // 主线程刷新UI
         dispatch_async(dispatch_get_main_queue(), ^{
             CGSize imagesize;
-            imagesize.height = 60;
-            imagesize.width = 60;
-//            UIImage *image1 = [self imageWithImage:image scaledToSize:imagesize];
-            [btn setImage:image forState:UIControlStateNormal];
+            imagesize.height = ZP_Width/4-30;
+            imagesize.width = ZP_Width/4-30;
+            UIImage *image1 = [self imageWithImage:image scaledToSize:imagesize];
+            NSData *imdata = UIImageJPEGRepresentation(image1, 1);
+
+            [btn setImage:[UIImage imageWithData:imdata] forState:UIControlStateNormal];
             [btn setTitle:name forState:UIControlStateNormal];
             btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 5, 0);
             [btn resizeWithDistance:10];

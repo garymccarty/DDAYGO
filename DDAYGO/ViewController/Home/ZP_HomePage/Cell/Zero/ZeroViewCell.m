@@ -38,26 +38,29 @@
 //                                   @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
 //                                   ];
     
-    SDCycleScrollView *scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ZP_Width, ZP_Width / 2) delegate:self placeholderImage:[UIImage imageNamed:@"ddg_advertising.png"]];
-    scrollView.backgroundColor = [UIColor whiteColor];
+//    768 × 320
+
+    SDCycleScrollView *scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, ZP_Width, zeroHeight) delegate:self placeholderImage:[UIImage imageNamed:@"ddg_advertising.png"]];
+    
+    scrollView.backgroundColor = [UIColor yellowColor];
     scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
     scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
 //    scrollView.imageURLStringsGroup = imagesURLStrings;
     [self.contentView addSubview:scrollView];
-    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.and.left.mas_equalTo(-1);
-        make.right.mas_equalTo(0);
-        make.height.mas_equalTo(ZP_Width / 2 - 25);
-    }];
-    
-    UIView * SegmentationView = [UIView new];
-    [self.contentView addSubview:SegmentationView];
-    SegmentationView.backgroundColor = ZP_DeepBlue;
-    [SegmentationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(ZP_Width / 2);
-        make.left.equalTo(self).offset(ZP_Width);
-        make.width.mas_offset(ZP_Width);
-    }];
+//    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.and.left.mas_equalTo(-1);
+//        make.right.mas_equalTo(0);
+//        make.height.mas_equalTo(zeroHeight);
+//    }];
+
+//    UIView * SegmentationView = [UIView new];
+//    [self.contentView addSubview:SegmentationView];
+//    SegmentationView.backgroundColor = ZP_DeepBlue;
+//    [SegmentationView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self).offset(ZP_Width / 2);
+//        make.left.equalTo(self).offset(ZP_Width);
+//        make.width.mas_offset(ZP_Width);
+//    }];
     
 }
 

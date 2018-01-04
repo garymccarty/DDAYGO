@@ -37,9 +37,18 @@
     [self addRefresh];
     //请求位置
     [self PositionallData];
-    self.tableView.separatorStyle =NO;
+    self.tableView.separatorStyle = NO;
     [self.view setBackgroundColor:ZP_Graybackground];
+//    [self.view setBackgroundColor:[UIColor yellowColor]];
     [self.navigationController.navigationBar setBarTintColor:ZP_NavigationCorlor];
+    
+//
+    if (@available(iOS 11.0, *)){
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+       _tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);//导航栏如果使用系统原生半透明的，top设置为64
+        _tableView.scrollIndicatorInsets = _tableView.contentInset;
+    }
+   
 }
 
 - (void)addRefresh {
@@ -60,7 +69,7 @@
 
 
 - (void)initUI {
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
     self.tableView.backgroundColor = ZP_Graybackground;
     self.tableView.delegate = self;
@@ -182,34 +191,7 @@
     
     return 1;
 }
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section {
-    return 0.1f;
-}
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section {
-    return 0.1f;
-}
-//  组头
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-//    if (section ==2) {
-//        return 5;
-//    }else
-//        if (section == 3) {
-//           return 5;
-//        }else
-//           if (section ==4) {
-//            return 5;
-//        }
-    return 1.f;
-}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 1.f;
-}
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return 0.0001;
-//}
 // cell个数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -305,7 +287,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return ZP_Width / 2 - 25 -30;
+        return    zeroHeight;
     }else
         if (indexPath.section ==1){
 //            if (_newsData.count == 0) {
@@ -383,4 +365,14 @@
     
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+//    return 1.f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
 @end

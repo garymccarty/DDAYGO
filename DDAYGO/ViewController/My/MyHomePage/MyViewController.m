@@ -48,13 +48,13 @@
     [self loginAllData];
     
 //     判断是否是供货商
-    if (state.length == NO) {
+    if (state.length == YES) {
         _SdglLayoutConstraint.constant = CGFLOAT_MIN;
          _sdglView.hidden = YES;
 //        _viewLayoutConstraint.constant = 50.0;
     }
     //     判断是否申请成功供货商
-    if (state.length == YES) {
+    if (state.length == NO) {
 //        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
         self.XfjlLayoutConstraint.constant = CGFLOAT_MIN;
         self.xfjlView.hidden = YES;
@@ -355,7 +355,7 @@
 - (IBAction)settingAction:(id)sender {
     SettingViewController * settingViewController = [[SettingViewController alloc] init];
     [self.navigationController pushViewController:settingViewController animated:YES];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
 }
 
@@ -363,16 +363,14 @@
 - (IBAction)scAction:(id)sender {
     CollectionViewController *collectionViewController = [[CollectionViewController alloc] init];
     [self.navigationController pushViewController:collectionViewController animated:YES];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
 }
-// 关注店铺（暂时不开启）
-- (IBAction)gzdpAction:(id)sender {
+// 关注店铺（暂时不开启）- (IBAction)gzdpAction:(id)sender {
 //    ConcernShopViewController *concernShopViewController = [[ConcernShopViewController alloc] init];
 //    [self.navigationController pushViewController:concernShopViewController animated:YES];
 //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
-//    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-}
+//    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;}
 // 足迹
 - (IBAction)zjAction:(id)sender {
     FootprintViewController *footprintViewController = [[FootprintViewController alloc] init];
