@@ -64,7 +64,7 @@
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
 
-    dic[@"acc"] = [_ZPEmailTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    dic[@"acc"] = [_ZPEmailTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""]; // 防止輸入帶有空格
     dic[@"pwd"] = [_ZPPswTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     [ZP_LoginTool requesForFirstTimeLogin:dic success:^(id obj) {
         NSDictionary * adic = obj;

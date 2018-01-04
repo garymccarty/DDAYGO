@@ -116,7 +116,7 @@
     _chooseCityBtn.contentEdgeInsets = UIEdgeInsetsMake(6, -15, 6, 5);
     _chooseCityBtn.titleLabel.font = ZP_TooBarFont;
     [_chooseCityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_chooseCityBtn setTitle:NSLocalizedString(@"Taiwan", nil) forState:UIControlStateNormal];
+    [_chooseCityBtn setTitle:NSLocalizedString(@"臺灣", nil) forState:UIControlStateNormal];
     
     
     [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
@@ -140,7 +140,7 @@
 - (void)buttonAction:(UIButton *)sender {
     if (!DD_HASLOGIN) {
         if (![MyViewController sharedInstanceTool].hasRemind) {
-            [MyViewController sharedInstanceTool].hasRemind = YES;
+//            [MyViewController sharedInstanceTool].hasRemind = YES;
             [self PositionallData];
             NSLog(@"位置");
             PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];

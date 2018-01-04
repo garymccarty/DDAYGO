@@ -17,8 +17,8 @@
 /* Class = "UILabel"; text = "("; ObjectID = "EYd-Rv-7Up"; */
 "EYd-Rv-7Up.text" = "(";
 
-/* Class = "UIButton"; normalTitle = "申请成为供货商"; ObjectID = "PW7-pe-KJH"; */
-"PW7-pe-KJH.normalTitle" = "申請成為供貨商";
+/* Class = "UILabel"; text = "1111100"; ObjectID = "N31-ty-HnO"; */
+"N31-ty-HnO.text" = "";
 
 /* Class = "UIButton"; normalTitle = "扫一扫"; ObjectID = "SzE-mi-64s"; */
 "SzE-mi-64s.normalTitle" = "掃一掃";
@@ -28,6 +28,9 @@
 
 /* Class = "UIButton"; normalTitle = "促销彩"; ObjectID = "Yq7-mx-siu"; */
 "Yq7-mx-siu.normalTitle" = "促銷彩";
+
+/* Class = "UILabel"; text = "申請成為供貨商"; ObjectID = "dSx-Sb-nWM"; */
+"dSx-Sb-nWM.text" = "申請成為供貨商";
 
 /* Class = "UILabel"; text = "0"; ObjectID = "wKB-1F-Lrk"; */
 "wKB-1F-Lrk.text" = "0";

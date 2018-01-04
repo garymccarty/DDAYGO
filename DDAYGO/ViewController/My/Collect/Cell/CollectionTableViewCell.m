@@ -43,7 +43,7 @@
     _priceLabel.text = [NSString stringWithFormat:@"%@",model.productprice];
 //    _CurrencySymbolLabel.text = model.CurrencySymbolLabel;
      NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"symbol"];
-   _CurrencySymbolLabel.text = [NSString stringWithFormat:@"%@:",str];
+   _CurrencySymbolLabel.text = [NSString stringWithFormat:@"%@",str];
     _Cp.text = [NSString stringWithFormat:@"%@",model.cp];
     _shopTextLabel.text = model.productname;
 }

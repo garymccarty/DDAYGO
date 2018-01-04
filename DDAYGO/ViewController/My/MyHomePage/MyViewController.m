@@ -48,13 +48,13 @@
     [self loginAllData];
     
 //     判断是否是供货商
-    if (state.length == YES) {
+    if (state.length == NO) {
         _SdglLayoutConstraint.constant = CGFLOAT_MIN;
          _sdglView.hidden = YES;
 //        _viewLayoutConstraint.constant = 50.0;
     }
     //     判断是否申请成功供货商
-    if (state.length == NO) {
+    if (state.length == YES) {
 //        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
         self.XfjlLayoutConstraint.constant = CGFLOAT_MIN;
         self.xfjlView.hidden = YES;

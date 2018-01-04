@@ -62,7 +62,9 @@
 - (void)updateData:(ZP_LotterModel *)model{
     
      lotteryModel *model1 = [lotteryModel mj_objectWithKeyValues:model.lottery];
-    _NianLabel.text = [NSString stringWithFormat:@"%ld",model1.yyyy.longValue];
+    _NianLabel.text = [model1.yyyy stringValue];
+    _YueLabel.text = [model1.mm stringValue];
+    _RiLabel.text = [model1.periods stringValue];
     _dateLabel.text = model1.createtime;
     [_but1 setTitle:[model1.white1 stringValue] forState:UIControlStateNormal];
     [_but2 setTitle:[model1.white2 stringValue] forState:UIControlStateNormal];

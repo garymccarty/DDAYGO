@@ -21,6 +21,7 @@
 "Best-selling products" = "熱銷商品";
 "erchandise" = "精選商品";
 "More erchandise" = "更多精選";
+"Cancel" = "取消";
 /*****************/
 /* *
  * 分类
@@ -37,8 +38,10 @@
 "Shopping" = "購物車";
 "Edit" = "編輯";
 "omplete" = "完成";
-"Select All" = "全選";
+"Select" = "全選";
 "Total" = "合計";
+"delete" = "完成";
+"settlement" = "结算";
 "Clearing(0)" = "結算(0)";
 "You have not selected goods " = "您還沒有選擇寶貝喔";
 /*****************/

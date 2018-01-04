@@ -211,6 +211,8 @@
 		C42A17411FF2532400680F92 /* BetTableViewMyCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A173B1FF2532400680F92 /* BetTableViewMyCell2.m */; };
 		C42A17451FF2544100680F92 /* tableHeadView1.m in Sources */ = {isa = PBXBuildFile; fileRef = C42A17421FF2544000680F92 /* tableHeadView1.m */; };
 		C42A17461FF2544100680F92 /* tableHeadView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42A17441FF2544100680F92 /* tableHeadView1.xib */; };
+		C42F06FE1FFE259A00B3D510 /* ZP_BetHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C42F06FD1FFE259A00B3D510 /* ZP_BetHeaderModel.m */; };
+		C42F07021FFE2D8000B3D510 /* ZP_InstructionBetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C42F07011FFE2D8000B3D510 /* ZP_InstructionBetModel.m */; };
 		C435171F1FB2AC180066302E /* ConcernShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43517211FB2AC180066302E /* ConcernShopTableViewCell.xib */; };
 		C43517281FB2AC4B0066302E /* ConcernShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C435172A1FB2AC4B0066302E /* ConcernShopViewController.xib */; };
 		C43517311FB2AC6D0066302E /* FootprintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C43517331FB2AC6D0066302E /* FootprintViewController.xib */; };
@@ -782,6 +784,13 @@
 		C42A17421FF2544000680F92 /* tableHeadView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableHeadView1.m; sourceTree = "<group>"; };
 		C42A17431FF2544000680F92 /* tableHeadView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableHeadView1.h; sourceTree = "<group>"; };
 		C42A17441FF2544100680F92 /* tableHeadView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableHeadView1.xib; sourceTree = "<group>"; };
+		C42F06FC1FFE259A00B3D510 /* ZP_BetHeaderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_BetHeaderModel.h; sourceTree = "<group>"; };
+		C42F06FD1FFE259A00B3D510 /* ZP_BetHeaderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_BetHeaderModel.m; sourceTree = "<group>"; };
+		C42F07001FFE2D8000B3D510 /* ZP_InstructionBetModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_InstructionBetModel.h; sourceTree = "<group>"; };
+		C42F07011FFE2D8000B3D510 /* ZP_InstructionBetModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_InstructionBetModel.m; sourceTree = "<group>"; };
+		C42F07041FFE5BDF00B3D510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyViewController.strings; sourceTree = "<group>"; };
+		C42F07061FFE5C7C00B3D510 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MyViewController.strings"; sourceTree = "<group>"; };
+		C42F07081FFE5CAA00B3D510 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MyViewController.strings"; sourceTree = "<group>"; };
 		C43517201FB2AC180066302E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ConcernShopTableViewCell.xib; sourceTree = "<group>"; };
 		C43517231FB2AC1D0066302E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ConcernShopTableViewCell.strings; sourceTree = "<group>"; };
 		C43517251FB2AC1F0066302E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ConcernShopTableViewCell.strings"; sourceTree = "<group>"; };
@@ -1102,9 +1111,6 @@
 		C482B2841FC2B62600D7539F /* ZP_AnonymityViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_AnonymityViewCell.h; sourceTree = "<group>"; };
 		C482B2851FC2B62600D7539F /* ZP_AnonymityViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_AnonymityViewCell.m; sourceTree = "<group>"; };
 		C4910F6F1FFC6D24006DA5B9 /* ddg_advertising.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ddg_advertising.png; sourceTree = "<group>"; };
-		C4910F721FFCADC4006DA5B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyViewController.strings; sourceTree = "<group>"; };
-		C4910F761FFCAF59006DA5B9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MyViewController.strings"; sourceTree = "<group>"; };
-		C4910F781FFCAF65006DA5B9 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MyViewController.strings"; sourceTree = "<group>"; };
 		C4910F7A1FFCB087006DA5B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SettingViewController.strings; sourceTree = "<group>"; };
 		C4910F7C1FFCB08A006DA5B9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SettingViewController.strings"; sourceTree = "<group>"; };
 		C4910F7E1FFCB08C006DA5B9 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/SettingViewController.strings"; sourceTree = "<group>"; };
@@ -2401,6 +2407,24 @@
 			path = ZP_FootprintModel;
 			sourceTree = "<group>";
 		};
+		C42F06FB1FFE257000B3D510 /* BetHeaderModel */ = {
+			isa = PBXGroup;
+			children = (
+				C42F06FC1FFE259A00B3D510 /* ZP_BetHeaderModel.h */,
+				C42F06FD1FFE259A00B3D510 /* ZP_BetHeaderModel.m */,
+			);
+			path = BetHeaderModel;
+			sourceTree = "<group>";
+		};
+		C42F06FF1FFE2D7100B3D510 /* ZP_InstructionBetModel */ = {
+			isa = PBXGroup;
+			children = (
+				C42F07001FFE2D8000B3D510 /* ZP_InstructionBetModel.h */,
+				C42F07011FFE2D8000B3D510 /* ZP_InstructionBetModel.m */,
+			);
+			path = ZP_InstructionBetModel;
+			sourceTree = "<group>";
+		};
 		C43987721FF48B2F00044E21 /* RegistrationAgreement */ = {
 			isa = PBXGroup;
 			children = (
@@ -2583,6 +2607,7 @@
 				C42A172E1FF252F300680F92 /* BetViewController.m */,
 				C42A172F1FF252F300680F92 /* BetViewController.xib */,
 				C4573F2A1FCFA3A6001DFE97 /* BetHeaderCell */,
+				C42F06FB1FFE257000B3D510 /* BetHeaderModel */,
 			);
 			path = ZP_LotteryBet;
 			sourceTree = "<group>";
@@ -2610,6 +2635,7 @@
 			isa = PBXGroup;
 			children = (
 				C492A1921FD0EDC0009FF57B /* ZP_InstructionBetHomePage */,
+				C42F06FF1FFE2D7100B3D510 /* ZP_InstructionBetModel */,
 			);
 			path = ZP_InstructionBet;
 			sourceTree = "<group>";
@@ -4256,6 +4282,7 @@
 				C42A173D1FF2532400680F92 /* BetTableViewCellTwo.m in Sources */,
 				C42A173C1FF2532400680F92 /* BetTableViewMyCell.m in Sources */,
 				06F571D11F9F1A7900D61FDB /* BindingICUEViewController.m in Sources */,
+				C42F06FE1FFE259A00B3D510 /* ZP_BetHeaderModel.m in Sources */,
 				C46B9F4F1FDE764000942750 /* ZP_ExtractModel.m in Sources */,
 				06F5718F1F9F16E600D61FDB /* NewsTableViewCell.m in Sources */,
 				C4535E281FC51E7D00DFFD62 /* ZP_InformationModel.m in Sources */,
@@ -4294,6 +4321,7 @@
 				C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */,
 				C45F22D11FA05A9E00F5DB41 /* UITabBarItem+Theme.m in Sources */,
 				C45F22EE1FA0746300F5DB41 /* UIButton+UIButtonImageWithLable.m in Sources */,
+				C42F07021FFE2D8000B3D510 /* ZP_InstructionBetModel.m in Sources */,
 				0642497F1F99DD3600340EBA /* PayPassController.m in Sources */,
 				C45F22DE1FA05AB900F5DB41 /* UIColor+Extension.m in Sources */,
 				064449B21F6A9B250004DFE4 /* MJRefreshGifHeader.m in Sources */,
@@ -4448,9 +4476,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				C47212A41FB186C90055578E /* Base */,
-				C4910F721FFCADC4006DA5B9 /* en */,
-				C4910F761FFCAF59006DA5B9 /* zh-Hans */,
-				C4910F781FFCAF65006DA5B9 /* zh-Hant */,
+				C42F07041FFE5BDF00B3D510 /* en */,
+				C42F07061FFE5C7C00B3D510 /* zh-Hans */,
+				C42F07081FFE5CAA00B3D510 /* zh-Hant */,
 			);
 			name = MyViewController.xib;
 			sourceTree = "<group>";
@@ -4595,7 +4623,7 @@
 				DEVELOPMENT_TEAM = CV87W82W48;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = DDAYGO/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -4618,7 +4646,7 @@
 				DEVELOPMENT_TEAM = CV87W82W48;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = DDAYGO/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (

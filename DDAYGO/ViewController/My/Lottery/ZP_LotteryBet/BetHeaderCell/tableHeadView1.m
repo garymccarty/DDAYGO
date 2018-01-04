@@ -7,8 +7,16 @@
 //
 
 #import "tableHeadView1.h"
-
+#import "ZP_BetHeaderModel.h"
 @implementation tableHeadView1
 
+- (void)tableHeadView1:(ZP_BetHeaderModel *)model {
+    self.YearsLabel.text = [model.yyyy stringValue];
+    self.MonthLabel.text = [model.mm stringValue];
+    self.DyaLabel.text = [model.periods stringValue];
+    self.ItmeLanel.text = [NSString stringWithFormat:@"%@",model.lotterytime];
+    self.NumberLabel.text = [model.lotterycounts stringValue];
+    self.AmountLabel.text = [model.poolamount stringValue];
+}
 
 @end

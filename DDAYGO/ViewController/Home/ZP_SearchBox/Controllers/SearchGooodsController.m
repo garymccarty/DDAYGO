@@ -51,7 +51,7 @@
 //设置导航栏
 - (void)setUpNavgationBar{
     
-    //    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"input_home_search"] forBarMetrics:UIBarMetricsDefault];
+//        [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"input_home_search"] forBarMetrics:UIBarMetricsDefault];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:NSLocalizedString(@"Cancel", nil) style:UIBarButtonItemStyleDone target:self action:@selector(back)];
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];

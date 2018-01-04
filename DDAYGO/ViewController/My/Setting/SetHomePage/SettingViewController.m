@@ -280,11 +280,14 @@
         ZPICUEToken = nil;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"icuetoken"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"state"];
-//        [self.navigationController popToRootViewControllerAnimated:YES];// 跳转到根目录（第一个界面）
-        [MyViewController sharedInstanceTool].hasLogin = NO;
-        [[MyViewController sharedInstanceTool].tabBarController setSelectedIndex:0];
-//        HomeViewController * Home = [[HomeViewController alloc]init];
-//        [self.navigationController pushViewController:Home animated:YES];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        [self.navigationController popToRootViewControllerAnimated:NO];
+        
+        //跳转
+        if ([[[UIApplication sharedApplication] keyWindow].rootViewController isKindOfClass:[UITabBarController class]]) {
+            UITabBarController * tbvc  = [[UIApplication sharedApplication] keyWindow].rootViewController;
+            [tbvc setSelectedIndex:0];
+        }
         NSLog(@"点击了确定按钮");
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

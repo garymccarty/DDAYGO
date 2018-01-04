@@ -7,6 +7,8 @@
 //
 
 #import "ZP_InstructionController.h"
+#import "ZP_MyTool.h"
+#import "PrefixHeader.pch"
 @interface ZP_InstructionController ()
 
 @end
@@ -16,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    [self AllData];
 }
 
 - (void)initUI {
@@ -23,4 +26,13 @@
 
 }
 
+- (void)AllData {
+//    NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+//    dic[@"token"] = Token;
+    [ZP_MyTool requestLotterynow:Token uccess:^(id obj) {
+        ZPLog(@"%@",obj);
+    } failure:^(NSError *error) {
+        ZPLog(@"%@",error);
+    }];
+}
 @end

@@ -15,6 +15,7 @@
 @interface ZP_HistoryVetController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
 @property (nonatomic, strong)NSMutableArray * newsData;
+@property (nonatomic, strong) NSMutableArray * allData;
 @end
 
 @implementation ZP_HistoryVetController
@@ -22,8 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    [self allData];
-    [self initTableHeadView];
+    [self AllData];
+//    [self initTableHeadView];
 }
 - (void)initUI {
     
@@ -109,11 +110,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0, 5, ZP_Width, 20)];
     //    self.tableview.tableHeaderView = myView; // 表头跟着cell一起滚动
-    [myView setBackgroundColor:ZP_WhiteColor];
+//    [myView setBackgroundColor:ZP_WhiteColor];
     //     订单
     ZP_GeneralLabel * OrderLabel = [ZP_GeneralLabel initWithtextLabel:_OrderLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:nil];
     OrderLabel.text = @"";
-    [myView addSubview:OrderLabel];
+//    [myView addSubview:OrderLabel];
     _OrderLabel = OrderLabel;
     [OrderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(myView).offset(15);
@@ -125,7 +126,7 @@
     //     订单号
     ZP_GeneralLabel * OrderNumberLabel = [ZP_GeneralLabel initWithtextLabel:_OrderNumberLabel.text textColor:ZP_textblack font:ZP_TrademarkFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     OrderNumberLabel.text = @"";
-    [myView addSubview:OrderNumberLabel];
+//    [myView addSubview:OrderNumberLabel];
     _OrderNumberLabel = OrderNumberLabel;
     [OrderNumberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(OrderLabel.mas_trailing).offset(2);
@@ -149,7 +150,7 @@
 }
 
 // 数据
-- (void)allData {
+- (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = Token;
     dic[@"page"] = @"1";
@@ -185,7 +186,8 @@
 - (void)WithHistoryAllData:(ZP_HistoryModel *) model {
     //    _OrderLabel.text = model.
     _TitleLabel2.text = [[model.yyyy stringValue] stringByAppendingString:@"期"];
-    _TitleLabel5.text =  [NSString stringWithFormat:@"@%",model.createtime];
+    _TitleLabel5.text =  [NSString stringWithFormat:@"%@",model.createtime];
+    
 //    _TitleLabel5.text = [NSString stringWithFormat:@"%@",model.createtime ];
     
 }
@@ -213,7 +215,7 @@
 
 #pragma mark -- tableviewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.newsData.count;
+    return self.allData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
