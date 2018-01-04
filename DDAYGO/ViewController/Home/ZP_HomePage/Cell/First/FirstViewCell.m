@@ -21,6 +21,7 @@
     }
     return self;
 }
+
 - (void)first:(NSArray *)sup {
     NSMutableArray * arr = [NSMutableArray array];
     NSMutableArray * arrar = [NSMutableArray array];
@@ -31,7 +32,7 @@
         [arrar addObject:[NSString stringWithFormat:@"http://www.ddaygo.com%@",[model.imgurl stringByReplacingOccurrencesOfString:@"~" withString:@""]]];
         [arrid addObject:model.typeid];
     }
-
+    
     NSInteger num = 0;
     for (int z = 0; z <= 1; z ++) {
         UIView * view = [UIView new];
