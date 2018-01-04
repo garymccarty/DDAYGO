@@ -25,6 +25,11 @@
     self.title = NSLocalizedString(@"餘額", nil);
     UIBarButtonItem * ExtractBut = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_withdrawals_record"] style:UIBarButtonItemStyleDone target:self action:@selector(Extract)];
     ExtractBut.tintColor = ZP_WhiteColor;
+    self.amountText.keyboardType = UIKeyboardTypeNumberPad;
+//    self.CollectingBankText.keyboardType = UIKeyboardTypeNumberPad;
+    self.PaymentAccountText.keyboardType = UIKeyboardTypeNumberPad;
+    self.reservedPhoneText.keyboardType = UIKeyboardTypeNumberPad;
+    self.emailText.keyboardType = UIKeyboardTypeASCIICapable;
     self.navigationItem.rightBarButtonItem = ExtractBut;
     self.TikuanscrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
 }

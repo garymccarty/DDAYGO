@@ -163,19 +163,21 @@
 
 // 添加提现申请  addsuppliertakeout
 + (void)requesAddSupplierTakeOut:(NSDictionary *)QrCoed success:(void (^)(id))success failure:(void (^)(NSError *))failure {
-    //    NSString * str = [NSString stringWithFormat:@"%@addsuppliertakeout?token=%@&sid=%@&amount=%@&bankname=%@&bankcardno=%@&bankcardname=%@&phone=%@&email=%@",URLAPI,QrCoed[@"token"],QrCoed[@"sid"],QrCoed[@"amount"],QrCoed[@"bankname"],QrCoed[@"bankcardno"],QrCoed[@"bankcardname"],QrCoed[@"phone"],QrCoed[@"email"]];
-    //    NSString * urlString = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    //    [ZP_NetorkingTools POST:urlString parameters:nil success:^(NSDictionary *responseObject) {
-    //        success(responseObject);
-    //    } failure:^(NSError *error) {
-    //        failure(error);
-    //    }];
+        NSString * str = [NSString stringWithFormat:@"%@addsuppliertakeout?token=%@&sid=%@&amount=%@&bankname=%@&bankcardno=%@&bankcardname=%@&phone=%@&email=%@",URLAPI,QrCoed[@"token"],QrCoed[@"sid"],QrCoed[@"amount"],QrCoed[@"bankname"],QrCoed[@"bankcardno"],QrCoed[@"bankcardname"],QrCoed[@"phone"],QrCoed[@"email"]];
+        NSString * urlString = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [ZP_NetorkingTools POST:urlString parameters:nil success:^(NSDictionary *responseObject) {
+            success(responseObject);
+        } failure:^(NSError *error) {
+            failure(error);
+        }];
+//    http://www.ddaygo.com/api/Test/addsuppliertakeout?token=aa9ee6106a69859b12ea438b12c0b6ca&sid=(null)&amount=1&bankname=Sgvd%2520&bankcardno=23322%20&bankcardname=111&phone=112&email=1479@qq.com
     
-    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addsuppliertakeout?token=%@&sid=%@&amount=%@&bankname=%@&bankcardno=%@&bankcardname=%@&phone=%@&email=%@",URLAPI,QrCoed[@"token"],QrCoed[@"sid"],QrCoed[@"amount"],QrCoed[@"bankname"],QrCoed[@"bankcardno"],QrCoed[@"bankcardname"],QrCoed[@"phone"],QrCoed[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
-        success(responseObject);
-    } failure:^(NSError *error) {
-        failure(error);
-    }];
+    
+//    [ZP_NetorkingTools POST:[NSString stringWithFormat:@"%@addsuppliertakeout?token=%@&sid=%@&amount=%@&bankname=%@&bankcardno=%@&bankcardname=%@&phone=%@&email=%@",URLAPI,QrCoed[@"token"],QrCoed[@"sid"],QrCoed[@"amount"],QrCoed[@"bankname"],QrCoed[@"bankcardno"],QrCoed[@"bankcardname"],QrCoed[@"phone"],QrCoed[@"email"]] parameters:nil success:^(NSDictionary *responseObject) {
+//        success(responseObject);
+//    } failure:^(NSError *error) {
+//        failure(error);
+//    }];
     
 }
 

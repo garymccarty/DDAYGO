@@ -81,7 +81,7 @@
 // 1.设置section的数目，即是你有多少个cell
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 3; // in your case, there are 3 cells
+    return self.ExtractArr.count; // in your case, there are 3 cells
 }
 
 //2.对于每个section返回一个cell

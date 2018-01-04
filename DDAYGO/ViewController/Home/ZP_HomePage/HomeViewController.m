@@ -293,7 +293,7 @@
 //            if (_newsData.count == 0) {
 //                return 0;
 //            }
-            return ZP_Width / 2 - 30;
+            return ZP_Width / 2 ;
     }else
 /**********暂时不需要***********/
 //        if (indexPath.section == 2){
@@ -306,7 +306,7 @@
 //            if (_newsData.count == 0) {
 //                return 0;
 //            }
-            return 190 - 30;
+            return 190  ;
     }else
         if (indexPath.section == 3){
 /*********有问题***********/
@@ -365,14 +365,23 @@
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return CGFLOAT_MIN;
-//    return 1.f;
+//    return 5.0f;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return CGFLOAT_MIN;
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return CGFLOAT_MIN;
+    NSLog(@"go ");
+    return 10.0f;
 }
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 10)];
+    return v;
+}
+
+
+
+
 @end

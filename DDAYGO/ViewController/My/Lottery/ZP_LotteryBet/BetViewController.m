@@ -57,6 +57,9 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewCellTwo" bundle:nil] forCellReuseIdentifier:@"BetTableViewCellTwo"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewMyCell2" bundle:nil] forCellReuseIdentifier:@"BetTableViewMyCell2"];
 
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
 //     添加一个按钮
     CGRect frame = _chooseCityBtn.frame;
     frame.size.width = 50;
@@ -93,6 +96,7 @@
     dic[@"count"] = _dicArray;
     dic[@"count"] = @"3";
     [ZP_MyTool requestBte:dic uccess:^(id obj) {
+        ZPLog(@"%@",obj);
         if ([obj[@"result"]isEqualToString:@"time_err"]) {
             [SVProgressHUD showInfoWithStatus:@"還沒到開放時間"];
         }
@@ -161,7 +165,7 @@
 //  设置表头高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return 140.0f;
+        return 85.0f;
     }else{
         return 44.0f;
     }
@@ -290,7 +294,7 @@
     [self.dicArray[but.tag] addObject:jStr];
     NSIndexPath * index = [NSIndexPath indexPathForRow:but.tag inSection:2];
     [self.tableView reloadMoveToBottom];
-//    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
  
 }
 // 减
@@ -305,6 +309,7 @@
         return;
     }
     [self.dicArray[but.tag] removeObjectAtIndex:6];
+    
     NSString * jStr = [NSString stringWithFormat:@"%d",[str integerValue] - 1];
     [self.dicArray[but.tag] addObject:jStr];
 

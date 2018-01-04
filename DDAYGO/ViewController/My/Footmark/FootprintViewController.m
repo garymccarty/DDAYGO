@@ -61,13 +61,14 @@
     if (self.newsData.count == 0) {
         return;
     }
+    
     ZP_FootprintModel1 *model = self.newsData[btn.tag];
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = Token;
     dic[@"historyid"] = model.historyid;
     [ZP_MyTool requtsDeleFootprint:dic success:^(id obj) {
         NSLog(@"dele %@",obj);
-        [self allData];
+        [self.newsData removeObjectAtIndex:btn.tag];
         if ([obj[@"result"]isEqualToString:@"ok"]) {
             [SVProgressHUD showSuccessWithStatus:@"刪除成功"];
         }else {
@@ -75,6 +76,7 @@
                 [SVProgressHUD showInfoWithStatus:@"刪除失敗"];
             }
         }
+        [self.collectionView reloadData];
     } failure:^(NSError * error) {
         NSLog(@"dele %@",error);
     }];
