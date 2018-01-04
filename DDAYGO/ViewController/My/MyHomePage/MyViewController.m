@@ -43,22 +43,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+}
+// 生命周期
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
     [self initUI];
     [self LoginJudde];
     [self loginAllData];
+    [self Supplier];
     
-//     判断是否是供货商
+    //    本地数据调用
+    UIImage * image = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
+    if (image) {
+        _headImageBut.layer.cornerRadius = 42;
+        _headImageBut.layer.masksToBounds = YES;
+        [_headImageBut setImage:image forState:UIControlStateNormal];
+    }
+    
+}
+
+- (void) Supplier {
+    //     判断是否是供货商
     if (state.length == NO) {
         _SdglLayoutConstraint.constant = CGFLOAT_MIN;
-         _sdglView.hidden = YES;
-//        _viewLayoutConstraint.constant = 50.0;
+        _sdglView.hidden = YES;
+        //        _viewLayoutConstraint.constant = 50.0;
     }
     //     判断是否申请成功供货商
     if (state.length == YES) {
-//        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        //        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
         self.XfjlLayoutConstraint.constant = CGFLOAT_MIN;
         self.xfjlView.hidden = YES;
-//        _viewLayoutConstraint.constant = 50.0;
+        //        _viewLayoutConstraint.constant = 50.0;
     }
 }
 
@@ -113,6 +131,7 @@
     return instance;
 }
 
+
 - (void)autoLogin:(void (^)(id obj))success {
     if (DD_HASLOGIN) {
         if (success) {
@@ -157,22 +176,7 @@
     }
 }
 
-// 生命周期
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [super viewWillAppear:animated];
-    
-//    本地数据调用
-    UIImage * image = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
-    if (image) {
-        _headImageBut.layer.cornerRadius = 42;
-        _headImageBut.layer.masksToBounds = YES;
-        [_headImageBut setImage:image forState:UIControlStateNormal];
-    }
-    
 
-    
-}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

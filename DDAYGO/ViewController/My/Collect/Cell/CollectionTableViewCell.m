@@ -26,7 +26,7 @@
      [_ShopimageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     if ([model.state intValue] == 4) {
         _showYImageVIew.hidden = NO;
-        _showYImageVIew.image = [UIImage imageNamed:@"bg_invalid_frame"];
+        _showYImageVIew.image = [UIImage imageNamed:@"bg_footprint_frame"];
         _showYImageVIew.backgroundColor = [UIColor clearColor];
 
         _zhuangtaiLabel.center = _ShopimageView.center;
