@@ -26,9 +26,15 @@
 }
 @end
 
+
+
+
+
+
+
 @implementation ZP_FootprintModel1
 
-+ (instancetype)gEtFootprint:(NSDictionary *)Dic {
++ (instancetype)gEtFootprint1:(NSDictionary *)Dic {
     return [[self alloc]initWithFootprintData:Dic];
 }
 

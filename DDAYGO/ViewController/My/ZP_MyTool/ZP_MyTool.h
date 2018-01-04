@@ -85,6 +85,9 @@
 // 促销彩下注
 + (void)requestBte:(NSDictionary *)Bte uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
+// 获取下注页面奖金彩券数量开奖时间
++ (void)requestAcquisitionTime:(NSDictionary *)AcquisitionTime uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
 // 邮箱验证
 + (void)requesEmail:(NSDictionary *)Email uccess:(void (^)(id))success failure:(void (^)(NSError *))failure;
 

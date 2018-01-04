@@ -37,9 +37,18 @@
     [self addRefresh];
     //请求位置
     [self PositionallData];
-    self.tableView.separatorStyle =NO;
+    self.tableView.separatorStyle = NO;
     [self.view setBackgroundColor:ZP_Graybackground];
+//    [self.view setBackgroundColor:[UIColor yellowColor]];
     [self.navigationController.navigationBar setBarTintColor:ZP_NavigationCorlor];
+    
+//
+    if (@available(iOS 11.0, *)){
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+       _tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);//导航栏如果使用系统原生半透明的，top设置为64
+        _tableView.scrollIndicatorInsets = _tableView.contentInset;
+    }
+   
 }
 
 - (void)addRefresh {
@@ -60,7 +69,7 @@
 
 
 - (void)initUI {
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;  //隐藏tableview多余的线条
     self.tableView.backgroundColor = ZP_Graybackground;
     self.tableView.delegate = self;
@@ -107,7 +116,7 @@
     _chooseCityBtn.contentEdgeInsets = UIEdgeInsetsMake(6, -15, 6, 5);
     _chooseCityBtn.titleLabel.font = ZP_TooBarFont;
     [_chooseCityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_chooseCityBtn setTitle:NSLocalizedString(@"Taiwan", nil) forState:UIControlStateNormal];
+    [_chooseCityBtn setTitle:NSLocalizedString(@"臺灣", nil) forState:UIControlStateNormal];
     
     
     [_chooseCityBtn setImage:[UIImage imageNamed:@"ic_home_down"] forState:(UIControlStateNormal)];
@@ -131,7 +140,7 @@
 - (void)buttonAction:(UIButton *)sender {
     if (!DD_HASLOGIN) {
         if (![MyViewController sharedInstanceTool].hasRemind) {
-            [MyViewController sharedInstanceTool].hasRemind = YES;
+//            [MyViewController sharedInstanceTool].hasRemind = YES;
             [self PositionallData];
             NSLog(@"位置");
             PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
@@ -182,34 +191,7 @@
     
     return 1;
 }
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section {
-    return 0.1f;
-}
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section {
-    return 0.1f;
-}
-//  组头
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    
-//    if (section ==2) {
-//        return 5;
-//    }else
-//        if (section == 3) {
-//           return 5;
-//        }else
-//           if (section ==4) {
-//            return 5;
-//        }
-    return 1.f;
-}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 1.f;
-}
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return 0.0001;
-//}
 // cell个数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -305,13 +287,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return ZP_Width / 2 - 25 -30;
+        return    zeroHeight;
     }else
         if (indexPath.section ==1){
 //            if (_newsData.count == 0) {
 //                return 0;
 //            }
-            return ZP_Width / 2 - 30;
+            return ZP_Width / 2 ;
     }else
 /**********暂时不需要***********/
 //        if (indexPath.section == 2){
@@ -324,7 +306,7 @@
 //            if (_newsData.count == 0) {
 //                return 0;
 //            }
-            return 190 - 30;
+            return 190  ;
     }else
         if (indexPath.section == 3){
 /*********有问题***********/
@@ -382,5 +364,24 @@
     NSLog(@"选中%ld",(long)indexPath.item);
     
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+//    return 5.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return CGFLOAT_MIN;
+    NSLog(@"go ");
+    return 10.0f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, 10)];
+    return v;
+}
+
+
+
 
 @end

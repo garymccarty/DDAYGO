@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZP_BetHeaderModel.h"
 @interface tableHeadView1 : UIView
 @property (weak, nonatomic) IBOutlet UILabel *YearsLabel; // 期数(年)
 @property (weak, nonatomic) IBOutlet UILabel *MonthLabel; // 期数（月）
@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *NumberLabel; // 彩金劵数
 @property (weak, nonatomic) IBOutlet UILabel *BallLabel;  // 已选的球
 
+- (void)tableHeadView1:(ZP_BetHeaderModel *)model;
 
 
 @end

@@ -39,6 +39,8 @@
 @property (weak, nonatomic) IBOutlet UIView * view3;
 @property (weak, nonatomic) IBOutlet UIView * DividingLineView; // 分割线
 //@property (weak, nonatomic) IBOutlet UIView *view4;
+@property (weak, nonatomic) IBOutlet UIView *xgview;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *xgLayout;
 
 @property (nonatomic, strong)NSMutableDictionary * dataDic;
 
@@ -61,11 +63,13 @@
         _BangDingLayout.constant = CGFLOAT_MIN;
         _IcueNumLayout.constant = CGFLOAT_MIN;
 //        _view4Layout.constant = CGFLOAT_MIN;
+        _xgLayout.constant = CGFLOAT_MIN;
+        _xgview.hidden = YES;
         _DividingLineView.hidden = YES;
         _view1.hidden = YES;
         _view3.hidden = YES;
 //        _view4.hidden = YES;
-        _view3Layout.constant = 100.0;
+        _view3Layout.constant = 50.0;
     }
     
     [self.navigationController.navigationBar lt_setBackgroundColor:ZP_NavigationCorlor];
@@ -144,6 +148,7 @@
     UIImage * img = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
     if (img) {
         _headerImage.image = img;
+//        [[MyViewController sharedInstanceTool].headImageBut setImage:img forState:UIControlStateNormal];
     }
 }
 
@@ -263,10 +268,11 @@
 
 //  登出
 - (IBAction)logoutAction:(id)sender {
+    
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"reminding", nil) message: NSLocalizedString(@"Are you sure you want to log out?", nil)preferredStyle:UIAlertControllerStyleActionSheet];
     //  设置popover指向的item
     alert.popoverPresentationController.barButtonItem = self.navigationItem.leftBarButtonItem;
-    //  添加按钮
+    //  確定按钮
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"ok", nil)  style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         Token = nil;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
@@ -275,11 +281,14 @@
         ZPICUEToken = nil;
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"icuetoken"];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"state"];
-//        [self.navigationController popToRootViewControllerAnimated:YES];// 跳转到根目录（第一个界面）
-        [MyViewController sharedInstanceTool].hasLogin = NO;
-        [[MyViewController sharedInstanceTool].tabBarController setSelectedIndex:0];
-//        HomeViewController * Home = [[HomeViewController alloc]init];
-//        [self.navigationController pushViewController:Home animated:YES];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        [self.navigationController popToRootViewControllerAnimated:NO];
+        
+        //跳转
+        if ([[[UIApplication sharedApplication] keyWindow].rootViewController isKindOfClass:[UITabBarController class]]) {
+            UITabBarController * tbvc  = [[UIApplication sharedApplication] keyWindow].rootViewController;
+            [tbvc setSelectedIndex:0];
+        }
         NSLog(@"点击了确定按钮");
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"cancel",nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

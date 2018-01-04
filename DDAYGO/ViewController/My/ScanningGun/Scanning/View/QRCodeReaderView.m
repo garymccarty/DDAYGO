@@ -142,9 +142,9 @@ static CGFloat const timer_animation_Duration = 0.05;
     [bottom_View addSubview:promptLabel];
     
 // 添加闪光灯按钮
-    UIButton *light_button = [[UIButton alloc] init];
-    CGFloat light_buttonX = CGRectGetMaxY(promptLabel.frame) + scanContent_Y * 0.6;
-    CGFloat light_buttonY = CGRectGetMaxY(promptLabel.frame) + scanContent_X * 0.5;
+    UIButton * light_button = [[UIButton alloc] init];
+    CGFloat light_buttonX = CGRectGetWidth([UIScreen mainScreen].bounds) / 2 - 35/2;
+    CGFloat light_buttonY = CGRectGetMaxY(promptLabel.frame) + scanContent_X * 0.6;
     CGFloat light_buttonW = 35;
     CGFloat light_buttonH = 35;
     light_button.frame = CGRectMake(light_buttonX, light_buttonY, light_buttonW, light_buttonH);

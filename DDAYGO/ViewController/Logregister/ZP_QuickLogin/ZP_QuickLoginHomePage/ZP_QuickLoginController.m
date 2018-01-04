@@ -63,8 +63,9 @@
 //  数据 ICUE登入（如返回首次登入则调用55再请求）
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"acc"] = _ZPEmailTextField.textField.text;
-    dic[@"pwd"] = _ZPPswTextField.textField.text;
+
+    dic[@"acc"] = [_ZPEmailTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""]; // 防止輸入帶有空格
+    dic[@"pwd"] = [_ZPPswTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     [ZP_LoginTool requesForFirstTimeLogin:dic success:^(id obj) {
         NSDictionary * adic = obj;
         ZPLog(@"%@",obj);

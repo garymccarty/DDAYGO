@@ -13,7 +13,7 @@
 #import "BetTableViewCellTwo.h"
 #import "BetTableViewMyCell.h"
 #import "BetTableViewMyCell2.h"
-
+#import "ZP_BetHeaderModel.h"
 @interface BetViewController ()<UITableViewDelegate,UITableViewDataSource> {
     UIButton * _chooseCityBtn;
 }
@@ -32,6 +32,8 @@
 
 @property (nonatomic, strong) NSMutableArray *dicArray;
 
+@property (nonatomic, strong)   ZP_BetHeaderModel * model;
+
 @end
 
 @implementation BetViewController
@@ -46,17 +48,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self AcquisitionTime];
     [self initUI];
 }
 
 - (void)initUI {
-    self.title = @"促销彩下注";
+    self.title = @"促销彩填寫";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewMyCell" bundle:nil] forCellReuseIdentifier:@"BetTableViewMyCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewCellTwo" bundle:nil] forCellReuseIdentifier:@"BetTableViewCellTwo"];
     [self.tableView registerNib:[UINib nibWithNibName:@"BetTableViewMyCell2" bundle:nil] forCellReuseIdentifier:@"BetTableViewMyCell2"];
 
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
 //     添加一个按钮
     CGRect frame = _chooseCityBtn.frame;
     frame.size.width = 50;
@@ -81,6 +86,20 @@
     self.tableView.frame =CGRectMake(0, 0, ZP_Width, ZP_height-TabbarHeight -NavBarHeight);
     
 }
+// 获取时间，彩金劵数量
+- (void)AcquisitionTime {
+    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+    dict[@"token"] = Token;
+    [ZP_MyTool requestAcquisitionTime:dict uccess:^(id obj) {
+        ZPLog(@"%@",obj);
+       _model = [ZP_BetHeaderModel mj_objectWithKeyValues:obj];
+        
+        [self.tableView reloadData];
+    } failure:^(NSError * error) {
+        ZPLog(@"%@",error);
+    }];
+}
+
 
 // 下注
 - (void)Instruction {
@@ -93,6 +112,7 @@
     dic[@"count"] = _dicArray;
     dic[@"count"] = @"3";
     [ZP_MyTool requestBte:dic uccess:^(id obj) {
+        ZPLog(@"%@",obj);
         if ([obj[@"result"]isEqualToString:@"time_err"]) {
             [SVProgressHUD showInfoWithStatus:@"還沒到開放時間"];
         }
@@ -107,6 +127,7 @@
     if (section == 0) {
         self.tableHeadView1 = [[[NSBundle mainBundle] loadNibNamed:@"tableHeadView1" owner:nil options:nil] firstObject];
          self.tableHeadView1.BallLabel.text  = [NSString stringWithFormat:@"%ld",self.array1.count];
+        [self.tableHeadView1  tableHeadView1:_model];
         return self.tableHeadView1;
     }
     if (section == 1) {
@@ -161,7 +182,7 @@
 //  设置表头高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return 140.0f;
+        return 85.0f;
     }else{
         return 44.0f;
     }
@@ -193,7 +214,7 @@
         BetTableViewMyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewMyCell"];
 //        NSLog(@"you go");
         cell.butArray = self.array1;
-        [cell upDataButtonWith:69];
+        [cell upDataButtonWith:68];
         cell.arrayBlock = ^(NSMutableArray *arr1) {
            self.tableHeadView1.BallLabel.text = [NSString stringWithFormat:@"%ld",arr1.count];
             if (self.Selearray.count > 0) {
@@ -222,7 +243,7 @@
         BetTableViewMyCell2 *cell = [tableView dequeueReusableCellWithIdentifier:@"BetTableViewMyCell2"];
         NSLog(@"you go");
          cell.butArray = self.arrayT;
-        [cell upDataButtonWith:26];
+        [cell upDataButtonWith:25];
         cell.arrayBlock = ^(NSMutableArray *arr2) {
             _label3.text = [NSString stringWithFormat:@"%ld",arr2.count];
             _arrayT = arr2;
@@ -290,7 +311,7 @@
     [self.dicArray[but.tag] addObject:jStr];
     NSIndexPath * index = [NSIndexPath indexPathForRow:but.tag inSection:2];
     [self.tableView reloadMoveToBottom];
-//    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
  
 }
 // 减
@@ -305,6 +326,7 @@
         return;
     }
     [self.dicArray[but.tag] removeObjectAtIndex:6];
+    
     NSString * jStr = [NSString stringWithFormat:@"%d",[str integerValue] - 1];
     [self.dicArray[but.tag] addObject:jStr];
 

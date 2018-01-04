@@ -82,19 +82,19 @@
     return 350;
 }
 
-// 把将要进入二维码页面时的系统亮度保存
-- (void)viewWillAppear:(BOOL)animated {
-    self.currentLight = [[USER_DEFAULTS valueForKey:SCREEN_BRIGHT] floatValue];
-    [USER_DEFAULTS setBool:YES forKey:ISQRCONTROLLER];
-}
-// 进入控制器完成后，让控制器变量
-- (void)viewDidAppear:(BOOL)animated {
-    [[UIScreen mainScreen] setBrightness: 1.0];//0.1~1.0之间，值越大越亮
-}
-// 退出控制器时恢复之前的亮度
-- (void)viewWillDisappear:(BOOL)animated {
-    [[UIScreen mainScreen] setBrightness: self.currentLight];//0.5是自己设定认为比较合适的亮度值
-    [USER_DEFAULTS setBool:NO forKey:ISQRCONTROLLER];
-}
+//// 把将要进入二维码页面时的系统亮度保存
+//- (void)viewWillAppear:(BOOL)animated {
+//    self.currentLight = [[USER_DEFAULTS valueForKey:SCREEN_BRIGHT] floatValue];
+//    [USER_DEFAULTS setBool:YES forKey:ISQRCONTROLLER];
+//}
+//// 进入控制器完成后，让控制器变量
+//- (void)viewDidAppear:(BOOL)animated {
+//    [[UIScreen mainScreen] setBrightness: 1.0];//0.1~1.0之间，值越大越亮
+//}
+//// 退出控制器时恢复之前的亮度
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [[UIScreen mainScreen] setBrightness: self.currentLight];//0.5是自己设定认为比较合适的亮度值
+//    [USER_DEFAULTS setBool:NO forKey:ISQRCONTROLLER];
+//}
 @end
 

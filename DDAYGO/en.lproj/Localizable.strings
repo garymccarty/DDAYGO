@@ -21,7 +21,7 @@
 "Server link failed" = "Server link failed";
 "Once logged in, no other countries will be supported" = "Once logged in, no other countries will be supported";
 "Taiwan" = "Taiwan";
-"" = "";
+"Cancel" = "Cancel";
 "" = "";
 "" = "";
 "" = "";
@@ -68,15 +68,15 @@
 //"" = "";
 "Shopping" = "Shopping";
 "Edit" = "Edit";
-"Select All" = "Select All";
+"Select" = "Select";
 "Total" = "Total";
 "Complete" = "Complete";
 
 
 "Clearing(0)" = "Clearing(0)";
 "You have not selected goods " = "You have not selected goods ";
-"" = "";
-"" = "";
+"delete" = "delete";
+"settlement" = "settlement";
 "" = "";
 "" = "";
 "" = "";

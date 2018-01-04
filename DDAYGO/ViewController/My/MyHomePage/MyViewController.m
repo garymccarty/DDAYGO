@@ -23,6 +23,9 @@
 #import "ZP_HomePageModel.h"
 #import "ZP_LoginTool.h"
 #import "ZP_MyHopageModel.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "SDImageCache.h"
 @interface MyViewController ()
 @property (weak, nonatomic) IBOutlet UIView * userBackView;
 @property (weak, nonatomic) IBOutlet UIView * sdglView;
@@ -30,7 +33,6 @@
 //@property (weak, nonatomic) IBOutlet UIView * zxxxView;
 @property (weak, nonatomic) IBOutlet UIView * scanView;
 @property (weak, nonatomic) IBOutlet UIView * CaipiaoView;
-@property (weak, nonatomic) IBOutlet UIButton * headImageBut;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *SdglLayoutConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *XfjlLayoutConstraint;
@@ -41,22 +43,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+}
+// 生命周期
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [super viewWillAppear:animated];
     [self initUI];
     [self LoginJudde];
     [self loginAllData];
+    [self Supplier];
     
-//     判断是否是供货商
+    //    本地数据调用
+    UIImage * image = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
+    if (image) {
+        _headImageBut.layer.cornerRadius = 42;
+        _headImageBut.layer.masksToBounds = YES;
+        [_headImageBut setImage:image forState:UIControlStateNormal];
+    }
+    
+}
+
+- (void) Supplier {
+    //     判断是否是供货商
     if (state.length == NO) {
         _SdglLayoutConstraint.constant = CGFLOAT_MIN;
-         _sdglView.hidden = YES;
-//        _viewLayoutConstraint.constant = 50.0;
+        _sdglView.hidden = YES;
+        //        _viewLayoutConstraint.constant = 50.0;
     }
     //     判断是否申请成功供货商
     if (state.length == YES) {
-//        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        //        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
         self.XfjlLayoutConstraint.constant = CGFLOAT_MIN;
         self.xfjlView.hidden = YES;
-//        _viewLayoutConstraint.constant = 50.0;
+        //        _viewLayoutConstraint.constant = 50.0;
     }
 }
 
@@ -111,6 +131,7 @@
     return instance;
 }
 
+
 - (void)autoLogin:(void (^)(id obj))success {
     if (DD_HASLOGIN) {
         if (success) {
@@ -155,22 +176,7 @@
     }
 }
 
-// 生命周期
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [super viewWillAppear:animated];
-    
-//    本地数据调用
-    UIImage * image = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
-    if (image) {
-        _headImageBut.layer.cornerRadius = 42;
-        _headImageBut.layer.masksToBounds = YES;
-        [_headImageBut setImage:image forState:UIControlStateNormal];
-    }
-    
 
-    
-}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -199,6 +205,8 @@
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.nickname = obj[@"nickname"];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
+        [self.headImageBut sd_setBackgroundImageWithURL:[NSURL URLWithString:model.avatarimg] forState:UIControlStateNormal];
+//        [self.headImageBut sd_setImageWithURL:[NSURL URLWithString:model.avatarimg]];
         [self MyViewData:model];
         
     } failure:^(NSError * error) {
@@ -351,7 +359,7 @@
 - (IBAction)settingAction:(id)sender {
     SettingViewController * settingViewController = [[SettingViewController alloc] init];
     [self.navigationController pushViewController:settingViewController animated:YES];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
 }
 
@@ -359,16 +367,14 @@
 - (IBAction)scAction:(id)sender {
     CollectionViewController *collectionViewController = [[CollectionViewController alloc] init];
     [self.navigationController pushViewController:collectionViewController animated:YES];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
+
     self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
 }
-// 关注店铺（暂时不开启）
-- (IBAction)gzdpAction:(id)sender {
+// 关注店铺（暂时不开启）- (IBAction)gzdpAction:(id)sender {
 //    ConcernShopViewController *concernShopViewController = [[ConcernShopViewController alloc] init];
 //    [self.navigationController pushViewController:concernShopViewController animated:YES];
 //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
-//    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;
-}
+//    self.navigationController.navigationBar.tintColor = ZP_WhiteColor;}
 // 足迹
 - (IBAction)zjAction:(id)sender {
     FootprintViewController *footprintViewController = [[FootprintViewController alloc] init];

@@ -13,7 +13,7 @@
 @property (nonatomic, strong) NSNumber * countrycode;
 @property (nonatomic, strong) NSNumber * yyyy;
 @property (nonatomic, strong) NSNumber * mm;
-@property (nonatomic, strong) NSNumber * createtime;
+@property (nonatomic, strong) NSString * createtime;
 @property (nonatomic, strong) NSNumber * periods;
 @property (nonatomic, strong) NSNumber * white1;
 @property (nonatomic, strong) NSNumber * white2;

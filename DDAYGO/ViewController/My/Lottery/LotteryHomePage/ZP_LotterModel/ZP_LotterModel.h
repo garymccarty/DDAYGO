@@ -13,8 +13,9 @@
 
 @interface ZP_LotterModel : NSObject
 
-@property (nonatomic, strong) NSDictionary *lottery;
-
+@property (nonatomic, strong) NSDictionary * lottery;
+/*彩金點數*/
+@property (nonatomic, strong) NSNumber * lbalance;
 @property (nonatomic, strong) NSArray<lotterywinModel *> *lotterywin;
 
 @property (nonatomic, strong) NSArray<lotteryorderModel *> *lotteryorder;
@@ -23,6 +24,7 @@
 
 
 @interface lotteryModel : NSObject
+
 /*奖池ID*/
 @property (nonatomic, strong) NSNumber *pollid;
 /*国家id*/

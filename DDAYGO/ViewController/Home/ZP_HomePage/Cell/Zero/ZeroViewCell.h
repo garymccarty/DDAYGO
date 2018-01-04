@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
+#define zeroHeight 320.0/768.0 * ZP_Width
+
 typedef void (^FinishBlock)(id response);
 @interface ZeroViewCell : UITableViewCell
 

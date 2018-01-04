@@ -21,6 +21,7 @@
 "Best-selling products" = "热销商品";
 "erchandise" = "精选商品";
 "More erchandise" = "更多精选";
+"Cancel" = "取消";
 /*****************/
 /* *
  * 分类
@@ -37,8 +38,11 @@
 "Shopping" = "购物车";
 "Edit" = "编辑";
 "omplete" = "完成";
-"Select All" = "全选";
+"Select" = "全选";
 "Total" = "合计";
+"delete" = "完成";
+"Complete" = "完成";
+"settlement" = "结算";
 "Clearing(0)" = "结算(0)";
 "You have not selected goods " = "您还没有选择宝贝哦";
 /*****************/

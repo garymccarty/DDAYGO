@@ -115,17 +115,19 @@
 
 //  navigationBar按钮
 - (void) setUpNavgationBar {
-    static CGFloat const kButtonWidth = 63.0f;
+    static CGFloat const kButtonWidth = 90.0f;
     static CGFloat const kButtonHeight = 43.0f;
     UIButton *cartButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cartButton.frame = CGRectMake(0.0f, 0.0f, kButtonWidth - 25, kButtonHeight);
     cartButton.backgroundColor = [UIColor clearColor];
     
     [cartButton setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
-;
+    cartButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     cartButton.titleLabel.font = ZP_TooBarFont;
     [cartButton addTarget:self action:@selector(onClickedSweep:) forControlEvents:UIControlEventTouchUpInside];
     cartButton.imageEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
+//    [cartButton setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+//    cartButton.backgroundColor = [UIColor yellowColor];
     [cartButton.titleLabel setTextAlignment:NSTextAlignmentRight];
     UIBarButtonItem * rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:cartButton];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
@@ -144,14 +146,14 @@
   //      _ClearingButt.selected = YES;
         
         [sup setTitle:NSLocalizedString(@"Complete", nil) forState:UIControlStateNormal];
-        [self.ClearingButt setTitle:@"刪除" forState: UIControlStateNormal];
+        [self.ClearingButt setTitle:NSLocalizedString(@"delete",nil) forState: UIControlStateNormal];
     }else{
         _StatisticsLabel.hidden = NO;
         _PriceLabel.hidden = NO;
         _CurrencySymbolLabel.hidden = NO;
 //        _ClearingButt.selected = NO;
          [sup setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
-            [self.ClearingButt setTitle:@"結算" forState: UIControlStateNormal];
+            [self.ClearingButt setTitle:NSLocalizedString(@"settlement", nil) forState: UIControlStateNormal];
     }
     [self.tableView reloadData];
    
@@ -184,7 +186,7 @@
     self.AllButton.layer.cornerRadius = self.AllButton.frame.size.height/2;
     self.AllButton.layer.borderColor = [UIColor clearColor].CGColor;
     self.AllButton.layer.borderWidth = 1;
-    [self.AllButton setTitle:NSLocalizedString(@"Select All", nil) forState:UIControlStateNormal];
+    [self.AllButton setTitle:NSLocalizedString(@"Select", nil) forState:UIControlStateNormal];
     self.AllButton.titleLabel.font = ZP_TooBarFont;
     [self.AllButton setTitleColor:ZP_TypefaceColor forState:UIControlStateNormal];
     [self.AllButton addTarget:self action:@selector(selectClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -195,7 +197,7 @@
     [self.AllButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(bottomView).offset(5); // 左边
         make.bottom.equalTo(bottomView).offset(-15); // 下边
-        make.width.mas_offset(55);
+        make.width.mas_offset(65);
         make.height.mas_offset(20);
     }];
     
@@ -227,7 +229,7 @@
     StatisticsLabel.text = NSLocalizedString(@"Total", nil);
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(CurrencySymbolLabel).offset(-32.5); // 左边
+        make.left.equalTo(CurrencySymbolLabel).offset(-30.5); // 左边
         make.bottom.equalTo(CurrencySymbolLabel).offset(0); // 下
     }];
     _StatisticsLabel = StatisticsLabel;

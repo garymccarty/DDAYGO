@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,8 +42,8 @@
                         <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RMB:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYA-FP-Cd3">
-                        <rect key="frame" x="108" y="58" width="30" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RMB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYA-FP-Cd3">
+                        <rect key="frame" x="108" y="58" width="26.5" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="3Fk-Tw-HfL"/>
                         </constraints>
@@ -52,7 +52,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDF-sZ-3mY">
-                        <rect key="frame" x="141" y="58" width="38" height="15"/>
+                        <rect key="frame" x="137.5" y="58" width="38" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="2bm-g8-D2C"/>
                         </constraints>
@@ -92,10 +92,21 @@
                             <constraint firstAttribute="width" constant="92" id="rRJ-0R-3XU"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey6-EQ-Rg4">
+                        <rect key="frame" x="33" y="44" width="42" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Syx-aY-psP"/>
+                            <constraint firstAttribute="width" constant="42" id="hzU-0e-R9W"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="nSL-kj-gLK" firstAttribute="top" secondItem="A0p-VQ-TKJ" secondAttribute="bottom" constant="26" id="0pi-rJ-mJ9"/>
                     <constraint firstItem="W1e-m4-kIK" firstAttribute="leading" secondItem="otV-Dq-b6g" secondAttribute="trailing" constant="45" id="13X-2B-SdL"/>
+                    <constraint firstItem="ey6-EQ-Rg4" firstAttribute="top" secondItem="sgc-ol-QRs" secondAttribute="topMargin" constant="33" id="67s-oT-VuC"/>
                     <constraint firstItem="UlF-Tk-dWI" firstAttribute="leading" secondItem="NhN-r3-pHL" secondAttribute="trailing" constant="8" id="6b5-rZ-4p1"/>
                     <constraint firstItem="yDF-sZ-3mY" firstAttribute="top" secondItem="UlF-Tk-dWI" secondAttribute="bottom" constant="2" id="AZt-sn-pwo"/>
                     <constraint firstItem="vFh-Ip-qIP" firstAttribute="centerY" secondItem="sgc-ol-QRs" secondAttribute="centerY" id="Aub-6k-91J"/>
@@ -113,6 +124,7 @@
                     <constraint firstItem="DYA-FP-Cd3" firstAttribute="leading" secondItem="NhN-r3-pHL" secondAttribute="trailing" constant="8" id="gaw-yJ-gIw"/>
                     <constraint firstItem="vFh-Ip-qIP" firstAttribute="leading" secondItem="sgc-ol-QRs" secondAttribute="leading" constant="8" id="gfO-ct-2ia"/>
                     <constraint firstItem="yDF-sZ-3mY" firstAttribute="leading" secondItem="DYA-FP-Cd3" secondAttribute="trailing" constant="3" id="gqG-R7-fAV"/>
+                    <constraint firstItem="ey6-EQ-Rg4" firstAttribute="centerX" secondItem="vFh-Ip-qIP" secondAttribute="centerX" id="l9P-aE-Dc6"/>
                     <constraint firstAttribute="bottom" secondItem="nSL-kj-gLK" secondAttribute="bottom" id="tNa-wN-ivl"/>
                 </constraints>
             </tableViewCellContentView>
@@ -123,6 +135,7 @@
                 <outlet property="priceLabel" destination="yDF-sZ-3mY" id="L0P-SS-Zrb"/>
                 <outlet property="shopTextLabel" destination="UlF-Tk-dWI" id="dVg-9O-Tjd"/>
                 <outlet property="showYImageVIew" destination="vFh-Ip-qIP" id="Jzd-n5-U2Z"/>
+                <outlet property="zhuangtaiLabel" destination="ey6-EQ-Rg4" id="gvk-4V-tSz"/>
             </connections>
             <point key="canvasLocation" x="13" y="52"/>
         </tableViewCell>

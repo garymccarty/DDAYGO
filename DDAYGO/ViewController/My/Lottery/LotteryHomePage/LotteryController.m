@@ -52,6 +52,7 @@
         ZPLog(@"%@",obj);
         //这个是一次的数据
         ZP_LotterModel * model = [ZP_LotterModel mj_objectWithKeyValues:obj];
+        _AmountLabel.text = [model.lbalance stringValue];
         self.prizeDic = obj;
         [self updateData:model];
     } failure:^(NSError *error) {
@@ -61,7 +62,9 @@
 - (void)updateData:(ZP_LotterModel *)model{
     
      lotteryModel *model1 = [lotteryModel mj_objectWithKeyValues:model.lottery];
-    _AmountLabel.text = [model1.poolamount stringValue];
+    _NianLabel.text = [model1.yyyy stringValue];
+    _YueLabel.text = [model1.mm stringValue];
+    _RiLabel.text = [model1.periods stringValue];
     _dateLabel.text = model1.createtime;
     [_but1 setTitle:[model1.white1 stringValue] forState:UIControlStateNormal];
     [_but2 setTitle:[model1.white2 stringValue] forState:UIControlStateNormal];

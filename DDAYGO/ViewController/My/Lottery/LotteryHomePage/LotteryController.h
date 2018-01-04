@@ -19,12 +19,19 @@
 @property (weak, nonatomic) IBOutlet UIView * outVIew;
 //@property (weak, nonatomic) IBOutlet UILabel * MosaicGoldLabel;
 @property (weak, nonatomic) IBOutlet UILabel * ymbolLabel;
-@property (weak, nonatomic) IBOutlet UILabel *AmountLabel;
-@property (weak, nonatomic) IBOutlet UILabel *YuanLabel;
-@property (weak, nonatomic) IBOutlet UIView *AssemblageView;
+@property (weak, nonatomic) IBOutlet UILabel * AmountLabel;
+@property (weak, nonatomic) IBOutlet UILabel * YuanLabel;
+@property (weak, nonatomic) IBOutlet UIView * AssemblageView;
 @property (weak, nonatomic) IBOutlet UILabel * WinningNumbersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *periodsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel * periodsLabel;
+@property (weak, nonatomic) IBOutlet UILabel * dateLabel;
+//年月日
+@property (weak, nonatomic) IBOutlet UILabel *NianLabel;
+@property (weak, nonatomic) IBOutlet UILabel *YueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *RiLabel;
+
+
+
 @property (weak, nonatomic) IBOutlet UIView * WinningNumbersView; // 中奖号码及按钮
 @property (weak, nonatomic) IBOutlet UIButton * but1;
 @property (weak, nonatomic) IBOutlet UIButton * but2;
