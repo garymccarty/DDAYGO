@@ -37,10 +37,10 @@
  * */
 "Shopping" = "購物車";
 "Edit" = "編輯";
-"omplete" = "完成";
+//"omplete" = "完成";
 "Select" = "全選";
 "Total" = "合計";
-"delete" = "完成";
+"delete" = "刪除";
 "settlement" = "结算";
 "Complete" = "完成";
 "Clearing(0)" = "結算(0)";
