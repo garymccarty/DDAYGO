@@ -47,17 +47,27 @@
         
         for (int i = 0; i <= 3; i ++) {
             UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(i * ZP_Width / 4 , z * ZP_Width / 4 , ZP_Width / 4 , ZP_Width / 4 )];
-            button.backgroundColor = [UIColor whiteColor];
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i * ZP_Width / 4 + (ZP_Width / 4 - 60) / 2  , z * ZP_Width / 4 + (ZP_Width / 4 - 60) / 2 - 10, 60 , 60 )];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(i * ZP_Width / 4, z * ZP_Width / 4 + (ZP_Width / 4 - 60) / 2 - 10 + 60 + 8, ZP_Width / 4, 15)];
+            label.font = [UIFont systemFontOfSize:13];
+            label.textAlignment =NSTextAlignmentCenter;
+//            button.backgroundColor = [UIColor whiteColor];
             button.titleLabel.font = ZP_titleFont;
             [button setTitleColor:ZP_textblack forState:UIControlStateNormal];
             if (z == 0) {
-                [self ZP_setButton:button ImageWithUrl:arrar[i] WithName:arr[i]];
+                [self ZP_setButton:button ImageWithUrl:arrar[i] WithName:arr[i] ImageView:imageView];
+                label.text = arr[i];
             }
             if (z == 1) {
-                [self ZP_setButton:button ImageWithUrl:arrar[i+4] WithName:arr[i+4]];
+                [self ZP_setButton:button ImageWithUrl:arrar[i+4] WithName:arr[i+4] ImageView:imageView];
+                label.text = arr[i+4];
             }
+            [button.titleLabel setTextAlignment:NSTextAlignmentLeft];
             button.tag = [arrid[num] integerValue];
             [button addTarget:self action:@selector(buttonType:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [self.contentView addSubview:imageView];
+            [self.contentView addSubview:label];
             [self.contentView addSubview:button];
             num ++;
         }
@@ -91,7 +101,7 @@
     
 }
 
-- (void)ZP_setButton:(UIButton *)btn ImageWithUrl:(NSString *)urlStr WithName:(NSString *)name {
+- (void)ZP_setButton:(UIButton *)btn ImageWithUrl:(NSString *)urlStr WithName:(NSString *)name ImageView:(UIImageView *)imageView{
     [[SDImageCache sharedImageCache] storeImage:btn.imageView.image forKey:urlStr toDisk:NO];
     [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:urlStr] options:0 progress:nil completed:^(UIImage * image, NSError * error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         // 主线程刷新UI
@@ -99,13 +109,9 @@
             CGSize imagesize;
             imagesize.height = ZP_Width/4-30;
             imagesize.width = ZP_Width/4-30;
-            UIImage *image1 = [self imageWithImage:image scaledToSize:imagesize];
-            NSData *imdata = UIImageJPEGRepresentation(image1, 1);
-
-            [btn setImage:[UIImage imageWithData:imdata] forState:UIControlStateNormal];
-            [btn setTitle:name forState:UIControlStateNormal];
-            btn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 5, 0);
-            [btn resizeWithDistance:10];
+            imageView.image = image;
+//            [btn setTitle:name forState:UIControlStateNormal];
+//            [btn resizeWithDistance:10];
         });
     }];
 }
