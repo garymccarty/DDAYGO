@@ -154,7 +154,7 @@
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
     dic[@"token"] = Token;
     dic[@"page"] = @"1";
-    dic[@"pagesize"] = @"10";
+    dic[@"pagesize"] = @"6";
     [ZP_MyTool requestHistoryPrize:dic uccess:^(id obj) {
         ZPLog(@"%@",obj);
         ZP_HistoryModel * model = [[ZP_HistoryModel alloc]init];
@@ -192,11 +192,11 @@
     
 }
 
-
 // 领奖按钮
 - (void)AwardBut {
     ZPLog(@"按钮");
 }
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
     return 1;
 }

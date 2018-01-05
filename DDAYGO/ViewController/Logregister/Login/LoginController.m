@@ -62,7 +62,7 @@
 // 数据
 - (void)allData {
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    dic[@"email"] = _ZPEmailTextField.textField.text;
+    dic[@"email"] = [self.ZPEmailTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""]; // 防止輸入帶有空格
     dic[@"pwd"] = [self md5:_ZPPswTextField.textField.text];
     dic[@"countrycode"] = CountCode;
 //    NSLog(@"count %@",CountCode);

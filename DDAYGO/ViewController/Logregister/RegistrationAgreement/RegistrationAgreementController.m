@@ -7,7 +7,7 @@
 //
 
 #import "RegistrationAgreementController.h"
-
+#import "PrefixHeader.pch"
 @interface RegistrationAgreementController ()<UIWebViewDelegate>
 
 @end
@@ -35,7 +35,7 @@
 
 - (void) webViewDidStartLoad:(UIWebView *)webView {
     //创建UIActivityIndicatorView背底半透明View
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
     [view setTag:108];
     [view setBackgroundColor:[UIColor blackColor]];
     [view setAlpha:0.5];

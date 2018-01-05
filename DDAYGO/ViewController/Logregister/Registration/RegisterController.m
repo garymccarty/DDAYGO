@@ -79,8 +79,8 @@
 //        ZPLog(@"请输入验证码");
 //        return;
 //    }
-    if (_ZPPswTextField.textField.text.length < 8||_ZPPswTextField.textField.text.length >20) {
-        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于8大于20"];
+    if (_ZPPswTextField.textField.text.length < 6||_ZPPswTextField.textField.text.length >20) {
+        [SVProgressHUD showInfoWithStatus:@"密码位数不能小于6大于20"];
         ZPLog(@"密码不足6位");
         return;
     }
@@ -89,11 +89,11 @@
 //        NSLog(@"请输入正确邮箱");
 //        return;
 //    }
-    if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"密码必须8-20大小写数字组合"];
-        ZPLog(@"密码不足8位");
-        return;
-    }
+//    if (![self judgePassWordLegal:_ZPPswTextField.textField.text]) {
+//        [SVProgressHUD showInfoWithStatus:@"密码必须8-20大小写数字组合"];
+//        ZPLog(@"密码不足8位");
+//        return;
+//    }
     if (_ZPCountryTextField.textField.text.length < 1) {
         [SVProgressHUD showInfoWithStatus:@"选择国家"];
         ZPLog(@"选择国家");
@@ -105,6 +105,7 @@
         return;
     }
     [self allData];
+ 
 }
 
 // 数据
@@ -206,6 +207,10 @@
 
 // 选择国家
 - (void)choseCountry {
+    
+    _ZPCountryTextField.functionBtn.userInteractionEnabled = NO;
+    
+    
     [self PositionallData];
     ZPLog(@"选择国家");
 }
@@ -213,6 +218,7 @@
 - (void)PositionallData {
     
     [ZP_HomeTool requesPosition:nil success:^(id obj) {
+    _ZPCountryTextField.functionBtn.userInteractionEnabled = YES;
         NSArray * arr = [ZP_PositionModel arrayWithArray:obj];
 //        ZPLog(@"%@",obj);
         PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
@@ -227,6 +233,7 @@
         
     } failure:^(NSError *error) {
 //        ZPLog(@"%@",error);
+        _ZPCountryTextField.functionBtn.userInteractionEnabled = YES;
         [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
@@ -262,19 +269,19 @@
         
     }
 
-- (BOOL)judgePassWordLegal:(NSString *)pass {
-    
-    BOOL result ;
-    // 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
-    NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$";
-    
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    
-    result = [pred evaluateWithObject:pass];
-    
-    return result;
-    
-}
+//- (BOOL)judgePassWordLegal:(NSString *)pass {
+//
+//    BOOL result ;
+//    // 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
+//    NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$";
+//
+//    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+//
+//    result = [pred evaluateWithObject:pass];
+//
+//    return result;
+//
+//}
 
 //  MD5加密方法
 -(NSString *)md5:(NSString *)input {
@@ -298,4 +305,14 @@
     return YES;
 }
 
+#pragma mark - 安全输入
+-(void)secureTextEntry {
+    _ZPPswTextField.textField.secureTextEntry = !_ZPPswTextField.textField.secureTextEntry;
+    
+    if (_ZPPswTextField.textField.secureTextEntry) {
+        [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_close.png"] forState:UIControlStateNormal];
+    }else {
+        [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_open.png"] forState:UIControlStateNormal];
+    }
+}
 @end

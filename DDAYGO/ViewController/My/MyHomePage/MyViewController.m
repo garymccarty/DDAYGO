@@ -72,12 +72,12 @@
         //        _viewLayoutConstraint.constant = 50.0;
     }
     //     判断是否申请成功供货商
-    if (state.length == YES) {
-        //        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
-        self.XfjlLayoutConstraint.constant = CGFLOAT_MIN;
-        self.xfjlView.hidden = YES;
-        //        _viewLayoutConstraint.constant = 50.0;
-    }
+//    if (state.length == YES) {
+//        //        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+//        self.XfjlLayoutConstraint.constant = CGFLOAT_MIN;
+//        self.xfjlView.hidden = YES;
+//        //        _viewLayoutConstraint.constant = 50.0;
+//    }
 }
 
 // 登录状态
@@ -210,7 +210,13 @@
         [self MyViewData:model];
         
     } failure:^(NSError * error) {
-        
+        //        if (state.length == NO) {
+        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        _sdglView.hidden = YES;
+        //        _viewLayoutConstraint.constant = 50.0;
+        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        _sdglView.hidden = YES;
+//        }
     }];
 }
 
@@ -232,6 +238,11 @@
         [self setAllDatas:model];
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
+        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        _sdglView.hidden = YES;
+        //        _viewLayoutConstraint.constant = 50.0;
+        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        _sdglView.hidden = YES;
 //        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
     }];
 }
@@ -324,6 +335,11 @@
         
         [self SupplierData:model];
     } failure:^(NSError * error) {
+        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        _sdglView.hidden = YES;
+        //        _viewLayoutConstraint.constant = 50.0;
+        _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+        _sdglView.hidden = YES;
         ZPLog(@"%@",error);
     }];
 }

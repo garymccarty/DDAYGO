@@ -235,6 +235,7 @@
 
 // 获取历史开奖
 + (void)requestHistoryPrize:(NSDictionary *)HistoryPrize uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
+//    http://www.ddaygo.com/api/Test/getlotterywinhistory?token=d4668f7f74078e1aa211b97e06d2b4a7&page=1&pagesize=10
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getlotterywinhistory?token=%@&page=%@&pagesize=%@",URLAPI,HistoryPrize[@"token"],HistoryPrize[@"page"],HistoryPrize[@"pagesize"]] parameters:nil success:^(id responseObject) {
         success(responseObject);
     } failure:^(NSError * error) {

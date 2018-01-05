@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPConPswTextField;
 @property (nonatomic, strong) NSString * codeStr;
+@property (nonatomic, strong) NSString * verifyemail;
 
 @end
 
@@ -24,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self secureTextEntry];
+//    [self secureTextEntry];
     _ForgetPswscrollView.bounces = NO;
     [self initUI];
     self.title = @"忘記密碼";
@@ -42,6 +43,15 @@
     self.ZPPswTextField.textField.keyboardType = UIKeyboardTypeDefault;
     self.ZPConPswTextField.textField.keyboardType = UIKeyboardTypeDefault;
     [self.ZPCodeTextField.functionBtn addTarget:self action:@selector(getMSNCode) forControlEvents:UIControlEventTouchUpInside];
+    
+//    _ZPPswTextField.showBtn                  = NO;
+//    _ZPPswTextField.showEyeBtn               = YES;
+//    [_ZPPswTextField.functionBtn addTarget:self action:@selector(secureTextEntry) forControlEvents:UIControlEventTouchUpInside];
+    
+//    self.ZPConPswTextField.showBtn                  = NO;
+//    self.ZPConPswTextField.showEyeBtn               = YES;
+//    [self.ZPConPswTextField.functionBtn addTarget:self action:@selector(secureTextEntry) forControlEvents:UIControlEventTouchUpInside];
+
     self.ZPCodeTextField.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 }
 
@@ -49,23 +59,23 @@
 // 获取验证码
 - (void)getMSNCode {
     NSLog(@"获取验证码");
-    if (![self validateEmail:self.ZPEmailTextField.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"郵箱格式不正確"];
-        return;
+    if (_ZPEmailTextField.textField.text == nil) {
+        [SVProgressHUD showInfoWithStatus:@"賬號不能為空"];
     }
-    __weak typeof (self) WeakSelf = self;
     [self.ZPCodeTextField.functionBtn startWithTime:60 title:NSLocalizedString(@"重新獲取", nil) titleColor:[UIColor whiteColor]countDownTitle:@"s" countDownTitleColor:[UIColor whiteColor] mainColor:ZP_PayColor countColor:ZP_PayColor];
-    [WeakSelf qurestCode];  // 开始获取验证码
+    [self qurestCode];  // 开始获取验证码
 }
 
 //  发生网络请求 --> 获取验证码
 - (void)qurestCode {
     ZPLog(@"发生网络请求 --> 获取验证码");
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"acc"] = self.ZPEmailTextField.textField.text;
+    dic[@"acc"] = [self.ZPEmailTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""]; // 防止輸入帶有空格
     [ZP_LoginTool requestForgetPsw1:dic success:^(id obj) {
         NSDictionary * dic = obj;
+        _verifyemail = dic[@"verifyemail"];
         ZPLog(@"%@",dic);
+        
     if ([dic[@"result"] isEqualToString:@"ok"]) {
         [SVProgressHUD showSuccessWithStatus:@"發送成功!"];
         ZPLog(@"发送成功");
@@ -73,12 +83,15 @@
     }else
         if ([dic[@"result"] isEqualToString:@"acc_null_err"]) {
             [SVProgressHUD showInfoWithStatus:@"賬號不能為空"];
+            
     }else
         if ([dic[@"result"] isEqualToString:@"acc_email_err"]) {
             [SVProgressHUD showInfoWithStatus:@"賬號不存在"];
+            [_ZPCodeTextField.functionBtn cancelCountDownWith:@"重新获取"];//这句代码是倒计时清0 
     }else
         if ([dic[@"result"] isEqualToString:@"send_error"]) {
             [SVProgressHUD showInfoWithStatus:@"驗證碼發送失敗,請稍後再試"];
+            [_ZPCodeTextField.functionBtn cancelCountDownWith:@"重新获取"];
         }
         
     } failure:^(NSError * error) {
@@ -88,60 +101,77 @@
 
 // 完成按钮
 - (IBAction)DetermineBut:(id)sender {
-    if (self.ZPPswTextField.textField.text.length < 8 || self.ZPPswTextField.textField.text.length >20) {
-        [SVProgressHUD showInfoWithStatus:@"密碼位數不能少於8-20位"];
+    
+    if (self.ZPPswTextField.textField.text.length < 6 || self.ZPPswTextField.textField.text.length >20) {
+        [SVProgressHUD showInfoWithStatus:@"密碼位數不能少於6-20位"];
         ZPLog(@"密码不足6位");
         return;
     }
-    if (![self judgePassWordLegal:self.ZPConPswTextField.textField.text]) {
-        [SVProgressHUD showInfoWithStatus:@"密碼必須8-20大小寫數字組合"];
-        ZPLog(@"密码不足8位");
+        if (_ZPCodeTextField.textField.text.length < 1) {
+            [SVProgressHUD showInfoWithStatus:@"验证码不能为空"];
+            ZPLog(@"请输入验证码");
+            return;
+        }
+    
+    if (![_ZPCodeTextField.textField.text isEqualToString:_codeStr]) {
+        
+        [SVProgressHUD showErrorWithStatus:@"验证码错误"];
         return;
     }
-    if (self.ZPPswTextField.textField.text != self.ZPConPswTextField.textField.text) {
+    
+//    if (![self judgePassWordLegal:self.ZPConPswTextField.textField.text]) {
+//        [SVProgressHUD showInfoWithStatus:@"密碼必須8-20大小寫數字組合"];
+//        ZPLog(@"密码不足8位");
+//        return;
+//    }
+    if (![self.ZPPswTextField.textField.text isEqualToString: self.ZPConPswTextField.textField.text]) {
         [SVProgressHUD showInfoWithStatus:@"兩次密碼不一致"];
     }else {
         [self AllData];
+    
     }
 }
 
 // 修改密码数据（第二步）
 - (void)AllData {
     NSMutableDictionary * dic = [NSMutableDictionary dictionary];
-    dic[@"acc"] = self.ZPEmailTextField.textField.text;
-    dic[@"com&verifyemail"] = self.ZPEmailTextField.textField.text;
-    dic[@"npwd"] = self.ZPPswTextField.textField.text;
-    dic[@"npwd"] = self.ZPConPswTextField.textField.text;
+    dic[@"acc"] = [self.ZPEmailTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""]; // 防止輸入帶有空格
+    dic[@"verifyemail"] = _verifyemail;
+    dic[@"npwd"] = [self md5:_ZPPswTextField.textField.text];
+    dic[@"npwd"] = [self md5:_ZPConPswTextField.textField.text];
     [ZP_LoginTool requestForgetPsw2:dic success:^(id obj) {
-        if ([obj[@"result"] isEqualToString:@"ok"]) {
+        NSDictionary * dic = obj;
+        _verifyemail = dic[@"verifyemail"];
+        if ([dic[@"result"] isEqualToString:@"ok"]) {
             [SVProgressHUD showSuccessWithStatus:@"密碼找回成功!"];
+//            _verifyemail = dic[@"verifyemail"];
             [self.navigationController popViewControllerAnimated:YES];
         }else
-            if ([obj[@"result"] isEqualToString:@"acc_null_err"]) {
+            if ([dic[@"result"] isEqualToString:@"acc_null_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"賬號為空"];
         }else
-            if ([obj[@"result"] isEqualToString:@"verifyemail_null_err"]) {
+            if ([dic[@"result"] isEqualToString:@"verifyemail_null_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"驗證郵箱為空"];
         }else
-            if ([obj[@"result"] isEqualToString:@"npwd_null_err"]) {
+            if ([dic[@"result"] isEqualToString:@"npwd_null_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"密碼為空"];
         }else
-            if ([obj[@"result"] isEqualToString:@"sys_err"]) {
+            if ([dic[@"result"] isEqualToString:@"sys_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"修改失敗"];
         }
-        ZPLog(@"%@",obj);
+        ZPLog(@"%@",dic);
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
     }];
 }
 
 #pragma mark - - - - - - - - - - - - - - - private methods 私有方法 - - - - - - - - - - - - - -
-- (BOOL)validateEmail:(NSString *)email {
-//     邮箱正则式
-    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:email];
-}
+//- (BOOL)validateEmail:(NSString *)email {
+////     邮箱正则式
+//    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+//    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+//    return [emailTest evaluateWithObject:email];
+//}
 
 - (BOOL)JudgeTheillegalCharacter:(NSString *)content {
 //    提示标签不能输入特殊字符
@@ -150,14 +180,15 @@
     return [emailTest evaluateWithObject:content];
 }
 
-- (BOOL)judgePassWordLegal:(NSString *)pass {
-    BOOL result ;
-// 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
-    NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    result = [pred evaluateWithObject:pass];
-    return result;
-}
+//- (BOOL)judgePassWordLegal:(NSString *)pass {
+//    BOOL result ;
+//
+//// 判断长度大于8位后再接着判断是否同时包含数字和大小写字母
+//    NSString * regex =@"(?![0-9A-Z]+$)(?![0-9a-z]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$";
+//    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+//    result = [pred evaluateWithObject:pass];
+//    return result;
+//}
 
 //  安全输入
 -(void)secureTextEntry {
@@ -168,6 +199,9 @@
         [_ZPPswTextField.functionBtn setImage:[UIImage imageNamed:@"ic_login_open.png"] forState:UIControlStateNormal];
     }
 }
+
+//安全输入
+
 //  MD5加密方法
 -(NSString *)md5:(NSString *)input {
     const char * cStr = [input UTF8String];

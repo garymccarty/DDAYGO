@@ -43,7 +43,7 @@
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="showBtn" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="secureTextEntry" value="NO"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="请输入邮箱账号"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleStr" value="请输入账号"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="驗證碼：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTz-Xy-Ym9">

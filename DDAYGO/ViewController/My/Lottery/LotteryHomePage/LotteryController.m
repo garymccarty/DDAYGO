@@ -295,14 +295,14 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-// 历史下注号码
+// 历史填写
 - (void)HistoricalBetAction {
     
     ZP_LotteryHistoricalBettingNumberController * LotteryHistoricalBettingNumber = [[ZP_LotteryHistoricalBettingNumberController alloc]init];
     [self.navigationController pushViewController:LotteryHistoricalBettingNumber animated:YES];
 }
 
-// 历史下注
+// 历史开奖
 - (void)Instruction {
     ZP_HistoryVetController * History = [[ZP_HistoryVetController alloc]init];
     [self.navigationController pushViewController:History animated:YES];
