@@ -109,7 +109,7 @@
         
     } failure:^(NSError *error) {
 //        NSLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服務器連接失敗", nil)];
+//        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服務器連接失敗", nil)];
     }];
 }
 
@@ -217,10 +217,10 @@
 //    货币符号
     ZP_GeneralLabel * CurrencySymbolLabel = [ZP_GeneralLabel initWithtextLabel:_CurrencySymbolLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"symbol"];
-    CurrencySymbolLabel.text = [NSString stringWithFormat:@"%@:",str];
+    CurrencySymbolLabel.text = [NSString stringWithFormat:@"%@",str];
     [bottomView addSubview:CurrencySymbolLabel];
     [CurrencySymbolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(PriceLabel).offset(-35);
+        make.left.equalTo(PriceLabel).offset(-33);
         make.top.equalTo(PriceLabel).offset(0);
     }];
     _CurrencySymbolLabel = CurrencySymbolLabel;
@@ -229,7 +229,7 @@
     StatisticsLabel.text = NSLocalizedString(@"Total", nil);
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(CurrencySymbolLabel).offset(-30.5); // 左边
+        make.left.equalTo(CurrencySymbolLabel).offset(-33.5); // 左边
         make.bottom.equalTo(CurrencySymbolLabel).offset(0); // 下
     }];
     _StatisticsLabel = StatisticsLabel;
@@ -384,7 +384,7 @@
                 ZP_CartsShopModel * models = nameArray[0];
                 ZP_CartsModel *model = models.array[tag];
                 
-//                NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"RMB"];
+//                NSArray *array = [cell.PriceLabel.text componentsSeparatedByString:@"NT"];
 //                data += ([array.lastObject integerValue] * [cell.QuantityLabel.text integerValue]);
                 data += [model.priceamount integerValue] *[model.productprice floatValue];
                 dataCount += [cell.QuantityLabel.text integerValue];
@@ -454,7 +454,7 @@ if (count == dataArray.count) {
             NSLog(@"%@",obj);
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
-            [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服務器連接失敗 ", nil)];
+//            [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"服務器連接失敗 ", nil)];
         }];
         }];
         [alert addAction:defaultAction];
@@ -698,7 +698,7 @@ if (count == dataArray.count) {
                 }
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
-             [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
+//             [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
         }];
         
         [dataArray removeObjectAtIndex:indexPath.row];

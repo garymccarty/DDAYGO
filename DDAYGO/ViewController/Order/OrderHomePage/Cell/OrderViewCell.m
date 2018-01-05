@@ -127,7 +127,7 @@
 //  货币符号
     ZP_GeneralLabel * CurrencySymbolLabel = [ZP_GeneralLabel initWithtextLabel:_CurrencySymbolLabel.text textColor:ZP_TypefaceColor font:ZP_titleFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_Graybackground];
     [self.Backgroundview addSubview:CurrencySymbolLabel];
-    CurrencySymbolLabel.text = @"RMB:";
+    CurrencySymbolLabel.text = @"NT";
     [CurrencySymbolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(FigureImage).offset(80);
         make.top.equalTo(SizeLabel).offset(20);
@@ -371,7 +371,7 @@
     _AmountLabel.text = [NSString stringWithFormat:@"%@",model.ordersamount];
     _ExpressFeeLabel.text = [NSString stringWithFormat:@"%@",model.freight]; // 运费
     _PreferentialLabel.text = [NSString stringWithFormat:@"%@",dic.price];
-//    _priceLabel.text = [NSString stringWithFormat:@"RMB:%@",dic.cost];
+//    _priceLabel.text = [NSString stringWithFormat:@"NT%@",dic.cost];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = [NSString stringWithFormat:@"%@",dic.cp];
     _QuantityLabel.text = [NSString stringWithFormat:@"%@",dic.amount];

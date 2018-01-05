@@ -132,6 +132,7 @@
 - (void)onClikedSearchBar {
     SearchGooodsController * search = [SearchGooodsController new];
     UINavigationController * login = [[UINavigationController alloc]initWithRootViewController:search];
+//    [self.navigationController pushViewController:search animated:YES];
     [self presentViewController:login animated:YES completion:nil];
     NSLog(@"搜索框");
 }
@@ -169,7 +170,7 @@
         
     } failure:^(NSError *error) {
 //        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus: NSLocalizedString(@"Server link failed", nil)];
+//        [SVProgressHUD showInfoWithStatus: NSLocalizedString(@"Server link failed", nil)];
     }];
 }
 //  数据
@@ -182,7 +183,8 @@
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
     } failure:^(NSError *error) {
-        [SVProgressHUD showInfoWithStatus: NSLocalizedString(@"Server link failed", nil)];
+        ZPLog(@"%@",error);
+//        [SVProgressHUD showInfoWithStatus: NSLocalizedString(@"Server link failed", nil)];
     }];
 }
 #pragma mark -- tabeView delegate

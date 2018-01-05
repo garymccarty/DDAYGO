@@ -13,8 +13,12 @@
 #import "ZP_HomeTool.h"
 #import "ZP_PositionModel.h"
 #import "UINavigationBar+Awesome.h"
+#import "RegistrationAgreementController.h"
 @interface ZP_QuickLoginController ()
-
+{
+    BOOL userL;
+    
+}
 @property (weak, nonatomic) IBOutlet TextView * ZPEmailTextField;
 @property (weak, nonatomic) IBOutlet TextView * ZPPswTextField;
 @property (weak, nonatomic) IBOutlet UIButton * LoginBtn;
@@ -44,21 +48,29 @@
 
 //  登录
 - (IBAction)LoginClick:(id)sender {
-//    if (_ZPEmailTextField.textField.text.length < 1) {
-//        [SVProgressHUD showInfoWithStatus:@"邮箱不能为空"];
-//    }
-//    if (_ZPPswTextField.textField.text.length < 1) {
-//        [SVProgressHUD showInfoWithStatus:@"密码不能为空"];
-//    }
-//    if (!_ProtocolBut.selected) {
-//        [SVProgressHUD showInfoWithStatus:@"请选择同意用户协议协议"];
-//        ZPLog(@"同意协议");
-//        return;
-//    }
+    if (_ZPEmailTextField.textField.text.length < 1) {
+        [SVProgressHUD showInfoWithStatus:@"邮箱不能为空"];
+         return;
+    }
+    if (_ZPPswTextField.textField.text.length < 1) {
+      [SVProgressHUD showInfoWithStatus:@"密码不能为空"];
+         return;
+    }
+    if (!_ProtocolBut.selected) {
+        [SVProgressHUD showInfoWithStatus:@"请选择同意用户协议协议"];
+        ZPLog(@"同意协议");
+        return;
+    }
     
+
+    _LoginBtn.userInteractionEnabled = NO;
+
+    [SVProgressHUD showWithStatus:@"正在登录。。。"];
+
     [self AllData];
     ZPLog(@"数据");
 }
+
 
 //  数据 ICUE登入（如返回首次登入则调用55再请求）
 - (void)AllData {
@@ -67,12 +79,16 @@
     dic[@"acc"] = [_ZPEmailTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""]; // 防止輸入帶有空格
     dic[@"pwd"] = [_ZPPswTextField.textField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
     [ZP_LoginTool requesForFirstTimeLogin:dic success:^(id obj) {
+        [SVProgressHUD dismiss];
         NSDictionary * adic = obj;
         ZPLog(@"%@",obj);
         //目前不是参数的类型··可能会崩,s
+       
         if ([adic[@"result"]isEqualToString:@"first_login"]) {
+          
             [self getPosttion];  //  调用55的接口
         }else {
+             _LoginBtn.userInteractionEnabled = YES;
             if ([adic[@"result"]isEqualToString:@"ok"]) {
                 Token = obj[@"token"];
                 ZPICUEToken = obj[@"icuetoken"];
@@ -82,10 +98,11 @@
                 [[NSUserDefaults standardUserDefaults] setObject:obj[@"countrycode"] forKey:@"countrycode"];  // 国别缓存本地
                 [[NSUserDefaults standardUserDefaults] synchronize];  // 国别缓存本地
                 [SVProgressHUD showSuccessWithStatus:@"登錄成功!"];
+              
                 [self.navigationController popToRootViewControllerAnimated:YES];
         }else
             if ([adic[@"result"]isEqualToString:@"failure"]) {
-                [SVProgressHUD showInfoWithStatus:@"登錄失敗"];
+//                [SVProgressHUD showInfoWithStatus:@"登錄失敗"];
         }else
             if ([adic[@"result"]isEqualToString:@"acc_pwd_err"]) {
                 [SVProgressHUD showInfoWithStatus:@"賬號或密碼錯誤"];
@@ -106,6 +123,7 @@
         }
     } failure:^(NSError * error) {
         ZPLog(@"%@",error);
+           _LoginBtn.userInteractionEnabled = YES;
 //        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
 }
@@ -182,6 +200,7 @@
 - (void)PositionallData {
     
     [ZP_HomeTool requesPosition:nil success:^(id obj) {
+           _LoginBtn.userInteractionEnabled = YES;
         NSArray * arr = [ZP_PositionModel arrayWithArray:obj];
         PositionView * position = [[PositionView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height)];
         [position Position:arr];
@@ -205,6 +224,7 @@
         //  显示
         [position showInView:self.navigationController.view];
     } failure:^(NSError *error) {
+           _LoginBtn.userInteractionEnabled = YES;
         [SVProgressHUD showInfoWithStatus:@"網路連接失敗"];
     }];
 }
@@ -237,6 +257,12 @@
     sender.selected = !sender.selected;
 }
 
+#pragma mark - 用戶服务協議
+- (IBAction)yonghufuwuxieyi:(id)sender {
+    RegistrationAgreementController * RegistrationAgreement = [[RegistrationAgreementController alloc]init];
+    [self.navigationController pushViewController:RegistrationAgreement animated:YES];
+    ZPLog(@"用户服务协议 ");
+}
 //  MD5加密方法
 -(NSString *)md5:(NSString *)input {
     const char * cStr = [input UTF8String];

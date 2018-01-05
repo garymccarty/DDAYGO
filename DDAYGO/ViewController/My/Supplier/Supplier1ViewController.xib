@@ -80,7 +80,7 @@
                                     <constraint firstAttribute="height" constant="35" id="b1l-2M-aFo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="提交訂單">
+                                <state key="normal" title="提交申請">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

@@ -12,7 +12,9 @@
 #import "UIFont+Extension.h"
 #import "UIView+Extension.h"
 #import "UIColor+Extension.h"
-@interface SearchGooodsController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
+#import "ZP_ClassViewTool.h"
+#import "CPViewController.h"
+@interface SearchGooodsController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource,UINavigationControllerDelegate>
 @property (nonatomic, weak) SearchBar * searchBar;
 @property (nonatomic, strong)NSArray * dataArray;
 @property (nonatomic, strong)UITableView * tableView;
@@ -72,9 +74,50 @@
     self.navigationItem.titleView = searchBar;
 }
 
+#pragma mark - 请求数据
+- (void)search:(NSString *)keywords{
+    NSLog(@"go - > %@",keywords);
+    
+    if (keywords.length > 0 ) {
+        NSLog(@"go");
+        CPViewController * CVPView = [[CPViewController alloc]init];
+        CVPView.fatherId =[NSNumber numberWithInteger:1];
+        CVPView.keyword = keywords;
+        CVPView.titleString = @"搜索";
+        [SVProgressHUD showInfoWithStatus:@"暂无数据"];
+//        [self presentViewController:CVPView animated:YES completion:nil];
+//        [self.navigationController pushViewController:CVPView animated:YES];
+    }else{
+    [SVProgressHUD showInfoWithStatus:@"請輸入你要寻找的商品"];
+        NSLog(@"no go");
+    }
+    
+    
+
+
+//    [SVProgressHUD showWithStatus:@"正在搜索..." maskType:SVProgressHUDMaskTypeBlack];
+//    NSDictionary *dic = @{@"pageno":@"0",@"pageSize":@"10",@"queryStr":keywords};
+//    [ZP_ClassViewTool search:dic success:^(id obj) {
+//        if (obj!=nil) {
+//            [SVProgressHUD dismiss];
+//            self.dataArray = obj;
+//            [self.tableView reloadData];
+//            self.tableView.hidden = NO;
+//        }else{
+//            [SVProgressHUD dismiss];
+//            return ;
+//        }
+//    } failure:^(NSError *error) {
+//        [SVProgressHUD dismiss];
+//    }];
+}
+
+#pragma mark - action
+
 - (void)back {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -86,10 +129,39 @@
     return nil;
 }
 
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    LWNsearchModel *mo = self.dataArray[indexPath.row];
+//    ClassDetailCarVC *class = [ClassDetailCarVC new];
+    //    ClassDetailCarModel *classModel = [[ClassDetailCarModel alloc]init];
+    //    classModel.ids = mo.ID.integerValue;
+    //    classModel.title = mo.title;
+    //    classModel.img = mo.img1;
+    //    classModel.price = mo.price;
+    //    class.mo = classModel;
+//    class.dis = mo.ID.integerValue;
+//    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:class];
+//    [self presentViewController:navi animated:YES completion:nil];
+}
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return 82;
     
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self search:textField.text];
+    [self.searchBar resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 判断要显示的控制器是否是自身控制器
+    BOOL isShowMyController = [viewController isKindOfClass:[self class]];
+    [self.navigationController setNavigationBarHidden:isShowMyController animated:YES];
 }
 
 @end

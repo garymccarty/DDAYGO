@@ -109,9 +109,9 @@
     _AmountLabel = AmountLabel;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        NSDictionary * dic = _InformatonArray[0];
-//        CGFloat f = [[dic[@"Preferential"] stringByReplacingOccurrencesOfString:@"RMB:" withString:@""] floatValue];
+//        CGFloat f = [[dic[@"Preferential"] stringByReplacingOccurrencesOfString:@"NT" withString:@""] floatValue];
 //        CGFloat r = [dic[@"Cost"] floatValue];
-//        _AmountLabel.text = [NSString stringWithFormat:@"RMB:%.2f",f* [dic[@"Quantiy"] floatValue] + r];
+//        _AmountLabel.text = [NSString stringWithFormat:@"NT%.2f",f* [dic[@"Quantiy"] floatValue] + r];
         [self.contentView addSubview:self.tableView];
     });
     
@@ -283,7 +283,7 @@
 
 - (void)setAmountLabel:(UILabel *)AmountLabel {
     
-//    _AmountLabel.text = [NSString stringWithFormat:@"RMB:%.2f",AmountLabel.text.floatValue];
+//    _AmountLabel.text = [NSString stringWithFormat:@"NT%.2f",AmountLabel.text.floatValue];
 }
 
 - (void)setDataArray:(NSArray *)dataArray {

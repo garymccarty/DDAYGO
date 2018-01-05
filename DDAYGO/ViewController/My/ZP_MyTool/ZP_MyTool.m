@@ -277,6 +277,7 @@
         failure(error);
     }];
 }
+
 // 获取下注页面奖金彩券数量开奖时间
 + (void)requestAcquisitionTime:(NSDictionary *)AcquisitionTime uccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [ZP_NetorkingTools GET:[NSString stringWithFormat:@"%@getlotterybuyinfo?token=%@",URLAPI,AcquisitionTime[@"token"]] parameters:nil success:^(id responseObject) {
@@ -340,8 +341,7 @@
     } failure:^(NSError *error) {
         failure(error);
     }];
-    
-    
 }
+
 @end
 

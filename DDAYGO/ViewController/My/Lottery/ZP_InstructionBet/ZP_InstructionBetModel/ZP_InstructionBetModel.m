@@ -9,5 +9,21 @@
 #import "ZP_InstructionBetModel.h"
 
 @implementation ZP_InstructionBetModel
+@end
 
+
+@implementation InstructionBetModel
+@end
+
+
+@implementation InstructionBetMode2
+@end
+
+@implementation InstructionBetMode3
+@end
+
+@implementation InstructionBetMode4
+@end
+
+@implementation InstructionBetMode5
 @end

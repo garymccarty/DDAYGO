@@ -31,7 +31,7 @@
     //    self.standardValueList = @[@[@"200ml",@"400ml",@"600ml"],@[]];
     self.chooseView = [[ChooseView alloc] initWithFrame:CGRectMake(0, screen_Height, screen_Width, screen_Height)];
     self.chooseView.headImage.image = [UIImage imageNamed:@"bingli"];
-    self.chooseView.LB_price.text = @"RMB36.00";
+    self.chooseView.LB_price.text = @"NT36.00";
     self.chooseView.LB_stock.text = [NSString stringWithFormat:NSLocalizedString(@"库存%@件", nil),@56];
     self.chooseView.LB_detail.text = nil;
     [self addSubview:self.chooseView];

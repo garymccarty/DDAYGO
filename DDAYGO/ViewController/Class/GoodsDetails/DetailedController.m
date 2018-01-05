@@ -177,7 +177,8 @@
     [ZP_ClassViewTool requClassIficationrj:dictt success:^(id obj) {
 //        ZPLog(@"%@",obj);
     } failure:^(NSError *error) {
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        ZPLog(@"%@",error);
     }];
 }
 
@@ -208,12 +209,14 @@
 //        这里到时候需要根据 接口返回的类型来判断，不然一样会奔溃·
         _pjArr = obj;
         if (obj == nil) {
-            [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+//            [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+            ZPLog(@"-----");
             
         }
         ZPLog(@"%@",obj);
     } failure:^(NSError *error) {
-        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
+        ZPLog(@"%@",error);
+//        [SVProgressHUD showInfoWithStatus:@"服务器链接失败"];
     }];
     
 }
@@ -329,7 +332,8 @@
     if (_pjArr.count >0) {
         [self.detailTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     }else {
-       [SVProgressHUD showInfoWithStatus:@"数据加载失败!"];
+        ZPLog(@"----==");
+//       [SVProgressHUD showInfoWithStatus:@"数据加载失败!"];
     }
     
 }
@@ -338,7 +342,7 @@
     if (_pjArr.count > 0) {
         [self.detailTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     }else {
-        [SVProgressHUD showInfoWithStatus:@"数据加载失败!"];
+//        [SVProgressHUD showInfoWithStatus:@"数据加载失败!"];
     }
     
 }
@@ -347,7 +351,7 @@
     if (_pjArr.count >0) {
         [self.detailTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     }else {
-        [SVProgressHUD showInfoWithStatus:@"数据加载失败!"];
+//        [SVProgressHUD showInfoWithStatus:@"数据加载失败!"];
     }
     
 }

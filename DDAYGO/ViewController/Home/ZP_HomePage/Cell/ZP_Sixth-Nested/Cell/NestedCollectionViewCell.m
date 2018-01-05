@@ -133,8 +133,8 @@
 - (void)cellWithdic:(ZP_SixthModel *)model {
     [_imageView sd_setImageWithURL:[NSURL URLWithString:model.defaultimg] placeholderImage:[UIImage imageNamed:@""]];
     _introduceLabel.text = model.productname;
-    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@", model.PreferentialLabel];
-    _priceLabel.text = [NSString stringWithFormat:@"RMB:"];
+    _PreferentialLabel.text = [NSString stringWithFormat:@"NT%@", model.PreferentialLabel];
+    _priceLabel.text = [NSString stringWithFormat:@"NT"];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = model.TrademarkLabel;
     

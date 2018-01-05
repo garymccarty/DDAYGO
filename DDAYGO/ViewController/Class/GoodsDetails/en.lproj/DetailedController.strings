@@ -20,8 +20,8 @@
 /* Class = "UILabel"; text = "00000000"; ObjectID = "CaB-oG-Ejt"; */
 "CaB-oG-Ejt.text" = "00000000";
 
-/* Class = "UILabel"; text = "RMB:189.00"; ObjectID = "JC2-YT-xXX"; */
-"JC2-YT-xXX.text" = "RMB:189.00";
+/* Class = "UILabel"; text = "NT:189.00"; ObjectID = "JC2-YT-xXX"; */
+"JC2-YT-xXX.text" = "NT189.00";
 
 /* Class = "UIButton"; normalTitle = "购物车"; ObjectID = "LQ3-G5-mOb"; */
 "LQ3-G5-mOb.normalTitle" = "Shopping Cart";
@@ -38,8 +38,8 @@
 /* Class = "UILabel"; text = "库存："; ObjectID = "fXd-pQ-kAe"; */
 "fXd-pQ-kAe.text" = "stock：";
 
-/* Class = "UILabel"; text = "RMB"; ObjectID = "h8l-8J-Oxy"; */
-"h8l-8J-Oxy.text" = "RMB";
+/* Class = "UILabel"; text = "NT"; ObjectID = "h8l-8J-Oxy"; */
+"h8l-8J-Oxy.text" = "NT";
 
 /* Class = "UIButton"; normalTitle = "68"; ObjectID = "k90-TI-nPH"; */
 "k90-TI-nPH.normalTitle" = "68";

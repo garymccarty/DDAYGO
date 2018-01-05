@@ -109,7 +109,7 @@
         self.newsData = [ZP_SixthModel arrayWithArray:arr];
         [self.bottomCV reloadData];
     } failure:^(NSError *reeor) {
-        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"Select erchandise ach Month", nil)];
+//        [SVProgressHUD showInfoWithStatus:NSLocalizedString(@"Select erchandise ach Month", nil)];
     }];
 }
 

@@ -24,6 +24,9 @@
 @property (nonatomic, strong) NSString * nameStr;
 
 @property (nonatomic, copy) NSString * titleString;
+
+@property (nonatomic, copy) NSString * keyword;
+
 //@property (nonatomic, strong) NSString * tagid;
 
 

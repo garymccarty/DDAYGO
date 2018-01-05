@@ -52,7 +52,7 @@
     [self initUI];
     [self LoginJudde];
     [self loginAllData];
-    [self Supplier];
+//    [self Supplier];
     
     //    本地数据调用
     UIImage * image = [UIImage imageWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"headerImage"]];
@@ -231,8 +231,8 @@
         model.historycount = obj[@"historycount"];
         [self setAllDatas:model];
     } failure:^(NSError * error) {
-//        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
+        ZPLog(@"%@",error);
+//        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
     }];
 }
 
@@ -251,46 +251,59 @@
         model.state = obj[@"state"];
         self.RequestStatusStr = model.state;
         
-//        if (model.state == nil) {
-//            _RequestStatusLabel.text = nil;
-////            return ;
-//        }
-        
         if ([obj[@"result"] isEqualToString:@"ok"]) {
             _RequestStatusStr = @(-1);
             _RequestStatusLabel.text = @"";
-            
+            _kuohaoLabel1.hidden = YES;
+            _kuohaoLabel2.hidden = YES;
+        }else{
+            _kuohaoLabel1.hidden = NO;
+            _kuohaoLabel2.hidden = NO;
         }
         if (obj[@"state"]) {
             model.state = obj[@"state"];
         }else {
             model.state = @(-1);
             _RequestStatusLabel.text = nil;
+            _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+            _sdglView.hidden = YES; //  默认隐藏商家
+            self.XfjlLayoutConstraint.constant = 49;
+            self.xfjlView.hidden = NO; // 已审核隐藏申请列表
             return ;
         }
         switch (model.state.integerValue) {
-//            case -1:
-//            {
-//                model.stateString = @"ok";
-//                 _RequestStatusLabel.text = @"";
-//            }
-//                break;
+
             case 0:
             {
                 self.reason = obj[@"reason"];
                 model.stateString = @"已取消";
                 self.ssdkBut.enabled = YES;
+                _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+                _sdglView.hidden = YES; //  已取消隐藏商家
+                self.XfjlLayoutConstraint.constant = 49;
+                self.xfjlView.hidden = NO; // 已审核隐藏申请列表
+                
             }
                 break;
             case 2:
             {
                 model.stateString = @"待審核";
                 self.ssdkBut.enabled = NO;
+                _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+                _sdglView.hidden = YES; //  待审核隐藏商家
+                self.XfjlLayoutConstraint.constant = 49;
+                self.xfjlView.hidden = NO; // 已审核隐藏申请列表
+                
             }
                 break;
             case 3:
             {
                 model.stateString = @"已審核";
+                self.XfjlLayoutConstraint.constant = CGFLOAT_MIN;
+                self.xfjlView.hidden = YES; // 已审核隐藏申请列表
+                _SdglLayoutConstraint.constant = 49;
+                _sdglView.hidden = NO; //  显示商家
+                
             }
                 break;
             case 7:
@@ -298,6 +311,10 @@
                 model.stateString = @"已退件";
                 self.reason = obj[@"reason"];
                 self.ssdkBut.enabled = YES;
+                _SdglLayoutConstraint.constant = CGFLOAT_MIN;
+                _sdglView.hidden = YES; //  已退件隐藏商家
+                self.XfjlLayoutConstraint.constant = 49;
+                self.xfjlView.hidden = NO; // 已审核隐藏申请列表
             }
                 break;
                 

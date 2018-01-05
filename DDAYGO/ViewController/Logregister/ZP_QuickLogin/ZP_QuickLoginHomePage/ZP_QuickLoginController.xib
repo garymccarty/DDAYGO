@@ -112,6 +112,9 @@
                                     </fragment>
                                 </attributedString>
                             </state>
+                            <connections>
+                                <action selector="yonghufuwuxieyi:" destination="-1" eventType="touchUpInside" id="sJC-0z-g2e"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

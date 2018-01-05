@@ -230,7 +230,8 @@
 //  数据
 - (void)allData {
 //    NSString * str = [[NSUserDefaults standardUserDefaults] objectForKey:@"countrycode"];
-    NSDictionary * dic =@{@"fatherid":_fatherId,@"seq":@"desc",@"word":@"",@"countrycode":@"886",@"page":@"1",@"pagesize":@"10"};
+    
+    NSDictionary * dic =@{@"fatherid":_fatherId,@"seq":@"desc",@"word":[NSString stringWithFormat:@"%@",_keyword],@"countrycode":@"886",@"page":@"1",@"pagesize":@"10"};
     
     [ZP_ClassViewTool requMerchandise:dic WithIndex:0 success:^(id obj) {
         NSDictionary * dict = obj;
@@ -275,7 +276,13 @@
     dic[@"page"] = @"1";
     dic[@"pagesize"] = @"10";
     [ZP_ClassViewTool requMerchandise:dic WithIndex:tag success:^(id obj) {
-//         数据为空时提示
+//        NSLog(@"obj = %@",obj);
+        NSDictionary * dict = obj;
+        self.dicts = dict[@"datalist"];
+        NSArray * arr = dict[@"datalist"];
+        self.newsData = [ZP_ClassGoodsModel arrayWithArray:arr];
+        
+//      数据为空时提示
         if (self.newsData.count < 1) {
             UIImageView * image = [UIImageView new];
             image.image = [UIImage imageNamed:@"icon_fail"];
@@ -296,11 +303,6 @@
             }];
             
         }
-//        NSLog(@"obj = %@",obj);
-        NSDictionary * dict = obj;
-        self.dicts = dict[@"datalist"];
-        NSArray * arr = dict[@"datalist"];
-        self.newsData = [ZP_ClassGoodsModel arrayWithArray:arr];
         switch (tag) {
             case 0:
                 [self.collectionView1 reloadData];
@@ -320,7 +322,7 @@
         }
 //
     } failure:^(NSError *error) {
-        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
+//        [SVProgressHUD showInfoWithStatus:@"服務器連接失敗"];
         NSLog(@"%@",error);
         
     }];

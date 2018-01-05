@@ -28,7 +28,7 @@
 
 // 数据
 -(void)Extract:(ZP_ExtractModel *)model {
-    _MmountLabel.text = [NSString stringWithFormat:@"RMB:%@",model.takeamount]; // 金额
+    _MmountLabel.text = [NSString stringWithFormat:@"NT%@",model.takeamount]; // 金额
     _BanksLabel.text = [NSString stringWithFormat:@"%@",model.bankname];  // 银行
     _NameLabel.text = [NSString stringWithFormat:@"%@",model.bankcardname]; // 名字
     _BankAccountLabel.text = [NSString stringWithFormat:@"%@",model.bankcardno]; // 账户

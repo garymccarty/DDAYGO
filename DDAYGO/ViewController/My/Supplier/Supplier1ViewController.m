@@ -255,7 +255,7 @@
             cell2.TissueMorphologyLabel.text = @"請選擇組織形態";
             
         }
-        [cell2.SelectBut addTarget:self action:@selector(actBut:) forControlEvents:UIControlEventTouchUpInside];
+//        [cell2.SelectBut addTarget:self action:@selector(actBut:) forControlEvents:UIControlEventTouchUpInside];
         return cell2;
     }else {
         SupplierTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SupplierTableViewCell"];
@@ -350,6 +350,33 @@
     }
     
     [popoverView showToView:but withActions:titleArray];
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 5) {
+        SupplierViewCell2
+        * cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
+        JXPopoverView *popoverView = [JXPopoverView popoverView];
+        NSMutableArray *titleArray = [NSMutableArray array];
+        for (int i = 0; i < self.typeNameArray.count; i ++) {
+            JXPopoverAction *action1 = [JXPopoverAction actionWithTitle:self.typeNameArray[i] handler:^(JXPopoverAction *action) {
+                
+                NSLog(@"dian ji l %@",self.typeNameArray[i]);
+                
+                _seleStr = self.typeNameArray[i];
+                _seleId = self.typeIdArray[i];
+                NSIndexPath *index = [NSIndexPath indexPathForRow:5 inSection:0];
+                [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:index, nil] withRowAnimation:UITableViewRowAnimationNone];
+                
+            }];
+            [titleArray addObject:action1];
+        }
+        
+        [popoverView showToView:cell.SelectBut withActions:titleArray];
+        
+    }
     
 }
 

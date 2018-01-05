@@ -62,7 +62,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = ZP_WhiteColor;
     
-    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 40) titles:@[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待發貨", nil),NSLocalizedString(@"待收貨", nil),NSLocalizedString(@"評價", nil)] delegate:self indicatorType:FSIndicatorTypeEqualTitle];
+    self.titleView = [[FSSegmentTitleView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 40) titles:@[NSLocalizedString(@"all", nil),NSLocalizedString(@"Waiting payment", nil),NSLocalizedString(@"Wait delivery", nil),NSLocalizedString(@"Waiting goods", nil),NSLocalizedString(@"evaluation", nil)] delegate:self indicatorType:FSIndicatorTypeEqualTitle];
     self.titleView.titleSelectFont = [UIFont systemFontOfSize:14];
     self.titleView.titleFont = [UIFont systemFontOfSize:13];
     self.titleView.titleSelectColor = [UIColor orangeColor];
@@ -71,7 +71,7 @@
     
     
     NSMutableArray *childVCs = [[NSMutableArray alloc]init];
-    [@[NSLocalizedString(@"全部", nil),NSLocalizedString(@"待付款", nil),NSLocalizedString(@"待發貨", nil),NSLocalizedString(@"待收貨", nil),NSLocalizedString(@"評價", nil)] enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [@[NSLocalizedString(@"all", nil),NSLocalizedString(@"Waiting payment", nil),NSLocalizedString(@"Wait delivery", nil),NSLocalizedString(@"Waiting goods", nil),NSLocalizedString(@"evaluation", nil)] enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
         ZP_OrderController *vc = [[ZP_OrderController alloc]init];
 
         vc.titleStr = obj;

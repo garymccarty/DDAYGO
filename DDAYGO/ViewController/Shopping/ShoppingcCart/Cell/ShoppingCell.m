@@ -184,7 +184,7 @@
     _SizeLabel.text = model.normname;
 //    _CurrencySymbolLabel.text = model.symbol;
     _PreferentialLabel.text = [NSString stringWithFormat:@"%@",model.productprice];
-//    _PriceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice];
+//    _PriceLabel.text = [NSString stringWithFormat:@"NT:%@",model.productprice];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = [NSString stringWithFormat:@"%@",model.cp];
     _QuantityLabel.text = [NSString stringWithFormat:@"%@",str];

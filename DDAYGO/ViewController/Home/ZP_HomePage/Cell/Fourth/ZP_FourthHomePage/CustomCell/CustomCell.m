@@ -44,10 +44,10 @@
         make.right.equalTo(self).offset(-80);
     }];
     _introduceLabel = introduceLabel;
-//     RMB
+//     NT
     ZP_GeneralLabel * CurrencySymbolLabel = [ZP_GeneralLabel initWithtextLabel:_CurrencySymbolLabel.text textColor:ZP_HomeTitleTypefaceCorlor font:ZP_introduceFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
     [self addSubview:CurrencySymbolLabel];
-    CurrencySymbolLabel.text = @"RMB:";
+    CurrencySymbolLabel.text = @"NT";
     [CurrencySymbolLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(45);
         make.left.equalTo(self).offset(5);
@@ -120,7 +120,7 @@
     _introduceLabel.text = model.productname;
     
     _PreferentialLabel.text = [NSString stringWithFormat:@"%@",model.PreferentialLabel]; // 优惠价格
-//    _PriceLabel.text = [NSString stringWithFormat:@"RMB:"];
+//    _PriceLabel.text = [NSString stringWithFormat:@"NT:"];
     _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     _TrademarkLabel.text = model.TrademarkLabel;
 }

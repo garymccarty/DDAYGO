@@ -71,7 +71,7 @@
     
 //   商品价格
     LB_price = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(headImage.frame)+20, 10, 150, 20)];
-    LB_price.text = @"RMB100";
+    LB_price.text = @"NT100";
     LB_price.textColor = MainColor;
     LB_price.font = ZP_NavTextdetaFont;
     [whiteView addSubview:LB_price];

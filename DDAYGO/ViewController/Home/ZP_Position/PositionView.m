@@ -64,10 +64,11 @@
     titleLabel.text = NSLocalizedString(@"Choose your country", nil) ;
     titleLabel.numberOfLines = 0;
     titleLabel.font = [UIFont systemFontOfSize:18];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
     [bounceView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(bounceView).offset(20); // 上面
-        make.left.equalTo(bounceView).offset(70); // 左边
+        make.left.equalTo(bounceView).offset(60); // 左边
         make.right.equalTo(bounceView).offset(- 60);
         make.width.mas_offset(ZP_height - 70 - 60);
         make.height.mas_offset(25);

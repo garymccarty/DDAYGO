@@ -164,8 +164,8 @@
     _descLabel.text = model.colorname;
     _SizeLanbel.text = model.normname;
     _numLabel.text = [NSString stringWithFormat:@"%@",model.amount];
-    //    _PreferentialLabel.text = [NSString stringWithFormat:@"RMB:%@",model.priceamount];
-    //    _PriceLabel.text = [NSString stringWithFormat:@"RMB:%@",model.productprice];
+    //    _PreferentialLabel.text = [NSString stringWithFormat:@"NT:%@",model.priceamount];
+    //    _PriceLabel.text = [NSString stringWithFormat:@"NT:%@",model.productprice];
     //    _TrademarkImage.image = [UIImage imageNamed:@"ic_cp"];
     //    _TrademarkLabel.text = [NSString stringWithFormat:@"%@",model.cp];
     //    _QuantityLabel.text = [NSString stringWithFormat:@"%@",model.amount];

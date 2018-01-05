@@ -7,8 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class InstructionBetModel;
+@class InstructionBetMode2;
+@class InstructionBetMode3;
+@class InstructionBetMode4;
+@class InstructionBetMode5;
 @interface ZP_InstructionBetModel : NSObject
-@property (nonatomic, strong) NSNumber * winamount;
+@property (nonatomic, strong) NSArray<InstructionBetModel *> * lotterywin;
+@end
 
+
+@interface InstructionBetModel : NSObject
+@property (nonatomic, strong) NSNumber * winamount;
+@end
+
+
+@interface InstructionBetMode2 : NSObject
+@property (nonatomic, strong) NSNumber * winamount;
+@end
+
+
+@interface InstructionBetMode3 : NSObject
+@property (nonatomic, strong) NSNumber * winamount;
+@end
+
+
+@interface InstructionBetMode4 : NSObject
+@property (nonatomic, strong) NSNumber * winamount;
+@end
+
+
+@interface InstructionBetMode5 : NSObject
+@property (nonatomic, strong) NSNumber * winamount;
 @end

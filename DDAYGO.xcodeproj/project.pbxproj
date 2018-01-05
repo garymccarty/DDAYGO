@@ -195,6 +195,7 @@
 		C41CBE2F1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CBE2E1FF7EEB000F9B227 /* ZP_LotteryHistoricalBettingNumberModel.m */; };
 		C41CBE321FF89A7900F9B227 /* ZP_LotterySubCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CBE311FF89A7900F9B227 /* ZP_LotterySubCell.m */; };
 		C41CBE351FF89CDC00F9B227 /* ButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = C41CBE341FF89CDC00F9B227 /* ButtonsView.m */; };
+		C41FF4DA1FFF53F7009B720D /* ZP_InstructionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C41FF4DC1FFF53F7009B720D /* ZP_InstructionController.xib */; };
 		C420EDE51FF3D397005ECE30 /* UIViewController+LLProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */; };
 		C420EDE81FF3D7E9005ECE30 /* CALayer+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C420EDE71FF3D7E9005ECE30 /* CALayer+UIColor.m */; };
 		C425BEA91FC813C30097DB8F /* FSPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C425BEA51FC813C30097DB8F /* FSPageContentView.m */; };
@@ -386,7 +387,6 @@
 		C492A18B1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1891FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.m */; };
 		C492A18C1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A18A1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.xib */; };
 		C492A1961FD0EDC0009FF57B /* ZP_InstructionController.m in Sources */ = {isa = PBXBuildFile; fileRef = C492A1941FD0EDC0009FF57B /* ZP_InstructionController.m */; };
-		C492A1971FD0EDC0009FF57B /* ZP_InstructionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C492A1951FD0EDC0009FF57B /* ZP_InstructionController.xib */; };
 		C492A1BC1FD15189009FF57B /* 扫码付款状态.png in Resources */ = {isa = PBXBuildFile; fileRef = C492A1B51FD15189009FF57B /* 扫码付款状态.png */; };
 		C49B32211FD5A995007632F2 /* ZP_ExtractController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */; };
 		C49B32221FD5A995007632F2 /* ZP_ExtractController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C49B32201FD5A995007632F2 /* ZP_ExtractController.xib */; };
@@ -756,6 +756,10 @@
 		C41CBE311FF89A7900F9B227 /* ZP_LotterySubCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_LotterySubCell.m; sourceTree = "<group>"; };
 		C41CBE331FF89CDC00F9B227 /* ButtonsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonsView.h; sourceTree = "<group>"; };
 		C41CBE341FF89CDC00F9B227 /* ButtonsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonsView.m; sourceTree = "<group>"; };
+		C41FF4DB1FFF53F7009B720D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ZP_InstructionController.xib; sourceTree = "<group>"; };
+		C41FF4DE1FFF53FC009B720D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ZP_InstructionController.strings; sourceTree = "<group>"; };
+		C41FF4E01FFF5401009B720D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ZP_InstructionController.strings"; sourceTree = "<group>"; };
+		C41FF4E21FFF5404009B720D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ZP_InstructionController.strings"; sourceTree = "<group>"; };
 		C420EDE31FF3D396005ECE30 /* UIViewController+LLProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LLProgress.m"; sourceTree = "<group>"; };
 		C420EDE41FF3D397005ECE30 /* UIViewController+LLProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LLProgress.h"; sourceTree = "<group>"; };
 		C420EDE61FF3D7E9005ECE30 /* CALayer+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+UIColor.h"; sourceTree = "<group>"; };
@@ -1128,7 +1132,6 @@
 		C492A18A1FD0ED72009FF57B /* ZP_DetailsSistoryAwardController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_DetailsSistoryAwardController.xib; sourceTree = "<group>"; };
 		C492A1931FD0EDC0009FF57B /* ZP_InstructionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZP_InstructionController.h; sourceTree = "<group>"; };
 		C492A1941FD0EDC0009FF57B /* ZP_InstructionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZP_InstructionController.m; sourceTree = "<group>"; };
-		C492A1951FD0EDC0009FF57B /* ZP_InstructionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZP_InstructionController.xib; sourceTree = "<group>"; };
 		C492A1B51FD15189009FF57B /* 扫码付款状态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫码付款状态.png"; sourceTree = "<group>"; };
 		C49B321E1FD5A995007632F2 /* ZP_ExtractController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZP_ExtractController.h; sourceTree = "<group>"; };
 		C49B321F1FD5A995007632F2 /* ZP_ExtractController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZP_ExtractController.m; sourceTree = "<group>"; };
@@ -3640,7 +3643,7 @@
 			children = (
 				C492A1931FD0EDC0009FF57B /* ZP_InstructionController.h */,
 				C492A1941FD0EDC0009FF57B /* ZP_InstructionController.m */,
-				C492A1951FD0EDC0009FF57B /* ZP_InstructionController.xib */,
+				C41FF4DC1FFF53F7009B720D /* ZP_InstructionController.xib */,
 			);
 			path = ZP_InstructionBetHomePage;
 			sourceTree = "<group>";
@@ -3944,7 +3947,7 @@
 				C46B9F491FDE71FE00942750 /* 本期下注号码_spec.png in Resources */,
 				06F571DE1F9F1A7900D61FDB /* AddAddressViewController.xib in Resources */,
 				062C9D591F8CD6F900E14987 /* button_1@2x.png in Resources */,
-				C492A1971FD0EDC0009FF57B /* ZP_InstructionController.xib in Resources */,
+				C41FF4DA1FFF53F7009B720D /* ZP_InstructionController.xib in Resources */,
 				06F571DC1F9F1A7900D61FDB /* AddressTableViewCell.xib in Resources */,
 				C42A173F1FF2532400680F92 /* BetTableViewMyCell.xib in Resources */,
 				C42A17401FF2532400680F92 /* BetTableViewCellTwo.xib in Resources */,
@@ -4396,6 +4399,17 @@
 				C47212A11FB184110055578E /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C41FF4DC1FFF53F7009B720D /* ZP_InstructionController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C41FF4DB1FFF53F7009B720D /* Base */,
+				C41FF4DE1FFF53FC009B720D /* en */,
+				C41FF4E01FFF5401009B720D /* zh-Hans */,
+				C41FF4E21FFF5404009B720D /* zh-Hant */,
+			);
+			name = ZP_InstructionController.xib;
 			sourceTree = "<group>";
 		};
 		C43517211FB2AC180066302E /* ConcernShopTableViewCell.xib */ = {

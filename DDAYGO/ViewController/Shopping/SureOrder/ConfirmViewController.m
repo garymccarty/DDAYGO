@@ -112,7 +112,7 @@
     
 //      合计
     ZP_GeneralLabel * StatisticsLabel = [ZP_GeneralLabel initWithtextLabel:_StatisticsLabel.text textColor:ZP_TypefaceColor font:ZP_TooBarFont textAlignment:NSTextAlignmentLeft bakcgroundColor:ZP_WhiteColor];
-    StatisticsLabel.text = NSLocalizedString(@"合計RMB:", nil);
+    StatisticsLabel.text = NSLocalizedString(@"合計NT", nil);
     [bottomView addSubview:StatisticsLabel];
     [StatisticsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(PriceLabel).offset(- 65); // 右
@@ -201,14 +201,14 @@
                 [self.navigationController pushViewController:web animated:YES];
             } failure:^(NSError *error) {
                 NSLog(@"%@",error);
-                [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
+//                [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
             }];
         };
         
         [PayView showInView:self.view];
     } failure:^(NSError * error) {
-//        ZPLog(@"%@",error);
-        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
+        ZPLog(@"%@",error);
+//        [SVProgressHUD showInfoWithStatus:@"服務器鏈接失敗"];
     }];
 }
 
