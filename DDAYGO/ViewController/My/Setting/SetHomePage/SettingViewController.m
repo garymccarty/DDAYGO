@@ -29,8 +29,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *genderBooy;
 @property (nonatomic, strong)NSMutableArray * newsData;
 /** 调整是否为ICUE登录*/
-@property (weak, nonatomic) IBOutlet UIButton *IuceNumBut;
-@property (weak, nonatomic) IBOutlet UIButton *BangDingBut;
+@property (weak, nonatomic) IBOutlet UIButton * IuceNumBut;
+@property (weak, nonatomic) IBOutlet UIButton * BangDingBut;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * BangDingLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * IcueNumLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint * view3Layout;
@@ -82,15 +82,25 @@
     dic[@"nonce"] = @(i);
     [ZP_MyTool requestSetHomePage:dic success:^(id obj) {
         ZPLog(@"%@",obj);
+        
         ZP_HomePageModel * model = [[ZP_HomePageModel alloc]init];
         model.avatarimg = [NSString stringWithFormat:@"http://www.ddaygo.com%@",obj[@"avatarimg"]];
         model.nickname = obj[@"nickname"];
         model.realname = obj[@"realname"];
         model.icueaccount = obj[@"icueaccount"];
+        if ([model.icueaccount length]) {
+            _BangDingBut.userInteractionEnabled = NO;
+        }else {
+            _BangDingBut.userInteractionEnabled = YES;
+        }
         model.email = obj[@"email"];
         model.emailverify = obj[@"emailverify"];
         model.introducer = obj[@"introducer"];
-        
+        if ([model.introducer length]) {
+            _IuceNumBut.userInteractionEnabled = NO;
+        }else {
+            _IuceNumBut.userInteractionEnabled = YES;
+        }
         self.dataDic[@"nickname"] = obj[@"nickname"];
         self.dataDic[@"realname"] = obj[@"realname"];
         self.dataDic[@"sex"] = obj[@"sex"];
@@ -123,21 +133,21 @@
 }
 
 - (IBAction)touxiangAction:(id)sender {
-    
-    if (!_photoManager) {
-        _photoManager = [[SelectPhotoManager alloc]init];
-    }
-    [_photoManager startSelectPhotoWithImageName:NSLocalizedString(@"Choose photos", nil)];
-    __weak typeof(self)mySelf = self;
- //  选取照片成功
-    _photoManager.successHandle=^(SelectPhotoManager *manager,UIImage * image){
-        
-        mySelf.headerImage.image = image;
- //  保存到本地
-        NSData *data = UIImagePNGRepresentation(image);
-        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"headerImage"];
-    };
-    
+/********  暂时没有接口,不让点击******/
+//    if (!_photoManager) {
+//        _photoManager = [[SelectPhotoManager alloc]init];
+//    }
+//    [_photoManager startSelectPhotoWithImageName:NSLocalizedString(@"Choose photos", nil)];
+//    __weak typeof(self)mySelf = self;
+// //  选取照片成功
+//    _photoManager.successHandle=^(SelectPhotoManager *manager,UIImage * image){
+//
+//        mySelf.headerImage.image = image;
+// //  保存到本地
+//        NSData *data = UIImagePNGRepresentation(image);
+//        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"headerImage"];
+//    };
+//
 }
 
 - (void)setHead {
@@ -235,9 +245,7 @@
 
 //  绑定ICUE
 - (IBAction)bdICUEAction:(id)sender {
-    if () {
-        <#statements#>
-    }
+//        _BangDingBut.height = NO;
     BindingICUEViewController *viewController = [[BindingICUEViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];  // 隐藏返回按钮上的文字
