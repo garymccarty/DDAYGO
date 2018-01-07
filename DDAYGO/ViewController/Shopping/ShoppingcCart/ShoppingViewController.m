@@ -238,7 +238,7 @@
 //    [ClearingBut setTitle:NSLocalizedString(@"Delete", nil) forState:UIControlStateSelected];
     ClearingBut.titleLabel.font = ZP_TooBarFont;
     [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
-    ClearingBut.enabled = NO;
+//    ClearingBut.enabled = NO;
 //  保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
  //   [ClearingBut addTarget:self action:@selector(preventFlicker:) forControlEvents:UIControlEventAllTouchEvents];
     [bottomView addSubview:ClearingBut];
