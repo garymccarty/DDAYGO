@@ -143,7 +143,7 @@
         _StatisticsLabel.hidden = YES;
         _CurrencySymbolLabel.hidden = YES;
         _PriceLabel.hidden = YES;
-  //      _ClearingButt.selected = YES;
+        _ClearingButt.selected = YES;
         
         [sup setTitle:NSLocalizedString(@"Complete", nil) forState:UIControlStateNormal];
         [self.ClearingButt setTitle:NSLocalizedString(@"delete",nil) forState: UIControlStateNormal];
@@ -151,7 +151,7 @@
         _StatisticsLabel.hidden = NO;
         _PriceLabel.hidden = NO;
         _CurrencySymbolLabel.hidden = NO;
-//        _ClearingButt.selected = NO;
+        _ClearingButt.selected = NO;
          [sup setTitle:NSLocalizedString(@"Edit", nil) forState:UIControlStateNormal];
             [self.ClearingButt setTitle:NSLocalizedString(@"settlement", nil) forState: UIControlStateNormal];
     }
@@ -161,9 +161,6 @@
 
 // UI
 - (void)initUI {
-    
-   
-    
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height-TabbarHeight -50) style:UITableViewStylePlain];
     self.tableView.backgroundColor = ZP_Graybackground;
     self.tableView.delegate = self;
@@ -240,7 +237,7 @@
     [ClearingBut setTitle:NSLocalizedString(@"Clearing(0)", nil) forState:UIControlStateNormal];
 //    [ClearingBut setTitle:NSLocalizedString(@"Delete", nil) forState:UIControlStateSelected];
     ClearingBut.titleLabel.font = ZP_TooBarFont;
- //   [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
+    [ClearingBut addTarget:self action:@selector(ClearingBut:) forControlEvents:UIControlEventTouchUpInside];
     ClearingBut.enabled = NO;
 //  保证所有touch事件button的highlighted属性为NO,即可去除高亮效果
  //   [ClearingBut addTarget:self action:@selector(preventFlicker:) forControlEvents:UIControlEventAllTouchEvents];

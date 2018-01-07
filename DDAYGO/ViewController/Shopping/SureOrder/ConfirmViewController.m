@@ -73,7 +73,6 @@
 
 // UI
 - (void)initUI {
-    
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ZP_Width, ZP_height-49) style:UITableViewStylePlain];
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;  // 隐藏tableview线条
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滚动时键盘隐藏
@@ -173,9 +172,7 @@
         PayView.AmountLabel.text = _PriceLabel.text;
         PayView.dataArray = [ZP_ConfirmPayModel arrayWithArray:obj];
         PayView.confirmPayBlock = ^(id response) {
-            
         };
-        
         PayView.ConfirmPayMoneyBlock = ^(id response) {
             ZP_ConfirmPayModel * model = response;
             NSLog(@"payname = %@",model.payname);
